@@ -10,7 +10,7 @@ const config = {
   title: "Platform API documentation",
   tagline: "Altium Platform",
   url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/api/",
+  baseUrl: "/platform-api-docs/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
