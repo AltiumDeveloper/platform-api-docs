@@ -41,6 +41,15 @@ const config = {
     ]
   ],
 
+  markdown: {
+    parseFrontMatter: async (params) => {
+      const result = await params.defaultParseFrontMatter(params);
+      // set slug to be the exact name of the schema element (type, query, etc.)
+      result.frontMatter.id = result.frontMatter.title
+      return result;
+    },
+  },
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
