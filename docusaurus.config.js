@@ -1,6 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const { directiveDescriptor, directiveTag } = require("@graphql-markdown/helpers");
+const { getTypeDirectiveValues } = require("@graphql-markdown/graphql");
+
 const { themes } = require("prism-react-renderer");
 const lightCodeTheme = themes.github,
   darkCodeTheme = themes.dracula;
@@ -12,12 +15,39 @@ const config = {
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/platform-api-docs/",
   onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "altium", // Usually your GitHub org/user name.
   projectName: "platform-api-docs", // Usually your repo name.
   plugins: [
-    "@graphql-markdown/docusaurus",
+    [
+      "@graphql-markdown/docusaurus",
+      /** @type {import('@graphql-markdown/types').ConfigOptions} */
+      {
+        schema: 'https://usw2.dev-365.altium.com/napi/gateway/graphql',
+        rootPath: './docs',
+        loaders: {
+          UrlLoader: {
+            module: '@graphql-tools/url-loader'
+          },
+        },
+        baseURL: '.',
+        homepage: 'static/index.md',
+        docOptions: {
+          index: true,
+          frontMatter: {
+            hide_table_of_contents: true,
+            pagination_next: null,
+            pagination_prev: null
+          }
+        },
+        printTypeOptions: {
+          exampleSection: true,
+          parentTypePrefix: false,
+          relatedTypeSection: false,
+          typeBadges: true,
+        }
+      }
+    ],
     [
       "@cmfcmf/docusaurus-search-local",
       {
@@ -48,6 +78,9 @@ const config = {
       result.frontMatter.id = result.frontMatter.title
       return result;
     },
+    hooks: {
+      onBrokenMarkdownLinks: "warn"
+    }
   },
 
   themeConfig:
@@ -70,7 +103,7 @@ const config = {
       footer: {
         style: "light",
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} My Website, Inc. Built with GraphQL-Markdown & Docusaurus.`
+        copyright: `Copyright © ${new Date().getFullYear()}. Built with GraphQL-Markdown & Docusaurus.`
       },
       prism: {
         theme: lightCodeTheme,
