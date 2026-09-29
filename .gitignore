@@ -1,15 +1,15 @@
 # Dependencies
 /node_modules
 
-
 # Production
 /build
 
 # Generated files
 .docusaurus
 .cache-loader
-/docs/*
-!/docs/superpowers/
+/.schema/
+/docs/reference/
+/static/schema.graphql
 
 # Misc
 .DS_Store
