@@ -81,7 +81,7 @@ export function formatReport(report) {
   }
   if (report.staleCdm.length) lines.push(`Warning: CDM maps to missing API types: ${report.staleCdm.join(', ')}`);
   if (report.unmappedEntities.length) {
-    lines.push(`Info: ${report.unmappedEntities.length} Node entities without a CDM mapping: ${report.unmappedEntities.join(', ')}`);
+    lines.push(`Info: ${report.unmappedEntities.length} Node entities without a CDM mapping (see report.json)`);
   }
   return lines.join('\n');
 }

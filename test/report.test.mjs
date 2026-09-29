@@ -63,3 +63,11 @@ test('reports stale overrides and stale allowlist entries', () => {
   assert.deepEqual(clean.staleOverrides, []);
   assert.deepEqual(clean.staleAllowlist, []);
 });
+
+test('formatReport prints unmapped Node entities as a count only', () => {
+  const report = buildReport({ classification, cdmIndex, schema, contextMap, allowlist: new Set() });
+  const text = formatReport(report);
+  assert.match(text, /Info: 2 Node entities without a CDM mapping \(see report\.json\)/);
+  assert.doesNotMatch(text, /BomWip/);
+  assert.deepEqual(report.unmappedEntities, ['BomWip', 'DesOrphanEntity']);
+});
