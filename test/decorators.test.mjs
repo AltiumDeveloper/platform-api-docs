@@ -49,5 +49,5 @@ test('badge uses the formatter provided by graphql-markdown', () => {
   const seen = [];
   const out = experimentalBadge.render({}, { formatMDXBadge: (badge) => { seen.push(badge); return 'BADGE'; } });
   assert.equal(out, 'BADGE');
-  assert.deepEqual(seen, [{ text: 'EXPERIMENTAL', classname: 'badge--warning' }]);
+  assert.deepEqual(seen, [{ text: 'EXPERIMENTAL', classname: 'warning' }]);
 });

@@ -27,7 +27,7 @@ function buildDecorators({ cdmIndex }) {
     experimentalBadge: {
       predicate: hasDirectiveNamed('experimental'),
       position: { into: 'tags' },
-      render: (_values, options) => options.formatMDXBadge({ text: 'EXPERIMENTAL', classname: 'badge--warning' }),
+      render: (_values, options) => options.formatMDXBadge({ text: 'EXPERIMENTAL', classname: 'warning' }),
     },
     experimentalNote: {
       predicate: and(hasDirectiveNamed('experimental'), isEntity(...PAGE_KINDS)),
