@@ -13,6 +13,9 @@ const DEVELOPER_CENTER_DOCS = 'https://www.altium.com/documentation/altium-devel
 const CDM_DOCS = 'https://altiumdeveloper.github.io/cdm/';
 const REPO = 'https://github.com/AltiumDeveloper/platform-api-docs';
 
+// Fixture builds (smoke test) only contain some BCs, so landing-page links to the others are expected to break there.
+const brokenLinks = process.env.APIDOCS_SCHEMA_FILE ? 'warn' : 'throw';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Altium Platform API',
@@ -22,9 +25,9 @@ const config = {
   organizationName: 'AltiumDeveloper',
   projectName: 'platform-api-docs',
   favicon: 'img/favicon.ico',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: brokenLinks,
   markdown: {
-    hooks: { onBrokenMarkdownLinks: 'warn' },
+    hooks: { onBrokenMarkdownLinks: brokenLinks },
   },
   plugins: [
     [
