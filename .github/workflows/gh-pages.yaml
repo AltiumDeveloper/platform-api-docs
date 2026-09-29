@@ -2,37 +2,72 @@ name: GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # Set a branch name to trigger deployment
+    branches: [main]
+  pull_request:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
+
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  build:
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          node-version: 22
+          cache: npm
 
-      - name: Dependencies
-        run: npm i -ci
+      - name: Install
+        run: npm ci
 
-      - name: Build
-        run: |
-          npm run doc
-          npm run build
+      - name: Unit tests
+        run: npm test
+
+      - name: Restore previous schema size
+        uses: actions/cache/restore@v4
+        with:
+          path: .schema/last-size
+          key: schema-size-${{ github.run_id }}
+          restore-keys: schema-size-
+
+      - name: Generate API reference
+        run: npm run apidocs
+
+      - name: Build site
+        run: npm run build
+
+      - name: Save schema size
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/cache/save@v4
+        with:
+          path: .schema/last-size
+          key: schema-size-${{ github.run_id }}
+
+      - name: Upload classification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apidocs-report
+          path: .schema/report.json
+          if-no-files-found: ignore
+
+      - name: Upload site for review
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: build
 
       - name: Deploy
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
-        # If you're changing the branch from main,
-        # also change the `main` in `refs/heads/main`
-        # below accordingly.
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
