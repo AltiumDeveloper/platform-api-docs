@@ -1,0 +1,75 @@
+---
+id: index
+slug: /
+title: Altium Platform API
+description: GraphQL reference for the Altium Platform API, organised by bounded context.
+sidebar_label: Overview
+hide_table_of_contents: false
+pagination_next: null
+pagination_prev: null
+---
+
+The **Altium Platform API** is a single GraphQL endpoint that brings together the services behind
+Altium 365: design projects, libraries, collaboration, procurement, supply data and more. This site is
+the reference for every query, mutation and type it exposes, generated nightly from the production schema.
+
+## Endpoint and access
+
+```text
+https://eur.365.altium.com/napi/gateway/graphql
+```
+
+The gateway is regional: use the endpoint of the region that hosts your workspace. Requests are
+authenticated with an access token issued to an application registered with Altium. See the
+[Altium Developer Center](https://developer.altium.com/) and its
+[documentation](https://www.altium.com/documentation/altium-developer-center) for registering an
+application and obtaining tokens.
+
+## How this reference is organised
+
+The API is grouped by **bounded context** — a business area with its own entities and vocabulary —
+aligned with the [Common Data Model (CDM)](https://altiumdeveloper.github.io/cdm/). Each context
+lists its queries, mutations and types. Where an API type represents a CDM entity, its page links to
+the entity definition.
+
+| Bounded context | Covers |
+| --- | --- |
+| [Platform](/reference/platform/overview) | Workspaces, users and organizations, apps and tokens, events, notifications, solutions, knowledge graph |
+| [Design](/reference/design/overview) | Hardware projects, design data, rule checks, comparisons, releases |
+| [Insights](/reference/insights/overview) | Workspace insights |
+| [Library Management](/reference/library-management/overview) | Components, parts, symbols, footprints, datasheets, lifecycles, library search |
+| [Collaboration](/reference/collaboration/overview) | Comments, annotations, tasks |
+| [Configuration Management](/reference/configuration-management/overview) | Revisions, naming schemes, folders |
+| [Procurement](/reference/procurement/overview) | Managed BOMs and BOM releases |
+| [Supply](/reference/supply/overview) | Parts, offers, part families, reference designs, evaluation kits, solution templates |
+| [Customization](/reference/customization/overview) | Extension points, scripts, workflows |
+| [System Design](/reference/system-design/overview) | System design documents and system models |
+| [Requirements](/reference/requirements/overview) | Requirements projects and data |
+| [Renesas (preview)](/reference/renesas-preview/overview) | Renesas-specific device models, software projects and tools |
+| [Common](/reference/common/overview) | Shared scalars, paging, filtering and directives |
+
+## Naming conventions
+
+Names tell you where an operation belongs:
+
+- **Bounded-context queries** are nested by context and entity:
+  `design.project.byId(id: ID!)`, `platform.token.byId(id: ID!)`.
+- **Legacy queries** use a short prefix: `desProjectById`, `supSearchMpn`, `bomBoms`
+  (`des` = design, `sup` = supply, `glo` = global/platform, `bom` = procurement).
+- **Mutations** are top-level and named `{boundedContext}{Entity}{Action}`, for example
+  `designRuleCheckExecute`. Each takes a single `input: <Name>Input!` argument and returns a `<Name>Payload!`.
+- Types and operations whose names end in `_Preview` belong to preview schemas.
+
+## Lifecycle
+
+| Stage | What it means for you |
+| --- | --- |
+| **Experimental** | Marked with an `EXPERIMENTAL` badge. Not production-ready: it may change or be removed without notice. Do not build production integrations on it. |
+| **Stable** | Evolves only in backward-compatible ways. |
+| **Deprecated** | Still works, but marked `@deprecated` with a reason and a replacement. Migrate before it is removed. |
+| **Removed** | No longer part of the schema. |
+
+## Machine-readable schema
+
+Download the full schema in SDL form: [schema.graphql](pathname:///schema.graphql). It is regenerated
+together with this site and is the best input for code generators and AI assistants.

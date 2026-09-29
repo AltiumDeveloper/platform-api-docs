@@ -1,41 +1,39 @@
-# GraphQL-Markdown template
+# Altium Platform API documentation
 
-Docusaurus template for [GraphQL-Markdown](https://graphql-markdown.dev).
+Source for https://altiumdeveloper.github.io/platform-api-docs/ — the GraphQL reference for the
+Altium Platform API, grouped by bounded context and cross-linked with the
+[Common Data Model](https://altiumdeveloper.github.io/cdm/).
 
-## Quick start
+## How it works
 
-**1. Install**
+`npm run apidocs` runs the pipeline:
 
-```shell
-npm init docusaurus my-website https://github.com/graphql-markdown/template.git
-```
+1. `fetch-schema` — downloads the SDL (with applied directives) from the EUR gateway (`?sdl`).
+2. `fetch-cdm` — builds an API-type → CDM-entity index from the public CDM schema.
+3. `annotate` — assigns every type and operation to a bounded context using
+   `config/context-map.yaml`, strips internal directives, and writes `.schema/report.json`.
+   The build fails if a name is unassigned and not listed in `config/unassigned-allowlist.txt`.
+4. `graphql-to-doc` — graphql-markdown renders `docs/reference/**`.
+5. `postprocess` — writes BC overview pages, the sidebar index and redirects for old URLs.
 
-**2. Configure**
+`npm run build` then builds the Docusaurus site. The GitHub workflow does both nightly.
 
-Update settings in `.graphqlrc` (see [documentation](https://graphql-markdown.dev/docs/configuration#graphql-config)).
+## Local development
 
-```yaml
-schema: 'https://api.react-finland.fi/graphql'
-extensions:
-  graphql-markdown:
-    baseURL: '.'
-    homepage: 'static/index.md'
-    loaders:
-      UrlLoader: '@graphql-tools/url-loader'
-    docOptions:
-      pagination: false
-    printTypeOptions:
-      deprecated: 'group'
-```
+Requires Node 22.
 
-**3. Generate**
-
-```shell
-npm run doc
-```
-
-**4. Start**
-
-```shell
+```bash
+npm ci
+npm run apidocs
 npm start
 ```
+
+Tests: `npm test` (unit) and `npm run test:smoke` (full build from test fixtures).
+
+## Changing the grouping
+
+Edit `config/context-map.yaml`. Each context has regexes for query, mutation and type names; the most
+specific anchored prefix wins, CDM mappings win for entity types, and `overrides` pins individual
+names. Run `npm run apidocs:fetch && npm run apidocs:annotate` to see the effect in the report.
+
+Keep the context map public-safe: no owner or team names, OAuth resources or internal links.
