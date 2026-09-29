@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   buildPagesIndex, buildRedirects, isDocDirectivePage, readFrontMatter, renderContextOverview,
+  stripDocDirectiveLinks,
 } from './lib/pages.mjs';
 
 const readJson = (path, fallback) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : fallback);
@@ -27,6 +28,11 @@ export function runPostprocess({ docsDir = 'docs', schemaDir = '.schema' } = {})
   for (const file of files) {
     if (isDocDirectivePage(file)) unlinkSync(file.abs);
     else kept.push(file);
+  }
+  for (const file of kept) {
+    const text = readFileSync(file.abs, 'utf8');
+    const stripped = stripDocDirectiveLinks(text);
+    if (stripped !== text) writeFileSync(file.abs, stripped);
   }
 
   const pages = buildPagesIndex(kept, manifest);

@@ -22,6 +22,29 @@ export function isDocDirectivePage({ path, frontMatter }) {
   return /\/types\/directives\//.test(path) && frontMatter.title === 'doc';
 }
 
+const DOC_LINK = /\[[^\]]*\]\([^)\s]*\/types\/directives\/doc(?:\.mdx)?(?:#[^)\s]*)?\)(?:[ \t]*<Badge\b[^>]*\/>)?/g;
+const BULLET = '<Bullet />';
+
+// Removes references to the deleted synthetic @doc directive page (link, its trailing relation badge and
+// one adjacent <Bullet /> separator); lines left with nothing but badges/bullets/whitespace are dropped.
+export function stripDocDirectiveLinks(text) {
+  return text
+    .split('\n')
+    .flatMap((line) => {
+      if (!line.includes('directives/doc')) return [line];
+      DOC_LINK.lastIndex = 0;
+      if (!DOC_LINK.test(line)) return [line];
+      const cleaned = line
+        .replace(DOC_LINK, '')
+        .replace(/(?:<Bullet \/>\s*){2,}/g, BULLET)
+        .replace(/^\s*<Bullet \/>\s*/, '')
+        .replace(/\s*<Bullet \/>\s*$/, '');
+      const leftover = cleaned.replace(/<Badge\b[^>]*\/>|<Bullet \/>|[-*+]|\s/g, '');
+      return leftover === '' ? [] : [cleaned];
+    })
+    .join('\n');
+}
+
 export function buildPagesIndex(files, manifest) {
   const contextBySlug = new Map(manifest.contexts.map((c) => [c.slug, c.id]));
   const operationByPath = Object.fromEntries(

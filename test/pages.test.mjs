@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  buildPagesIndex, buildRedirects, renderContextOverview, readFrontMatter, isDocDirectivePage,
+  buildPagesIndex, buildRedirects, renderContextOverview, readFrontMatter, isDocDirectivePage, stripDocDirectiveLinks,
 } from '../scripts/apidocs/lib/pages.mjs';
 
 const manifest = {
@@ -77,4 +77,30 @@ test('renderContextOverview lists counts, entry points and CDM entities', () => 
   assert.match(md, /- \[`desProjectById`\]\(\/reference\/design\/operations\/queries\/des-project-by-id\)/);
   assert.match(md, /- \[`design\.ruleCheck\.byId`\]/);
   assert.match(md, /\[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) — \[Hardware Project\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/classes\/des_Project\/\)/);
+});
+
+const REAL_LINE = '[`DmDeviceModel`](/reference/renesas-preview/types/objects/dm-device-model.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`doc`](/reference/common/types/directives/doc.mdx)  <Badge class="badge badge--secondary badge--relation" text="directive"/><Bullet />[`gloCusCreateExtensionPoint`](/reference/customization/operations/mutations/glo-cus-create-extension-point.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>';
+
+test('stripDocDirectiveLinks removes the doc link, its badge and one separator from a relation line', () => {
+  const out = stripDocDirectiveLinks(`before\n${REAL_LINE}\nafter\n`);
+  assert.ok(!out.includes('directives/doc'));
+  assert.ok(!out.includes('`doc`'));
+  assert.ok(!out.includes('<Bullet /><Bullet />'));
+  assert.match(out, /text="object"\/><Bullet \/>\[`gloCusCreateExtensionPoint`\]/);
+  assert.match(out, /^before\n/);
+  assert.match(out, /\nafter\n$/);
+});
+
+test('stripDocDirectiveLinks handles first and last position, anchors and bare targets', () => {
+  const badge = '  <Badge class="badge" text="directive"/>';
+  assert.equal(stripDocDirectiveLinks(`[\`doc\`](/a/types/directives/doc.mdx)${badge}<Bullet />[\`x\`](/x.mdx)`), '[`x`](/x.mdx)');
+  assert.equal(stripDocDirectiveLinks(`[\`x\`](/x.mdx)<Bullet />[\`doc\`](/a/types/directives/doc#foo)${badge}`), '[`x`](/x.mdx)');
+  assert.equal(stripDocDirectiveLinks('See [doc](/reference/common/types/directives/doc) now'), 'See  now');
+});
+
+test('stripDocDirectiveLinks drops lines left empty and leaves other content alone', () => {
+  const only = '[`doc`](/reference/common/types/directives/doc.mdx)  <Badge class="badge" text="directive"/>';
+  assert.equal(stripDocDirectiveLinks(`a\n${only}\nb\n`), 'a\nb\n');
+  const untouched = '[`deprecated`](/reference/common/types/directives/deprecated.mdx)\n\n\nend\n';
+  assert.equal(stripDocDirectiveLinks(untouched), untouched);
 });
