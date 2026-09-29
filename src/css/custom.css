@@ -37,3 +37,16 @@ html[data-theme='dark'] {
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* Experimental markers */
+.sidebar-exp > .menu__link::after {
+  content: 'EXP';
+  margin-left: 0.4rem;
+  padding: 0 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  color: var(--ifm-color-warning-contrast-foreground);
+  background: var(--ifm-color-warning-contrast-background);
+}

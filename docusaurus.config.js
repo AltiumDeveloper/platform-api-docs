@@ -2,6 +2,7 @@
 const { existsSync, readFileSync } = require('node:fs');
 const { themes } = require('prism-react-renderer');
 const { buildDecorators } = require('./scripts/apidocs/decorators.cjs');
+const { sidebarItemsGenerator } = require('./scripts/apidocs/sidebar.cjs');
 
 const readJson = (path, fallback) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : fallback);
 const cdmIndex = readJson('./.schema/cdm-index.json', {});
@@ -57,7 +58,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: false,
-        docs: { routeBasePath: '/', sidebarPath: './sidebars.js' },
+        docs: { routeBasePath: '/', sidebarPath: './sidebars.js', sidebarItemsGenerator },
         theme: { customCss: './src/css/custom.css' },
       }),
     ],
