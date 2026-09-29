@@ -1,0 +1,12 @@
+classes:
+  plt_workspace:
+    in_subset: platform
+    class_uri: plt:Workspace
+    title: Workspace
+    annotations:
+      grid:
+        tag: grid
+        value: grid:workspace:{workspace-id}
+      platformAPI:
+        tag: platformAPI
+        value: DesWorkspace
