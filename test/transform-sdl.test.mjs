@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { buildSchema } from 'graphql';
-import { stripDirectives, annotateSdl, STRIP } from '../scripts/apidocs/lib/transform-sdl.mjs';
+import { stripDirectives, annotateSdl, rootTypeNamesOf, STRIP } from '../scripts/apidocs/lib/transform-sdl.mjs';
 import { parseContextMap, contextById } from '../scripts/apidocs/lib/context-map.mjs';
 import { buildCdmIndex } from '../scripts/apidocs/lib/cdm.mjs';
 import { classifySchema } from '../scripts/apidocs/lib/classify.mjs';
@@ -57,4 +57,18 @@ test('does not duplicate an existing @experimental', () => {
   const schema = annotateFixture();
   const design = schema.getQueryType().getFields().design;
   assert.equal(design.astNode.directives.filter((d) => d.name.value === 'experimental').length, 1);
+});
+
+test('annotates custom-named root types', () => {
+  const custom = 'schema { query: RootQuery }\ntype RootQuery { desProjectById: String }\n';
+  const customSchema = buildSchema(custom);
+  assert.deepEqual(rootTypeNamesOf(customSchema), { RootQuery: 'query' });
+  const map = parseContextMap(readFixture('context-map.yaml'));
+  const classification = classifySchema(customSchema, map, {});
+  const annotated = buildSchema(annotateSdl(custom, {
+    classification,
+    titleOf: (id) => contextById(map, id).title,
+    rootTypeNames: rootTypeNamesOf(customSchema),
+  }));
+  assert.equal(directiveArg(annotated.getQueryType().getFields().desProjectById.astNode, 'doc'), 'Design');
 });

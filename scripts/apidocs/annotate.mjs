@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { buildSchema } from 'graphql';
 import { contextById, loadContextMap } from './lib/context-map.mjs';
 import { classifySchema } from './lib/classify.mjs';
-import { annotateSdl, stripDirectives, STRIP } from './lib/transform-sdl.mjs';
+import { annotateSdl, rootTypeNamesOf, stripDirectives, STRIP } from './lib/transform-sdl.mjs';
 import { buildReport, formatReport, parseAllowlist } from './lib/report.mjs';
 import { buildManifest } from './lib/manifest.mjs';
 
@@ -22,7 +22,8 @@ export function runAnnotate({
   const contextMap = loadContextMap(contextMapPath);
   const cdmIndex = readJson(join(schemaDir, 'cdm-index.json'), {});
   const classification = classifySchema(schema, contextMap, cdmIndex);
-  const annotated = annotateSdl(publicSdl, { classification, titleOf: (id) => contextById(contextMap, id).title });
+  const annotated = annotateSdl(publicSdl, { classification, titleOf: (id) => contextById(contextMap, id).title,
+    rootTypeNames: rootTypeNamesOf(schema) });
   const allowlist = existsSync(allowlistPath) ? parseAllowlist(readFileSync(allowlistPath, 'utf8')) : new Set();
   const report = buildReport({ classification, cdmIndex, schema, allowlist });
 

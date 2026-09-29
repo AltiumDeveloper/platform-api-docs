@@ -42,6 +42,13 @@ const namedTypeName = (typeNode) => (typeNode.kind === Kind.NAMED_TYPE ? typeNod
 const withDirectives = (node, extra) =>
   extra.length ? { ...node, directives: [...(node.directives ?? []), ...extra] } : node;
 
+export function rootTypeNamesOf(schema) {
+  const names = {};
+  const roots = { query: schema.getQueryType(), mutation: schema.getMutationType(), subscription: schema.getSubscriptionType() };
+  for (const [kind, type] of Object.entries(roots)) if (type) names[type.name] = kind;
+  return names;
+}
+
 export function annotateSdl(sdl, { classification, titleOf, rootTypeNames = { Query: 'query', Mutation: 'mutation', Subscription: 'subscription' } }) {
   const rootKinds = new Map(Object.entries(rootTypeNames));
   const ast = visit(parse(sdl), {
