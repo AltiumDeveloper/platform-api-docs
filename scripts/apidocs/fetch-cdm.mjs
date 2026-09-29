@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Builds .schema/cdm-index.json from the public CDM (AltiumDeveloper/cdm). Never fails the build:
-// on error it writes an empty index and the site is built without CDM cross-references.
+// on error it keeps a previous index if present, else writes an empty one, and the site is built without CDM cross-references.
 // Set APIDOCS_CDM_DIR to read *.yaml from a local directory instead.
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { buildCdmIndex } from './lib/cdm.mjs';
 
@@ -34,6 +34,10 @@ try {
   writeFileSync(OUT, JSON.stringify(index, null, 2));
   console.log(`fetch-cdm: ${Object.keys(index).length} API types mapped (CDM ${process.env.APIDOCS_CDM_DIR ?? REF})`);
 } catch (error) {
-  console.warn(`fetch-cdm: ${error.message}; continuing without CDM cross-references`);
-  writeFileSync(OUT, '{}');
+  if (existsSync(OUT)) {
+    console.warn(`fetch-cdm: ${error.message}; reusing previous ${OUT}`);
+  } else {
+    console.warn(`fetch-cdm: ${error.message}; continuing without CDM cross-references`);
+    writeFileSync(OUT, '{}');
+  }
 }

@@ -102,3 +102,28 @@ test('collects unassigned names and experimental items', () => {
   assert.deepEqual([...c.experimentalNamespaces].sort(), ['DesignProjectQueries', 'DesignQueries']);
   assert.deepEqual(c.ambiguous, []);
 });
+
+test('records a conflict when CDM and regex/common disagree', () => {
+  const cdm = { DesOrphanEntity: [{ subset: 'platform' }] };
+  assert.deepEqual(classifySchema(schema, map, cdm).cdmConflicts,
+    [{ name: 'DesOrphanEntity', cdm: 'platform', regex: 'design' }]);
+});
+
+test('records a conflict with regex null when only CDM knows the type', () => {
+  const cdm = { ZzzOrphanType: [{ subset: 'design' }] };
+  assert.deepEqual(classifySchema(schema, map, cdm).cdmConflicts,
+    [{ name: 'ZzzOrphanType', cdm: 'design', regex: null }]);
+});
+
+test('no conflicts when CDM agrees with regex (fixture)', () => {
+  assert.deepEqual(classifySchema(schema, map, cdmIndex).cdmConflicts, []);
+});
+
+test('reports ambiguity when CDM entries of one type span different contexts', () => {
+  const cdm = { DesProject: [{ subset: 'design' }, { subset: 'platform' }] };
+  const c = classifySchema(schema, map, cdm);
+  assert.deepEqual(c.ambiguous, [
+    { kind: 'type', name: 'DesProject', candidates: ['design', 'platform'], source: 'cdm' },
+  ]);
+  assert.equal(c.types.get('DesProject'), 'design');
+});

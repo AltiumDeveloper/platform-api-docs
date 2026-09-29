@@ -48,25 +48,35 @@ export function classifySchema(schema, map, cdmIndex = {}) {
     experimentalNamespaces: new Set(),
     unassigned: [],
     ambiguous: [],
+    cdmConflicts: [],
     experimental: { operations: new Set(), types: new Set() },
+  };
+
+  const byRegex = (name, kind) => {
+    const match = matchContext(name, kind, map);
+    if (match) return { id: match.id, ambiguous: match.ambiguous };
+    if (kind === 'type' && (map.common.names.has(name) || map.common.type.some((regex) => regex.test(name)))) {
+      return { id: COMMON_ID, ambiguous: null };
+    }
+    return { id: null, ambiguous: null };
   };
 
   const assign = (name, kind) => {
     if (map.overrides.has(name)) return map.overrides.get(name);
+    const regex = byRegex(name, kind);
     if (kind === 'type') {
-      const subset = cdmIndex[name]?.[0]?.subset;
+      const entries = cdmIndex[name] ?? [];
+      const subset = entries[0]?.subset;
       const fromCdm = subset ? contextForCdm(map, subset) : null;
-      if (fromCdm) return fromCdm;
+      if (fromCdm) {
+        const candidates = [...new Set(entries.map((entry) => (entry.subset ? contextForCdm(map, entry.subset) : null)).filter(Boolean))];
+        if (candidates.length > 1) result.ambiguous.push({ kind, name, candidates, source: 'cdm' });
+        if (regex.id !== fromCdm) result.cdmConflicts.push({ name, cdm: fromCdm, regex: regex.id });
+        return fromCdm;
+      }
     }
-    const match = matchContext(name, kind, map);
-    if (match) {
-      if (match.ambiguous) result.ambiguous.push({ kind, name, candidates: match.ambiguous });
-      return match.id;
-    }
-    if (kind === 'type' && (map.common.names.has(name) || map.common.type.some((regex) => regex.test(name)))) {
-      return COMMON_ID;
-    }
-    return null;
+    if (regex.ambiguous) result.ambiguous.push({ kind, name, candidates: regex.ambiguous });
+    return regex.id;
   };
 
   const rootNames = new Set();

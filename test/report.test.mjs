@@ -38,3 +38,11 @@ test('formatReport suggests a context-map entry for blocking names', () => {
   assert.match(text, /query: '\^zzz'/);
   assert.match(text, /config\/unassigned-allowlist\.txt/);
 });
+
+test('report exposes CDM conflicts and formatReport warns about them', () => {
+  const conflicted = classifySchema(schema, parseContextMap(read('context-map.yaml')), { DesOrphanEntity: [{ subset: 'platform' }] });
+  const report = buildReport({ classification: conflicted, cdmIndex, schema, allowlist: new Set() });
+  assert.deepEqual(report.cdmConflicts, [{ name: 'DesOrphanEntity', cdm: 'platform', regex: 'design' }]);
+  assert.match(formatReport(report), /Warning: 1 CDM\/regex classification conflicts[\s\S]*DesOrphanEntity: cdm=platform, regex=design/);
+  assert.deepEqual(buildReport({ classification, cdmIndex, schema, allowlist: new Set() }).cdmConflicts, []);
+});

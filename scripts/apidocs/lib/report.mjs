@@ -34,6 +34,7 @@ export function buildReport({ classification, cdmIndex, schema, allowlist }) {
     unassigned: classification.unassigned,
     blocking: classification.unassigned.filter((item) => !allowlist.has(item.name)),
     ambiguous: classification.ambiguous,
+    cdmConflicts: classification.cdmConflicts,
     staleCdm: Object.keys(cdmIndex).filter((name) => !typeMap[name]).sort(),
     unmappedEntities,
   };
@@ -55,6 +56,10 @@ export function formatReport(report) {
   if (report.ambiguous.length) {
     lines.push(`Warning: ${report.ambiguous.length} ambiguous matches (first context wins):`);
     for (const a of report.ambiguous) lines.push(`  - ${a.kind} ${a.name}: ${a.candidates.join(', ')}`);
+  }
+  if (report.cdmConflicts.length) {
+    lines.push(`Warning: ${report.cdmConflicts.length} CDM/regex classification conflicts (CDM wins):`);
+    for (const c of report.cdmConflicts) lines.push(`  - ${c.name}: cdm=${c.cdm}, regex=${c.regex ?? 'none'}`);
   }
   if (report.staleCdm.length) lines.push(`Warning: CDM maps to missing API types: ${report.staleCdm.join(', ')}`);
   if (report.unmappedEntities.length) {
