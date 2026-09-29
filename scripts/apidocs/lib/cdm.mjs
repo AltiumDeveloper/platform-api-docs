@@ -7,7 +7,7 @@ const annotationValue = (annotation) =>
 
 export function cdmClassPageName(key, cls) {
   const uri = cls?.class_uri;
-  if (typeof uri === 'string' && uri.includes(':')) {
+  if (typeof uri === 'string' && /^[A-Za-z][\w-]*:[A-Za-z_]\w*$/.test(uri)) {
     const [prefix, local] = uri.split(':');
     return `${prefix}_${local}`;
   }

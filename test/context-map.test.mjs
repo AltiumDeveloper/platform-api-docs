@@ -41,3 +41,10 @@ test('rejects top-level regex alternation but allows grouped alternation', () =>
   assert.doesNotThrow(() => parseContextMap("contexts:\n  - {id: a, title: A, type: ['^supPartFamil(y|ies)', '^a[|]b', '^a\\|b']}\n"));
   assert.throws(() => parseContextMap("contexts:\n  - {id: a, title: A}\ncommon:\n  type: ['x|y']\n"), /top-level alternation/);
 });
+
+test('normalizes a string cdm value to an array', () => {
+  const map = parseContextMap("contexts:\n  - {id: a, title: A, cdm: design}\n  - {id: b, title: B, cdm: [x, y]}\n  - {id: c, title: C}\n");
+  assert.deepEqual(contextById(map, 'a').cdm, ['design']);
+  assert.deepEqual(contextById(map, 'b').cdm, ['x', 'y']);
+  assert.deepEqual(contextById(map, 'c').cdm, []);
+});

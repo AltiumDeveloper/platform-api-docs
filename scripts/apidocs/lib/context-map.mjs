@@ -42,7 +42,7 @@ export function parseContextMap(text) {
       id: entry.id,
       title: entry.title,
       description: entry.description ?? '',
-      cdm: entry.cdm ?? [],
+      cdm: [entry.cdm ?? []].flat(),
       collapsed: entry.collapsed ?? true,
     };
     for (const kind of KINDS) context[kind] = toRegExps(entry[kind]);

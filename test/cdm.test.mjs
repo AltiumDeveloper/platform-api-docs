@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildCdmIndex, CDM_SITE } from '../scripts/apidocs/lib/cdm.mjs';
+import { buildCdmIndex, cdmClassPageName, CDM_SITE } from '../scripts/apidocs/lib/cdm.mjs';
 
 const read = (name) => readFileSync(new URL(`./fixtures/cdm/${name}`, import.meta.url), 'utf8');
 
@@ -37,4 +37,12 @@ test('reads { tag, value } annotation objects', () => {
 
 test('tolerates empty documents', () => {
   assert.deepEqual(buildCdmIndex(['', 'classes: {}']), {});
+});
+
+test('cdmClassPageName only rewrites well-formed prefix:local class URIs', () => {
+  assert.equal(cdmClassPageName('Key', { class_uri: 'des:Project' }), 'des_Project');
+  assert.equal(cdmClassPageName('Key', { class_uri: 'https://example.org/Thing' }), 'Key');
+  assert.equal(cdmClassPageName('Key', { class_uri: 'a:b:c' }), 'Key');
+  assert.equal(cdmClassPageName('Key', { class_uri: 'des:' }), 'Key');
+  assert.equal(cdmClassPageName('Key', {}), 'Key');
 });
