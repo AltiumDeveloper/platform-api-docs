@@ -30,6 +30,11 @@ const project = page('reference/design/types/objects/des-project');
 assert.match(project, /Common Data Model/);
 assert.match(project, /Hardware Project/);
 assert.doesNotMatch(project, /id="comments"/);
+// Member headings keep graphql-markdown's explicit IDs, so `#name`-style links resolve.
+assert.match(project, /id="name"/);
+
+const drc = page('reference/design/operations/mutations/design-rule-check-execute');
+assert.match(drc, /id="input"/);
 
 const overview = page('reference/design/overview');
 assert.match(overview, /Entry points/);
