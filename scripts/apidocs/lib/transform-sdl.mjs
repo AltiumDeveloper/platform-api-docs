@@ -17,7 +17,23 @@ export function stripDirectives(sdl, { directives = [], types = [] } = {}) {
   return print(ast);
 }
 
-const DOC_DEFINITION = parse(
+const EXPERIMENTAL_PREFIX = /^\s*\*\*Experimental\*\*\s*/;
+
+// The gateway prefixes descriptions of experimental elements with a literal `**Experimental**`; rendered
+// pages already show an EXP badge, so the prefix is dropped (a description left empty is removed).
+export function stripExperimentalPrefix(sdl) {
+  const ast = visit(parse(sdl), {
+    enter(node) {
+      const description = node.description;
+      if (!description || !EXPERIMENTAL_PREFIX.test(description.value)) return undefined;
+      const value = description.value.replace(EXPERIMENTAL_PREFIX, '');
+      return { ...node, description: value ? { ...description, value } : undefined };
+    },
+  });
+  return print(ast);
+}
+
+const DOC_DEFINITION =parse(
   'directive @doc(category: String) on OBJECT | INTERFACE | UNION | ENUM | INPUT_OBJECT | SCALAR | FIELD_DEFINITION',
 ).definitions[0];
 

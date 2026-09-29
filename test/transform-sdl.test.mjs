@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildSchema } from 'graphql';
-import { stripDirectives, annotateSdl, rootTypeNamesOf, STRIP } from '../scripts/apidocs/lib/transform-sdl.mjs';
+import { buildSchema, parse } from 'graphql';
+import { stripExperimentalPrefix, stripDirectives, annotateSdl, rootTypeNamesOf, STRIP } from '../scripts/apidocs/lib/transform-sdl.mjs';
 import { parseContextMap, contextById } from '../scripts/apidocs/lib/context-map.mjs';
 import { buildCdmIndex } from '../scripts/apidocs/lib/cdm.mjs';
 import { classifySchema } from '../scripts/apidocs/lib/classify.mjs';
@@ -18,6 +18,52 @@ test('removes @authorize, @cost, their definitions and ApplyPolicy', () => {
   const schema = buildSchema(out);
   assert.ok(schema.getType('DesProject'));
   assert.equal(schema.getType('ApplyPolicy'), undefined);
+});
+
+test('stripExperimentalPrefix drops the leading **Experimental** marker from every kind of description', () => {
+  const input = `
+"**Experimental** The tag types."
+type A @experimental {
+  "**Experimental**"
+  bare: ID!
+  """
+  **Experimental**
+  Block string description.
+  """
+  block(
+    "**Experimental** Arg description."
+    arg: String
+  ): String
+  "Mentions **Experimental** only mid-text."
+  keep: String
+}
+
+enum E {
+  "**Experimental**   Spaced value."
+  ONE
+}
+
+input I {
+  "**Experimental** Input field."
+  f: String
+}
+
+"**Experimental** Directive."
+directive @d on FIELD_DEFINITION
+`;
+  const out = stripExperimentalPrefix(input);
+  assert.match(out, /"The tag types\."\ntype A/);
+  assert.match(out, /"""Block string description\."""/);
+  assert.match(out, /"Arg description\."/);
+  assert.match(out, /"Spaced value\."/);
+  assert.match(out, /"Input field\."/);
+  assert.match(out, /"Directive\."/);
+  assert.match(out, /"Mentions \*\*Experimental\*\* only mid-text\."/);
+  assert.doesNotMatch(out, /"\*\*Experimental\*\*/);
+  assert.doesNotMatch(out, /^\s*\*\*Experimental\*\*/m);
+  assert.doesNotMatch(out, /(^|[^"])""([^"]|$)/);
+  assert.match(out, /\n  bare: ID!/);
+  assert.ok(parse(out));
 });
 
 const readFixture = (p) => readFileSync(new URL(`./fixtures/${p}`, import.meta.url), 'utf8');

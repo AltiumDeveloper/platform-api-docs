@@ -39,6 +39,25 @@ test('writes annotated SDL, public SDL, report and manifest', () => {
   assert.deepEqual(JSON.parse(readFileSync(join(dir, 'report.json'), 'utf8')).blocking, []);
 });
 
+test('strips the **Experimental** prefix from annotated SDL only, keeping the public SDL intact', () => {
+  const dir = setup();
+  const raw = readFileSync(join(dir, 'raw.graphql'), 'utf8');
+  const marked = raw.replace('"Gets a project by its identifier."', '"**Experimental** Gets a project by its identifier."');
+  assert.notEqual(marked, raw);
+  writeFileSync(join(dir, 'raw.graphql'), marked);
+  const publicSchemaPath = join(dir, 'public', 'schema.graphql');
+  runAnnotate({
+    schemaDir: dir,
+    contextMapPath: fixture('context-map.yaml'),
+    allowlistPath: fixture('unassigned-allowlist.txt'),
+    publicSchemaPath,
+  });
+  const annotated = readFileSync(join(dir, 'annotated.graphql'), 'utf8');
+  assert.match(annotated, /"Gets a project by its identifier\."/);
+  assert.doesNotMatch(annotated, /\*\*Experimental\*\*/);
+  assert.match(readFileSync(publicSchemaPath, 'utf8'), /"\*\*Experimental\*\* Gets a project by its identifier\."/);
+});
+
 test('reports blocking names when the allowlist is missing', () => {
   const dir = setup();
   const { report } = runAnnotate({
