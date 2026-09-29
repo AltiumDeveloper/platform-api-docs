@@ -1,115 +1,101 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+const { existsSync, readFileSync } = require('node:fs');
+const { themes } = require('prism-react-renderer');
+const { buildDecorators } = require('./scripts/apidocs/decorators.cjs');
 
-const { directiveDescriptor, directiveTag } = require("@graphql-markdown/helpers");
-const { getTypeDirectiveValues } = require("@graphql-markdown/graphql");
+const readJson = (path, fallback) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : fallback);
+const cdmIndex = readJson('./.schema/cdm-index.json', {});
+const redirects = readJson('./.schema/redirects.json', []);
 
-const { themes } = require("prism-react-renderer");
-const lightCodeTheme = themes.github,
-  darkCodeTheme = themes.dracula;
+const DEVELOPER_CENTER = 'https://developer.altium.com/';
+const DEVELOPER_CENTER_DOCS = 'https://www.altium.com/documentation/altium-developer-center';
+const CDM_DOCS = 'https://altiumdeveloper.github.io/cdm/';
+const REPO = 'https://github.com/AltiumDeveloper/platform-api-docs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Platform API documentation",
-  tagline: "Altium Platform",
-  url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/platform-api-docs/",
-  onBrokenLinks: "warn",
-  favicon: "img/favicon.ico",
-  organizationName: "altium", // Usually your GitHub org/user name.
-  projectName: "platform-api-docs", // Usually your repo name.
+  title: 'Altium Platform API',
+  tagline: 'GraphQL reference for the Altium Platform API, organised by bounded context',
+  url: 'https://altiumdeveloper.github.io',
+  baseUrl: '/platform-api-docs/',
+  organizationName: 'AltiumDeveloper',
+  projectName: 'platform-api-docs',
+  favicon: 'img/favicon.ico',
+  onBrokenLinks: 'warn',
+  markdown: {
+    hooks: { onBrokenMarkdownLinks: 'warn' },
+  },
   plugins: [
     [
-      "@graphql-markdown/docusaurus",
-      /** @type {import('@graphql-markdown/types').ConfigOptions} */
+      '@graphql-markdown/docusaurus',
       {
-        schema: 'https://usw2.dev-365.altium.com/napi/gateway/graphql',
+        schema: './.schema/annotated.graphql',
         rootPath: './docs',
-        loaders: {
-          UrlLoader: {
-            module: '@graphql-tools/url-loader'
-          },
-        },
-        baseURL: '.',
-        homepage: 'static/index.md',
+        baseURL: 'reference',
+        homepage: false,
+        loaders: { GraphQLFileLoader: '@graphql-tools/graphql-file-loader' },
+        groupByDirective: { directive: 'doc', field: 'category', fallback: 'Common' },
         docOptions: {
-          index: true,
-          frontMatter: {
-            hide_table_of_contents: true,
-            pagination_next: null,
-            pagination_prev: null
-          }
+          index: false,
+          frontMatter: { hide_table_of_contents: true, pagination_next: null, pagination_prev: null },
         },
         printTypeOptions: {
-          exampleSection: true,
+          deprecated: 'group',
           parentTypePrefix: false,
-          relatedTypeSection: false,
           typeBadges: true,
-        }
-      }
+          relatedTypeSection: true,
+        },
+        decorators: buildDecorators({ cdmIndex }),
+      },
     ],
-    [
-      "@cmfcmf/docusaurus-search-local",
-      {
-        indexBlog: false
-      }
-    ],
-  ], // See .graphqlrc for configuration
+    ['@docusaurus/plugin-client-redirects', { redirects }],
+    ['@cmfcmf/docusaurus-search-local', { indexBlog: false }],
+  ],
   presets: [
     [
-      "classic",
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: false,
-        docs: {
-          routeBasePath: "/",
-        },
-        theme: {
-          customCss: "./src/css/custom.css",
-        }
-      })
-    ]
+        docs: { routeBasePath: '/', sidebarPath: './sidebars.js' },
+        theme: { customCss: './src/css/custom.css' },
+      }),
+    ],
   ],
-
-  markdown: {
-    parseFrontMatter: async (params) => {
-      const result = await params.defaultParseFrontMatter(params);
-      // set slug to be the exact name of the schema element (type, query, etc.)
-      result.frontMatter.id = result.frontMatter.title
-      return result;
-    },
-    hooks: {
-      onBrokenMarkdownLinks: "warn"
-    }
-  },
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Platform API",
-        logo: {
-          alt: "graphql-markdown",
-          src: "img/graphql-markdown.svg"
-        },
+        title: 'Altium Platform API',
         items: [
-          {
-            href: "https://github.com/graphql-markdown/graphql-markdown",
-            label: "GitHub",
-            position: "right"
-          }
-        ]
+          { type: 'docSidebar', sidebarId: 'docs', label: 'Reference', position: 'left' },
+          { href: DEVELOPER_CENTER, label: 'Developer Center', position: 'right' },
+          { href: REPO, label: 'GitHub', position: 'right' },
+        ],
       },
       footer: {
-        style: "light",
-        links: [],
-        copyright: `Copyright © ${new Date().getFullYear()}. Built with GraphQL-Markdown & Docusaurus.`
+        style: 'light',
+        links: [
+          {
+            title: 'Altium',
+            items: [
+              { label: 'Developer Center', href: DEVELOPER_CENTER },
+              { label: 'Developer Center documentation', href: DEVELOPER_CENTER_DOCS },
+              { label: 'Common Data Model', href: CDM_DOCS },
+            ],
+          },
+          {
+            title: 'This site',
+            items: [
+              { label: 'Schema (SDL)', href: 'pathname:///schema.graphql' },
+              { label: 'Source on GitHub', href: REPO },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Altium.`,
       },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme
-      }
-    })
+      prism: { theme: themes.github, darkTheme: themes.dracula },
+    }),
 };
 
 module.exports = config;
