@@ -43,7 +43,7 @@ test('buildPagesIndex resolves names, contexts, experimental flags and legacy UR
     docId: 'reference/design/operations/queries/des-project-by-id',
     url: '/reference/design/operations/queries/des-project-by-id',
     name: 'desProjectById', section: 'operations', kind: 'queries', context: 'design',
-    experimental: false, legacyUrl: '/operations/queries/desProjectById',
+    experimental: false, deprecated: false, legacyUrl: '/operations/queries/desProjectById',
   });
   assert.equal(pages[1].name, 'design.ruleCheck.byId');
   assert.equal(pages[1].docId, 'reference/design/operations/queries/design/rule-check/by-id');
@@ -103,4 +103,33 @@ test('stripDocDirectiveLinks drops lines left empty and leaves other content alo
   assert.equal(stripDocDirectiveLinks(`a\n${only}\nb\n`), 'a\nb\n');
   const untouched = '[`deprecated`](/reference/common/types/directives/deprecated.mdx)\n\n\nend\n';
   assert.equal(stripDocDirectiveLinks(untouched), untouched);
+});
+
+const deprecatedFiles = [
+  { path: 'reference/deprecated/design/operations/queries/des-old.mdx', frontMatter: { id: 'des-old', title: 'desOld' } },
+  { path: 'reference/deprecated/design/types/objects/des-legacy.mdx', frontMatter: { id: 'des-legacy', title: 'DesLegacy' } },
+];
+
+test('buildPagesIndex handles the deprecated group emitted by graphql-markdown', () => {
+  const pages = buildPagesIndex(deprecatedFiles, manifest);
+  assert.deepEqual(pages[0], {
+    docId: 'reference/deprecated/design/operations/queries/des-old',
+    url: '/reference/deprecated/design/operations/queries/des-old',
+    name: 'desOld', section: 'operations', kind: 'queries', context: 'design',
+    experimental: false, deprecated: true, legacyUrl: '/operations/queries/desOld',
+  });
+  assert.equal(pages[1].context, 'design');
+  assert.equal(pages[1].legacyUrl, '/types/objects/DesLegacy');
+  assert.equal(buildPagesIndex(files, manifest)[0].deprecated, false);
+});
+
+test('renderContextOverview ignores deprecated pages', () => {
+  const pages = buildPagesIndex([...files, ...deprecatedFiles, {
+    path: 'reference/deprecated/design/operations/queries/des-old-by-id.mdx',
+    frontMatter: { id: 'des-old-by-id', title: 'desOldById' },
+  }], manifest);
+  const md = renderContextOverview(manifest.contexts[0], pages, {});
+  assert.match(md, /\| Queries \| 2 \| 1 \|/);
+  assert.match(md, /\| Objects \| 1 \| 0 \|/);
+  assert.doesNotMatch(md, /desOldById|deprecated/);
 });

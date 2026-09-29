@@ -10,7 +10,8 @@ const docIdsIn = (item) => {
   if (item.type === 'category') return item.items.flatMap(docIdsIn);
   return [];
 };
-const contextSlugOf = (item) => docIdsIn(item)[0]?.split('/')[1];
+const contextSlugOf = (item, index = 1) => docIdsIn(item)[0]?.split('/')[index];
+const isDeprecatedGroup = (item) => item.type === 'category' && contextSlugOf(item) === 'deprecated';
 
 function markExperimental(item, experimentalDocIds) {
   if (item.type === 'doc' && experimentalDocIds.has(item.id)) {
@@ -28,28 +29,42 @@ function flattenKinds(items) {
   return new Set(labels).size === labels.length ? flat : items;
 }
 
-function regroupReference(items, { contexts, experimentalDocIds }) {
+// Relabels/orders BC categories whose doc ids carry the BC slug at `slugIndex`
+// (1 for reference/<bc>/..., 2 for reference/deprecated/<bc>/...).
+function regroupContexts(items, { contexts, experimentalDocIds, slugIndex = 1, deprecated = false }) {
   const bySlug = new Map(contexts.map((context) => [context.slug, context]));
   const order = new Map(contexts.map((context, index) => [context.slug, index]));
   const regrouped = items.map((item) => {
     if (item.type !== 'category') return item;
-    const slug = contextSlugOf(item);
+    const slug = contextSlugOf(item, slugIndex);
     const context = bySlug.get(slug);
     if (!context) return item;
     const overviewId = `reference/${slug}/overview`;
-    const children = item.items.filter((child) => !(child.type === 'doc' && child.id === overviewId));
+    const children = deprecated ? item.items : item.items.filter((child) => !(child.type === 'doc' && child.id === overviewId));
     const hasOverview = children.length !== item.items.length;
     return {
       ...item,
       label: context.title,
       collapsible: true,
-      collapsed: context.collapsed,
+      collapsed: deprecated ? true : context.collapsed,
       ...(hasOverview ? { link: { type: 'doc', id: overviewId } } : {}),
       items: flattenKinds(children).map((child) => markExperimental(child, experimentalDocIds)),
     };
   });
-  const rank = (item) => order.get(contextSlugOf(item)) ?? Number.MAX_SAFE_INTEGER;
+  const rank = (item) => order.get(contextSlugOf(item, slugIndex)) ?? Number.MAX_SAFE_INTEGER;
   return [...regrouped].sort((a, b) => rank(a) - rank(b));
+}
+
+function regroupReference(items, { contexts, experimentalDocIds }) {
+  const regular = items.filter((item) => !isDeprecatedGroup(item));
+  const deprecatedGroups = items.filter(isDeprecatedGroup).map((group) => ({
+    ...group,
+    label: 'Deprecated',
+    collapsible: true,
+    collapsed: true,
+    items: regroupContexts(group.items, { contexts, experimentalDocIds, slugIndex: 2, deprecated: true }),
+  }));
+  return [...regroupContexts(regular, { contexts, experimentalDocIds }), ...deprecatedGroups];
 }
 
 async function sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {

@@ -58,7 +58,10 @@ export function buildPagesIndex(files, manifest) {
 
   return files.map(({ path, frontMatter }) => {
     const segments = path.replace(/\.mdx?$/, '').split('/');
-    const [, contextSlug, section, kind, ...rest] = segments;
+    // graphql-markdown's `deprecated: 'group'` nests fully deprecated pages under reference/deprecated/<bc>/...
+    const deprecated = segments[1] === 'deprecated';
+    const logical = deprecated ? [segments[0], ...segments.slice(2)] : segments;
+    const [, contextSlug, section, kind, ...rest] = logical;
     const operationKind = section === 'operations' ? OPERATION_KINDS[kind] : undefined;
     const namespaced = Boolean(operationKind) && rest.length > 1;
     const name = namespaced
@@ -74,6 +77,7 @@ export function buildPagesIndex(files, manifest) {
       kind,
       context: contextBySlug.get(contextSlug) ?? null,
       experimental,
+      deprecated,
       legacyUrl: namespaced ? null : `/${section}/${kind}/${name}`,
     };
   });
@@ -91,7 +95,7 @@ export function buildRedirects(pages) {
 }
 
 export function renderContextOverview(context, pages, cdmIndex) {
-  const mine = pages.filter((page) => page.context === context.id);
+  const mine = pages.filter((page) => page.context === context.id && !page.deprecated);
   const rows = KIND_LABELS.map(([kind, label]) => {
     const ofKind = mine.filter((page) => page.kind === kind);
     return ofKind.length ? `| ${label} | ${ofKind.length} | ${ofKind.filter((p) => p.experimental).length} |` : null;

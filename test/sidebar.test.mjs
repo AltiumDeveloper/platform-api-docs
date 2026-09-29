@@ -52,3 +52,26 @@ test('marks experimental docs', () => {
   assert.equal(out[1].items[0].items[0].className, 'sidebar-exp');
   assert.equal(out[1].items[1].items[0].className, undefined);
 });
+
+test('orders the Deprecated group last, collapsed, with BC sub-categories relabelled and flattened', () => {
+  const withDeprecated = [
+    category('deprecated', [
+      category('design', [
+        category('Operations', [category('Queries', [doc('reference/deprecated/design/operations/queries/des-old')])]),
+        category('Types', [category('Objects', [doc('reference/deprecated/design/types/objects/des-legacy')])]),
+      ]),
+      category('platform', [
+        category('Operations', [category('Queries', [doc('reference/deprecated/platform/operations/queries/old-node')])]),
+      ]),
+    ]),
+    ...generated,
+  ];
+  const out = regroupReference(withDeprecated, { contexts, experimentalDocIds: new Set() });
+  assert.deepEqual(out.map((c) => c.label), ['Platform', 'Design', 'Common', 'Deprecated']);
+  const deprecated = out.at(-1);
+  assert.equal(deprecated.collapsed, true);
+  assert.equal(deprecated.collapsible, true);
+  assert.deepEqual(deprecated.items.map((c) => c.label), ['Platform', 'Design']);
+  assert.deepEqual(deprecated.items[1].items.map((i) => i.label), ['Queries', 'Objects']);
+  assert.equal(deprecated.items[1].collapsed, true);
+});
