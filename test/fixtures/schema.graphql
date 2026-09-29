@@ -1,0 +1,87 @@
+directive @experimental on OBJECT | FIELD_DEFINITION | INPUT_OBJECT | ENUM | SCALAR | ARGUMENT_DEFINITION | ENUM_VALUE | INTERFACE | UNION
+directive @cost(weight: String!) on SCALAR | OBJECT | FIELD_DEFINITION | ARGUMENT_DEFINITION | ENUM | INPUT_FIELD_DEFINITION
+directive @authorize(apply: ApplyPolicy! = BEFORE_RESOLVER, policy: String, roles: [String!]) repeatable on OBJECT | FIELD_DEFINITION
+
+enum ApplyPolicy {
+  BEFORE_RESOLVER
+  AFTER_RESOLVER
+  VALIDATION
+}
+
+interface Node {
+  id: ID!
+}
+
+type Query {
+  node(id: ID!): Node @cost(weight: "10")
+  "Design bounded context queries."
+  design: DesignQueries @experimental
+  "Gets a project by its identifier."
+  desProjectById(id: ID!): DesProject @cost(weight: "10")
+  "Gets workspace insight settings."
+  desWorkspaceInsSettings(workspaceUrl: String!): DesWorkspaceInsSettings
+  desWorkspaceById(id: ID!): DesWorkspace
+  "Lists BOMs."
+  bomBoms(workspaceUrl: String!): [BomWip!]!
+  dmDeviceFamilies: [DmDeviceModel!]! @experimental
+  zzzOverridden: String
+  zzzUnknown: String
+}
+
+type Mutation {
+  "Creates a comment thread."
+  desCreateCommentThread(input: String!): Boolean @authorize(policy: "SendEmail")
+  designRuleCheckExecute(input: String!): Boolean @experimental
+  gloCusCreateExtensionPoint(input: String!): Boolean
+}
+
+type DesignQueries {
+  project: DesignProjectQueries
+}
+
+type DesignProjectQueries {
+  "Gets a project by its identifier."
+  byId(id: ID!): DesProject
+}
+
+"A hardware project."
+type DesProject implements Node {
+  id: ID!
+  name: String!
+  oldName: String @deprecated(reason: "Use `name`.")
+  preview: Int @experimental
+}
+
+type DesWorkspace implements Node {
+  id: ID!
+}
+
+type DesWorkspaceInsSettings {
+  enabled: Boolean!
+}
+
+type BomWip implements Node {
+  id: ID!
+}
+
+type DesOrphanEntity implements Node {
+  id: ID!
+}
+
+type DmDeviceModel @experimental {
+  name: String
+}
+
+input StringOperationFilterInput {
+  eq: String
+}
+
+type ZzzOrphanType {
+  value: String
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+}
+
+scalar Long
