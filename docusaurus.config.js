@@ -58,7 +58,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: false,
-        docs: { routeBasePath: '/', sidebarPath: './sidebars.js', sidebarItemsGenerator },
+        docs: { routeBasePath: '/', sidebarPath: './sidebars.js', sidebarItemsGenerator, exclude: ['superpowers/**'] },
         theme: { customCss: './src/css/custom.css' },
       }),
     ],
