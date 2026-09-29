@@ -1,0 +1,80 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import {
+  buildPagesIndex, buildRedirects, renderContextOverview, readFrontMatter, isDocDirectivePage,
+} from '../scripts/apidocs/lib/pages.mjs';
+
+const manifest = {
+  contexts: [
+    { id: 'design', title: 'Design', slug: 'design', description: 'Hardware projects.', collapsed: true, cdm: ['design'] },
+    { id: 'common', title: 'Common', slug: 'common', description: 'Shared types.', collapsed: true, cdm: [] },
+  ],
+  operations: {
+    query: { desProjectById: 'design', 'design.ruleCheck.byId': 'design' },
+    mutation: { designRuleCheckExecute: 'design' },
+    subscription: {},
+  },
+  types: { DesProject: 'design', String: 'common' },
+  experimental: { operations: ['design.ruleCheck.byId', 'designRuleCheckExecute'], types: [] },
+  cdmTypes: ['DesProject'],
+};
+
+const files = [
+  { path: 'reference/design/operations/queries/des-project-by-id.mdx', frontMatter: { id: 'des-project-by-id', title: 'desProjectById' } },
+  { path: 'reference/design/operations/queries/design/rule-check/by-id.mdx', frontMatter: { id: 'by-id', title: 'byId' } },
+  { path: 'reference/design/operations/mutations/design-rule-check-execute.mdx', frontMatter: { id: 'design-rule-check-execute', title: 'designRuleCheckExecute' } },
+  { path: 'reference/design/types/objects/des-project.mdx', frontMatter: { id: 'des-project', title: 'DesProject' } },
+  { path: 'reference/common/types/scalars/string.mdx', frontMatter: { id: 'string', title: 'String' } },
+];
+
+test('readFrontMatter parses the YAML block', () => {
+  assert.deepEqual(readFrontMatter('---\nid: by-id\ntitle: byId\n---\n\nbody'), { id: 'by-id', title: 'byId' });
+  assert.deepEqual(readFrontMatter('no front matter'), {});
+});
+
+test('isDocDirectivePage detects the synthetic @doc directive page', () => {
+  assert.ok(isDocDirectivePage({ path: 'reference/common/types/directives/doc.mdx', frontMatter: { title: 'doc' } }));
+  assert.ok(!isDocDirectivePage({ path: 'reference/common/types/directives/experimental.mdx', frontMatter: { title: 'experimental' } }));
+});
+
+test('buildPagesIndex resolves names, contexts, experimental flags and legacy URLs', () => {
+  const pages = buildPagesIndex(files, manifest);
+  assert.deepEqual(pages[0], {
+    docId: 'reference/design/operations/queries/des-project-by-id',
+    url: '/reference/design/operations/queries/des-project-by-id',
+    name: 'desProjectById', section: 'operations', kind: 'queries', context: 'design',
+    experimental: false, legacyUrl: '/operations/queries/desProjectById',
+  });
+  assert.equal(pages[1].name, 'design.ruleCheck.byId');
+  assert.equal(pages[1].docId, 'reference/design/operations/queries/design/rule-check/by-id');
+  assert.equal(pages[1].experimental, true);
+  assert.equal(pages[1].legacyUrl, null);
+  assert.equal(pages[2].experimental, true);
+  assert.equal(pages[3].legacyUrl, '/types/objects/DesProject');
+  assert.equal(pages[4].context, 'common');
+});
+
+test('buildRedirects maps legacy URLs to new ones, deduplicated and sorted', () => {
+  const redirects = buildRedirects(buildPagesIndex([...files, files[0]], manifest));
+  assert.deepEqual(redirects.map((r) => r.from), [
+    '/operations/mutations/designRuleCheckExecute',
+    '/operations/queries/desProjectById',
+    '/types/objects/DesProject',
+    '/types/scalars/String',
+  ]);
+  assert.equal(redirects[2].to, '/reference/design/types/objects/des-project');
+});
+
+test('renderContextOverview lists counts, entry points and CDM entities', () => {
+  const pages = buildPagesIndex(files, manifest);
+  const cdmIndex = { DesProject: [{ title: 'Hardware Project', url: 'https://altiumdeveloper.github.io/cdm/classes/des_Project/' }] };
+  const md = renderContextOverview(manifest.contexts[0], pages, cdmIndex);
+  assert.match(md, /^---\nid: overview\ntitle: "Design"\n/);
+  assert.match(md, /Hardware projects\./);
+  assert.match(md, /\| Queries \| 2 \| 1 \|/);
+  assert.match(md, /\| Mutations \| 1 \| 1 \|/);
+  assert.match(md, /\| Objects \| 1 \| 0 \|/);
+  assert.match(md, /- \[`desProjectById`\]\(\/reference\/design\/operations\/queries\/des-project-by-id\)/);
+  assert.match(md, /- \[`design\.ruleCheck\.byId`\]/);
+  assert.match(md, /\[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) — \[Hardware Project\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/classes\/des_Project\/\)/);
+});
