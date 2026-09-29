@@ -25,7 +25,7 @@ export function runAnnotate({
   const annotated = annotateSdl(publicSdl, { classification, titleOf: (id) => contextById(contextMap, id).title,
     rootTypeNames: rootTypeNamesOf(schema) });
   const allowlist = existsSync(allowlistPath) ? parseAllowlist(readFileSync(allowlistPath, 'utf8')) : new Set();
-  const report = buildReport({ classification, cdmIndex, schema, allowlist });
+  const report = buildReport({ classification, cdmIndex, schema, contextMap, allowlist });
 
   writeFileSync(join(schemaDir, 'annotated.graphql'), annotated);
   mkdirSync(dirname(publicSchemaPath), { recursive: true });

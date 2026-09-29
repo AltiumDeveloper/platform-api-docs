@@ -6,7 +6,7 @@ export function parseAllowlist(text) {
   );
 }
 
-export function buildReport({ classification, cdmIndex, schema, allowlist }) {
+export function buildReport({ classification, cdmIndex, schema, contextMap, allowlist }) {
   const counts = {};
   const bump = (id, bucket) => {
     counts[id] ??= { query: 0, mutation: 0, subscription: 0, type: 0 };
@@ -25,6 +25,16 @@ export function buildReport({ classification, cdmIndex, schema, allowlist }) {
     .map((type) => type.name)
     .sort();
 
+  const rootFieldNames = new Set();
+  for (const root of [schema.getQueryType(), schema.getMutationType(), schema.getSubscriptionType()]) {
+    for (const field of Object.keys(root?.getFields() ?? {})) rootFieldNames.add(field);
+  }
+  const staleOverrides = [...contextMap.overrides.keys()]
+    .filter((name) => !typeMap[name] && !rootFieldNames.has(name))
+    .sort();
+  const unassignedNames = new Set(classification.unassigned.map((item) => item.name));
+  const staleAllowlist = [...allowlist].filter((name) => !unassignedNames.has(name)).sort();
+
   return {
     counts,
     experimental: {
@@ -35,6 +45,8 @@ export function buildReport({ classification, cdmIndex, schema, allowlist }) {
     blocking: classification.unassigned.filter((item) => !allowlist.has(item.name)),
     ambiguous: classification.ambiguous,
     cdmConflicts: classification.cdmConflicts,
+    staleOverrides,
+    staleAllowlist,
     staleCdm: Object.keys(cdmIndex).filter((name) => !typeMap[name]).sort(),
     unmappedEntities,
   };
@@ -60,6 +72,12 @@ export function formatReport(report) {
   if (report.cdmConflicts.length) {
     lines.push(`Warning: ${report.cdmConflicts.length} CDM/regex classification conflicts (CDM wins):`);
     for (const c of report.cdmConflicts) lines.push(`  - ${c.name}: cdm=${c.cdm}, regex=${c.regex ?? 'none'}`);
+  }
+  if (report.staleOverrides.length) {
+    lines.push(`Warning: overrides naming no type or root field: ${report.staleOverrides.join(', ')}`);
+  }
+  if (report.staleAllowlist.length) {
+    lines.push(`Warning: allowlist entries that are no longer unassigned: ${report.staleAllowlist.join(', ')}`);
   }
   if (report.staleCdm.length) lines.push(`Warning: CDM maps to missing API types: ${report.staleCdm.join(', ')}`);
   if (report.unmappedEntities.length) {
