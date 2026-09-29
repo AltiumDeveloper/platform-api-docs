@@ -1,0 +1,221 @@
+# Bounded-context mapping for the Platform API reference.
+# Public-safe: no owners, teams, OAuth resources or internal links.
+# Matching: overrides > CDM mapping (types) > most specific anchored regex > common > unassigned.
+# "Most specific" = longest literal prefix after '^', then longest match. So '^desWorkspace' beats
+# '^des.*Task' for desWorkspaceTasks; use a longer literal (or an override) to win against it.
+# Regexes must not use top-level '|' alternation: split them into separate entries.
+# Keep regex results in line with the CDM: if the CDM cannot be fetched, the regexes alone must
+# produce the same classification.
+contexts:
+  - id: platform
+    title: Platform
+    description: Workspaces, users and organizations, apps and tokens, folders, generic revisions, permissions and settings, lifecycle definitions and revision naming schemes, domain events, notifications, solutions and the knowledge graph.
+    cdm: [platform]
+    query:
+      - '^node$'
+      - '^nodes$'
+      - '^platform'
+      - '^glo'
+      - '^global'
+      - '^desWorkspace'
+      - '^desUser'
+      - '^desTeam$'
+      - '^desSettings$'
+      - '^desPermissions'
+      - '^desLifeCycle'
+      - '^desRevisionNamingScheme'
+      - '^desRevision'
+      - '^desFolder'
+      - '^sol'
+      - '^kg'
+    mutation:
+      - '^platform'
+      - '^glo'
+      - '^global'
+      - '^desWorkspace'
+      - '^des.*User'
+      - '^desUpdatePermissions$'
+      - '^desUpdateSetting$'
+      - '^des.*LifeCycleDefinition'
+      - '^des.*RevisionNamingScheme'
+      - '^des.*Folder'
+      - '^sol'
+      - '^kg'
+    type:
+      - '^Platform'
+      - '^Token'
+      - '^Glo'
+      - '^Global'
+      - '^DesWorkspace'
+      - '^DesUser'
+      - '^Des.*User'
+      - '^DesTeam$'
+      - '^DesSetting$'
+      - '^DesUpdateSetting'
+      # Entity permissions (access control); project and folder permissions stay with their entity.
+      - '^DesPermission'
+      - '^DesUpdatePermissions'
+      - '^DesTrusteePermissions$'
+      - '^DesOrganizationPermission$'
+      - '^DesOwnerPermission$'
+      # Lifecycle definitions and revision naming schemes are workspace-level platform entities in the CDM.
+      - '^DesLifeCycle'
+      - '^Des.*LifeCycleDefinition'
+      - '^DesRevisionNaming'
+      - '^Des.*RevisionNamingScheme'
+      # Folders (workspace structure) and generic revision details.
+      - '^DesFolder'
+      - '^Des.*Folder'
+      - '^DesRevision'
+      - '^DesContentTypeKind$'
+      - '^Sol'
+      - '^Kg'
+  - id: design
+    title: Design
+    description: Hardware projects, design data, rule checks, comparisons and project releases.
+    cdm: [design]
+    query: ['^design', '^des']
+    mutation: ['^design', '^des']
+    type:
+      - '^Design'
+      - '^Des'
+      - '^DesProject'
+      - '^DesCad'
+      - '^DesCollaboration'
+      - '^DesVcs'
+      - '^DesDownloadable'
+      - '^RuleCheck'
+      - '^RuleViolation'
+      - '^LatestGeneration'
+  - id: insights
+    title: Insights
+    description: Workspace insights about parts and designs.
+    cdm: [insights]
+    query: ['^desWorkspaceIns']
+    mutation: ['^desWorkspaceIns']
+    type: ['^DesWorkspaceIns']
+  - id: library-management
+    title: Library Management
+    description: Managed components, component templates, parts, symbols, footprints, datasheets, reuse blocks and library search.
+    cdm: [library]
+    query:
+      - '^desLibrary'
+      - '^desPart'
+      - '^desComponent'
+      - '^desSymbol'
+      - '^desFootprint'
+      - '^desDatasheet'
+      - '^desReuseBlock'
+      - '^desSearch'
+    mutation:
+      - '^desPart'
+      - '^desSearch'
+      - '^desUpdateComponent'
+      - '^des.*Component'
+      - '^des.*Library'
+      - '^des.*Symbol'
+      - '^des.*Footprint'
+      - '^des.*Datasheet'
+      - '^des.*ReuseBlock'
+    type:
+      - '^DesLibrary'
+      - '^DesPart'
+      - '^DesComponent'
+      - '^DesUpdateComponent'
+      - '^Des.*Component'
+      - '^DesSymbol'
+      - '^Des.*Symbol'
+      - '^DesFootprint'
+      - '^Des.*Footprint'
+      - '^DesDatasheet'
+      - '^Des.*Datasheet'
+      - '^DesReuseBlock'
+      - '^Des.*ReuseBlock'
+      - '^DesSearch'
+      - '^DesManufacturerPart'
+      - '^DesSupplier'
+      - '^Des.*Upgrade'
+  - id: collaboration
+    title: Collaboration
+    description: Comments, comment threads, mentions, annotations and tasks.
+    cdm: [collaboration]
+    query: ['^desAnnotations?', '^desComment', '^desTask', '^desWorkspaceTasks$', '^desProjectTasks$']
+    mutation: ['^des.*Annotations?', '^des.*Comment', '^des.*Task']
+    subscription: ['^des.*Comment']
+    type: ['^DesAnnotation', '^DesComment', '^Des.*Comment', '^DesTask', '^Des.*Task', '^DesMention']
+  - id: configuration-management
+    title: Configuration Management
+    description: "Environment configuration and templates: project templates, settings templates, managed sheet templates and their revisions."
+    cdm: [configuration]
+    # Templates are configuration-management by owner decision, even where the CDM says otherwise
+    # (see overrides). Solution templates belong to Supply.
+    query: ['^desEnvironment', '^desWorkspaceConfiguration$', '^desProjectTemplate', '^desComponentTemplate', '^des.*SheetTemplate', '^des.*SettingsTemplate']
+    mutation: ['^desEnvironment', '^desUpdateComponentTemplate', '^desReleaseComponentTemplate', '^des.*ProjectTemplate', '^des.*SheetTemplate', '^des.*SettingsTemplate']
+    type: ['^DesEnvironment', '^DesWorkspaceConfiguration$', '^DesProjectTemplate', '^DesComponentTemplate', '^DesUpdateComponentTemplate', '^DesReleaseComponentTemplate', '^Des.*ProjectTemplate', '^Des.*SheetTemplate', '^Des.*SettingsTemplate']
+  - id: procurement
+    title: Procurement
+    description: Managed BOMs, BOM releases and BOM items.
+    cdm: [procurement]
+    query: ['^bom', '^procurement']
+    mutation: ['^bom', '^procurement']
+    type: ['^Bom', '^Procurement']
+  - id: supply
+    title: Supply
+    description: Parts, offers, part families, reference designs, evaluation kits, software projects and solution templates.
+    cdm: [supply]
+    query: ['^sup', '^supply']
+    mutation: ['^sup', '^supply']
+    type: ['^Sup', '^Supply']
+  - id: customization
+    title: Customization
+    description: Extension points, scripts, script executions and workflows.
+    cdm: [customization]
+    query: ['^gloCus', '^gloScr']
+    mutation: ['^gloCus', '^gloScr', '^des.*Workflows?']
+    type: ['^GloCus', '^GloScr', '^DesWorkflow', '^Des.*Workflows?']
+  - id: system-design
+    title: System Design
+    description: Electronic system design documents, system models and software libraries.
+    cdm: [system, system-sdm]
+    query: ['^sys']
+    mutation: ['^sys']
+    type: ['^Sys']
+  - id: requirements
+    title: Requirements
+    description: Requirements projects and requirements data.
+    cdm: [requirements]
+    query: ['^requirements']
+    mutation: ['^requirements']
+    type: ['^Requirement']
+  - id: renesas-preview
+    title: Renesas (preview)
+    description: Renesas-specific device models, software projects and tools. Parked; not yet organised into bounded contexts.
+    cdm: [deviceModel, software, ota]
+    query: ['^dm', '^sft', '^rsa']
+    mutation: ['^dm', '^sft', '^rsa']
+    # Motor Studio types that were published without the 'Rsa' prefix.
+    type: ['^Dm', '^Sft', '^Rsa', '^Motor', '^Tuning', '^TriggerEdge$', '^TriggerMode$', '^ParamSource$']
+common:
+  title: Common
+  description: Shared scalars, paging, errors, filtering and sorting types, and directives used across all bounded contexts.
+  names: [Node, PageInfo, Error, DateTime, LocalDate, Long, Decimal, Upload, UUID, URL, Any, JSON, SortEnumType, GridFilterInput, PathFilterInput]
+  type: ['OperationFilterInput$', 'FilterInputType$', '^ListFilterInputType', '^Comparable']
+overrides:
+  # Templates: configuration-management by owner decision; the CDM places these in design.
+  DesProjectTemplate: configuration-management
+  DesProjectTemplateRevision: configuration-management
+  # Generic error type shared by mutations across Design, Library Management, Collaboration and others.
+  DesPayloadError: common
+  # Only used by desComponentsByIds.
+  DesUnionPayload: library-management
+  DesErrorPayload: library-management
+  # Component parameters and simulations.
+  DesParameterType: library-management
+  DesRevisionParameterInput: library-management
+  DesSimulation: library-management
+  # Only used by comment threads.
+  DesDocumentType: collaboration
+  # Returned by sysSdmSchemaVersionRegistry.
+  SchemaRegistryEntry: system-design
+  # Returned by designRegisterUpload.
+  UploadRegistrationResult: design
