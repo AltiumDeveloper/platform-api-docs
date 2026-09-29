@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import { buildSchema } from 'graphql';
 import { contextById, loadContextMap } from './lib/context-map.mjs';
 import { classifySchema } from './lib/classify.mjs';
@@ -34,7 +34,7 @@ export function runAnnotate({
   return { report };
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && realpathSync(fileURLToPath(import.meta.url)) === realpathSync(process.argv[1])) {
   const { report } = runAnnotate({
     contextMapPath: process.env.APIDOCS_CONTEXT_MAP || undefined,
     allowlistPath: process.env.APIDOCS_ALLOWLIST || undefined,
