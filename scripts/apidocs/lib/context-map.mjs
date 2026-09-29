@@ -4,7 +4,27 @@ import { parse } from 'yaml';
 export const COMMON_ID = 'common';
 const KINDS = ['query', 'mutation', 'subscription', 'type'];
 
-const toRegExps = (list = []) => list.map((source) => new RegExp(source));
+function hasTopLevelAlternation(source) {
+  let depth = 0;
+  let inClass = false;
+  for (let i = 0; i < source.length; i += 1) {
+    const ch = source[i];
+    if (ch === '\\') i += 1;
+    else if (inClass) inClass = ch !== ']';
+    else if (ch === '[') inClass = true;
+    else if (ch === '(') depth += 1;
+    else if (ch === ')') depth -= 1;
+    else if (ch === '|' && depth === 0) return true;
+  }
+  return false;
+}
+
+const toRegExps = (list = []) => list.map((source) => {
+  if (hasTopLevelAlternation(source)) {
+    throw new Error(`context map: regex "${source}" uses top-level alternation; split it into separate entries`);
+  }
+  return new RegExp(source);
+});
 
 export function parseContextMap(text) {
   const raw = parse(text);

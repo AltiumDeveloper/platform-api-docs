@@ -32,3 +32,12 @@ test('rejects overrides to unknown contexts', () => {
 test('rejects empty map', () => {
   assert.throws(() => parseContextMap('contexts: []\n'), /non-empty list/);
 });
+
+test('rejects top-level regex alternation but allows grouped alternation', () => {
+  assert.throws(
+    () => parseContextMap("contexts:\n  - {id: a, title: A, query: ['^foo|^bar']}\n"),
+    /context map: regex "\^foo\|\^bar" uses top-level alternation; split it into separate entries/,
+  );
+  assert.doesNotThrow(() => parseContextMap("contexts:\n  - {id: a, title: A, type: ['^supPartFamil(y|ies)', '^a[|]b', '^a\\|b']}\n"));
+  assert.throws(() => parseContextMap("contexts:\n  - {id: a, title: A}\ncommon:\n  type: ['x|y']\n"), /top-level alternation/);
+});
