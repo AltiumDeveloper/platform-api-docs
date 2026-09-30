@@ -33,7 +33,11 @@ if (process.env.APIDOCS_SCHEMA_FILE) {
   text = await response.text();
 }
 
-const previousSize = !process.env.APIDOCS_SCHEMA_FILE && existsSync(SIZE_FILE) ? Number(readFileSync(SIZE_FILE, 'utf8')) : 0;
+const allowShrink = process.env.APIDOCS_ALLOW_SHRINK === '1';
+if (allowShrink) console.warn('fetch-schema: APIDOCS_ALLOW_SHRINK=1, schema size guard bypassed');
+const previousSize = !allowShrink && !process.env.APIDOCS_SCHEMA_FILE && existsSync(SIZE_FILE)
+  ? Number(readFileSync(SIZE_FILE, 'utf8'))
+  : 0;
 try {
   checkSdl(text, previousSize);
 } catch (error) {

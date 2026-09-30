@@ -37,3 +37,18 @@ specific anchored prefix wins, CDM mappings win for entity types, and `overrides
 names. Run `npm run apidocs:fetch && npm run apidocs:annotate` to see the effect in the report.
 
 Keep the context map public-safe: no owner or team names, OAuth resources or internal links.
+
+## Troubleshooting
+
+### "SDL shrank ... refusing to publish"
+
+`fetch-schema` remembers the size of the last accepted SDL (`.schema/last-size`, cached between CI runs).
+If a new SDL is more than 50% smaller, the fetch fails so that a partial or broken gateway response is never
+published. If the removal is legitimate (for example a large bounded context was retired), bypass the guard once:
+
+- Locally: `APIDOCS_ALLOW_SHRINK=1 npm run apidocs:fetch`.
+- In CI: run the "GitHub Pages" workflow manually (`workflow_dispatch`) with `allow_shrink` ticked.
+  It sets `APIDOCS_ALLOW_SHRINK=1` for the "Generate API reference" step, and the new, smaller size becomes the baseline.
+
+The script logs `schema size guard bypassed` when the bypass is active. Other checks (empty SDL, parse errors,
+missing `Query` type) still apply.

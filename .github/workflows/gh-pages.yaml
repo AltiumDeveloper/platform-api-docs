@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+    inputs:
+      allow_shrink:
+        description: Bypass the schema-shrink guard (use only for a legitimate large removal)
+        type: boolean
+        default: false
 
 jobs:
   build:
@@ -44,6 +49,7 @@ jobs:
         run: npm run apidocs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APIDOCS_ALLOW_SHRINK: ${{ inputs.allow_shrink && '1' || '' }}
 
       - name: Build site
         run: npm run build
