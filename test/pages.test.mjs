@@ -133,3 +133,21 @@ test('renderContextOverview ignores deprecated pages', () => {
   assert.match(md, /\| Objects \| 1 \| 0 \|/);
   assert.doesNotMatch(md, /desOldById|deprecated/);
 });
+
+test('renderContextOverview renders a placeholder page for a context with no pages', () => {
+  const md = renderContextOverview(manifest.contexts[1], [], {});
+  assert.match(md, /^---\nid: overview\ntitle: "Common"\n/);
+  assert.match(md, /\nShared types\.\n/);
+  assert.match(md, /No operations or types are currently published in this bounded context\./);
+  assert.doesNotMatch(md, /\| Kind \|/);
+});
+
+test('renderContextOverview escapes MDX in descriptions and CDM entity titles', () => {
+  const pages = buildPagesIndex(files, manifest);
+  const context = { ...manifest.contexts[0], description: 'Uses {braces} and <tags>.' };
+  const cdmIndex = { DesProject: [{ title: 'Odd {title} <x>', url: 'https://example.com/x' }] };
+  const md = renderContextOverview(context, pages, cdmIndex);
+  assert.match(md, /\nUses &#x007B;braces&#x007D; and &#x003C;tags&#x003E;\.\n/);
+  assert.doesNotMatch(md, /Odd \{title\}|<x>/);
+  assert.match(md, /\[Odd &#x007B;title&#x007D; &#x003C;x&#x003E;\]\(https:\/\/example\.com\/x\)/);
+});

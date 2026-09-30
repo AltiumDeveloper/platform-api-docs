@@ -2,7 +2,7 @@ import { createRequire } from 'node:module';
 import { parse } from 'yaml';
 
 const require = createRequire(import.meta.url);
-const { slugify } = require('@graphql-markdown/utils');
+const { escapeMDX, slugify } = require('@graphql-markdown/utils');
 
 const OPERATION_KINDS = { queries: 'query', mutations: 'mutation', subscriptions: 'subscription' };
 const KIND_LABELS = [
@@ -115,12 +115,14 @@ export function renderContextOverview(context, pages, cdmIndex) {
     'pagination_prev: null',
     '---',
     '',
-    context.description,
+    escapeMDX(context.description),
     '',
-    '| Kind | Items | Experimental |',
-    '| --- | --- | --- |',
-    ...rows,
   ];
+  if (!mine.length) {
+    lines.push('No operations or types are currently published in this bounded context.');
+    return `${lines.join('\n')}\n`;
+  }
+  lines.push('| Kind | Items | Experimental |', '| --- | --- | --- |', ...rows);
   if (entryPoints.length) {
     lines.push('', '## Entry points', '', 'Look up entities by identifier:', '');
     for (const page of entryPoints) lines.push(`- [\`${page.name}\`](${page.url})`);
@@ -128,7 +130,7 @@ export function renderContextOverview(context, pages, cdmIndex) {
   if (cdmTypes.length) {
     lines.push('', '## Common Data Model', '', 'API types in this bounded context that represent CDM entities:', '');
     for (const page of cdmTypes) {
-      const entities = cdmIndex[page.name].map((entry) => `[${entry.title}](${entry.url})`).join(', ');
+      const entities = cdmIndex[page.name].map((entry) => `[${escapeMDX(entry.title)}](${entry.url})`).join(', ');
       lines.push(`- [\`${page.name}\`](${page.url}) — ${entities}`);
     }
     lines.push('', 'Browse all entities in the [Common Data Model](https://altiumdeveloper.github.io/cdm/).');

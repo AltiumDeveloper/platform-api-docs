@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Runs after `docusaurus graphql-to-doc`: removes the synthetic @doc directive page, writes BC overview
 // pages, the pages index used by the sidebar, and legacy-URL redirects.
-import { existsSync, readdirSync, readFileSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -37,7 +37,7 @@ export function runPostprocess({ docsDir = 'docs', schemaDir = '.schema' } = {})
 
   const pages = buildPagesIndex(kept, manifest);
   for (const context of manifest.contexts) {
-    if (!pages.some((page) => page.context === context.id)) continue;
+    mkdirSync(join(referenceDir, context.slug), { recursive: true });
     writeFileSync(join(referenceDir, context.slug, 'overview.md'), renderContextOverview(context, pages, cdmIndex));
   }
   const redirects = buildRedirects(pages);
