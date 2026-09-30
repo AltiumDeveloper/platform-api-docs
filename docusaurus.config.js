@@ -1,5 +1,6 @@
 // @ts-check
 const { existsSync, readFileSync } = require('node:fs');
+const { pathToFileURL } = require('node:url');
 const { GlobExcludeDefault } = require('@docusaurus/utils');
 const { themes } = require('prism-react-renderer');
 const { buildDecorators } = require('./scripts/apidocs/decorators.cjs');
@@ -51,6 +52,8 @@ const config = {
           relatedTypeSection: true,
         },
         decorators: buildDecorators({ cdmIndex }),
+        // Stock Docusaurus formatter plus beforeComposePageTypeHook (type-page section order).
+        formatter: pathToFileURL(require.resolve('./scripts/apidocs/mdx.cjs')).href,
       },
     ],
     ['@docusaurus/plugin-client-redirects', { redirects }],
