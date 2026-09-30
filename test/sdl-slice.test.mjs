@@ -107,6 +107,18 @@ test('insights slice has its root query and type', () => {
   assert.doesNotMatch(text, /^type Mutation/m);
 });
 
+test('warns about referenced types that belong to no context', (t) => {
+  const warn = t.mock.method(console, 'warn', () => {});
+  assert.deepEqual(slice('design').unowned, []);
+  assert.equal(warn.mock.callCount(), 0, 'the fixture has no unowned references');
+  const { Node: _node, ...types } = manifest.types;
+  const result = buildSlice({ document, manifest: { ...manifest, types }, contextId: 'design', siteUrl: SITE });
+  assert.deepEqual(result.unowned, ['Node']);
+  assert.doesNotMatch(result.text, /#\s+Node →/);
+  assert.equal(warn.mock.callCount(), 1);
+  assert.equal(warn.mock.calls[0].arguments[0], 'sdl-slice: the Design slice references types that belong to no context: Node');
+});
+
 test('an unknown context is an error', () => {
   assert.throws(() => slice('nope'), /unknown context "nope"/);
 });

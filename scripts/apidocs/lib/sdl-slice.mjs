@@ -40,7 +40,8 @@ function referencedNames(nodes) {
   return names;
 }
 
-// Returns { text, definitions, externals, tokens } for one context. `document` is the parsed public SDL.
+// Returns { text, definitions, externals, unowned, tokens } for one context (`unowned`: referenced types that belong
+// to no context; warned about). `document` is the parsed public SDL.
 export function buildSlice({ document, manifest, contextId, siteUrl }) {
   const contexts = new Map(manifest.contexts.map((context) => [context.id, context]));
   const context = contexts.get(contextId);
@@ -76,11 +77,16 @@ export function buildSlice({ document, manifest, contextId, siteUrl }) {
   }));
   const definitions = [...rootDefinitions, ...types, ...directives];
   const defined = new Set(types.map((definition) => definition.name.value));
-  const externals = [...referencedNames(definitions)]
+  const referenced = [...referencedNames(definitions)]
     .filter((name) => !defined.has(name) && !rootNames.has(name) && !BUILTIN_SCALARS.has(name))
     .map((name) => ({ name, context: contexts.get(ownerOf(name, manifest)) ?? null }))
-    .filter((external) => external.context)
     .sort((a, b) => a.name.localeCompare(b.name));
+  const externals = referenced.filter((external) => external.context);
+  // Should not happen (annotate classifies every name): such types could not be pointed to in the header.
+  const unowned = referenced.filter((external) => !external.context).map((external) => external.name);
+  if (unowned.length) {
+    console.warn(`sdl-slice: the ${context.title} slice references types that belong to no context: ${unowned.join(', ')}`);
+  }
 
   const body = definitions.length ? `${print({ kind: Kind.DOCUMENT, definitions })}\n` : '';
   const header = (tokens) => [
@@ -94,7 +100,7 @@ export function buildSlice({ document, manifest, contextId, siteUrl }) {
     '',
   ].join('\n');
   const tokens = estimateTokens(header(0) + body);
-  return { text: `${header(tokens)}\n${body}`, definitions, externals, tokens };
+  return { text: `${header(tokens)}\n${body}`, definitions, externals, unowned, tokens };
 }
 
 export const parseSdl = (sdl) => parse(sdl, { noLocation: true });
