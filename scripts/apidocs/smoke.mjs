@@ -5,6 +5,7 @@ import { execSync } from 'node:child_process';
 import { cpSync, existsSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { parse } from 'graphql';
 
 const env = {
   ...process.env,
@@ -22,21 +23,31 @@ const page = (path) => {
   return readFileSync(file, 'utf8');
 };
 
-// The pipeline overwrites .schema/ (raw SDL, manifest, CDM index, size baseline): keep the live copy safe.
+// The pipeline overwrites .schema/ (raw SDL, manifest, CDM index, size baseline) and static/schema.graphql
+// (the public SDL that `npm run test:guides` validates against): keep the live copies safe.
 const SCHEMA_DIR = '.schema';
+const PUBLIC_SDL = 'static/schema.graphql';
 const backup = join(process.env.TMPDIR || tmpdir(), `apidocs-smoke-backup-${process.pid}`);
 const hadSchemaDir = existsSync(SCHEMA_DIR);
+const hadPublicSdl = existsSync(PUBLIC_SDL);
 if (hadSchemaDir) cpSync(SCHEMA_DIR, backup, { recursive: true });
+if (hadPublicSdl) cpSync(PUBLIC_SDL, `${backup}.graphql`);
 
 try {
   runSmoke();
 } finally {
   rmSync(env.APIDOCS_MISMATCHES_FILE, { force: true });
   rmSync(SCHEMA_DIR, { recursive: true, force: true });
+  if (hadPublicSdl) {
+    cpSync(`${backup}.graphql`, PUBLIC_SDL);
+    rmSync(`${backup}.graphql`, { force: true });
+  } else {
+    rmSync(PUBLIC_SDL, { force: true });
+  }
   if (hadSchemaDir) {
     cpSync(backup, SCHEMA_DIR, { recursive: true });
     rmSync(backup, { recursive: true, force: true });
-    console.log('smoke: restored .schema; run `npm run apidocs:generate && npm run apidocs:postprocess && npm run build` to rebuild live docs');
+    console.log('smoke: restored .schema and static/schema.graphql; run `npm run apidocs:generate && npm run apidocs:postprocess && npm run build && npm run llms` to rebuild live docs');
   }
 }
 
@@ -92,6 +103,45 @@ function runSmoke() {
 
   const sdl = readFileSync('build/schema.graphql', 'utf8');
   assert.doesNotMatch(sdl, /@authorize|@cost|@doc\(/);
+
+  // Landing page: public endpoints, a pointer for assistants, no gateway URL.
+  assert.match(home, /eur\.365\.altium\.com\/api\/graphql/);
+  assert.match(home, /For AI assistants/);
+  assert.doesNotMatch(home, /napi\/gateway/);
+
+  // Guides are in the sidebar, before the reference.
+  const guide = page('guides/getting-started');
+  assert.match(guide, /Getting started/);
+  const guidesAt = home.indexOf('title="Guides"');
+  assert.ok(guidesAt !== -1 && guidesAt < home.indexOf('title="Reference"'), 'sidebar: Guides category before Reference');
+
+  // Every doc page advertises its Markdown twin.
+  const alternate = (html, href) => (html.match(/<link\b[^>]*>/g) ?? []).some((tag) =>
+    tag.includes('rel="alternate"') && tag.includes('type="text/markdown"') && tag.includes(`href="${href}"`));
+  assert.ok(alternate(project, '/platform-api-docs/reference/design/types/objects/des-project.md'), 'type page: markdown alternate link');
+  assert.ok(alternate(home, '/platform-api-docs/index.md'), 'home page: markdown alternate link');
+
+  // LLM surface.
+  run('npm run llms');
+  const text = (path) => {
+    const file = `build/${path}`;
+    assert.ok(existsSync(file), `missing ${file}`);
+    return readFileSync(file, 'utf8');
+  };
+  const llms = text('llms.txt');
+  assert.match(llms, /^# Altium Platform API\n/);
+  assert.match(llms, /\[Design\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/llms\.txt\)/);
+  assert.match(llms, /\[Getting started\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/guides\/getting-started\.md\)/);
+  assert.match(text('reference/design/llms.txt'), /^# Design — Altium Platform API\n/);
+  const slice = text('reference/design/schema.graphql');
+  parse(slice);
+  assert.match(slice, /^type DesProject implements Node/m);
+  const projectMd = text('reference/design/types/objects/des-project.md');
+  assert.match(projectMd, /^---\ntitle: "DesProject"\nurl: "https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/types\/objects\/des-project"\nbounded_context: "Design"\nkind: "objects"\n/);
+  assert.doesNotMatch(projectMd, /<Badge|export const|hash-link/);
+  assert.match(text('reference/design/operations/queries/design/project/by-id.md'), /\*\*EXPERIMENTAL\*\*/);
+  assert.match(text('index.md'), /^---\ntitle: "Altium Platform API"/);
+  assert.match(text('llms-full.txt'), /title: "Getting started"/);
 
   console.log('smoke: OK');
 }
