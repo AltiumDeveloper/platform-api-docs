@@ -134,6 +134,10 @@ export function renderContextOverview(context, pages, cdmIndex) {
   ];
   const concepts = cdmConceptsLine(context);
   if (concepts) lines.push(concepts, '');
+  // `npm run llms` writes these after the Docusaurus build, so they must be plain (non-router) links; it writes
+  // all three files for every context.
+  const base = `pathname:///reference/${context.slug}`;
+  lines.push(`For AI assistants: [llms.txt](${base}/llms.txt) · [schema slice](${base}/schema.graphql) · [all types](${base}/types.txt)`, '');
   if (!mine.length) {
     lines.push('No operations or types are currently published in this bounded context.');
     return `${lines.join('\n')}\n`;

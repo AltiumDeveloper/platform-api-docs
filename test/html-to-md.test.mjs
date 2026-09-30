@@ -24,6 +24,10 @@ test('rewriteHref makes internal links absolute .md URLs and leaves the rest alo
   assert.equal(rewriteHref('/platform-api-docs/reference/design/overview#entry-points', ctx), `${SITE}/reference/design/overview.md#entry-points`);
   assert.equal(rewriteHref('/platform-api-docs/schema.graphql', ctx), `${SITE}/schema.graphql`);
   assert.equal(rewriteHref('/platform-api-docs/img/favicon.ico', ctx), `${SITE}/img/favicon.ico`);
+  // Built `pathname:///` links become plain base-URL paths: the LLM files keep their extension.
+  for (const file of ['llms.txt', 'schema.graphql', 'types.txt']) {
+    assert.equal(rewriteHref(`/platform-api-docs/reference/design/${file}`, ctx), `${SITE}/reference/design/${file}`);
+  }
   assert.equal(rewriteHref('des-net', ctx), `${SITE}/reference/design/types/objects/des-net.md`);
   assert.equal(rewriteHref('#fields', ctx), `${SITE}/reference/design/types/objects/des-layer.md#fields`);
   assert.equal(rewriteHref(`${SITE}/reference/common/overview`, ctx), `${SITE}/reference/common/overview.md`);

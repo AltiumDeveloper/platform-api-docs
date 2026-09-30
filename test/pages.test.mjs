@@ -116,6 +116,17 @@ test('renderContextOverview links every CDM subset of a multi-subset context and
   assert.doesNotMatch(renderContextOverview(manifest.contexts[1], [], {}), /Concepts:/);
 });
 
+test('renderContextOverview links the context llms.txt, schema slice and types right after Concepts', () => {
+  const pages = buildPagesIndex(files, manifest);
+  const md = renderContextOverview(manifest.contexts[0], pages, {});
+  const links = 'For AI assistants: [llms.txt](pathname:///reference/design/llms.txt) · [schema slice](pathname:///reference/design/schema.graphql) · [all types](pathname:///reference/design/types.txt)';
+  assert.ok(md.includes(`bounded context in the [Common Data Model](https://altiumdeveloper.github.io/cdm/subsets/design/)\n\n${links}\n`), 'links follow the Concepts line');
+  // A context without a CDM subset has no Concepts line: the links still follow the description.
+  const plain = renderContextOverview(manifest.contexts[1], pages, {});
+  assert.match(plain, new RegExp(`\\n\\nFor AI assistants: \\[llms\\.txt\\]\\(pathname:///reference/${manifest.contexts[1].slug}/llms\\.txt\\)`));
+  assert.ok(plain.indexOf('For AI assistants') < plain.indexOf('## Contents') || !plain.includes('## Contents'));
+});
+
 test('renderContextOverview renders CDM descriptions and GRIDs, nesting multiple entities', () => {
   const pages = buildPagesIndex(files, manifest);
   const url = 'https://example.com/x';
