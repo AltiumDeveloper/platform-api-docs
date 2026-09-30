@@ -1,7 +1,20 @@
 import { parse } from 'yaml';
 
 export const CDM_SITE = 'https://altiumdeveloper.github.io/cdm';
-export const DEFAULT_CDM_REF = 'v0.10.0';
+export const DEFAULT_CDM_REF = 'main';
+export const CDM_REPO = 'AltiumDeveloper/cdm';
+export const CDM_SCHEMA_DIR = 'src/common_data_model/schema';
+
+export const cdmCommitUrl = (sha, repo = CDM_REPO) => `https://github.com/${repo}/commit/${sha}`;
+export const cdmResolveUrl = (ref, repo = CDM_REPO) =>
+  `https://api.github.com/repos/${repo}/commits/${encodeURIComponent(ref)}`;
+export const cdmListUrl = (sha, repo = CDM_REPO, dir = CDM_SCHEMA_DIR) =>
+  `https://api.github.com/repos/${repo}/contents/${dir}?ref=${sha}`;
+export const cdmRawUrl = (sha, name, repo = CDM_REPO, dir = CDM_SCHEMA_DIR) =>
+  `https://raw.githubusercontent.com/${repo}/${sha}/${dir}/${name}`;
+
+// Shape of .schema/cdm-meta.json: the requested ref, the commit it resolved to, and where/when it was fetched.
+export const buildCdmMeta = ({ ref, sha = null, fetchedAt = null, source }) => ({ ref, sha, fetchedAt, source });
 
 const annotationValue = (annotation) =>
   annotation && typeof annotation === 'object' ? annotation.value ?? null : annotation ?? null;

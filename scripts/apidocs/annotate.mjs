@@ -37,7 +37,7 @@ export function runAnnotate({
   writeFileSync(join(schemaDir, 'report.json'), JSON.stringify(report, null, 2));
   writeFileSync(join(schemaDir, 'manifest.json'), JSON.stringify(buildManifest({ contextMap, classification, cdmIndex }), null, 2));
   if (mismatchesPath) {
-    const cdm = readJson(join(schemaDir, 'cdm-meta.json'), { ref: process.env.CDM_REF || DEFAULT_CDM_REF });
+    const cdm = readJson(join(schemaDir, 'cdm-meta.json'), { ref: process.env.CDM_REF || DEFAULT_CDM_REF, sha: null });
     mkdirSync(dirname(mismatchesPath), { recursive: true });
     writeFileSync(mismatchesPath, renderMismatches(buildMismatches({ report, cdmIndex, contextMap }), {
       generatedAt: now.toISOString(), cdm,

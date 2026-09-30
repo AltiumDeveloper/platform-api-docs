@@ -74,6 +74,10 @@ Keep the context map public-safe: no owner or team names, OAuth resources or int
 
 ## CDM alignment
 
+The site follows the CDM `main` branch: the nightly build resolves `main` to a commit SHA and reads every schema
+file at that SHA, so fixes to the CDM show up on the next run. To pin a version (for example while `main` is
+broken), set `CDM_REF` to a tag, branch or SHA; the resolved commit is recorded in `.schema/cdm-meta.json`.
+
 Every `annotate` run rewrites `notes/cdm-mismatches.md` (git-ignored, never published; in CI it is uploaded
 with `.schema/report.json` as the `apidocs-report` artifact). It records the CDM ref it was built from
 (`.schema/cdm-meta.json`, written by `fetch-cdm`) and lists, one bullet per name:

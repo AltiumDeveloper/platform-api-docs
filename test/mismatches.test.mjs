@@ -39,10 +39,13 @@ test('buildMismatches collects report findings and CDM subset coverage', () => {
 test('renderMismatches writes a markdown log with header, one bullet per item and None for empty sections', () => {
   const md = renderMismatches(buildMismatches({ report, cdmIndex, contextMap }), {
     generatedAt: '2026-09-30T00:00:00.000Z',
-    cdm: { ref: 'v0.10.0', source: 'github:AltiumDeveloper/cdm', fetchedAt: '2026-09-29T23:00:00.000Z' },
+    cdm: {
+      ref: 'main', sha: '0123456789abcdef0123456789abcdef01234567',
+      source: 'github:AltiumDeveloper/cdm', fetchedAt: '2026-09-29T23:00:00.000Z',
+    },
   });
   assert.match(md, /^# CDM mismatches\n/);
-  assert.match(md, /Generated 2026-09-30T00:00:00\.000Z from CDM `v0\.10\.0` \(github:AltiumDeveloper\/cdm, fetched 2026-09-29T23:00:00\.000Z\)\./);
+  assert.match(md, /Generated 2026-09-30T00:00:00\.000Z from CDM \[`main @ 0123456`\]\(https:\/\/github\.com\/AltiumDeveloper\/cdm\/commit\/0123456789abcdef0123456789abcdef01234567\) \(github:AltiumDeveloper\/cdm, fetched 2026-09-29T23:00:00\.000Z\)\./);
   assert.match(md, /## CDM mappings to missing API types \(1\)\n\n[^#]*- `DesGone`\n/);
   assert.match(md, /## Node entities without a CDM mapping \(2\)\n\n[^#]*- `BomWip`\n- `DesOrphanEntity`\n/);
   assert.match(md, /## Overrides that contradict the CDM bounded context \(1\)\n\n[^#]*- `DesProject`: override `platform`, CDM `design`\n/);

@@ -1,7 +1,29 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildCdmIndex, cdmClassPageName, CDM_SITE } from '../scripts/apidocs/lib/cdm.mjs';
+import {
+  buildCdmIndex, cdmClassPageName, CDM_SITE, DEFAULT_CDM_REF,
+  cdmCommitUrl, cdmResolveUrl, cdmListUrl, cdmRawUrl, buildCdmMeta,
+} from '../scripts/apidocs/lib/cdm.mjs';
+
+test('follows CDM main by default and builds SHA-pinned URLs', () => {
+  assert.equal(DEFAULT_CDM_REF, 'main');
+  assert.equal(cdmResolveUrl('main'), 'https://api.github.com/repos/AltiumDeveloper/cdm/commits/main');
+  assert.equal(cdmResolveUrl('feature/x'), 'https://api.github.com/repos/AltiumDeveloper/cdm/commits/feature%2Fx');
+  assert.equal(cdmListUrl('abc123'),
+    'https://api.github.com/repos/AltiumDeveloper/cdm/contents/src/common_data_model/schema?ref=abc123');
+  assert.equal(cdmRawUrl('abc123', 'design.yaml'),
+    'https://raw.githubusercontent.com/AltiumDeveloper/cdm/abc123/src/common_data_model/schema/design.yaml');
+  assert.equal(cdmCommitUrl('abc123'), 'https://github.com/AltiumDeveloper/cdm/commit/abc123');
+});
+
+test('buildCdmMeta records ref, sha, fetchedAt and source', () => {
+  assert.deepEqual(
+    buildCdmMeta({ ref: 'main', sha: 'abc', fetchedAt: 't', source: 'github:x' }),
+    { ref: 'main', sha: 'abc', fetchedAt: 't', source: 'github:x' },
+  );
+  assert.deepEqual(buildCdmMeta({ ref: null, source: 's' }), { ref: null, sha: null, fetchedAt: null, source: 's' });
+});
 
 const read = (name) => readFileSync(new URL(`./fixtures/cdm/${name}`, import.meta.url), 'utf8');
 

@@ -1,6 +1,8 @@
 // CDM alignment log: mismatches between the public CDM, the API schema and config/context-map.yaml.
 // Written by annotate to notes/cdm-mismatches.md (git-ignored, uploaded with the CI report artifact).
 
+import { cdmCommitUrl } from './cdm.mjs';
+
 const sorted = (values) => [...values].sort((a, b) => a.localeCompare(b));
 
 export function buildMismatches({ report, cdmIndex, contextMap }) {
@@ -79,12 +81,18 @@ const SECTIONS = [
   },
 ];
 
+// `main @ abc1234` linked to the CDM commit when the SHA is known, else just the ref.
+function cdmLabel({ ref, sha }) {
+  if (!sha) return code(ref ?? 'unknown');
+  return `[${code(`${ref ?? 'unknown'} @ ${sha.slice(0, 7)}`)}](${cdmCommitUrl(sha)})`;
+}
+
 export function renderMismatches(mismatches, { generatedAt, cdm = {} }) {
   const origin = [cdm.source, cdm.fetchedAt ? `fetched ${cdm.fetchedAt}` : null].filter(Boolean).join(', ');
   const lines = [
     '# CDM mismatches',
     '',
-    `Generated ${generatedAt} from CDM ${code(cdm.ref ?? 'unknown')}${origin ? ` (${origin})` : ''}.`,
+    `Generated ${generatedAt} from CDM ${cdmLabel(cdm)}${origin ? ` (${origin})` : ''}.`,
     'Rewritten by `npm run apidocs:annotate`; not published.',
   ];
   for (const { key, title, hint, item } of SECTIONS) {

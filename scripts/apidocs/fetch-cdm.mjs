@@ -1,57 +1,66 @@
 #!/usr/bin/env node
 // Builds .schema/cdm-index.json from the public CDM (AltiumDeveloper/cdm). Never fails the build:
 // on error it keeps a previous index if present, else writes an empty one, and the site is built without CDM cross-references.
+// Follows CDM `main` by default (CDM_REF overrides: tag, branch or SHA). The ref is resolved to a commit SHA first and
+// every file is listed and downloaded at that SHA, so one run never mixes versions.
 // Set APIDOCS_CDM_DIR to read *.yaml from a local directory instead.
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { buildCdmIndex, DEFAULT_CDM_REF } from './lib/cdm.mjs';
+import {
+  buildCdmIndex, buildCdmMeta, cdmListUrl, cdmRawUrl, cdmResolveUrl, CDM_REPO, DEFAULT_CDM_REF,
+} from './lib/cdm.mjs';
 
-const REPO = 'AltiumDeveloper/cdm';
 const REF = process.env.CDM_REF || DEFAULT_CDM_REF;
-const DIR = 'src/common_data_model/schema';
 const OUT = '.schema/cdm-index.json';
-// {ref, fetchedAt, source} of the CDM the index was built from; read by annotate for notes/cdm-mismatches.md.
+// {ref, sha, fetchedAt, source} of the CDM the index was built from; read by annotate for notes/cdm-mismatches.md.
 const META = '.schema/cdm-meta.json';
 
-async function fetchOk(url) {
+async function fetchOk(url, accept) {
   const headers = { 'user-agent': 'platform-api-docs' };
+  if (accept) headers.accept = accept;
   if (process.env.GITHUB_TOKEN) headers.authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   const response = await fetch(url, { headers, signal: AbortSignal.timeout(60000) });
   if (!response.ok) throw new Error(`${response.status} ${response.statusText} for ${url}`);
   return response;
 }
 
-async function loadTexts() {
+async function loadCdm() {
   if (process.env.APIDOCS_CDM_DIR) {
     const dir = process.env.APIDOCS_CDM_DIR;
-    return readdirSync(dir).filter((f) => f.endsWith('.yaml')).map((f) => readFileSync(join(dir, f), 'utf8'));
+    const texts = readdirSync(dir).filter((f) => f.endsWith('.yaml')).map((f) => readFileSync(join(dir, f), 'utf8'));
+    return { texts, sha: null };
   }
-  const listing = await (await fetchOk(`https://api.github.com/repos/${REPO}/contents/${DIR}?ref=${REF}`)).json();
+  const github = 'application/vnd.github+json';
+  const { sha } = await (await fetchOk(cdmResolveUrl(REF), github)).json();
+  if (!sha) throw new Error(`could not resolve CDM ref ${REF} to a commit`);
+  const listing = await (await fetchOk(cdmListUrl(sha), github)).json();
   const files = listing.filter((entry) => entry.name.endsWith('.yaml'));
-  return Promise.all(files.map(async (entry) =>
-    (await fetchOk(`https://raw.githubusercontent.com/${REPO}/${REF}/${DIR}/${entry.name}`)).text()));
+  const texts = await Promise.all(files.map(async (entry) => (await fetchOk(cdmRawUrl(sha, entry.name))).text()));
+  return { texts, sha };
 }
 
 const writeMeta = (meta) => writeFileSync(META, JSON.stringify(meta, null, 2));
-const SOURCE = process.env.APIDOCS_CDM_DIR ? `dir:${process.env.APIDOCS_CDM_DIR}` : `github:${REPO}`;
+const SOURCE = process.env.APIDOCS_CDM_DIR ? `dir:${process.env.APIDOCS_CDM_DIR}` : `github:${CDM_REPO}`;
 
 mkdirSync('.schema', { recursive: true });
 try {
-  const index = buildCdmIndex(await loadTexts());
+  const { texts, sha } = await loadCdm();
+  const index = buildCdmIndex(texts);
   writeFileSync(OUT, JSON.stringify(index, null, 2));
-  writeMeta({ ref: process.env.APIDOCS_CDM_DIR ? 'local' : REF, fetchedAt: new Date().toISOString(), source: SOURCE });
-  console.log(`fetch-cdm: ${Object.keys(index).length} API types mapped (CDM ${process.env.APIDOCS_CDM_DIR ?? REF})`);
+  writeMeta(buildCdmMeta({
+    ref: process.env.APIDOCS_CDM_DIR ? 'local' : REF, sha, fetchedAt: new Date().toISOString(), source: SOURCE,
+  }));
+  console.log(`fetch-cdm: ${Object.keys(index).length} API types mapped (CDM ${process.env.APIDOCS_CDM_DIR ?? `${REF} @ ${sha.slice(0, 7)}`})`);
 } catch (error) {
   if (existsSync(OUT)) {
     console.warn(`fetch-cdm: ${error.message}; reusing previous ${OUT}`);
-    if (!existsSync(META)) writeMeta({ ref: 'unknown (cached)', fetchedAt: null, source: SOURCE });
+    if (!existsSync(META)) writeMeta(buildCdmMeta({ ref: 'unknown (cached)', source: SOURCE }));
   } else {
     console.warn(`fetch-cdm: ${error.message}; continuing without CDM cross-references`);
     writeFileSync(OUT, '{}');
-    writeMeta({
+    writeMeta(buildCdmMeta({
       ref: null,
-      fetchedAt: null,
       source: process.env.APIDOCS_CDM_DIR ? `${SOURCE} (unavailable, empty index)` : 'unavailable (empty index)',
-    });
+    }));
   }
 }
