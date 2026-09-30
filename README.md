@@ -16,7 +16,8 @@ Altium Platform API, grouped by bounded context and cross-linked with the
 4. `graphql-to-doc` — graphql-markdown renders `docs/reference/**`.
 5. `postprocess` — writes BC overview pages, the sidebar index and redirects for old URLs.
 
-`npm run build` then builds the Docusaurus site. The GitHub workflow does both nightly.
+`npm run build` then builds the Docusaurus site, and `npm run llms` adds the LLM surface to `build/`
+(see below). The GitHub workflow runs all three nightly.
 
 ## Local development
 
@@ -28,7 +29,28 @@ npm run apidocs
 npm start
 ```
 
-Tests: `npm test` (unit) and `npm run test:smoke` (full build from test fixtures).
+Tests: `npm test` (unit), `npm run test:guides` (guide examples against `static/schema.graphql`; run
+`npm run apidocs` first) and `npm run test:smoke` (full build from test fixtures, including `npm run llms`).
+
+## Guides
+
+Hand-written pages live in `docs/guides/*.mdx` (sidebar order from `sidebar_position`; the front-matter
+`description` is reused in `llms.txt`). Every ` ```graphql ` block that is an operation is validated against
+the public SDL by `npm run test:guides`; mark schema excerpts with ` ```graphql title="SDL" `. Keep `{`, `}`,
+`<` and `>` inside code spans (MDX). Use only public-safe facts.
+
+## LLM surface
+
+`npm run llms` (after `npm run build`) writes, from already-public outputs only:
+
+- `build/llms.txt` — site index for coding assistants (bounded contexts, guides, Developer Center links);
+- `build/reference/<context>/llms.txt` and `build/reference/<context>/schema.graphql` — per-context index and
+  SDL slice (types from other contexts are referenced, not defined); `build/reference/deprecated/llms.txt`;
+- a `.md` twin of every docs page (`/reference/design/overview` → `/reference/design/overview.md`, home →
+  `/index.md`), advertised by `<link rel="alternate" type="text/markdown">`;
+- `build/llms-full.txt` — all guides and reference pages as Markdown.
+
+It prints token estimates (characters / 4). `npm run serve` serves the files locally.
 
 ## Changing the grouping
 

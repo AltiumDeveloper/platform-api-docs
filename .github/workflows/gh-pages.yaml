@@ -52,8 +52,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           APIDOCS_ALLOW_SHRINK: ${{ inputs.allow_shrink && '1' || '' }}
 
+      - name: Validate guide examples
+        run: npm run test:guides
+
       - name: Build site
         run: npm run build
+
+      - name: Generate LLM files
+        run: npm run llms
 
       - name: Upload site
         uses: actions/upload-artifact@v4
