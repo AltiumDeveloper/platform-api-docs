@@ -1,0 +1,3628 @@
+# Altium Platform API — Design schema slice (~30731 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DateTimeOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Decimal → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesCommentThread → Collaboration: https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/schema.graphql
+#   DesComponent → Library Management: https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/schema.graphql
+#   DesFootprint → Library Management: https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/schema.graphql
+#   DesPayloadError → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesPermissionScope → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesTask → Collaboration: https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/schema.graphql
+#   DesUser → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesUserGroup → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesWorkflow → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
+#   DesWorkflowFilterByVariableInput → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
+#   DesWorkflowFilterInput → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
+#   DesWorkspaceUser → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesWorkspaceUserProfilePictureSize → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   ListFilterInputTypeOfDesDesignItemParameterFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Long → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Node → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   SortEnumType → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   StringOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   URL → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+
+type Query {
+  desComparisonHealthcheck: Boolean! @deprecated
+  "**Experimental** Gets design related queries."
+  design: DesignQueries! @experimental
+  "Gets manufacture packages."
+  desManufacturePackages: [DesManufacturePackage!]! @deprecated(reason: "Not implemented. Will soon be removed.")
+  "Searches a project by its identifier."
+  desProjectById(
+    "The project identifier."
+    id: ID!
+  ): DesProject
+  "The project latest ECAD, MCAD or ESD revision."
+  desProjectCollaborationLatestRevision(
+    "The collaboration domain."
+    domain: DesCollaborationDomain!
+    "The identifier for a specific project."
+    projectId: ID!
+  ): DesCollaborationRevision
+  "The project ECAD, MCAD or ESD revisions returned by pages."
+  desProjectCollaborationRevisions(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "The collaboration domain."
+    domain: DesCollaborationDomain!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "The identifier for a specific project."
+    projectId: ID!
+  ): DesCollaborationRevisionConnection
+  "*PROTOTYPE, SUBJECT TO CHANGE*"
+  desProjectCollaborationSimulationLatestRevision(
+    "The collaboration domain name."
+    domainName: String!
+    "The project identifier."
+    projectId: ID!
+    "The project type name."
+    projectTypeName: String!
+  ): DesCollaborationSimulationRevision
+  "*PROTOTYPE, SUBJECT TO CHANGE*"
+  desProjectCollaborationSimulationRevisions(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "The collaboration domain name."
+    domainName: String!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "The project identifier."
+    projectId: ID!
+  ): DesCollaborationSimulationRevisionConnection
+  "Gets the project identifier from its internal identifier."
+  desProjectIdFromAfsId(
+    "AFS internal identifier."
+    afsId: String!
+    "True for shared projects."
+    isSharedProject: Boolean
+    "The web address of a workspace."
+    workspaceUrl: String
+  ): DesProjectIdPayload!
+  "Search projects within a workspace with results in paged groups."
+  desProjects(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Extra arguments."
+    args: DesProjectsInput
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [DesProjectSortInput!]
+    "Requirements block filter."
+    requirementsBlockFilter: DesProjectsRequirementsBlockFilterInput
+    where: DesProjectFilterInput
+    "The web address of a workspace."
+    workspaceUrl: String
+  ): DesProjectConnection
+  "Searches projects by their identifiers."
+  desProjectsByIds(
+    "An array of project identifiers."
+    ids: [ID!]!
+  ): [DesProject]!
+  "Searches a release by its identifier."
+  desReleaseById(
+    "The release identifier."
+    id: ID!
+  ): DesRelease
+  "Searches a project release variant by its name."
+  desReleaseVariantByVariantName(
+    "The project release identifier."
+    releaseId: ID!
+    "The variant name."
+    variantName: String!
+  ): DesReleaseVariant
+  "Gets items shared with me."
+  desSharedWithMe: DesSharedWithMe!
+  "Searches a project WIP variant by its name."
+  desWipVariantByVariantName(
+    "The project identifier."
+    projectId: ID!
+    "The variant name."
+    variantName: String!
+  ): DesWipVariant
+}
+
+type Mutation {
+  "Runs schematic, PCB, or BOM comparisons between two project releases. Provides URL of the comparison result for web-browser."
+  desCompareReleases(input: DesComparisonRunInput!): DesComparisonRunPayload!
+  "**Experimental** Registers an uploaded file as a design upload."
+  designRegisterUpload(input: DesignRegisterUploadInput!): DesignRegisterUploadPayload! @experimental
+  "**Experimental** Executes rule checks for the specified design and returns the resulting rule check execution."
+  designRuleCheckExecute(input: DesignRuleCheckExecuteInput!): DesignRuleCheckExecutePayload! @experimental
+  "**Experimental** Executes rule checks for the specified upload and returns the resulting rule check execution."
+  designRuleCheckExecuteOnUpload(input: DesignRuleCheckExecuteOnUploadInput!): DesignRuleCheckExecuteOnUploadPayload! @experimental
+  "Link/unlink A365 project with requirements block component."
+  desSetProjectRequirementsBlock(input: DesSetProjectRequirementsBlockInput!): DesSetProjectRequirementsBlockPayload!
+  "Updates the owner for the associated project."
+  desUpdateProjectOwner(input: DesUpdateProjectOwnerInput!): DesUpdateProjectOwnerPayload!
+  "Updates parameters for the specified project (does not affect the revision)."
+  desUpdateProjectParameters(input: DesUpdateProjectParametersInput!): DesUpdateProjectParametersPayload!
+  "Updates the permissions for the associated project."
+  desUpdateProjectPermissions(input: DesUpdateProjectPermissionsInput!): DesUpdateProjectPermissionsPayload!
+  "Uploads the specified collaboration."
+  desUploadCollaboration(input: DesUploadCollaborationInput!): DesUploadCollaborationPayload!
+  "*PROTOTYPE, SUBJECT TO CHANGE*"
+  desUploadCollaborationSimulation(input: DesUploadCollaborationSimulationInput!): DesUploadCollaborationSimulationPayload!
+  "Uploads the project zip file."
+  desUploadProject(input: DesUploadProjectInput!): DesUploadProjectPayload!
+}
+
+"Area in mm^2 and mils^2. Mils are one thousandth of an inch."
+type DesArea {
+  "Area value."
+  x: Float!
+  "Area in mm^2 and mils^2. Mils are one thousandth of an inch."
+  xMils2: Decimal!
+  "Area in mm^2."
+  xMm2: Decimal!
+}
+
+"Assembly drawing files display all components on the board in their assembled locations, with corresponding designators."
+type DesAssemblyDrawings {
+  "Assembly drawing files."
+  assemblyDrawingFiles: [DesDownloadableFile!]!
+  "Package download URL."
+  downloadUrl: String
+  "Package name."
+  packageName: String
+}
+
+"A Bill of Materials (BOM) contains a list of all of the parts needed for the assembly of a PCB."
+type DesBom {
+  bomItems: [DesBomItem!]! @deprecated(reason: "Use `items`.")
+  "The list of BOM items returned by pages."
+  items(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): DesBomItemConnection
+}
+
+"A Bill of Materials (BOM) item contains usage information for a unique component on the PCB."
+type DesBomItem {
+  "The list of each instance of this BOM item."
+  bomItemInstances: [DesBomItemInstance!]!
+  "The detailed component information for this BOM item."
+  component: DesComponent!
+  "The total number of times this item is used."
+  quantity: Int!
+}
+
+"A connection to a list of items."
+type DesBomItemConnection {
+  "A list of edges."
+  edges: [DesBomItemEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesBomItem!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesBomItemEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesBomItem!
+}
+
+"A Bill of Materials (BOM) item instance contains information for one specific usage of the item."
+type DesBomItemInstance {
+  "An alternate component used in this variant."
+  alternateComponent: DesComponent
+  "The unique label for this item."
+  designator: String!
+  "The variant use status for this item."
+  isFitted: Boolean!
+}
+
+"Lines in your board where the design is folded at assembly."
+type DesCadBendingLine {
+  "The regions affected by the bend."
+  affectedRegions: [String!]
+  "The angle in degrees that the surface of the flex region is to bend."
+  angle: Float!
+  "Line ending point."
+  endPoint: DesCadPoint!
+  "Defines the sequence that the bends are folded in at assembly."
+  foldIndex: Int!
+  "The distance away from the bend surface that the bending center point is located."
+  radius: Int!
+  "Line starting point."
+  startPoint: DesCadPoint!
+}
+
+"An item instance containing information a 3D model."
+type DesCadBoard3DBodyModelData {
+  "3D model color."
+  color: Long
+  "The token for getting URL by `DesLibrary.downloadUrlsByTokens`."
+  downloadToken: String
+  "True if ECAD provides the raw 3D model."
+  isEcadProvidesRaw3DModel: Boolean!
+  "Local test file name for 3D model."
+  localTestFileName: String
+  "Display name for 3D model."
+  modelDisplayName: String
+  "3D model file extension."
+  modelFileExtension: String
+  "File hash for 3D model."
+  modelFileHash: String
+  "File path for 3D model."
+  modelFilePath: String
+  "Identifier on server for 3D model."
+  modelIdOnServer: String
+  "File path net name."
+  modelNetName: String
+  "Part name for 3D model."
+  modelPartName: String
+  "3D model opacity."
+  opacity: Float
+}
+
+"Information about the board area."
+type DesCadBoardArea {
+  "Comment for CAD board area."
+  comment: String
+  "Object designator."
+  designator: String
+  "Board object location."
+  location: DesCadPoint!
+  "Board object type."
+  objectType: DesCadBoardObjectType!
+  "CAD board area placement."
+  placement: DesCadBoardComponentPlacement!
+  "True if CAD board area restricts copper."
+  restrictsCopper: Boolean!
+  "True if CAD board area restricts SMD pad."
+  restrictsSMDPad: Boolean!
+  "True if CAD board area restricts TH pad."
+  restrictsTHPad: Boolean!
+  "True if CAD board area restricts track."
+  restrictsTrack: Boolean!
+  "True if CAD board area restricts via."
+  restrictsVia: Boolean!
+  "Board object rotation."
+  rotation: Float!
+  "JSON serialized *GeometricShape*."
+  shapeJson: String
+  "Unique identifier for CAD board area."
+  uniqueId: String
+}
+
+"Information about a CAD board component."
+type DesCadBoardComponent {
+  "Board region names for CAD board component."
+  boardRegionName: String
+  "Deepening of CAD board component."
+  deepening: Int!
+  "Object designator."
+  designator: String
+  "CAD board component free 3D body rotation (X)."
+  free3DBodyRotationX: Float!
+  "CAD board component free 3D body rotation (Y)."
+  free3DBodyRotationY: Float!
+  "CAD board component free 3D body rotation (Z)."
+  free3DBodyRotationZ: Float!
+  "CAD board component free 3D body standoff height."
+  free3DBodyStandoffHeight: Int!
+  "Identifier for CAD board component."
+  id: String
+  "In case the component contains a single 3D body AND no conversion was performed when exporting to a 3D model, the 3D model's position relative to board is stored here."
+  innerBodyRelativeToBoardTransform: DesCadBodyTransformation
+  "True if CAD board component is a free 3D body."
+  isFree3DBody: Boolean!
+  "True if CAD board component is locked."
+  isLocked: Boolean!
+  "True if CAD board component MCAD uses its own 3D body."
+  isMcadUsesOwn3DBody: Boolean!
+  "Board object location."
+  location: DesCadPoint!
+  "In case component contains single 3D body, the body's position relative to the component's origin point is stored here."
+  modelInComponentTransform: DesCadBodyTransformation
+  "Board object type."
+  objectType: DesCadBoardObjectType!
+  "Placement of CAD board component."
+  placement: DesCadBoardComponentPlacement!
+  "Board object rotation."
+  rotation: Float!
+  "Variant name for CAD board component."
+  variantName: String
+}
+
+"Information about a CAD board component type."
+type DesCadBoardComponentType {
+  "CAD board component type body shape."
+  bodyShape: DesCadComponentBodyShape
+  "CAD board component type company component identifier."
+  companyComponentId: String
+  "The library component stitched from this CAD board component type, when available."
+  component: DesComponent
+  "CAD board component type components."
+  components: [DesCadBoardComponent!]
+  "Name of DMS component."
+  dmsComponentName: String
+  "The selected footprint stitched from this CAD board component type, when available."
+  footprint: DesFootprint
+  "CAD board component type footprint reference."
+  footprintReference: String
+  "CAD board component type identifier."
+  id: String
+  "CAD board component type internal identifier."
+  internalId: String
+  "True if CAD board component type is from local PCB library."
+  isFromLocalPcbLibrary: Boolean!
+  "CAD board component type item identifier."
+  itemGuid: String
+  "CAD board component type library reference."
+  libraryReference: String
+  "CAD board component type properties."
+  properties: [DesCadProperty!]
+  "CAD board component type revision identifier."
+  revisionGuid: String
+}
+
+"Information about a copper layer on the CAD board."
+type DesCadBoardCopperLayer {
+  "True if CAD board copper layer is pad and via barrels special layer."
+  isPadAndViaBarrelsSpecialLayer: Boolean!
+  "CAD board copper layer models."
+  models: [DesCadBoard3DBodyModelData!]
+  "CAD board copper layer name."
+  name: String
+  "CAD board copper layer platform layer identifier."
+  platformLayerId: Int!
+  "CAD board copper layer thickness."
+  thickness: Int!
+}
+
+"Information about a copper layer region on the CAD board."
+type DesCadBoardCopperRegion {
+  "JSON serialized array of *GeometricShape*."
+  holeShapesJson: String
+  "CAD board copper region layer name."
+  layerName: String
+  "JSON serialized array of *GeometricShape*."
+  outlineShapesJson: String
+  "CAD board copper region type."
+  regionType: DesCadBoardCopperRegionType!
+}
+
+"Information about a cutout on the CAD board."
+type DesCadBoardCutout {
+  "CAD board cut abstruct associated component designator."
+  associatedComponentDesignator: String
+  "Object designator."
+  designator: String
+  "Board object location."
+  location: DesCadPoint!
+  "Board object type."
+  objectType: DesCadBoardObjectType!
+  "Original designator of CAD board cut abstruct."
+  originalDesignator: String
+  "Board object rotation."
+  rotation: Float!
+  "JSON serialized *GeometricShape*."
+  shapeJson: String
+  "CAD board cut abstruct unique identifier."
+  uniqueId: String
+}
+
+"Information about a hole on the CAD board component."
+type DesCadBoardHole {
+  "CAD board cut abstruct associated component designator."
+  associatedComponentDesignator: String
+  "CAD board hole counter angle."
+  counterAngle: Float!
+  "CAD board hole counter depth."
+  counterDepth: Int!
+  "CAD board counter size."
+  counterSize: Int!
+  "CAD board hole counter type."
+  counterType: DesCadCounterType!
+  "Object designator."
+  designator: String
+  "CAD board hole diameter."
+  diameter: Int!
+  "CAD board hole type."
+  holeType: DesCadHoleType!
+  "True if CAD board hole is plated."
+  isPlated: Boolean!
+  "Board object location."
+  location: DesCadPoint!
+  "Board object type."
+  objectType: DesCadBoardObjectType!
+  "Original designator of CAD board cut abstruct."
+  originalDesignator: String
+  "Board object rotation."
+  rotation: Float!
+  "CAD board hole size."
+  size: DesCadPoint!
+  "CAD board cut abstruct unique identifier."
+  uniqueId: String
+}
+
+"Information about a layer on the CAD board component."
+type DesCadBoardLayer {
+  "CAD board layer category."
+  layerCategory: DesCadBoardLayerCategory!
+  "CAD board layer component placement."
+  layerComponentPlacement: DesCadBoardLayerComponentPlacement!
+  "CAD board layer dielectric type."
+  layerDielectricType: DesCadBoardLayerDielectricType!
+  "CAD board layer physical category."
+  layerPhysicalCategory: DesCadBoardLayerPhysicalCategory!
+  "CAD board layer position."
+  layerPosition: DesCadBoardLayerPosition!
+  "CAD board layer type."
+  layerType: DesCadBoardLayerType!
+  "CAD board layer name."
+  name: String
+  "CAD board platform layer identifier."
+  platformLayerId: Int!
+  "CAD board layer thickness."
+  thickness: Int!
+}
+
+"Information about a CAD board region."
+type DesCadBoardRegion {
+  "CAD board region color."
+  color: Long!
+  "CAD board region internal point."
+  internalPoint: DesCadPoint!
+  "True if CAD board region is flexible."
+  isFlex: Boolean!
+  "True if CAD board region is locked 3D."
+  isLocked3D: Boolean!
+  "CAD board region layers."
+  layers: [DesCadBoardLayer!]
+  "CAD board region name."
+  name: String
+  "CAD board region layer bottom coordinate (Z)."
+  regionLayerZBottom: Int!
+  "CAD board region layer top coordinate (Z)."
+  regionLayerZTop: Int!
+  "JSON serialized *ComplexShape*."
+  shapeJson: String
+}
+
+"Information about a track on the CAD board."
+type DesCadBoardTrack {
+  "CAD board track layer name."
+  layerName: String
+  "CAD board track net name."
+  netName: String
+  "CAD board track points."
+  points: [DesCadPoint!]!
+  "CAD board track width."
+  width: Int!
+}
+
+"Information about a variant of the CAD board."
+type DesCadBoardVariant {
+  "CAD board variant description."
+  description: String
+  "CAD board variant name."
+  name: String
+  "CAD board variant properties."
+  properties: [DesCadProperty!]
+  "CAD board variant unique identifier."
+  uniqueId: String
+  "CAD board variant variations."
+  variations: [DesCadComponentVariation!]
+}
+
+"Information about variants of the CAD board."
+type DesCadBoardVariants {
+  "Component type variant library for CAD board variants."
+  componentTypeVariantLibrary: [DesCadBoardComponentType!]
+  "CAD board variants."
+  variants: [DesCadBoardVariant!]
+}
+
+"Information about a via on the CAD board."
+type DesCadBoardVia {
+  "CAD board via copper diameter."
+  copperDiameter: Int!
+  "CAD board via end layer name."
+  endLayerName: String
+  "CAD board via hole diameter."
+  holeDiameter: Int!
+  "CAD board hole location."
+  location: DesCadPoint!
+  "CAD board via start layer name."
+  startLayerName: String
+}
+
+"Information about a transformation of the CAD board."
+type DesCadBodyTransformation {
+  "The rotation around the X axis in degrees."
+  rotationX: Float!
+  "The rotation around the Y axis in degrees."
+  rotationY: Float!
+  "The rotation around the Z axis in degrees."
+  rotationZ: Float!
+  "The scaling factor along the X axis."
+  scaleX: Float!
+  "The scaling factor along the Y axis."
+  scaleY: Float!
+  "The scaling factor along the Z axis."
+  scaleZ: Float!
+  "The translation along the X axis."
+  translationX: Float!
+  "The translation along the Y axis."
+  translationY: Float!
+  "The translation along the Z axis."
+  translationZ: Float!
+}
+
+"Information about the body shape of a CAD board component."
+type DesCadComponentBodyShape {
+  "CAD component body height."
+  height: Int!
+  "True if CAD component is bodyless on ECAD."
+  isBodylessOnEcad: Boolean!
+  "True if CAD component body is hidden."
+  isHidden: Boolean!
+  "CAD component model data."
+  modelData: DesCadBoard3DBodyModelData
+  "JSON serialized *GeometricShape*."
+  shapeJson: String
+}
+
+"Information about a variation of a CAD board component."
+type DesCadComponentVariation {
+  "CAD component type identifier."
+  componentTypeId: String
+  "CAD component variation designator."
+  designator: String
+  "CAD component variation location."
+  location: DesCadPoint!
+  "In case the component contains a single 3D body, the body's position relative to the component's origin point is stored here."
+  modelInComponentTransform: DesCadBodyTransformation
+  "CAD component variation placement."
+  placement: DesCadBoardComponentPlacement!
+  "CAD component variation rotation."
+  rotation: Float!
+  "CAD component variant kind."
+  variantKind: DesCadComponentVariationKind!
+}
+
+"Information about a CAD design file."
+type DesCadDesign {
+  "CAD design board areas."
+  boardAreas: [DesCadBoardArea!]
+  "CAD design board bending lines."
+  boardBendingLines: [DesCadBendingLine!]
+  "CAD design board color."
+  boardColor: Long!
+  "CAD design board core color."
+  boardCoreColor: Long
+  "CAD design board core opacity."
+  boardCoreOpacity: Float
+  "CAD design board layers."
+  boardLayers: [DesCadBoardLayer!]
+  "CAD design board offset MCAD to ECAD origin."
+  boardOffsetMcadToEcadOrigin: DesCadPoint!
+  "CAD design board origin."
+  boardOrigin: DesCadPoint!
+  "JSON serialized *ComplexShape*."
+  boardOutlineJson: String
+  "CAD design board regions."
+  boardRegions: [DesCadBoardRegion!]
+  "CAD design board split lines."
+  boardSplitLines: [DesCadSplitLine!]
+  "CAD design board thickness."
+  boardThickness: Int!
+  "CAD design collaboration flags."
+  collaborationFlags: [DesCadBoardCollaborationFlag!]!
+  "CAD design component types."
+  componentTypes: [DesCadBoardComponentType!]
+  "CAD design coordinates system translation."
+  coordinateSystemTranslation: DesCadPoint!
+  "CAD design copper export features."
+  copperExportFeatures: [DesCadBoardCopperExportFeature!]!
+  "CAD design copper layers."
+  copperLayers: [DesCadBoardCopperLayer!]
+  "CAD design copper regions."
+  copperRegions: [DesCadBoardCopperRegion!]
+  "CAD design cutouts."
+  cutouts: [DesCadBoardCutout!]
+  "CAD design file name."
+  designFileName: String
+  "CAD design variant identifier."
+  designVariantId: String
+  "CAD design variant name."
+  designVariantName: String
+  "True if CAD design has hatched copper polygons."
+  hasHatchedCopperPolygons: Boolean!
+  "CAD design holes."
+  holes: [DesCadBoardHole!]
+  "True if CAD design is a RF20 design."
+  isRF20Design: Boolean!
+  "Mode of export for CAD design."
+  layersExportMode: DesCadLayersExportMode!
+  "CAD design messages."
+  messages: [String!]
+  "CAD design minimal height of the components shown."
+  minimalHeightComponentsShown: Int!
+  "CAD design properties."
+  properties: [DesCadProperty!]
+  "CAD design tracks."
+  tracks: [DesCadBoardTrack!]
+  "CAD design variants."
+  variants: DesCadBoardVariants
+  "CAD design vias."
+  vias: [DesCadBoardVia!]
+  "CAD design workflow state."
+  workflowState: DesCadWorkflowState!
+}
+
+"Information about a CAD board point."
+type DesCadPoint {
+  "CAD point coordinate (X)."
+  x: Int!
+  "CAD point coordinate (Y)."
+  y: Int!
+  "CAD point coordinate (Z)."
+  z: Int!
+}
+
+"Information about a property in CAD."
+type DesCadProperty {
+  "CAD property name."
+  name: String!
+  "CAD property value."
+  value: String
+}
+
+"Information about a CAD split line."
+type DesCadSplitLine {
+  "Line ending point."
+  endPoint: DesCadPoint!
+  "CAD split line region name (left)."
+  leftRegionName: String
+  "CAD split line region name (right)."
+  rightRegionName: String
+  "JSON serialized *ComplexShape*."
+  shapeJson: String
+  "Line starting point."
+  startPoint: DesCadPoint!
+}
+
+"ECAD, MCAD or ESD revision data."
+type DesCollaborationRevision {
+  "Revision comment."
+  comment: String!
+  "Creation time."
+  createdAt: DateTime!
+  "The user who created this revision."
+  createdBy: DesUser!
+  "*PROTOTYPE, SUBJECT TO CHANGE*"
+  design: DesCadDesign
+  "Revision download data."
+  downloadableFile: DesDownloadableFile!
+}
+
+"A connection to a list of items."
+type DesCollaborationRevisionConnection {
+  "A list of edges."
+  edges: [DesCollaborationRevisionEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesCollaborationRevision!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesCollaborationRevisionEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesCollaborationRevision!
+}
+
+"*PROTOTYPE, SUBJECT TO CHANGE*"
+type DesCollaborationSimulationFile {
+  "The file download URL."
+  downloadUrl: String!
+  "The file type."
+  fileTypeName: String!
+}
+
+"*PROTOTYPE, SUBJECT TO CHANGE*"
+type DesCollaborationSimulationRevision {
+  "The date and time when the simulation revision was created."
+  createdAt: DateTime!
+  "The user who created the simulation revision."
+  createdBy: DesUser!
+  "The files associated with the simulation revision."
+  files: [DesCollaborationSimulationFile!]!
+  "The metadata associated with the simulation revision."
+  metadata: String!
+}
+
+"A connection to a list of items."
+type DesCollaborationSimulationRevisionConnection {
+  "A list of edges."
+  edges: [DesCollaborationSimulationRevisionEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesCollaborationSimulationRevision!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesCollaborationSimulationRevisionEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesCollaborationSimulationRevision!
+}
+
+"Information in HEX and RGB for the color of an item."
+type DesColor {
+  "Color value (HEX)."
+  hexString: String!
+  "Color value (RGB)."
+  rgbString: String!
+}
+
+type DesComparisonRunPayload {
+  comparisonUrl: String!
+}
+
+"A design manages all of the schematic, PCB, and BOM content for a project."
+type DesDesign {
+  "The list of published versions of the design grouped into pages."
+  releases(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesReleaseFilterInput
+  ): DesReleaseConnection
+  "The list of variants contained in your work in progress (WIP) in this design."
+  variants(where: DesWipVariantFilterInput): [DesWipVariant!]!
+  workInProgress: DesWorkInProgress! @deprecated(reason: "Use `variants` instead.")
+}
+
+"Design exchange models and downloads."
+type DesDesignExchange {
+  "Design exchange downloadable files."
+  downloadableFile: DesDownloadableFile!
+  "Design exchange 3D models."
+  models3D: [DesModel3D!]!
+}
+
+"A design item is a specific instance of a part used in the design."
+type DesDesignItem {
+  area: DesRectangle @deprecated(reason: "Use `boundingBox`.")
+  "The axis-aligned bounding box."
+  boundingBox: DesRectangle
+  "The additional information for this design item."
+  comment: String!
+  "The list of all comment threads related to this design item."
+  commentThreads: [DesCommentThread!]
+  "The detailed component information for this design item."
+  component: DesComponent
+  "The summary of function or other performance details for this design item."
+  description: String!
+  "The unique label for this design item."
+  designator: String!
+  "Design area footprint name."
+  footprintName: String!
+  "The layer(side) placement for this design item."
+  layer: DesLayer
+  "*PROTOTYPE, SUBJECT TO CHANGE*"
+  mesh3D: DesMesh3D
+  "The list of connection targets for this design item."
+  pads: [DesPad!]!
+  "The list of parameters describing the design item."
+  parameters: [DesDesignItemParameter!]!
+  "The PCB identifier."
+  pcbId: String
+  "The planar location for this design item."
+  position: DesPosition2D!
+  "The rotation in degrees."
+  rotation: Decimal
+  "The schematic identifier."
+  schId: String
+  "The list of conductor segments for this design item."
+  tracks(where: DesTrackFilterInput): [DesTrack!]!
+  "The list of multiple layer connections for this design item."
+  vias: [DesVia!]!
+}
+
+"A connection to a list of items."
+type DesDesignItemConnection {
+  "A list of edges."
+  edges: [DesDesignItemEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesDesignItem!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesDesignItemEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesDesignItem!
+}
+
+"A parameter describing the design item."
+type DesDesignItemParameter {
+  "Parameter name."
+  name: String!
+  "Parameter value."
+  value: String!
+}
+
+"Information and URL for a downloadable file."
+type DesDownloadableFile {
+  "Download URL for file."
+  downloadUrl: String!
+  "Downloadable file name."
+  fileName: String!
+  "Downloadable file relative path."
+  relativePath: String!
+}
+
+"A folder of downloadable files."
+type DesDownloadableFolder {
+  "Download URL for the whole folder."
+  downloadUrl: String!
+  "Downloadable files of this folder."
+  files: [DesDownloadableFile!]!
+  "The folder relative path."
+  relativePath: String!
+}
+
+"Gerber information. Gerber files store the shape and location data for all the elements on the PCB layout."
+type DesGerber {
+  "Package download URL."
+  downloadUrl: String
+  "Gerber files."
+  gerberFiles: [DesDownloadableFile!]!
+  "Package name."
+  packageName: String
+}
+
+"Gerber X2 information. Gerber X2 files store the shape and location data for all the elements on the PCB layout."
+type DesGerberX2 {
+  "Package download URL."
+  downloadUrl: String
+  "Gerber X2 files."
+  gerberX2Files: [DesDownloadableFile!]!
+  "Package name."
+  packageName: String
+}
+
+"IPC 2581 information. IPC 2581 files hold manufacturing data."
+type DesIpc2581 {
+  "Package download URL."
+  downloadUrl: String
+  "IPC 2581 files."
+  ipc2581Files: [DesDownloadableFile!]!
+  "Package name."
+  packageName: String
+}
+
+"Information about a specific layer in the PCB."
+type DesLayer {
+  copperArea: DesArea @deprecated(reason: "No longer used - always returns null.")
+  copperRatio: Decimal @deprecated(reason: "No longer used - always returns null.")
+  "Layer copper weight."
+  copperWeight: DesWeight
+  "Layer dielectric constant."
+  dielectricConstant: Decimal
+  "Layer properties."
+  layerProperties: [DesLayerProperty!]!
+  "Layer type."
+  layerType: DesLayerType!
+  "Layer material."
+  material: String
+  "Layer name."
+  name: String!
+  "Layer nets."
+  nets: [DesNet!]!
+  "Layer thickness."
+  thickness: DesSize
+}
+
+"A property describing a layer."
+type DesLayerProperty {
+  "Layer property name."
+  name: String!
+  "Layer property size."
+  size: DesSize
+  "Layer property text."
+  text: String!
+}
+
+"Information about the manufacture package."
+type DesManufacturePackage {
+  "Manufacture package download URL."
+  downloadUrl: String!
+  "Manufacture package reference identifier."
+  manufacturePackageId: String!
+  "Manufacture package name."
+  name: String!
+}
+
+"3D mesh information."
+type DesMesh3D {
+  "The downloadable file for the 3D mesh."
+  glbFile: DesDownloadableFile
+}
+
+"3D model information."
+type DesModel3D {
+  "The downloadable 3D model Parasolid file."
+  parasolidFile: DesDownloadableFile
+}
+
+"NC Drill file information."
+type DesNcDrill {
+  "Package download URL."
+  downloadUrl: String
+  "NC Drill files."
+  ncDrillFiles: [DesDownloadableFile!]!
+  "Package name."
+  packageName: String
+}
+
+"Net information."
+type DesNet {
+  "Net cumulative length."
+  cumulativeLength: DesSize!
+  "The layers associated with this net."
+  layers: [DesLayer!]!
+  "Net name."
+  name: String!
+  "The pads associated with this net."
+  pads: [DesPad!]!
+  "The tracks associated with this net."
+  tracks(where: DesTrackFilterInput): [DesTrack!]!
+  "The vias associated with this net."
+  vias: [DesVia!]!
+}
+
+"ODB file information."
+type DesOdb {
+  "Package download URL."
+  downloadUrl: String
+  "ODB files."
+  odbFiles: [DesDownloadableFile!]!
+  "Package name."
+  packageName: String
+}
+
+"Pad information."
+type DesPad {
+  "The designator associated with this pad."
+  designator: String
+  "The global designator associated with this pad."
+  globalDesignator: String
+  "The hole size of this pad."
+  holeSize: DesSize!
+  "The plated status of this pad."
+  isPlated: Boolean
+  "The layer associated with this pad."
+  layer: DesLayer
+  "The net associated with this pad."
+  net: DesNet
+  "The type of this pad."
+  padType: DesPadType!
+  "The position of this pad."
+  position: DesPosition2D!
+  "The radius of this pad."
+  radius: Int
+  "The rotation of this pad."
+  rotation: Decimal
+  "The shape of this pad."
+  shape: DesPrimitiveShape
+  "The size of this pad."
+  size: DesSize2D!
+}
+
+"A PCB contains design details of the physical product."
+type DesPcb {
+  "The total area contained by the PCB outline."
+  area: DesArea!
+  "The list of all comment threads related to this PCB."
+  commentThreads: [DesCommentThread!]!
+  "PCB items, instances of `DesComponent`, returned by pages."
+  designItems(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "**DEPRECATED** Use `where: {designator: {in: ...}}`."
+    designators: [String!]
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesDesignItemFilterInput
+  ): DesDesignItemConnection
+  "The reference identifier for this PCB."
+  documentId: String!
+  "The document file name."
+  documentName: String!
+  "The details of the layer structure of this PCB."
+  layerStack: DesStackup
+  "*PROTOTYPE, SUBJECT TO CHANGE*"
+  mesh3D: DesMesh3D
+  "The list of all electrically connected regions in this PCB."
+  nets(
+    "An optional array of names to search."
+    names: [String!]
+  ): [DesNet!]!
+  "The location of the coordinate system origin."
+  origin: DesPosition2D!
+  "The outline of this PCB."
+  outline: DesPolygon!
+  "The list of all part connection targets in this PCB."
+  pads: [DesPad!]!
+  "The dimensions of the PCB outline."
+  size: DesSize2D!
+  "The list of all conductor segments in this PCB."
+  tracks(where: DesTrackFilterInput): [DesTrack!]!
+  "The list of all multiple layer connections in this PCB."
+  vias: [DesVia!]!
+}
+
+"PCB assembly information and URLs to download files."
+type DesPcbAssembly {
+  assemblyDrawings: DesAssemblyDrawings! @deprecated(reason: "Use `folders`.")
+  "Download URL."
+  downloadUrl: String!
+  "Downloadable folders."
+  folders: [DesDownloadableFolder!]!
+  "Life cycle state name."
+  lifeCycleStateName: String!
+  "The name of the PCB assembly package."
+  packageName: String!
+  pickAndPlace: DesPickAndPlace! @deprecated(reason: "Use `folders`.")
+  "Version."
+  version: String!
+}
+
+"PCB fabrication information and URLs to download files."
+type DesPcbFabrication {
+  "Download URL."
+  downloadUrl: String!
+  "Downloadable folders."
+  folders: [DesDownloadableFolder!]!
+  gerber: DesGerber! @deprecated(reason: "Use `folders`.")
+  gerberX2: DesGerberX2! @deprecated(reason: "Use `folders`.")
+  ipc2581: DesIpc2581! @deprecated(reason: "Use `folders`.")
+  "Life cycle state name."
+  lifeCycleStateName: String!
+  ncDrill: DesNcDrill! @deprecated(reason: "Use `folders`.")
+  odb: DesOdb! @deprecated(reason: "Use `folders`.")
+  "The name of the PCB fabrication package."
+  packageName: String!
+  testPoints: DesTestPoints! @deprecated(reason: "Use `folders`.")
+  "Version."
+  version: String!
+}
+
+"PCB Pick and Place files and download URL."
+type DesPickAndPlace {
+  "Package download URL."
+  downloadUrl: String
+  "Package name."
+  packageName: String
+  "Pick and Place files."
+  pickAndPlaceFiles: [DesDownloadableFile!]!
+}
+
+"Pin properties."
+type DesPin {
+  "Description of pin."
+  description: String!
+  "The numerical identifier of the pin."
+  designator: String!
+  "Electrical type of the pin."
+  electricalType: DesPinElectricalType!
+  "Returns `true` if the pin is hidden."
+  isHidden: Boolean!
+  "Pin display name. By default, a newly placed pin will be named using the designator value."
+  name: String!
+}
+
+"Polygon properties."
+type DesPolygon {
+  "Vertices of polygon."
+  vertices: [DesPosition2D!]!
+}
+
+"2D positional information in mm and mils."
+type DesPosition2D {
+  "Positional coordinate (X)."
+  x: Int!
+  "X in mils. Mils are one thousandth of an inch."
+  xMils: Decimal!
+  "X in mm."
+  xMm: Decimal!
+  "Positional coordinate (Y)."
+  y: Int!
+  "Y in mils. Mils are one thousandth of an inch."
+  yMils: Decimal!
+  "Y in mm."
+  yMm: Decimal!
+}
+
+"A project manages all development stages of the PCB/PCA product lifecycle."
+type DesProject implements Node {
+  "The latest ECAD, MCAD or ESD revision. See also `desProjectCollaborationLatestRevision`."
+  collaborationLatestRevision(
+    "The collaboration domain to get the latest revision for."
+    domain: DesCollaborationDomain!
+  ): DesCollaborationRevision
+  "ECAD, MCAD or ESD revisions returned by pages. See also `desProjectCollaborationRevisions`."
+  collaborationRevisions(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "The collaboration domain to get the revisions for."
+    domain: DesCollaborationDomain!
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): DesCollaborationRevisionConnection
+  "The `DateTime` when this project was created."
+  createdAt: DateTime!
+  "The account information for who created this project."
+  createdBy: DesUser!
+  "The summary of this project content or purpose."
+  description: String
+  "The detailed design information for this project."
+  design: DesDesign!
+  "The node identifier for this project (used by `desProjectById`)."
+  id: ID!
+  "Gets current scaffolding status."
+  isScaffolding: Boolean!
+  "The latest VCS revision. May be null, see GraphQL errors."
+  latestRevision: DesVcsRevision
+  "The assigned name for this project."
+  name: String
+  "Hardware project's owner."
+  owner: DesWorkspaceUser
+  "The list of the parameters describing this project."
+  parameters(
+    "An optional list of parameter names to search."
+    names: [String!]
+  ): [DesProjectParameter!]!
+  "The web address to download a preview image for this project."
+  previewUrl(
+    "Tells to get a direct link to the preview image."
+    isDirectLink: Boolean! = false
+  ): String!
+  "The reference identifier for this project."
+  projectId: String!
+  "The list of project permissions."
+  projectPermissions: [DesProjectPermission!]!
+  "The project type."
+  projectType: DesProjectType!
+  "Whether the Git repository is hosted inside or outside Altium 365. Null when the project has no VCS repository, or when the repository lookup fails (in which case see GraphQL errors)."
+  repositoryType: DesProjectRepositoryType
+  "The Git remote URL for the repository. Treat it as an opaque value — request it from the API and use it as-is."
+  repositoryUrl: String
+  "The requirements block identifier."
+  requirementsBlockId: String
+  "The list of VCS revisions."
+  revisions(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): DesVcsRevisionConnection
+  "The list of project tasks. For a particular project consider using the more effective query `desProjectTasks`."
+  tasks: [DesTask!]!
+  "The `DateTime` when this project was last modified."
+  updatedAt: DateTime!
+  "The account information for who last modified this project."
+  updatedBy: DesUser!
+  "The Altium 365 web address."
+  url: String!
+  "The number of design variants."
+  variantCount: Int!
+  "The list of workflows associated with this project."
+  workflows(
+    "An option to search workflows that have been completed."
+    isClosed: Boolean! = false
+    "An option to search workflows that have been modified after a specific `DateTime`."
+    modifiedAfter: DateTime
+    where: DesWorkflowFilterInput
+    "Filter workflows by a variable."
+    withVariable: DesWorkflowFilterByVariableInput
+  ): [DesWorkflow!]
+  "The Altium 365 workspace URL."
+  workspaceUrl: String!
+}
+
+"A connection to a list of items."
+type DesProjectConnection {
+  "A list of edges."
+  edges: [DesProjectEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesProject!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesProjectEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesProject!
+}
+
+"""
+Represents a project guest (a user who is not registered to the workspace but has explicit share to one or more
+items in the workspace).
+"""
+type DesProjectGuest {
+  "A composition of the first name and last name."
+  displayName: String!
+  "Email of the user."
+  email: String!
+  "The first name of the user."
+  firstName: String!
+  "The global user identifier."
+  globalUserId: String!
+  """
+  Specifies whether the user is active within any of the workspaces. Null if the information is unavailable
+  (e.g. the requester does not belong to the user's organization).
+  """
+  isOnline: Boolean
+  "The last name of the user."
+  lastName: String!
+  "A URL for a picture of this user."
+  profilePicture(size: DesWorkspaceUserProfilePictureSize! = SIZE48X48): URL
+}
+
+"A connection to a list of items."
+type DesProjectGuestConnection {
+  "A list of edges."
+  edges: [DesProjectGuestEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesProjectGuest!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesProjectGuestEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesProjectGuest!
+}
+
+"Payload associated with project node identifier."
+type DesProjectIdPayload {
+  "The project identifier."
+  id: ID!
+}
+
+"A parameter describing the project."
+type DesProjectParameter {
+  "Parameter name."
+  name: String!
+  "Parameter value."
+  value: String!
+}
+
+"A permission associated with the project."
+type DesProjectPermission {
+  "Tells if this permission allows creation of objects within the associated project."
+  canCreate: Boolean!
+  "Tells if this permission allows deletion of the associated project."
+  canDelete: Boolean!
+  "Tells if this permission allows editing the associated project."
+  canEdit: Boolean!
+  "Tells if this permission allows reading of the associated project."
+  canRead: Boolean!
+  "The `DesUserGroup` this permission is associated with."
+  group: DesUserGroup
+  "The name of this project permission."
+  name: String!
+  "The permission scope to differentiate different permission types."
+  scope: DesPermissionScope!
+  "The user this project permission is associated with."
+  user: DesUser
+}
+
+"Rectangle positional information."
+type DesRectangle {
+  "Rectangle corner point 1."
+  pos1: DesPosition2D!
+  "Rectangle corner point 2."
+  pos2: DesPosition2D!
+}
+
+"A release is a published version of a design with additional generated files for manufacturing."
+type DesRelease implements Node {
+  "The `DateTime` when this release was created."
+  createdAt: DateTime!
+  "The summary of this release content or purpose."
+  description: String!
+  "The identifier for this release (used by `desReleaseById`)."
+  id: ID!
+  "Not implemented."
+  manufacturePackages: [DesManufacturePackage!]! @deprecated(reason: "Not implemented. Will soon be removed.")
+  "The reference identifier for this release."
+  releaseId: String!
+  "The list of variants contained in this release."
+  variants(where: DesReleaseVariantFilterInput): [DesReleaseVariant!]!
+}
+
+"A connection to a list of items."
+type DesReleaseConnection {
+  "A list of edges."
+  edges: [DesReleaseEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesRelease!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesReleaseEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesRelease!
+}
+
+"A variant contains a specific configuration of a base design."
+type DesReleaseVariant {
+  "The Bill of Materials (BOM) for this published design variant."
+  bom: DesBom
+  "The project release package."
+  downloadUrl: String!
+  "The descriptive label for this design variant."
+  name: String!
+  "The PCB document for this design variant."
+  pcb: DesPcb
+  "The data needed for assembly of this published design variant."
+  pcbAssembly: DesPcbAssembly
+  "The data needed for fabrication of this published design variant."
+  pcbFabrication: DesPcbFabrication
+  releaseId: ID! @deprecated(reason: "This is temporary to illustrate project release identifier as GRID`.")
+  "The list of schematic documents for this design variant."
+  schematics(where: DesSchematicFilterInput): [DesSchematic!]!
+}
+
+"A schematic contains the design parts and logical connections."
+type DesSchematic {
+  "The list of all comment threads related to this schematic."
+  commentThreads: [DesCommentThread!]!
+  "The list of all part instances used in this schematic grouped into pages."
+  designItems(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesDesignItemFilterInput
+  ): DesDesignItemConnection
+  "The reference identifier for this schematic."
+  documentId: String!
+  "The document file name."
+  documentName: String!
+}
+
+"Payload for setting the requirements block of a project."
+type DesSetProjectRequirementsBlockPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Projects and manufacture packages shared with user."
+type DesSharedWithMe {
+  "Manufacture packages shared with user."
+  manufacturePackages: [DesManufacturePackage!]!
+  "Projects shared with user."
+  projects(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesSharedWithMeProjectInfoFilterInput
+  ): DesSharedWithMeProjectInfoConnection
+}
+
+"Information about a project that is shared with the user."
+type DesSharedWithMeProjectInfo {
+  "The project description."
+  description: String!
+  "The project name."
+  name: String!
+  "The project or null if its workspace is deleted. Avoid this field on getting many projects at once. Consider using `projectId` and `desProjectById`."
+  project: DesProject
+  "The project node identifier. Use it for getting the project by `desProjectById`."
+  projectId: ID!
+}
+
+"A connection to a list of items."
+type DesSharedWithMeProjectInfoConnection {
+  "A list of edges."
+  edges: [DesSharedWithMeProjectInfoEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesSharedWithMeProjectInfo!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesSharedWithMeProjectInfoEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesSharedWithMeProjectInfo!
+}
+
+"Size in mm and mils."
+type DesSize {
+  "X value."
+  x: Decimal!
+  "Size in mils. Mils are one thousandth of an inch."
+  xMils: Decimal!
+  "Size in mm."
+  xMm: Decimal!
+}
+
+"2D size in mm and mils."
+type DesSize2D {
+  "X value."
+  x: Int!
+  "X value in mils. Mils are one thousandth of an inch."
+  xMils: Decimal!
+  "X value in mm."
+  xMm: Decimal!
+  "Y value."
+  y: Int!
+  "Y value in mils. Mils are one thousandth of an inch."
+  yMils: Decimal!
+  "Y value in mm."
+  yMm: Decimal!
+}
+
+"Information about layer stack."
+type DesStack {
+  "Layers in the stack."
+  layers: [DesLayer!]!
+  "The name of the stack."
+  name: String!
+}
+
+"Layer stackup properties and definition."
+type DesStackup {
+  "Layer types in stackup."
+  layerTypes: [DesLayerType!]!
+  "Roughness factor, characterizing the expected maximal increase in conductor losses due to the roughness effect. Default is 2."
+  roughnessFactorRF: String!
+  "Value of the surface roughness."
+  roughnessFactorSR: String!
+  "Shows roughness of conductive layers."
+  roughnessType: String!
+  "Substacks that make a stackup."
+  stacks: [DesStack!]!
+  "Type of stackup."
+  stackupType: String!
+}
+
+"System diagram information."
+type DesSystemDiagram {
+  "The downloadable file for the system diagram."
+  systemDiagramFile: DesDownloadableFile
+}
+
+"Information for test points for PCB fabrication."
+type DesTestPoints {
+  "Package download URL."
+  downloadUrl: String
+  "Package name."
+  packageName: String
+  "File information for test point files."
+  testPointFiles: [DesDownloadableFile!]!
+}
+
+"PCB design track information."
+type DesTrack {
+  "Positional information about the track start point."
+  begin: DesPosition2D!
+  "Positional information about the track end point."
+  end: DesPosition2D!
+  "Layer associated with the track."
+  layer: DesLayer
+  "Net associated with the track."
+  net: DesNet
+  "Width of track."
+  width: DesSize!
+}
+
+"Payload associated with updating project owner."
+type DesUpdateProjectOwnerPayload {
+  "Project identifier."
+  projectId: ID!
+}
+
+"Payload associated with updating project parameters."
+type DesUpdateProjectParametersPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Project identifier."
+  projectId: ID!
+}
+
+"Payload associated with updating project permissions."
+type DesUpdateProjectPermissionsPayload {
+  "Project identifier."
+  projectId: ID!
+}
+
+"Payload associated with uploading collaboration."
+type DesUploadCollaborationPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with uploading collaboration simulation."
+type DesUploadCollaborationSimulationPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with uploading project."
+type DesUploadProjectPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "The unique project identifier."
+  projectId: ID!
+}
+
+"VCS revision/commit information."
+type DesVcsRevision {
+  "User that created the VCS revision."
+  author: String!
+  "`DateTime` when VCS revision was created."
+  createdAt: DateTime!
+  "VCS revision files."
+  files: [DesVcsRevisionFileChange!]!
+  "VCS revision message."
+  message: String!
+  "VCS revision identifier."
+  revisionId: String!
+}
+
+"A connection to a list of items."
+type DesVcsRevisionConnection {
+  "A list of edges."
+  edges: [DesVcsRevisionEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesVcsRevision!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesVcsRevisionEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesVcsRevision!
+}
+
+"Describes the file affected by a VCS revision."
+type DesVcsRevisionFileChange {
+  "VCS revision file change kind."
+  kind: DesVcsChangeKind!
+  "VCS revision file path."
+  path: String!
+}
+
+"PCB design via information."
+type DesVia {
+  "Layer information about the via start point."
+  beginLayer: DesLayer
+  "Positional information about the via end point."
+  endLayer: DesLayer
+  "Via hole diameter."
+  holeDiameter: DesSize!
+  "Layer associated with via."
+  layer: DesLayer
+  "Name of via."
+  name: String
+  "Net associated with via."
+  net: DesNet
+  "Via pad diameter."
+  padDiameter: DesSize!
+  "Positional information about the via."
+  position: DesPosition2D!
+  "Via shape."
+  shape: DesPrimitiveShape
+}
+
+"Weight in grams and ounces."
+type DesWeight {
+  "The weight value in grams."
+  gram: Decimal!
+  "The weight value in ounces."
+  ounce: Decimal!
+  "The weight value in the base unit."
+  x: Decimal!
+}
+
+"A variant contains a specific configuration of a base design."
+type DesWipVariant {
+  "The Bill of Materials (BOM) for this design variant."
+  bom: DesBom
+  "The design exchange information."
+  designExchange: DesDesignExchange
+  "The descriptive label for this design variant."
+  name: String!
+  "The PCB document for this design variant."
+  pcb: DesPcb
+  projectId: ID! @deprecated(reason: "This is temporary to illustrate project identifier as GRID`.")
+  "The list of schematic documents for this design variant."
+  schematics(where: DesSchematicFilterInput): [DesSchematic!]!
+  "The system diagram for this design variant."
+  systemDiagram: DesSystemDiagram
+}
+
+"The most recent version of a design."
+type DesWorkInProgress {
+  "The list of variants contained in your work in progress (WIP) in this design."
+  variants(where: DesWipVariantFilterInput): [DesWipVariant!]!
+}
+
+"**Experimental** Represents the result of a single ERC check."
+type DesignDataCombinedErcCheckResult @experimental {
+  "**Experimental** The custom rule check, when the result originates from a custom check."
+  customRuleCheck: RuleCheckExecutionPart
+  "**Experimental** The name of the ERC check."
+  name: String!
+  "**Experimental** The source of the ERC check result. Known values: CUSTOM, DEFAULT. New values may be added; clients must tolerate unknown values."
+  origin: String!
+  "**Experimental** The outcome of the ERC check. Known values: PASSED, SKIPPED, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values."
+  outcome: String
+  "**Experimental** The type of the ERC check."
+  ruleCheckType: String!
+  "**Experimental** The violations reported by the ERC check."
+  violations: [RuleViolation!]!
+}
+
+"**Experimental** Represents the combined custom and default ERC results for a design revision."
+type DesignDataCombinedErcExecution @experimental {
+  "**Experimental** The identifier of the design associated with the ERC results."
+  designId: ID!
+  "**Experimental** The combined ERC check results."
+  results: [DesignDataCombinedErcCheckResult!]!
+  "**Experimental** The revision identifier associated with the ERC results."
+  revisionId: String!
+  "**Experimental** The current execution status of the combined ERC results. Known values: PENDING, RUNNING, COMPLETED, FAILED, SKIPPED. New values may be added; clients must tolerate unknown values."
+  status: String!
+}
+
+"**Experimental** Represents a parameter associated with a component."
+type DesignDataComponentParameter_Preview @experimental {
+  "**Experimental** The name of the parameter."
+  name: String
+  "**Experimental** The value of the parameter."
+  value: String
+}
+
+"**Experimental** Represents a component in the design."
+type DesignDataComponent_Preview @experimental {
+  "**Experimental** The bounding rectangle of the component."
+  boundingRectangle: DesignDataRectangle_Preview
+  "**Experimental** The comment associated with the component."
+  comment: String
+  "**Experimental** The type of the component."
+  componentType: String
+  "**Experimental** The description of the component."
+  description: String
+  "**Experimental** The unique identifier of the component within the design."
+  designComponentId: String
+  "**Experimental** The identifier of the document containing the component."
+  documentId: String
+  "**Experimental** The footprint of the component."
+  footprint: String
+  "**Experimental** The hierarchy path of the component."
+  hierarchyPath: String
+  "**Experimental** The identifier of the library component."
+  libraryComponentId: ID
+  "**Experimental** The location of the component."
+  location: DesignDataLocation_Preview
+  "**Experimental** The logical designator of the component."
+  logicalDesignator: String
+  "**Experimental** The parameters associated with the component."
+  parameters: [DesignDataComponentParameter_Preview!]!
+  "**Experimental** The parts that make up this component."
+  parts: [DesignDataPart_Preview!]!
+  "**Experimental** The physical designator of the component."
+  physicalDesignator: String
+  "**Experimental** The tag types of the component."
+  tagTypes: [String!] @deprecated(reason: "Use componentType instead.")
+  "**Experimental** The unique identifier of the component."
+  uniqueId: String @deprecated(reason: "Use designComponentId instead.")
+  "**Experimental** The variant identifier of the component."
+  variantId: String
+  "**Experimental** The variant name of the component."
+  variantName: String
+}
+
+"**Experimental** Represents the configuration settings for a design."
+type DesignDataConfiguration_Preview @experimental {
+  "**Experimental** The custom check configurations defined for the design."
+  customChecks: [DesignDataCustomCheckConfigurationItem_Preview!]!
+}
+
+"**Experimental** Represents a custom check configuration item in the design."
+type DesignDataCustomCheckConfigurationItem_Preview @experimental {
+  "**Experimental** The identifier of the custom check."
+  customCheckId: String!
+  "**Experimental** The error level at which violations of this check are reported. Known values: NO_REPORT, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values."
+  errorReportLevel: String!
+  "**Experimental** The name of the custom check."
+  name: String!
+}
+
+"**Experimental** Represents a differential pair and its associated positive and negative nets."
+type DesignDataDifferentialPair_Preview @experimental {
+  "**Experimental** The name of the negative net in the differential pair."
+  negativeNet: String
+  "**Experimental** The name of the positive net in the differential pair."
+  positiveNet: String
+}
+
+"**Experimental** Represents a design data generation process and its result."
+type DesignDataGeneration @experimental {
+  "**Experimental** Design data generated from the design."
+  designData_Preview: DesignData_Preview
+  "**Experimental** The identifier of the design for which the design data is or was generated."
+  designId: ID
+  "**Experimental** Error message if the generation failed."
+  message: String
+  "**Experimental** Revision of the source design, locally unique."
+  revisionId: String
+  "**Experimental** Status of the design data generation. Known values: PENDING, IN_PROGRESS, COMPLETED, FAILED, SKIPPED. New values may be added; clients must tolerate unknown values."
+  status: String!
+  "**Experimental** The identifier of the upload, when generation is for a custom uploaded design."
+  uploadId: String
+}
+
+"**Experimental**"
+type DesignDataGeneration_Preview @experimental {
+  "**Experimental**"
+  designData: DesignData_Preview
+  "**Experimental**"
+  designId: ID
+  "**Experimental**"
+  message: String
+  "**Experimental**"
+  revisionId: String
+  "**Experimental**"
+  status: String!
+  "**Experimental**"
+  uploadId: String
+}
+
+"**Experimental** Represents a line segment in the design."
+type DesignDataLine_Preview @experimental {
+  "**Experimental** The bounding rectangle of the line."
+  boundingRectangle: DesignDataRectangle_Preview
+  "**Experimental** The identifier of the document containing this line."
+  documentId: String
+  "**Experimental** The location of the line."
+  location: DesignDataLocation_Preview
+  "**Experimental** The unique identifier of the line."
+  uniqueId: String
+}
+
+"**Experimental** Represents a 2D coordinate location."
+type DesignDataLocation_Preview @experimental {
+  "**Experimental** The X coordinate."
+  x: Int!
+  "**Experimental** The Y coordinate."
+  y: Int!
+}
+
+"**Experimental** Represents an item belonging to a net."
+type DesignDataNetItem_Preview @experimental {
+  "**Experimental** The bounding rectangle of the net item."
+  boundingRectangle: DesignDataRectangle_Preview
+  "**Experimental** The identifier of the document containing this net item."
+  documentId: String
+  "**Experimental** The kind of the object."
+  kind: String
+  "**Experimental** The location of the net item."
+  location: DesignDataLocation_Preview
+  "**Experimental** The port name associated with this net item."
+  portName: String
+  "**Experimental** The unique identifier of the net item."
+  uniqueId: String
+  "**Experimental** The variant identifier of the net item."
+  variantId: String
+  "**Experimental** The variant name of the net item."
+  variantName: String
+}
+
+"**Experimental** Represents a parameter associated with a net."
+type DesignDataNetParameter_Preview @experimental {
+  "**Experimental** The name of the parameter."
+  name: String
+  "**Experimental** The value of the parameter."
+  value: String
+}
+
+"**Experimental** Represents a net (electrical connection) in the design."
+type DesignDataNet_Preview @experimental {
+  "**Experimental** The bounding rectangle of the net."
+  boundingRectangle: DesignDataRectangle_Preview
+  "**Experimental** The calculated net name."
+  calculatedNetName: String
+  "**Experimental** The color value associated with the net."
+  color: Int!
+  "**Experimental** Indicates whether the net is part of a differential pair."
+  diffPair: DesignDataDifferentialPair_Preview
+  "**Experimental** The lines that form the net."
+  lines: [DesignDataLine_Preview!]!
+  "**Experimental** The location of the net."
+  location: DesignDataLocation_Preview
+  "**Experimental** The name of the net."
+  name: String
+  "**Experimental** The class of the net."
+  netClasses: [String!]!
+  "**Experimental** The net items belonging to the net."
+  netItems: [DesignDataNetItem_Preview!]!
+  "**Experimental** The parameters associated with the net."
+  parameters: [DesignDataNetParameter_Preview!]!
+  "**Experimental** The pins connected to the net."
+  pins: [DesignDataPin_Preview!]!
+  "**Experimental** The rules associated with the net."
+  rules: [DesignDataRule_Preview!]!
+}
+
+"**Experimental** Represents a parameter associated with a part."
+type DesignDataPartParameter_Preview @experimental {
+  "**Experimental** The name of the parameter."
+  name: String
+  "**Experimental** The value of the parameter."
+  value: String
+}
+
+"**Experimental** Represents a part within a component."
+type DesignDataPart_Preview @experimental {
+  "**Experimental** The bounding rectangle of the part."
+  boundingRectangle: DesignDataRectangle_Preview
+  "**Experimental** The unique identifier of the part within the design."
+  designPartId: String
+  "**Experimental** The identifier of the document containing this part."
+  documentId: String
+  "**Experimental** The item GUID of the part."
+  itemGuid: String
+  "**Experimental** The location of the part."
+  location: DesignDataLocation_Preview
+  "**Experimental** The logical designator of the part."
+  logicalDesignator: String
+  "**Experimental** The parameters associated with this part."
+  parameters: [DesignDataPartParameter_Preview!]!
+  "**Experimental** The physical designator of the part."
+  physicalDesignator: String
+  "**Experimental** The pins belonging to this part."
+  pins: [DesignDataPin_Preview!]!
+  "**Experimental** The revision GUID of the part."
+  revisionGuid: String
+  "**Experimental** The unique identifier of the part."
+  uniqueId: String @deprecated(reason: "Use designPartId instead.")
+  "**Experimental** The variant identifier of the part."
+  variantId: String
+  "**Experimental** The variant name of the part."
+  variantName: String
+  "**Experimental** The kind of variation applied to this part."
+  variationKind: String
+  "**Experimental** The vault GUID of the part."
+  vaultGuid: String
+}
+
+"**Experimental** Represents a parameter associated with a pin."
+type DesignDataPinParameter_Preview @experimental {
+  "**Experimental** The name of the parameter."
+  name: String
+  "**Experimental** The value of the parameter."
+  value: String
+}
+
+"**Experimental** Represents a pin on a component or part."
+type DesignDataPin_Preview @experimental {
+  "**Experimental** The bounding rectangle of the pin."
+  boundingRectangle: DesignDataRectangle_Preview
+  "**Experimental** The description of the pin."
+  description: String
+  "**Experimental** The identifier of the document containing the pin."
+  documentId: String
+  "**Experimental** The electrical type of the pin."
+  electricalType: String
+  "**Experimental** The full name of the pin."
+  fullName: String
+  "**Experimental** The electrical type of the pin."
+  functions: [String!]!
+  "**Experimental** The location of the pin."
+  location: DesignDataLocation_Preview
+  "**Experimental** The name of the pin."
+  name: String
+  "**Experimental** The number of the pin."
+  number: String
+  "**Experimental** The parameters associated with this pin."
+  parameters: [DesignDataPinParameter_Preview!]!
+  "**Experimental** The propagation delay of the pin."
+  propagationDelay: Float
+  "**Experimental** The unique identifier of the pin."
+  uniqueId: String
+  "**Experimental** The variant identifier of the pin."
+  variantId: String
+  "**Experimental** The variant name of the pin."
+  variantName: String
+}
+
+"**Experimental** Represents an axis-aligned rectangle."
+type DesignDataRectangle_Preview @experimental {
+  "**Experimental** The bottom edge coordinate."
+  bottom: Int!
+  "**Experimental** The left edge coordinate."
+  left: Int!
+  "**Experimental** The right edge coordinate."
+  right: Int!
+  "**Experimental** The top edge coordinate."
+  top: Int!
+}
+
+"**Experimental** Represents an attribute associated with a rule."
+type DesignDataRuleAttribute_Preview @experimental {
+  "**Experimental** The name of the attribute."
+  name: String!
+  "**Experimental** The value of the attribute."
+  value: String
+}
+
+"**Experimental** Represents a rule associated with a net."
+type DesignDataRule_Preview @experimental {
+  "**Experimental** The collection of attributes associated with the rule."
+  attributes: [DesignDataRuleAttribute_Preview!]!
+  "**Experimental** The name of the net rule."
+  name: String
+}
+
+"**Experimental** Represents a schematic document in the design."
+type DesignDataSchematicDocument_Preview @experimental {
+  "**Experimental** The identifier of the schematic document."
+  documentId: String
+  "**Experimental** The file name of the schematic document."
+  fileName: String
+  "**Experimental** The identifiers of the logical parent documents, or an empty collection for a root document."
+  parentDocumentIds: [String!]!
+}
+
+"**Experimental** Represents a project variant in the design."
+type DesignDataVariant_Preview @experimental {
+  "**Experimental** The name of the variant."
+  name: String!
+  "**Experimental** The unique identifier of the variant."
+  variantGuid: String
+  "**Experimental** The variations defined within this variant."
+  variations: [DesignDataVariation_Preview!]!
+}
+
+"**Experimental** Represents a variation applied to a component within a project variant."
+type DesignDataVariation_Preview @experimental {
+  "**Experimental** The alternate part identifier, if the variation kind is Alternate."
+  alternatePart: String
+  "**Experimental** The designator of the component this variation applies to."
+  componentDesignator: String
+  "**Experimental** The hierarchy path of the component this variation applies to."
+  componentHierarchyPath: String
+  "**Experimental** The unique identifier of the component."
+  componentUniqueId: String
+  "**Experimental** The kind of variation. Known values: NONE, NOT_FITTED, ALTERNATE. New values may be added; clients must tolerate unknown values."
+  kind: String!
+}
+
+"**Experimental** Represents the design data extracted from a design project."
+type DesignData_Preview @experimental {
+  "**Experimental** The components contained in the design."
+  components: [DesignDataComponent_Preview!]!
+  "**Experimental** The configuration settings for the design."
+  configuration: DesignDataConfiguration_Preview!
+  "**Experimental** The nets defined in the design."
+  nets: [DesignDataNet_Preview!]!
+  "**Experimental** The identifier of the source project."
+  projectGuid: String
+  "**Experimental** The schematic documents contained in the design."
+  schematics: [DesignDataSchematicDocument_Preview!]!
+  "**Experimental** The project variants defined in the design."
+  variants: [DesignDataVariant_Preview!]!
+  "**Experimental** The version of the design data."
+  version: String
+}
+
+"**Experimental** Entry point for the experimental design preview queries, which may change or be removed without deprecation."
+type DesignPreviewQueries @experimental {
+  "**Experimental** Retrieves the design data generation."
+  latestGeneration(
+    "The identifier of the design."
+    designGrid: ID!
+    "The identifier of the project commit."
+    revisionId: String
+  ): DesignDataGeneration_Preview @deprecated(reason: "Use design.latestGeneration.byDesignId instead.")
+  "**Experimental** Retrieves the design data generation for the upload."
+  latestGenerationByUploadId(
+    "The identifier of the upload."
+    uploadId: String!
+  ): DesignDataGeneration_Preview @deprecated(reason: "Use design.latestGeneration.byUploadId instead.")
+  "**Experimental** Retrieves the aggregated rule check results for a design."
+  ruleCheckAggregateResultsByDesignId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
+    where: RuleCheckExecutionFilterInput
+  ): RuleCheckAggregateExecution_Preview @deprecated(reason: "Use design.ruleCheckExecution.byDesignIdAggregated instead.")
+  "**Experimental** Retrieves the aggregated rule check results for a design."
+  ruleCheckAggregateResultsByReleaseId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project release."
+    releaseId: ID!
+    where: RuleCheckExecutionFilterInput
+  ): RuleCheckAggregateExecution_Preview @deprecated(reason: "Use design.ruleCheckExecution.byReleaseIdAggregated instead.")
+  "**Experimental** Retrieves a rule check by its identifier."
+  ruleCheckById(
+    "The identifier of the rule check."
+    id: ID!
+  ): RuleCheck @deprecated(reason: "Use design.ruleCheck.byId instead.")
+  "**Experimental** Retrieves current rule check configuration."
+  ruleCheckConfiguration: RuleCheckConfiguration! @deprecated(reason: "Use design.ruleCheck.configuration instead.")
+  "**Experimental** Retrieves a rule check execution by its identifier."
+  ruleCheckExecution(
+    "The identifier of the rule check execution."
+    id: ID!
+  ): RuleCheckExecution_Preview @deprecated(reason: "Use design.ruleCheckExecution.byId instead.")
+  "**Experimental** Retrieves multiple rule check executions by their identifiers."
+  ruleCheckExecutions(
+    "The identifiers of the rule check executions."
+    ids: [ID!]!
+  ): [RuleCheckExecution_Preview] @deprecated(reason: "Use design.ruleCheckExecution.byIds instead.")
+  "**Experimental** Retrieves all rule check executions for a design's revision. Supports filtering on reason and source via the standard 'where' argument."
+  ruleCheckExecutionsByDesignId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project commit."
+    revisionId: String!
+    where: RuleCheckExecutionFilterInput
+  ): [RuleCheckExecution_Preview!] @deprecated(reason: "Use design.ruleCheckExecution.byDesignId instead.")
+  "**Experimental** Retrieves all rule check executions for a design's revision. Supports filtering on reason and source via the standard 'where' argument."
+  ruleCheckExecutionsByReleaseId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the release."
+    releaseId: ID!
+    where: RuleCheckExecutionFilterInput
+  ): [RuleCheckExecution_Preview!] @deprecated(reason: "Use design.ruleCheckExecution.byReleaseId instead.")
+  "**Experimental** Retrieves the latest rule check execution for a WIP design."
+  ruleCheckLatestExecution(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
+  ): RuleCheckExecution_Preview @deprecated(reason: "Use design.ruleCheckExecution.byDesignIdAggregated instead.")
+  "**Experimental** Retrieves all rule checks contained in the workspace."
+  ruleChecksByAuth: [RuleCheck!]! @deprecated(reason: "Use design.ruleCheck.byAuth instead.")
+  "**Experimental** Retrieves rule checks by their identifiers."
+  ruleChecksByIds(
+    "The identifiers of the rule checks."
+    ids: [ID!]!
+  ): [RuleCheck]! @deprecated(reason: "Use design.ruleCheck.byIds instead.")
+}
+
+"**Experimental** Design related queries entry point."
+type DesignQueries @experimental {
+  "**Experimental** Queries for the latest design data generation."
+  latestGeneration: LatestGenerationQueries!
+  "**Experimental** Experimental queries for design, which are subject to change or removal without deprecation."
+  preview: DesignPreviewQueries!
+  "**Experimental** Queries for design rule checks."
+  ruleCheck: RuleCheckQueries!
+  "**Experimental** Queries for design rule checks."
+  ruleCheckExecution: RuleCheckExecutionQueries!
+}
+
+"**Experimental**"
+type DesignRegisterUploadPayload @experimental {
+  "**Experimental**"
+  designUploadResult: UploadRegistrationResult
+}
+
+"**Experimental**"
+type DesignRuleCheckExecuteOnUploadPayload @experimental {
+  "**Experimental**"
+  ruleCheckExecution: RuleCheckExecution!
+  "**Experimental**"
+  ruleCheckExecution_Preview: RuleCheckExecution! @deprecated(reason: "Use 'ruleCheckExecution' instead.")
+}
+
+"**Experimental**"
+type DesignRuleCheckExecutePayload @experimental {
+  "**Experimental**"
+  ruleCheckExecution: RuleCheckExecution!
+  "**Experimental**"
+  ruleCheckExecution_Preview: RuleCheckExecution! @deprecated(reason: "Use 'ruleCheckExecution' instead.")
+}
+
+"**Experimental** The entry point for queries related to the latest design data generation."
+type LatestGenerationQueries @experimental {
+  "**Experimental** Retrieves the design data generation."
+  byDesignId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
+  ): DesignDataGeneration!
+  "**Experimental** Retrieves the design data generation for the upload."
+  byUploadId(
+    "The identifier of the upload."
+    uploadId: String!
+  ): DesignDataGeneration!
+}
+
+"**Experimental** Represents a rule check definition."
+type RuleCheck @experimental {
+  "**Experimental** The error level at which this rule check was actually executed. Defaults to the rule check's default level when the actual level is not known (e.g. legacy records). Known values: NO_REPORT, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values."
+  actualErrorReportLevel: String!
+  "**Experimental** The default error level at which violations are reported. Known values: NO_REPORT, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values."
+  defaultErrorReportLevel: String!
+  "**Experimental** The description of the rule check."
+  description: String
+  "**Experimental** The unique identifier of the rule check."
+  id: ID!
+  "**Experimental** The name of the rule check."
+  name: String!
+  "**Experimental** The type of the rule check. Known values: ERC, DRC. New values may be added; clients must tolerate unknown values."
+  type: String!
+}
+
+"**Experimental** Represents the aggregated result of one or more rule check executions for a design."
+type RuleCheckAggregateExecution @experimental {
+  "**Experimental** The identifier of the design being checked."
+  designId: ID!
+  "**Experimental** The list of individual rule check executions that were aggregated to produce this result."
+  executions: [RuleCheckExecution!]!
+  "**Experimental** The aggregated list of rule check execution parts across all executions, with their definition at the time of execution and their current status."
+  parts: [RuleCheckExecutionPart!]!
+  "**Experimental** The design revision identifier associated with the aggregated executions."
+  revisionId: String!
+  "**Experimental** The current aggregated status of the rule check executions. Known values: PENDING, RUNNING, COMPLETED, FAILED, SKIPPED. New values may be added; clients must tolerate unknown values."
+  status: String!
+  "**Experimental** The aggregated list of violations found across all executions."
+  violations: [RuleViolation!]!
+}
+
+"**Experimental**"
+type RuleCheckAggregateExecution_Preview @experimental {
+  "**Experimental**"
+  designId: ID!
+  "**Experimental**"
+  executions: [RuleCheckExecution_Preview!]!
+  "**Experimental**"
+  parts: [RuleCheckExecutionPart!]!
+  "**Experimental**"
+  revisionId: String!
+  "**Experimental** The aggregated list of rule checks executed across all executions, with their definition at the time of execution."
+  ruleChecks: [RuleCheckExecutionPart!] @deprecated(reason: "Use `parts` instead.")
+  "**Experimental**"
+  status: String!
+  "**Experimental**"
+  violations: [RuleViolation_Preview!]!
+}
+
+"**Experimental** Represents current rule check configuration."
+type RuleCheckConfiguration @experimental {
+  "**Experimental** Supported optional rule check features."
+  features: [String!]!
+  "**Experimental** ISO 8601 representation of the maximum time a rule check should remain in unchanged, incomplete status. If this threshold is exceeded the caller should assume that the execution is stale and abandon monitoring."
+  staleStatusThreshold: String!
+}
+
+"**Experimental** Represents the execution of rule checks against a design."
+type RuleCheckExecution @experimental {
+  "**Experimental** The identifier of the design being checked."
+  designId: ID
+  "**Experimental** The time when the execution finished, if finished."
+  finishedAt: DateTime
+  "**Experimental** The unique identifier of the rule check execution."
+  id: ID!
+  "**Experimental** The list of rule checks executed as part of this execution, with their definition at the time of execution and their current status."
+  parts: [RuleCheckExecutionPart!]!
+  "**Experimental** Reason why the rule check execution was triggered, which can be used for filtering and distinguishing different types of rule check executions. Known values: CHANGE, PROCESS, REGENERATION, RELEASE_CANDIDATE, RELEASE, UPLOAD. New values may be added; clients must tolerate unknown values."
+  reason: String!
+  "**Experimental** The design revision identifier associated with the execution."
+  revisionId: String!
+  "**Experimental** Source of the rule check execution, identifying whether it was triggered by a user or by the system. Known values: SYSTEM, USER. New values may be added; clients must tolerate unknown values."
+  source: String!
+  "**Experimental** The time when the execution started."
+  startedAt: DateTime!
+  "**Experimental** The identifier of the user who started the execution."
+  startedByUserId: String!
+  "**Experimental** The current status of the rule check execution. Known values: PENDING, RUNNING, COMPLETED, FAILED, SKIPPED. New values may be added; clients must tolerate unknown values."
+  status: String!
+  "**Experimental** Identifier of the upload, when the rule check execution targets a custom uploaded design."
+  uploadId: String
+  "**Experimental** The list of violations found during execution."
+  violations: [RuleViolation!]!
+}
+
+"**Experimental** Represents the definition of a single rule check (one part of the execution) at the time of execution and it's current status."
+type RuleCheckExecutionPart @experimental {
+  "**Experimental** The error level at which this rule check was actually executed. Defaults to the rule check's default level when the actual level is not known (e.g. legacy records). Known values: NO_REPORT, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values."
+  actualErrorReportLevel: String!
+  "**Experimental** The rule check at its current state (potentially different from the past definition)."
+  currentRule: RuleCheck
+  "**Experimental** The default error level at which violations are reported. Known values: NO_REPORT, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values."
+  defaultErrorReportLevel: String!
+  "**Experimental** The description of the rule check."
+  description: String
+  "**Experimental** The unique identifier of the rule check."
+  id: ID!
+  "**Experimental** The name of the rule check."
+  name: String!
+  "**Experimental** The execution status of this rule check. Known values: PENDING, RUNNING, COMPLETED, FAILED. New values may be added; clients must tolerate unknown values."
+  status: String!
+  "**Experimental** The type of the rule check. Known values: ERC, DRC. New values may be added; clients must tolerate unknown values."
+  type: String!
+}
+
+"**Experimental** The entry point for queries related to design rule checks."
+type RuleCheckExecutionQueries @experimental {
+  "**Experimental** Retrieves all rule check executions for a design's revision. Supports filtering on reason and source via the standard 'where' argument."
+  byDesignId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project commit."
+    revisionId: String!
+    where: RuleCheckExecutionFilterInput
+  ): [RuleCheckExecution!]!
+  "**Experimental** Retrieves the aggregated rule check results for a design."
+  byDesignIdAggregated(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
+    where: RuleCheckExecutionFilterInput
+  ): RuleCheckAggregateExecution!
+  "**Experimental** Retrieves combined custom and default ERC results for a design."
+  byDesignIdCombinedErc(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
+  ): DesignDataCombinedErcExecution!
+  "**Experimental** Retrieves a rule check execution by its identifier."
+  byId(
+    "The identifier of the rule check execution."
+    id: ID!
+  ): RuleCheckExecution
+  "**Experimental** Retrieves multiple rule check executions by their identifiers."
+  byIds(
+    "The identifiers of the rule check executions."
+    ids: [ID!]!
+  ): [RuleCheckExecution]!
+  "**Experimental** Retrieves all rule check executions for a design's revision. Supports filtering on reason and source via the standard 'where' argument."
+  byReleaseId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the release."
+    releaseId: ID!
+    where: RuleCheckExecutionFilterInput
+  ): [RuleCheckExecution!]!
+  "**Experimental** Retrieves the aggregated rule check results for a design."
+  byReleaseIdAggregated(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project release."
+    releaseId: ID!
+    where: RuleCheckExecutionFilterInput
+  ): RuleCheckAggregateExecution!
+}
+
+"**Experimental**"
+type RuleCheckExecution_Preview @experimental {
+  "**Experimental**"
+  designId: ID
+  "**Experimental**"
+  finishedAt: DateTime
+  "**Experimental**"
+  id: ID!
+  "**Experimental**"
+  parts: [RuleCheckExecutionPart!]!
+  "**Experimental**"
+  reason: String!
+  "**Experimental**"
+  revisionId: String!
+  "**Experimental** The list of rule checks executed as part of this execution, with their definition at the time of execution."
+  ruleChecks: [RuleCheckExecutionPart!] @deprecated(reason: "Use `parts` instead.")
+  "**Experimental**"
+  source: String!
+  "**Experimental**"
+  startedAt: DateTime!
+  "**Experimental**"
+  startedByUserId: String!
+  "**Experimental**"
+  status: String!
+  "**Experimental**"
+  uploadId: String
+  "**Experimental**"
+  violations: [RuleViolation_Preview!]!
+}
+
+"**Experimental** The entry point for queries related to design rule checks."
+type RuleCheckQueries @experimental {
+  "**Experimental** Retrieves all rule checks contained in the workspace."
+  byAuth: [RuleCheck!]!
+  "**Experimental** Retrieves a rule check by its identifier."
+  byId(
+    "The identifier of the rule check."
+    id: ID!
+  ): RuleCheck
+  "**Experimental** Retrieves rule checks by their identifiers."
+  byIds(
+    "The identifiers of the rule checks."
+    ids: [ID!]!
+  ): [RuleCheck]!
+  "**Experimental** Retrieves current rule check configuration."
+  configuration: RuleCheckConfiguration!
+}
+
+"**Experimental** Represents a violation detected during a rule check execution."
+type RuleViolation @experimental {
+  "**Experimental** The bounding rectangle of the violation in the design."
+  boundingRectangle: RuleViolationRectangle
+  "**Experimental** The identifier of the document where the violation occurred."
+  documentId: String
+  "**Experimental** The error level of this violation. Known values: SKIPPED, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values."
+  errorReportLevel: String!
+  "**Experimental** The error text describing the violation."
+  errorText: String!
+  "**Experimental** The location of the violation in the design."
+  location: RuleViolationLocation
+  "**Experimental** The design objects related to this violation."
+  relatedObjects: [RuleViolationRelatedObject!]!
+  "**Experimental** The information about the rule check at the time the violation was reported."
+  ruleCheck: RuleCheckExecutionPart!
+  "**Experimental** The failure code if the rule check itself failed, rather than detecting a violation. Known values: INTERNAL_SERVER_ERROR, UNHANDLED_EXCEPTION_FROM_USER_SCRIPT, INVALID_RETURN_VALUE_FROM_USER_SCRIPT. New values may be added; clients must tolerate unknown values."
+  ruleFailureCode: String
+  "**Experimental** The variant identifier for the violation."
+  variantId: String
+  "**Experimental** The variant name for the violation."
+  variantName: String
+}
+
+"**Experimental** Represents a 2D coordinate location associated with a rule violation."
+type RuleViolationLocation @experimental {
+  "**Experimental** The X coordinate."
+  x: Int!
+  "**Experimental** The Y coordinate."
+  y: Int!
+}
+
+"**Experimental** Represents an axis-aligned bounding rectangle associated with a rule violation."
+type RuleViolationRectangle @experimental {
+  "**Experimental** The bottom edge coordinate."
+  bottom: Int!
+  "**Experimental** The left edge coordinate."
+  left: Int!
+  "**Experimental** The right edge coordinate."
+  right: Int!
+  "**Experimental** The top edge coordinate."
+  top: Int!
+}
+
+"**Experimental** Represents a design object related to a rule violation."
+type RuleViolationRelatedObject @experimental {
+  "**Experimental** The bounding rectangle of the related object."
+  boundingRectangle: RuleViolationRectangle
+  "**Experimental** The designator of the related object."
+  designator: String!
+  "**Experimental** The identifier of the document containing the related object."
+  documentId: String!
+  "**Experimental** The location of the related object."
+  location: RuleViolationLocation
+  "**Experimental** The name of the related object."
+  name: String!
+  "**Experimental** The type of the related object. Known values: DOCUMENT, PIN, NET, COMPONENT, PART, LINE, NET_ITEM, VARIANT. New values may be added; clients must tolerate unknown values."
+  type: String!
+  "**Experimental** The unique identifier of the related object."
+  uniqueId: String!
+  "**Experimental** The variant identifier of the related object."
+  variantId: String
+  "**Experimental** The variant name of the related object."
+  variantName: String
+}
+
+"**Experimental**"
+type RuleViolation_Preview @experimental {
+  "**Experimental**"
+  boundingRectangle: RuleViolationRectangle
+  "**Experimental**"
+  documentId: String
+  "**Experimental**"
+  errorReportLevel: String!
+  "**Experimental**"
+  errorText: String!
+  "**Experimental**"
+  location: RuleViolationLocation
+  "**Experimental**"
+  relatedObjects: [RuleViolationRelatedObject!]!
+  "**Experimental**"
+  ruleCheck: RuleCheckExecutionPart!
+  "**Experimental** The description of the rule that was violated."
+  ruleDescription: String @deprecated(reason: "Use ruleCheck.description instead.")
+  "**Experimental**"
+  ruleFailureCode: String
+  "**Experimental** The name of the rule that was violated."
+  ruleName: String! @deprecated(reason: "Use ruleCheck.name instead.")
+  "**Experimental** The name of the rule that was violated with variant if applicable."
+  ruleNameWithVariant: String! @deprecated(reason: "Compose the rule name with variant instead.")
+  "**Experimental** The type of the rule that was violated."
+  ruleType: String! @deprecated(reason: "Use ruleCheck.type instead.")
+  "**Experimental**"
+  variantId: String
+  "**Experimental**"
+  variantName: String
+}
+
+"**Experimental**"
+type UploadRegistrationResult @experimental {
+  "**Experimental** The identifier of the design upload."
+  uploadId: String!
+}
+
+"Input for CAD bending line."
+input DesCadBendingLineInput {
+  "Regions that are affected by the CAD bending line."
+  affectedRegions: [String!]
+  "CAD bending line angle."
+  angle: Float
+  "CAD bending line end point."
+  endPoint: DesCadBoardPointInput
+  "CAD bending line fold index required to define the sequence that the bends are folded."
+  foldIndex: Int
+  "CAD bending line radius."
+  radius: Int
+  "CAD bending line start point."
+  startPoint: DesCadBoardPointInput
+}
+
+"Input for CAD Board 3D Body Model Data."
+input DesCadBoard3DBodyModelDataInput {
+  "Model color."
+  color: Long
+  "True if ECAD provides the raw 3D model."
+  isEcadProvidesRaw3DModel: Boolean
+  "Local test file name."
+  localTestFileName: String
+  "Model display name."
+  modelDisplayName: String
+  "Model file extension."
+  modelFileExtension: String
+  "File hash for model."
+  modelFileHash: String
+  "File path for model."
+  modelFilePath: String
+  "Unique identifier for model on server."
+  modelIdOnServer: String
+  "Model net name."
+  modelNetName: String
+  "Model part name."
+  modelPartName: String
+  "Model opacity."
+  opacity: Float
+}
+
+"Input for CAD board area."
+input DesCadBoardAreaInput {
+  "CAD board area comment."
+  comment: String
+  "CAD board area designator."
+  designator: String
+  "CAD board area location."
+  location: DesCadBoardPointInput
+  "CAD board area placement."
+  placement: DesCadBoardComponentPlacement
+  "Whether the CAD board area restricts copper."
+  restrictsCopper: Boolean
+  "Whether the CAD board area restricts a SMD pad."
+  restrictsSMDPad: Boolean
+  "Whether the CAD board area restricts TH pad."
+  restrictsTHPad: Boolean
+  "Whether the CAD board area restricts a track."
+  restrictsTrack: Boolean
+  "Whether the CAD board area restricts a via."
+  restrictsVia: Boolean
+  "CAD board area rotation."
+  rotation: Float
+  "JSON serialized *GeometricShape*."
+  shapeJson: String
+  "CAD board area unique identifier."
+  uniqueId: String
+}
+
+"Input for CAD board component."
+input DesCadBoardComponentInput {
+  "CAD board component board region name."
+  boardRegionName: String
+  "CAD board component deepening value."
+  deepening: Int
+  "CAD board component designator."
+  designator: String
+  "CAD board component free 3D body rotation (X direction)."
+  free3DBodyRotationX: Float
+  "CAD board component free 3D body rotation (Y direction)."
+  free3DBodyRotationY: Float
+  "CAD board component free 3D body rotation (Z direction)."
+  free3DBodyRotationZ: Float
+  "CAD board component free 3D body standoff height."
+  free3DBodyStandoffHeight: Int
+  "CAD board component unique identifier."
+  id: String
+  "In case the component contains a single 3D body AND no conversion was performed when exporting to a 3D model, the 3D model's position relative to board is stored here."
+  innerBodyRelativeToBoardTransform: DesCadBodyTransformationInput
+  "Whether the CAD board component is a free 3D body or not."
+  isFree3DBody: Boolean
+  "Whether the CAD board component is locked or not."
+  isLocked: Boolean
+  "Whether MCAD uses its own 3D body for CAD board component."
+  isMcadUsesOwn3DBody: Boolean
+  "CAD board component location."
+  location: DesCadBoardPointInput
+  "In case component contains single 3D body, the body's position relative to the component's origin point is stored here."
+  modelInComponentTransform: DesCadBodyTransformationInput
+  "CAD board component placement."
+  placement: DesCadBoardComponentPlacement
+  "CAD board component rotation."
+  rotation: Float
+  "CAD board component variant name."
+  variantName: String
+}
+
+"Input for CAD board component type."
+input DesCadBoardComponentTypeInput {
+  "Body shape for CAD board component type."
+  bodyShape: DesCadComponentBodyShapeInput
+  "Identifier for company component."
+  companyComponentId: String
+  "Components for CAD board component type."
+  components: [DesCadBoardComponentInput!]
+  "DMS component name for CAD board component type."
+  dmsComponentName: String
+  "Footprint reference for CAD board component type."
+  footprintReference: String
+  "Identifier for CAD board component type."
+  id: String
+  "Internal unique identifier for CAD board component type."
+  internalId: String
+  "Whether the CAD board component type is from local PCB library or not."
+  isFromLocalPcbLibrary: Boolean
+  "GUID for CAD board component type item."
+  itemGuid: String
+  "Library reference for CAD board component type."
+  libraryReference: String
+  "Properties for CAD board component type."
+  properties: [DesCadPropertyInput!]
+  "GUID for CAD board component type revision."
+  revisionGuid: String
+}
+
+"Input for CAD board copper layout."
+input DesCadBoardCopperLayerInput {
+  "Whether CAD board copper layout is a pad and via barrels special layer."
+  isPadAndViaBarrelsSpecialLayer: Boolean
+  "CAD board copper layout models."
+  models: [DesCadBoard3DBodyModelDataInput!]
+  "CAD board copper layout name."
+  name: String
+  "CAD board copper layout platform layer identifier."
+  platformLayerId: Int
+  "CAD board copper layout thickness."
+  thickness: Int
+}
+
+"Input for CAD board copper region."
+input DesCadBoardCopperRegionInput {
+  "JSON serialized array of *GeometricShape*."
+  holeShapesJson: String
+  "CAD board copper region layer name."
+  layerName: String
+  "JSON serialized array of *GeometricShape*."
+  outlineShapesJson: String
+}
+
+"Input for CAD board cutout."
+input DesCadBoardCutoutInput {
+  "CAD board cutout associated component designator."
+  associatedComponentDesignator: String
+  "CAD board cutout designator."
+  designator: String
+  "CAD board cutout location."
+  location: DesCadBoardPointInput
+  "CAD board cutout original designator."
+  originalDesignator: String
+  "CAD board cutout rotation."
+  rotation: Float
+  "JSON serialized *GeometricShape*."
+  shapeJson: String
+  "Unique identifier for CAD board cutout."
+  uniqueId: String
+}
+
+"Input for CAD board hole."
+input DesCadBoardHoleInput {
+  "CAD board hole associated component designator."
+  associatedComponentDesignator: String
+  "CAD board counter angle."
+  counterAngle: Float
+  "CAD board hole counter depth."
+  counterDepth: Int
+  "CAD board hole counter size."
+  counterSize: Int
+  "CAD board hole counter type."
+  counterType: DesCadCounterType
+  "CAD board hole designator."
+  designator: String
+  "CAD board hole diameter."
+  diameter: Int
+  "CAD board hole type."
+  holeType: DesCadHoleType
+  "Whether the CAD board hole is plated or not."
+  isPlated: Boolean
+  "CAD board hole location."
+  location: DesCadBoardPointInput
+  "CAD board hole original designator."
+  originalDesignator: String
+  "CAD board hole rotation."
+  rotation: Float
+  "CAD board hole size."
+  size: DesCadBoardPointInput
+  "Unique identifier for CAD board hole."
+  uniqueId: String
+}
+
+"Input for CAD board layer."
+input DesCadBoardLayerInput {
+  "CAD board layer category."
+  layerCategory: DesCadBoardLayerCategory
+  "CAD board layer component placement."
+  layerComponentPlacement: DesCadBoardLayerComponentPlacement
+  "CAD board layer dielectric type."
+  layerDielectricType: DesCadBoardLayerDielectricType
+  "CAD board layer physical category."
+  layerPhysicalCategory: DesCadBoardLayerPhysicalCategory
+  "CAD board layer position."
+  layerPosition: DesCadBoardLayerPosition
+  "CAD board layer type."
+  layerType: DesCadBoardLayerType
+  "CAD board layer name."
+  name: String
+  "CAD board layer platform layer identifier."
+  platformLayerId: Int
+  "CAD board layer thickness."
+  thickness: Int
+}
+
+"Input for CAD board point."
+input DesCadBoardPointInput {
+  "CAD board coordinate (X)."
+  x: Int!
+  "CAD board coordinate (Y)."
+  y: Int!
+  "CAD board coordinate (Z)."
+  z: Int!
+}
+
+"Input for CAD board region."
+input DesCadBoardRegionInput {
+  "CAD board region color."
+  color: Long
+  "CAD board region internal point."
+  internalPoint: DesCadBoardPointInput
+  "Whether CAD board region is flex."
+  isFlex: Boolean
+  "Whether CAD board region is locked 3D."
+  isLocked3D: Boolean
+  "CAD board region layers."
+  layers: [DesCadBoardLayerInput!]
+  "CAD board region name."
+  name: String
+  "CAD board region bottom layer Z value."
+  regionLayerZBottom: Int
+  "CAD board region top layer Z value."
+  regionLayerZTop: Int
+  "JSON serialized *ComplexShape*."
+  shapeJson: String
+}
+
+"CAD board track input."
+input DesCadBoardTrackInput {
+  "CAD board track layer name."
+  layerName: String
+  "CAD board track net name."
+  netName: String
+  "CAD board track points."
+  points: [DesCadBoardPointInput!]
+  "CAD board track width."
+  width: Int
+}
+
+"Input for CAD board variant."
+input DesCadBoardVariantInput {
+  "CAD board variant description."
+  description: String
+  "CAD board variant name."
+  name: String
+  "CAD board variant properties."
+  properties: [DesCadPropertyInput!]
+  "Unique identifier for CAD board variant."
+  uniqueId: String
+  "CAD board variant variations."
+  variations: [DesCadComponentVariationInput!]
+}
+
+"Input for CAD board variants."
+input DesCadBoardVariantsInput {
+  "Component type variant library for CAD board variants."
+  componentTypeVariantLibrary: [DesCadBoardComponentTypeInput!]
+  "Variants for CAD board variants."
+  variants: [DesCadBoardVariantInput!]
+}
+
+"Input for CAD board via."
+input DesCadBoardViaInput {
+  "CAD board via copper diameter."
+  copperDiameter: Int
+  "End layer name for CAD board via."
+  endLayerName: String
+  "CAD board via hole diameter."
+  holeDiameter: Int
+  "CAD board via location."
+  location: DesCadBoardPointInput
+  "Start layer name for CAD board via."
+  startLayerName: String
+}
+
+"Input for CAD body transformation."
+input DesCadBodyTransformationInput {
+  "CAD body rotation in X direction."
+  rotationX: Float!
+  "CAD body rotation in Y direction."
+  rotationY: Float!
+  "CAD body rotation in Z direction."
+  rotationZ: Float!
+  "CAD body scale in X direction."
+  scaleX: Float!
+  "CAD body scale in Y direction."
+  scaleY: Float!
+  "CAD body scale in Z direction."
+  scaleZ: Float!
+  "CAD body translation in X direction."
+  translationX: Float!
+  "CAD body translation in Y direction."
+  translationY: Float!
+  "CAD body translation in Z direction."
+  translationZ: Float!
+}
+
+"Input for CAD component body shape."
+input DesCadComponentBodyShapeInput {
+  "Height of CAD component body shape."
+  height: Int
+  "Whether CAD component body shape is bodyless on ECAD."
+  isBodylessOnEcad: Boolean
+  "Whether CAD component body shape is hidden or not."
+  isHidden: Boolean
+  "Model data for CAD component body shape."
+  modelData: DesCadBoard3DBodyModelDataInput
+  "JSON serialized *GeometricShape*."
+  shapeJson: String
+}
+
+"Input for CAD component variation."
+input DesCadComponentVariationInput {
+  "CAD component variation component type identifier."
+  componentTypeId: String
+  "CAD component variation designator."
+  designator: String
+  "CAD component variation location."
+  location: DesCadBoardPointInput
+  "In case the component variation contains a single 3D body, the body's position relative to the component's origin point is stored here."
+  modelInComponentTransform: DesCadBodyTransformationInput
+  "CAD component variation placement."
+  placement: DesCadBoardComponentPlacement
+  "CAD component variation rotation."
+  rotation: Float
+  "CAD component variant kind."
+  variantKind: DesCadComponentVariationKind
+}
+
+"Input for CAD design."
+input DesCadDesignInput {
+  "CAD design board areas."
+  boardAreas: [DesCadBoardAreaInput!]
+  "CAD design board bending lines."
+  boardBendingLines: [DesCadBendingLineInput!]
+  "CAD design board color."
+  boardColor: Long
+  "CAD design board core color."
+  boardCoreColor: Long
+  "CAD design board core opacity."
+  boardCoreOpacity: Float
+  "CAD design board layers."
+  boardLayers: [DesCadBoardLayerInput!]
+  "CAD design board offset MCAD to ECAD origin."
+  boardOffsetMcadToEcadOrigin: DesCadBoardPointInput
+  "CAD design board origin."
+  boardOrigin: DesCadBoardPointInput
+  "JSON serialized *ComplexShape*."
+  boardOutlineJson: String
+  "CAD design board regions."
+  boardRegions: [DesCadBoardRegionInput!]
+  "CAD design board split lines."
+  boardSplitLines: [DesCadSplitLineInput!]
+  "CAD design board thickness."
+  boardThickness: Int
+  "CAD design collaboration flags."
+  collaborationFlags: [DesCadBoardCollaborationFlag!]
+  "CAD design component types."
+  componentTypes: [DesCadBoardComponentTypeInput!]
+  "CAD design coordinate system translation."
+  coordinateSystemTranslation: DesCadBoardPointInput
+  "CAD design copper export features."
+  copperExportFeatures: [DesCadBoardCopperExportFeature!]
+  "CAD design copper layers."
+  copperLayers: [DesCadBoardCopperLayerInput!]
+  "CAD design copper regions."
+  copperRegions: [DesCadBoardCopperRegionInput!]
+  "CAD design cutouts."
+  cutouts: [DesCadBoardCutoutInput!]
+  "CAD design file name."
+  designFileName: String
+  "CAD design variant identifier."
+  designVariantId: String
+  "CAD design variant name."
+  designVariantName: String
+  "Whether CAD design has hatched copper polygons or not."
+  hasHatchedCopperPolygons: Boolean
+  "CAD design holes."
+  holes: [DesCadBoardHoleInput!]
+  "Whether CAD design is a RF20 design or not."
+  isRF20Design: Boolean
+  "CAD design export mode."
+  layersExportMode: DesCadLayersExportMode
+  "CAD design messages."
+  messages: [String!]
+  "CAD design minimal height of components shown."
+  minimalHeightComponentsShown: Int
+  "CAD design properties."
+  properties: [DesCadPropertyInput!]
+  "CAD design tracks."
+  tracks: [DesCadBoardTrackInput!]
+  "CAD design variants."
+  variants: DesCadBoardVariantsInput
+  "CAD design vias."
+  vias: [DesCadBoardViaInput!]
+  "CAD design workflow state."
+  workflowState: DesCadWorkflowState
+}
+
+"Input for CAD property."
+input DesCadPropertyInput {
+  "CAD property name."
+  name: String!
+  "CAD property value."
+  value: String
+}
+
+"Input for CAD split line."
+input DesCadSplitLineInput {
+  "End point for CAD split line."
+  endPoint: DesCadBoardPointInput
+  "Left region name for CAD split line."
+  leftRegionName: String
+  "Right region name for CAD split line."
+  rightRegionName: String
+  "JSON serialized *ComplexShape*."
+  shapeJson: String
+  "Start point for CAD split line."
+  startPoint: DesCadBoardPointInput
+}
+
+"Input for collaboration simulation file."
+input DesCollaborationSimulationFileInput {
+  "Collaboration simulation file identifier."
+  fileId: String!
+  "Collaboration simulation file name."
+  fileName: String!
+  "Collaboration simulation file type."
+  fileType: String!
+}
+
+"Input for object color."
+input DesColorInput {
+  "The color input in hex format, e.g. '#AABBCC'."
+  hexString: String
+  "The color input in numerical format, e.g. 'RGB(255, 255, 0)'."
+  rgbString: String
+}
+
+input DesComparisonRunInput {
+  mode: DesComparisonMode!
+  sourceReleaseId: ID!
+  targetReleaseId: ID!
+}
+
+"A design item is a specific instance of a part used in the design."
+input DesDesignItemFilterInput {
+  and: [DesDesignItemFilterInput!]
+  "The unique label for this design item."
+  designator: StringOperationFilterInput
+  "The layer(side) placement for this design item."
+  layer: DesLayerFilterInput
+  or: [DesDesignItemFilterInput!]
+  "The list of parameters describing the design item."
+  parameters: ListFilterInputTypeOfDesDesignItemParameterFilterInput
+}
+
+"A parameter describing the design item."
+input DesDesignItemParameterFilterInput {
+  and: [DesDesignItemParameterFilterInput!]
+  "Parameter name."
+  name: StringOperationFilterInput
+  or: [DesDesignItemParameterFilterInput!]
+  "Parameter value."
+  value: StringOperationFilterInput
+}
+
+"Information about a specific layer in the PCB."
+input DesLayerFilterInput {
+  and: [DesLayerFilterInput!]
+  "Layer name."
+  name: StringOperationFilterInput
+  or: [DesLayerFilterInput!]
+}
+
+"2D positional information in mm and mils."
+input DesPosition2DInput {
+  "Positional coordinate (X)."
+  x: Int!
+  "Positional coordinate (Y)."
+  y: Int!
+}
+
+"A project manages all development stages of the PCB/PCA product lifecycle."
+input DesProjectFilterInput {
+  and: [DesProjectFilterInput!]
+  "The `DateTime` when this project was created."
+  createdAt: DateTimeOperationFilterInput
+  "The summary of this project content or purpose."
+  description: StringOperationFilterInput
+  "The assigned name for this project."
+  name: StringOperationFilterInput
+  or: [DesProjectFilterInput!]
+  "The reference identifier for this project."
+  projectId: StringOperationFilterInput
+  "The project type."
+  projectType: DesProjectTypeOperationFilterInput
+  "The `DateTime` when this project was last modified."
+  updatedAt: DateTimeOperationFilterInput
+  "The Altium 365 web address."
+  url: StringOperationFilterInput
+  "The Altium 365 workspace URL."
+  workspaceUrl: StringOperationFilterInput
+}
+
+"Specifies the filtering criteria for the project guest list."
+input DesProjectGuestFilterInput {
+  "Global identifiers of the users."
+  globalUserIds: [String!]
+  "The text that either the guest first or last names or emails must contain. Case-insensitive."
+  text: String
+}
+
+"Input for the parametric details of a project."
+input DesProjectParameterInput {
+  "Project parameter name."
+  name: String!
+  "Project parameter value."
+  value: String!
+}
+
+"A project manages all development stages of the PCB/PCA product lifecycle."
+input DesProjectSortInput {
+  "The `DateTime` when this project was created."
+  createdAt: SortEnumType
+  "The summary of this project content or purpose."
+  description: SortEnumType
+  "The node identifier for this project (used by `desProjectById`)."
+  id: SortEnumType
+  "The assigned name for this project."
+  name: SortEnumType
+  "The `DateTime` when this project was last modified."
+  updatedAt: SortEnumType
+}
+
+input DesProjectTypeOperationFilterInput {
+  eq: DesProjectType
+  in: [DesProjectType!]
+  neq: DesProjectType
+  nin: [DesProjectType!]
+}
+
+"`desProjects` extra arguments."
+input DesProjectsInput {
+  "Tells to get projects with layers."
+  hasLayers: Boolean
+}
+
+"Filter for requirements blocks in projects."
+input DesProjectsRequirementsBlockFilterInput {
+  "Requirements block identifiers."
+  blockIds: [String!]!
+}
+
+"Rectangle positional information."
+input DesRectangleInput {
+  "Rectangle corner point 1."
+  pos1: DesPosition2DInput!
+  "Rectangle corner point 2."
+  pos2: DesPosition2DInput!
+}
+
+"A release is a published version of a design with additional generated files for manufacturing."
+input DesReleaseFilterInput {
+  and: [DesReleaseFilterInput!]
+  "The `DateTime` when this release was created."
+  createdAt: DateTimeOperationFilterInput
+  "The summary of this release content or purpose."
+  description: StringOperationFilterInput
+  or: [DesReleaseFilterInput!]
+  "The reference identifier for this release."
+  releaseId: StringOperationFilterInput
+}
+
+"A variant contains a specific configuration of a base design."
+input DesReleaseVariantFilterInput {
+  and: [DesReleaseVariantFilterInput!]
+  "The descriptive label for this design variant."
+  name: StringOperationFilterInput
+  or: [DesReleaseVariantFilterInput!]
+}
+
+"A schematic contains the design parts and logical connections."
+input DesSchematicFilterInput {
+  and: [DesSchematicFilterInput!]
+  "The reference identifier for this schematic."
+  documentId: StringOperationFilterInput
+  "The document file name."
+  documentName: StringOperationFilterInput
+  or: [DesSchematicFilterInput!]
+}
+
+"Sets the requirements block for a project."
+input DesSetProjectRequirementsBlockInput {
+  "Project identifier."
+  projectId: ID!
+  "Requirements block identifier."
+  requirementsBlockId: String
+}
+
+"Information about a project that is shared with the user."
+input DesSharedWithMeProjectInfoFilterInput {
+  and: [DesSharedWithMeProjectInfoFilterInput!]
+  "The project description."
+  description: StringOperationFilterInput
+  "The project name."
+  name: StringOperationFilterInput
+  or: [DesSharedWithMeProjectInfoFilterInput!]
+}
+
+"PCB design track information."
+input DesTrackFilterInput {
+  and: [DesTrackFilterInput!]
+  "Layer associated with the track."
+  layer: DesLayerFilterInput
+  or: [DesTrackFilterInput!]
+}
+
+"Input for updating project owner."
+input DesUpdateProjectOwnerInput {
+  "Project identifier."
+  projectId: ID!
+  "Workspace user identifier of the new project owner."
+  userId: String!
+}
+
+"Input for updating project parameters."
+input DesUpdateProjectParametersInput {
+  "Parameters to describe the project."
+  parameters: [DesProjectParameterInput!]!
+  "Project identifier."
+  projectId: ID!
+  "Replace all existing user-specific project parameters. By default parameters are appended to the existing list."
+  replaceExisting: Boolean
+}
+
+"Input for updating project permission."
+input DesUpdateProjectPermissionInput {
+  "Allows updating, deleting and creating when set, otherwise only read permissions will be allowed."
+  canModify: Boolean!
+  "Group reference identifier."
+  groupId: String
+  "Scope of the permission."
+  scope: DesPermissionScope!
+  "User identifier. Workspace user identifier should be used for the scope 'USER', global user identifier should be used for the scope 'GUEST'."
+  userId: String
+}
+
+"Input for updating project permissions."
+input DesUpdateProjectPermissionsInput {
+  "Permissions to update."
+  permissions: [DesUpdateProjectPermissionInput!]!
+  "Project identifier."
+  projectId: ID!
+  "Tells to replace all existing permissions. By default permissions are added to existing."
+  replaceExisting: Boolean
+}
+
+"Input for uploading a collaboration."
+input DesUploadCollaborationInput {
+  "The uploaded file comment."
+  comment: String!
+  "*PROTOTYPE, SUBJECT TO CHANGE*"
+  design: DesCadDesignInput
+  "The ECAD, MCAD or ESD domain."
+  domain: DesCollaborationDomain!
+  "The uploaded file identifier. Either the file identifier or design must be given."
+  fileId: String
+  "Project identifier."
+  projectId: ID!
+}
+
+"Input for uploading a collaboration simulation."
+input DesUploadCollaborationSimulationInput {
+  "Comment."
+  comment: String!
+  "Domain."
+  domain: String!
+  "Collaboration simulation files."
+  files: [DesCollaborationSimulationFileInput!]!
+  "Project identifier."
+  projectId: ID!
+  "Project type."
+  projectType: String!
+  "Revision."
+  revision: String!
+}
+
+"Input for uploading a project."
+input DesUploadProjectInput {
+  "The project description."
+  description: String
+  "The uploaded zip file identifier."
+  fileId: String!
+  "The project name."
+  name: String!
+  "The project target parent folder identifier."
+  parentFolderId: ID!
+  "The workspace URL."
+  workspaceUrl: String
+}
+
+"A variant contains a specific configuration of a base design."
+input DesWipVariantFilterInput {
+  and: [DesWipVariantFilterInput!]
+  "The descriptive label for this design variant."
+  name: StringOperationFilterInput
+  or: [DesWipVariantFilterInput!]
+}
+
+"**Experimental** Represents input value for generate design data mutation."
+input DesignRegisterUploadInput @experimental {
+  "**Experimental**"
+  designId: ID @deprecated(reason: "DesignId is no longer used for uploads.")
+  "**Experimental** Identifier of the zip file containing the design files."
+  fileId: String!
+}
+
+"**Experimental** Represents the input for executing rule checks on a design."
+input DesignRuleCheckExecuteInput @experimental {
+  "**Experimental** Client-generated identifier used together with the design and revision to deduplicate executions."
+  clientExecutionId: String
+  "**Experimental** Custom configuration of the rule check reporting. When specified, overrides the configuration stored in the design data for this execution only."
+  configuration: DesignRuleCheckExecutionConfigurationInput
+  "**Experimental** The identifier of the design to execute rule checks for."
+  designId: ID!
+  "**Experimental** Idempotency token used together with the design and revision to deduplicate executions."
+  idempotencyToken: String @deprecated(reason: "idempotencyToken is obsolete. Use clientExecutionId instead.")
+  "**Experimental** Reason why the rule check execution is triggered, which can be used for filtering and distinguishing different types of rule check executions. Known values: CHANGE, PROCESS, REGENERATION, RELEASE_CANDIDATE, RELEASE, UPLOAD. New values may be added; clients must tolerate unknown values."
+  reason: String!
+  "**Experimental** The identifier of the project commit. If not specified, the latest commit is used."
+  revisionId: String
+  "**Experimental** Source of the rule check execution, identifying whether it is triggered by a user or by the system. Known values: SYSTEM, USER. New values may be added; clients must tolerate unknown values."
+  source: String!
+}
+
+"**Experimental** Represents the input for executing rule checks on an upload."
+input DesignRuleCheckExecuteOnUploadInput @experimental {
+  "**Experimental** Client-generated identifier used together with the design and revision to deduplicate executions."
+  clientExecutionId: String
+  "**Experimental** Custom configuration of the rule check reporting. When specified, overrides the configuration stored in the design data for this execution only."
+  configuration: DesignRuleCheckExecutionConfigurationInput
+  "**Experimental** Idempotency token used together with the design and revision to deduplicate executions."
+  idempotencyToken: String @deprecated(reason: "idempotencyToken is obsolete. Use clientExecutionId instead.")
+  "**Experimental** Reason why the rule check execution is triggered, which can be used for filtering and distinguishing different types of rule check executions. Known values: CHANGE, PROCESS, REGENERATION, RELEASE_CANDIDATE, RELEASE, UPLOAD. New values may be added; clients must tolerate unknown values."
+  reason: String!
+  "**Experimental** Source of the rule check execution, identifying whether it is triggered by a user or by the system. Known values: SYSTEM, USER. New values may be added; clients must tolerate unknown values."
+  source: String!
+  "**Experimental** The identifier of the upload to execute rule checks for."
+  uploadId: String!
+}
+
+"**Experimental** Represents the configuration of rule check execution, allowing to override certain traits of the rule check execution."
+input DesignRuleCheckExecutionConfigurationInput @experimental {
+  "**Experimental** The error report level overrides for specific rule checks, identified by their identifiers. When null, the design's default rule check configuration is used."
+  ruleChecks: [DesignRuleCheckExecutionConfigurationItemInput!]
+}
+
+"**Experimental** Represents the rule check configuration for a specific rule check execution, allowing to override certain traits of the rule check execution."
+input DesignRuleCheckExecutionConfigurationItemInput @experimental {
+  "**Experimental** The error level at which violations of this rule check should be reported for this execution. Known values: NO_REPORT, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values."
+  errorReportLevel: String!
+  "**Experimental** The display name of the rule check. Used to report a skipped violation when the rule check no longer exists on the server."
+  name: String
+  "**Experimental** The identifier of the rule check."
+  ruleCheckId: ID!
+}
+
+"**Experimental** Represents the execution of rule checks against a design."
+input RuleCheckExecutionFilterInput @experimental {
+  "**Experimental**"
+  and: [RuleCheckExecutionFilterInput!]
+  "**Experimental**"
+  or: [RuleCheckExecutionFilterInput!]
+  "**Experimental** Reason why the rule check execution was triggered, which can be used for filtering and distinguishing different types of rule check executions."
+  reason: RuleCheckExecutionReasonOperationFilterInput
+  "**Experimental** Source of the rule check execution, identifying whether it was triggered by a user or by the system."
+  source: RuleCheckExecutionSourceOperationFilterInput
+}
+
+"**Experimental**"
+input RuleCheckExecutionReasonOperationFilterInput @experimental {
+  "**Experimental**"
+  eq: String
+  "**Experimental**"
+  in: [String!]
+  "**Experimental**"
+  neq: String
+  "**Experimental**"
+  nin: [String!]
+}
+
+"**Experimental**"
+input RuleCheckExecutionSourceOperationFilterInput @experimental {
+  "**Experimental**"
+  eq: String
+  "**Experimental**"
+  in: [String!]
+  "**Experimental**"
+  neq: String
+  "**Experimental**"
+  nin: [String!]
+}
+
+"Board option flags."
+enum DesCadBoardCollaborationFlag {
+  BASELINE_UNIT_IMPERIAL
+  IGNORE_DUPLICATE_PAD_DESIGNATORS
+}
+
+"Component placement kind."
+enum DesCadBoardComponentPlacement {
+  BOTH
+  BOTTOM
+  TOP
+}
+
+"Specifies which copper features to include when exporting board copper data."
+enum DesCadBoardCopperExportFeature {
+  COPPER_REGIONS
+  PADS
+  TRACKS
+  VIAS
+}
+
+"Specifies the type of copper region."
+enum DesCadBoardCopperRegionType {
+  PAD
+  REGION
+}
+
+"Category of the board layer."
+enum DesCadBoardLayerCategory {
+  MECHANICAL
+  PHYSICAL
+}
+
+"Component placement for the signal layer."
+enum DesCadBoardLayerComponentPlacement {
+  BODY_DOWN
+  BODY_UP
+  NONE
+}
+
+"Dielectric type for the dielectric layer."
+enum DesCadBoardLayerDielectricType {
+  CORE
+  FILM
+  NONE
+  PRE_PREQ
+  SURFACE
+}
+
+"Physical category of the board layer."
+enum DesCadBoardLayerPhysicalCategory {
+  DIELECTRICAL_ORDINAL
+  DIELECTRICAL_SOLDER_MASK
+  ELECTRICAL_INTERNAL_PLANE
+  ELECTRICAL_SIGNAL_LAYER
+  PHYSICAL_OVERLAY
+  PHYSICAL_PASTE_MASK
+}
+
+"Position of the board layer within the stackup."
+enum DesCadBoardLayerPosition {
+  BOTTOM
+  INTERNAL
+  TOP
+}
+
+"Type of the board layer."
+enum DesCadBoardLayerType {
+  DIELECTRIC
+  INTERNAL_PLANE
+  SIGNAL
+}
+
+"The type of the board object."
+enum DesCadBoardObjectType {
+  BENDING_LINE
+  BOARD_AREA
+  BOARD_OUTLINE
+  BOARD_VIA
+  COMPONENT
+  COMPONENT_TYPE
+  CUTOUT
+  HOLE
+  LAYER
+  REGION
+  SPLIT_LINE
+  TRACK
+}
+
+"The kind of component variation in a CAD design."
+enum DesCadComponentVariationKind {
+  ALTERNATE
+  FITTED
+  NOT_FITTED
+}
+
+"The type of the hole."
+enum DesCadCounterType {
+  COUNTERBORE_BOTTOM
+  COUNTERBORE_TOP
+  COUNTERSINK_BOTTOM
+  COUNTERSINK_TOP
+  NONE
+}
+
+"The type of the hole."
+enum DesCadHoleType {
+  CIRCULAR
+  RECTANGULAR
+  SLOT
+  UNKNOWN
+}
+
+"The mode for exporting layers in a design."
+enum DesCadLayersExportMode {
+  ALL_LAYERS
+  NO_LAYERS
+  OUTER_SIGNAL_LAYERS_ONLY
+}
+
+"The workflow state for proposed changes."
+enum DesCadWorkflowState {
+  NONE
+  READY_TO_SEND_OR_RECEIVE_CHANGES
+  RECEIVED_PROPOSED_CHANGES
+  SENT_PROPOSED_CHANGES
+}
+
+"Specifies ECAD, MCAD or ESD domain."
+enum DesCollaborationDomain {
+  ECAD
+  ESD
+  MCAD
+}
+
+enum DesComparisonMode {
+  BOM
+  PCB
+  SCHEMATIC
+}
+
+"The type of PCB layer."
+enum DesLayerType {
+  ABSTRACT
+  ADHESIVE
+  BIKINI_COVERLAY
+  CONDUCTIVE
+  CORE
+  DIELECTRIC
+  FOIL
+  MECHANICAL
+  MISC
+  NON_CONDUCTIVE
+  OVERLAY
+  PASTE_MASK
+  PE_LAYER
+  PHYSICAL
+  PLANE
+  PLATING
+  PREPREG
+  SIGNAL
+  SOLDER_MASK
+  STIFFENER
+  SURFACE_FINISH
+  UNKNOWN
+}
+
+"Pad type: SMD or free."
+enum DesPadType {
+  FREE
+  SMD
+}
+
+"The electrical type of a pin."
+enum DesPinElectricalType {
+  HI_Z
+  INPUT
+  IO
+  OPEN_COLLECTOR
+  OPEN_EMITTER
+  OUTPUT
+  PASSIVE
+  POWER
+}
+
+"Shape of a PCB primitive."
+enum DesPrimitiveShape {
+  ARC
+  CIRCLE
+  CUSTOM
+  NONE
+  OCTAGON
+  RECTANGLE
+  ROTATED_RECTANGLE
+  ROUND
+  ROUND_RECTANGLE
+  ROUNDED_RECTANGLE
+  TERMINATOR
+}
+
+"Specifies the sort order field for the result set of project guests."
+enum DesProjectGuestOrderBy {
+  "Order by the user display name."
+  DISPLAY_NAME
+  "Order by user email."
+  EMAIL
+  "Order by global user identifier."
+  GLOBAL_USER_ID
+}
+
+"The hosting location of a project's VCS repository."
+enum DesProjectRepositoryType {
+  "The repository is hosted outside Altium 365."
+  EXTERNAL
+  "The repository is hosted inside Altium 365."
+  INTERNAL
+}
+
+"Type of project."
+enum DesProjectType {
+  HARNESS_DESIGN
+  NONE
+  PCB_PROJECT
+  SYSTEM_DESIGN
+}
+
+"Describes VCS item change kind."
+enum DesVcsChangeKind {
+  ADDED
+  DELETED
+  MODIFIED
+  NONE
+}

@@ -1,0 +1,3094 @@
+# Altium Platform API — Library Management schema slice (~25626 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Decimal → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesDownloadableFile → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesFolder → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesFolderFilterInput → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesLifeCycleDefinition → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesLifeCycleState → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesModel3D → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesPayloadError → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesPin → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesRevision → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesUser → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   Long → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Node → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   SortEnumType → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   StringOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   URL → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   UUID → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+
+type Query {
+  "Search a specific component by its unique identifier."
+  desComponentById(
+    "The identifier for a component."
+    id: ID!
+  ): DesComponent
+  "Searches multiple components by their unique identifiers."
+  desComponentsByIds(
+    "The identifiers for components."
+    ids: [ID!]!
+  ): [DesUnionPayload!]!
+  "Searches for a specific template for a component by its unique identifier."
+  desComponentTemplateById(
+    "The node identifier for a component template."
+    id: ID!
+  ): DesComponentTemplate
+  "Searches for a specific component template revision by its unique identifier."
+  desComponentTemplateRevisionById(
+    "The component template revision identifier."
+    id: ID!
+  ): DesComponentTemplateRevision
+  "Search a specific datasheet by its unique identifier."
+  desDatasheetById(
+    "The identifier for a datasheet."
+    id: ID!
+  ): DesDatasheet
+  "Searches for a specific footprint by its unique identifier."
+  desFootprintById(
+    "The node identifier for a footprint."
+    id: ID!
+  ): DesFootprint
+  "Gets the library by workspace URL."
+  desLibrary(
+    args: DesLibraryArgsInput
+    "The workspace URL."
+    workspaceUrl: String
+  ): DesLibrary!
+  "Gets part attributes by provider."
+  desPartAttributesByProvider: DesPartAttributes!
+  "Gets a part by its identifier."
+  desPartById(
+    "The unique identifier of the part."
+    id: ID!
+    "Specifies whether paid data from *SiliconExpert* or *Z2Data* is requested. When set to true, the provider quota is consumed."
+    requestPaidData: Boolean
+  ): DesPart
+  "Gets parts by their identifiers."
+  desPartByIds(
+    "The unique identifiers of the parts."
+    ids: [ID!]!
+    "Specifies whether paid data from *SiliconExpert* or *Z2Data* is requested. When set to true, the provider quota is consumed."
+    requestPaidData: Boolean
+  ): [DesPart]!
+  "Gets part categories by provider."
+  desPartCategoriesByProvider: DesPartCategoriesByProviders!
+  "Gets global parts by their identifiers."
+  desPartGlobalPartByIds(
+    "The unique identifiers of the global parts."
+    globalPartIds: [String!]!
+  ): [DesPartGlobalPart]!
+  "Searches part by attributes globally."
+  desPartGlobalSearch(
+    "The cursor to return the global parts after."
+    after: String
+    "Specifies the list of attribute identifiers for which facets should be calculated."
+    attributeFacets: [String!]
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "The maximum number of global parts to return."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "The sort order to apply to the global parts."
+    order: DesPartGlobalSearchSortInput
+    "The filter to apply to the global part search."
+    where: DesPartGlobalSearchFilterInput
+  ): DesPartGlobalSearchConnection
+  "Gets manufacturers list by provider."
+  desPartManufacturersByProvider: DesPartManufacturers!
+  "Searches parts by attributes."
+  desPartSearch(
+    "The cursor to return the parts after."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "The maximum number of parts to return."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "The sort order to apply to the parts."
+    order: [DesPartSortInput!]
+    "The filter to apply to the part search."
+    where: DesPartSearchFilterInput
+  ): DesPartSearchConnection
+  "Searches parts by their manufacturer name and part number."
+  desPartSearchByManufacturerPartIds(
+    "The manufacturer part identifiers to search by."
+    items: [DesPartManufacturerPartIdInput!]!
+    "The options to apply to the search."
+    options: DesPartSearchByManufacturerPartIdsOptionsInput
+  ): [DesPartSearchByManufacturerPartIdsResultItem!]!
+  "Searches custom parts by manufacturer and MPN in all custom part sources."
+  desPartSearchCustomParts(
+    "The manufacturer part identifiers to search by."
+    items: [DesPartManufacturerPartIdInput!]!
+  ): [DesPartCustomPartSearchResultItem!]!
+  "Infers part search criteria from a keyword."
+  desPartSearchInference(
+    "The filter to use for search inference."
+    where: DesPartSearchInferenceFilterInput!
+  ): DesPartSearchInferenceResult!
+  "Gets part search suggestions."
+  desPartSearchSuggestions(
+    "The minimum part coverage required for returned attributes."
+    minCoverage: Float! = 0.01
+    "The list of attributes to request suggestions for."
+    requestedAttributes: [String!]
+    "The filter to apply to the search suggestions."
+    where: DesPartSearchSuggestionFilterInput!
+  ): DesPartSearchSuggestionValues!
+  "Gets sellers list by provider."
+  desPartSellersByProvider: DesPartSellers!
+  "The tags that can be assigned to parts in this workspace, ordered by name."
+  desPartTags: [DesPartTag!]!
+  "Returns the result of a completed components upload, or 'null' when there is no such report. EXPERIMENTAL: this query may change or be removed without notice."
+  desPartUploadComponentsReport(
+    "The operation to read the result of, as returned by `desPartUploadOperation`."
+    operationId: UUID!
+  ): DesPartUploadComponentsPayload
+  "Returns the result of a completed library parts upload, or 'null' when there is no such report. EXPERIMENTAL: this query may change or be removed without notice."
+  desPartUploadLibraryPartsReport(
+    "The operation to read the result of, as returned by `desPartUploadOperation`."
+    operationId: UUID!
+  ): DesPartUploadLibraryPartsPayload
+  "Returns the latest parts upload operation of the workspace, or 'null' when there is none. EXPERIMENTAL: this query may change or be removed without notice."
+  desPartUploadOperation: DesPartUploadOperationPayload
+  "Reads column headers from a previously uploaded CSV or Excel file. EXPERIMENTAL: this query may change or be removed without notice."
+  desPartUploadPartFileColumns(
+    "File identifier to read columns from."
+    fileId: String!
+    "File name to read columns from."
+    fileName: String!
+  ): DesPartUploadPartFileColumnsPayload!
+  "Find a specific reuse block by its unique identifier."
+  desReuseBlockById(
+    "The node identifier for a reuse block."
+    id: ID!
+  ): DesReuseBlock
+  "Find a specific reuse block revision by its unique identifier."
+  desReuseBlockRevisionById(
+    "The node identifier for a reuse block revision."
+    id: ID!
+  ): DesReuseBlockRevision
+  "Find specific reuse block revisions by their unique identifiers."
+  desReuseBlockRevisionsByIds(
+    "Node identifiers for the reuse block revisions."
+    ids: [ID!]!
+  ): [DesReuseBlockRevision]!
+  "Find specific reuse blocks by their unique identifiers."
+  desReuseBlocksByIds(
+    "Node identifiers for the reuse blocks."
+    ids: [ID!]!
+  ): [DesReuseBlock]!
+  "Gets components by internal part numbers."
+  desSearchComponentsByIpns(
+    "Internal part numbers."
+    ipns: [String!]!
+  ): [DesComponent]!
+  "*PROTOTYPE, SUBJECT TO CHANGE*. Searches for components where one of the provided MPNs matches a part choice."
+  desSearchComponentsByMpns(
+    "The manufacturer part numbers to search by."
+    input: [DesSearchComponentByMpnInput!]!
+  ): [DesSearchComponentResult!]!
+  "Searches for a specific symbol by its unique identifier."
+  desSymbolById(
+    "The node identifier for a symbol."
+    id: ID!
+  ): DesSymbol
+}
+
+type Mutation {
+  "Adds part choices of the specified component."
+  desAddComponentPartChoices(input: DesAddComponentPartChoicesInput!): DesAddComponentPartChoicesPayload!
+  "Adds the specified datasheet to a component (does not affect the revision)."
+  desAddDatasheetToComponent(input: DesAddDatasheetToComponentInput!): DesAddDatasheetToComponentPayload!
+  "Adds the specified footprint to a component (does not affect the revision)."
+  desAddFootprintToComponent(input: DesAddFootprintToComponentInput!): DesAddFootprintToComponentPayload!
+  "Creates a datasheet."
+  desCreateDatasheet(input: DesCreateDatasheetInput!): DesCreateDatasheetPayload!
+  "Creates a footprint."
+  desCreateFootprint(input: DesCreateFootprintInput!): DesCreateFootprintPayload!
+  "Creates a symbol."
+  desCreateSymbol(input: DesCreateSymbolInput!): DesCreateSymbolPayload!
+  "Marks the result of a finished parts upload operation as read. EXPERIMENTAL: this mutation may change or be removed without notice."
+  desPartAcknowledgeUploadOperation(
+    "The operation to acknowledge."
+    input: DesPartAcknowledgeUploadOperationInput!
+  ): DesPartAcknowledgeUploadOperationPayload!
+  "Assigns a tag to parts. Parts that already have the tag are not reported as an error."
+  desPartAttachTag(
+    "The tag to assign and the parts to assign it to."
+    input: DesPartAttachTagInput!
+  ): DesPartAttachTagPayload!
+  "Moves a part to another lifecycle state."
+  desPartChangeLifecycleState(
+    "The part to move and the lifecycle state to move it to."
+    input: DesPartChangeLifecycleStateInput!
+  ): DesPartChangeLifecycleStatePayload!
+  "Creates a tag that can be assigned to parts."
+  desPartCreateTag(
+    "The tag to create."
+    input: DesPartCreateTagInput!
+  ): DesPartCreateTagPayload!
+  "Deletes a part tag. The tag has to be unassigned from every part first."
+  desPartDeleteTag(
+    "The tag to delete."
+    input: DesPartDeleteTagInput!
+  ): DesPartDeleteTagPayload!
+  "Unassigns a tag from parts. Parts that do not have the tag are not reported as an error."
+  desPartDetachTag(
+    "The tag to unassign and the parts to unassign it from."
+    input: DesPartDetachTagInput!
+  ): DesPartDetachTagPayload!
+  "Removes custom part by the given identifiers."
+  desPartRemoveCustomParts(
+    "The custom parts to remove."
+    input: DesPartRemoveCustomPartsInput!
+  ): DesPartRemoveCustomPartsPayload!
+  "Starts a background upload of components with part choices and returns the identifier of the started operation. EXPERIMENTAL: this mutation may change or be removed without notice."
+  desPartUploadComponents(
+    "The components to upload."
+    input: DesPartUploadComponentsInput!
+  ): DesPartStartUploadPayload!
+  "Uploads a datasheet file for a custom part and returns its public service URL."
+  desPartUploadCustomPartDatasheet(
+    "The datasheet file to upload."
+    input: DesPartUploadCustomPartFileInput!
+  ): DesPartUploadCustomPartFilePayload!
+  "Uploads an image file for a custom part and returns its public service URL."
+  desPartUploadCustomPartImage(
+    "The image file to upload."
+    input: DesPartUploadCustomPartFileInput!
+  ): DesPartUploadCustomPartFilePayload!
+  "Starts a background upload of custom library parts and returns the identifier of the started operation. EXPERIMENTAL: this mutation may change or be removed without notice."
+  desPartUploadLibraryParts(
+    "The custom library parts to upload."
+    input: DesPartUploadLibraryPartsInput!
+  ): DesPartStartUploadPayload!
+  "Upserts custom parts."
+  desPartUpsertCustomParts(
+    "The custom parts to upsert."
+    input: DesPartUpsertCustomPartsInput!
+  ): DesPartUpsertCustomPartsPayload!
+  "Releases the specified component."
+  desReleaseComponent(input: DesReleaseComponentInput!): DesReleaseComponentPayload!
+  "Creates and releases the specified component template."
+  desReleaseComponentTemplate(input: DesReleaseComponentTemplateInput!): DesReleaseComponentTemplatePayload!
+  "Removes part choices of the specified component."
+  desRemoveComponentPartChoices(input: DesRemoveComponentPartChoicesInput!): DesRemoveComponentPartChoicesPayload!
+  "Removes the specified datasheet from a component (does not affect the revision)."
+  desRemoveDatasheetFromComponent(input: DesRemoveDatasheetFromComponentInput!): DesRemoveDatasheetFromComponentPayload!
+  "Removes the specified footprint from a component (does not affect the revision)."
+  desRemoveFootprintFromComponent(input: DesRemoveFootprintFromComponentInput!): DesRemoveFootprintFromComponentPayload!
+  "Updates item parameters for the specified component (does not affect the revision)."
+  desUpdateComponentItemParameters(input: DesUpdateComponentItemParametersInput!): DesUpdateComponentItemParametersPayload!
+  "Updates life cycle state for the provided component."
+  desUpdateComponentLifeCycleState(input: DesUpdateComponentLifeCycleStateInput!): DesUpdateComponentLifeCycleStatePayload!
+  "Updates parameters for the specified component (creates a new revision)."
+  desUpdateComponentRevisionParameters(input: DesUpdateComponentRevisionParametersInput!): DesUpdateComponentRevisionParametersPayload!
+  "Updates the specified component's symbol (does not affect the revision)."
+  desUpdateComponentSymbol(input: DesUpdateComponentSymbolInput!): DesUpdateComponentSymbolPayload!
+  "Updates the specified component template."
+  desUpdateComponentTemplate(input: DesUpdateComponentTemplateInput!): DesUpdateComponentTemplatePayload!
+  "Updates the specified footprint. This will create a new revision of the footprint, and reset the lifecycle state."
+  desUpdateFootprint(input: DesUpdateFootprintInput!): DesUpdateFootprintPayload!
+  "Updates life cycle state for the provided footprint."
+  desUpdateFootprintLifeCycleState(input: DesUpdateFootprintLifeCycleStateInput!): DesUpdateFootprintLifeCycleStatePayload!
+  "Updates a specific result block."
+  desUpdateReuseBlock(input: DesUpdateReuseBlockInput!): DesUpdateReuseBlockPayload!
+  "Updates the specified symbol. This will create a new revision of the symbol, and reset the lifecycle state."
+  desUpdateSymbol(input: DesUpdateSymbolInput!): DesUpdateSymbolPayload!
+  "Updates life cycle state for the provided symbol."
+  desUpdateSymbolLifeCycleState(input: DesUpdateSymbolLifeCycleStateInput!): DesUpdateSymbolLifeCycleStatePayload!
+  "Upgrades components to use the latest footprint revision. This operation updates the link to the footprint and does not create new component revisions."
+  desUpgradeComponentsToLatestFootprint(input: DesUpgradeComponentsToLatestFootprintInput!): DesUpgradeComponentsToLatestFootprintPayload!
+  "Upgrades components to use the latest symbol revision. This operation updates the link to the symbol and does not create new component revisions."
+  desUpgradeComponentsToLatestSymbol(input: DesUpgradeComponentsToLatestSymbolInput!): DesUpgradeComponentsToLatestSymbolPayload!
+}
+
+"Payload associated with adding part choices for a component."
+type DesAddComponentPartChoicesPayload {
+  "Component identifier. If revision control is enabled, this will refer to the created revision."
+  componentId: ID!
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with adding a datasheet to a component."
+type DesAddDatasheetToComponentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with adding a footprint to a component."
+type DesAddFootprintToComponentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"A component contains the parametric details of a PCB part."
+type DesComponent implements Node {
+  "The additional information for this component."
+  comment: String!
+  "The component template revision linked to this component revision, if any."
+  componentTemplate: DesComponentTemplateRevision
+  "The component type classification for this component."
+  componentType: DesComponentType
+  "The `DateTime` when this component was created."
+  createdAt: DateTime!
+  "The user who created this component."
+  createdBy: DesUser!
+  "The summary of function or other performance details for this component."
+  description: String!
+  "More component data, consider using only with `desComponentById`."
+  details: DesComponentDetails!
+  "The component folder."
+  folder: DesFolder
+  "The node identifier used by `desComponentById`. Unmanaged components may be not found."
+  id: ID!
+  "Gets true if the component is managed."
+  isManaged: Boolean!
+  "The list of the part choices associated with this component."
+  manufacturerParts: [DesManufacturerPart!]!
+  "Component 3D model."
+  model3D: DesModel3D
+  "The `DateTime` when this component was last modified."
+  modifiedAt: DateTime!
+  "The library label for this component."
+  name: String!
+  "The component revision."
+  revision: DesRevision!
+  "The identifier of the component revision."
+  revisionId: String!
+}
+
+"A connection to a list of items."
+type DesComponentConnection {
+  "A list of edges."
+  edges: [DesComponentEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesComponent!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"Detailed component information."
+type DesComponentDetails {
+  "The list of component datasheets."
+  datasheets: [DesDatasheet!]!
+  "The list of component footprints."
+  footprints: [DesFootprint!]!
+  "The component item internal identifier."
+  itemInternalId: String!
+  "The list of parameters describing the item."
+  itemParameters: [DesComponentParameter!]!
+  "The list of revision level parameters from the latest revision. Parameter types are unknown (`NONE`) for unmanaged components."
+  parameters: [DesComponentParameter!]!
+  "The list of component simuation models."
+  simulations: [DesSimulation!]!
+  "The list of component symbols."
+  symbols: [DesSymbol!]!
+}
+
+"An edge in a connection."
+type DesComponentEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesComponent!
+}
+
+"Parameter describing a component."
+type DesComponentParameter {
+  "Parameter name."
+  name: String!
+  "Component parameter real value in scientific notation."
+  realValue: String
+  "Component parameter type."
+  type: DesParameterType!
+  "Parameter value."
+  value: String!
+}
+
+"Information about a component template."
+type DesComponentTemplate implements Node {
+  "Component template description."
+  description: String!
+  "The folder containing this component template."
+  folder: DesFolder
+  "The node identifier (used by `desComponentTemplateById`)."
+  id: ID!
+  "Component template latest revision."
+  latestRevision: DesComponentTemplateRevision!
+  "Component template name."
+  name: String!
+}
+
+"A connection to a list of items."
+type DesComponentTemplateConnection {
+  "A list of edges."
+  edges: [DesComponentTemplateEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesComponentTemplate!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesComponentTemplateEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesComponentTemplate!
+}
+
+"Component template revision information."
+type DesComponentTemplateRevision implements Node {
+  "Component template revision comment."
+  comment: String!
+  "Creation date for component template revision."
+  createdAt: DateTime!
+  "Component template revision description."
+  description: String!
+  "Component template revision downloadable file."
+  downloadableFile: DesDownloadableFile!
+  "Component template revision identifier."
+  id: ID!
+  "Component template revision name."
+  name: String!
+}
+
+"Represents a component type classification in the component library."
+type DesComponentType {
+  "The reference identifier for this component type."
+  componentTypeId: String!
+  "The `DateTime` this was created."
+  createdAt: DateTime!
+  "The user this was created by."
+  createdBy: DesUser!
+  "The display name of the component type."
+  name: String!
+  "The parent of this component type in the hierarchy."
+  parent: DesComponentType
+  "The full path of the component type."
+  path: String!
+  "The `DateTime` this was last updated."
+  updatedAt: DateTime!
+  "The user this was last updated by."
+  updatedBy: DesUser!
+}
+
+"A connection to a list of items."
+type DesComponentTypeConnection {
+  "A list of edges."
+  edges: [DesComponentTypeEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesComponentType!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesComponentTypeEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesComponentType!
+}
+
+"Payload associated with creating datasheet."
+type DesCreateDatasheetPayload {
+  "The created datasheet identifier."
+  datasheetId: ID
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with creating footprint."
+type DesCreateFootprintPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "The created footprint identifier."
+  footprintId: ID
+}
+
+"Payload associated with creating a symbol."
+type DesCreateSymbolPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Identifier of the created symbol."
+  id: ID!
+}
+
+"A component datasheet."
+type DesDatasheet implements Node {
+  "ECAD entity comment."
+  comment: String!
+  "The user this entity was created by."
+  createdBy: DesUser!
+  "ECAD entity data download URL."
+  dataDownloadUrl: String!
+  "ECAD entity description."
+  description: String!
+  "ECAD entity folder."
+  folder: DesFolder
+  "Datasheet node identifier."
+  id: ID!
+  "Item internal identifier."
+  itemInternalId: String!
+  "ECAD entity name."
+  name: String!
+  "Revision internal identifier."
+  revisionInternalId: String!
+  "The user this entity was last updated by."
+  updatedBy: DesUser!
+}
+
+"A connection to a list of items."
+type DesDatasheetConnection {
+  "A list of edges."
+  edges: [DesDatasheetEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesDatasheet!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesDatasheetEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesDatasheet!
+}
+
+"Payload associated with error."
+type DesErrorPayload {
+  "Error message."
+  message: String!
+}
+
+"A component footprint. Footprints define the space a component occupies."
+type DesFootprint implements Node {
+  "ECAD entity comment."
+  comment: String!
+  "The `DateTime` when this revision was created."
+  createdAt: DateTime!
+  "The user this entity was created by."
+  createdBy: DesUser!
+  "ECAD entity data download URL."
+  dataDownloadUrl: String!
+  "ECAD entity description."
+  description: String!
+  "ECAD entity folder."
+  folder: DesFolder
+  guid: String! @deprecated(reason: "Use `RevisionInternalId` instead.")
+  "Footprint node identifier."
+  id: ID!
+  "ECAD entity full size image URL."
+  imageFullSizeUrl: String!
+  "ECAD entity thumbnail image URL."
+  imageThumbnailUrl: String!
+  "Item internal identifier."
+  itemInternalId: String!
+  "The life cycle state information."
+  lifeCycleState: DesLifeCycleState!
+  "ECAD entity name."
+  name: String!
+  pins: [DesPin!]! @deprecated(reason: "Not implemented and may be removed.")
+  "The `DateTime` when this revision was released."
+  releasedAt: DateTime!
+  "Revision internal identifier."
+  revisionInternalId: String!
+  "The user this entity was last updated by."
+  updatedBy: DesUser!
+}
+
+"A connection to a list of items."
+type DesFootprintConnection {
+  "A list of edges."
+  edges: [DesFootprintEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesFootprint!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesFootprintEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesFootprint!
+}
+
+"Information about your library. All component data in A365 is stored in your library."
+type DesLibrary {
+  "Gets library components."
+  components(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesComponentFilterInput
+  ): DesComponentConnection
+  "Gets library component templates."
+  componentTemplates(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): DesComponentTemplateConnection
+  "Gets library component types."
+  componentTypes(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesComponentTypeFilterInput
+  ): DesComponentTypeConnection
+  "The date and time the library was created."
+  createdAt: DateTime!
+  "The user that created the library."
+  createdBy: DesUser!
+  "Gets library datasheets."
+  datasheets(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesDatasheetFilterInput
+  ): DesDatasheetConnection
+  "A description of the library."
+  description: String!
+  "*PROTOTYPE, SUBJECT TO CHANGE*"
+  downloadUrlsByTokens(
+    "The list of tokens to get download URLs for."
+    tokens: [String!]!
+  ): [String]!
+  "The event channel of the library."
+  eventChannel: String!
+  "Gets library folders."
+  folders(where: DesFolderFilterInput): [DesFolder!]!
+  "Gets library footprints."
+  footprints(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesFootprintFilterInput
+  ): DesFootprintConnection
+  "The name of the library."
+  name: String!
+  "Gets library reuse blocks."
+  reuseBlocks(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): DesReuseBlockConnection
+  "Gets library symbols."
+  symbols(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    where: DesSymbolFilterInput
+  ): DesSymbolConnection
+  "The date and time the library was last updated."
+  updatedAt: DateTime!
+  "The user that updated the library."
+  updatedBy: DesUser!
+  "The version of the library."
+  version: String!
+}
+
+"Manufacturer part information."
+type DesManufacturerPart {
+  "The manufacturer company name."
+  companyName: String!
+  "The Octopart identifier."
+  octopartId: String
+  "The manufacturer part parameters."
+  parameters: [DesManufacturerPartParameter!]!
+  "The part number (MPN)."
+  partNumber: String!
+  "Manufacturer part priority."
+  priority: Int!
+  "The list of supplier parts associated with this manufacturer part."
+  supplierParts: [DesSupplierPart!]!
+}
+
+"Parameter describing a manufacturer part."
+type DesManufacturerPartParameter {
+  "Parameter name."
+  name: String!
+  "Parameter unit."
+  unit: String
+  "Parameter value."
+  value: String!
+}
+
+"Represents a part."
+type DesPart {
+  "The alternatives for this part."
+  alternatives: DesPartAlternativesResult
+  "The custom part details."
+  customPart: DesPartProviderPart
+  "A description of the part."
+  description: String!
+  "The health check results for the part."
+  healthChecks: [DesPartHealthCheckResult!]!
+  "The identifier of the part."
+  id: ID!
+  "The URL for the part image."
+  imageUrl: URL
+  "The lifecycle of the part. `null` when the part has no vault item yet."
+  lifecycle: DesPartLifecycle
+  "The cached subset of `supplyPart`."
+  localSupplyPart: DesPartProviderPart
+  "The manufacturer name of the part."
+  manufacturerName: String!
+  "The manufacturer part number of the part."
+  mpn: String!
+  "The *SiliconExpert* part details."
+  siliconExpertPart: DesPartProviderPart
+  "The supply part details."
+  supplyPart: DesPartSupplyPart
+  "The tags assigned to the part. Empty when the part has no vault item yet."
+  tags: [DesPartTag!]!
+  "The usage information for the part."
+  usages: DesPartUsages
+  "The *Z2Data* part details."
+  z2DataPart: DesPartProviderPart
+}
+
+"Payload produced when the result of a parts upload operation is marked as read."
+type DesPartAcknowledgeUploadOperationPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "The acknowledged operation, or 'null' when the acknowledgement was refused."
+  operation: DesPartUploadOperationPayload
+}
+
+"An alternative part."
+type DesPartAlternativeItem {
+  "The alternative part."
+  part: DesPart!
+  "Provider-specific metadata for this alternative within the enclosing bucket."
+  providerInfo: DesPartAlternativeProviderInfo!
+}
+
+"Provider-specific information about a part alternative."
+type DesPartAlternativeProviderInfo {
+  "Provider comments about the alternative."
+  comments: String
+  "The compatibility rating (0-1)."
+  compatibilityRating: Float
+  "The cross type."
+  crossType: String
+  "The abbreviated cross type."
+  crossTypeShort: String
+}
+
+"The result of a part alternatives lookup, grouped by provider."
+type DesPartAlternativesResult {
+  "Alternatives provided by *SiliconExpert*."
+  siliconExpertParts: [DesPartAlternativeItem!]!
+  "Alternatives provided by Altium."
+  supplyParts: [DesPartAlternativeItem!]!
+  "Alternatives provided by *Z2Data*."
+  z2DataParts: [DesPartAlternativeItem!]!
+}
+
+"Represents the payload returned after assigning a part tag to parts."
+type DesPartAttachTagPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "Indicates whether every requested part has the tag now. Always `false` when `errors` is not empty."
+  isSuccessful: Boolean!
+}
+
+"Represents a part attribute."
+type DesPartAttribute {
+  "The identifier of the attribute."
+  attributeId: String!
+  "The group name used to cluster similar attributes (e.g., Technical, Physical, Compliance)."
+  group: String!
+  "The display name of the attribute."
+  name: String!
+  "The short name of the attribute."
+  shortname: String!
+  "The units name of the attribute."
+  unitsName: String!
+  "The units symbol of the attribute."
+  unitsSymbol: String!
+  "The value type of the attribute."
+  valueType: String!
+}
+
+"Represents part attributes by provider."
+type DesPartAttributes {
+  "The custom part attributes."
+  customPart: [DesPartAttribute!]
+  "The *SiliconExpert* part attributes."
+  siliconExpertPart: [DesPartAttribute!]
+  "The supply part attributes."
+  supplyPart: [DesPartAttribute!]
+  "The *Z2Data* part attributes."
+  z2DataPart: [DesPartAttribute!]
+}
+
+"Represents the image for a part."
+type DesPartBestImage {
+  "The URL of the image."
+  url: String!
+}
+
+"Represents the alternative parts of a single element."
+type DesPartBomAlternativePartsEntry {
+  "A collection of alternative part identifiers for the element."
+  alternativePartIds: [ID!]!
+  "The identifier of the element."
+  elementId: String!
+}
+
+"Represents a BOM usage."
+type DesPartBomUsage {
+  "A collection of element identifiers that this part is an alternative for."
+  alternativeForElementIds: [String!]
+  "A dictionary mapping element identifiers to a collection of alternative part identifiers."
+  alternativePartsForElementIds: [DesPartBomAlternativePartsEntry!]
+  "A collection of designators."
+  designators: [String!]
+  "A collection of element identifiers in the BOM."
+  elementIds: [String!]
+  "The identifier of the BOM."
+  id: ID!
+  "A collection of linked component identifiers."
+  linkedComponentsIds: [ID!]!
+}
+
+"Represents a collection of part categories grouped by providers."
+type DesPartCategoriesByProviders {
+  "Categories from custom parts."
+  customPart: [DesPartCategory!]
+  "Categories from *SiliconExpert* parts."
+  siliconExpertPart: [DesPartCategory!]
+  "Categories from supply parts."
+  supplyPart: [DesPartCategory!]!
+  "Categories from *Z2Data* parts."
+  z2DataPart: [DesPartCategory!]
+}
+
+"Represents a part category."
+type DesPartCategory {
+  "The identifier of the category."
+  categoryId: String!
+  "The name of the category."
+  name: String!
+  "The identifier of the parent category."
+  parentCategoryId: String!
+  "The path of the category."
+  path: String!
+  "The attributes relevant to the category."
+  relevantAttributes: [DesPartAttribute!]!
+}
+
+"Represents the payload returned after changing the lifecycle state of a part."
+type DesPartChangeLifecycleStatePayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "Indicates whether the lifecycle state of the part was changed. Always `false` when `errors` is not empty."
+  isSuccessful: Boolean!
+}
+
+"Represents a company."
+type DesPartCompany {
+  "The identifier of the company."
+  companyId: String!
+  "The name of the company."
+  name: String!
+  "Used for URLs like */manufacturers/aimtec* or */distributors/digi-key*."
+  slug: String
+}
+
+"Represents a company offer."
+type DesPartCompanyOffer {
+  "The URL to the offer."
+  clickUrl: String
+  "The eligible region for the offer."
+  eligibleRegion: String
+  "The number of days to acquire parts from the factory."
+  factoryLeadDays: Int
+  "The number of units available to be shipped (e.g., stock, quantity)."
+  inventoryLevel: Int
+  "The Minimum Order Quantity (MOQ): the smallest number of parts that can be purchased."
+  moq: Int
+  "The identifier of the offer."
+  offerId: String!
+  "The number of items that must be ordered together."
+  orderMultiple: Int
+  "The packaging of parts (e.g., Tape, Reel)."
+  packaging: String
+  "A collection of price points for the offer, sorted by minimum order quantity."
+  prices: [DesPartPricePoint!]!
+  "The stock keeping unit used by the internal distributor."
+  sku: String!
+  "The last update date."
+  updated: DateTime
+}
+
+"Represents a component usage."
+type DesPartComponentUsage {
+  "The identifier of the component."
+  id: ID!
+  "A collection of part choice identifiers."
+  partChoiceIds: [String!]!
+}
+
+"Represents the payload returned after creating a part tag."
+type DesPartCreateTagPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "The created tag. Always `null` when `errors` is not empty."
+  tag: DesPartTag
+}
+
+"Represents a custom part."
+type DesPartCustomPart {
+  "The custom part data."
+  part: DesPartCustomPartData!
+  "The custom part source."
+  source: DesPartCustomPartSource!
+}
+
+"Represents custom part data."
+type DesPartCustomPartData {
+  "The category name of the part."
+  categoryName: String
+  "The URL of datasheet for sync systems."
+  datasheetUrl: String
+  "The description of the part."
+  description: String
+  "A collection of datasheet URLs."
+  documents: [DesPartCustomPartDocument!]!
+  "The URL for the part image."
+  imageUrl: String
+  "The manufacturer name of the part."
+  manufacturerName: String!
+  "The manufacturer part number of the part."
+  mpn: String!
+  "A collection of sellers."
+  sellers: [DesPartCustomPartSeller!]!
+  "A collection of part specifications."
+  specs: [DesPartCustomPartSpec!]!
+  "The last update time."
+  updatedAt: DateTime!
+}
+
+"Represents a custom part document."
+type DesPartCustomPartDocument {
+  "The name of the document."
+  name: String!
+  "The URL of the document."
+  url: String!
+}
+
+"Represents the result of an operation for a custom part."
+type DesPartCustomPartOperationResult {
+  "The error message if the operation failed."
+  errorMessage: String
+  "The identifiers of the part."
+  partId: DesPartManufacturerPartId!
+}
+
+"Represents a price point."
+type DesPartCustomPartPricePoint {
+  "The price value."
+  price: Decimal!
+  "The price break quantity."
+  quantity: Int!
+}
+
+"Represents a search result item."
+type DesPartCustomPartSearchResultItem {
+  "The found parts."
+  parts: [DesPartCustomPart!]!
+  "The requested part identifier."
+  requested: DesPartManufacturerPartId!
+}
+
+"Represents a seller for a custom part."
+type DesPartCustomPartSeller {
+  "The currency code."
+  currency: String
+  "A collection of price points."
+  prices: [DesPartCustomPartPricePoint!]!
+  "The display name of the seller."
+  sellerName: String!
+  "The URL for the seller."
+  sellerUrl: String
+  "The stock keeping unit."
+  sku: String
+  "A collection of seller specifications."
+  specs: [DesPartCustomPartSellerSpec!]!
+  "A collection of stock items."
+  stock: [DesPartCustomPartStockItem!]!
+  "The last update time."
+  updatedAt: DateTime
+}
+
+"Represents a specification for a seller."
+type DesPartCustomPartSellerSpec {
+  "The display name."
+  name: String!
+  "The value."
+  value: String!
+}
+
+"Represents a custom part source."
+type DesPartCustomPartSource {
+  "The display name."
+  name: String!
+  "The identifier of the part source."
+  partSourceId: String!
+}
+
+"Represents a custom part specification."
+type DesPartCustomPartSpec {
+  "The display name."
+  name: String!
+  "The value."
+  value: String!
+}
+
+"Represents a stock item."
+type DesPartCustomPartStockItem {
+  "The location."
+  location: String!
+  "The quantity."
+  quantity: Int!
+}
+
+"Represents the payload returned after deleting a part tag."
+type DesPartDeleteTagPayload {
+  "The identifier of the deleted tag. Always `null` when `errors` is not empty."
+  deletedTagId: String
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+}
+
+"Represents the payload returned after unassigning a part tag from parts."
+type DesPartDetachTagPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "Indicates whether none of the requested parts has the tag anymore. Always `false` when `errors` is not empty."
+  isSuccessful: Boolean!
+}
+
+"Represents a part document."
+type DesPartDocument {
+  "The MIME type of the document."
+  mimeType: String!
+  "The name of the document."
+  name: String!
+  "The URL of the document."
+  url: URL!
+}
+
+"Represents a collection of part documents."
+type DesPartDocumentCollection {
+  "A collection of documents in the group."
+  documents: [DesPartDocument!]!
+  "The name of the group (e.g., Datasheets)."
+  name: String!
+}
+
+"Maps file columns to a document."
+type DesPartDocumentMapping {
+  "Column header for the document name."
+  nameColumn: String
+  "Column header for the document URL."
+  urlColumn: String!
+}
+
+"Represents a standard error payload."
+type DesPartErrorPayload {
+  "The human-readable description of the error."
+  message: String!
+}
+
+"Represents a facet range."
+type DesPartFacetRange {
+  "The start of the range."
+  from: String!
+  "The end of the range."
+  to: String!
+}
+
+"An alternative global part."
+type DesPartGlobalAlternativeItem {
+  "The alternative global part."
+  part: DesPartGlobalPart!
+  "Provider-specific metadata for this alternative within the enclosing bucket."
+  providerInfo: DesPartAlternativeProviderInfo!
+}
+
+"The result of a global part alternatives lookup, grouped by provider."
+type DesPartGlobalAlternativesResult {
+  "Alternatives provided by *SiliconExpert*."
+  siliconExpertParts: [DesPartGlobalAlternativeItem!]!
+  "Alternatives provided by Altium."
+  supplyParts: [DesPartGlobalAlternativeItem!]!
+  "Alternatives provided by *Z2Data*."
+  z2DataParts: [DesPartGlobalAlternativeItem!]!
+}
+
+"Represents global the part details."
+type DesPartGlobalPart {
+  "The alternatives for this global part."
+  alternatives: DesPartGlobalAlternativesResult
+  "The identifier of the global part."
+  globalPartId: String!
+  "The health check results for the part."
+  healthCheckResults: [DesPartHealthCheckResult!]!
+  "The Silicon Expert part details."
+  siliconExpertPart: DesPartProviderPart
+  "The search result part details."
+  supplyPart: DesPartProviderPart!
+  "The Z2Data part details."
+  z2DataPart: DesPartProviderPart
+}
+
+"A connection to a list of items."
+type DesPartGlobalSearchConnection {
+  "A list of edges."
+  edges: [DesPartGlobalSearchEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesPartGlobalSearchItem!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Gets the search facets for the current result set."
+  searchFacets: DesPartGlobalSearchFacets!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesPartGlobalSearchEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesPartGlobalSearchItem!
+}
+
+"Represents the search facets."
+type DesPartGlobalSearchFacets {
+  "The attribute facets."
+  attributeFacets: [DesPartSearchAttributeFacet!]!
+  "The fixed facets."
+  fixedFacets: DesPartGlobalSearchFixedFacets!
+}
+
+"Represents fixed search facets."
+type DesPartGlobalSearchFixedFacets {
+  "The category names."
+  categoryNames: [DesPartSearchFacetValue!]!
+  "The manufacturer names."
+  manufacturerNames: [DesPartSearchFacetValue!]!
+}
+
+"Represents a global search item with links to supply part and platform part."
+type DesPartGlobalSearchItem {
+  "The global part details."
+  globalPart: DesPartGlobalPart!
+  "The workspace part."
+  part: DesPart
+}
+
+"Represents a health check result for a part."
+type DesPartHealthCheckResult {
+  "The detailed description of the health check result."
+  description: String!
+  "The identifier of the health check."
+  healthCheckId: String!
+  "The severity level of the health check (e.g., *Clean*, *Warning*, *Error*, *FatalError*)."
+  severity: String!
+  "The short description of the health check result."
+  shortDescription: String!
+  "The source of the health check result (e.g., *SupplyPart*, *CustomPart*, *SiliconExpertPart*, *Z2DataPart*)."
+  source: String!
+}
+
+"Represents the lifecycle of a managed part."
+type DesPartLifecycle {
+  "The identifier of the current lifecycle state."
+  currentLifecycleStateId: String!
+  "The lifecycle definition of the part."
+  definition: DesLifeCycleDefinition!
+}
+
+"Represents a manufacturer company."
+type DesPartManufacturerCompany {
+  "The identifier of the company."
+  companyId: String!
+  "Indicates whether the company is active."
+  isActive: Boolean!
+  "The name of the company."
+  name: String!
+  "Used for URLs like */manufacturers/aimtec* or */distributors/digi-key*."
+  slug: String
+}
+
+"Represents the part manufacturer name and part number."
+type DesPartManufacturerPartId {
+  "The name of the manufacturer."
+  manufacturerName: String!
+  "The manufacturer part number."
+  mpn: String!
+}
+
+"Represents the part manufacturer name and part number with internal part number."
+type DesPartManufacturerPartIdWithIpn {
+  "The internal part number."
+  ipn: String
+  "The name of the manufacturer."
+  manufacturerName: String!
+  "The manufacturer part number."
+  mpn: String!
+}
+
+"Represents a collection of manufacturer companies by provider."
+type DesPartManufacturers {
+  "Manufacturer companies from custom parts."
+  customPart: [DesPartManufacturerCompany!]
+  "Manufacturer companies from *SiliconExpert* parts."
+  siliconExpertPart: [DesPartManufacturerCompany!]
+  "Manufacturer companies from supply parts."
+  supplyPart: [DesPartManufacturerCompany!]!
+  "Manufacturer companies from *Z2Data* parts."
+  z2DataPart: [DesPartManufacturerCompany!]
+}
+
+"Maps the price of a fixed break quantity to a file column."
+type DesPartPriceMapping {
+  "Column header for the price at this quantity."
+  priceColumn: String!
+  "Break quantity of the price tier."
+  quantity: Int!
+}
+
+"The price points of the offer, sorted by minimum order quantity."
+type DesPartPricePoint {
+  "Currency for price."
+  currency: String!
+  "Price in currency."
+  price: Float!
+  "Minimum purchase quantity to get this price (aka price break)."
+  quantity: Int!
+}
+
+"Represents a project usage."
+type DesPartProjectUsage {
+  "A collection of element identifiers that this part is an alternative for."
+  alternativeForElementIds: [String!]
+  "A dictionary mapping element identifiers to a collection of alternative part identifiers."
+  alternativePartsForElementIds: [DesPartBomAlternativePartsEntry!]
+  "A collection of designators."
+  designators: [String!]
+  "A collection of element identifiers in the BOM."
+  elementIds: [String!]
+  "The identifier of the BOM."
+  id: ID!
+  "A collection of linked component identifiers."
+  linkedComponentsIds: [ID!]!
+  "The identifier of the variant."
+  variantId: String
+}
+
+"Represents a provider part."
+type DesPartProviderPart {
+  "The image for the part."
+  bestImage: DesPartBestImage
+  "The category details."
+  category: DesPartCategory
+  "The document collections."
+  documentCollections: [DesPartDocumentCollection!]!
+  "The manufacturer details."
+  manufacturer: DesPartCompany!
+  "The median price at quantity 1,000, discarding outliers. A reasonable estimate of average price for a part."
+  medianPrice1000: DesPartPricePoint
+  "The manufacturer part number."
+  mpn: String!
+  "The identifier in the provider."
+  providerId: String!
+  "The sellers with offers."
+  sellers: [DesPartSellerWithOffers!]!
+  "A short description of the part."
+  shortDescription: String
+  "Attribute values for this part."
+  specs: [DesPartSpec!]!
+  "Sum of stock available across all distributors."
+  totalAvail: Long!
+}
+
+"Represents the payload returned after removing custom parts."
+type DesPartRemoveCustomPartsPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "A collection of results for each part."
+  results: [DesPartCustomPartOperationResult!]!
+}
+
+"Represents an attribute facet."
+type DesPartSearchAttributeFacet {
+  "The identifier of the attribute."
+  attributeId: String!
+  "The range of the facet."
+  range: DesPartFacetRange
+  "The values of the facet."
+  values: [DesPartSearchFacetValue!]!
+}
+
+"Represents a search result item."
+type DesPartSearchByManufacturerPartIdsResultItem {
+  "The found part."
+  part: DesPart
+  "The requested part identifier."
+  requested: DesPartManufacturerPartId!
+}
+
+"A connection to a list of items."
+type DesPartSearchConnection {
+  "A list of edges."
+  edges: [DesPartSearchEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesPart!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Gets the search facets for the current result set."
+  searchFacets: DesPartSearchFacets!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesPartSearchEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesPart!
+}
+
+"Represents a search facet value."
+type DesPartSearchFacetValue {
+  "The parts count."
+  count: Int!
+  "The numeric value of the facet value."
+  floatValue: Float
+  "The facet value."
+  value: String!
+}
+
+"Represents the search facets."
+type DesPartSearchFacets {
+  "The attribute facets."
+  attributeFacets: [DesPartSearchAttributeFacet!]!
+  "The fixed facets."
+  fixedFacets: DesPartSearchFixedFacets!
+}
+
+"Represents fixed search facets."
+type DesPartSearchFixedFacets {
+  "The category names."
+  categoryNames: [DesPartSearchFacetValue!]!
+  "Indicates if the part has BOM or project usages."
+  hasBomOrProjectUsages: [DesPartSearchFacetValue!]!
+  "The manufacturer names."
+  manufacturerNames: [DesPartSearchFacetValue!]!
+  "The overall health check statuses."
+  overallHealthCheckStatuses: [DesPartSearchFacetValue!]!
+  "The tags. Not calculated yet, so it is always empty."
+  tags: [DesPartSearchFacetValue!]!
+}
+
+"Represents a suggested category for an inferred search."
+type DesPartSearchInferenceCategorySuggestion {
+  "The suggested category."
+  category: DesPartCategory!
+  "The estimated parts count for this category."
+  count: Int!
+}
+
+"Represents inferred part search criteria."
+type DesPartSearchInferenceResult {
+  "Attributes inferred for this query."
+  attributes: [DesPartSearchInferenceSuggestedAttribute!]!
+  "Category inferred for this query."
+  category: DesPartCategory
+  "Manufacturer inferred for this query."
+  manufacturer: DesPartCompany
+  "Normalized original query string used for inference."
+  normalizedQuery: String!
+  "Query string with inferred terms removed."
+  strippedQuery: String!
+  "Positions of removed inferred terms mapped to attribute short names."
+  strippedSpans: [DesPartSearchInferenceStrippedSpan!]!
+  "Category suggestions related to this query."
+  suggestedCategories: [DesPartSearchInferenceCategorySuggestion!]!
+}
+
+"Represents a term stripped from the original query during inference."
+type DesPartSearchInferenceStrippedSpan {
+  "Attribute short names corresponding to the stripped term."
+  attributeShortnames: [String!]!
+  "The exclusive end character index of the stripped term."
+  end: Int!
+  "The start character index of the stripped term."
+  start: Int!
+  "The stripped term text."
+  text: String!
+}
+
+"Represents an inferred search attribute."
+type DesPartSearchInferenceSuggestedAttribute {
+  "The inferred attribute details."
+  attribute: DesPartAttribute!
+  "Human-readable values to display in the UI."
+  displayValues: [String!]!
+  "The display name of this inferred attribute."
+  name: String!
+  "The filter key for this attribute."
+  shortname: String!
+  "The symbol of the units."
+  unitsSymbol: String
+  "Values to use in the search filter."
+  values: [String!]!
+}
+
+"Represents the results of a part search suggestion request."
+type DesPartSearchSuggestionValues {
+  "The list of all suggested attributes."
+  allAttributes: [DesPartAttribute!]!
+  "The list of suggested parameter facets."
+  attributeFacets: [DesPartSearchAttributeFacet!]!
+}
+
+"Maps file columns to a seller and its prices/stocks."
+type DesPartSellerMapping {
+  "Column header for the seller currency."
+  currencyColumn: String
+  "Column header for the seller name."
+  nameColumn: String!
+  "Price tier mappings."
+  prices: [DesPartPriceMapping!]
+  "Column header for the seller SKU."
+  skuColumn: String
+  "Stock mappings."
+  stocks: [DesPartStockMapping!]
+  "Column header for the seller URL."
+  urlColumn: String
+}
+
+"Represents a seller with offers."
+type DesPartSellerWithOffers {
+  "The distributor."
+  company: DesPartCompany!
+  "The custom part source."
+  customPartSource: DesPartSource
+  "List of offers. Multiple offers may exist in different packaging."
+  offers: [DesPartCompanyOffer!]!
+}
+
+"Represents a collection of seller companies by provider."
+type DesPartSellers {
+  "Seller companies from custom parts."
+  customPart: [DesPartCompany!]
+  "Seller companies from *SiliconExpert* parts."
+  siliconExpertPart: [DesPartCompany!]
+  "Seller companies from supply parts."
+  supplyPart: [DesPartCompany!]!
+  "Seller companies from *Z2Data* parts."
+  z2DataPart: [DesPartCompany!]
+}
+
+"Represents a part source."
+type DesPartSource {
+  "The name of the source."
+  name: String!
+  "The identifier of the source."
+  partSourceGuid: String!
+}
+
+"Represents a part specification."
+type DesPartSpec {
+  "The attribute."
+  attribute: DesPartAttribute!
+  "The formatted display value."
+  displayValue: String!
+  "The value of the spec in SI base units."
+  siValue: String!
+  "The units of the value."
+  units: String!
+  "The short name of the units."
+  unitsName: String!
+  "The short name of the units."
+  unitsSymbol: String!
+  "The actual value."
+  value: String!
+  "The value type of the specification."
+  valueType: String!
+}
+
+"Maps a file column to a spec value."
+type DesPartSpecMapping {
+  "The spec name header."
+  nameColumn: String!
+  "The value column header."
+  valueColumn: String!
+}
+
+"Payload produced when a parts upload is started."
+type DesPartStartUploadPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "The identifier of the started operation. 'null' when the upload was not started; the reason is then in 'errors'."
+  operationId: UUID
+}
+
+"Maps a file column to a stock quantity and optional location."
+type DesPartStockMapping {
+  "Column header for the location. When absent or unreadable, location is left empty."
+  locationColumn: String
+  "Column header for the quantity."
+  qtyColumn: String!
+}
+
+"Represents a supply part."
+type DesPartSupplyPart {
+  "The identifier of the supply part."
+  supplyPartId: String!
+}
+
+"Represents a tag that can be assigned to parts."
+type DesPartTag {
+  "Indicates whether the tag can be deleted. Tags the workspace reserves, such as *Critical*, cannot."
+  isDeletable: Boolean!
+  "The name of the tag."
+  name: String!
+  "The identifier of the tag."
+  tagId: String!
+}
+
+"Represents the result of the upload components operation."
+type DesPartUploadComponentOperationResult {
+  "The error message if the operation failed."
+  errorMessage: String
+  "The identifiers of the part."
+  partId: DesPartManufacturerPartIdWithIpn!
+  "The status of the operation: *Created*, *Updated*, *AlreadyExists*, *Duplicated* or *Failed*."
+  status: String!
+}
+
+"Column mapping for components upload. Only MPN, Manufacturer and IPN columns are supported."
+type DesPartUploadComponentsColumnMapping {
+  "Column header for IPN."
+  ipnColumn: String!
+  "Column header for manufacturer name."
+  manufacturerNameColumn: String!
+  "Column header for MPN."
+  mpnColumn: String!
+}
+
+"Payload produced when uploading components."
+type DesPartUploadComponentsPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "A collection of results for each component."
+  results: [DesPartUploadComponentOperationResult!]!
+}
+
+"Payload produced when uploading a custom part file."
+type DesPartUploadCustomPartFilePayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "Uploaded file URL."
+  url: String
+}
+
+"Represents the result of a library part upload operation."
+type DesPartUploadLibraryPartOperationResult {
+  "The error message if the operation failed."
+  errorMessage: String
+  "The identifiers of the part."
+  partId: DesPartManufacturerPartId!
+  "The status of the operation: *Created*, *Updated*, *Duplicated* or *Failed*."
+  status: String!
+}
+
+"Maps file columns to part fields."
+type DesPartUploadLibraryPartsColumnMapping {
+  "Column header for category name."
+  categoryNameColumn: String
+  "Column header for datasheet URL."
+  datasheetUrlColumn: String
+  "Column header for description."
+  descriptionColumn: String
+  "Document mappings."
+  documents: [DesPartDocumentMapping!]
+  "Column header for image URL."
+  imageUrlColumn: String
+  "Column header for manufacturer name."
+  manufacturerNameColumn: String
+  "Column header for MPN."
+  mpnColumn: String
+  "Seller mappings."
+  sellers: [DesPartSellerMapping!]
+  "Spec mappings."
+  specs: [DesPartSpecMapping!]
+}
+
+"Payload produced when uploading custom library parts."
+type DesPartUploadLibraryPartsPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "A collection of results for each library part."
+  results: [DesPartUploadLibraryPartOperationResult!]!
+}
+
+"Represents a parts upload operation of the workspace."
+type DesPartUploadOperationPayload {
+  "Column mapping the upload was started with. Set for the *Components* upload only."
+  componentsColumnMapping: DesPartUploadComponentsColumnMapping
+  "When the upload was started by the user."
+  createdAt: DateTime!
+  "The identifier of the uploaded file."
+  fileId: String!
+  "The name of the uploaded file."
+  fileName: String!
+  "When the operation reached its final status."
+  finishedAt: DateTime
+  "Whether the result of the operation is already read."
+  isAck: Boolean!
+  "The kind of the upload: *LibraryParts* or *Components*."
+  kind: String!
+  "Column mapping the upload was started with. Set for the *LibraryParts* upload only."
+  libraryPartsColumnMapping: DesPartUploadLibraryPartsColumnMapping
+  "The identifier of the operation. Report and acknowledgement requests are addressed by it."
+  operationId: UUID!
+  "How existing part choices are handled: *Update* or *Recreate*. Set for the *Components* upload only."
+  partChoiceUpdateMode: String
+  "When the processing of the upload began."
+  startedAt: DateTime
+  "The status of the operation: *Queued*, *Running*, *Completed* or *Failed*."
+  status: String!
+}
+
+"Payload produced when reading columns from an uploaded file."
+type DesPartUploadPartFileColumnsPayload {
+  "Column headers found in the file."
+  columns: [String!]!
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+}
+
+"Represents the result of upserting custom parts."
+type DesPartUpsertCustomPartsPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesPartErrorPayload!]!
+  "A collection of results for each part."
+  results: [DesPartCustomPartOperationResult!]!
+}
+
+"Represents the usages of a part."
+type DesPartUsages {
+  "The assembly variants."
+  assemblyVariants: [DesPartProjectUsage!]
+  "The BOM release usages."
+  bomReleaseUsages: [DesPartBomUsage!]
+  "The component usages."
+  componentUsages: [DesPartComponentUsage!]
+  "The consolidated BOM releases usages."
+  consolidatedBomReleasesUsages: [DesPartBomUsage!]
+  "The project usages."
+  projectUsages: [DesPartProjectUsage!]
+  "The WIP BOM usages."
+  wipBomUsages: [DesPartBomUsage!]
+  "The WIP consolidated BOM usages."
+  wipConsolidatedBomUsages: [DesPartBomUsage!]
+}
+
+"Payload associated with releasing component file."
+type DesReleaseComponentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with releasing a component template."
+type DesReleaseComponentTemplatePayload {
+  "Component template identifier."
+  componentTemplateId: ID!
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with removing part choices for a component."
+type DesRemoveComponentPartChoicesPayload {
+  "Component identifier. If revision control is enabled, this will refer to the created revision."
+  componentId: ID!
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with removing a datasheet from a component."
+type DesRemoveDatasheetFromComponentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with removing a footprint from a component."
+type DesRemoveFootprintFromComponentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Reuse blocks are items that can be reused in future board-level design projects."
+type DesReuseBlock implements Node {
+  "Description of reuse block."
+  description: String!
+  "The node identifier for this reuse block (used by `desReuseBlockById`)."
+  id: ID!
+  "Latest revision for a reuse block."
+  latestRevision: DesReuseBlockRevision!
+  "Name of reuse block."
+  name: String!
+  "All revisions of the reuse block."
+  revisions: [DesReuseBlockRevision!]!
+}
+
+"A connection to a list of items."
+type DesReuseBlockConnection {
+  "A list of edges."
+  edges: [DesReuseBlockEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesReuseBlock!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesReuseBlockEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesReuseBlock!
+}
+
+"Reuse block revision information."
+type DesReuseBlockRevision implements Node {
+  "The comment on a reuse block revision."
+  comment: String!
+  "The description for the reuse block revision."
+  description: String!
+  "The node identifier for this reuse block (used by `desReuseBlockRevisionById`)."
+  id: ID!
+  "The life cycle state information."
+  lifeCycleState: DesLifeCycleState!
+  "The name of the reuse block revision."
+  name: String!
+  "The circuitry in a PCB design including components and routing saved as a reuse block."
+  pcbSnippet: DesDownloadableFile!
+  "The circuitry on a single schematic sheet saved as a reuse block."
+  schematicSnippet: DesDownloadableFile!
+}
+
+"Represents the result of searching for a component by its manufacturer part number."
+type DesSearchComponentResult {
+  "The unique identifier of the component node."
+  componentId: ID!
+  "The identifier of the item in the workspace."
+  itemId: String!
+  "The name of the item."
+  itemName: String!
+  "The identifier of the latest revision of the component in the workspace."
+  revisionId: String!
+  "The name of the latest revision of the component."
+  revisionName: String!
+}
+
+"Component simulation information."
+type DesSimulation {
+  "ECAD entity comment."
+  comment: String!
+  "The user this entity was created by."
+  createdBy: DesUser!
+  "ECAD entity data download URL."
+  dataDownloadUrl: String!
+  "ECAD entity description."
+  description: String!
+  "ECAD entity folder."
+  folder: DesFolder
+  guid: String! @deprecated(reason: "Use `RevisionInternalId` instead.")
+  "Item internal identifier."
+  itemInternalId: String!
+  "ECAD entity name."
+  name: String!
+  "Revision internal identifier."
+  revisionInternalId: String!
+  "The user this entity was last updated by."
+  updatedBy: DesUser!
+}
+
+"Information about supplier and part offers."
+type DesSupplierPart {
+  "The supplier company name."
+  companyName: String!
+  "The part number (SKU)."
+  partNumber: String!
+  "Use `prices` and `stocks` with library components only, e.g. `DesLibrary.components`, `desComponentById`."
+  prices: [DesSupplierPrice!]
+  "Use `prices` and `stocks` with library components only, e.g. `DesLibrary.components`, `desComponentById`."
+  stocks: [DesSupplierStock!]
+}
+
+"Price information from supplier."
+type DesSupplierPrice {
+  "Supplier offer price break. A price break is when the cost per item is decreased when larger quantities are ordered."
+  breakQuantity: Int!
+  "Currency of offer."
+  currency: String!
+  "Supplier offer price."
+  price: Decimal!
+}
+
+"Supplier inventory level."
+type DesSupplierStock {
+  "Region that this inventory level applies to."
+  locationName: String!
+  "Stock level value."
+  quantity: Decimal!
+}
+
+"A component symbol. These represent the body and the pins on the physical component."
+type DesSymbol implements Node {
+  "ECAD entity comment."
+  comment: String!
+  "The `DateTime` when this revision was created."
+  createdAt: DateTime!
+  "The user this entity was created by."
+  createdBy: DesUser!
+  "ECAD entity data download URL."
+  dataDownloadUrl: String!
+  "ECAD entity description."
+  description: String!
+  "ECAD entity folder."
+  folder: DesFolder
+  guid: String! @deprecated(reason: "Use `RevisionInternalId` instead.")
+  "Symbol node identifier."
+  id: ID!
+  "ECAD entity full size image URL."
+  imageFullSizeUrl: String!
+  "ECAD entity thumbnail image URL."
+  imageThumbnailUrl: String!
+  "Item internal identifier."
+  itemInternalId: String!
+  "The life cycle state information."
+  lifeCycleState: DesLifeCycleState!
+  "ECAD entity name."
+  name: String!
+  "The list of pins."
+  pins: [DesPin!]!
+  "The `DateTime` when this revision was released."
+  releasedAt: DateTime!
+  "Revision internal identifier."
+  revisionInternalId: String!
+  "The user this entity was last updated by."
+  updatedBy: DesUser!
+  "Reverse relationships showing where this symbol is used."
+  usedBy: DesSymbolUsedBy!
+}
+
+"A connection to a list of items."
+type DesSymbolConnection {
+  "A list of edges."
+  edges: [DesSymbolEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesSymbol!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesSymbolEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesSymbol!
+}
+
+"Represents reverse relationships for a symbol (where the symbol is used)."
+type DesSymbolUsedBy {
+  "Gets all components that use this symbol, with cursor-based pagination."
+  components(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): DesComponentConnection
+}
+
+"Payload associated with updating component item parameters."
+type DesUpdateComponentItemParametersPayload {
+  "Component identifier."
+  componentId: ID!
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a component life cycle state."
+type DesUpdateComponentLifeCycleStatePayload {
+  "Component identifier."
+  componentId: ID!
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating component revision parameters."
+type DesUpdateComponentRevisionParametersPayload {
+  "Component identifier."
+  componentId: ID!
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating the symbol of a component."
+type DesUpdateComponentSymbolPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a component template."
+type DesUpdateComponentTemplatePayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a footprint life cycle state."
+type DesUpdateFootprintLifeCycleStatePayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Footprint identifier."
+  footprintId: ID!
+}
+
+"Payload of updating a footprint."
+type DesUpdateFootprintPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Identifier of the updated footprint."
+  id: ID!
+}
+
+"Payload associated with updating a reuse block."
+type DesUpdateReuseBlockPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a symbol life cycle state."
+type DesUpdateSymbolLifeCycleStatePayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Symbol identifier."
+  symbolId: ID!
+}
+
+"Payload of updating a symbol."
+type DesUpdateSymbolPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Identifier of the updated symbol."
+  id: ID!
+}
+
+"Payload for upgrading components to use the latest footprint revision."
+type DesUpgradeComponentsToLatestFootprintPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "List of component identifiers that failed to upgrade."
+  failedComponentIds: [ID!]!
+  "The number of components that failed to upgrade."
+  failedCount: Int!
+  "The total number of components that were processed."
+  totalProcessed: Int!
+  "List of component identifiers that were upgraded."
+  upgradedComponentIds: [ID!]!
+  "The number of components that were successfully upgraded."
+  upgradedCount: Int!
+}
+
+"Payload for upgrading components to use the latest symbol revision."
+type DesUpgradeComponentsToLatestSymbolPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "List of component identifiers that failed to upgrade."
+  failedComponentIds: [ID!]!
+  "The number of components that failed to upgrade."
+  failedCount: Int!
+  "The total number of components that were processed."
+  totalProcessed: Int!
+  "List of component identifiers that were upgraded."
+  upgradedComponentIds: [ID!]!
+  "The number of components that were successfully upgraded."
+  upgradedCount: Int!
+}
+
+"Union type for various payloads."
+union DesUnionPayload = DesComponent | DesErrorPayload
+
+"Input to add component part choices."
+input DesAddComponentPartChoicesInput {
+  "Component identifier."
+  componentId: ID!
+  "Manufacturer part choices to add."
+  manufacturerParts: [DesPartChoiceInput!]!
+}
+
+"Input for adding a datasheet to a component."
+input DesAddDatasheetToComponentInput {
+  "The component identifier."
+  componentId: ID!
+  "The identifier of the datasheet to add to the component."
+  datasheetId: ID!
+}
+
+"Input for adding a footprint to a component."
+input DesAddFootprintToComponentInput {
+  "The index that the footprint should be added to the component at. If set as 0, it is set as the first and default footprint for the component. If omitted or set as `null`, it is set as the last listed footprint."
+  addAtIndex: Int
+  "The component identifier."
+  componentId: ID!
+  "The identifier of the footprint to add to the component."
+  footprintId: ID!
+}
+
+"A component contains the parametric details of a PCB part."
+input DesComponentFilterInput {
+  "The additional information for this component."
+  comment: DesComponentStringOperationFilterInput
+  "The summary of function or other performance details for this component."
+  description: DesComponentStringOperationFilterInput
+  "The library label for this component."
+  name: DesComponentStringOperationFilterInput
+}
+
+"Input for the parametric details of a component."
+input DesComponentItemParameterInput {
+  "Component item parameter name."
+  name: String!
+  "Component item parameter real value in scientific notation."
+  realValue: String
+  "Component item parameter type. Defaults to text if omitted."
+  type: DesParameterType
+  "Component item parameter value."
+  value: String!
+}
+
+"String operation filter input type for components."
+input DesComponentStringOperationFilterInput {
+  eq: String
+}
+
+"Represents a component type classification in the component library."
+input DesComponentTypeFilterInput {
+  and: [DesComponentTypeFilterInput!]
+  "The display name of the component type."
+  name: StringOperationFilterInput
+  or: [DesComponentTypeFilterInput!]
+}
+
+"Filter input type for component upgrades."
+input DesComponentUpgradeFilterInput {
+  "Filter by the component's comment field."
+  comment: DesStringUpgradeOperationFilterInput
+  "Filter by the component's description."
+  description: DesStringUpgradeOperationFilterInput
+  "Filter by the name of the component's lifecycle state (e.g., \"Validated\")."
+  lifeCycleStateName: DesLifecycleStateUpgradeOperationFilterInput
+  "Filter by component name (HRID)."
+  name: DesStringUpgradeOperationFilterInput
+}
+
+"Input for creating a datasheet file."
+input DesCreateDatasheetFileInput {
+  "Uploaded file identifier."
+  fileId: String!
+  "Relative path of the source file (typically Released/filename.pdf)."
+  relativePath: String!
+}
+
+"Input for creating a datasheet."
+input DesCreateDatasheetInput {
+  "Comment for datasheet revision."
+  comment: String
+  "Description for datasheet revision."
+  description: String
+  "The datasheet file (typically a PDF or document)."
+  file: DesCreateDatasheetFileInput!
+  "The destination folder identifier."
+  folderId: String!
+  "The datasheet life cycle definition identifier."
+  lifeCycleDefinitionId: ID
+  "The datasheet name. Use null to be generated, provided that the destination folder defines an item naming scheme."
+  name: String
+  "The datasheet revision naming scheme identifier."
+  revisionNamingSchemeId: ID
+  "The workspace URL."
+  workspaceUrl: String
+}
+
+"Input for creating a footprint file."
+input DesCreateFootprintFileInput {
+  "Uploaded file identifier (typically a *PcbLib* file)."
+  fileId: String!
+  "Relative path of the source file (typically *Released/filename.PcbLib*)."
+  relativePath: String!
+}
+
+"Input for creating a footprint."
+input DesCreateFootprintInput {
+  "Comment for footprint revision."
+  comment: String
+  "Description for footprint revision."
+  description: String
+  "The footprint files."
+  files: [DesCreateFootprintFileInput!]!
+  "The destination folder identifier."
+  folderId: ID!
+  "The footprint life cycle definition identifier."
+  lifeCycleDefinitionId: ID
+  "The footprint name. Use null to be generated, provided that the destination folder defines an item naming scheme."
+  name: String
+  "Parameters for footprint revision."
+  parameters: [DesRevisionParameterInput!]
+  "The footprint revision naming scheme identifier."
+  revisionNamingSchemeId: ID
+  "The workspace URL."
+  workspaceUrl: String
+}
+
+"Input for creating a symbol file."
+input DesCreateSymbolFileInput {
+  "Uploaded file identifier (typically a *SchLib* file)."
+  fileId: String!
+  "Relative path of the source file (typically *Released/filename.SchLib*)."
+  relativePath: String!
+}
+
+"Input for creating a symbol."
+input DesCreateSymbolInput {
+  "The symbol files."
+  files: [DesCreateSymbolFileInput!]!
+  "The destination folder identifier."
+  folderId: ID!
+  "The symbol life cycle definition identifier."
+  lifeCycleDefinitionId: ID
+  "The symbol name. Use null to be generated, provided that the destination folder defines an item naming scheme."
+  name: String
+  "The symbol revision naming scheme identifier."
+  revisionNamingSchemeId: ID
+  "The workspace URL."
+  workspaceUrl: String
+}
+
+"A component datasheet."
+input DesDatasheetFilterInput {
+  and: [DesDatasheetFilterInput!]
+  "ECAD entity comment."
+  comment: StringOperationFilterInput
+  "ECAD entity description."
+  description: StringOperationFilterInput
+  "ECAD entity name."
+  name: StringOperationFilterInput
+  or: [DesDatasheetFilterInput!]
+}
+
+"Provides filter options for a list of footprints."
+input DesFootprintFilterInput {
+  and: [DesFootprintFilterInput!]
+  "Filter by the ECAD entity comment."
+  comment: StringOperationFilterInput
+  "Filter by the ECAD entity description."
+  description: StringOperationFilterInput
+  "Filter by the ECAD entity name."
+  name: StringOperationFilterInput
+  or: [DesFootprintFilterInput!]
+}
+
+"`desLibrary` extra arguments."
+input DesLibraryArgsInput {
+  "Fetch all component revisions when listing components. When set to false, only the latest component revisions are returned. Defaults to false."
+  allComponentRevisions: Boolean
+}
+
+"Filter input type for lifecycle state names."
+input DesLifecycleStateUpgradeOperationFilterInput {
+  "Equals."
+  eq: String
+  "Is one of the given strings."
+  in: [String!]
+  "Not equals."
+  neq: String
+  "Is not one of the given strings."
+  notIn: [String!]
+}
+
+"Input for marking the result of a parts upload operation as read."
+input DesPartAcknowledgeUploadOperationInput {
+  "The operation to acknowledge, as returned by `desPartUploadOperation`."
+  operationId: UUID!
+}
+
+"Represents the input for assigning a part tag to parts."
+input DesPartAttachTagInput {
+  "The unique identifiers of the parts to assign the tag to. Parts that already have the tag are left as they are."
+  partIds: [ID!]!
+  "The identifier of the tag to assign."
+  tagId: String!
+}
+
+"Represents the input for sorting by attribute."
+input DesPartAttributeSortInput {
+  "The identifier of the attribute."
+  attributeId: String!
+  "The sorting direction."
+  direction: SortEnumType!
+}
+
+"Represents the input for changing the lifecycle state of a part."
+input DesPartChangeLifecycleStateInput {
+  "The unique identifier of the part."
+  partId: ID!
+  "The identifier of the lifecycle state the part is moved to."
+  transitionLifecycleStateId: String!
+}
+
+"Input for part choice."
+input DesPartChoiceInput {
+  "Name of company for part choice."
+  companyName: String!
+  "Part number for part choice."
+  partNumber: String!
+  "The identifier of the part source that provides this part choice. If omitted or set to `null`, the default Altium Parts Provider will be used."
+  partSourceId: String
+}
+
+"Represents the input for creating a part tag."
+input DesPartCreateTagInput {
+  "The name of the tag. Must not be taken by another tag of the workspace."
+  name: String!
+}
+
+"Represents custom part data."
+input DesPartCustomPartDataInput {
+  "The category name of the part."
+  categoryName: String
+  "The URL of datasheet for sync systems."
+  datasheetUrl: String
+  "The description of the part."
+  description: String
+  "A collection of datasheet URLs."
+  documents: [DesPartCustomPartDocumentInput!]!
+  "The URL for the part image."
+  imageUrl: String
+  "The manufacturer name of the part."
+  manufacturerName: String!
+  "The manufacturer part number of the part."
+  mpn: String!
+  "A collection of sellers."
+  sellers: [DesPartCustomPartSellerInput!]!
+  "A collection of part specifications."
+  specs: [DesPartCustomPartSpecInput!]!
+  "The last update time."
+  updatedAt: DateTime!
+}
+
+"Represents a custom part document."
+input DesPartCustomPartDocumentInput {
+  "The name of the document."
+  name: String!
+  "The URL of the document."
+  url: String!
+}
+
+"Represents a price point."
+input DesPartCustomPartPricePointInput {
+  "The price value."
+  price: Decimal!
+  "The price break quantity."
+  quantity: Int!
+}
+
+"Represents a seller for a custom part."
+input DesPartCustomPartSellerInput {
+  "The currency code."
+  currency: String
+  "A collection of price points."
+  prices: [DesPartCustomPartPricePointInput!]!
+  "The display name of the seller."
+  sellerName: String!
+  "The URL for the seller."
+  sellerUrl: String
+  "The stock keeping unit."
+  sku: String
+  "A collection of seller specifications."
+  specs: [DesPartCustomPartSellerSpecInput!]!
+  "A collection of stock items."
+  stock: [DesPartCustomPartStockItemInput!]!
+  "The last update time."
+  updatedAt: DateTime
+}
+
+"Represents a specification for a seller."
+input DesPartCustomPartSellerSpecInput {
+  "The display name."
+  name: String!
+  "The value."
+  value: String!
+}
+
+"Represents a custom part specification."
+input DesPartCustomPartSpecInput {
+  "The display name."
+  name: String!
+  "The value."
+  value: String!
+}
+
+"Represents a stock item."
+input DesPartCustomPartStockItemInput {
+  "The location."
+  location: String!
+  "The quantity."
+  quantity: Int!
+}
+
+"Represents the input for deleting a part tag."
+input DesPartDeleteTagInput {
+  "The identifier of the tag to delete."
+  tagId: String!
+}
+
+"Represents the input for unassigning a part tag from parts."
+input DesPartDetachTagInput {
+  "The unique identifiers of the parts to unassign the tag from. Parts that do not have the tag are left as they are."
+  partIds: [ID!]!
+  "The identifier of the tag to unassign."
+  tagId: String!
+}
+
+"Maps file columns to a document."
+input DesPartDocumentMappingInput {
+  "Column header for the document name."
+  nameColumn: String
+  "Column header for the document URL."
+  urlColumn: String!
+}
+
+"Represents the filter for global searching parts."
+input DesPartGlobalSearchFilterInput {
+  "A collection of attribute filters to search by."
+  attributes: [DesPartSearchAttributeFilterInput!]
+  "A collection of category names to search by."
+  categoryName: [String!]
+  "Indicates whether to filter parts that have a CAD models."
+  hasCADModelOnly: Boolean
+  "Indicates whether to filter parts that have a datasheets."
+  hasDatasheetOnly: Boolean
+  "Indicates whether to filter parts that are in stock."
+  inStockOnly: Boolean
+  "The keyword to search for."
+  keyword: String
+  "A collection of manufacturer names to search by."
+  manufacturerName: [String!]
+}
+
+"Represents the input for sorting parts."
+input DesPartGlobalSearchSortInput {
+  "The sort order for the attribute."
+  attribute: DesPartAttributeSortInput
+  "The sort order for the manufacturer name."
+  manufacturerName: SortEnumType
+  "The sort order for the median price (only for Altium part provider)."
+  medianPrice1000: SortEnumType
+  "The sort order for the manufacturer part number."
+  mpn: SortEnumType
+}
+
+"Represents the part manufacturer name and part number."
+input DesPartManufacturerPartIdInput {
+  "The name of the manufacturer."
+  manufacturerName: String!
+  "The manufacturer part number."
+  mpn: String!
+}
+
+"Represents the part manufacturer name and part number with last sync time in part source."
+input DesPartManufacturerPartIdWithLastSyncTimeInput {
+  "The last synchronization time."
+  lastSyncTime: DateTime!
+  "The name of the manufacturer."
+  manufacturerName: String!
+  "The manufacturer part number."
+  mpn: String!
+}
+
+"Represents the filter for part providers."
+input DesPartPartProvidersFilterInput {
+  "Specifies if the part has an Altium part provider."
+  hasAltiumPartProvider: Boolean
+  "Specifies if the part has a custom part provider."
+  hasCustomPartProvider: Boolean
+  "Specifies if the part has a *SiliconExpert* part provider."
+  hasSiliconExpertPartProvider: Boolean
+  "Specifies if the part has a *Z2Data* part provider."
+  hasZ2DataPartProvider: Boolean
+}
+
+"Maps the price of a fixed break quantity to a file column."
+input DesPartPriceMappingInput {
+  "Column header for the price at this quantity."
+  priceColumn: String!
+  "Break quantity of the price tier."
+  quantity: Int!
+}
+
+"Represents the input for removing custom parts."
+input DesPartRemoveCustomPartsInput {
+  "The manufacturer part identifiers with their last synchronization times."
+  partIds: [DesPartManufacturerPartIdWithLastSyncTimeInput!]!
+  "The unique identifier of the part source."
+  partSourceGuid: String!
+}
+
+"Represents the filter for searching by attribute."
+input DesPartSearchAttributeFilterInput {
+  "The identifier of the attribute."
+  attributeId: String!
+  "The values of the attribute."
+  values: [String!]!
+}
+
+"Represents the search options."
+input DesPartSearchByManufacturerPartIdsOptionsInput {
+  "Filters by part providers."
+  partProvidersFilter: DesPartPartProvidersFilterInput
+}
+
+"Represents the filter for searching parts."
+input DesPartSearchFilterInput {
+  "A collection of attribute filters to search by."
+  attributes: [DesPartSearchAttributeFilterInput!]
+  "A collection of category names to search by."
+  categoryName: [String!]
+  "A collection of custom part source names to search by."
+  customPartSourceName: [String!]
+  "Specifies if the part has usages in BOM, projects, or assemblies."
+  hasBomOrProjectsUsages: Boolean
+  "Specifies if the part has usages in components."
+  hasComponentsUsages: Boolean
+  "Specifies if the part has any usages."
+  hasUsages: Boolean
+  "The keyword to search for."
+  keyword: String
+  "A collection of lifecycle state identifiers to search by. Not supported yet and must not be provided."
+  lifecycleState: [String!]
+  "A collection of manufacturer names to search by."
+  manufacturerName: [String!]
+  "A collection of manufacturer part numbers to search by."
+  mpn: [String!]
+  "The filter for part providers."
+  partProviders: DesPartPartProvidersFilterInput
+  "A collection of supplier names to search by."
+  supplierName: [String!] @deprecated(reason: "Supplier data is no longer indexed, so this field is not supported and must not be provided.")
+  "A collection of supplier part numbers to search by."
+  supplierPartNumber: [String!] @deprecated(reason: "Supplier data is no longer indexed, so this field is not supported and must not be provided.")
+  "A collection of tag identifiers to search by. Not supported yet and must not be provided."
+  tags: [String!]
+  "A collection of usage filters to search by."
+  usages: [DesPartSearchUsagesFilterInput!]
+}
+
+"Filter for inferring part search criteria from a keyword."
+input DesPartSearchInferenceFilterInput {
+  "A collection of attribute filters to search by."
+  attributes: [DesPartSearchAttributeFilterInput!]
+  "A collection of category names to search by."
+  categories: [String!]
+  "Indicates whether to filter parts that are in stock."
+  inStockOnly: Boolean
+  "The keyword to infer search criteria from."
+  keyword: String!
+  "A collection of manufacturer names to search by."
+  manufacturers: [String!]
+}
+
+"Filter for part search suggestions."
+input DesPartSearchSuggestionFilterInput {
+  "The list of categories to filter by."
+  categories: [String!]
+  "The list of manufacturers to filter by."
+  manufacturers: [String!]
+}
+
+"Represents the filter for searching by usages."
+input DesPartSearchUsagesFilterInput {
+  "The identifier of the usage."
+  id: ID!
+  "The variant identifier of the project. This is ignored for non-project resources."
+  variantId: String
+}
+
+"Maps file columns to a seller and its prices/stocks."
+input DesPartSellerMappingInput {
+  "Column header for the seller currency."
+  currencyColumn: String
+  "Column header for the seller name."
+  nameColumn: String!
+  "Price tier mappings."
+  prices: [DesPartPriceMappingInput!]
+  "Column header for the seller SKU."
+  skuColumn: String
+  "Stock mappings."
+  stocks: [DesPartStockMappingInput!]
+  "Column header for the seller URL."
+  urlColumn: String
+}
+
+"Represents the input for sorting parts."
+input DesPartSortInput {
+  "The sort order for the attribute."
+  attribute: DesPartAttributeSortInput
+  "The sort order for the category name."
+  categoryName: SortEnumType
+  "The sort order for the lifecycle state. Not supported yet and must not be provided."
+  lifecycleState: SortEnumType
+  "The sort order for the manufacturer name."
+  manufacturerName: SortEnumType
+  "The sort order for the median price (only for Altium part provider)."
+  medianPrice1000: SortEnumType
+  "The sort order for the manufacturer part number."
+  mpn: SortEnumType
+}
+
+"Maps a file column to a spec value."
+input DesPartSpecMappingInput {
+  "The spec name header."
+  nameColumn: String!
+  "The value column header."
+  valueColumn: String!
+}
+
+"Maps a file column to a stock quantity and optional location."
+input DesPartStockMappingInput {
+  "Column header for the location. When absent or unreadable, location is left empty."
+  locationColumn: String
+  "Column header for the quantity."
+  qtyColumn: String!
+}
+
+"Column mapping for components upload. Only MPN, Manufacturer and IPN columns are supported."
+input DesPartUploadComponentsColumnMappingInput {
+  "Column header for IPN."
+  ipnColumn: String!
+  "Column header for manufacturer name."
+  manufacturerNameColumn: String!
+  "Column header for MPN."
+  mpnColumn: String!
+}
+
+"Input for uploading components with part choices."
+input DesPartUploadComponentsInput {
+  "Column mapping."
+  columnMapping: DesPartUploadComponentsColumnMappingInput!
+  "File identifier with parts for upload."
+  fileId: String!
+  "File name with parts for upload."
+  fileName: String!
+  "Specifies how existing part choices are handled during upload."
+  partChoiceUpdateMode: DesPartPartChoiceUpdateMode!
+}
+
+"Input for uploading a custom part file."
+input DesPartUploadCustomPartFileInput {
+  "Temporary file identifier."
+  fileId: String!
+  "Original file name."
+  fileName: String!
+}
+
+"Maps file columns to part fields."
+input DesPartUploadLibraryPartsColumnMappingInput {
+  "Column header for category name."
+  categoryNameColumn: String
+  "Column header for datasheet URL."
+  datasheetUrlColumn: String
+  "Column header for description."
+  descriptionColumn: String
+  "Document mappings."
+  documents: [DesPartDocumentMappingInput!]
+  "Column header for image URL."
+  imageUrlColumn: String
+  "Column header for manufacturer name."
+  manufacturerNameColumn: String
+  "Column header for MPN."
+  mpnColumn: String
+  "Seller mappings."
+  sellers: [DesPartSellerMappingInput!]
+  "Spec mappings."
+  specs: [DesPartSpecMappingInput!]
+}
+
+"Input for uploading custom library parts (Custom Part Provider mode). Column mapping is required."
+input DesPartUploadLibraryPartsInput {
+  "Column mapping. Maps file column headers to part fields."
+  columnMapping: DesPartUploadLibraryPartsColumnMappingInput!
+  "File identifier with parts for upload."
+  fileId: String!
+  "File name with parts for upload."
+  fileName: String!
+}
+
+"Represents the input for upserting custom parts."
+input DesPartUpsertCustomPartsInput {
+  "A collection of parts to upsert."
+  parts: [DesPartCustomPartDataInput!]!
+  "The identifier of the part source."
+  partSourceGuid: String!
+}
+
+"Input for releasing component datasheet."
+input DesReleaseComponentDatasheetInput {
+  "The datasheet file for adding a new datasheet to the release. Either `id` or `file` must be provided."
+  file: DesReleaseComponentFileInput
+  "Datasheet identifier for adding an existing datasheet to the release. Either `id` or `file` must be provided."
+  id: ID
+  "The datasheet name for the `file`. Use null to be generated."
+  itemName: String
+  "The datasheet life cycle definition identifier. Required when `file` is provided."
+  lifeCycleDefinitionNodeId: ID
+  "The datasheet revision naming scheme identifier. Required when `file` is provided."
+  revisionNamingSchemeNodeId: ID
+}
+
+"Input for releasing component file."
+input DesReleaseComponentFileInput {
+  "Uploaded file identifier."
+  fileId: String!
+  "Relative path of the source file."
+  relativePath: String!
+}
+
+"Input for adding existing footprints to the release."
+input DesReleaseComponentFootprintInput {
+  "Footprint identifier."
+  id: ID!
+}
+
+"Input for releasing component."
+input DesReleaseComponentInput {
+  "Comment for component."
+  componentComment: String
+  "Description for component."
+  componentDescription: String
+  "Name of component item."
+  componentItemName: String!
+  "**DEPRECATED** Use `componentLifeCycleDefinitionNodeId` instead with a value from `DesLifeCycleDefinition.id`."
+  componentLifeCycleDefinitionId: String
+  "Life cycle definition identifier for component."
+  componentLifeCycleDefinitionNodeId: ID
+  "Destination parent folder identifier for releasing a component. If omitted or empty, `componentReleaseFolder` is required."
+  componentParentFolderId: ID
+  "New child folder name for releasing a component. If omitted or empty, `componentParentFolderId` is required."
+  componentReleaseFolder: String
+  "**DEPRECATED** Use `componentRevisionNamingSchemeNodeId` instead with a value from `DesRevisionNamingScheme.id`."
+  componentRevisionNamingSchemeId: String
+  "Revision naming scheme identifier for component."
+  componentRevisionNamingSchemeNodeId: ID
+  "The component template identifier. The released component is linked to this template; its component type is inherited unless `componentTypeId` is set."
+  componentTemplateId: ID
+  "The component type identifier. If omitted or set as `null`, no component type will be assigned."
+  componentTypeId: String
+  "The datasheet folder path, existing or to be created."
+  datasheetReleaseFolder: String
+  "Naming scheme template for the datasheet folder."
+  datasheetReleaseFolderItemNamingSchemeTemplate: String
+  "Datasheets for component."
+  datasheets: [DesReleaseComponentDatasheetInput!]
+  "The footprint files. Either `footprintFiles` or `footprints` must be provided."
+  footprintFiles: [DesReleaseComponentFileInput!]
+  "The footprint name. Use null to be generated."
+  footprintItemName: String
+  "**DEPRECATED** Use `footprintLifeCycleDefinitionNodeId` instead with a value from `DesLifeCycleDefinition.id`."
+  footprintLifeCycleDefinitionId: String
+  "The footprint life cycle definition identifier."
+  footprintLifeCycleDefinitionNodeId: ID
+  "The footprint folder path, existing or to be created. Required when `footprintFiles` are provided."
+  footprintReleaseFolder: String
+  "**DEPRECATED** Use `footprintRevisionNamingSchemeNodeId` instead with a value from `DesRevisionNamingScheme.id`."
+  footprintRevisionNamingSchemeId: String
+  "The footprint revision naming scheme identifier."
+  footprintRevisionNamingSchemeNodeId: ID
+  "Existing footprints to include. Either `footprintFiles` or `footprints` must be provided."
+  footprints: [DesReleaseComponentFootprintInput!]
+  "Parameters for component."
+  parameters: [DesRevisionParameterInput!]!
+  "Existing symbol to include. Either `symbolFiles` or `symbol` must be provided."
+  symbol: DesReleaseComponentSymbolInput
+  "The symbol files. Either `symbolFiles` or `symbol` must be provided."
+  symbolFiles: [DesReleaseComponentFileInput!]
+  "The symbol name. Use null to be generated."
+  symbolItemName: String
+  "**DEPRECATED** Use `symbolLifeCycleDefinitionNodeId` instead with a value from `DesLifeCycleDefinition.id`."
+  symbolLifeCycleDefinitionId: String
+  "The symbol life cycle definition identifier."
+  symbolLifeCycleDefinitionNodeId: ID
+  "The symbol folder path, existing or to be created. Required when `symbolFiles` are provided."
+  symbolReleaseFolder: String
+  "**DEPRECATED** Use `symbolRevisionNamingSchemeNodeId` instead with a value from `DesRevisionNamingScheme.id`."
+  symbolRevisionNamingSchemeId: String
+  "The symbol revision naming scheme identifier."
+  symbolRevisionNamingSchemeNodeId: ID
+  "When `componentReleaseFolder` is set, tells to use existing folder if any, otherwise create a new folder."
+  useExistingComponentReleaseFolder: Boolean
+  "Workspace URL for releasing a component."
+  workspaceUrl: String
+}
+
+"Input for adding existing symbols to the release."
+input DesReleaseComponentSymbolInput {
+  "Symbol identifier."
+  id: ID!
+}
+
+"Input for releasing a component template."
+input DesReleaseComponentTemplateInput {
+  "Optional comment."
+  comment: String
+  "The component template content (CMPT format JSON string)."
+  contentAsText: String!
+  "Optional description."
+  description: String
+  "The target folder path, existing or to be created."
+  folder: String!
+  "Optional life cycle identifier."
+  lifeCycleDefinitionId: String
+  "The component template name."
+  name: String!
+  "Optional parameters."
+  parameters: [DesRevisionParameterInput!]
+  "Optional naming scheme identifier."
+  revisionNamingSchemeId: String
+  "The target workspace URL."
+  workspaceUrl: String
+}
+
+"Input to remove component part choices."
+input DesRemoveComponentPartChoicesInput {
+  "Component identifier."
+  componentId: ID!
+  "Manufacturer part choices to remove. Use null to remove all choices."
+  manufacturerParts: [DesPartChoiceInput!]
+}
+
+"Input for removing a datasheet from a component."
+input DesRemoveDatasheetFromComponentInput {
+  "The component identifier."
+  componentId: ID!
+  "The identifier of the datasheet to remove from the component."
+  datasheetId: ID!
+}
+
+"Input for removing a footprint from a component."
+input DesRemoveFootprintFromComponentInput {
+  "The component identifier."
+  componentId: ID!
+  "The identifier of the footprint to remove from the component."
+  footprintId: ID!
+}
+
+"Input for revision parameter."
+input DesRevisionParameterInput {
+  "Revision parameter name."
+  name: String!
+  "Revision parameter real value in scientific notation."
+  realValue: String
+  "Revision parameter type. Defaults to text if omitted."
+  type: DesParameterType
+  "Revision parameter value."
+  value: String!
+}
+
+"Represents the input for searching components by manufacturer part numbers."
+input DesSearchComponentByMpnInput {
+  "The name of the manufacturer."
+  manufacturerName: String
+  "The manufacturer part number."
+  mpn: String!
+}
+
+"String filter input type for component upgrades."
+input DesStringUpgradeOperationFilterInput {
+  "Contains the given string."
+  contains: String
+  "Ends with the given string."
+  endsWith: String
+  "Equals."
+  eq: String
+  "Is one of the given strings."
+  in: [String!]
+  "Not equals."
+  neq: String
+  "Is not one of the given strings."
+  notIn: [String!]
+  "Starts with the given string."
+  startsWith: String
+}
+
+"A component symbol. These represent the body and the pins on the physical component."
+input DesSymbolFilterInput {
+  and: [DesSymbolFilterInput!]
+  "ECAD entity comment."
+  comment: StringOperationFilterInput
+  "ECAD entity description."
+  description: StringOperationFilterInput
+  "ECAD entity name."
+  name: StringOperationFilterInput
+  or: [DesSymbolFilterInput!]
+}
+
+"Input for updating component item parameters."
+input DesUpdateComponentItemParametersInput {
+  "Component identifier."
+  componentId: ID!
+  "Parameters to describe the component item."
+  parameters: [DesComponentItemParameterInput!]!
+  "Tells to replace all existing parameters. By default parameters are added to existing."
+  replaceExisting: Boolean
+}
+
+"Input to update component life cycle state."
+input DesUpdateComponentLifeCycleStateInput {
+  "Comment."
+  comment: String
+  "Component identifier."
+  componentId: ID!
+  "Life cycle transition state identifier."
+  lifeCycleStateTransitionId: String!
+}
+
+"Input for updating component revision parameters."
+input DesUpdateComponentRevisionParametersInput {
+  "Component identifier."
+  componentId: ID!
+  "Component revision naming scheme identifier."
+  componentRevisionNamingSchemeId: String
+  "Parameters to update."
+  parameters: [DesRevisionParameterInput!]!
+  "Release note to go alongside update."
+  releaseNote: String
+  "If set to `true`, all existing parameters are overwritten. By default, parameters are added as new parameters."
+  replaceExisting: Boolean
+}
+
+"Input for updating the symbol of a component."
+input DesUpdateComponentSymbolInput {
+  "The component identifier."
+  componentId: ID!
+  "The identifier of the symbol to link to the component. If omitted or set to `null`, the symbol will be unlinked from the component."
+  symbolId: ID
+}
+
+"Input for updating component template."
+input DesUpdateComponentTemplateInput {
+  "Optional comment."
+  comment: String
+  "The node identifier."
+  componentTemplateId: ID!
+  "The component template content (CMPT format JSON string)."
+  contentAsText: String!
+  "Optional description."
+  description: String
+}
+
+"Input for updating a footprint file."
+input DesUpdateFootprintFileInput {
+  "Uploaded file identifier (typically a *PcbLib* file)."
+  fileId: String!
+  "Relative path of the source file (typically *Released/filename.PcbLib*)."
+  relativePath: String!
+}
+
+"Input for updating a footprint."
+input DesUpdateFootprintInput {
+  "Optional comment."
+  comment: String
+  "Optional description."
+  description: String
+  "Optional footprint files. If provided, these replace all existing release content."
+  files: [DesUpdateFootprintFileInput!]
+  "The footprint identifier."
+  footprintId: ID!
+  "Optional release note."
+  releaseNote: String
+}
+
+"Input to update footprint life cycle state."
+input DesUpdateFootprintLifeCycleStateInput {
+  "Comment."
+  comment: String
+  "Footprint identifier."
+  footprintId: ID!
+  "Life cycle transition state identifier."
+  lifeCycleStateTransitionId: String!
+}
+
+"Input to update reuse block."
+input DesUpdateReuseBlockInput {
+  "Reuse block description."
+  description: String
+  "Reuse block identifier."
+  id: ID!
+  "Reuse block name."
+  name: String
+}
+
+"Input for updating a symbol file."
+input DesUpdateSymbolFileInput {
+  "Uploaded file identifier (typically a *SchLib* file)."
+  fileId: String!
+  "Relative path of the source file (typically *Released/filename.SchLib*)."
+  relativePath: String!
+}
+
+"Input for updating a symbol."
+input DesUpdateSymbolInput {
+  "Optional comment."
+  comment: String
+  "Optional description."
+  description: String
+  "Optional symbol files. If provided, these replace all existing release content."
+  files: [DesUpdateSymbolFileInput!]
+  "Optional release note."
+  releaseNote: String
+  "The symbol identifier."
+  symbolId: ID!
+}
+
+"Input to update symbol life cycle state."
+input DesUpdateSymbolLifeCycleStateInput {
+  "Comment."
+  comment: String
+  "Life cycle transition state identifier."
+  lifeCycleStateTransitionId: String!
+  "Symbol identifier."
+  symbolId: ID!
+}
+
+"Input for upgrading components to use the latest footprint revision."
+input DesUpgradeComponentsToLatestFootprintInput {
+  "Optional structured filter to limit which components are upgraded."
+  componentFilter: DesComponentUpgradeFilterInput
+  "The footprint identifier whose components should be upgraded."
+  footprintId: ID!
+}
+
+"Input for upgrading components to use the latest symbol revision."
+input DesUpgradeComponentsToLatestSymbolInput {
+  "Optional structured filter to limit which components are upgraded."
+  componentFilter: DesComponentUpgradeFilterInput
+  "The symbol identifier whose components should be upgraded."
+  symbolId: ID!
+}
+
+"Component parameter type."
+enum DesParameterType {
+  CAPACITANCE
+  CHARGE
+  CONDUCTANCE
+  CURRENT
+  DECIBELS
+  FREQUENCY
+  IMPEDANCE
+  INDUCTANCE
+  LENGTH
+  MASS
+  NONE
+  PERCENT
+  POWER
+  RESISTANCE
+  TEMPERATURE
+  TEXT
+  TIME
+  VOLTAGE
+}
+
+"Specifies how existing part choices are handled during upload."
+enum DesPartPartChoiceUpdateMode {
+  "Replaces all existing part choices."
+  RECREATE
+  "Adds only new part choices."
+  UPDATE
+}

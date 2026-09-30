@@ -1,0 +1,11 @@
+# Requirements — Altium Platform API
+> Requirements projects and requirements data.
+
+Concepts: [requirements](https://altiumdeveloper.github.io/cdm/subsets/requirements/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/schema.graphql) (~183 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/overview.md).
+
+## Entry points
+- [requirements.project.byId](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/operations/queries/requirements/project/by-id.md): Gets Requirements project by GRID.
+- [requirements.project.byIds](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/operations/queries/requirements/project/by-ids.md): Gets Requirements projects by GRIDs.
+
+## Optional
+- [All types in Requirements](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/types.txt): one line per type (~144 tokens)

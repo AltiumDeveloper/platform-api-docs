@@ -1,0 +1,4 @@
+# Configuration Management — types
+> Types of the Configuration Management bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/llms.txt).
+
+- [DesWorkspaceConfiguration](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-workspace-configuration.md): Information about workspace configuration.

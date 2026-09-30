@@ -1,0 +1,222 @@
+# Renesas (preview) — types
+> Types of the Renesas (preview) bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/llms.txt).
+
+- [DmAddressMapModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-map-model.md): Address map for the device including memory and peripheral regions. [EXPERIMENTAL]
+- [DmAmFieldEnum](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-field-enum.md): Enumerated value for a register field. [EXPERIMENTAL]
+- [DmAmMemory](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-memory.md): Memory entry with name, size and type. [EXPERIMENTAL]
+- [DmAmRegister](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register.md): Register entry within an address block. [EXPERIMENTAL]
+- [DmAmRegisterField](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register-field.md): Bit field within a register. [EXPERIMENTAL]
+- [DmConfigDependency](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-dependency.md): Dependency describing how a configuration value maps to GPIO or alternate function usage. [EXPERIMENTAL]
+- [DmConfigEnumValue](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-enum-value.md): Configuration enumeration value for a port setting. [EXPERIMENTAL]
+- [DmConstraintModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-constraint-model.md): Snapshot of the CP-SAT constraint model built before the solver runs, including variables, constraint groups, and the objective. [EXPERIMENTAL]
+- [DmDependencyPinConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-dependency-pin-config.md): Pin dependecy to port mapping entry within an operation mode. [EXPERIMENTAL]
+- [DmDeviceBoard](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-board.md): Represents an available device board for a specific device model. [EXPERIMENTAL]
+- [DmDeviceFamily](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-family.md): A supported device family (e.g. RA, RX) with display metadata and total device count. [EXPERIMENTAL]
+- [DmDeviceModelAsConfigured](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-model-as-configured.md): GraphQL type that exposes the device model as configured, typically after user or tool selections. [EXPERIMENTAL]
+- [DmDeviceToPeripheralOptionsModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-to-peripheral-options-model.md): Options describing how device interfaces map onto physical peripherals. [EXPERIMENTAL]
+- [DmEsdResolverResult](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-esd-resolver-result.md): Resolver results for a specific functional block within ESD. [EXPERIMENTAL]
+- [DmEsdResolverSummary](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-esd-resolver-summary.md): Summary of running device model evaluation for an ESD document. [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationByFamilyPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-by-family-payload.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationByMpnPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-by-mpn-payload.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationFromConfigurationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-from-configuration-payload.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationFromESDPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-from-esdpayload.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationFromESDv2Payload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-from-esdv-2-payload.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationFromXmlPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-from-xml-payload.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-payload.md) [EXPERIMENTAL]
+- [DmExecuteDeviceExtractionFromConfigurationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-extraction-from-configuration-payload.md) [EXPERIMENTAL]
+- [DmExecuteDeviceExtractionFromConfigurationUrlPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-extraction-from-configuration-url-payload.md) [EXPERIMENTAL]
+- [DmFamilyCapability](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-capability.md): A single named family capability. [EXPERIMENTAL]
+- [DmFamilyPart](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md): Represents a single device family part variant. [EXPERIMENTAL]
+- [DmFamilyPartModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part-model.md): Root GraphQL type exposing the collection of device family part definitions. [EXPERIMENTAL]
+- [DmFeasibleDeviceModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-feasible-device-model.md): A device without concrete peripherals and ports — enough to drive the matched-parts list and search results. [EXPERIMENTAL]
+- [DmFspModule](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md): Firmware Support Package (FSP) module that represents a device interface, including its requirements and provided interfaces. [EXPERIMENTAL]
+- [DmFspProvides](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-provides.md): Represents an interface provided by an FSP module. [EXPERIMENTAL]
+- [DmFspRequires](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-requires.md): Represents an interface requirement of an FSP module. [EXPERIMENTAL]
+- [DmFullStackModelReport](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-model-report.md) [EXPERIMENTAL]
+- [DmHistogramBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-histogram-bucket.md): A histogram bucket mapping an instance count to the number of models with that count. [EXPERIMENTAL]
+- [DmInstanceSelection](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-instance-selection.md): Selected instance details and its pin assignments. [EXPERIMENTAL]
+- [DmInstanceStatistics](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-instance-statistics.md): Statistics on instance counts across supported models for an interface. [EXPERIMENTAL]
+- [DmInterfaceModelSupport](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-model-support.md): Support details for an interface across a set of models (devices or boards). [EXPERIMENTAL]
+- [DmInterfaceSummary](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-summary.md): Summary of a single generic interface (e.g., UART, PWM) showing device and board support details. [EXPERIMENTAL]
+- [DmInterfaceSupportSummary](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-support-summary.md): Summary of supported interfaces across all devices in the catalog. [EXPERIMENTAL]
+- [DmInterfaceTypeModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-type-model.md): A supported interface (port) type with display metadata. [EXPERIMENTAL]
+- [DmMcuPartNumberModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-mcu-part-number-model.md): MCU part number details parsed into structured properties. [EXPERIMENTAL]
+- [DmModelSupportEntry](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-model-support-entry.md): Support entry for a device or board, showing max instance count and access to the full model. [EXPERIMENTAL]
+- [DmModePinConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-mode-pin-config.md): Pin function to port mapping entry within an operation mode. [EXPERIMENTAL]
+- [DmOpMode](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-op-mode.md): Concrete operation mode configuration containing pin function assignments. [EXPERIMENTAL]
+- [DmPeripheralChanges](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-changes.md): Changes in peripheral instances between incoming SDM and resolved model. [EXPERIMENTAL]
+- [DmPeripheralModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-model.md): Peripheral model for the device, including all available peripherals. [EXPERIMENTAL]
+- [DmPeripheralPortCoverageItem](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-port-coverage-item.md) [EXPERIMENTAL]
+- [DmPeripheralPortCoverageReport](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-port-coverage-report.md) [EXPERIMENTAL]
+- [DmPeripheralProperty](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-property.md): Peripheral property or metadata entry. [EXPERIMENTAL]
+- [DmPinAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-pin-assignment.md): Pin mapping entry from function name to a concrete port. [EXPERIMENTAL]
+- [DmPortModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-model.md): Port model describing all device ports and their details. [EXPERIMENTAL]
+- [DmPortPreset](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-preset.md): A port that carries a board-level preset function preference. [EXPERIMENTAL]
+- [DmRaPartNumberModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-ra-part-number-model.md): Deprecated alias of DmMcuPartNumberModel, retained for backward compatibility. [EXPERIMENTAL]
+- [DmRequestedPeripheral](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requested-peripheral.md): Requested peripheral entry with its required count. [EXPERIMENTAL]
+- [DmRequiresProvidesMapping](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requires-provides-mapping.md): Mapping of a single required interface to the interface that provides it. [EXPERIMENTAL]
+- [DmRequiresProvidesResolution](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requires-provides-resolution.md): Resolution details mapping FSP module requirements to provided interfaces. [EXPERIMENTAL]
+- [DmResolverFeasibilityResult](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-feasibility-result.md): Feasibility outcome for a single candidate device (no full configuration). [EXPERIMENTAL]
+- [DmResolverFeasibilitySummary](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-feasibility-summary.md): Fast, family-scoped feasibility summary. [EXPERIMENTAL]
+- [DmResolverResult](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-result.md): Resolver outcome and details for a single device. [EXPERIMENTAL]
+- [DmResolverSummary](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-summary.md): Summary of all resolver runs including per-device results. [EXPERIMENTAL]
+- [DmSoftwareComponent](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-component.md): The software component used in configuration.xml, optionally linked to a library ID. [EXPERIMENTAL]
+- [DmSoftwareModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-model.md): The software model for a device, including the device part number, its ports, and associated software components such as middleware and drivers. [EXPERIMENTAL]
+- [DmSoftwareToDeviceOptionsModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-to-device-options-model.md): Options describing how software requirements map onto device interfaces. [EXPERIMENTAL]
+- [DmStackContext](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-context.md): An FSP configuration context grouping stack elements for a context ID. [EXPERIMENTAL]
+- [DmStackElement](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-element.md): A single FSP stack element including its module and dependency relationships. [EXPERIMENTAL]
+- [DmStackModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-model.md): FSP stack containing one or more configuration contexts. [EXPERIMENTAL]
+- [DmTemperatureRange](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-temperature-range.md): Operating temperature range with units and measurement reference. [EXPERIMENTAL]
+- [DmUpdateDeviceFromSdmPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-update-device-from-sdm-payload.md) [EXPERIMENTAL]
+- [DmUpdaterSummary](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-updater-summary.md): Summary of device model updater run. [EXPERIMENTAL]
+- [RsaMotorStudioCreateEasyModeConfigPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-easy-mode-config-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-project-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateScopeCapturePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-scope-capture-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateScopeConfigPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-scope-config-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateTuningPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-tuning-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateTuningRevisionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-tuning-revision-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateVariableSetPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-variable-set-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateVariableSetRevisionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-variable-set-revision-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteEasyModeConfigPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-easy-mode-config-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-project-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteScopeCapturePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-scope-capture-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteScopeConfigPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-scope-config-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteTuningPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-tuning-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteVariableSetPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-variable-set-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioEasyModeConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-easy-mode-config.md) [EXPERIMENTAL]
+- [RsaMotorStudioLinkTuningToProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-link-tuning-to-project-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioProject](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) [EXPERIMENTAL]
+- [RsaMotorStudioScopeCapture](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) [EXPERIMENTAL]
+- [RsaMotorStudioScopeChannelConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-channel-config.md) [EXPERIMENTAL]
+- [RsaMotorStudioScopeConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) [EXPERIMENTAL]
+- [RsaMotorStudioScopeView](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-view.md) [EXPERIMENTAL]
+- [RsaMotorStudioSlider](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-slider.md) [EXPERIMENTAL]
+- [RsaMotorStudioTuning](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning.md) [EXPERIMENTAL]
+- [RsaMotorStudioTuningModule](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-module.md) [EXPERIMENTAL]
+- [RsaMotorStudioTuningParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-parameter.md) [EXPERIMENTAL]
+- [RsaMotorStudioTuningParameterEvidence](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-parameter-evidence.md) [EXPERIMENTAL]
+- [RsaMotorStudioTuningRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-revision.md) [EXPERIMENTAL]
+- [RsaMotorStudioUnlinkTuningFromProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-unlink-tuning-from-project-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateEasyModeConfigPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-easy-mode-config-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-project-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateScopeConfigPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-scope-config-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateTuningPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-tuning-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateVariableSetPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-variable-set-payload.md) [EXPERIMENTAL]
+- [RsaMotorStudioVariableSet](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) [EXPERIMENTAL]
+- [RsaMotorStudioVariableSetEntry](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set-entry.md) [EXPERIMENTAL]
+- [RsaMotorStudioVariableSetRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set-revision.md) [EXPERIMENTAL]
+- [SftAIModel](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md)
+- [SftAIModelCreatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-create-payload.md)
+- [SftAIModelCreatePropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-create-properties-payload.md)
+- [SftAIModelCustomProperty](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-custom-property.md)
+- [SftAIModelDeletePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-delete-payload.md)
+- [SftAIModelDeletePropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-delete-properties-payload.md)
+- [SftAIModelUpdatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-update-payload.md)
+- [SftAIModelUpdatePropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-update-properties-payload.md)
+- [SftDevCfgCreateDeviceConfigurationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-create-device-configuration-payload.md)
+- [SftDevCfgDeleteDeviceConfigurationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-delete-device-configuration-payload.md)
+- [SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-link-device-configuration-revision-to-hardware-project-payload.md)
+- [SftDevCfgLinkDeviceConfigurationToSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-link-device-configuration-to-software-project-payload.md)
+- [SftDevCfgUnlinkDeviceConfigurationFromSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-unlink-device-configuration-from-software-project-payload.md)
+- [SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-unlink-device-configuration-revision-from-hardware-project-payload.md)
+- [SftSimSimulation](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md)
+- [SftSimSimulationCreatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-create-payload.md)
+- [SftSimSimulationCreatePropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-create-properties-payload.md)
+- [SftSimSimulationCustomProperty](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-custom-property.md)
+- [SftSimSimulationDeletePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-delete-payload.md)
+- [SftSimSimulationDeletePropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-delete-properties-payload.md)
+- [SftSimSimulationUpdatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-update-payload.md)
+- [SftSimSimulationUpdatePropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-update-properties-payload.md)
+- [SftSoftwareCreateProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-create-project-payload.md)
+- [SftSoftwareCreateProjectPropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-create-project-properties-payload.md)
+- [SftSoftwareDeleteProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-delete-project-payload.md)
+- [SftSoftwareDeleteProjectPropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-delete-project-properties-payload.md)
+- [SftSoftwareProjectCustomProperty](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project-custom-property.md)
+- [SftSoftwareProjectUpdateConfigurationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project-update-configuration-payload.md)
+- [SftSoftwareProjectUpdateFirmwarePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project-update-firmware-payload.md)
+- [SftSoftwareUpdateProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-update-project-payload.md)
+- [SftSoftwareUpdateProjectPropertiesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-update-project-properties-payload.md)
+- [DmExecuteDeviceEvaluationByFamilyInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-by-family-input.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationByMpnInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-by-mpn-input.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationFromConfigurationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-from-configuration-input.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationFromESDInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-from-esdinput.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationFromESDv2Input](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-from-esdv-2-input.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationFromXmlInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-from-xml-input.md) [EXPERIMENTAL]
+- [DmExecuteDeviceEvaluationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-input.md) [EXPERIMENTAL]
+- [DmExecuteDeviceExtractionFromConfigurationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-extraction-from-configuration-input.md) [EXPERIMENTAL]
+- [DmExecuteDeviceExtractionFromConfigurationUrlInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-extraction-from-configuration-url-input.md) [EXPERIMENTAL]
+- [DmRequiredPeripheralPayloadInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-required-peripheral-payload-input.md) [EXPERIMENTAL]
+- [DmUpdateDeviceFromSdmInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-update-device-from-sdm-input.md) [EXPERIMENTAL]
+- [MotorStudioProjectGridFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/motor-studio-project-grid-filter-input.md) [EXPERIMENTAL]
+- [MotorStudioProjectGridSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/motor-studio-project-grid-sort-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateEasyModeConfigInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-easy-mode-config-input.md): Represents input value for motor studio project easymode config creation. [EXPERIMENTAL]
+- [RsaMotorStudioCreateProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-project-input.md): Represents input value for motor studio project creation. [EXPERIMENTAL]
+- [RsaMotorStudioCreateScopeCaptureInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-capture-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateScopeChannelInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-channel-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateScopeConfigInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-config-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateScopeViewInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-view-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateSliderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-slider-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateTuningInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-tuning-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateTuningRevisionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-tuning-revision-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateVariableSetInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-variable-set-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioCreateVariableSetRevisionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-variable-set-revision-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteEasyModeConfigInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-easy-mode-config-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-project-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteScopeCaptureInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-scope-capture-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteScopeConfigInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-scope-config-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteTuningInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-tuning-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioDeleteVariableSetInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-variable-set-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioLinkTuningToProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-link-tuning-to-project-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioParameterEvidenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-parameter-evidence-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioProjectFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-project-filter-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioProjectSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-project-sort-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioScopeChannelInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-scope-channel-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioTuningModuleInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-tuning-module-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioTuningParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-tuning-parameter-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioUnlinkTuningFromProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-unlink-tuning-from-project-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateEasyModeConfigInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-easy-mode-config-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-project-input.md): Represents input value for motor studio project creation. [EXPERIMENTAL]
+- [RsaMotorStudioUpdateScopeConfigInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-scope-config-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateScopeViewInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-scope-view-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateSliderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-slider-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateTuningInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-tuning-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioUpdateVariableSetInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-variable-set-input.md) [EXPERIMENTAL]
+- [RsaMotorStudioVariableSetEntryInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-variable-set-entry-input.md) [EXPERIMENTAL]
+- [SftAIModelCreateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-create-input.md)
+- [SftAIModelCreatePropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-create-properties-input.md)
+- [SftAIModelCustomPropertyInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-custom-property-input.md)
+- [SftAIModelDeleteInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-delete-input.md)
+- [SftAIModelDeletePropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-delete-properties-input.md)
+- [SftAIModelUpdateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-update-input.md)
+- [SftAIModelUpdatePropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-update-properties-input.md)
+- [SftDevCfgCreateDeviceConfigurationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-create-device-configuration-input.md)
+- [SftDevCfgDeleteDeviceConfigurationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-delete-device-configuration-input.md)
+- [SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-link-device-configuration-revision-to-hardware-project-input.md)
+- [SftDevCfgLinkDeviceConfigurationToSoftwareProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-link-device-configuration-to-software-project-input.md)
+- [SftDevCfgUnlinkDeviceConfigurationFromSoftwareProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-unlink-device-configuration-from-software-project-input.md)
+- [SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-unlink-device-configuration-revision-from-hardware-project-input.md)
+- [SftSimSimulationCreateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-create-input.md)
+- [SftSimSimulationCreatePropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-create-properties-input.md)
+- [SftSimSimulationCustomPropertyInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-custom-property-input.md)
+- [SftSimSimulationDeleteInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-delete-input.md)
+- [SftSimSimulationDeletePropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-delete-properties-input.md)
+- [SftSimSimulationUpdateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-update-input.md)
+- [SftSimSimulationUpdatePropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-update-properties-input.md)
+- [SftSoftwareCreateProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-create-project-input.md)
+- [SftSoftwareCreateProjectPropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-create-project-properties-input.md)
+- [SftSoftwareDeleteProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-delete-project-input.md)
+- [SftSoftwareDeleteProjectPropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-delete-project-properties-input.md)
+- [SftSoftwareProjectCustomPropertyInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-project-custom-property-input.md)
+- [SftSoftwareUpdateProjectConfigrationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-configration-input.md)
+- [SftSoftwareUpdateProjectFirmwareInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-firmware-input.md)
+- [SftSoftwareUpdateProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-input.md)
+- [SftSoftwareUpdateProjectPropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-properties-input.md)
+- [DmModelEvaluationStrategy](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/dm-model-evaluation-strategy.md): Controls how device models are evaluated with respect to devices and boards, including preferred and fallback behaviors. [EXPERIMENTAL]
+- [ParamSource](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/param-source.md) [EXPERIMENTAL]
+- [SftSimSimulationRepositoryType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/sft-sim-simulation-repository-type.md)
+- [SftSimSimulationType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/sft-sim-simulation-type.md)
+- [SftSoftwareRepositoryType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/sft-software-repository-type.md)
+- [TriggerEdge](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/trigger-edge.md) [EXPERIMENTAL]
+- [TriggerMode](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/trigger-mode.md) [EXPERIMENTAL]
+- [TuningModuleType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-module-type.md) [EXPERIMENTAL]
+- [TuningType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-type.md) [EXPERIMENTAL]

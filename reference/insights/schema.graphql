@@ -1,0 +1,505 @@
+# Altium Platform API — Insights schema slice (~4669 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   JSON → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+
+type Query {
+  "Gets an insight by its identifier."
+  desWorkspaceInsInsightById(id: ID!): DesWorkspaceInsInsight
+  "Gets an insight by its name."
+  desWorkspaceInsInsightByName(name: String!): DesWorkspaceInsInsight
+  "Gets a list of insights."
+  desWorkspaceInsInsights(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    filter: DesWorkspaceInsInsightFilterInput
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    sorting: DesWorkspaceInsOrderingInput
+  ): DesWorkspaceInsInsightsConnection
+  "Gets all available insight severities."
+  desWorkspaceInsInsightSeverities: [String!]!
+  "Gets all available insight sorting fields."
+  desWorkspaceInsInsightSortingFields: [String!]!
+  "Gets all available insight statuses."
+  desWorkspaceInsInsightStatuses: [String!]!
+  "Gets all available insight types."
+  desWorkspaceInsInsightTypes: [String!]!
+  "Gets the notification settings."
+  desWorkspaceInsNotificationSettings: DesWorkspaceInsNotificationSettings!
+  "Gets the settings."
+  desWorkspaceInsSettings: DesWorkspaceInsUserSettings!
+}
+
+type Mutation {
+  "Runs the initialization process for insights, if didn't run yet."
+  desWorkspaceInsInitializeInsightsIfRequired: DesWorkspaceInsInitializeInsightsIfRequiredPayload!
+  "Unsubscribes from notifications."
+  desWorkspaceInsUnsubscribeFromNotifications(input: DesWorkspaceInsUnsubscribeFromNotificationsInput!): DesWorkspaceInsUpdateNotificationSettingsPayload!
+  "Updates an insight by identifier."
+  desWorkspaceInsUpdateInsightById(input: DesWorkspaceInsUpdateInsightByIdInput!): DesWorkspaceInsUpdateInsightByIdPayload!
+  "Updates the notification settings."
+  desWorkspaceInsUpdateNotificationSettings(input: DesWorkspaceInsNotificationSettingsInput!): DesWorkspaceInsUpdateNotificationSettingsPayload!
+  "Updates the settings."
+  desWorkspaceInsUpdateSettings(input: DesWorkspaceInsUserSettingsInput!): DesWorkspaceInsUserSettingsPayload!
+  "Creates or updates an insight by key."
+  desWorkspaceInsUpsertInsightByKey(input: DesWorkspaceInsUpsertInsightByKeyInput!): DesWorkspaceInsUpsertInsightByKeyPayload!
+}
+
+"Payload returned when initializing insights on first use."
+type DesWorkspaceInsInitializeInsightsIfRequiredPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesWorkspaceInsInsightErrorPayload!]!
+  "Indicates whether the initialization finished successfully."
+  isSuccess: Boolean!
+}
+
+"Insight aggregated from workspace signals and related resources."
+type DesWorkspaceInsInsight {
+  "Creation timestamp and user information."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Full data payload for the insight."
+  data: JSON!
+  "History of changes applied to the insight."
+  history: [DesWorkspaceInsInsightHistoryTransaction!]!
+  "Unique identifier of the insight resource."
+  id: ID!
+  "Indicates whether the insight has been acknowledged."
+  isAck: Boolean!
+  "Human-readable name of the insight."
+  name: String!
+  "Resources related to this insight (projects, BOMs, parts, etc.)."
+  relatedEntities: DesWorkspaceInsRelatedEntities!
+  "Tasks and requests associated with this insight."
+  relatedTasks: DesWorkspaceInsRelatedTasks!
+  "Severity level assigned to the insight."
+  severity: String!
+  "Compact, UI-friendly representation of the insight data."
+  shortData: JSON!
+  "Current status of the insight lifecycle."
+  status: String!
+  "Type key that categorizes the insight."
+  type: String!
+  "Most recent update timestamp and user information."
+  updated: DesWorkspaceInsUserActionTimestamp!
+}
+
+"Link to an assembly variant associated with the insight."
+type DesWorkspaceInsInsightAssemblyVariantLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"Link to a work-in-progress BOM associated with the insight."
+type DesWorkspaceInsInsightBomLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"Link to a released BOM associated with the insight."
+type DesWorkspaceInsInsightBomReleaseLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"Link to a component associated with the insight."
+type DesWorkspaceInsInsightComponentLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"Link to a component revision associated with the insight."
+type DesWorkspaceInsInsightComponentRevisionLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"Link to a consolidated BOM associated with the insight."
+type DesWorkspaceInsInsightConsolidatedBomLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"Link to a consolidated BOM release associated with the insight."
+type DesWorkspaceInsInsightConsolidatedBomReleaseLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"History entry capturing changes to an insight's data payloads."
+type DesWorkspaceInsInsightDataChangedAction {
+  "Updated full data payload for the insight."
+  newData: JSON!
+  "Updated summary data payload for the insight."
+  newShortData: JSON!
+  "Previous full data payload, if available."
+  oldData: JSON
+  "Previous summary data payload, if available."
+  oldShortData: JSON
+}
+
+"History entry capturing changes to linked entities."
+type DesWorkspaceInsInsightEntityLinksChangedAction {
+  "Entities that were added to the insight."
+  newEntities: [ID!]!
+  "Entities that were removed from the insight."
+  removedEntities: [ID!]!
+}
+
+"Standard error payload returned by insight mutations."
+type DesWorkspaceInsInsightErrorPayload {
+  "Human-readable description of the error."
+  message: String!
+}
+
+"A point-in-time collection of actions recorded for an insight."
+type DesWorkspaceInsInsightHistoryTransaction {
+  "Actions that happened together within this transaction."
+  actions: [DesWorkspaceInsInsightHistoryAction!]!
+  "Timestamp and user who produced the actions."
+  created: DesWorkspaceInsUserActionTimestamp!
+}
+
+"Link to a part associated with the insight."
+type DesWorkspaceInsInsightPartLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"Link to a part request task associated with the insight."
+type DesWorkspaceInsInsightPartRequestLinkGql {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"Link to a project associated with the insight."
+type DesWorkspaceInsInsightProjectLink {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"History entry representing a severity change on an insight."
+type DesWorkspaceInsInsightSeverityChangedAction {
+  "Severity value after the change."
+  newSeverity: String!
+  "Severity value before the change, if any."
+  oldSeverity: String
+}
+
+"History entry representing a status change on an insight."
+type DesWorkspaceInsInsightStatusChangedAction {
+  "Status value after the change."
+  newStatus: String!
+  "Status value before the change, if any."
+  oldStatus: String
+}
+
+"Link to a task associated with the insight."
+type DesWorkspaceInsInsightTaskLinkGql {
+  "Information about when and by whom the link was created."
+  created: DesWorkspaceInsUserActionTimestamp!
+  "Identifier of the related resource."
+  id: ID!
+}
+
+"History entry capturing changes to linked tasks."
+type DesWorkspaceInsInsightTaskLinksChangedAction {
+  "Tasks that were added to the insight."
+  newTasks: [ID!]!
+}
+
+"A connection to a list of items."
+type DesWorkspaceInsInsightsConnection {
+  "A list of edges."
+  edges: [DesWorkspaceInsInsightsEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesWorkspaceInsInsight!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesWorkspaceInsInsightsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesWorkspaceInsInsight!
+}
+
+"Recipients configuration applied to insight notifications."
+type DesWorkspaceInsNotificationRecipientSettings {
+  "Recipient groups included in notifications."
+  groups: [DesWorkspaceInsRecipientGroup!]!
+  "Send notifications to the insight owners automatically."
+  sendToOwners: Boolean!
+  "Explicit user recipients for notifications."
+  users: [DesWorkspaceInsRecipientUser!]!
+}
+
+"Notification settings defined for the current user."
+type DesWorkspaceInsNotificationSettings {
+  "Whether notifications are enabled for insights."
+  enabled: Boolean!
+  "Recipient configuration for insight notifications."
+  recipientSettings: DesWorkspaceInsNotificationRecipientSettings!
+  "Users who should not receive insight notifications."
+  unsubscribedUserIds: [ID!]!
+}
+
+"Project-level preferences affecting insight generation and visibility."
+type DesWorkspaceInsProjectsSettings {
+  "Assembly variants that should be excluded from insights."
+  excludedAssemblyVariants: [ID!]!
+  "Released BOMs excluded from insight consideration."
+  excludedBomReleases: [ID!]!
+  "Consolidated BOM releases excluded from insight consideration."
+  excludedConsolidatedBomReleases: [ID!]!
+  "Consolidated BOMs excluded from insight consideration."
+  excludedConsolidatedBoms: [ID!]!
+  "Projects that should be excluded from insights."
+  excludedProjects: [ID!]!
+  "Work-in-progress BOMs excluded from insight consideration."
+  excludedWipBoms: [ID!]!
+  "Exclude non-active projects from insight processing."
+  excludeNonActiveProjects: Boolean!
+  "Number of inactivity days before a project is excluded."
+  projectInactivityThresholdDays: Int!
+}
+
+"Group recipient for notifications."
+type DesWorkspaceInsRecipientGroup {
+  "Identifier of the recipient group."
+  id: ID!
+}
+
+"User recipient for notifications."
+type DesWorkspaceInsRecipientUser {
+  "Identifier of the recipient user."
+  id: ID!
+}
+
+"Entities linked to an insight across the workspace."
+type DesWorkspaceInsRelatedEntities {
+  "Assembly variants connected to the insight."
+  assemblyVariants: [DesWorkspaceInsInsightAssemblyVariantLink!]!
+  "Released BOMs connected to the insight."
+  bomReleases: [DesWorkspaceInsInsightBomReleaseLink!]!
+  "Work-in-progress BOMs connected to the insight."
+  boms: [DesWorkspaceInsInsightBomLink!]!
+  "Component revisions referenced by the insight."
+  componentRevisions: [DesWorkspaceInsInsightComponentRevisionLink!]!
+  "Components referenced by the insight."
+  components: [DesWorkspaceInsInsightComponentLink!]!
+  "Consolidated BOM releases linked to the insight."
+  consolidatedBomReleases: [DesWorkspaceInsInsightConsolidatedBomReleaseLink!]!
+  "Consolidated BOMs linked to the insight."
+  consolidatedBoms: [DesWorkspaceInsInsightConsolidatedBomLink!]!
+  "Parts associated with the insight."
+  parts: [DesWorkspaceInsInsightPartLink!]!
+  "Projects associated with the insight."
+  projects: [DesWorkspaceInsInsightProjectLink!]!
+}
+
+"Tasks and task-like items related to an insight."
+type DesWorkspaceInsRelatedTasks {
+  "Part requests associated with the insight."
+  partRequests: [DesWorkspaceInsInsightPartRequestLinkGql!]!
+  "Tasks linked to the insight."
+  tasks: [DesWorkspaceInsInsightTaskLinkGql!]!
+}
+
+"Payload produced after updating an insight by identifier."
+type DesWorkspaceInsUpdateInsightByIdPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesWorkspaceInsInsightErrorPayload!]!
+  "Insight updated with the provided changes."
+  insight: DesWorkspaceInsInsight
+}
+
+"Payload returned after updating notification settings."
+type DesWorkspaceInsUpdateNotificationSettingsPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesWorkspaceInsInsightErrorPayload!]!
+  "Notification settings after the update operation."
+  settings: DesWorkspaceInsNotificationSettings
+}
+
+"Payload produced when upserting an insight using a deduplication key."
+type DesWorkspaceInsUpsertInsightByKeyPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesWorkspaceInsInsightErrorPayload!]!
+  "Insight resulting from the upsert operation."
+  insight: DesWorkspaceInsInsight
+}
+
+"Timestamp information including the user responsible for an action."
+type DesWorkspaceInsUserActionTimestamp {
+  "When the action occurred."
+  timestamp: DateTime!
+  "Identifier of the user who performed the action."
+  userId: ID!
+}
+
+"User settings related to insights."
+type DesWorkspaceInsUserSettings {
+  "Project settings that influence which insights are shown."
+  projectsSettings: DesWorkspaceInsProjectsSettings!
+}
+
+"Payload returning user settings for insight notifications and filters."
+type DesWorkspaceInsUserSettingsPayload {
+  "Errors that occurred while performing the operation."
+  errors: [DesWorkspaceInsInsightErrorPayload!]!
+  "User settings that match the request."
+  userSettings: DesWorkspaceInsUserSettings
+}
+
+"Union marker for actions recorded in an insight's history."
+union DesWorkspaceInsInsightHistoryAction = DesWorkspaceInsInsightSeverityChangedAction | DesWorkspaceInsInsightEntityLinksChangedAction | DesWorkspaceInsInsightStatusChangedAction | DesWorkspaceInsInsightTaskLinksChangedAction | DesWorkspaceInsInsightDataChangedAction
+
+"Input for filtering insights based on various criteria."
+input DesWorkspaceInsInsightFilterInput {
+  "Limit results to insights linked to the provided entities."
+  linkedEntities: [ID!]
+  "Match insights whose names contain any of the provided values."
+  name: [String!]
+  "Filter insights by severity levels."
+  severity: [String!]
+  "Filter insights by their status values."
+  status: [String!]
+  "Filter insights by their type identifiers."
+  type: [String!]
+}
+
+"User action parameters applied to an insight update."
+input DesWorkspaceInsInsightUserActionInput {
+  "Whether the insight is acknowledged by the user."
+  isAck: Boolean
+  "Tasks created while handling the insight."
+  newTaskIds: [ID!]
+  "New status to apply to the insight."
+  status: String
+}
+
+"Recipients configuration for insight notifications."
+input DesWorkspaceInsNotificationRecipientSettingsInput {
+  "User groups that should receive notifications."
+  groups: [DesWorkspaceInsRecipientGroupInput!]!
+  "Send notifications to insight owners automatically."
+  sendToOwners: Boolean!
+  "Explicit list of workspace users to notify."
+  users: [DesWorkspaceInsRecipientUserInput!]!
+}
+
+"Notification settings that control delivery of insight updates."
+input DesWorkspaceInsNotificationSettingsInput {
+  "Enables or disables notifications for insights."
+  enabled: Boolean!
+  "Recipient rules describing who should receive notifications."
+  recipientSettings: DesWorkspaceInsNotificationRecipientSettingsInput
+  "Users who should not receive notifications for insights."
+  unsubscribedUserIds: [ID!]
+}
+
+"Sorting configuration for insight queries."
+input DesWorkspaceInsOrderingInput {
+  "Field name used for ordering results."
+  field: String
+  "Whether results should be sorted in descending order."
+  isDesc: Boolean
+}
+
+"User-level project filtering preferences for insights."
+input DesWorkspaceInsProjectSettingsInput {
+  "Entities that should be excluded from insight calculations."
+  excludedEntities: [ID!]!
+  "Exclude projects that are no longer active from insight results."
+  excludeNonActiveProjects: Boolean!
+  "Number of days after which inactive projects are ignored."
+  projectInactivityThresholdDays: Int!
+}
+
+"Group recipient reference for notifications."
+input DesWorkspaceInsRecipientGroupInput {
+  "Identifier of the group that should receive notifications."
+  id: ID!
+}
+
+"User recipient reference for notifications."
+input DesWorkspaceInsRecipientUserInput {
+  "Identifier of the user that should receive notifications."
+  id: ID!
+}
+
+"Input for removing a user from insight notifications."
+input DesWorkspaceInsUnsubscribeFromNotificationsInput {
+  "User to exclude from receiving notifications."
+  userId: ID!
+}
+
+"Input for updating an existing insight by its identifier."
+input DesWorkspaceInsUpdateInsightByIdInput {
+  "Identifier of the insight to be updated."
+  id: ID!
+  "User action describing how the insight should change."
+  userAction: DesWorkspaceInsInsightUserActionInput!
+}
+
+"Input for creating or updating an insight identified by a deduplication key."
+input DesWorkspaceInsUpsertInsightByKeyInput {
+  "Insight details to create or update."
+  insight: DesWorkspaceInsUpsertInsightInput!
+  "Key used to find an existing insight or create a new one."
+  insightDedupKey: String!
+}
+
+"Input payload for creating or updating an insight."
+input DesWorkspaceInsUpsertInsightInput {
+  "Full data payload for the insight."
+  data: JSON!
+  "Entities that should be linked to this insight."
+  relatedEntityIds: [ID!]!
+  "The severity level of the insight."
+  severity: String!
+  "Short, UI-friendly payload representing the insight."
+  shortData: JSON!
+  "Status value to assign to the insight."
+  status: String
+  "The type identifier of the insight."
+  type: String!
+}
+
+"User-specific settings that control insight experience."
+input DesWorkspaceInsUserSettingsInput {
+  "Project-level preferences used when delivering insights."
+  projectsSettings: DesWorkspaceInsProjectSettingsInput
+}

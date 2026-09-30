@@ -1,0 +1,212 @@
+# Design — types
+> Types of the Design bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/design/llms.txt).
+
+- [DesArea](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-area.md): Area in mm^2 and mils^2.
+- [DesAssemblyDrawings](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-assembly-drawings.md): Assembly drawing files display all components on the board in their assembled locations, with corresponding designators.
+- [DesBom](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom.md): A Bill of Materials (BOM) contains a list of all of the parts needed for the assembly of a PCB.
+- [DesBomItem](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item.md): A Bill of Materials (BOM) item contains usage information for a unique component on the PCB.
+- [DesBomItemInstance](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item-instance.md): A Bill of Materials (BOM) item instance contains information for one specific usage of the item.
+- [DesCadBendingLine](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-bending-line.md): Lines in your board where the design is folded at assembly.
+- [DesCadBoard3DBodyModelData](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-3-dbody-model-data.md): An item instance containing information a 3D model.
+- [DesCadBoardArea](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-area.md): Information about the board area.
+- [DesCadBoardComponent](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-component.md): Information about a CAD board component.
+- [DesCadBoardComponentType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-component-type.md): Information about a CAD board component type.
+- [DesCadBoardCopperLayer](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-copper-layer.md): Information about a copper layer on the CAD board.
+- [DesCadBoardCopperRegion](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-copper-region.md): Information about a copper layer region on the CAD board.
+- [DesCadBoardCutout](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-cutout.md): Information about a cutout on the CAD board.
+- [DesCadBoardHole](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-hole.md): Information about a hole on the CAD board component.
+- [DesCadBoardLayer](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-layer.md): Information about a layer on the CAD board component.
+- [DesCadBoardRegion](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-region.md): Information about a CAD board region.
+- [DesCadBoardTrack](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-track.md): Information about a track on the CAD board.
+- [DesCadBoardVariant](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-variant.md): Information about a variant of the CAD board.
+- [DesCadBoardVariants](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-variants.md): Information about variants of the CAD board.
+- [DesCadBoardVia](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-via.md): Information about a via on the CAD board.
+- [DesCadBodyTransformation](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-body-transformation.md): Information about a transformation of the CAD board.
+- [DesCadComponentBodyShape](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-component-body-shape.md): Information about the body shape of a CAD board component.
+- [DesCadComponentVariation](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-component-variation.md): Information about a variation of a CAD board component.
+- [DesCadDesign](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-design.md): Information about a CAD design file.
+- [DesCadPoint](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-point.md): Information about a CAD board point.
+- [DesCadProperty](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-property.md): Information about a property in CAD.
+- [DesCadSplitLine](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-split-line.md): Information about a CAD split line.
+- [DesCollaborationRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-revision.md): ECAD, MCAD or ESD revision data.
+- [DesCollaborationSimulationFile](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-file.md): *PROTOTYPE, SUBJECT TO CHANGE*
+- [DesCollaborationSimulationRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision.md): *PROTOTYPE, SUBJECT TO CHANGE*
+- [DesColor](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-color.md): Information in HEX and RGB for the color of an item.
+- [DesComparisonRunPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-comparison-run-payload.md)
+- [DesDesign](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design.md): A design manages all of the schematic, PCB, and BOM content for a project.
+- [DesDesignExchange](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-exchange.md): Design exchange models and downloads.
+- [DesDesignItem](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md): A design item is a specific instance of a part used in the design.
+- [DesDesignItemParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item-parameter.md): A parameter describing the design item.
+- [DesDownloadableFile](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md): Information and URL for a downloadable file.
+- [DesDownloadableFolder](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-folder.md): A folder of downloadable files.
+- [DesGerber](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-gerber.md): Gerber information.
+- [DesGerberX2](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-gerber-x2.md): Gerber X2 information.
+- [DesignData_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-preview.md): Represents the design data extracted from a design project. [EXPERIMENTAL]
+- [DesignDataCombinedErcCheckResult](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-combined-erc-check-result.md): Represents the result of a single ERC check. [EXPERIMENTAL]
+- [DesignDataCombinedErcExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-combined-erc-execution.md): Represents the combined custom and default ERC results for a design revision. [EXPERIMENTAL]
+- [DesignDataComponent_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-component-preview.md): Represents a component in the design. [EXPERIMENTAL]
+- [DesignDataComponentParameter_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-component-parameter-preview.md): Represents a parameter associated with a component. [EXPERIMENTAL]
+- [DesignDataConfiguration_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-configuration-preview.md): Represents the configuration settings for a design. [EXPERIMENTAL]
+- [DesignDataCustomCheckConfigurationItem_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-custom-check-configuration-item-preview.md): Represents a custom check configuration item in the design. [EXPERIMENTAL]
+- [DesignDataDifferentialPair_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-differential-pair-preview.md): Represents a differential pair and its associated positive and negative nets. [EXPERIMENTAL]
+- [DesignDataGeneration](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation.md): Represents a design data generation process and its result. [EXPERIMENTAL]
+- [DesignDataGeneration_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation-preview.md) [EXPERIMENTAL]
+- [DesignDataLine_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-line-preview.md): Represents a line segment in the design. [EXPERIMENTAL]
+- [DesignDataLocation_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-location-preview.md): Represents a 2D coordinate location. [EXPERIMENTAL]
+- [DesignDataNet_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-preview.md): Represents a net (electrical connection) in the design. [EXPERIMENTAL]
+- [DesignDataNetItem_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-item-preview.md): Represents an item belonging to a net. [EXPERIMENTAL]
+- [DesignDataNetParameter_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-parameter-preview.md): Represents a parameter associated with a net. [EXPERIMENTAL]
+- [DesignDataPart_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-part-preview.md): Represents a part within a component. [EXPERIMENTAL]
+- [DesignDataPartParameter_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-part-parameter-preview.md): Represents a parameter associated with a part. [EXPERIMENTAL]
+- [DesignDataPin_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-pin-preview.md): Represents a pin on a component or part. [EXPERIMENTAL]
+- [DesignDataPinParameter_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-pin-parameter-preview.md): Represents a parameter associated with a pin. [EXPERIMENTAL]
+- [DesignDataRectangle_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-rectangle-preview.md): Represents an axis-aligned rectangle. [EXPERIMENTAL]
+- [DesignDataRule_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-rule-preview.md): Represents a rule associated with a net. [EXPERIMENTAL]
+- [DesignDataRuleAttribute_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-rule-attribute-preview.md): Represents an attribute associated with a rule. [EXPERIMENTAL]
+- [DesignDataSchematicDocument_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-schematic-document-preview.md): Represents a schematic document in the design. [EXPERIMENTAL]
+- [DesignDataVariant_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-variant-preview.md): Represents a project variant in the design. [EXPERIMENTAL]
+- [DesignDataVariation_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-variation-preview.md): Represents a variation applied to a component within a project variant. [EXPERIMENTAL]
+- [DesignRegisterUploadPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-register-upload-payload.md) [EXPERIMENTAL]
+- [DesignRuleCheckExecuteOnUploadPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-rule-check-execute-on-upload-payload.md) [EXPERIMENTAL]
+- [DesignRuleCheckExecutePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-rule-check-execute-payload.md) [EXPERIMENTAL]
+- [DesIpc2581](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-ipc-2581.md): IPC 2581 information.
+- [DesLayer](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md): Information about a specific layer in the PCB.
+- [DesLayerProperty](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer-property.md): A property describing a layer.
+- [DesManufacturePackage](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-manufacture-package.md): Information about the manufacture package.
+- [DesMesh3D](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-mesh-3-d.md): 3D mesh information.
+- [DesModel3D](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-model-3-d.md): 3D model information.
+- [DesNcDrill](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-nc-drill.md): NC Drill file information.
+- [DesNet](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md): Net information.
+- [DesOdb](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-odb.md): ODB file information.
+- [DesPad](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pad.md): Pad information.
+- [DesPcb](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb.md): A PCB contains design details of the physical product.
+- [DesPcbAssembly](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb-assembly.md): PCB assembly information and URLs to download files.
+- [DesPcbFabrication](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb-fabrication.md): PCB fabrication information and URLs to download files.
+- [DesPickAndPlace](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pick-and-place.md): PCB Pick and Place files and download URL.
+- [DesPin](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pin.md): Pin properties.
+- [DesPolygon](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-polygon.md): Polygon properties.
+- [DesPosition2D](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md): 2D positional information in mm and mils.
+- [DesProjectGuest](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-guest.md): Represents a project guest (a user who is not registered to the workspace but has explicit share to one or more items in the workspace).
+- [DesProjectIdPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-id-payload.md): Payload associated with project node identifier.
+- [DesProjectPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-permission.md): A permission associated with the project.
+- [DesRectangle](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-rectangle.md): Rectangle positional information.
+- [DesReleaseVariant](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release-variant.md): A variant contains a specific configuration of a base design.
+- [DesSchematic](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-schematic.md): A schematic contains the design parts and logical connections.
+- [DesSetProjectRequirementsBlockPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-set-project-requirements-block-payload.md): Payload for setting the requirements block of a project.
+- [DesSharedWithMe](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me.md): Projects and manufacture packages shared with user.
+- [DesSharedWithMeProjectInfo](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info.md): Information about a project that is shared with the user.
+- [DesSize](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md): Size in mm and mils.
+- [DesSize2D](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size-2-d.md): 2D size in mm and mils.
+- [DesStack](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-stack.md): Information about layer stack.
+- [DesStackup](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-stackup.md): Layer stackup properties and definition.
+- [DesSystemDiagram](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-system-diagram.md): System diagram information.
+- [DesTestPoints](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-test-points.md): Information for test points for PCB fabrication.
+- [DesTrack](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-track.md): PCB design track information.
+- [DesUpdateProjectOwnerPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-update-project-owner-payload.md): Payload associated with updating project owner.
+- [DesUpdateProjectParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-update-project-parameters-payload.md): Payload associated with updating project parameters.
+- [DesUpdateProjectPermissionsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-update-project-permissions-payload.md): Payload associated with updating project permissions.
+- [DesUploadCollaborationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-collaboration-payload.md): Payload associated with uploading collaboration.
+- [DesUploadCollaborationSimulationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-collaboration-simulation-payload.md): Payload associated with uploading collaboration simulation.
+- [DesUploadProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-project-payload.md): Payload associated with uploading project.
+- [DesVcsRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision.md): VCS revision/commit information.
+- [DesVcsRevisionFileChange](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision-file-change.md): Describes the file affected by a VCS revision.
+- [DesVia](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-via.md): PCB design via information.
+- [DesWeight](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-weight.md): Weight in grams and ounces.
+- [DesWorkInProgress](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-work-in-progress.md): The most recent version of a design.
+- [RuleCheck](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check.md): Represents a rule check definition. [EXPERIMENTAL]
+- [RuleCheckAggregateExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-aggregate-execution.md): Represents the aggregated result of one or more rule check executions for a design. [EXPERIMENTAL]
+- [RuleCheckAggregateExecution_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-aggregate-execution-preview.md) [EXPERIMENTAL]
+- [RuleCheckConfiguration](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-configuration.md): Represents current rule check configuration. [EXPERIMENTAL]
+- [RuleCheckExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md): Represents the execution of rule checks against a design. [EXPERIMENTAL]
+- [RuleCheckExecutionPart](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md): Represents the definition of a single rule check (one part of the execution) at the time of execution and it's current status. [EXPERIMENTAL]
+- [RuleViolation](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation.md): Represents a violation detected during a rule check execution. [EXPERIMENTAL]
+- [RuleViolation_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-preview.md) [EXPERIMENTAL]
+- [RuleViolationLocation](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-location.md): Represents a 2D coordinate location associated with a rule violation. [EXPERIMENTAL]
+- [RuleViolationRectangle](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-rectangle.md): Represents an axis-aligned bounding rectangle associated with a rule violation. [EXPERIMENTAL]
+- [RuleViolationRelatedObject](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-related-object.md): Represents a design object related to a rule violation. [EXPERIMENTAL]
+- [UploadRegistrationResult](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/upload-registration-result.md) [EXPERIMENTAL]
+- [DesCadBendingLineInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-bending-line-input.md): Input for CAD bending line.
+- [DesCadBoard3DBodyModelDataInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-3-dbody-model-data-input.md): Input for CAD Board 3D Body Model Data.
+- [DesCadBoardAreaInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-area-input.md): Input for CAD board area.
+- [DesCadBoardComponentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-component-input.md): Input for CAD board component.
+- [DesCadBoardComponentTypeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-component-type-input.md): Input for CAD board component type.
+- [DesCadBoardCopperLayerInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-copper-layer-input.md): Input for CAD board copper layout.
+- [DesCadBoardCopperRegionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-copper-region-input.md): Input for CAD board copper region.
+- [DesCadBoardCutoutInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-cutout-input.md): Input for CAD board cutout.
+- [DesCadBoardHoleInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-hole-input.md): Input for CAD board hole.
+- [DesCadBoardLayerInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-layer-input.md): Input for CAD board layer.
+- [DesCadBoardPointInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md): Input for CAD board point.
+- [DesCadBoardRegionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-region-input.md): Input for CAD board region.
+- [DesCadBoardTrackInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-track-input.md): CAD board track input.
+- [DesCadBoardVariantInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-variant-input.md): Input for CAD board variant.
+- [DesCadBoardVariantsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-variants-input.md): Input for CAD board variants.
+- [DesCadBoardViaInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-via-input.md): Input for CAD board via.
+- [DesCadBodyTransformationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-body-transformation-input.md): Input for CAD body transformation.
+- [DesCadComponentBodyShapeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-component-body-shape-input.md): Input for CAD component body shape.
+- [DesCadComponentVariationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-component-variation-input.md): Input for CAD component variation.
+- [DesCadDesignInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-design-input.md): Input for CAD design.
+- [DesCadPropertyInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-property-input.md): Input for CAD property.
+- [DesCadSplitLineInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-split-line-input.md): Input for CAD split line.
+- [DesCollaborationSimulationFileInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-collaboration-simulation-file-input.md): Input for collaboration simulation file.
+- [DesColorInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-color-input.md): Input for object color.
+- [DesComparisonRunInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-comparison-run-input.md)
+- [DesDesignItemFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-filter-input.md): A design item is a specific instance of a part used in the design.
+- [DesDesignItemParameterFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md): A parameter describing the design item.
+- [DesignRegisterUploadInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-register-upload-input.md): Represents input value for generate design data mutation. [EXPERIMENTAL]
+- [DesignRuleCheckExecuteInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execute-input.md): Represents the input for executing rule checks on a design. [EXPERIMENTAL]
+- [DesignRuleCheckExecuteOnUploadInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execute-on-upload-input.md): Represents the input for executing rule checks on an upload. [EXPERIMENTAL]
+- [DesignRuleCheckExecutionConfigurationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execution-configuration-input.md): Represents the configuration of rule check execution, allowing to override certain traits of the rule check execution. [EXPERIMENTAL]
+- [DesignRuleCheckExecutionConfigurationItemInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execution-configuration-item-input.md): Represents the rule check configuration for a specific rule check execution, allowing to override certain traits of the rule check execution. [EXPERIMENTAL]
+- [DesLayerFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-layer-filter-input.md): Information about a specific layer in the PCB.
+- [DesPosition2DInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-position-2-dinput.md): 2D positional information in mm and mils.
+- [DesProjectFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-filter-input.md): A project manages all development stages of the PCB/PCA product lifecycle.
+- [DesProjectGuestFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-guest-filter-input.md): Specifies the filtering criteria for the project guest list.
+- [DesProjectParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-parameter-input.md): Input for the parametric details of a project.
+- [DesProjectsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-projects-input.md): `desProjects` extra arguments.
+- [DesProjectSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-sort-input.md): A project manages all development stages of the PCB/PCA product lifecycle.
+- [DesProjectsRequirementsBlockFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-projects-requirements-block-filter-input.md): Filter for requirements blocks in projects.
+- [DesProjectTypeOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-type-operation-filter-input.md)
+- [DesRectangleInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-rectangle-input.md): Rectangle positional information.
+- [DesReleaseFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-release-filter-input.md): A release is a published version of a design with additional generated files for manufacturing.
+- [DesReleaseVariantFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-release-variant-filter-input.md): A variant contains a specific configuration of a base design.
+- [DesSchematicFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-schematic-filter-input.md): A schematic contains the design parts and logical connections.
+- [DesSetProjectRequirementsBlockInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-set-project-requirements-block-input.md): Sets the requirements block for a project.
+- [DesSharedWithMeProjectInfoFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-shared-with-me-project-info-filter-input.md): Information about a project that is shared with the user.
+- [DesTrackFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-track-filter-input.md): PCB design track information.
+- [DesUpdateProjectOwnerInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-update-project-owner-input.md): Input for updating project owner.
+- [DesUpdateProjectParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-update-project-parameters-input.md): Input for updating project parameters.
+- [DesUpdateProjectPermissionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-update-project-permission-input.md): Input for updating project permission.
+- [DesUpdateProjectPermissionsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-update-project-permissions-input.md): Input for updating project permissions.
+- [DesUploadCollaborationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-collaboration-input.md): Input for uploading a collaboration.
+- [DesUploadCollaborationSimulationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-collaboration-simulation-input.md): Input for uploading a collaboration simulation.
+- [DesUploadProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-project-input.md): Input for uploading a project.
+- [DesWipVariantFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-wip-variant-filter-input.md): A variant contains a specific configuration of a base design.
+- [RuleCheckExecutionFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-filter-input.md): Represents the execution of rule checks against a design. [EXPERIMENTAL]
+- [RuleCheckExecutionReasonOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-reason-operation-filter-input.md) [EXPERIMENTAL]
+- [RuleCheckExecutionSourceOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-source-operation-filter-input.md) [EXPERIMENTAL]
+- [DesCadBoardCollaborationFlag](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-collaboration-flag.md): Board option flags.
+- [DesCadBoardComponentPlacement](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-component-placement.md): Component placement kind.
+- [DesCadBoardCopperExportFeature](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-copper-export-feature.md): Specifies which copper features to include when exporting board copper data.
+- [DesCadBoardCopperRegionType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-copper-region-type.md): Specifies the type of copper region.
+- [DesCadBoardLayerCategory](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-category.md): Category of the board layer.
+- [DesCadBoardLayerComponentPlacement](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-component-placement.md): Component placement for the signal layer.
+- [DesCadBoardLayerDielectricType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-dielectric-type.md): Dielectric type for the dielectric layer.
+- [DesCadBoardLayerPhysicalCategory](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-physical-category.md): Physical category of the board layer.
+- [DesCadBoardLayerPosition](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-position.md): Position of the board layer within the stackup.
+- [DesCadBoardLayerType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-type.md): Type of the board layer.
+- [DesCadBoardObjectType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-object-type.md): The type of the board object.
+- [DesCadComponentVariationKind](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-component-variation-kind.md): The kind of component variation in a CAD design.
+- [DesCadCounterType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-counter-type.md): The type of the hole.
+- [DesCadHoleType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-hole-type.md): The type of the hole.
+- [DesCadLayersExportMode](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-layers-export-mode.md): The mode for exporting layers in a design.
+- [DesCadWorkflowState](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-workflow-state.md): The workflow state for proposed changes.
+- [DesCollaborationDomain](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-collaboration-domain.md): Specifies ECAD, MCAD or ESD domain.
+- [DesComparisonMode](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-comparison-mode.md)
+- [DesLayerType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-layer-type.md): The type of PCB layer.
+- [DesPadType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-pad-type.md): Pad type: SMD or free.
+- [DesPinElectricalType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-pin-electrical-type.md): The electrical type of a pin.
+- [DesPrimitiveShape](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-primitive-shape.md): Shape of a PCB primitive.
+- [DesProjectGuestOrderBy](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-guest-order-by.md): Specifies the sort order field for the result set of project guests.
+- [DesProjectRepositoryType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-repository-type.md): The hosting location of a project's VCS repository.
+- [DesProjectType](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md): Type of project.
+- [DesVcsChangeKind](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-vcs-change-kind.md): Describes VCS item change kind.

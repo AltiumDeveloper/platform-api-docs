@@ -1,0 +1,2699 @@
+# Altium Platform API — Renesas (preview) schema slice (~24372 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DateTimeOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Decimal → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesPermission → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesWorkspaceUser → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesWorkspaceUserFilterInput → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   DesWorkspaceUserSortInput → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   GridFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Long → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   SolSolution → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   SortEnumType → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   StringOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Upload → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   UuidOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+
+type Query {
+  "**Experimental** A board model (an MCU as soldered onto a specific eval kit) by board name."
+  dmBoardDeviceModel(boardName: String!): DmFullStackDeviceModel @experimental
+  "**Experimental**"
+  dmConfiguredDeviceModel(deviceMpn: String!, sessionId: String!): DmDeviceModelAsConfigured @experimental
+  "**Experimental**"
+  dmConfiguredDeviceModelAllDevices(sessionId: String!): [DmDeviceModelAsConfigured]! @experimental
+  "**Experimental** Returns the supported device families (backend-owned), ordered by priority, each with a live total device count."
+  dmDeviceFamilies: [DmDeviceFamily!]! @experimental
+  "**Experimental**"
+  dmFamilyPartModel: DmFamilyPartModel! @experimental
+  "**Experimental**"
+  dmFullStackDeviceModel(deviceMpn: String!): DmFullStackDeviceModel @experimental
+  "**Experimental**"
+  dmFullStackDeviceModelAllDevices: [DmFullStackDeviceModel]! @experimental
+  "**Experimental**"
+  dmFullStackDeviceModelReport(deviceMpn: String!): DmFullStackModelReport @experimental
+  "**Experimental**"
+  dmFullStackDeviceModelReportAllDevices: [DmFullStackModelReport]! @experimental
+  "**Experimental** Returns a summary of supported interfaces across all devices, including instance counts and device support details."
+  dmInterfaceSupportSummary: DmInterfaceSupportSummary! @experimental
+  "**Experimental** Returns the unified dictionary of supported interface (port) types, including display metadata and which are user-selectable. Source of truth for supported interface types."
+  dmInterfaceTypeModels: [DmInterfaceTypeModel!]! @experimental
+  "**Experimental**"
+  dmSoftwareModelFromConfigurationXml(fileId: String!): DmSoftwareModel! @experimental @deprecated(reason: "For internal use only. Will be removed in next few weeks.")
+  "**Experimental** Get an easymode config by id."
+  rsaMotorStudioEasyModeConfigById(configId: String!, projectId: ID!): RsaMotorStudioEasyModeConfig @experimental
+  "**Experimental** List existing easymode configs for a project."
+  rsaMotorStudioEasyModeConfigs(projectId: ID!): [RsaMotorStudioEasyModeConfig!]! @experimental
+  "**Experimental** Retrieves a MotorStudioProject"
+  rsaMotorStudioProjectById(id: ID!): RsaMotorStudioProject! @experimental
+  "**Experimental** Retrieves collection of MotorStudioProject"
+  rsaMotorStudioProjects(order: [RsaMotorStudioProjectSortInput!], where: RsaMotorStudioProjectFilterInput): [RsaMotorStudioProject!]! @experimental
+  "**Experimental** Gets motor studio projects by IDs."
+  rsaMotorStudioProjectsByIds(ids: [ID!]!): [RsaMotorStudioProject!]! @experimental
+  "**Experimental** Get a scope capture by id."
+  rsaMotorStudioScopeCaptureById(captureId: String!, projectId: ID!): RsaMotorStudioScopeCapture @experimental
+  "**Experimental** List scope captures for a project."
+  rsaMotorStudioScopeCaptures(projectId: ID!): [RsaMotorStudioScopeCapture!]! @experimental
+  "**Experimental** Get a scope configuration by id."
+  rsaMotorStudioScopeConfigById(configId: String!, projectId: ID!): RsaMotorStudioScopeConfig @experimental
+  "**Experimental** List scope configurations for a project."
+  rsaMotorStudioScopeConfigs(projectId: ID!): [RsaMotorStudioScopeConfig!]! @experimental
+  "**Experimental** Get a tuning by id."
+  rsaMotorStudioTuningById(id: ID!): RsaMotorStudioTuning! @experimental
+  "**Experimental** Get a tuning revision by id."
+  rsaMotorStudioTuningRevisionById(revisionId: ID!): RsaMotorStudioTuningRevision! @experimental
+  "**Experimental** List tuning revisions for a tuning."
+  rsaMotorStudioTuningRevisionsByTuningId(tuningId: ID!): [RsaMotorStudioTuningRevision!]! @experimental
+  "**Experimental** List tunings."
+  rsaMotorStudioTunings: [RsaMotorStudioTuning!]! @experimental
+  "**Experimental** Get a variable set by id."
+  rsaMotorStudioVariableSetById(projectId: ID!, variableSetId: String!): RsaMotorStudioVariableSet @experimental
+  "**Experimental** List variable sets for a project."
+  rsaMotorStudioVariableSets(projectId: ID!): [RsaMotorStudioVariableSet!]! @experimental
+  "Gets AI model by identifier."
+  sftAIModelById(id: ID!): SftAIModel
+  "Gets all available AI models."
+  sftAIModels: [SftAIModel!]!
+  "Gets AI models by identifiers."
+  sftAIModelsByIds(ids: [ID!]!): [SftAIModel!]!
+  "Gets device configuration by ID."
+  sftDevCfgDeviceConfigurationById(id: ID!): SftDevCfgDeviceConfiguration
+  "Gets device configuration revision by ID."
+  sftDevCfgDeviceConfigurationRevisionById(id: ID!): SftDevCfgDeviceConfigurationRevision!
+  "Gets revisions of given device configuration."
+  sftDevCfgDeviceConfigurationRevisionsByDeviceConfigurationId(id: ID!): [SftDevCfgDeviceConfigurationRevision!]!
+  "Gets device configuration revisions by IDs."
+  sftDevCfgDeviceConfigurationRevisionsByIds(ids: [ID!]!): [SftDevCfgDeviceConfigurationRevision!]!
+  "Gets all available device configurations."
+  sftDevCfgDeviceConfigurations: [SftDevCfgDeviceConfiguration!]!
+  "Gets device configurations by IDs."
+  sftDevCfgDeviceConfigurationsByIds(ids: [ID!]!): [SftDevCfgDeviceConfiguration!]!
+  "Gets simulation by identifier."
+  sftSimSimulationById(id: ID!): SftSimSimulation
+  "Gets all available simulations."
+  sftSimSimulations: [SftSimSimulation!]!
+  "Gets simulations by identifiers."
+  sftSimSimulationsByIds(ids: [ID!]!): [SftSimSimulation!]!
+  "Gets software project by ID."
+  sftSoftwareProjectById(id: ID!): SftSoftwareProject
+  "Gets all available software projects."
+  sftSoftwareProjects: [SftSoftwareProject!]!
+  "Gets software projects by IDs."
+  sftSoftwareProjectsByIds(ids: [ID!]!): [SftSoftwareProject!]!
+}
+
+type Mutation {
+  "**Experimental**"
+  dmExecuteDeviceEvaluation(input: DmExecuteDeviceEvaluationInput!): DmExecuteDeviceEvaluationPayload! @experimental
+  "**Experimental** Fast, family-scoped feasibility evaluation. Returns candidate devices with feasibility and a lean feasibleModel (no configured ports/peripherals). An empty family yields an empty summary so callers can fall back to the next family."
+  dmExecuteDeviceEvaluationByFamily(input: DmExecuteDeviceEvaluationByFamilyInput!): DmExecuteDeviceEvaluationByFamilyPayload! @experimental
+  "**Experimental** Evaluates required peripherals against a single, already-chosen device (by MPN) and returns the full configured model (concrete ports and peripherals)."
+  dmExecuteDeviceEvaluationByMpn(input: DmExecuteDeviceEvaluationByMpnInput!): DmExecuteDeviceEvaluationByMpnPayload! @experimental
+  "**Experimental**"
+  dmExecuteDeviceEvaluationFromConfiguration(input: DmExecuteDeviceEvaluationFromConfigurationInput!): DmExecuteDeviceEvaluationFromConfigurationPayload! @experimental
+  "**Experimental**"
+  dmExecuteDeviceEvaluationFromESD(input: DmExecuteDeviceEvaluationFromESDInput!): DmExecuteDeviceEvaluationFromESDPayload! @experimental @deprecated(reason: "Use dmExecuteDeviceEvaluationFromESDv2 mutation instead")
+  "**Experimental**"
+  dmExecuteDeviceEvaluationFromESDv2(input: DmExecuteDeviceEvaluationFromESDv2Input!): DmExecuteDeviceEvaluationFromESDv2Payload! @experimental
+  "**Experimental**"
+  dmExecuteDeviceEvaluationFromXml(input: DmExecuteDeviceEvaluationFromXmlInput!): DmExecuteDeviceEvaluationFromXmlPayload! @experimental
+  "**Experimental**"
+  dmExecuteDeviceExtractionFromConfiguration(input: DmExecuteDeviceExtractionFromConfigurationInput!): DmExecuteDeviceExtractionFromConfigurationPayload! @experimental
+  "**Experimental**"
+  dmExecuteDeviceExtractionFromConfigurationUrl(input: DmExecuteDeviceExtractionFromConfigurationUrlInput!): DmExecuteDeviceExtractionFromConfigurationUrlPayload! @experimental
+  "**Experimental**"
+  dmUpdateDeviceFromSdm(input: DmUpdateDeviceFromSdmInput!): DmUpdateDeviceFromSdmPayload! @experimental
+  "**Experimental** Add an easymode config for the specified project."
+  rsaMotorStudioCreateEasyModeConfig(input: RsaMotorStudioCreateEasyModeConfigInput!): RsaMotorStudioCreateEasyModeConfigPayload! @experimental
+  "**Experimental** Add new MotorStudioProject"
+  rsaMotorStudioCreateProject(input: RsaMotorStudioCreateProjectInput!): RsaMotorStudioCreateProjectPayload! @experimental
+  "**Experimental** Create a scope capture for the specified project and scope configuration."
+  rsaMotorStudioCreateScopeCapture(input: RsaMotorStudioCreateScopeCaptureInput!): RsaMotorStudioCreateScopeCapturePayload! @experimental
+  "**Experimental** Create a scope configuration for the specified project."
+  rsaMotorStudioCreateScopeConfig(input: RsaMotorStudioCreateScopeConfigInput!): RsaMotorStudioCreateScopeConfigPayload! @experimental
+  "**Experimental** Create a tuning."
+  rsaMotorStudioCreateTuning(input: RsaMotorStudioCreateTuningInput!): RsaMotorStudioCreateTuningPayload! @experimental
+  "**Experimental** Create a new tuning revision for the specified tuning."
+  rsaMotorStudioCreateTuningRevision(input: RsaMotorStudioCreateTuningRevisionInput!): RsaMotorStudioCreateTuningRevisionPayload! @experimental
+  "**Experimental** Create a variable set for the specified project."
+  rsaMotorStudioCreateVariableSet(input: RsaMotorStudioCreateVariableSetInput!): RsaMotorStudioCreateVariableSetPayload! @experimental
+  "**Experimental** Create a new revision for an existing variable set."
+  rsaMotorStudioCreateVariableSetRevision(input: RsaMotorStudioCreateVariableSetRevisionInput!): RsaMotorStudioCreateVariableSetRevisionPayload! @experimental
+  "**Experimental** Delete an easymode config for the specified project."
+  rsaMotorStudioDeleteEasyModeConfig(input: RsaMotorStudioDeleteEasyModeConfigInput!): RsaMotorStudioDeleteEasyModeConfigPayload! @experimental
+  "**Experimental** Delete specified motor studio project."
+  rsaMotorStudioDeleteProject(input: RsaMotorStudioDeleteProjectInput!): RsaMotorStudioDeleteProjectPayload! @experimental
+  "**Experimental** Delete a scope capture for the specified project."
+  rsaMotorStudioDeleteScopeCapture(input: RsaMotorStudioDeleteScopeCaptureInput!): RsaMotorStudioDeleteScopeCapturePayload! @experimental
+  "**Experimental** Delete a scope configuration for the specified project."
+  rsaMotorStudioDeleteScopeConfig(input: RsaMotorStudioDeleteScopeConfigInput!): RsaMotorStudioDeleteScopeConfigPayload! @experimental
+  "**Experimental** Delete a tuning and all its revisions."
+  rsaMotorStudioDeleteTuning(input: RsaMotorStudioDeleteTuningInput!): RsaMotorStudioDeleteTuningPayload! @experimental
+  "**Experimental** Delete a variable set and all of its revisions for the specified project."
+  rsaMotorStudioDeleteVariableSet(input: RsaMotorStudioDeleteVariableSetInput!): RsaMotorStudioDeleteVariableSetPayload! @experimental
+  "**Experimental**"
+  rsaMotorStudioLinkTuningToProject(input: RsaMotorStudioLinkTuningToProjectInput!): RsaMotorStudioLinkTuningToProjectPayload! @experimental
+  "**Experimental**"
+  rsaMotorStudioUnlinkTuningFromProject(input: RsaMotorStudioUnlinkTuningFromProjectInput!): RsaMotorStudioUnlinkTuningFromProjectPayload! @experimental
+  "**Experimental** Update an easymode config for the specified project (provided sliders will become the entire list)."
+  rsaMotorStudioUpdateEasyModeConfig(input: RsaMotorStudioUpdateEasyModeConfigInput!): RsaMotorStudioUpdateEasyModeConfigPayload! @experimental
+  "**Experimental** Update a MotorStudioProject"
+  rsaMotorStudioUpdateProject(input: RsaMotorStudioUpdateProjectInput!): RsaMotorStudioUpdateProjectPayload! @experimental
+  "**Experimental** Update a scope configuration for the specified project (provided views/channels become the entire list)."
+  rsaMotorStudioUpdateScopeConfig(input: RsaMotorStudioUpdateScopeConfigInput!): RsaMotorStudioUpdateScopeConfigPayload! @experimental
+  "**Experimental** Update a tuning."
+  rsaMotorStudioUpdateTuning(input: RsaMotorStudioUpdateTuningInput!): RsaMotorStudioUpdateTuningPayload! @experimental
+  "**Experimental** Update a variable set metadata for the specified project."
+  rsaMotorStudioUpdateVariableSet(input: RsaMotorStudioUpdateVariableSetInput!): RsaMotorStudioUpdateVariableSetPayload! @experimental
+  "Creates new AI model."
+  sftAIModelCreate(input: SftAIModelCreateInput!): SftAIModelCreatePayload!
+  "Creates the AI model custom properties."
+  sftAIModelCreateCustomProperties(input: SftAIModelCreatePropertiesInput!): SftAIModelCreatePropertiesPayload!
+  "Deletes the AI Model."
+  sftAIModelDelete(input: SftAIModelDeleteInput!): SftAIModelDeletePayload!
+  "Delete the AI model custom properties."
+  sftAIModelDeleteCustomProperties(input: SftAIModelDeletePropertiesInput!): SftAIModelDeletePropertiesPayload!
+  "Updates the AI model."
+  sftAIModelUpdate(input: SftAIModelUpdateInput!): SftAIModelUpdatePayload!
+  "Updates the AI model custom properties."
+  sftAIModelUpdateCustomProperties(input: SftAIModelUpdatePropertiesInput!): SftAIModelUpdatePropertiesPayload!
+  "Creates new device configuration."
+  sftDevCfgCreateDeviceConfiguration(input: SftDevCfgCreateDeviceConfigurationInput!): SftDevCfgCreateDeviceConfigurationPayload!
+  "Deletes device configuration by ID."
+  sftDevCfgDeleteDeviceConfiguration(input: SftDevCfgDeleteDeviceConfigurationInput!): SftDevCfgDeleteDeviceConfigurationPayload!
+  "Creates a link between device configuration revision and hardware project."
+  sftDevCfgLinkDeviceConfigurationRevisionToHardwareProject(input: SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput!): SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectPayload!
+  "Creates a link between device configuration and software project."
+  sftDevCfgLinkDeviceConfigurationToSoftwareProject(input: SftDevCfgLinkDeviceConfigurationToSoftwareProjectInput!): SftDevCfgLinkDeviceConfigurationToSoftwareProjectPayload!
+  "Removes a link between device configuration and software project."
+  sftDevCfgUnlinkDeviceConfigurationFromSoftwareProject(input: SftDevCfgUnlinkDeviceConfigurationFromSoftwareProjectInput!): SftDevCfgUnlinkDeviceConfigurationFromSoftwareProjectPayload!
+  "Removes an existing link between device configuration revision and hardware project."
+  sftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProject(input: SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectInput!): SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectPayload!
+  "Creates new simulation."
+  sftSimSimulationCreate(input: SftSimSimulationCreateInput!): SftSimSimulationCreatePayload!
+  "Creates the simulation custom properties."
+  sftSimSimulationCreateCustomProperties(input: SftSimSimulationCreatePropertiesInput!): SftSimSimulationCreatePropertiesPayload!
+  "Deletes simulation by identifier."
+  sftSimSimulationDelete(input: SftSimSimulationDeleteInput!): SftSimSimulationDeletePayload!
+  "Delete the simulation custom properties."
+  sftSimSimulationDeleteCustomProperties(input: SftSimSimulationDeletePropertiesInput!): SftSimSimulationDeletePropertiesPayload!
+  "Updates the simulation."
+  sftSimSimulationUpdate(input: SftSimSimulationUpdateInput!): SftSimSimulationUpdatePayload!
+  "Updates the simulation custom properties."
+  sftSimSimulationUpdateCustomProperties(input: SftSimSimulationUpdatePropertiesInput!): SftSimSimulationUpdatePropertiesPayload!
+  "Creates new Sofware Project."
+  sftSoftwareCreateProject(input: SftSoftwareCreateProjectInput!): SftSoftwareCreateProjectPayload!
+  "Creates the Software Project custom properties."
+  sftSoftwareCreateProjectCustomProperties(input: SftSoftwareCreateProjectPropertiesInput!): SftSoftwareCreateProjectPropertiesPayload!
+  "Deletes Software Project by ID."
+  sftSoftwareDeleteProject(input: SftSoftwareDeleteProjectInput!): SftSoftwareDeleteProjectPayload!
+  "Delete the Software Project custom properties."
+  sftSoftwareDeleteProjectCustomProperties(input: SftSoftwareDeleteProjectPropertiesInput!): SftSoftwareDeleteProjectPropertiesPayload!
+  "Updates the Software Project."
+  sftSoftwareUpdateProject(input: SftSoftwareUpdateProjectInput!): SftSoftwareUpdateProjectPayload!
+  "Updates the Software Project configuration."
+  sftSoftwareUpdateProjectConfiguration(input: SftSoftwareUpdateProjectConfigrationInput!): SftSoftwareProjectUpdateConfigurationPayload!
+  "Updates the Software Project custom properties."
+  sftSoftwareUpdateProjectCustomProperties(input: SftSoftwareUpdateProjectPropertiesInput!): SftSoftwareUpdateProjectPropertiesPayload!
+  "Updates the Software Project firmware."
+  sftSoftwareUpdateProjectFirmware(input: SftSoftwareUpdateProjectFirmwareInput!): SftSoftwareProjectUpdateFirmwarePayload!
+}
+
+"**Experimental** Address block with start, size, and optional registers and peripherals."
+type DmAddressBlock @experimental {
+  "**Experimental** Source(s) of this block (e.g., RZone, SVD, PinCfg)."
+  dataSource: String!
+  "**Experimental** Description of the block."
+  description: String!
+  "**Experimental** Memory entries contained within this block."
+  memories: [DmAmMemory!]!
+  "**Experimental** Name of the block."
+  name: String!
+  "**Experimental** Peripheral instance associated with this block."
+  peripheralInstance: DmPeripheralInstance
+  "**Experimental** Registers contained within this block."
+  registers: [DmAmRegister!]!
+  "**Experimental** Size in bytes."
+  size: Long!
+  "**Experimental** Size formatted as hex (0x...)."
+  sizeHex: String!
+  "**Experimental** Start address in bytes."
+  startAddress: Long!
+  "**Experimental** Start address formatted as hex (0x...)."
+  startAddressHex: String!
+  "**Experimental** Area type (Memory or Peripheral)."
+  type: String!
+  "**Experimental** Upper address in bytes."
+  upperAddress: Long!
+  "**Experimental** Upper address formatted as hex (0x...)."
+  upperAddressHex: String!
+}
+
+"**Experimental** Address map for the device including memory and peripheral regions."
+type DmAddressMapModel @experimental {
+  "**Experimental** Address segments (block containers with total size and nested blocks)."
+  addressSegments: [DmAddressSegment!]!
+}
+
+"**Experimental** Address segment which can contain child blocks and has a total segment size."
+type DmAddressSegment @experimental {
+  "**Experimental** Nested address blocks within the segment."
+  blocks: [DmAddressBlock!]!
+  "**Experimental** Segment description."
+  description: String!
+  "**Experimental** Segment name."
+  name: String!
+  "**Experimental** Segment aliases."
+  nameAliases: [String!]!
+  "**Experimental** Peripherals associated with this segment."
+  peripherals: [DmPeripheral!]!
+  "**Experimental** Total segment size in bytes."
+  size: Long!
+  "**Experimental** Total segment size formatted as hex (0x...)."
+  sizeHex: String!
+  "**Experimental**"
+  startAddress: Long!
+  "**Experimental**"
+  startAddressHex: String!
+}
+
+"**Experimental** Enumerated value for a register field."
+type DmAmFieldEnum @experimental {
+  "**Experimental** Enumeration description."
+  description: String!
+  "**Experimental** Enumeration name."
+  name: String!
+  "**Experimental** Enumeration value."
+  value: String!
+}
+
+"**Experimental** Memory entry with name, size and type."
+type DmAmMemory @experimental {
+  "**Experimental** Memory name."
+  name: String!
+  "**Experimental** Size formatted as hex (0x...)."
+  sizeHex: String!
+  "**Experimental** Memory type."
+  type: String!
+}
+
+"**Experimental** Register entry within an address block."
+type DmAmRegister @experimental {
+  "**Experimental** Access type (e.g., read-only, read-write)."
+  access: String!
+  "**Experimental** Address offset in bytes from the block start."
+  addressOffset: Long!
+  "**Experimental** Address offset formatted as hex (0x...)."
+  addressOffsetHex: String!
+  "**Experimental** Register description."
+  description: String!
+  "**Experimental** Bit fields within this register."
+  fields: [DmAmRegisterField!]!
+  "**Experimental** Register name."
+  name: String!
+  "**Experimental** Register reset mask."
+  resetMask: String!
+  "**Experimental** Register reset value."
+  resetValue: String!
+  "**Experimental** Register size in bytes."
+  size: Long!
+  "**Experimental** Register size formatted as hex (0x...)."
+  sizeHex: String!
+}
+
+"**Experimental** Bit field within a register."
+type DmAmRegisterField @experimental {
+  "**Experimental** Access type of the field (e.g., RO, RW)."
+  access: String!
+  "**Experimental** Field description."
+  description: String!
+  "**Experimental** Enumerated values for the field."
+  enums: [DmAmFieldEnum!]!
+  "**Experimental** Least significant bit index of the field."
+  lsb: Int!
+  "**Experimental** Most significant bit index of the field."
+  msb: Int!
+  "**Experimental** Field name."
+  name: String!
+}
+
+"**Experimental** Dependency describing how a configuration value maps to GPIO or alternate function usage."
+type DmConfigDependency @experimental {
+  "**Experimental** Full alternative reference string used to derive mode/function tokens."
+  altRef: String!
+  "**Experimental** Root configuration reference token (e.g., P408)."
+  configRef: String!
+  "**Experimental** Peripheral function name for alternate mode (e.g., TXD, RXD)."
+  functionName: String!
+  "**Experimental** GPIO mode (None, Input, OutputLow, OutputHigh). Meaningful only when portMode == GPIO."
+  gpioMode: String!
+  "**Experimental** Peripheral instance name for alternate function mode (e.g., SCI0)."
+  peripheralInstanceName: String!
+  "**Experimental** Port identifier extracted from the configuration reference."
+  port: String!
+  "**Experimental** Port mode (GPIO or AlternateFunction)."
+  portMode: String!
+}
+
+"**Experimental** Configuration enumeration value for a port setting."
+type DmConfigEnumValue @experimental {
+  "**Experimental** Configuration dependencies associated with this enumeration value."
+  configDependencies: [DmConfigDependency!]!
+  "**Experimental** Display representation of the enumeration value."
+  display: String!
+  "**Experimental** Identifier for the enumeration value."
+  id: String!
+  "**Experimental** Display name of the enumeration value."
+  name: String!
+}
+
+"**Experimental** Snapshot of the CP-SAT constraint model built before the solver runs, including variables, constraint groups, and the objective."
+type DmConstraintModel @experimental {
+  "**Experimental** List of individual constraints with their group name, index, and description."
+  constraints: [String!]!
+  "**Experimental** Structured, human-readable representation of the full constraint model."
+  display: String!
+  "**Experimental**"
+  objective: String!
+  "**Experimental** List of individual decision variables with their group name, optional sub-label, and variable name."
+  variables: [String!]!
+}
+
+"**Experimental** Pin dependecy to port mapping entry within an operation mode."
+type DmDependencyPinConfig @experimental {
+  "**Experimental** Display representation of the pin mapping."
+  display: String!
+  "**Experimental** Pin dependency name id."
+  pinDependencyName: String!
+  "**Experimental** Pin value of pin dependency name id."
+  pinDependencyValue: String!
+}
+
+"**Experimental** Represents an available device board for a specific device model."
+type DmDeviceBoard @experimental {
+  "**Experimental** Indicates if the device board is compatible with the device model."
+  isCompatible: Boolean!
+  "**Experimental** The name of the board (e.g., EK-RA4M3)."
+  name: String!
+}
+
+"**Experimental** A supported device family (e.g. RA, RX) with display metadata and total device count."
+type DmDeviceFamily @experimental {
+  "**Experimental** Search aliases used to recognise this family from user input."
+  aliases: [String!]!
+  "**Experimental** Extensible key-value list of family feature flags (e.g. bspGeneration). Absent capabilities should be treated as false by callers."
+  capabilities: [DmFamilyCapability!]!
+  "**Experimental** One-line human description of the family."
+  description: String!
+  "**Experimental** Stable string key for the family (e.g. \"RA\", \"RAFW\", \"RX\"). Use this as the deviceFamily input to evaluation."
+  key: String!
+  "**Experimental** Full display label, e.g. \"Renesas RA\"."
+  label: String!
+  "**Experimental** Selection/fallback order. Lower is tried first / is the default family."
+  priority: Int!
+  "**Experimental** Compact display label, e.g. \"RA\"."
+  shortLabel: String!
+  "**Experimental** Number of devices of this family currently loaded in the catalog."
+  totalDevices: Int!
+  "**Experimental** Silicon vendor, e.g. \"Renesas\"."
+  vendor: String!
+}
+
+"**Experimental** GraphQL type that exposes the device model as configured, typically after user or tool selections."
+type DmDeviceModelAsConfigured @experimental {
+  "**Experimental** An evaluation kit or specific hardware design that the MCU is soldered onto"
+  board: DmDeviceBoard
+  "**Experimental** Collection of Flexible Software Package (FSP) modules that represent device interfaces."
+  deviceInterfaces: [DmFspModule!]!
+  "**Experimental** Device part number."
+  deviceMpn: String!
+  "**Experimental** Peripherals as configured for the device."
+  devicePeripherals: DmPeripheralModel
+  "**Experimental** Ports as configured for the device."
+  devicePorts(includeBoardFixedPorts: Boolean! = false): DmPortModel
+  "**Experimental** Family part details for the device."
+  familyPart: DmFamilyPart
+  "**Experimental** Software stack as configured for the device."
+  softwareStack: DmStackModel
+}
+
+"**Experimental** Options describing how device interfaces map onto physical peripherals."
+type DmDeviceToPeripheralOptionsModel @experimental {
+  "**Experimental** Collection of resolutions linking device requirements to specific peripherals."
+  deviceToPeripheralElements: [DmRequiresProvidesResolution!]!
+}
+
+"**Experimental** Resolver results for a specific functional block within ESD."
+type DmEsdResolverResult @experimental {
+  "**Experimental** The functional block identifier within the ESD document."
+  functionalBlockId: String!
+  "**Experimental** The summary of resolver runs for this functional block."
+  resolverSummary: DmResolverSummary!
+  "**Experimental** The session identifier that can be used to retrieve resolver results for this functional block."
+  sessionId: String!
+}
+
+"**Experimental** Summary of running device model evaluation for an ESD document. This includes all found MCUs with per-device results. Each MCU has associated session ID that can be used to retrieve the results at later time"
+type DmEsdResolverSummary @experimental {
+  "**Experimental** The results for functional blocks found in the ESD document."
+  functionalBlocks: [DmEsdResolverResult!]!
+}
+
+"**Experimental**"
+type DmExecuteDeviceEvaluationByFamilyPayload @experimental {
+  "**Experimental**"
+  dmResolverFeasibilitySummary: DmResolverFeasibilitySummary
+}
+
+"**Experimental**"
+type DmExecuteDeviceEvaluationByMpnPayload @experimental {
+  "**Experimental**"
+  dmResolverSummary: DmResolverSummary
+}
+
+"**Experimental**"
+type DmExecuteDeviceEvaluationFromConfigurationPayload @experimental {
+  "**Experimental**"
+  dmResolverSummary: DmResolverSummary
+}
+
+"**Experimental**"
+type DmExecuteDeviceEvaluationFromESDPayload @experimental {
+  "**Experimental**"
+  dmResolverSummary: DmResolverSummary
+}
+
+"**Experimental**"
+type DmExecuteDeviceEvaluationFromESDv2Payload @experimental {
+  "**Experimental**"
+  dmEsdResolverSummary: DmEsdResolverSummary
+}
+
+"**Experimental**"
+type DmExecuteDeviceEvaluationFromXmlPayload @experimental {
+  "**Experimental**"
+  dmResolverSummary: DmResolverSummary
+}
+
+"**Experimental**"
+type DmExecuteDeviceEvaluationPayload @experimental {
+  "**Experimental**"
+  dmResolverSummary: DmResolverSummary
+}
+
+"**Experimental**"
+type DmExecuteDeviceExtractionFromConfigurationPayload @experimental {
+  "**Experimental**"
+  dmDeviceModelAsConfigured: DmDeviceModelAsConfigured
+}
+
+"**Experimental**"
+type DmExecuteDeviceExtractionFromConfigurationUrlPayload @experimental {
+  "**Experimental**"
+  dmDeviceModelAsConfigured: DmDeviceModelAsConfigured
+}
+
+"**Experimental** A single named family capability. The set is an extensible key-value list so new capabilities do not require a schema change."
+type DmFamilyCapability @experimental {
+  "**Experimental** Capability identifier, e.g. \"bspGeneration\"."
+  key: String!
+  "**Experimental** Whether the capability is available for devices in this family."
+  value: Boolean!
+}
+
+"**Experimental** Represents a single device family part variant."
+type DmFamilyPart @experimental {
+  "**Experimental** Indicates whether this part variant is a concrete (fully specified) part."
+  concrete: Boolean!
+  "**Experimental** Descriptive text explaining the part variant."
+  description: String!
+  "**Experimental** Stable family key (e.g. \"RA\", \"RAFW\", \"RX\"), derived from the backing device's platform. Matches DmDeviceFamily.key and deviceFamilyKey. Empty when the platform is unknown (e.g. a non-concrete grouping node with no device)."
+  deviceFamily: String!
+  "**Experimental** Formatted display string for the part variant."
+  display: String!
+  "**Experimental** Human-friendly display of the partial MPN."
+  friendlyPartialMpn: String!
+  "**Experimental** Hierarchy level of the part within the family."
+  level: Int!
+  "**Experimental** Manufacturer or vendor associated with the part."
+  manufacturer: String!
+  "**Experimental** MCU part number details parsed into structured properties."
+  mcuPartDetails: DmMcuPartNumberModel
+  "**Experimental** Partial manufacturer part number pattern identifying a family subset."
+  partialMpn: String!
+  "**Experimental** Deprecated. RA part number details; use mcuPartDetails."
+  raPartDetails: DmRaPartNumberModel @deprecated(reason: "Use mcuPartDetails instead.")
+  "**Experimental** Silicon vendor, e.g. \"Renesas\", derived from the backing device's platform. Empty when the platform is unknown."
+  vendor: String!
+}
+
+"**Experimental** Root GraphQL type exposing the collection of device family part definitions."
+type DmFamilyPartModel @experimental {
+  "**Experimental** List of family part variants defined for the device family."
+  familyParts: [DmFamilyPart!]!
+}
+
+"**Experimental** A device without concrete peripherals and ports — enough to drive the matched-parts list and search results."
+type DmFeasibleDeviceModel @experimental {
+  "**Experimental** Device board evaluated for this candidate, with configuration-compatibility. Null when the family has no board variant or the DevicesOnly strategy was used."
+  board: DmDeviceBoard
+  "**Experimental** Device part number."
+  deviceMpn: String!
+  "**Experimental** Family part details for the device (manufacturer, partial MPN, part-number details)."
+  familyPart: DmFamilyPart
+}
+
+"**Experimental** Firmware Support Package (FSP) module that represents a device interface, including its requirements and provided interfaces."
+type DmFspModule @experimental {
+  "**Experimental** Category or grouping for this module (for example, communication, timers)."
+  category: String!
+  "**Experimental** Unique identifier for the FSP module."
+  id: String!
+  "**Experimental** Human-readable name of the FSP module."
+  name: String!
+  "**Experimental** Interfaces that this module provides to other modules."
+  provides: [DmFspProvides!]!
+  "**Experimental** Interfaces that this module requires to function."
+  requires: [DmFspRequires!]!
+}
+
+"**Experimental** Represents an interface provided by an FSP module."
+type DmFspProvides @experimental {
+  "**Experimental** Indicates whether this provided interface is external to the device."
+  external: Boolean!
+  "**Experimental** List of instance names for the provided interface."
+  instances: [String!]!
+  "**Experimental** Fully qualified name of the provided interface."
+  interface: String!
+  "**Experimental** Base or canonical name of the provided interface."
+  interfaceBase: String!
+}
+
+"**Experimental** Represents an interface requirement of an FSP module."
+type DmFspRequires @experimental {
+  "**Experimental** Identifier of the required interface."
+  id: String!
+}
+
+"**Experimental** Root GraphQL type that exposes the full device model, including interfaces, peripherals, and ports."
+type DmFullStackDeviceModel @experimental {
+  "**Experimental** An evaluation kit or specific hardware design that the MCU is soldered onto"
+  board: DmDeviceBoard
+  "**Experimental** Address map of the device, including segments and blocks."
+  deviceAddressMap: DmAddressMapModel
+  "**Experimental** Collection of Flexible Software Package (FSP) modules that represent device interfaces."
+  deviceInterfaces: [DmFspModule!]!
+  "**Experimental** Manufacturer part number (MPN) that uniquely identifies the device."
+  deviceMpn: String!
+  "**Experimental** All peripherals available on the device, including their instances and properties."
+  devicePeripherals: DmPeripheralModel
+  "**Experimental** I/O port model for the device, including functions, configurations, and connections."
+  devicePorts: DmPortModel
+  "**Experimental** Mappings from device interfaces to peripherals that can fulfill those interfaces."
+  deviceToPeripheralOptions: DmDeviceToPeripheralOptionsModel
+  "**Experimental** Family part details for the device."
+  familyPart: DmFamilyPart
+  "**Experimental** Mappings that show how software requirements can be satisfied by device-provided interfaces."
+  softwareToDeviceOptions: DmSoftwareToDeviceOptionsModel
+}
+
+"**Experimental**"
+type DmFullStackModelReport @experimental {
+  "**Experimental**"
+  deviceMpn: String!
+  "**Experimental**"
+  reports: [DmPeripheralPortCoverageReport!]!
+}
+
+"**Experimental** A histogram bucket mapping an instance count to the number of models with that count."
+type DmHistogramBucket @experimental {
+  "**Experimental** Number of models that have this instance count."
+  deviceCount: Int!
+  "**Experimental** Number of instances (the bucket value)."
+  instanceCount: Int!
+}
+
+"**Experimental** Selected instance details and its pin assignments."
+type DmInstanceSelection @experimental {
+  "**Experimental** Completed op-mode group name that this selection belongs to, if any."
+  groupName: String
+  "**Experimental** Name of the selected peripheral instance (e.g., SCI0)."
+  instanceName: String!
+  "**Experimental** Selected mode/group for this instance."
+  modeName: String!
+  "**Experimental** Pin function to port assignments realized by this selection."
+  pins: [DmPinAssignment!]!
+}
+
+"**Experimental** Statistics on instance counts across supported models for an interface."
+type DmInstanceStatistics @experimental {
+  "**Experimental** Average number of instances across supported models."
+  avg: Float!
+  "**Experimental** Histogram showing number of models per instance count bucket, sorted by instance count."
+  histogram: [DmHistogramBucket!]!
+  "**Experimental** Maximum number of instances across supported models."
+  max: Int!
+  "**Experimental** Median number of instances across supported models."
+  median: Float!
+  "**Experimental** Minimum number of instances across supported models."
+  min: Int!
+}
+
+"**Experimental** Support details for an interface across a set of models (devices or boards)."
+type DmInterfaceModelSupport @experimental {
+  "**Experimental** Statistics on instance counts across supported models."
+  statistics: DmInstanceStatistics!
+  "**Experimental** Models that support this interface. Supports filtering by deviceMpn and/or family."
+  supported(deviceMpn: String, family: String): [DmModelSupportEntry!]!
+  "**Experimental** Number of models that support this interface."
+  supportedCount: Int!
+  "**Experimental** Percentage of models that support this interface."
+  supportedPercentage: Float!
+  "**Experimental** Models that do not support this interface. Supports filtering by deviceMpn and/or family."
+  unsupported(deviceMpn: String, family: String): [DmModelSupportEntry!]!
+}
+
+"**Experimental** Summary of a single generic interface (e.g., UART, PWM) showing device and board support details."
+type DmInterfaceSummary @experimental {
+  "**Experimental** Board support details for this interface."
+  boards: DmInterfaceModelSupport!
+  "**Experimental** Device support details for this interface."
+  devices: DmInterfaceModelSupport!
+  "**Experimental** Generic interface type identifier (e.g., uart, pwm, adc)."
+  interfaceType: String!
+  "**Experimental** Dictionary metadata for this interface type (label, description, user-selectable, aliases). Null if absent from the dictionary."
+  interfaceTypeModel: DmInterfaceTypeModel
+}
+
+"**Experimental** Summary of supported interfaces across all devices in the catalog."
+type DmInterfaceSupportSummary @experimental {
+  "**Experimental** List of supported generic interfaces with per-device support details. Optionally filter by interface type."
+  interfaces(interfaceType: String): [DmInterfaceSummary!]!
+  "**Experimental** Total number of boards in the catalog."
+  totalBoards: Int!
+  "**Experimental** Total number of devices in the catalog."
+  totalDevices: Int!
+}
+
+"**Experimental** A supported interface (port) type with display metadata. Source of truth for the interface types the product supports."
+type DmInterfaceTypeModel @experimental {
+  "**Experimental** Legacy or display-name variants that resolve to this interface type, for client migration."
+  aliases: [String!]!
+  "**Experimental** One-sentence description of the interface type."
+  description: String!
+  "**Experimental** Canonical lowercase interface-type key (e.g. uart, spi, storage, power). Matches interfaceType used in dmInterfaceSupportSummary and SDM."
+  key: String!
+  "**Experimental** Full human-readable name."
+  label: String!
+  "**Experimental** Compact display code shown on chips and menus (e.g. UART, SD/MMC)."
+  shortLabel: String!
+  "**Experimental** Whether users may add this interface type (controls Add Port menu visibility)."
+  userSelectable: Boolean!
+}
+
+"**Experimental** MCU part number details parsed into structured properties."
+type DmMcuPartNumberModel @experimental {
+  "**Experimental** Application category (e.g., Analog, Display, LowPower)."
+  application: String!
+  "**Experimental** Device type derived from the part number."
+  device: String!
+  "**Experimental** Formatted display summary of the part details."
+  display: String!
+  "**Experimental** Device family derived from the part number."
+  family: String!
+  "**Experimental** Feature set indicator for the device."
+  featureSet: String!
+  "**Experimental** On-chip flash memory size in kilobytes. Zero for SiP/Jacketed wireless parts where the position-8 character does not encode a Flash size; see onChipMemoryCode."
+  flashMemorySizeKB: Int!
+  "**Experimental** Group identifier within the family."
+  groupNumber: String!
+  "**Experimental** True when the package uses a two-dimensional array/grid pin layout with coordinate-named pins (BGA, LGA, WLCSP, and A-QFN) rather than a single perimeter row (standard QFN, LQFP, etc.). Lets the Device Explorer pick the correct package icon for array variants such as A-QFN."
+  isArrayPackage: Boolean!
+  "**Experimental** Raw position-8 character from the part number, retained so SiP/Jacketed wireless parts (where flashMemorySizeKB is 0) still surface the memory-tier code."
+  onChipMemoryCode: String!
+  "**Experimental** Package type (e.g., LQFP, BGA, QFN)."
+  package: String!
+  "**Experimental** Packing type (e.g., Tray, TapeAndReel, FullCarton, Unknown)."
+  packing: String!
+  "**Experimental** Full part number string."
+  partNumber: String!
+  "**Experimental** Performance tier (e.g., RA0, RA2, RA4, RA6, RA8)."
+  performance: String!
+  "**Experimental** Total number of pins for the package."
+  pinCount: Int!
+  "**Experimental** Pin pitch in millimeters."
+  pitchMm: Decimal!
+  "**Experimental** Quality grade (e.g., Industrial, Consumer)."
+  qualityGrade: String!
+  "**Experimental** ROM code segment (empty when not present in the part number)."
+  romCode: String!
+  "**Experimental** Supported operating temperature range."
+  temperatureRange: DmTemperatureRange
+  "**Experimental** Package X dimension in millimeters."
+  xMm: Decimal!
+  "**Experimental** Package Y dimension in millimeters."
+  yMm: Decimal!
+}
+
+"**Experimental** Pin function to port mapping entry within an operation mode."
+type DmModePinConfig @experimental {
+  "**Experimental** Identifies the specific virtualized channel used by this pin configuration. This field is applicable only when the associated peripheral instance uses channel-based virtualization and uniquely identifies the peripheral instance and function combination"
+  channel: String
+  "**Experimental** Display representation of the pin mapping."
+  display: String!
+  "**Experimental** Logical pin function name (e.g., TXD, RXD)."
+  pinFunction: String!
+  "**Experimental** Fully qualified identifier representing the channel, and pin function (e.g., sci0.txt, iic1.scl)."
+  pinName: String!
+  "**Experimental** Fully qualified identifier representing the channel, pin function, and physical pin (e.g., sci0.txd.p101, iic1.scl.p402)."
+  pinValue: String!
+  "**Experimental** Physical port target for the pin function."
+  port: DmPort
+  "**Experimental** Physical port mapping target for the pin function."
+  portName: String!
+}
+
+"**Experimental** Support entry for a device or board, showing max instance count and access to the full model."
+type DmModelSupportEntry @experimental {
+  "**Experimental** Maximum number of candidate instances this model supports for the interface."
+  maxInstances: Int!
+  "**Experimental** Full device or board model."
+  model: DmFullStackDeviceModel!
+}
+
+"**Experimental** Concrete operation mode configuration containing pin function assignments."
+type DmOpMode @experimental {
+  "**Experimental** Reference identifier linking to a connection set definition (if applicable)."
+  connectionSetRefId: String!
+  "**Experimental** List of pin dependencies to port mappings for this operation mode."
+  dependencyPinConfigs: [DmDependencyPinConfig!]!
+  "**Experimental** Display string representing the operation mode."
+  display: String!
+  "**Experimental** Identifier for the operation mode (group or configuration id)."
+  id: String!
+  "**Experimental** Identifier for the operation mode (group or configuration id)."
+  idConfig: String!
+  "**Experimental** List of pin function to port mappings for this operation mode."
+  modePinConfigs: [DmModePinConfig!]!
+  "**Experimental** Readable summary of pin mappings for this operation mode."
+  pinSummary: String!
+}
+
+"**Experimental** A single peripheral definition, including its instances and properties."
+type DmPeripheral @experimental {
+  "**Experimental** Unique identifier for the peripheral (e.g., sci, gpt)."
+  id: String!
+  "**Experimental** Display name of the peripheral."
+  name: String!
+  "**Experimental** Instances of this peripheral present on the device (e.g., SCI0, GPT2)."
+  peripheralInstances: [DmPeripheralInstance!]!
+  "**Experimental** Additional properties or metadata associated with the peripheral."
+  peripheralProperties: [DmPeripheralProperty!]!
+}
+
+"**Experimental** Changes in peripheral instances between incoming SDM and resolved model."
+type DmPeripheralChanges @experimental {
+  "**Experimental** IDs of peripheral instances present in the resolved model but not present in the incoming SDM device model."
+  added: [String!]!
+  "**Experimental** Peripheral instance payloads that were added in the resolved model compared to the incoming SDM device model."
+  addedInstances: [DmPeripheralInstance!]!
+  "**Experimental** IDs of peripheral instances present in both models where the selected pin configuration changed."
+  modified: [String!]!
+  "**Experimental** Peripheral instance payloads that exist in both models but have changed pin configuration."
+  modifiedInstances: [DmPeripheralInstance!]!
+  "**Experimental** IDs of peripheral instances present in the incoming SDM device model but not present in the resolved model."
+  removed: [String!]!
+}
+
+"**Experimental** A concrete instance of a peripheral (e.g., SCI0), including available modes."
+type DmPeripheralInstance @experimental {
+  "**Experimental** Address block for the instance."
+  addressBlocks: [DmAddressBlock!]!
+  "**Experimental** The specific channel number or instance identifier for the hardware peripheral (e.g., '0' for CAN0, '3' for GPT3)."
+  channel: String!
+  "**Experimental** Identifier for the peripheral instance."
+  id: String!
+  "**Experimental** The logical interface exposed by this peripheral (e.g., UART, I2C, SPI, ADC, PWM)."
+  interfaceType: String
+  "**Experimental** Operational modes supported by this peripheral instance."
+  modes: [DmPeripheralMode!]!
+  "**Experimental** Display name of the peripheral instance."
+  name: String!
+  "**Experimental** ID of configured software driver for the peripheral."
+  softwareDriverId: String!
+  "**Experimental** IDs of available software drivers for the peripheral."
+  softwareDriverIds: [String!]!
+  "**Experimental** Specifies how this peripheral instance is virtualized, indicating whether the instance represents a single, non-virtualized peripheral or a channel-virtualized peripheral where individual functions act as separate interface instances."
+  virtualization: String!
+}
+
+"**Experimental** An operational mode for a peripheral instance that groups one or more operation mode configurations."
+type DmPeripheralMode @experimental {
+  "**Experimental** Display string representing the peripheral mode."
+  display: String!
+  "**Experimental** Name of the peripheral mode (e.g., custom, async, sync)."
+  name: String!
+  "**Experimental** Concrete operation mode configurations available within this peripheral mode."
+  opModes: [DmOpMode!]!
+}
+
+"**Experimental** Peripheral model for the device, including all available peripherals."
+type DmPeripheralModel @experimental {
+  "**Experimental** List of peripheral definitions available on the device."
+  peripherals: [DmPeripheral!]!
+}
+
+"**Experimental**"
+type DmPeripheralPortCoverageItem @experimental {
+  "**Experimental**"
+  functionName: String!
+  "**Experimental**"
+  modeName: String
+  "**Experimental**"
+  opModeId: String
+  "**Experimental**"
+  peripheralInstanceName: String!
+  "**Experimental**"
+  peripheralName: String
+  "**Experimental**"
+  portName: String!
+}
+
+"**Experimental**"
+type DmPeripheralPortCoverageReport @experimental {
+  "**Experimental**"
+  coveragePercent: Float!
+  "**Experimental**"
+  covered: [DmPeripheralPortCoverageItem!]!
+  "**Experimental**"
+  notCovered: [DmPeripheralPortCoverageItem!]!
+  "**Experimental**"
+  peripheralName: String!
+  "**Experimental**"
+  total: Int!
+}
+
+"**Experimental** Peripheral property or metadata entry."
+type DmPeripheralProperty @experimental {
+  "**Experimental** Display representation of the property."
+  display: String!
+}
+
+"**Experimental**"
+type DmPin @experimental {
+  "**Experimental** Pin name."
+  name: String!
+}
+
+"**Experimental** Pin mapping entry from function name to a concrete port."
+type DmPinAssignment @experimental {
+  "**Experimental** Display representation of the pin assignment."
+  display: String!
+  "**Experimental** Logical pin function name (e.g., TXD, RXD)."
+  functionName: String!
+  "**Experimental** Mapped physical port name."
+  portName: String!
+  "**Experimental** Board-level preset function name for this port, if any. Useful for debugging solver weight behaviour."
+  presetFunctionName: String
+}
+
+"**Experimental** A single device port with its functions, configurations, and connections."
+type DmPort @experimental {
+  "**Experimental** Optional comment or description for the port."
+  comment: String!
+  "**Experimental** Port configuration options applicable to this port."
+  configurations: [DmPortConfiguration!]!
+  "**Experimental** Connections from this port to other components or signals."
+  connections: [DmPortConnection!]!
+  "**Experimental** Available functions that can be assigned to the port."
+  functions: [DmPortFunction!]!
+  "**Experimental** Unique identifier for the port."
+  id: String!
+  "**Experimental** Indicates whether this port can be assigned by the user."
+  isUserAssignable: Boolean!
+  "**Experimental** Display name of the port."
+  name: String!
+  "**Experimental** Associated pin."
+  pin: DmPin!
+  "**Experimental** Symbolic name for the port used in code or configuration."
+  symbolicName: String!
+}
+
+"**Experimental** A configuration option for a port (display-only in this schema)."
+type DmPortConfiguration @experimental {
+  "**Experimental** Enumerated values associated with the port configuration."
+  enumValues: [DmConfigEnumValue!]!
+  "**Experimental** Identifier for the port configuration."
+  id: String!
+  "**Experimental** Name of the port configuration."
+  name: String!
+}
+
+"**Experimental** A connection associated with a port (display-only in this schema)."
+type DmPortConnection @experimental {
+  "**Experimental** Identifier for the port connection."
+  id: String!
+  "**Experimental** Name of the port connection."
+  name: String!
+}
+
+"**Experimental** A function that a port can perform (display-only in this schema)."
+type DmPortFunction @experimental {
+  "**Experimental** Name of the port function."
+  name: String!
+  "**Experimental** Name of the peripheral instance associated with this function."
+  peripheralInstanceName: String!
+}
+
+"**Experimental** Port model describing all device ports and their details."
+type DmPortModel @experimental {
+  "**Experimental** List of device ports, including functions, configurations, and connections."
+  ports: [DmPort!]!
+}
+
+"**Experimental** A port that carries a board-level preset function preference."
+type DmPortPreset @experimental {
+  "**Experimental** Physical port name (e.g., P202)."
+  portName: String!
+  "**Experimental** Function name the board preset steers the solver toward (e.g., RXD9)."
+  presetFunctionName: String!
+}
+
+"**Experimental** Deprecated alias of DmMcuPartNumberModel, retained for backward compatibility. Use DmMcuPartNumberModel via the mcuPartDetails field."
+type DmRaPartNumberModel @experimental {
+  "**Experimental** Application category (e.g., Analog, Display, LowPower)."
+  application: String!
+  "**Experimental** Device type derived from the part number."
+  device: String!
+  "**Experimental** Formatted display summary of the part details."
+  display: String!
+  "**Experimental** Device family derived from the part number."
+  family: String!
+  "**Experimental** Feature set indicator for the device."
+  featureSet: String!
+  "**Experimental** On-chip flash memory size in kilobytes."
+  flashMemorySizeKB: Int!
+  "**Experimental** Group identifier within the family."
+  groupNumber: String!
+  "**Experimental** True when the package uses a two-dimensional array/grid pin layout with coordinate-named pins (BGA, LGA, WLCSP, and A-QFN) rather than a single perimeter row (standard QFN, LQFP, etc.). Lets the Device Explorer pick the correct package icon for array variants such as A-QFN."
+  isArrayPackage: Boolean!
+  "**Experimental** Package type (e.g., LQFP, BGA, QFN)."
+  package: String!
+  "**Experimental** Packing type (e.g., Tray, TapeAndReel, FullCarton, Unknown)."
+  packing: String!
+  "**Experimental** Full part number string."
+  partNumber: String!
+  "**Experimental** Performance tier (e.g., RA0, RA2, RA4, RA6, RA8)."
+  performance: String!
+  "**Experimental** Total number of pins for the package."
+  pinCount: Int!
+  "**Experimental** Pin pitch in millimeters."
+  pitchMm: Decimal!
+  "**Experimental** Quality grade (e.g., Industrial, Consumer)."
+  qualityGrade: String!
+  "**Experimental** ROM code segment (empty when not present in the part number)."
+  romCode: String!
+  "**Experimental** Supported operating temperature range."
+  temperatureRange: DmTemperatureRange
+  "**Experimental** Package X dimension in millimeters."
+  xMm: Decimal!
+  "**Experimental** Package Y dimension in millimeters."
+  yMm: Decimal!
+}
+
+"**Experimental** Requested peripheral entry with its required count."
+type DmRequestedPeripheral @experimental {
+  "**Experimental** Number of instances requested for this peripheral."
+  count: Int!
+  "**Experimental** Peripheral type or identifier requested (generic or device-specific)."
+  name: String!
+}
+
+"**Experimental** Mapping of a single required interface to the interface that provides it."
+type DmRequiresProvidesMapping @experimental {
+  "**Experimental** The provided interface that satisfies the requirement, if resolved."
+  provides: DmFspProvides
+  "**Experimental** The specific requirement entry."
+  requires: DmFspRequires!
+}
+
+"**Experimental** Resolution details mapping FSP module requirements to provided interfaces."
+type DmRequiresProvidesResolution @experimental {
+  "**Experimental** The FSP module that declares the interface requirements."
+  requiresModule: DmFspModule!
+  "**Experimental** Per-requirement mapping that shows which provided interface satisfies it, if any."
+  requiresToProvidesMapping: [DmRequiresProvidesMapping!]!
+}
+
+"**Experimental** Feasibility outcome for a single candidate device (no full configuration)."
+type DmResolverFeasibilityResult @experimental {
+  "**Experimental** An optional board name associated with this result."
+  boardName: String
+  "**Experimental** Snapshot of the CP-SAT constraint model built before solving, including variables, constraint groups, and the objective. Populated only when the evaluation runs with includeDiagnostics=true; null otherwise."
+  constraintModel: DmConstraintModel
+  "**Experimental** Legacy group/series prefix (e.g. \"R7FA8\"). Prefer deviceFamilyKey for the true family."
+  deviceFamily: String!
+  "**Experimental** Stable family key of the device (\"RA\", \"RAFW\", \"RX\")."
+  deviceFamilyKey: String!
+  "**Experimental** Manufacturer part number of the candidate device."
+  deviceMpn: String!
+  "**Experimental** Errors encountered during solving."
+  errors: [String!]!
+  "**Experimental** Lean device model (MPN + family part details) without configured ports/peripherals."
+  feasibleModel: DmFeasibleDeviceModel!
+  "**Experimental** Indicates whether a feasible solution exists for this device."
+  isFeasible: Boolean!
+  "**Experimental** Log lines collected during solving. Populated only when the evaluation runs with includeDiagnostics=true."
+  logs: [String!]!
+  "**Experimental** Final status returned by the constraint solver."
+  solverStatus: String!
+  "**Experimental** Silicon vendor of the device, e.g. \"Renesas\"."
+  vendor: String!
+  "**Experimental** Wall-clock time spent solving (seconds)."
+  wallTimeSeconds: Float!
+  "**Experimental** Warnings emitted during solving or post-processing."
+  warnings: [String!]!
+}
+
+"**Experimental** Fast, family-scoped feasibility summary. Carries a lean feasibleModel (no configured ports/peripherals) for each candidate device, enough to drive the matched-parts list and search results."
+type DmResolverFeasibilitySummary @experimental {
+  "**Experimental** Percentage of candidates that are feasible (two decimal places)."
+  percentResolvedSuccess: String!
+  "**Experimental** Aggregated required peripheral counts used as input."
+  requiredPeripherals: [DmRequestedPeripheral!]!
+  "**Experimental** Per-device feasibility results for the requested family."
+  results: [DmResolverFeasibilityResult!]!
+}
+
+"**Experimental** Resolver outcome and details for a single device."
+type DmResolverResult @experimental {
+  "**Experimental** An optional board name associated with this result."
+  boardName: String
+  "**Experimental** UTC timestamp when solving completed."
+  completedAt: DateTime!
+  "**Experimental** Operation mode groups completed by the solution."
+  completedOpModeGroups: [String!]! @deprecated(reason: "No longer populated. Use 'selections' instead to inspect completed candidate instances.")
+  "**Experimental** Configured device model produced by the solution, if available."
+  configuredModel: DmDeviceModelAsConfigured
+  "**Experimental** Snapshot of the CP-SAT constraint model built before solving, including variables, constraint groups, and the objective. Null when the model was not captured."
+  constraintModel: DmConstraintModel
+  "**Experimental** Legacy group/series prefix (e.g. \"R7FA8\"). Prefer deviceFamilyKey for the true family."
+  deviceFamily: String!
+  "**Experimental** Stable family key of the device (\"RA\", \"RAFW\", \"RX\")."
+  deviceFamilyKey: String!
+  "**Experimental** Manufacturer part number associated with this result."
+  deviceMpn: String!
+  "**Experimental** Duration between start and completion in seconds."
+  durationSeconds: Float!
+  "**Experimental** Errors encountered during solving."
+  errors: [String!]!
+  "**Experimental** Indicates whether a feasible solution was found."
+  isFeasible: Boolean!
+  "**Experimental** Indicates whether the found solution is proven optimal."
+  isOptimal: Boolean!
+  "**Experimental** Log lines collected during solving."
+  logs: [String!]!
+  "**Experimental** Objective value reported by the solver (if applicable)."
+  objectiveValue: Float!
+  "**Experimental** All ports on this board that carry a preset function preference, regardless of solver selection."
+  portPresets: [DmPortPreset!]!
+  "**Experimental** Requested peripheral counts used as input to the solver."
+  requestedPeripherals: [DmRequestedPeripheral!]!
+  "**Experimental** Total number of requested peripherals (sum of all requested counts)."
+  requestedTotalCount: Int!
+  "**Experimental** Selected peripheral instances with mode and pin mappings."
+  selections: [DmInstanceSelection!]!
+  "**Experimental** Final status returned by the constraint solver."
+  solverStatus: String!
+  "**Experimental** UTC timestamp when solving started."
+  startedAt: DateTime!
+  "**Experimental** Silicon vendor of the device, e.g. \"Renesas\"."
+  vendor: String!
+  "**Experimental** Wall-clock time spent solving (seconds)."
+  wallTimeSeconds: Float!
+  "**Experimental** Warnings emitted during solving or post-processing."
+  warnings: [String!]!
+}
+
+"**Experimental** Summary of all resolver runs including per-device results."
+type DmResolverSummary @experimental {
+  "**Experimental** Percentage of resolver results that produced a feasible or optimal solution (two decimal places)."
+  percentResolvedSuccess: String!
+  "**Experimental** Aggregated required peripheral counts across all resolver runs."
+  requiredPeripherals: [DmRequestedPeripheral!]!
+  "**Experimental** List of resolver results produced for devices."
+  results: [DmResolverResult!]!
+}
+
+"**Experimental** The software component used in configuration.xml, optionally linked to a library ID."
+type DmSoftwareComponent @experimental {
+  "**Experimental** The component library ID that this software component belongs to."
+  componentLibraryId: String
+  "**Experimental** Id of the software component"
+  id: String!
+  "**Experimental** Name of the software component (e.g. a middleware or driver) defined in the configuration.xml for this device."
+  name: String!
+}
+
+"**Experimental** The software model for a device, including the device part number, its ports, and associated software components such as middleware and drivers."
+type DmSoftwareModel @experimental {
+  "**Experimental** Device part number."
+  deviceMpn: String!
+  "**Experimental** The ports (e.g. UART, I2C) defined in the configuration.xml for this device."
+  ports: [DmRequestedPeripheral!]!
+  "**Experimental** The software components (e.g. middleware, drivers) defined in"
+  softwareComponents: [DmSoftwareComponent!]!
+}
+
+"**Experimental** Options describing how software requirements map onto device interfaces."
+type DmSoftwareToDeviceOptionsModel @experimental {
+  "**Experimental** Collection of resolutions linking software requirements to device-provided interfaces."
+  softwareToDeviceElements: [DmRequiresProvidesResolution!]!
+}
+
+"**Experimental** An FSP configuration context grouping stack elements for a context ID."
+type DmStackContext @experimental {
+  "**Experimental** Identifier of the context."
+  contextId: String!
+  "**Experimental** Stack elements within this context."
+  stackElements: [DmStackElement!]!
+}
+
+"**Experimental** A single FSP stack element including its module and dependency relationships."
+type DmStackElement @experimental {
+  "**Experimental** Dependent stack elements required by this element."
+  dependencies: [DmStackElement!]!
+  "**Experimental** Concrete module metadata for this stack element."
+  module: DmFspModule
+  "**Experimental** Unique module identifier."
+  moduleId: String!
+  "**Experimental** Requirement string for dependency resolution."
+  requires: String!
+}
+
+"**Experimental** FSP stack containing one or more configuration contexts."
+type DmStackModel @experimental {
+  "**Experimental** List of FSP configuration contexts."
+  contexts: [DmStackContext!]!
+}
+
+"**Experimental** Operating temperature range with units and measurement reference."
+type DmTemperatureRange @experimental {
+  "**Experimental** Display representation of the temperature range."
+  display: String!
+  "**Experimental** Maximum temperature in degrees Celsius."
+  max: Int!
+  "**Experimental** Minimum temperature in degrees Celsius."
+  min: Int!
+  "**Experimental** Temperature measurement reference (Ambient or Junction)."
+  tempType: String!
+}
+
+"**Experimental**"
+type DmUpdateDeviceFromSdmPayload @experimental {
+  "**Experimental**"
+  dmUpdaterSummary: DmUpdaterSummary
+}
+
+"**Experimental** Summary of device model updater run."
+type DmUpdaterSummary @experimental {
+  "**Experimental** Added, removed, and modified peripheral instances between incoming SDM and resolved model."
+  peripheralChanges: DmPeripheralChanges!
+  "**Experimental** Resolver output containing feasibility and selected peripheral instance assignments."
+  result: DmResolverResult!
+}
+
+"**Experimental**"
+type RsaMotorStudioCreateEasyModeConfigPayload @experimental {
+  "**Experimental**"
+  config: RsaMotorStudioEasyModeConfig!
+}
+
+"**Experimental**"
+type RsaMotorStudioCreateProjectPayload @experimental {
+  "**Experimental**"
+  project: RsaMotorStudioProject!
+}
+
+"**Experimental**"
+type RsaMotorStudioCreateScopeCapturePayload @experimental {
+  "**Experimental**"
+  capture: RsaMotorStudioScopeCapture!
+}
+
+"**Experimental**"
+type RsaMotorStudioCreateScopeConfigPayload @experimental {
+  "**Experimental**"
+  config: RsaMotorStudioScopeConfig!
+}
+
+"**Experimental**"
+type RsaMotorStudioCreateTuningPayload @experimental {
+  "**Experimental**"
+  tuning: RsaMotorStudioTuning!
+}
+
+"**Experimental**"
+type RsaMotorStudioCreateTuningRevisionPayload @experimental {
+  "**Experimental**"
+  revision: RsaMotorStudioTuningRevision!
+}
+
+"**Experimental**"
+type RsaMotorStudioCreateVariableSetPayload @experimental {
+  "**Experimental**"
+  variableSet: RsaMotorStudioVariableSet!
+}
+
+"**Experimental**"
+type RsaMotorStudioCreateVariableSetRevisionPayload @experimental {
+  "**Experimental**"
+  revision: RsaMotorStudioVariableSetRevision!
+}
+
+"**Experimental**"
+type RsaMotorStudioDeleteEasyModeConfigPayload @experimental {
+  "**Experimental**"
+  isDeleted: Boolean!
+}
+
+"**Experimental**"
+type RsaMotorStudioDeleteProjectPayload @experimental {
+  "**Experimental**"
+  isDeleted: Boolean!
+}
+
+"**Experimental**"
+type RsaMotorStudioDeleteScopeCapturePayload @experimental {
+  "**Experimental**"
+  isDeleted: Boolean!
+}
+
+"**Experimental**"
+type RsaMotorStudioDeleteScopeConfigPayload @experimental {
+  "**Experimental**"
+  isDeleted: Boolean!
+}
+
+"**Experimental**"
+type RsaMotorStudioDeleteTuningPayload @experimental {
+  "**Experimental**"
+  isDeleted: Boolean!
+}
+
+"**Experimental**"
+type RsaMotorStudioDeleteVariableSetPayload @experimental {
+  "**Experimental**"
+  isDeleted: Boolean!
+}
+
+"**Experimental**"
+type RsaMotorStudioEasyModeConfig @experimental {
+  "**Experimental**"
+  configId: String!
+  "**Experimental**"
+  modifiedAt: DateTime
+  "**Experimental**"
+  modifiedBy: DesWorkspaceUser
+  "**Experimental**"
+  modifiedById: ID @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  sliders: [RsaMotorStudioSlider!]!
+}
+
+"**Experimental**"
+type RsaMotorStudioLinkTuningToProjectPayload @experimental {
+  "**Experimental**"
+  isSuccess: Boolean!
+}
+
+"**Experimental**"
+type RsaMotorStudioProject @experimental {
+  "**Experimental**"
+  createdAt: DateTime! @experimental
+  "**Experimental**"
+  createdBy: DesWorkspaceUser! @experimental
+  "**Experimental**"
+  createdById: ID! @experimental @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
+  "**Experimental**"
+  description: String @experimental
+  "**Experimental** Collection of easymode configurations associated with the motor studio project."
+  easyModeConfigs: [RsaMotorStudioEasyModeConfig!]! @experimental
+  "**Experimental**"
+  folderId: String! @experimental
+  "**Experimental**"
+  id: ID!
+  "**Experimental**"
+  modifiedAt: DateTime @experimental
+  "**Experimental**"
+  modifiedBy: DesWorkspaceUser @experimental
+  "**Experimental**"
+  modifiedById: ID @experimental @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
+  "**Experimental**"
+  name: String! @experimental
+  "**Experimental** Parent solutions linked to this MotorStudio project."
+  parentSolutions: [SolSolution!]! @experimental
+  "**Experimental** Collection of scope captures associated with the motor studio project."
+  scopeCaptures: [RsaMotorStudioScopeCapture!]! @experimental
+  "**Experimental** Collection of scope configurations associated with the motor studio project."
+  scopeConfigs: [RsaMotorStudioScopeConfig!]! @experimental
+  "**Experimental** Collection of tunings linked with the motor studio project."
+  tunings: [RsaMotorStudioTuning!]! @experimental
+  "**Experimental** Collection of variable sets associated with the motor studio project."
+  variableSets: [RsaMotorStudioVariableSet!]! @experimental
+}
+
+"**Experimental**"
+type RsaMotorStudioScopeCapture @experimental {
+  "**Experimental**"
+  capturedAt: DateTime!
+  "**Experimental**"
+  capturedData: String!
+  "**Experimental**"
+  capturedDataUrl: String!
+  "**Experimental**"
+  captureId: String!
+  "**Experimental**"
+  createdBy: DesWorkspaceUser!
+  "**Experimental**"
+  createdById: ID!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  scopeConfigId: String!
+}
+
+"**Experimental**"
+type RsaMotorStudioScopeChannelConfig @experimental {
+  "**Experimental**"
+  channelId: String!
+  "**Experimental**"
+  color: String!
+  "**Experimental**"
+  index: Int!
+  "**Experimental**"
+  offset: Float
+  "**Experimental**"
+  scale: Float
+  "**Experimental**"
+  variableName: String
+}
+
+"**Experimental**"
+type RsaMotorStudioScopeConfig @experimental {
+  "**Experimental**"
+  channels: [RsaMotorStudioScopeChannelConfig!]!
+  "**Experimental**"
+  configId: String!
+  "**Experimental**"
+  createdAt: DateTime!
+  "**Experimental**"
+  createdBy: DesWorkspaceUser!
+  "**Experimental**"
+  createdById: ID!
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  modifiedAt: DateTime
+  "**Experimental**"
+  modifiedBy: DesWorkspaceUser
+  "**Experimental**"
+  modifiedById: ID
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  preTriggerSamples: Int!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  samplePeriodNs: Int!
+  "**Experimental**"
+  samplesLength: Int!
+  "**Experimental**"
+  triggerEdge: TriggerEdge!
+  "**Experimental**"
+  triggerLevel: Float!
+  "**Experimental**"
+  triggerMode: TriggerMode!
+  "**Experimental**"
+  triggerSourceChannelIndex: Int!
+  "**Experimental**"
+  views: [RsaMotorStudioScopeView!]!
+  "**Experimental**"
+  virtualVariables: [String!]!
+}
+
+"**Experimental**"
+type RsaMotorStudioScopeView @experimental {
+  "**Experimental**"
+  channelIndexes: [Int!]!
+  "**Experimental**"
+  viewId: String!
+}
+
+"**Experimental**"
+type RsaMotorStudioSlider @experimental {
+  "**Experimental**"
+  defaultValue: String
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  displayName: String!
+  "**Experimental**"
+  max: Float!
+  "**Experimental**"
+  min: Float!
+  "**Experimental**"
+  sliderId: String!
+  "**Experimental**"
+  unit: String
+  "**Experimental**"
+  variableName: String!
+}
+
+"**Experimental**"
+type RsaMotorStudioTuning @experimental {
+  "**Experimental**"
+  applicationMount: String!
+  "**Experimental**"
+  createdAt: DateTime!
+  "**Experimental**"
+  createdBy: DesWorkspaceUser!
+  "**Experimental**"
+  createdById: ID!
+  "**Experimental**"
+  folderId: String!
+  "**Experimental**"
+  id: ID!
+  "**Experimental**"
+  latestRevision: RsaMotorStudioTuningRevision
+  "**Experimental**"
+  modifiedAt: DateTime
+  "**Experimental**"
+  modifiedBy: DesWorkspaceUser
+  "**Experimental**"
+  modifiedById: ID
+  "**Experimental**"
+  motorStudioProject: RsaMotorStudioProject
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  revisions: [RsaMotorStudioTuningRevision!]!
+  "**Experimental**"
+  tuningType: TuningType!
+}
+
+"**Experimental**"
+type RsaMotorStudioTuningModule @experimental {
+  "**Experimental**"
+  moduleType: TuningModuleType!
+  "**Experimental**"
+  parameters: [RsaMotorStudioTuningParameter!]!
+  "**Experimental**"
+  path: String!
+}
+
+"**Experimental**"
+type RsaMotorStudioTuningParameter @experimental {
+  "**Experimental**"
+  evidence: RsaMotorStudioTuningParameterEvidence
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  source: ParamSource!
+  "**Experimental**"
+  units: String
+  "**Experimental**"
+  value: String!
+}
+
+"**Experimental**"
+type RsaMotorStudioTuningParameterEvidence @experimental {
+  "**Experimental**"
+  note: String
+  "**Experimental** Resolves the scope capture referenced by this evidence."
+  scopeCapture: RsaMotorStudioScopeCapture
+  "**Experimental**"
+  scopeCaptureId: String
+  "**Experimental**"
+  scopeProjectId: ID
+}
+
+"**Experimental**"
+type RsaMotorStudioTuningRevision @experimental {
+  "**Experimental**"
+  createdAt: DateTime!
+  "**Experimental**"
+  createdBy: DesWorkspaceUser!
+  "**Experimental**"
+  createdById: ID!
+  "**Experimental**"
+  id: ID!
+  "**Experimental**"
+  modules: [RsaMotorStudioTuningModule!]!
+  "**Experimental**"
+  resultParameters: [RsaMotorStudioVariableSetEntry!]!
+  "**Experimental**"
+  revision: Int!
+  "**Experimental**"
+  tuning: RsaMotorStudioTuning
+  "**Experimental**"
+  tuningId: ID!
+}
+
+"**Experimental**"
+type RsaMotorStudioUnlinkTuningFromProjectPayload @experimental {
+  "**Experimental**"
+  isSuccess: Boolean!
+}
+
+"**Experimental**"
+type RsaMotorStudioUpdateEasyModeConfigPayload @experimental {
+  "**Experimental**"
+  config: RsaMotorStudioEasyModeConfig!
+}
+
+"**Experimental**"
+type RsaMotorStudioUpdateProjectPayload @experimental {
+  "**Experimental**"
+  project: RsaMotorStudioProject!
+}
+
+"**Experimental**"
+type RsaMotorStudioUpdateScopeConfigPayload @experimental {
+  "**Experimental**"
+  config: RsaMotorStudioScopeConfig!
+}
+
+"**Experimental**"
+type RsaMotorStudioUpdateTuningPayload @experimental {
+  "**Experimental**"
+  tuning: RsaMotorStudioTuning!
+}
+
+"**Experimental**"
+type RsaMotorStudioUpdateVariableSetPayload @experimental {
+  "**Experimental**"
+  variableSet: RsaMotorStudioVariableSet!
+}
+
+"**Experimental**"
+type RsaMotorStudioVariableSet @experimental {
+  "**Experimental**"
+  createdAt: DateTime!
+  "**Experimental**"
+  createdBy: DesWorkspaceUser!
+  "**Experimental**"
+  createdById: ID!
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  latestRevision: RsaMotorStudioVariableSetRevision
+  "**Experimental**"
+  modifiedAt: DateTime
+  "**Experimental**"
+  modifiedBy: DesWorkspaceUser
+  "**Experimental**"
+  modifiedById: ID
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  revisions: [RsaMotorStudioVariableSetRevision!]!
+  "**Experimental**"
+  variableSetId: String!
+}
+
+"**Experimental**"
+type RsaMotorStudioVariableSetEntry @experimental {
+  "**Experimental**"
+  value: String!
+  "**Experimental**"
+  variableName: String!
+}
+
+"**Experimental**"
+type RsaMotorStudioVariableSetRevision @experimental {
+  "**Experimental**"
+  createdAt: DateTime!
+  "**Experimental**"
+  createdBy: DesWorkspaceUser!
+  "**Experimental**"
+  createdById: ID!
+  "**Experimental**"
+  entries: [RsaMotorStudioVariableSetEntry!]!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  revision: Int!
+  "**Experimental**"
+  revisionId: String!
+  "**Experimental**"
+  variableSet: RsaMotorStudioVariableSet
+  "**Experimental**"
+  variableSetId: String!
+}
+
+type SftAIModel {
+  createdAt: DateTime!
+  createdBy: DesWorkspaceUser!
+  customProperties: [SftAIModelCustomProperty!]!
+  description: String
+  folderId: String!
+  id: ID!
+  modifiedAt: DateTime
+  modifiedBy: DesWorkspaceUser
+  name: String!
+  "Ai model's owner."
+  owner: DesWorkspaceUser
+  "Collection of the Ai model's permissions."
+  permissions: [DesPermission!]
+  previewUrl: String!
+  url: String
+}
+
+type SftAIModelCreatePayload {
+  data: SftAIModel!
+}
+
+type SftAIModelCreatePropertiesPayload {
+  customProperties: [SftAIModelCustomProperty!]!
+  id: ID!
+}
+
+type SftAIModelCustomProperty {
+  key: String!
+  value: String
+}
+
+type SftAIModelDeletePayload {
+  isDeleted: Boolean!
+}
+
+type SftAIModelDeletePropertiesPayload {
+  deletedParametersCount: Int!
+  id: ID!
+}
+
+type SftAIModelUpdatePayload {
+  data: SftAIModel
+}
+
+type SftAIModelUpdatePropertiesPayload {
+  customProperties: [SftAIModelCustomProperty!]!
+  id: ID!
+}
+
+type SftDevCfgCreateDeviceConfigurationPayload {
+  data: SftDevCfgDeviceConfiguration!
+}
+
+type SftDevCfgDeleteDeviceConfigurationPayload {
+  isDeleted: Boolean!
+}
+
+type SftDevCfgDeviceConfiguration {
+  createdAt: DateTime
+  createdBy: DesWorkspaceUser!
+  createdById: ID! @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  folderId: String!
+  id: ID!
+  latestRevision: SftDevCfgDeviceConfigurationRevision
+  modifiedAt: DateTime
+  modifiedBy: DesWorkspaceUser
+  modifiedById: ID @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  name: String!
+  "Device configuration's owner."
+  owner: DesWorkspaceUser
+  "Collection of the device configuration's permissions."
+  permissions: [DesPermission!]
+  revisions: [SftDevCfgDeviceConfigurationRevision!]!
+  softwareProject: SftSoftwareProject
+}
+
+type SftDevCfgDeviceConfigurationRevision {
+  commitId: String
+  createdAt: DateTime
+  createdBy: DesWorkspaceUser!
+  createdById: ID! @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  description: String
+  deviceConfiguration: SftDevCfgDeviceConfiguration!
+  "Global resource identifiers (GRID) of device configuration which revision is assigned to."
+  deviceConfigurationId: ID! @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  "**Experimental** Gets device model information associated with this device configuration revision."
+  deviceModel: DmDeviceModelAsConfigured! @experimental
+  hardwareProjectId: ID @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  id: ID!
+  modifiedAt: DateTime
+  modifiedBy: DesWorkspaceUser
+  modifiedById: ID @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  name: String!
+  url: String
+}
+
+type SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectPayload {
+  isSuccess: Boolean!
+}
+
+type SftDevCfgLinkDeviceConfigurationToSoftwareProjectPayload {
+  isSuccess: Boolean!
+}
+
+type SftDevCfgUnlinkDeviceConfigurationFromSoftwareProjectPayload {
+  isSuccess: Boolean!
+}
+
+type SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectPayload {
+  isSuccess: Boolean!
+}
+
+type SftSimSimulation {
+  createdAt: DateTime!
+  createdBy: DesWorkspaceUser!
+  createdById: ID! @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  customProperties: [SftSimSimulationCustomProperty!]!
+  description: String
+  folderId: String!
+  id: ID!
+  modifiedAt: DateTime
+  modifiedBy: DesWorkspaceUser
+  modifiedById: ID @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  name: String!
+  "Simulation's owner."
+  owner: DesWorkspaceUser
+  "Collection of the simulation's permissions."
+  permissions: [DesPermission!]
+  previewUrl: String!
+  repositoryUrl: String
+  type: SftSimSimulationType!
+}
+
+type SftSimSimulationCreatePayload {
+  data: SftSimSimulation!
+}
+
+type SftSimSimulationCreatePropertiesPayload {
+  customProperties: [SftSimSimulationCustomProperty!]!
+  id: ID!
+}
+
+type SftSimSimulationCustomProperty {
+  key: String!
+  value: String
+}
+
+type SftSimSimulationDeletePayload {
+  isDeleted: Boolean!
+}
+
+type SftSimSimulationDeletePropertiesPayload {
+  deletedParametersCount: Int!
+  id: ID!
+}
+
+type SftSimSimulationUpdatePayload {
+  data: SftSimSimulation
+}
+
+type SftSimSimulationUpdatePropertiesPayload {
+  customProperties: [SftSimSimulationCustomProperty!]!
+  id: ID!
+}
+
+type SftSoftwareCreateProjectPayload {
+  data: SftSoftwareProject!
+}
+
+type SftSoftwareCreateProjectPropertiesPayload {
+  customProperties: [SftSoftwareProjectCustomProperty!]!
+  id: ID!
+}
+
+type SftSoftwareDeleteProjectPayload {
+  isDeleted: Boolean!
+}
+
+type SftSoftwareDeleteProjectPropertiesPayload {
+  deletedParametersCount: Int!
+  id: ID!
+}
+
+type SftSoftwareProject {
+  createdAt: DateTime!
+  createdBy: DesWorkspaceUser!
+  createdById: ID! @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  customProperties: [SftSoftwareProjectCustomProperty!]!
+  description: String
+  deviceConfiguration: SftDevCfgDeviceConfiguration
+  firmwareUrl: String
+  folderId: String!
+  id: ID!
+  "Gets current scaffolding status."
+  isScaffolding: Boolean!
+  modifiedAt: DateTime
+  modifiedBy: DesWorkspaceUser
+  modifiedById: ID @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  name: String!
+  "Software project's owner."
+  owner: DesWorkspaceUser
+  parentSolutions: [SolSolution!]!
+  "Collection of the software project's permissions."
+  permissions: [DesPermission!]
+  previewUrl: String!
+  repositoryType: SftSoftwareRepositoryType
+  repositoryUrl: String!
+}
+
+type SftSoftwareProjectCustomProperty {
+  key: String!
+  value: String
+}
+
+type SftSoftwareProjectUpdateConfigurationPayload {
+  data: SftSoftwareProject!
+}
+
+type SftSoftwareProjectUpdateFirmwarePayload {
+  data: SftSoftwareProject!
+}
+
+type SftSoftwareUpdateProjectPayload {
+  data: SftSoftwareProject
+}
+
+type SftSoftwareUpdateProjectPropertiesPayload {
+  customProperties: [SftSoftwareProjectCustomProperty!]!
+  id: ID!
+}
+
+"**Experimental**"
+input DmExecuteDeviceEvaluationByFamilyInput @experimental {
+  "**Experimental**"
+  deviceFamily: String!
+  "**Experimental**"
+  evaluationStrategy: DmModelEvaluationStrategy
+  "**Experimental**"
+  includeDiagnostics: Boolean
+  "**Experimental**"
+  payload: [DmRequiredPeripheralPayloadInput!]!
+  "**Experimental**"
+  vendor: String!
+}
+
+"**Experimental**"
+input DmExecuteDeviceEvaluationByMpnInput @experimental {
+  "**Experimental**"
+  deviceMpn: String!
+  "**Experimental**"
+  evaluationStrategy: DmModelEvaluationStrategy
+  "**Experimental**"
+  includeDiagnostics: Boolean
+  "**Experimental**"
+  payload: [DmRequiredPeripheralPayloadInput!]!
+}
+
+"**Experimental**"
+input DmExecuteDeviceEvaluationFromConfigurationInput @experimental {
+  "**Experimental**"
+  fileId: String!
+  "**Experimental**"
+  onlyFeasible: Boolean
+  "**Experimental**"
+  sessionId: String!
+}
+
+"**Experimental**"
+input DmExecuteDeviceEvaluationFromESDInput @experimental {
+  "**Experimental**"
+  fileId: String!
+  "**Experimental**"
+  sessionId: String!
+}
+
+"**Experimental**"
+input DmExecuteDeviceEvaluationFromESDv2Input @experimental {
+  "**Experimental**"
+  fileId: String!
+  "**Experimental**"
+  sessionId: String!
+}
+
+"**Experimental**"
+input DmExecuteDeviceEvaluationFromXmlInput @experimental {
+  "**Experimental**"
+  onlyFeasible: Boolean
+  "**Experimental**"
+  sessionId: String!
+  "**Experimental**"
+  xmlUpload: Upload!
+}
+
+"**Experimental**"
+input DmExecuteDeviceEvaluationInput @experimental {
+  "**Experimental**"
+  evaluationStrategy: DmModelEvaluationStrategy
+  "**Experimental**"
+  includeDiagnostics: Boolean
+  "**Experimental**"
+  onlyFeasible: Boolean
+  "**Experimental**"
+  optionalDeviceMpn: String
+  "**Experimental**"
+  payload: [DmRequiredPeripheralPayloadInput!]!
+  "**Experimental**"
+  sessionId: String!
+  "**Experimental**"
+  strictMode: Boolean
+}
+
+"**Experimental**"
+input DmExecuteDeviceExtractionFromConfigurationInput @experimental {
+  "**Experimental**"
+  fileId: String!
+  "**Experimental**"
+  sessionId: String!
+}
+
+"**Experimental**"
+input DmExecuteDeviceExtractionFromConfigurationUrlInput @experimental {
+  "**Experimental**"
+  configurationFileUrl: String!
+  "**Experimental**"
+  sessionId: String!
+}
+
+"**Experimental**"
+input DmRequiredPeripheralPayloadInput @experimental {
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  quantity: Int!
+}
+
+"**Experimental**"
+input DmUpdateDeviceFromSdmInput @experimental {
+  "**Experimental**"
+  deviceModelId: String!
+  "**Experimental**"
+  fileId: String!
+  "**Experimental**"
+  includeDiagnostics: Boolean
+  "**Experimental**"
+  requiredPeripherals: [DmRequiredPeripheralPayloadInput!]!
+}
+
+"**Experimental**"
+input MotorStudioProjectGridFilterInput @experimental {
+  "**Experimental**"
+  and: [MotorStudioProjectGridFilterInput!]
+  "**Experimental**"
+  or: [MotorStudioProjectGridFilterInput!]
+  "**Experimental**"
+  projectId: StringOperationFilterInput
+  "**Experimental**"
+  tenantId: UuidOperationFilterInput
+}
+
+"**Experimental**"
+input MotorStudioProjectGridSortInput @experimental {
+  "**Experimental**"
+  projectId: SortEnumType
+  "**Experimental**"
+  tenantId: SortEnumType
+}
+
+"**Experimental** Represents input value for motor studio project easymode config creation."
+input RsaMotorStudioCreateEasyModeConfigInput @experimental {
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  sliders: [RsaMotorStudioCreateSliderInput!]!
+}
+
+"**Experimental** Represents input value for motor studio project creation."
+input RsaMotorStudioCreateProjectInput @experimental {
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  folderId: String!
+  "**Experimental** Name of the project."
+  name: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateScopeCaptureInput @experimental {
+  "**Experimental**"
+  capturedAt: DateTime!
+  "**Experimental**"
+  capturedData: String!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  scopeConfigId: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateScopeChannelInput @experimental {
+  "**Experimental**"
+  color: String!
+  "**Experimental**"
+  index: Int!
+  "**Experimental**"
+  offset: Float
+  "**Experimental**"
+  scale: Float
+  "**Experimental**"
+  variableName: String
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateScopeConfigInput @experimental {
+  "**Experimental**"
+  channels: [RsaMotorStudioCreateScopeChannelInput!]!
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  preTriggerSamples: Int!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  samplePeriodNs: Int!
+  "**Experimental**"
+  samplesLength: Int!
+  "**Experimental**"
+  triggerEdge: TriggerEdge!
+  "**Experimental**"
+  triggerLevel: Float!
+  "**Experimental**"
+  triggerMode: TriggerMode!
+  "**Experimental**"
+  triggerSourceChannelIndex: Int!
+  "**Experimental**"
+  views: [RsaMotorStudioCreateScopeViewInput!]!
+  "**Experimental**"
+  virtualVariables: [String!]
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateScopeViewInput @experimental {
+  "**Experimental**"
+  channelIndexes: [Int!]!
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateSliderInput @experimental {
+  "**Experimental**"
+  defaultValue: String
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  displayName: String!
+  "**Experimental**"
+  max: Float!
+  "**Experimental**"
+  min: Float!
+  "**Experimental**"
+  unit: String
+  "**Experimental**"
+  variableName: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateTuningInput @experimental {
+  "**Experimental**"
+  applicationMount: String!
+  "**Experimental**"
+  folderId: String!
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  tuningType: TuningType!
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateTuningRevisionInput @experimental {
+  "**Experimental**"
+  modules: [RsaMotorStudioTuningModuleInput!]!
+  "**Experimental**"
+  tuningId: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateVariableSetInput @experimental {
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  initialEntries: [RsaMotorStudioVariableSetEntryInput!]
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  projectId: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioCreateVariableSetRevisionInput @experimental {
+  "**Experimental**"
+  entries: [RsaMotorStudioVariableSetEntryInput!]!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  variableSetId: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioDeleteEasyModeConfigInput @experimental {
+  "**Experimental**"
+  configId: String!
+  "**Experimental**"
+  projectId: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioDeleteProjectInput @experimental {
+  "**Experimental**"
+  id: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioDeleteScopeCaptureInput @experimental {
+  "**Experimental**"
+  captureId: String!
+  "**Experimental**"
+  projectId: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioDeleteScopeConfigInput @experimental {
+  "**Experimental**"
+  configId: String!
+  "**Experimental**"
+  projectId: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioDeleteTuningInput @experimental {
+  "**Experimental**"
+  id: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioDeleteVariableSetInput @experimental {
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  variableSetId: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioLinkTuningToProjectInput @experimental {
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  tuningId: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioParameterEvidenceInput @experimental {
+  "**Experimental**"
+  note: String
+  "**Experimental**"
+  scopeCaptureId: String
+}
+
+"**Experimental**"
+input RsaMotorStudioProjectFilterInput @experimental {
+  "**Experimental**"
+  and: [RsaMotorStudioProjectFilterInput!]
+  "**Experimental**"
+  createdAt: DateTimeOperationFilterInput
+  "**Experimental**"
+  createdBy: DesWorkspaceUserFilterInput
+  "**Experimental**"
+  createdById: GridFilterInput
+  "**Experimental**"
+  description: StringOperationFilterInput
+  "**Experimental**"
+  folderId: StringOperationFilterInput
+  "**Experimental**"
+  id: MotorStudioProjectGridFilterInput
+  "**Experimental**"
+  modifiedAt: DateTimeOperationFilterInput
+  "**Experimental**"
+  modifiedBy: DesWorkspaceUserFilterInput
+  "**Experimental**"
+  modifiedById: GridFilterInput
+  "**Experimental**"
+  name: StringOperationFilterInput
+  "**Experimental**"
+  or: [RsaMotorStudioProjectFilterInput!]
+}
+
+"**Experimental**"
+input RsaMotorStudioProjectSortInput @experimental {
+  "**Experimental**"
+  createdAt: SortEnumType
+  "**Experimental**"
+  createdBy: DesWorkspaceUserSortInput
+  "**Experimental**"
+  createdById: SortEnumType
+  "**Experimental**"
+  description: SortEnumType
+  "**Experimental**"
+  folderId: SortEnumType
+  "**Experimental**"
+  id: MotorStudioProjectGridSortInput
+  "**Experimental**"
+  modifiedAt: SortEnumType
+  "**Experimental**"
+  modifiedBy: DesWorkspaceUserSortInput
+  "**Experimental**"
+  modifiedById: SortEnumType
+  "**Experimental**"
+  name: SortEnumType
+}
+
+"**Experimental**"
+input RsaMotorStudioScopeChannelInput @experimental {
+  "**Experimental**"
+  channelId: String
+  "**Experimental**"
+  color: String!
+  "**Experimental**"
+  index: Int!
+  "**Experimental**"
+  offset: Float
+  "**Experimental**"
+  scale: Float
+  "**Experimental**"
+  variableName: String
+}
+
+"**Experimental**"
+input RsaMotorStudioTuningModuleInput @experimental {
+  "**Experimental**"
+  moduleType: TuningModuleType!
+  "**Experimental**"
+  parameters: [RsaMotorStudioTuningParameterInput!]!
+  "**Experimental**"
+  path: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioTuningParameterInput @experimental {
+  "**Experimental**"
+  evidence: RsaMotorStudioParameterEvidenceInput
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  source: ParamSource!
+  "**Experimental**"
+  units: String
+  "**Experimental**"
+  value: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioUnlinkTuningFromProjectInput @experimental {
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  tuningId: ID!
+}
+
+"**Experimental**"
+input RsaMotorStudioUpdateEasyModeConfigInput @experimental {
+  "**Experimental**"
+  configId: String!
+  "**Experimental**"
+  path: String
+  "**Experimental** ID of the project to which the easymode config will be added."
+  projectId: ID!
+  "**Experimental**"
+  sliders: [RsaMotorStudioUpdateSliderInput!]!
+}
+
+"**Experimental** Represents input value for motor studio project creation."
+input RsaMotorStudioUpdateProjectInput @experimental {
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  folderId: String
+  "**Experimental**"
+  id: ID!
+  "**Experimental**"
+  name: String
+}
+
+"**Experimental**"
+input RsaMotorStudioUpdateScopeConfigInput @experimental {
+  "**Experimental**"
+  channels: [RsaMotorStudioScopeChannelInput!]!
+  "**Experimental**"
+  configId: String!
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  preTriggerSamples: Int!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  samplePeriodNs: Int!
+  "**Experimental**"
+  samplesLength: Int!
+  "**Experimental**"
+  triggerEdge: TriggerEdge!
+  "**Experimental**"
+  triggerLevel: Float!
+  "**Experimental**"
+  triggerMode: TriggerMode!
+  "**Experimental**"
+  triggerSourceChannelIndex: Int!
+  "**Experimental**"
+  views: [RsaMotorStudioUpdateScopeViewInput!]!
+  "**Experimental**"
+  virtualVariables: [String!]
+}
+
+"**Experimental**"
+input RsaMotorStudioUpdateScopeViewInput @experimental {
+  "**Experimental**"
+  channelIndexes: [Int!]!
+  "**Experimental**"
+  viewId: String
+}
+
+"**Experimental**"
+input RsaMotorStudioUpdateSliderInput @experimental {
+  "**Experimental**"
+  defaultValue: String
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  displayName: String!
+  "**Experimental**"
+  max: Float!
+  "**Experimental**"
+  min: Float!
+  "**Experimental**"
+  sliderId: String
+  "**Experimental**"
+  unit: String
+  "**Experimental**"
+  variableName: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioUpdateTuningInput @experimental {
+  "**Experimental**"
+  applicationMount: String
+  "**Experimental**"
+  folderId: String
+  "**Experimental**"
+  id: ID!
+  "**Experimental**"
+  name: String
+  "**Experimental**"
+  path: String
+  "**Experimental**"
+  tuningType: TuningType
+}
+
+"**Experimental**"
+input RsaMotorStudioUpdateVariableSetInput @experimental {
+  "**Experimental**"
+  description: String
+  "**Experimental**"
+  name: String!
+  "**Experimental**"
+  path: String!
+  "**Experimental**"
+  projectId: ID!
+  "**Experimental**"
+  variableSetId: String!
+}
+
+"**Experimental**"
+input RsaMotorStudioVariableSetEntryInput @experimental {
+  "**Experimental**"
+  value: String!
+  "**Experimental**"
+  variableName: String!
+}
+
+input SftAIModelCreateInput {
+  customProperties: [SftAIModelCustomPropertyInput!]
+  description: String
+  fileToken: String
+  folderId: String!
+  name: String!
+}
+
+input SftAIModelCreatePropertiesInput {
+  customProperties: [SftAIModelCustomPropertyInput!]!
+  id: ID!
+}
+
+input SftAIModelCustomPropertyInput {
+  key: String!
+  value: String
+}
+
+input SftAIModelDeleteInput {
+  id: ID!
+}
+
+input SftAIModelDeletePropertiesInput {
+  customPropertyNames: [String!]!
+  id: ID!
+}
+
+input SftAIModelUpdateInput {
+  description: String
+  id: ID!
+  name: String
+}
+
+input SftAIModelUpdatePropertiesInput {
+  customProperties: [SftAIModelCustomPropertyInput!]!
+  id: ID!
+}
+
+input SftDevCfgCreateDeviceConfigurationInput {
+  folderId: String!
+  name: String!
+}
+
+input SftDevCfgDeleteDeviceConfigurationInput {
+  id: ID!
+}
+
+input SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput {
+  deviceConfigurationId: ID!
+  hardwareProjectId: ID!
+  revisionId: ID!
+}
+
+input SftDevCfgLinkDeviceConfigurationToSoftwareProjectInput {
+  deviceConfigurationId: ID!
+  softwareProjectId: ID!
+}
+
+input SftDevCfgUnlinkDeviceConfigurationFromSoftwareProjectInput {
+  deviceConfigurationId: ID!
+  softwareProjectId: ID!
+}
+
+input SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectInput {
+  deviceConfigurationId: ID!
+  hardwareProjectId: ID!
+}
+
+input SftSimSimulationCreateInput {
+  customProperties: [SftSimSimulationCustomPropertyInput!]
+  description: String
+  folderId: String!
+  name: String!
+  repositoryType: SftSimSimulationRepositoryType
+  type: SftSimSimulationType!
+  url: String
+}
+
+input SftSimSimulationCreatePropertiesInput {
+  customProperties: [SftSimSimulationCustomPropertyInput!]!
+  id: ID!
+}
+
+input SftSimSimulationCustomPropertyInput {
+  key: String!
+  value: String
+}
+
+input SftSimSimulationDeleteInput {
+  id: ID!
+}
+
+input SftSimSimulationDeletePropertiesInput {
+  customPropertyNames: [String!]!
+  id: ID!
+}
+
+input SftSimSimulationUpdateInput {
+  folderId: String
+  id: ID!
+  name: String
+  url: String
+}
+
+input SftSimSimulationUpdatePropertiesInput {
+  customProperties: [SftSimSimulationCustomPropertyInput!]!
+  id: ID!
+}
+
+input SftSoftwareCreateProjectInput {
+  customProperties: [SftSoftwareProjectCustomPropertyInput!]
+  description: String
+  folderId: String!
+  name: String!
+  repositoryType: SftSoftwareRepositoryType
+  url: String
+}
+
+input SftSoftwareCreateProjectPropertiesInput {
+  customProperties: [SftSoftwareProjectCustomPropertyInput!]!
+  id: ID!
+}
+
+input SftSoftwareDeleteProjectInput {
+  id: ID!
+}
+
+input SftSoftwareDeleteProjectPropertiesInput {
+  customPropertyNames: [String!]!
+  id: ID!
+}
+
+input SftSoftwareProjectCustomPropertyInput {
+  key: String!
+  value: String
+}
+
+input SftSoftwareUpdateProjectConfigrationInput {
+  fileId: String!
+  id: ID!
+  message: String
+}
+
+input SftSoftwareUpdateProjectFirmwareInput {
+  fileId: String!
+  id: ID!
+}
+
+input SftSoftwareUpdateProjectInput {
+  folderId: String
+  id: ID!
+  name: String
+  url: String
+}
+
+input SftSoftwareUpdateProjectPropertiesInput {
+  customProperties: [SftSoftwareProjectCustomPropertyInput!]!
+  id: ID!
+}
+
+"**Experimental** Controls how device models are evaluated with respect to devices and boards, including preferred and fallback behaviors."
+enum DmModelEvaluationStrategy @experimental {
+  "**Experimental** Evaluate only devices. Boards are not considered."
+  DEVICES_ONLY
+  "**Experimental** Evaluate devices, preferring configurations that are compatible with the specified board when possible (soft preference, not a hard constraint)."
+  DEVICES_PREFER_BOARD_COMPATIBLE
+}
+
+"**Experimental**"
+enum ParamSource @experimental {
+  "**Experimental**"
+  IDENT_RESULT
+  "**Experimental**"
+  USER_ENTERED
+}
+
+enum SftSimSimulationRepositoryType {
+  EXTERNAL
+  INTERNAL
+}
+
+enum SftSimSimulationType {
+  MATLAB
+  UNKNOWN
+}
+
+enum SftSoftwareRepositoryType {
+  EXTERNAL
+  INTERNAL
+}
+
+"**Experimental**"
+enum TriggerEdge @experimental {
+  "**Experimental**"
+  BOTH
+  "**Experimental**"
+  FALL
+  "**Experimental**"
+  RISE
+}
+
+"**Experimental**"
+enum TriggerMode @experimental {
+  "**Experimental**"
+  AUTO
+  "**Experimental**"
+  NORMAL
+  "**Experimental**"
+  SINGLE
+}
+
+"**Experimental**"
+enum TuningModuleType @experimental {
+  "**Experimental**"
+  BRUSHLESS_THREE_PHASE_MOTOR
+  "**Experimental**"
+  MOTOR
+  "**Experimental**"
+  PI_CURRENT_CONTROLLER
+  "**Experimental**"
+  PI_SPEED_CONTROLLER
+  "**Experimental**"
+  THREE_PHASE_INVERTER
+}
+
+"**Experimental**"
+enum TuningType @experimental {
+  "**Experimental**"
+  FOC3_PHASE_SENSORED
+  "**Experimental**"
+  FOC3_PHASE_SENSORLESS
+}

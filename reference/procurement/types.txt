@@ -1,0 +1,65 @@
+# Procurement — types
+> Types of the Procurement bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/llms.txt).
+
+- [BomChangeBomReleaseLifecycleStatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-change-bom-release-lifecycle-state-payload.md)
+- [BomComponentReference](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-component-reference.md): A reference to a component.
+- [BomCountry](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-country.md): Information about a country.
+- [BomCreateBomPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-create-bom-payload.md)
+- [BomCurrency](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-currency.md): Information about a currency.
+- [BomDesignReleaseSource](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-design-release-source.md): Describes the source design release used to create the current BOM.
+- [BomDesignRevisionSource](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-design-revision-source.md): Describes the source design revision used to create the current BOM.
+- [BomDesignSource](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-design-source.md): Describes the source design used to create the current BOM.
+- [BomExportBomPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-export-bom-payload.md)
+- [BomExportBomReleasePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-export-bom-release-payload.md)
+- [BomFileSource](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-file-source.md): Describes the source file used to create the current BOM.
+- [BomHealthCheck](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check.md): Health check description.
+- [BomHealthCheckCategory](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check-category.md): Information about the health check category (e.g., *Supply Chain*, *Manufacturer Lifecycles*).
+- [BomHealthCheckProvider](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check-provider.md): Information about the health check provider.
+- [BomInputValidationError](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-input-validation-error.md): Describes a problem with the provided input (validation error).
+- [BomItemElementAttribute](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-element-attribute.md): Describes a BOM item element's attribute.
+- [BomItemElementAttributeFloatValue](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-element-attribute-float-value.md): Floating-point value of a BOM element attribute.
+- [BomItemElementAttributeIntegerValue](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-element-attribute-integer-value.md): Integer value of a BOM element attribute.
+- [BomItemElementAttributeMoneyValue](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-element-attribute-money-value.md): Money value of a BOM element attribute.
+- [BomItemElementAttributePercentValue](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-element-attribute-percent-value.md): Percent value of a BOM element attribute.
+- [BomItemElementAttributeStringValue](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-element-attribute-string-value.md): String value of a BOM element attribute.
+- [BomOctopartOfferReference](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-octopart-offer-reference.md): A reference to an offer in Octopart.
+- [BomOctopartPartReference](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-octopart-part-reference.md): A reference to a part in Octopart.
+- [BomPartCatalogOfferReference](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-part-catalog-offer-reference.md): A reference to an offer in Part Catalog.
+- [BomPartCatalogPartReference](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-part-catalog-part-reference.md): A reference to a part in Part Catalog.
+- [BomPayloadError](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-payload-error.md): Describes an error occurred while executing a mutation.
+- [BomProduction](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-production.md): Production-related settings of a BOM (e.g., a 'production quantity' or a 'due date').
+- [BomProjectReleaseSource](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-project-release-source.md): Describes the source project release used to create the current BOM.
+- [BomReleaseSource](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release-source.md): Describes the source BOM release used to create the current BOM.
+- [BomSelectedElementOffer](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-selected-element-offer.md): Selected element offer.
+- [BomSelectedElementOfferItem](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-selected-element-offer-item.md): Selected element offer's item.
+- [BomSettings](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-settings.md): Settings of the BOM.
+- [BomSnapshotSource](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-snapshot-source.md): Describes the source BOM snapshot used to create the current BOM.
+- [Bom](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom.md): Represents a shared part of work-in-progress BOMs and releases of BOMs.
+- [BomError](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-error.md): A common interface for all errors that might occur in mutations.
+- [BomItemElementAttributeValue](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element-attribute-value.md): Base type of a BOM element attribute value.
+- [BomSource](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-source.md): Describes the source used to create the current BOM (e.g., a file, a design, or other BOM).
+- [BomOfferReference](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/unions/bom-offer-reference.md): A reference to an offer.
+- [BomPartReference](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/unions/bom-part-reference.md): A reference to a part.
+- [BomChangeBomReleaseLifecycleStateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-change-bom-release-lifecycle-state-input.md)
+- [BomCreateBomInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-input.md)
+- [BomCreateBomItemElementAttributeDeclarationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-element-attribute-declaration-input.md): Describes a BOM item element's attribute.
+- [BomCreateBomItemElementAttributeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-element-attribute-input.md): BOM item element attribute.
+- [BomCreateBomItemElementAttributeValueInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-element-attribute-value-input.md): BOM item element attribute's value.
+- [BomCreateBomItemElementInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-element-input.md): An element (part) that might be used for a particular BOM item.
+- [BomCreateBomItemInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-input.md): BOM items are the components of a product.
+- [BomCreateBomOfferReferenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-offer-reference-input.md): Describes an offer selected for an element.
+- [BomCreateBomPackagingPrioritiesSettingsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-packaging-priorities-settings-input.md): Specifies priorities of different packaging types.
+- [BomCreateBomPartReferenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-part-reference-input.md): Describes a part associated with an element.
+- [BomCreateBomProductionSettingsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-production-settings-input.md): Production-related settings of a BOM (e.g., a 'production quantity' or a 'due date').
+- [BomCreateBomSupplierReferenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-supplier-reference-input.md): Describes a supplier used in a BOM.
+- [BomExportBomByIdInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-export-bom-by-id-input.md)
+- [BomExportBomInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-export-bom-input.md)
+- [BomExportBomReleaseInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-export-bom-release-input.md)
+- [BomOctopartOfferReferenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-offer-reference-input.md): A reference to an offer in Octopart.
+- [BomOctopartPartReferenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-part-reference-input.md): A reference to a part in Octopart.
+- [BomOctopartSupplierReferenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-supplier-reference-input.md): A reference to a supplier in Octopart.
+- [BomRawPartReferenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-raw-part-reference-input.md): A raw part descriptor (MPN + Manufacturer).
+- [BomHealthCheckSeverity](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-health-check-severity.md)
+- [BomIssueSeverity](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-issue-severity.md)
+- [BomItemElementCustomAttributeType](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-item-element-custom-attribute-type.md)
+- [BomPackagingType](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-packaging-type.md)

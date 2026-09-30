@@ -1,0 +1,595 @@
+# Altium Platform API — Collaboration schema slice (~4391 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesPayloadError → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesRectangle → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesRectangleInput → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesUser → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   Node → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   RequirementFilterInput → Requirements: https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/schema.graphql
+
+type Query {
+  "Search annotations within a project with results in paged groups."
+  desAnnotations(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    projectId: String!
+    where: RequirementFilterInput
+  ): DesAnnotationsConnection
+  "Search for a specific comment thread associated with a project."
+  desCommentThread(
+    "The project identifier (`DesProject.id`)."
+    projectId: ID!
+    "The reference identifier for a comment thread."
+    threadId: String!
+  ): DesCommentThread
+  "Search for comment threads associated with a project."
+  desCommentThreads(
+    "The project identifier (`DesProject.id`)."
+    projectId: ID!
+  ): [DesCommentThread!]!
+  "The list of project tasks."
+  desProjectTasks(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "The identifier for a specific project."
+    projectId: ID!
+  ): DesTaskConnection
+  "The list of workspace tasks."
+  desWorkspaceTasks(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    "The URL of the workspace to get tasks from."
+    workspaceUrl: String
+  ): DesTaskConnection
+}
+
+type Mutation {
+  "Creates a new comment."
+  desCreateComment(input: DesCreateCommentInput!): DesCreateCommentPayload!
+  "Creates a new comment thread."
+  desCreateCommentThread(input: DesCreateCommentThreadInput!): DesCreateCommentThreadPayload!
+  "Creates a project task. A task is a job activity in Altium 365."
+  desCreateProjectTask(input: DesCreateProjectTaskInput!): DesCreateTaskPayload!
+  "Creates a new comment for the specified task."
+  desCreateTaskComment(input: DesCreateTaskCommentInput!): DesCreateTaskCommentPayload!
+  "Creates a workspace task. A task is a job activity in Altium 365."
+  desCreateWorkspaceTask(input: DesCreateWorkspaceTaskInput!): DesCreateTaskPayload!
+  "Permanently deletes the specified comment."
+  desDeleteComment(input: DesDeleteCommentInput!): DesDeleteCommentPayload!
+  "Permanently deletes a comment thread."
+  desDeleteCommentThread(input: DesDeleteCommentThreadInput!): DesDeleteCommentThreadPayload!
+  "Deletes the task specified by its node identifier."
+  desDeleteTask(input: DesDeleteTaskInput!): DesDeleteTaskPayload!
+  "Deletes the specified task comment."
+  desDeleteTaskComment(input: DesDeleteTaskCommentInput!): DesDeleteTaskCommentPayload!
+  "Updates the specified comment."
+  desUpdateComment(input: DesUpdateCommentInput!): DesUpdateCommentPayload!
+  "Updates an existing comment thread."
+  desUpdateCommentThread(input: DesUpdateCommentThreadInput!): DesUpdateCommentThreadPayload!
+  "Updates the specified task."
+  desUpdateTask(input: DesUpdateTaskInput!): DesUpdateTaskPayload!
+  "Updates the specified task comment."
+  desUpdateTaskComment(input: DesUpdateTaskCommentInput!): DesUpdateTaskCommentPayload!
+}
+
+type Subscription {
+  "Called on subscription events."
+  desOnCommentUpdated(input: DesOnCommentUpdatedInput!): DesCommentNotification!
+}
+
+"Annotation is like a sticky note you can place in the design, attaching it to design entities (e.g. schematic document, BOM line, design review, etc.). Annotation is a high-level concept that represents different facets of collaboration on the platform - comment threads, tasks to be completed, links or references to other related entities."
+type DesAnnotation {
+  "Bindings define the 'location' of the annotation, its 'address' in context of the design."
+  bindings: [DesAnnotationBinding!]!
+  createdAt: DateTime
+  createdBy: DesAnnotationUser
+  id: String!
+  "Requirements, associated with the annotation."
+  requirements: DesAnnotationRequirements
+  updatedAt: DateTime
+  updatedBy: DesAnnotationUser
+  "Deep link to the annotation - can be used to navigate to the annotation in the context of its placement."
+  url: String
+}
+
+type DesAnnotationDesignReviewBinding {
+  designReviewId: String!
+}
+
+type DesAnnotationDocumentBinding {
+  "Name of the document where the annotation is placed."
+  documentName: String!
+  "Type of the document where the annotation is placed."
+  documentType: String!
+}
+
+type DesAnnotationManagedBomRowBinding {
+  rowId: String!
+}
+
+type DesAnnotationReleaseBinding {
+  releaseId: String!
+}
+
+type DesAnnotationRequirementBinding {
+  requirementId: String!
+}
+
+type DesAnnotationRequirements {
+  id: String!
+}
+
+type DesAnnotationRevisionBinding {
+  commitHash: String!
+}
+
+type DesAnnotationUser {
+  displayName: String!
+}
+
+"A connection to a list of items."
+type DesAnnotationsConnection {
+  "A list of edges."
+  edges: [DesAnnotationsEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesAnnotation!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+}
+
+"An edge in a connection."
+type DesAnnotationsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesAnnotation!
+}
+
+"A comment is one of remarks associated with a comment thread or task."
+type DesComment {
+  "The comment reference identifier."
+  commentId: String!
+  "The creation date."
+  createdAt: DateTime!
+  "The user who created the comment."
+  createdBy: DesUser!
+  "The users mentioned by this comment."
+  mentions: [DesMention!]!
+  "The last modification date."
+  modifiedAt: DateTime!
+  "The user who modified the comment."
+  modifiedBy: DesUser!
+  "The comment text."
+  text: String!
+}
+
+"A comment context provides additional information about associations for a comment thread."
+type DesCommentContext {
+  "The area associated with a comment thread."
+  area: DesRectangle!
+  "The reference identifier for the document associated with a comment thread."
+  documentId: String
+  "The reference identifier for an object associated with a comment thread."
+  objectId: String
+  "The release identifier associated with a comment thread."
+  releaseId: String
+}
+
+"Notification for comment."
+type DesCommentNotification {
+  "Comment notification action."
+  action: String!
+  "Comment notification data."
+  data: DesCommentNotificationData!
+}
+
+"Information contained in comment notification data."
+type DesCommentNotificationData {
+  "Comment author."
+  commentAuthor: String
+  "Comment date."
+  commentDate: String!
+  "Comment identifier."
+  commentId: String!
+  "Comment text."
+  commentText: String
+  "Comment thread identifier."
+  commentThreadId: String!
+  "Comment notification document identifier."
+  documentId: String
+  "Comment notification document name."
+  documentName: String
+  "Comment notification project identifier."
+  projectId: String!
+  "Comment thread data."
+  threadData: String
+  "Comment thread date."
+  threadDate: String!
+  "Comment thread status."
+  threadStatus: String
+}
+
+"A comment thread contains an initial remark associated with the design and a collection of replies."
+type DesCommentThread {
+  "The account information for the owner of any action or response to this comment thread."
+  assignedTo: DesUser
+  "The list of replies associated with this comment thread."
+  comments: [DesComment!]!
+  "The reference identifier for this comment thread (used by `desCreateComment`, `desDeleteComment`, `desUpdateComment`)."
+  commentThreadId: String!
+  "The information about properties related to this comment thread."
+  context: DesCommentContext!
+  "The `DateTime` for the creation of this comment thread."
+  createdAt: DateTime!
+  "The account information for who created this comment thread."
+  createdBy: DesUser!
+  "The `DateTime` for the most recent modification of this comment thread."
+  modifiedAt: DateTime!
+  "The account information for who most recently modified this comment thread."
+  modifiedBy: DesUser!
+  "The web address to download the screenshot associated with the creation of this comment thread."
+  originalStateScreenshotUrl: String
+  "Comment thread status. 0 = *Resolved*, 1 = *Active*."
+  status: Int!
+  "The sequence number of this comment thread."
+  threadNumber: Int!
+}
+
+"Payload associated with creating a comment."
+type DesCreateCommentPayload {
+  "Comment identifier."
+  commentId: String!
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with creating a comment thread."
+type DesCreateCommentThreadPayload {
+  "Comment identifier."
+  commentId: String!
+  "Comment thread identifier."
+  commentThreadId: String!
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with creating a task comment."
+type DesCreateTaskCommentPayload {
+  "Task comment."
+  comment: DesComment
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with creating a task."
+type DesCreateTaskPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "The created task."
+  task: DesTask!
+}
+
+"Payload associated with deleting a comment."
+type DesDeleteCommentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with deleting a comment thread."
+type DesDeleteCommentThreadPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with deleting a task comment."
+type DesDeleteTaskCommentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with deleting a task."
+type DesDeleteTaskPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"A reference to a user in a comment."
+type DesMention {
+  "The mentioned user."
+  user: DesUser!
+}
+
+"Task activities in Altium 365 workspace for workspace members."
+type DesTask implements Node {
+  "The assigned user."
+  assignee: DesUser!
+  "The list of task comments."
+  comments: [DesComment!]!
+  "The creation date."
+  createdAt: DateTime!
+  "The user who created the task."
+  createdBy: DesUser!
+  "The task description."
+  description: String!
+  "The node identifier."
+  id: ID!
+  "The last modification date."
+  modifiedAt: DateTime!
+  "The user who modified the task."
+  modifiedBy: DesUser!
+  "The task name."
+  name: String!
+  "The task priority."
+  priority: DesTaskPriority!
+  "The task identifier shown in Altium 365."
+  refId: String!
+  "The task status."
+  status: DesTaskStatus!
+}
+
+"A connection to a list of items."
+type DesTaskConnection {
+  "A list of edges."
+  edges: [DesTaskEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesTask!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesTaskEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesTask!
+}
+
+"Payload associated with updating a comment."
+type DesUpdateCommentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a comment thread."
+type DesUpdateCommentThreadPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a task comment."
+type DesUpdateTaskCommentPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a task."
+type DesUpdateTaskPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"There may be multiple bindings associated with annotation instance. Together the bindings provide detailed information about the context of the annotation placement and associated design entities."
+union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
+
+"Input for comment creation."
+input DesCreateCommentInput {
+  "Comment thread identifier."
+  commentThreadId: String!
+  "Comment entity identifier."
+  entityId: ID!
+  "Comment text."
+  text: String!
+}
+
+"Input for comment thread creation."
+input DesCreateCommentThreadInput {
+  "Comment thread area."
+  area: DesRectangleInput
+  "Comment thread comment context type."
+  commentContextType: DesCommentContextType!
+  "Comment thread document identifier."
+  documentId: String!
+  "Comment thread document name."
+  documentName: String
+  "Comment thread document type."
+  documentType: DesDocumentType!
+  "Comment thread entity identifier."
+  entityId: ID!
+  "Comment thread item as design item PCB reference identifier."
+  itemAsDesignItemPcbUniqueId: String
+  "Comment thread item as design item schematic reference identifier."
+  itemAsDesignItemSchUniqueId: String
+  "Comment thread item as internal object identifier."
+  itemAsInternalObjectId: String
+  "Comment thread release identifier."
+  releaseId: String
+  "Comment thread text."
+  text: String!
+}
+
+"Input for project task creation."
+input DesCreateProjectTaskInput {
+  "Project identifier."
+  projectId: ID!
+  "The new task data."
+  task: DesCreateTaskInput!
+}
+
+"Input for task comment creation."
+input DesCreateTaskCommentInput {
+  "The task node identifier."
+  taskId: ID!
+  "The comment text."
+  text: String!
+}
+
+"Input for task creation."
+input DesCreateTaskInput {
+  "New task description."
+  description: String!
+  "New task name."
+  name: String!
+  "Optional task priority."
+  priority: DesTaskPriority
+  "Optional task status."
+  status: DesTaskStatus
+}
+
+"Input for workspace task creation."
+input DesCreateWorkspaceTaskInput {
+  "The new task data."
+  task: DesCreateTaskInput!
+  "The workspace URL."
+  workspaceUrl: String
+}
+
+"Input for deleting a comment."
+input DesDeleteCommentInput {
+  "Comment identifier."
+  commentId: String!
+  "Comment thread identifier."
+  commentThreadId: String!
+  "Entity identifier."
+  entityId: ID!
+}
+
+"Input for deleting a comment thread."
+input DesDeleteCommentThreadInput {
+  "Comment thread identifier."
+  commentThreadId: String!
+  "Entity identifier."
+  entityId: ID!
+}
+
+"Input for deleting a task comment."
+input DesDeleteTaskCommentInput {
+  "The comment identifier."
+  commentId: String!
+  "The task node identifier."
+  taskId: ID!
+}
+
+"Input for deleting a task."
+input DesDeleteTaskInput {
+  "The task node identifier."
+  taskId: ID!
+}
+
+"Input for subscribing to comment update notifications."
+input DesOnCommentUpdatedInput {
+  "Access token for authorization."
+  token: String!
+  "Workspace URL."
+  workspaceUrl: String
+}
+
+"Input for updating comment."
+input DesUpdateCommentInput {
+  "Identifier for comment."
+  commentId: String!
+  "Identifier for comment thread."
+  commentThreadId: String!
+  "Entity identifier for updating a comment."
+  entityId: ID!
+  "Comment text."
+  text: String!
+}
+
+"Input for updating a comment thread."
+input DesUpdateCommentThreadInput {
+  "Comment thread identifier."
+  commentThreadId: String!
+  "Entity identifier."
+  entityId: ID!
+  "Comment thread status."
+  status: DesCommentThreadStatus!
+}
+
+"Input for updating a task comment."
+input DesUpdateTaskCommentInput {
+  "The comment identifier."
+  commentId: String!
+  "The task node identifier."
+  taskId: ID!
+  "New comment text."
+  text: String!
+}
+
+"Input for updating a task."
+input DesUpdateTaskInput {
+  "The identifier of the user to assign this task to. If omitted or set to `null`, the assignee will not be updated."
+  assigneeId: String
+  "New task description or null to keep old."
+  description: String
+  "New task name or null to keep old."
+  name: String
+  "New task priority or null to keep old."
+  priority: DesTaskPriority
+  "New task status or null to keep old."
+  status: DesTaskStatus
+  "The task node identifier."
+  taskId: ID!
+}
+
+"The comment context type."
+enum DesCommentContextType {
+  AREA
+  COMPONENT
+  NONE
+  TRACK
+  VIA
+}
+
+"Specifies a comment thread status."
+enum DesCommentThreadStatus {
+  ACTIVE
+  RESOLVED
+}
+
+"The document type."
+enum DesDocumentType {
+  PCB
+  SCHEMATIC
+}
+
+"Priority levels for a task."
+enum DesTaskPriority {
+  HIGH
+  HIGHEST
+  LOW
+  MEDIUM
+  UNDEFINED
+}
+
+"Status values for a task."
+enum DesTaskStatus {
+  IN_PROGRESS
+  RESOLVED
+  TO_DO
+  UNDEFINED
+}

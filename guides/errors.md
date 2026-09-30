@@ -1,0 +1,84 @@
+---
+title: "Errors"
+url: "https://altiumdeveloper.github.io/platform-api-docs/guides/errors"
+bounded_context: "none"
+kind: "guide"
+experimental: false
+deprecated: false
+---
+
+# Errors
+
+The API reports errors in the standard GraphQL way, plus typed errors in mutation payloads.
+
+## The errors array
+
+The result of an operation is returned in `data`. If something goes wrong, the response also has a top-level `errors` array next to `data`; `errors` is present only when there is at least one error. A response can contain both: the fields that could be resolved are returned in `data`, the ones that failed are `null` and described in `errors`.
+
+For example, a request for the authenticated user and a workspace the user cannot access:
+
+```json
+{
+  "data": {
+    "desUserByAuth": { "name": "Jane Doe" },
+    "desWorkspaceByUrl": null
+  },
+  "errors": [
+    {
+      "message": "The workspace cannot be accessed.",
+      "path": ["desWorkspaceByUrl"],
+      "extensions": { "code": "AUTH_WORKSPACE_ACCESS" }
+    }
+  ]
+}
+```
+
+Each error has a human-readable `message` and, where applicable, `locations` and `path`. Its `extensions` object may contain:
+
+- `code` — a stable, machine-readable code; branch on this, not on `message`;
+- `severity` — `Error`, `Warning` or `Information`;
+- `statusCode` — the HTTP status class of the failure;
+- identifiers of the affected objects and other details.
+
+## Shared error codes
+
+| Code | Meaning |
+| - | - |
+| `AUTH_INVALID_TOKEN` | The access token could not be validated. |
+| `AUTH_EXPIRED_TOKEN` | The access token has expired: obtain a new one. |
+| `AUTH_WORKSPACE_ACCESS` | The workspace cannot be accessed — for example it does not exist or is hosted in a different region. |
+| `AUTH_NOT_AUTHENTICATED` | The request is not authenticated. |
+| `LIMIT_EXCEEDED` | Too many requests from the user, tenant or application: retry later. |
+
+Some older operations return the same codes in PascalCase (for example `AuthExpiredToken`); treat both spellings alike.
+
+## Mutation payload errors
+
+Mutations that follow the input/payload convention (see [Naming conventions](https://altiumdeveloper.github.io/platform-api-docs/guides/naming-conventions.md)) return a payload with the result and an `errors` list. Its items are types that implement the [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface (`message: String!`), so you can select the message of any error generically and use `__typename` to tell the error types apart:
+
+```graphql
+mutation CreateToken($input: PlatformWorkspaceTokenCreateInput!) {
+  platformWorkspaceTokenCreate(input: $input) {
+    redirectUrl
+    errors {
+      __typename
+      ... on Error {
+        message
+      }
+    }
+  }
+}
+```
+
+Here `__typename` is, for example, `PlatformTokenQuotaExceededError` when the workspace has reached its maximum number of active tokens. The error union of the payload — here [`PlatformWorkspaceTokenCreateError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-token-create-error.md) — lists every error type the mutation can return; add an inline fragment for a specific type to select its own fields.
+
+Some older mutations use their own error types instead of the `Error` interface; check the payload's reference page.
+
+## HTTP status codes
+
+| Status | When |
+| - | - |
+| `200` | The operation started executing — even if the response contains `errors`. |
+| `401` | Authentication failed. |
+| `403` / `404` | You do not have permission to access the resource (a `404` may hide its existence). |
+| `500` | The operation could not be executed at all. |

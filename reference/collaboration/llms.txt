@@ -1,0 +1,39 @@
+# Collaboration — Altium Platform API
+> Comments, comment threads, mentions, annotations and tasks.
+
+Concepts: [collaboration](https://altiumdeveloper.github.io/cdm/subsets/collaboration/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/schema.graphql) (~4391 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/overview.md).
+
+## Entities
+- [DesComment](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md): Comment. Via: DesCommentThread.comments, DesTask.comments
+- [DesCommentThread](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread.md): Comment Thread — Comment Thread represents a structured discussion linked to a specific design object, document, or workspace item, capturing feedback, decisions, and context directly within the collaborative design… GRID `grid:workspace:{workspace-id}:collaboration:comment-thread/{id}`. Via: desCommentThread, desCommentThreads, DesDesignItem.commentThreads, DesPcb.commentThreads, DesSchematic.commentThreads
+- [DesTask](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-task.md): Task — Task represents a discrete unit of work assigned to a user or team within the design workflow, used to track progress, responsibility, and completion status for design, review, or management activiti… GRID `grid:workspace:{workspace-id}:collaboration:task/{id}`. Via: desProjectTasks, desWorkspaceTasks, DesProject.tasks, DesWorkspace.tasks
+
+## Entry points
+- [desCommentThreads](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/queries/des-comment-threads.md) (list): Search for comment threads associated with a project.
+- [desProjectTasks](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/queries/des-project-tasks.md) (list): The list of project tasks.
+- [desWorkspaceTasks](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/queries/des-workspace-tasks.md) (list): The list of workspace tasks.
+
+## Queries
+- [desAnnotations](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/queries/des-annotations.md): Search annotations within a project with results in paged groups.
+- [desCommentThread](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/queries/des-comment-thread.md): Search for a specific comment thread associated with a project.
+
+## Mutations
+- [desCreateComment](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-create-comment.md): Creates a new comment.
+- [desCreateCommentThread](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-create-comment-thread.md): Creates a new comment thread.
+- [desCreateProjectTask](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-create-project-task.md): Creates a project task.
+- [desCreateTaskComment](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-create-task-comment.md): Creates a new comment for the specified task.
+- [desCreateWorkspaceTask](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-create-workspace-task.md): Creates a workspace task.
+- [desDeleteComment](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-delete-comment.md): Permanently deletes the specified comment.
+- [desDeleteCommentThread](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-delete-comment-thread.md): Permanently deletes a comment thread.
+- [desDeleteTask](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-delete-task.md): Deletes the task specified by its node identifier.
+- [desDeleteTaskComment](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-delete-task-comment.md): Deletes the specified task comment.
+- [desUpdateComment](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-update-comment.md): Updates the specified comment.
+- [desUpdateCommentThread](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-update-comment-thread.md): Updates an existing comment thread.
+- [desUpdateTask](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-update-task.md): Updates the specified task.
+- [desUpdateTaskComment](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-update-task-comment.md): Updates the specified task comment.
+
+## Subscriptions
+- [desOnCommentUpdated](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/subscriptions/des-on-comment-updated.md): Called on subscription events.
+
+## Optional
+- [All types in Collaboration](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types.txt): one line per type (~2197 tokens)

@@ -1,0 +1,56 @@
+# Design — Altium Platform API
+> Hardware projects, design data, rule checks, comparisons and project releases.
+
+Concepts: [design](https://altiumdeveloper.github.io/cdm/subsets/design/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql) (~30731 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/overview.md).
+
+## Entities
+- [DesProject](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md): Hardware Project. GRID `grid:workspace:{workspace-id}:design:project/{id}`; Harness Project — Harness Project defines the design of a cable and wiring harness as a standalone yet integrable artifact, capturing connectors, wires, splices, and pin-to-pin mappings required to implement electrica…; Multiboard Project — Multiboard Project represents the coordinated design of multiple interconnected PCB projects assembled into a single system, capturing both their logical interconnects and physical arrangements. Via: desProjectById, desProjectsByIds, desProjects, DesSharedWithMeProjectInfo.project, DesWorkspace.projects, …
+- [DesProjectParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-parameter.md): Project Parameter. Via: DesProject.parameters
+- [DesRelease](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release.md): Hardware Project Release — Project Release captures an immutable snapshot of a PCB design project at a specific point in its lifecycle, packaging all design data, outputs, and metadata required for manufacturing, assembly, and… GRID `grid:workspace:{workspace-id}:design:project-release/{id}`. Via: desReleaseById, DesDesign.releases
+- [DesWipVariant](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md): Hardware Project Variant. Via: desWipVariantByVariantName, DesDesign.variants, DesWorkInProgress.variants
+- [RuleCheckExecution_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-preview.md): Rule Check Execution — Execution of a rule check against a project to validate design integrity and compliance with specified constraints. GRID `grid:workspace:{workspace-id}:design:rule-check-execution/{id}`. Via: RuleCheckAggregateExecution_Preview.executions
+
+## Entry points
+- [design.ruleCheck.byId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check/by-id.md): Retrieves a rule check by its identifier. [EXPERIMENTAL]
+- [design.ruleCheck.byIds](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check/by-ids.md): Retrieves rule checks by their identifiers. [EXPERIMENTAL]
+- [design.ruleCheckExecution.byId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-id.md): Retrieves a rule check execution by its identifier. [EXPERIMENTAL]
+- [design.ruleCheckExecution.byIds](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-ids.md): Retrieves multiple rule check executions by their identifiers. [EXPERIMENTAL]
+- [desProjectById](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-by-id.md): Searches a project by its identifier.
+- [desProjectsByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-projects-by-ids.md): Searches projects by their identifiers.
+- [desReleaseById](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-release-by-id.md): Searches a release by its identifier.
+- [desProjects](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-projects.md) (list): Search projects within a workspace with results in paged groups.
+
+## Queries
+- [design.latestGeneration.byDesignId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/latest-generation/by-design-id.md): Retrieves the design data generation. [EXPERIMENTAL]
+- [design.latestGeneration.byUploadId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/latest-generation/by-upload-id.md): Retrieves the design data generation for the upload. [EXPERIMENTAL]
+- [design.ruleCheck.byAuth](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check/by-auth.md): Retrieves all rule checks contained in the workspace. [EXPERIMENTAL]
+- [design.ruleCheck.configuration](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check/configuration.md): Retrieves current rule check configuration. [EXPERIMENTAL]
+- [design.ruleCheckExecution.byDesignId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id.md): Retrieves all rule check executions for a design's revision. [EXPERIMENTAL]
+- [design.ruleCheckExecution.byDesignIdAggregated](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id-aggregated.md): Retrieves the aggregated rule check results for a design. [EXPERIMENTAL]
+- [design.ruleCheckExecution.byDesignIdCombinedErc](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id-combined-erc.md): Retrieves combined custom and default ERC results for a design. [EXPERIMENTAL]
+- [design.ruleCheckExecution.byReleaseId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-release-id.md): Retrieves all rule check executions for a design's revision. [EXPERIMENTAL]
+- [design.ruleCheckExecution.byReleaseIdAggregated](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-release-id-aggregated.md): Retrieves the aggregated rule check results for a design. [EXPERIMENTAL]
+- [desProjectCollaborationLatestRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-collaboration-latest-revision.md): The project latest ECAD, MCAD or ESD revision.
+- [desProjectCollaborationRevisions](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-collaboration-revisions.md): The project ECAD, MCAD or ESD revisions returned by pages.
+- [desProjectCollaborationSimulationLatestRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-collaboration-simulation-latest-revision.md): *PROTOTYPE, SUBJECT TO CHANGE*
+- [desProjectCollaborationSimulationRevisions](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-collaboration-simulation-revisions.md): *PROTOTYPE, SUBJECT TO CHANGE*
+- [desProjectIdFromAfsId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-id-from-afs-id.md): Gets the project identifier from its internal identifier.
+- [desReleaseVariantByVariantName](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-release-variant-by-variant-name.md): Searches a project release variant by its name.
+- [desSharedWithMe](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-shared-with-me.md): Gets items shared with me.
+- [desWipVariantByVariantName](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-wip-variant-by-variant-name.md): Searches a project WIP variant by its name.
+
+## Mutations
+- [desCompareReleases](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/des-compare-releases.md): Runs schematic, PCB, or BOM comparisons between two project releases.
+- [designRegisterUpload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/design-register-upload.md): Registers an uploaded file as a design upload. [EXPERIMENTAL]
+- [designRuleCheckExecute](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/design-rule-check-execute.md): Executes rule checks for the specified design and returns the resulting rule check execution. [EXPERIMENTAL]
+- [designRuleCheckExecuteOnUpload](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/design-rule-check-execute-on-upload.md): Executes rule checks for the specified upload and returns the resulting rule check execution. [EXPERIMENTAL]
+- [desSetProjectRequirementsBlock](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/des-set-project-requirements-block.md): Link/unlink A365 project with requirements block component.
+- [desUpdateProjectOwner](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/des-update-project-owner.md): Updates the owner for the associated project.
+- [desUpdateProjectParameters](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/des-update-project-parameters.md): Updates parameters for the specified project (does not affect the revision).
+- [desUpdateProjectPermissions](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/des-update-project-permissions.md): Updates the permissions for the associated project.
+- [desUploadCollaboration](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/des-upload-collaboration.md): Uploads the specified collaboration.
+- [desUploadCollaborationSimulation](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/des-upload-collaboration-simulation.md): *PROTOTYPE, SUBJECT TO CHANGE*
+- [desUploadProject](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/mutations/des-upload-project.md): Uploads the project zip file.
+
+## Optional
+- [All types in Design](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types.txt): one line per type (~9809 tokens)

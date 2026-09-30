@@ -1,0 +1,88 @@
+# Customization — types
+> Types of the Customization bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/llms.txt).
+
+- [DesLaunchWorkflowPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-launch-workflow-payload.md): Payload associated with launching a workflow.
+- [DesTerminateWorkflowsError](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-terminate-workflows-error.md): Error associated with terminating workflows.
+- [DesTerminateWorkflowsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-terminate-workflows-payload.md): Payload associated with terminating a workflow.
+- [DesWorkflow](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow.md): A workflow manages the execution of a logical sequence of tasks.
+- [DesWorkflowVariable](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-variable.md): A variable belonging to the workflow.
+- [GloCusAddAssignmentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-add-assignment-payload.md): Represents output value for extension point assignment creation.
+- [GloCusAssignmentConfigurationParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-assignment-configuration-parameter.md)
+- [GloCusAssignmentExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-assignment-execution.md): Dispatch result for a single assignment started by an extension point execution.
+- [GloCusAssignmentParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-assignment-parameter.md): Parameter for the assignment.
+- [GloCusDefaultAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-default-assignment.md)
+- [GloCusDeleteAssignmentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-delete-assignment-payload.md): Represents output value for assignment deletion.
+- [GloCusExecuteAssignmentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-execute-assignment-payload.md): Represents output value for assignment execution.
+- [GloCusExecuteExtensionPointPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-execute-extension-point-payload.md): Represents output value for extension point execution.
+- [GloCusExtensionPoint](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-extension-point.md)
+- [GloCusExtensionPointParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-extension-point-parameter.md)
+- [GloCusJsonArrayOfAssignmentConfigurationParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-json-array-of-assignment-configuration-parameter.md)
+- [GloCusPredefinedValue](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-predefined-value.md)
+- [GloCusScriptAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-assignment.md)
+- [GloCusScriptExecutionInfo](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-info.md)
+- [GloCusScriptExecutionLogPage](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-log-page.md)
+- [GloCusScriptExecutionOutput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-output.md)
+- [GloCusScriptExecutionResult](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-result.md)
+- [GloCusUpdateAssignmentConfigurationsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-update-assignment-configurations-payload.md)
+- [GloCusUpdateAssignmentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-update-assignment-payload.md): Represents output value for updating extension point assignment.
+- [GloCusWorkflowAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-workflow-assignment.md)
+- [GloScrCreateScriptPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-create-script-payload.md)
+- [GloScrCreateSecretPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-create-secret-payload.md)
+- [GloScrDeleteScriptPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-delete-script-payload.md)
+- [GloScrDeleteSecretPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-delete-secret-payload.md)
+- [GloScrExecuteScriptPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-execute-script-payload.md)
+- [GloScrRenameScriptPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-rename-script-payload.md)
+- [GloScrScriptExecutionLogPage](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution-log-page.md): Represents a page of execution logs.
+- [GloScrScriptExecutionResult](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution-result.md): Represents the result of a script execution.
+- [GloScrScriptOutput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-output.md): Represents an output value from a script execution.
+- [GloScrScriptPackage](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-package.md): Details of a script package including download information.
+- [GloScrScriptSecret](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-secret.md)
+- [GloScrSecret](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-secret.md)
+- [GloScrSetScriptSecretsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-set-script-secrets-payload.md)
+- [GloScrUpdateScriptPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-update-script-payload.md)
+- [GloCusAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/interfaces/glo-cus-assignment.md)
+- [DesLaunchWorkflowInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-launch-workflow-input.md): Input for launching a workflow.
+- [DesTerminateWorkflowsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-terminate-workflows-input.md): Input for terminating workflows.
+- [DesWorkflowAttachmentVariableInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-attachment-variable-input.md): An attachment-valued variable associated with a workflow.
+- [DesWorkflowDefinitionFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-definition-filter-input.md): A workflow definition contains a logical sequence of tasks.
+- [DesWorkflowFilterByVariableInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-filter-by-variable-input.md): Filter workflows by a variable.
+- [DesWorkflowFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-filter-input.md): A workflow manages the execution of a logical sequence of tasks.
+- [DesWorkflowVariableInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-variable-input.md): A variable belonging to the workflow.
+- [GloCusAddAssignmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-add-assignment-input.md): Represents input value for extension point assignment creation.
+- [GloCusAssignmentExecutionParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-execution-parameter-input.md)
+- [GloCusAssignmentFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-filter-input.md)
+- [GloCusAssignmentParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-parameter-input.md): Parameter for the assignment.
+- [GloCusAssignmentSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-sort-input.md)
+- [GloCusAssignmentTypeOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-type-operation-filter-input.md)
+- [GloCusBooleanOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-boolean-operation-filter-input.md)
+- [GloCusDeleteAssignmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-delete-assignment-input.md): Represents input value for assignment deletion.
+- [GloCusExecuteAssignmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-execute-assignment-input.md): Represents input value for assignment execution.
+- [GloCusExecuteExtensionPointInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-execute-extension-point-input.md): Represents input value for extension point execution.
+- [GloCusExecutionContextOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-execution-context-operation-filter-input.md)
+- [GloCusExtensionPointFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-filter-input.md)
+- [GloCusExtensionPointSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-sort-input.md)
+- [GloCusStringTypeFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md)
+- [GloCusUpdateAssignmentConfigurationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-configuration-input.md): Represents input value for updating assignment configuration.
+- [GloCusUpdateAssignmentConfigurationsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-configurations-input.md): Represents input value for updating multiple eassignment configuration.
+- [GloCusUpdateAssignmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-input.md): Represents input value for extension point assignment update.
+- [GloCusUpdateWithScriptAssignmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-with-script-assignment-input.md): Represents input value for updating with script assignment.
+- [GloCusUpdateWithScriptFileAssignmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-with-script-file-assignment-input.md): Represents input value for updating with script file assignment.
+- [GloCusUpdateWorkflowAssignmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-workflow-assignment-input.md): Represents input value for updating with workflow assignment.
+- [GloScrCreateScriptInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-create-script-input.md)
+- [GloScrCreateSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-create-secret-input.md)
+- [GloScrDeleteScriptInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-delete-script-input.md)
+- [GloScrDeleteSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-delete-secret-input.md)
+- [GloScrExecuteScriptInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-execute-script-input.md)
+- [GloScrRenameScriptInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-rename-script-input.md)
+- [GloScrScriptExecutionResultSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-execution-result-sort-input.md): Represents the result of a script execution.
+- [GloScrScriptExecutionSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-execution-sort-input.md): Represents the execution of a script with status and result information.
+- [GloScrScriptPackageInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-package-input.md): Input for defining a script package, including the file token required for retrieval.
+- [GloScrScriptPackageSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-package-sort-input.md): Details of a script package including download information.
+- [GloScrScriptParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-parameter-input.md): Script execution parameter, defining a name-value pair.
+- [GloScrScriptSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-sort-input.md): Represents a script with details including its versions.
+- [GloScrScriptVersionSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-version-sort-input.md): Represents a version of a script.
+- [GloScrSetScriptSecretsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-set-script-secrets-input.md)
+- [GloScrUpdateScriptInput](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-update-script-input.md)
+- [GloCusAssignmentType](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md)
+- [GloCusExecutionContext](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md): Represents the types of execution context for extension points.
+- [GloCusScriptExecutionStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-script-execution-status.md)

@@ -1,0 +1,933 @@
+# Altium Platform API — Procurement schema slice (~7437 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Decimal → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   LocalDate → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Long → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   URL → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+
+type Query {
+  "Get the specified BOM."
+  bomBom(
+    "ID of the BOM."
+    bomId: String!
+  ): BomWip! @deprecated(reason: "Use bomBomById(id: \"grid:...\") instead.")
+  "Get the specified BOM."
+  bomBomById(
+    "ID of the BOM."
+    id: ID!
+  ): Bom!
+  "Get the specified BOM release."
+  bomBomRelease(
+    "ID of the BOM."
+    bomId: String!
+    "ID of the release."
+    releaseId: String!
+  ): BomRelease! @deprecated(reason: "Use bomBomById(id: \"grid:...\") instead.")
+  "Get all available BOMs in the workspace."
+  bomBoms(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): BomBomsConnection
+}
+
+type Mutation {
+  "Changes the lifecycle state of the specified BOM release by applying the specified transition."
+  bomChangeBomReleaseLifecycleState(input: BomChangeBomReleaseLifecycleStateInput!): BomChangeBomReleaseLifecycleStatePayload!
+  "Creates a new BOM."
+  bomCreateBom(input: BomCreateBomInput!): BomCreateBomPayload!
+  "Exports the specified BOM into a file and provides a download URL."
+  bomExportBom(input: BomExportBomInput!): BomExportBomPayload! @deprecated(reason: "Use bomExportBomById() instead.")
+  "Exports the specified BOM into a file and provides a download URL."
+  bomExportBomById(input: BomExportBomByIdInput!): BomExportBomPayload!
+  "Exports the specified BOM release into a file and provides a download URL."
+  bomExportBomRelease(input: BomExportBomReleaseInput!): BomExportBomReleasePayload! @deprecated(reason: "Use bomExportBomById() instead.")
+}
+
+"Represents a shared part of work-in-progress BOMs and releases of BOMs."
+interface Bom {
+  "Effective health checks applicable to this BOM."
+  healthChecks: [BomHealthCheck!]!
+  "ID of the BOM."
+  id: ID!
+  """
+  List of incomplete health checks.
+  Some issues reported by these health checks may already be reported and included in the response, but the full set is still being processed and new issues may appear.
+  """
+  incompleteHealthChecks: [BomHealthCheck!]!
+  "Issues associated with the BOM."
+  issues: [BomIssue!]!
+  "A list of all custom BOM item element's attributes."
+  itemElementAttributes: [BomItemElementAttribute!]!
+  "BOM items."
+  items(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): BomItemsConnection
+  "Name of the BOM."
+  name: String!
+  "Settings of the BOM (e.g., currency, production quantity, etc.)."
+  settings: BomSettings!
+  "Sources of the BOM (e.g., a file, a design, or other BOMs)."
+  sources: [BomSource!]!
+}
+
+"A common interface for all errors that might occur in mutations."
+interface BomError {
+  "Error message."
+  message: String!
+}
+
+"An element (part) that might be used for a particular BOM item."
+interface BomItemElement {
+  "Values of custom element attributes."
+  attributeValues: [BomItemElementAttributeValue!]!
+  "A reference to a linked component."
+  componentReference: BomComponentReference
+  "Description of the element."
+  description: String!
+  "Unique ID of the element."
+  elementId: String!
+  "Issues associated with the element."
+  issues: [BomIssue!]!
+  "Manufacturer name."
+  manufacturer: String!
+  "MPN stands for Manufacturer Part Number. It is a unique identifier issued by manufacturers that identifies individual products."
+  mpn: String!
+  "Name of the element."
+  name: String!
+  "Identifier of the linked part."
+  partId: String
+  "A reference to a linked part."
+  partReference: BomPartReference
+  "Selected offer of the element."
+  selectedOffer: BomSelectedElementOffer
+}
+
+"Base type of a BOM element attribute value."
+interface BomItemElementAttributeValue {
+  "The attribute the value belongs to."
+  attribute: BomItemElementAttribute!
+  "Display value of the attribute."
+  displayValue: String!
+}
+
+"Describes the source used to create the current BOM (e.g., a file, a design, or other BOM)."
+interface BomSource {
+  "Quantity of the source (i.e., how many times the source is included into this BOM)."
+  quantity: Int!
+}
+
+"A connection to a list of items."
+type BomBomsConnection {
+  "A list of edges."
+  edges: [BomBomsEdge!]
+  "A flattened list of the nodes."
+  nodes: [BomWip!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+}
+
+"An edge in a connection."
+type BomBomsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: BomWip!
+}
+
+type BomChangeBomReleaseLifecycleStatePayload {
+  bomRelease: BomRelease
+  errors: [BomError!]!
+}
+
+"A reference to a component."
+type BomComponentReference {
+  "ID of the referenced component."
+  componentId: String!
+  "ID of the referenced component revision."
+  componentRevisionId: String!
+}
+
+"Information about a country."
+type BomCountry {
+  "ISO 3166-1 alpha-2 country code (e.g., 'US')."
+  code: String!
+  "Name of the country."
+  name: String!
+}
+
+type BomCreateBomPayload {
+  bom: BomWip
+  errors: [BomError!]!
+}
+
+"Information about a currency."
+type BomCurrency {
+  "Currency code (e.g., 'USD')."
+  code: String!
+  "Unit of the currency (e.g., '$')."
+  unit: String!
+}
+
+"Describes the source design release used to create the current BOM."
+type BomDesignReleaseSource implements BomSource {
+  "ID of the assembly used to create the BOM."
+  assemblyRevisionId: String!
+  "ID of the design."
+  designId: String!
+  "Quantity of the source (i.e., how many times the source is included into this BOM)."
+  quantity: Int!
+  "ID of the source revision used to create the BOM."
+  sourceRevisionId: String!
+}
+
+"Describes the source design revision used to create the current BOM."
+type BomDesignRevisionSource implements BomSource {
+  "ID of the design."
+  designId: String!
+  "Quantity of the source (i.e., how many times the source is included into this BOM)."
+  quantity: Int!
+  "ID of the source revision used to create the BOM."
+  sourceRevisionId: String!
+  "Name of the variant used to create the BOM."
+  variantName: String
+}
+
+"Describes the source design used to create the current BOM."
+type BomDesignSource implements BomSource {
+  "ID of the design."
+  designId: String!
+  "Quantity of the source (i.e., how many times the source is included into this BOM)."
+  quantity: Int!
+  "Name of the variant used to create the BOM."
+  variantName: String!
+}
+
+type BomExportBomPayload {
+  downloadUrl: URL
+}
+
+type BomExportBomReleasePayload {
+  downloadUrl: URL
+}
+
+"Describes the source file used to create the current BOM."
+type BomFileSource implements BomSource {
+  "Name of the original file."
+  fileName: String!
+  "Quantity of the source (i.e., how many times the source is included into this BOM)."
+  quantity: Int!
+}
+
+"Health check description."
+type BomHealthCheck {
+  "Category the health check belongs to (e.g., *Supply Chain*, *Manufacturer Lifecycles*)."
+  category: BomHealthCheckCategory!
+  "Description of the health check (e.g., *This part is RoHS Non-Compliant*)."
+  description: String!
+  """
+  If set, designates the name of a group the health check belongs to.
+  E.g., the group might be named *RoHS status*, and the descriptions of the health checks in the group might be *No*, *Yes with Exemption*, and *Unknown*.
+  """
+  group: String
+  "Health check ID."
+  healthCheckId: String!
+  "Recommended action to address the issue produced by the health check (e.g., *Consider using a different Manufacturer Part Number*)."
+  howToFix: String
+  "A concise label or tag for the health check. (e.g., *RoHS Non-Compliant*)."
+  label: String!
+  "Provider of the health check."
+  provider: BomHealthCheckProvider!
+  "Severity of the health check."
+  severity: BomHealthCheckSeverity!
+}
+
+"Information about the health check category (e.g., *Supply Chain*, *Manufacturer Lifecycles*)."
+type BomHealthCheckCategory {
+  "ID of the category."
+  categoryId: String!
+  "Name of the category."
+  name: String!
+}
+
+"Information about the health check provider."
+type BomHealthCheckProvider {
+  "Name of the provider."
+  name: String!
+  "ID of the provider."
+  providerId: String!
+}
+
+"Describes a problem with the provided input (validation error)."
+type BomInputValidationError implements BomError {
+  "Error message."
+  message: String!
+  "The path in the input where the validation failed."
+  path: String
+}
+
+"Issue details."
+type BomIssue {
+  "Description of the issue (e.g., *This part is RoHS Non-Compliant*)."
+  description: String!
+  "Health check definition."
+  healthCheck: BomHealthCheck!
+  "Health check definition ID."
+  healthcheckDefinitionId: String! @deprecated(reason: "Use healthCheck.healthCheckId instead.")
+  "Recommended action to address the issue produced by the health check (e.g., *Consider using a different Manufacturer Part Number*)."
+  howToFix: String
+  "Severity of the issue."
+  severity: BomIssueSeverity!
+  "Designates that the issue is waived."
+  waived: Boolean!
+  "A token whose value reflects the conditions that led to the issue. It changes if those conditions change significantly."
+  waivingToken: String
+}
+
+"BOM items are the components of a product."
+type BomItem {
+  "A reference to a component linked to the primary element."
+  componentReference: BomComponentReference @deprecated(reason: "Use 'primaryElement.componentReference' instead.")
+  "A list of designators that specify the placements of the item within the schematic."
+  designators: [String!]!
+  "All elements that could be used for this item (alternates and substitutes)."
+  elements: [BomItemElement!]!
+  "Extra quantity of the item to order. This is added to the product of 'Quantity' and 'BOM Production Quantity' to calculate the 'Total Quantity'."
+  extraQuantity: Int!
+  "Elements that were hidden from the 'elements' list."
+  hiddenElements: [BomItemElement!]!
+  "Issues associated with the item."
+  issues: [BomIssue!]!
+  "ID of the item. Items preserve their ID across releases of the BOM."
+  itemId: String!
+  "The primary element chosen for this item."
+  primaryElement: BomItemElement
+  "The quantity of the item required to produce one unit."
+  quantity: Int!
+  "The total quantity of the item to order, calculated as \"(Quantity * BOM Production Quantity) + Extra Quantity\"."
+  totalQuantity: Int!
+}
+
+"Alternate is a global replacement of a part by another in all BOMs where it's used."
+type BomItemAlternate implements BomItemElement {
+  "Values of custom element attributes."
+  attributeValues: [BomItemElementAttributeValue!]!
+  "A reference to a linked component."
+  componentReference: BomComponentReference
+  "Description of the element."
+  description: String!
+  "Unique ID of the element."
+  elementId: String!
+  "Issues associated with the element."
+  issues: [BomIssue!]!
+  "Manufacturer name."
+  manufacturer: String!
+  "MPN stands for Manufacturer Part Number. It is a unique identifier issued by manufacturers that identifies individual products."
+  mpn: String!
+  "Name of the element."
+  name: String!
+  "Identifier of the linked part."
+  partId: String
+  "A reference to a linked part."
+  partReference: BomPartReference
+  "Selected offer of the element."
+  selectedOffer: BomSelectedElementOffer
+}
+
+"Describes a BOM item element's attribute."
+type BomItemElementAttribute {
+  "ID of the attribute."
+  attributeId: String!
+  "Name of the attribute."
+  name: String!
+  "Type of the attribute. Please note that the actual attribute values may have different types."
+  type: BomItemElementCustomAttributeType!
+}
+
+"Floating-point value of a BOM element attribute."
+type BomItemElementAttributeFloatValue implements BomItemElementAttributeValue {
+  "The attribute the value belongs to."
+  attribute: BomItemElementAttribute!
+  "Display value of the attribute."
+  displayValue: String!
+  "The specified floating-point value."
+  floatValue: Float!
+}
+
+"Integer value of a BOM element attribute."
+type BomItemElementAttributeIntegerValue implements BomItemElementAttributeValue {
+  "The attribute the value belongs to."
+  attribute: BomItemElementAttribute!
+  "Display value of the attribute."
+  displayValue: String!
+  "The specified integer value."
+  integerValue: Long!
+}
+
+"Money value of a BOM element attribute."
+type BomItemElementAttributeMoneyValue implements BomItemElementAttributeValue {
+  "The specified amount."
+  amount: Float!
+  "The attribute the value belongs to."
+  attribute: BomItemElementAttribute!
+  "Currency of the specified amount."
+  currency: BomCurrency!
+  "Display value of the attribute."
+  displayValue: String!
+}
+
+"Percent value of a BOM element attribute."
+type BomItemElementAttributePercentValue implements BomItemElementAttributeValue {
+  "The attribute the value belongs to."
+  attribute: BomItemElementAttribute!
+  "Display value of the attribute."
+  displayValue: String!
+  "The specified percent value."
+  percentValue: Float!
+}
+
+"String value of a BOM element attribute."
+type BomItemElementAttributeStringValue implements BomItemElementAttributeValue {
+  "The attribute the value belongs to."
+  attribute: BomItemElementAttribute!
+  "Display value of the attribute."
+  displayValue: String!
+  "The specified string value."
+  stringValue: String!
+}
+
+"Substitute is a replacement of a part by another within an individual BOM."
+type BomItemSubstitute implements BomItemElement {
+  "Values of custom element attributes."
+  attributeValues: [BomItemElementAttributeValue!]!
+  "A reference to a linked component."
+  componentReference: BomComponentReference
+  "Description of the element."
+  description: String!
+  "Unique ID of the element."
+  elementId: String!
+  "Issues associated with the element."
+  issues: [BomIssue!]!
+  "Manufacturer name."
+  manufacturer: String!
+  "MPN stands for Manufacturer Part Number. It is a unique identifier issued by manufacturers that identifies individual products."
+  mpn: String!
+  "Name of the element."
+  name: String!
+  "Identifier of the linked part."
+  partId: String
+  "A reference to a linked part."
+  partReference: BomPartReference
+  "Selected offer of the element."
+  selectedOffer: BomSelectedElementOffer
+}
+
+"A connection to a list of items."
+type BomItemsConnection {
+  "A list of edges."
+  edges: [BomItemsEdge!]
+  "A flattened list of the nodes."
+  nodes: [BomItem!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type BomItemsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: BomItem!
+}
+
+"A reference to an offer in Octopart."
+type BomOctopartOfferReference {
+  "ID of the offer in Octopart."
+  offerId: String!
+}
+
+"A reference to a part in Octopart."
+type BomOctopartPartReference {
+  "ID of the part in Octopart."
+  partId: String!
+}
+
+"A reference to an offer in Part Catalog."
+type BomPartCatalogOfferReference {
+  "Manufacturer of the part."
+  manufacturer: String!
+  "MPN of the part."
+  mpn: String!
+  "Name of the source in Part Catalog."
+  sourceName: String!
+  "Supplier name."
+  supplier: String!
+  "Supplier part number."
+  supplierPartNumber: String!
+}
+
+"A reference to a part in Part Catalog."
+type BomPartCatalogPartReference {
+  "Manufacturer of the part."
+  manufacturer: String!
+  "MPN of the part."
+  mpn: String!
+  "Name of the source in Part Catalog."
+  sourceName: String!
+}
+
+"Describes an error occurred while executing a mutation."
+type BomPayloadError implements BomError {
+  "Error message."
+  message: String!
+}
+
+"Production-related settings of a BOM (e.g., a 'production quantity' or a 'due date')."
+type BomProduction {
+  "Production due date."
+  dueDate: LocalDate
+  "Production quantity (i.e., how many units are produced)."
+  quantity: Int!
+}
+
+"Describes the source project release used to create the current BOM."
+type BomProjectReleaseSource implements BomSource {
+  "ID of the design."
+  designId: String!
+  "Quantity of the source (i.e., how many times the source is included into this BOM)."
+  quantity: Int!
+  "ID of the source revision used to create the BOM."
+  sourceRevisionId: String!
+}
+
+"Represents a release of the BOM (i.e., a snapshot of a work-in-progress BOM)."
+type BomRelease implements Bom {
+  "ID of the BOM."
+  bomId: String!
+  "Effective health checks applicable to this BOM."
+  healthChecks: [BomHealthCheck!]!
+  "ID of the BOM."
+  id: ID!
+  """
+  List of incomplete health checks.
+  Some issues reported by these health checks may already be reported and included in the response,
+  but the full set is still being processed and new issues may appear.
+  """
+  incompleteHealthChecks: [BomHealthCheck!]!
+  "Issues associated with the BOM."
+  issues: [BomIssue!]!
+  "A list of all custom BOM item element's attributes."
+  itemElementAttributes: [BomItemElementAttribute!]!
+  "BOM items."
+  items(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): BomItemsConnection
+  "ID of the lifecycle definition used for this release."
+  lifeCycleDefinitionId: String!
+  "ID of the lifecycle state the release is in."
+  lifeCycleStateId: String!
+  "Name of the BOM."
+  name: String!
+  "Timestamp of the release creation."
+  releasedAt: DateTime!
+  "Human-readable ID of the release."
+  releaseHrid: String!
+  "ID of the release."
+  releaseId: String!
+  "Release notes specified for the release."
+  releaseNotes: String!
+  "Settings of the BOM (e.g., currency, production quantity, etc.)."
+  settings: BomSettings!
+  "Sources of the BOM (e.g., a file, a design, or other BOMs)."
+  sources: [BomSource!]!
+}
+
+"Describes the source BOM release used to create the current BOM."
+type BomReleaseSource implements BomSource {
+  "The source BOM release. Could be null if deleted or not accessible."
+  bom: BomRelease
+  "Quantity of the source (i.e., how many times the source is included into this BOM)."
+  quantity: Int!
+}
+
+"A connection to a list of items."
+type BomReleasesConnection {
+  "A list of edges."
+  edges: [BomReleasesEdge!]
+  "A flattened list of the nodes."
+  nodes: [BomRelease!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type BomReleasesEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: BomRelease!
+}
+
+"Selected element offer."
+type BomSelectedElementOffer {
+  "Parts of the selected offer."
+  items: [BomSelectedElementOfferItem!]!
+  "A surplus, if Total Order Quantity is higher than the required Total Quantity."
+  surplus: Int!
+  "Total order quantity of the selected offer."
+  totalOrderQuantity: Int!
+  "The total price of the selected offer."
+  totalPrice: Decimal!
+}
+
+"Selected element offer's item."
+type BomSelectedElementOfferItem {
+  "Identifier of the offer."
+  offerId: String!
+  "A reference to the offer."
+  offerReference: BomOfferReference
+  "The order quantity of this offer."
+  orderQuantity: Int!
+  "SKU of the offer."
+  sku: String
+  "The price of this offer."
+  subtotalPrice: Decimal!
+  "Name of the supplier."
+  supplierName: String
+  "The URL to the offer."
+  supplierOfferUrl: String
+}
+
+"Settings of the BOM."
+type BomSettings {
+  "A country associated with the BOM. It is primarily used to provide region-specific information about parts."
+  country: BomCountry!
+  "A currency associated with the BOM. Prices in the BOM are provided in this currency."
+  currency: BomCurrency!
+  "Production settings of the BOM."
+  production: BomProduction!
+}
+
+"Describes the source BOM snapshot used to create the current BOM."
+type BomSnapshotSource implements BomSource {
+  "ID of the BOM."
+  bomId: String!
+  "Quantity of the source (i.e., how many times the source is included into this BOM)."
+  quantity: Int!
+  "ID of the BOM snapshot."
+  snapshotId: String!
+}
+
+"Represents a work-in-progress BOM (i.e., it is mutable and could change dynamically)."
+type BomWip implements Bom {
+  "ID of the BOM."
+  bomId: String!
+  "Timestamp of the BOM creation."
+  createdAt: DateTime!
+  "Effective health checks applicable to this BOM."
+  healthChecks: [BomHealthCheck!]!
+  "ID of the BOM."
+  id: ID!
+  """
+  List of incomplete health checks.
+  Some issues reported by these health checks may already be reported and included in the response,
+  but the full set is still being processed and new issues may appear.
+  """
+  incompleteHealthChecks: [BomHealthCheck!]!
+  "Issues associated with the BOM."
+  issues: [BomIssue!]!
+  "A list of all custom BOM item element's attributes."
+  itemElementAttributes: [BomItemElementAttribute!]!
+  "BOM items."
+  items(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): BomItemsConnection
+  "Name of the BOM."
+  name: String!
+  "A collection of all BOM releases."
+  releases(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): BomReleasesConnection
+  "Settings of the BOM (e.g., currency, production quantity, etc.)."
+  settings: BomSettings!
+  "Sources of the BOM (e.g., a file, a design, or other BOMs)."
+  sources: [BomSource!]!
+  "Timestamp of the last change in the BOM."
+  updatedAt: DateTime!
+}
+
+"A reference to an offer."
+union BomOfferReference = BomOctopartOfferReference | BomPartCatalogOfferReference
+
+"A reference to a part."
+union BomPartReference = BomOctopartPartReference | BomPartCatalogPartReference
+
+input BomChangeBomReleaseLifecycleStateInput {
+  "ID of the BOM to update."
+  bomId: String!
+  "ID of the release to update."
+  releaseId: String!
+  "ID of the transition to apply."
+  transitionId: String!
+}
+
+input BomCreateBomInput {
+  "A country associated with the BOM. It is primarily used to provide region-specific information about parts."
+  countryCode: String
+  "A currency associated with the BOM. Prices in the BOM are provided in this currency."
+  currencyCode: String
+  "Description of the BOM."
+  description: String
+  "An optional identifier of the folder the BOM should be saved to."
+  folderId: String
+  "A list of custom BOM item element's attributes."
+  itemElementAttributes: [BomCreateBomItemElementAttributeDeclarationInput!]
+  "BOM items."
+  items: [BomCreateBomItemInput!]!
+  "Name of the BOM."
+  name: String!
+  "Specifies priorities of different packaging types. This affects the offer selection in the order list."
+  packagingPriorities: BomCreateBomPackagingPrioritiesSettingsInput
+  "Production-related settings of a BOM (e.g., a 'production quantity' or a 'due date')."
+  production: BomCreateBomProductionSettingsInput
+  "The list of suppliers to use for this BOM."
+  suppliers: [BomCreateBomSupplierReferenceInput!]
+  """
+  If set to true, the mutation tolerates missing references instead of failing.
+  
+  Suppliers: Missing ones won’t be added to the BOM.
+  Parts: BOM items with a non-existing part reference will remain unmapped.
+  Offers: Another available offer will be selected instead.
+  """
+  tolerateMissingReferences: Boolean! = false
+}
+
+"Describes a BOM item element's attribute."
+input BomCreateBomItemElementAttributeDeclarationInput {
+  """
+  A transient identifier that uniquely identifies this attribute within the current mutation call.
+  This ID is used to correlate this attribute with attribute values in BOM item elements.
+  """
+  attributeId: String!
+  "Name of the attribute."
+  name: String!
+  "Type of the attribute. The actual attribute values may have different types."
+  type: BomItemElementCustomAttributeType!
+}
+
+"BOM item element attribute."
+input BomCreateBomItemElementAttributeInput {
+  """
+  A transient identifier that uniquely identifies this attribute within the current mutation call.
+  This ID is used to correlate this attribute with the corresponding attribute declaration.
+  """
+  attributeId: String!
+  "Value of the attribute."
+  value: BomCreateBomItemElementAttributeValueInput!
+}
+
+"BOM item element attribute's value."
+input BomCreateBomItemElementAttributeValueInput {
+  "Floating-point value of a BOM element attribute."
+  floatValue: Float
+  "Integer value of a BOM element attribute."
+  integerValue: Long
+  "String value of a BOM element attribute."
+  stringValue: String
+}
+
+"An element (part) that might be used for a particular BOM item."
+input BomCreateBomItemElementInput {
+  "Values of custom element attributes."
+  attributeValues: [BomCreateBomItemElementAttributeInput!]
+  "Description of the element."
+  description: String
+  "Name of the element."
+  name: String
+  "An offer selected for this element."
+  offer: BomCreateBomOfferReferenceInput
+  "A part associated with this element."
+  part: BomCreateBomPartReferenceInput!
+}
+
+"BOM items are the components of a product."
+input BomCreateBomItemInput {
+  "A list of designators that specify the placements of the item within the schematic."
+  designators: [String!]!
+  "All elements that could be used for this item."
+  elements: [BomCreateBomItemElementInput!]!
+  """
+  Extra quantity of the item to order.
+  This is added to the product of 'Quantity' and 'BOM Production Quantity' to calculate the 'Total Quantity'.
+  """
+  extraQuantity: Int
+  "The quantity of the item required to produce one unit."
+  quantity: Int!
+}
+
+"""
+Describes an offer selected for an element.
+Only a single field must be specified.
+"""
+input BomCreateBomOfferReferenceInput {
+  "A reference to an offer in Octopart."
+  octopart: BomOctopartOfferReferenceInput
+}
+
+"""
+Specifies priorities of different packaging types.
+This affects the offer selection in the order list.
+"""
+input BomCreateBomPackagingPrioritiesSettingsInput {
+  "Specifies whether to use packaging type priorities or not."
+  enabled: Boolean!
+  """
+  Specifies the preferred order of packaging types.
+  Not specified packaging types will be assigned with the lowest priority.
+  """
+  order: [BomPackagingType!]!
+}
+
+"""
+Describes a part associated with an element.
+Only a single field must be specified.
+"""
+input BomCreateBomPartReferenceInput {
+  "A reference to a part in Octopart."
+  octopart: BomOctopartPartReferenceInput
+  "A raw part descriptor (MPN + Manufacturer)."
+  raw: BomRawPartReferenceInput
+}
+
+"Production-related settings of a BOM (e.g., a 'production quantity' or a 'due date')."
+input BomCreateBomProductionSettingsInput {
+  "Production due date."
+  dueDate: LocalDate
+  "Production quantity (i.e., how many units are produced)."
+  quantity: Int!
+}
+
+"""
+Describes a supplier used in a BOM.
+Only a single field must be specified.
+"""
+input BomCreateBomSupplierReferenceInput {
+  "A reference to a supplier in Octopart."
+  octopart: BomOctopartSupplierReferenceInput
+}
+
+input BomExportBomByIdInput {
+  "ID of the BOM to export."
+  id: ID!
+}
+
+input BomExportBomInput {
+  "ID of the BOM to export."
+  bomId: String!
+}
+
+input BomExportBomReleaseInput {
+  "ID of the BOM to export."
+  bomId: String!
+  "ID of the release to export."
+  releaseId: String!
+}
+
+"A reference to an offer in Octopart."
+input BomOctopartOfferReferenceInput {
+  "ID of the offer in Octopart."
+  offerId: String!
+}
+
+"A reference to a part in Octopart."
+input BomOctopartPartReferenceInput {
+  "ID of the part in Octopart."
+  partId: String!
+}
+
+"A reference to a supplier in Octopart."
+input BomOctopartSupplierReferenceInput {
+  "ID of the supplier in Octopart."
+  supplierId: String!
+}
+
+"A raw part descriptor (MPN + Manufacturer)."
+input BomRawPartReferenceInput {
+  "Manufacturer name."
+  manufacturer: String
+  "MPN stands for Manufacturer Part Number. It is a unique identifier issued by manufacturers that identifies individual products."
+  mpn: String
+}
+
+enum BomHealthCheckSeverity {
+  ERROR
+  FATAL
+  INFORMATION
+  SILENT
+  WARNING
+}
+
+enum BomIssueSeverity {
+  ERROR
+  FATAL
+  INFORMATION
+  WARNING
+}
+
+enum BomItemElementCustomAttributeType {
+  FLOAT
+  INTEGER
+  MONEY
+  PERCENT
+  STRING
+}
+
+enum BomPackagingType {
+  BULK
+  CUSTOM_REEL
+  CUT_TAPE
+  TAPE_AND_BOX
+  TAPE_AND_REEL
+  TRAY
+}

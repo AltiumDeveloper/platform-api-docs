@@ -1,0 +1,938 @@
+# Altium Platform API — Customization schema slice (~7313 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DateTimeOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   SortEnumType → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   StringOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+
+type Query {
+  "Retrieves a list of registered extension points."
+  gloCusExtensionPoints(order: [GloCusExtensionPointSortInput!], where: GloCusExtensionPointFilterInput): [GloCusExtensionPoint!]!
+  "Retrieves the execution info by execution identifier."
+  gloCusScriptExecutionInfo(scriptExecutionId: String!): GloCusScriptExecutionInfo
+  "Retrieves a script by its ID."
+  gloScrScript(scriptId: String!): GloScrScript
+  "Retrieves the execution result of a script by its execution ID."
+  gloScrScriptExecutionResult(scriptExecutionId: String!): GloScrScriptExecution
+  "Retrieves the execution results of a script by its script ID and version ID."
+  gloScrScriptExecutionResults(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [GloScrScriptExecutionSortInput!]
+    scriptId: String!
+    versionId: String
+  ): GloScrScriptExecutionConnection
+  "Retrieves a list of scripts with pagination options."
+  gloScrScripts(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [GloScrScriptSortInput!]
+  ): GloScrScriptConnection
+  "Retrieves the secrets a script revision declares. Omit the revision to read the latest one, the same revision a script execution uses by default. Values are never returned."
+  gloScrScriptSecrets(scriptId: String!, scriptVersionId: String): [GloScrScriptSecret!]!
+  "Retrieves the names of the workspace secrets. Values are write-only and are never returned."
+  gloScrSecrets: [GloScrSecret!]!
+}
+
+type Mutation {
+  "Launches a workflow. Workflows allow you to automate design processes, and are created in Altium 365."
+  desLaunchWorkflow(input: DesLaunchWorkflowInput!): DesLaunchWorkflowPayload!
+  "Terminates a workflow. Workflows allow you to automate design processes, and are created in Altium 365."
+  desTerminateWorkflows(input: DesTerminateWorkflowsInput!): DesTerminateWorkflowsPayload!
+  "Add new assignment to extension point."
+  gloCusAddAssignment(input: GloCusAddAssignmentInput!): GloCusAddAssignmentPayload!
+  "Deletes an existing assignment."
+  gloCusDeleteAssignment(input: GloCusDeleteAssignmentInput!): GloCusDeleteAssignmentPayload!
+  "Executes an existing assignment."
+  gloCusExecuteAssignment(input: GloCusExecuteAssignmentInput!): GloCusExecuteAssignmentPayload!
+  "Dispatches all active assignments of the given extension point in run-and-forget mode. Returns one entry per assignment; per-assignment failures are surfaced individually and do not abort the others."
+  gloCusExecuteExtensionPoint(input: GloCusExecuteExtensionPointInput!): GloCusExecuteExtensionPointPayload!
+  "Updates an existing assignment."
+  gloCusUpdateAssignment(input: GloCusUpdateAssignmentInput!): GloCusUpdateAssignmentPayload!
+  "Updates configuration parameters of an Extension point."
+  gloCusUpdateAssignmentConfigurations(input: GloCusUpdateAssignmentConfigurationsInput!): GloCusUpdateAssignmentConfigurationsPayload!
+  "Creates a new script."
+  gloScrCreateScript(input: GloScrCreateScriptInput!): GloScrCreateScriptPayload!
+  "Creates a workspace secret. There is no update: to change a value, delete the secret and add it again."
+  gloScrCreateSecret(input: GloScrCreateSecretInput!): GloScrCreateSecretPayload!
+  "Deletes a script by its identifier."
+  gloScrDeleteScript(input: GloScrDeleteScriptInput!): GloScrDeleteScriptPayload!
+  "Deletes a workspace secret by name."
+  gloScrDeleteSecret(input: GloScrDeleteSecretInput!): GloScrDeleteSecretPayload!
+  "Executes a script asynchronously."
+  gloScrExecuteScript(input: GloScrExecuteScriptInput!): GloScrExecuteScriptPayload!
+  "Renames an existing script without creating a new version. Optionally, the rename applies only while the script is provisional, meaning it still carries a generated name, and is skipped once the name has been set deliberately. Returns the script's current name either way."
+  gloScrRenameScript(input: GloScrRenameScriptInput!): GloScrRenameScriptPayload!
+  "Replaces the set of secrets a script revision declares. An empty list removes them all."
+  gloScrSetScriptSecrets(input: GloScrSetScriptSecretsInput!): GloScrSetScriptSecretsPayload!
+  "Updates an existing script, creating a new version."
+  gloScrUpdateScript(input: GloScrUpdateScriptInput!): GloScrUpdateScriptPayload!
+}
+
+interface GloCusAssignment {
+  active: Boolean!
+  assignmentId: String!
+  "Declared assignment configuration parameters."
+  configurationParameters: [GloCusAssignmentParameter!]!
+  createdAt: DateTime!
+  createdBy: String!
+  description: String
+  lastModifiedAt: DateTime!
+  lastModifiedBy: String!
+  name: String
+  type: GloCusAssignmentType!
+}
+
+"Payload associated with launching a workflow."
+type DesLaunchWorkflowPayload {
+  "Workflow identifier."
+  id: String!
+  "Status of the launched workflow."
+  status: Int!
+}
+
+"Error associated with terminating workflows."
+type DesTerminateWorkflowsError {
+  "Workflow identifier."
+  id: String!
+  "Workflow error message."
+  message: String!
+}
+
+"Payload associated with terminating a workflow."
+type DesTerminateWorkflowsPayload {
+  "Errors associated with terminating workflows."
+  errors: [DesTerminateWorkflowsError!]!
+}
+
+"A workflow manages the execution of a logical sequence of tasks."
+type DesWorkflow {
+  "The account information for the owner of any action or response needed for this workflow."
+  assignee: String!
+  "The `DateTime` for the creation of this workflow."
+  createdAt: DateTime!
+  "The account information for who created this workflow."
+  createdBy: String!
+  "The `DateTime` for the completion of this workflow."
+  endedAt: DateTime
+  "The `DateTime` for the most recent changes for this workflow."
+  modifiedAt: DateTime!
+  "The label for this workflow."
+  name: String!
+  "The reference identifier for definition of this workflow."
+  processDefinitionId: String!
+  "The label for the definition of this workflow."
+  processDefinitionName: String!
+  "The name of the active task(s) for this workflow."
+  state: String
+  "The current condition of this workflow."
+  status: String!
+  "The list of variables defined for this workflow."
+  variables(
+    "An optional list of parameter names to search."
+    names: [String!]
+  ): [DesWorkflowVariable!]!
+  "The reference identifier for this workflow."
+  workflowId: String!
+  "The type of this workflow."
+  workflowType: String!
+}
+
+"A workflow definition contains a logical sequence of tasks."
+type DesWorkflowDefinition {
+  "The `DateTime` for the creation of this workflow definition."
+  createdAt: DateTime!
+  "The account information for who created this workflow definition."
+  createdBy: String!
+  "The label for this workflow definition."
+  name: String!
+  "The list of variables need to launch this workflow definition."
+  variables: [DesWorkflowVariable!]!
+  "The reference identifier for this workflow definition."
+  workflowDefinitionId: String!
+  "The type of this workflow definition."
+  workflowType: String!
+}
+
+"A variable belonging to the workflow."
+type DesWorkflowVariable {
+  "Workflow variable constraint. If it is \"required\", then the variable needs to be provided when launching a workflow with `desLaunchWorkflow`."
+  constraint: String
+  "Parameter name."
+  name: String!
+  "Parameter value."
+  value: String!
+  "Type of variable."
+  valueType: String
+}
+
+"Represents output value for extension point assignment creation."
+type GloCusAddAssignmentPayload {
+  "Identifier of the assignment."
+  assignmentId: String!
+}
+
+type GloCusAssignmentConfigurationParameter {
+  name: String!
+  value: String!
+}
+
+"A connection to a list of items."
+type GloCusAssignmentConnection {
+  "A list of edges."
+  edges: [GloCusAssignmentEdge!]
+  "A flattened list of the nodes."
+  nodes: [GloCusAssignment]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type GloCusAssignmentEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: GloCusAssignment
+}
+
+"Dispatch result for a single assignment started by an extension point execution."
+type GloCusAssignmentExecution {
+  "Identifier of the assignment."
+  assignmentId: String!
+  "Type of the assignment."
+  assignmentType: GloCusAssignmentType!
+  "Error message for this assignment. Null on successful dispatch."
+  error: String
+  "Identifier of the started execution. Null on dispatch failure."
+  executionId: String
+}
+
+"Parameter for the assignment."
+type GloCusAssignmentParameter {
+  "Name of the parameter."
+  name: String!
+  "Value of the parameter."
+  value: String!
+}
+
+type GloCusDefaultAssignment implements GloCusAssignment {
+  active: Boolean!
+  assignmentId: String!
+  "Declared assignment configuration parameters."
+  configurationParameters: [GloCusAssignmentParameter!]!
+  configurationParams: GloCusJsonArrayOfAssignmentConfigurationParameter!
+  createdAt: DateTime!
+  createdBy: String!
+  description: String
+  lastModifiedAt: DateTime!
+  lastModifiedBy: String!
+  name: String
+  type: GloCusAssignmentType!
+}
+
+"Represents output value for assignment deletion."
+type GloCusDeleteAssignmentPayload {
+  "Identifier of the assignment."
+  assignmentId: String!
+}
+
+"Represents output value for assignment execution."
+type GloCusExecuteAssignmentPayload {
+  "Type of the dispatched assignment."
+  assignmentType: GloCusAssignmentType!
+  "Identifier of the started execution."
+  executionId: String!
+  "Identifier of the script execution. Guid.Empty for workflow assignments."
+  scriptExecutionId: String! @deprecated(reason: "Use executionId. For workflow assignments this returns Guid.Empty.")
+}
+
+"Represents output value for extension point execution."
+type GloCusExecuteExtensionPointPayload {
+  "Per-assignment dispatch results, one entry per active assignment."
+  executions: [GloCusAssignmentExecution!]!
+}
+
+type GloCusExtensionPoint {
+  assignments(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [GloCusAssignmentSortInput!]
+    where: GloCusAssignmentFilterInput
+  ): GloCusAssignmentConnection
+  "Declared extension point configuration parameters."
+  configurationParameters: [GloCusExtensionPointParameter!]!
+  description: String
+  entityType: String!
+  executionContext: GloCusExecutionContext!
+  extensionPointId: String!
+  "Declared extension point input parameters."
+  inputParameters: [GloCusExtensionPointParameter!]!
+  name: String!
+  "Declared extension point output parameters."
+  outputParameters: [GloCusExtensionPointParameter!]!
+  scriptDescription: String
+  scriptName: String!
+  scriptText: String!
+  "Allow-list of assignment types this extension point accepts."
+  supportedAssignmentTypes: [GloCusAssignmentType!]!
+  type: String!
+}
+
+type GloCusExtensionPointParameter {
+  description: String
+  name: String!
+  predefinedValues: [GloCusPredefinedValue!]!
+}
+
+type GloCusJsonArrayOfAssignmentConfigurationParameter {
+  gloCusValue: [GloCusAssignmentConfigurationParameter!]!
+  json: String!
+}
+
+type GloCusPredefinedValue {
+  displayText: String
+  value: String!
+}
+
+type GloCusScriptAssignment implements GloCusAssignment {
+  active: Boolean!
+  assignmentId: String!
+  "Declared assignment configuration parameters."
+  configurationParameters: [GloCusAssignmentParameter!]!
+  createdAt: DateTime!
+  createdBy: String!
+  description: String
+  lastModifiedAt: DateTime!
+  lastModifiedBy: String!
+  name: String
+  scriptFileToken: String
+  scriptId: String!
+  scriptVersionId: String!
+  type: GloCusAssignmentType!
+}
+
+type GloCusScriptExecutionInfo {
+  createdAt: DateTime!
+  "Retrieves a page of execution logs with a specified limit."
+  gloCusLogs(limit: Int! = 100, nextToken: String): GloCusScriptExecutionLogPage!
+  scriptExecutionId: String!
+  scriptExecutionResult: GloCusScriptExecutionResult!
+  status: GloCusScriptExecutionStatus!
+  updatedAt: DateTime!
+}
+
+type GloCusScriptExecutionLogPage {
+  logs: [String!]!
+  nextToken: String!
+}
+
+type GloCusScriptExecutionOutput {
+  name: String!
+  value: String!
+}
+
+type GloCusScriptExecutionResult {
+  exitCode: Int!
+  returnValues: [GloCusScriptExecutionOutput!]
+}
+
+type GloCusUpdateAssignmentConfigurationsPayload {
+  "Represents result of the updating assignment configuration."
+  success: Boolean!
+}
+
+"Represents output value for updating extension point assignment."
+type GloCusUpdateAssignmentPayload {
+  "Identifier of the assignment."
+  assignmentId: String!
+  "Type of the assignment."
+  type: GloCusAssignmentType!
+}
+
+type GloCusWorkflowAssignment implements GloCusAssignment {
+  active: Boolean!
+  assignmentId: String!
+  "Declared assignment configuration parameters."
+  configurationParameters: [GloCusAssignmentParameter!]!
+  configurationParams: GloCusJsonArrayOfAssignmentConfigurationParameter!
+  createdAt: DateTime!
+  createdBy: String!
+  description: String
+  lastModifiedAt: DateTime!
+  lastModifiedBy: String!
+  name: String
+  type: GloCusAssignmentType!
+  workflowId: String!
+}
+
+type GloScrCreateScriptPayload {
+  gloScrScript: GloScrScript
+}
+
+type GloScrCreateSecretPayload {
+  gloScrSecret: GloScrSecret
+}
+
+type GloScrDeleteScriptPayload {
+  boolean: Boolean
+}
+
+type GloScrDeleteSecretPayload {
+  boolean: Boolean
+}
+
+type GloScrExecuteScriptPayload {
+  gloScrScriptExecution: GloScrScriptExecution
+}
+
+type GloScrRenameScriptPayload {
+  gloScrScript: GloScrScript
+}
+
+"Represents a script with details including its versions."
+type GloScrScript {
+  createdAt: DateTime!
+  description: String
+  name: String!
+  scriptId: String!
+  "Retrieves a specific version of the script by its version ID."
+  versionById(scriptVersionId: String!): GloScrScriptVersion
+  "Retrieves versions of the script with pagination options."
+  versions(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [GloScrScriptVersionSortInput!]
+  ): GloScrScriptVersionConnection
+}
+
+"A connection to a list of items."
+type GloScrScriptConnection {
+  "A list of edges."
+  edges: [GloScrScriptEdge!]
+  "A flattened list of the nodes."
+  nodes: [GloScrScript!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type GloScrScriptEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: GloScrScript!
+}
+
+"Represents the execution of a script with status and result information."
+type GloScrScriptExecution {
+  createdAt: DateTime!
+  executionResult: GloScrScriptExecutionResult!
+  failureReason: String
+  "Retrieves a page of execution logs with a specified limit."
+  logs(limit: Int! = 100, nextToken: String): GloScrScriptExecutionLogPage!
+  scriptExecutionId: String!
+  status: String!
+  updatedAt: DateTime!
+}
+
+"A connection to a list of items."
+type GloScrScriptExecutionConnection {
+  "A list of edges."
+  edges: [GloScrScriptExecutionEdge!]
+  "A flattened list of the nodes."
+  nodes: [GloScrScriptExecution!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type GloScrScriptExecutionEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: GloScrScriptExecution!
+}
+
+"Represents a page of execution logs."
+type GloScrScriptExecutionLogPage {
+  logs: [String!]!
+  nextToken: String!
+}
+
+"Represents the result of a script execution."
+type GloScrScriptExecutionResult {
+  exitCode: Int!
+  returnValues: [GloScrScriptOutput!]
+}
+
+"Represents an output value from a script execution."
+type GloScrScriptOutput {
+  name: String!
+  value: String!
+}
+
+"Details of a script package including download information."
+type GloScrScriptPackage {
+  fileToken: String!
+}
+
+type GloScrScriptSecret {
+  "True when the secret this revision declares no longer exists in the workspace, so a run of it will fail."
+  isMissing: Boolean!
+  name: String!
+}
+
+"Represents a version of a script."
+type GloScrScriptVersion {
+  comment: String
+  package: GloScrScriptPackage!
+  scriptVersionId: String!
+  timestamp: DateTime!
+}
+
+"A connection to a list of items."
+type GloScrScriptVersionConnection {
+  "A list of edges."
+  edges: [GloScrScriptVersionEdge!]
+  "A flattened list of the nodes."
+  nodes: [GloScrScriptVersion!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type GloScrScriptVersionEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: GloScrScriptVersion!
+}
+
+type GloScrSecret {
+  name: String!
+}
+
+type GloScrSetScriptSecretsPayload {
+  gloScrScriptSecret: [GloScrScriptSecret!]
+}
+
+type GloScrUpdateScriptPayload {
+  gloScrScriptVersion: GloScrScriptVersion
+}
+
+"Input for launching a workflow."
+input DesLaunchWorkflowInput {
+  "The attachment variables."
+  attachments: [DesWorkflowAttachmentVariableInput!]
+  "Name of workflow definition."
+  name: String
+  "The string variables."
+  variables: [DesWorkflowVariableInput!]!
+  "Identifier for workflow definition."
+  workflowDefinitionId: String!
+  "URL of workspace."
+  workspaceUrl: String
+}
+
+"Input for terminating workflows."
+input DesTerminateWorkflowsInput {
+  "Workflow identifiers."
+  workflowIds: [String!]!
+  "Workspace URL."
+  workspaceUrl: String
+}
+
+"An attachment-valued variable associated with a workflow."
+input DesWorkflowAttachmentVariableInput {
+  "Uploaded file references."
+  files: [String!]!
+  "The variable name."
+  name: String!
+}
+
+"A workflow definition contains a logical sequence of tasks."
+input DesWorkflowDefinitionFilterInput {
+  and: [DesWorkflowDefinitionFilterInput!]
+  "The `DateTime` for the creation of this workflow definition."
+  createdAt: DateTimeOperationFilterInput
+  "The account information for who created this workflow definition."
+  createdBy: StringOperationFilterInput
+  "The label for this workflow definition."
+  name: StringOperationFilterInput
+  or: [DesWorkflowDefinitionFilterInput!]
+  "The reference identifier for this workflow definition."
+  workflowDefinitionId: StringOperationFilterInput
+  "The type of this workflow definition."
+  workflowType: StringOperationFilterInput
+}
+
+"Filter workflows by a variable."
+input DesWorkflowFilterByVariableInput {
+  "Name of the variable."
+  name: String
+  "List of value prefixes."
+  valueMatchesOneOf: [String!]!
+}
+
+"A workflow manages the execution of a logical sequence of tasks."
+input DesWorkflowFilterInput {
+  and: [DesWorkflowFilterInput!]
+  "The account information for the owner of any action or response needed for this workflow."
+  assignee: StringOperationFilterInput
+  "The `DateTime` for the creation of this workflow."
+  createdAt: DateTimeOperationFilterInput
+  "The account information for who created this workflow."
+  createdBy: StringOperationFilterInput
+  "The `DateTime` for the completion of this workflow."
+  endedAt: DateTimeOperationFilterInput
+  "The label for this workflow."
+  name: StringOperationFilterInput
+  or: [DesWorkflowFilterInput!]
+  "The reference identifier for definition of this workflow."
+  processDefinitionId: StringOperationFilterInput
+  "The label for the definition of this workflow."
+  processDefinitionName: StringOperationFilterInput
+  "The name of the active task(s) for this workflow."
+  state: StringOperationFilterInput
+  "The current condition of this workflow."
+  status: StringOperationFilterInput
+  "The reference identifier for this workflow."
+  workflowId: StringOperationFilterInput
+  "The type of this workflow."
+  workflowType: StringOperationFilterInput
+}
+
+"A variable belonging to the workflow."
+input DesWorkflowVariableInput {
+  "Workflow variable constraint. If it is \"required\", then the variable needs to be provided when launching a workflow with `desLaunchWorkflow`."
+  constraint: String
+  "Parameter name."
+  name: String!
+  "Parameter value."
+  value: String!
+  "Type of variable."
+  valueType: String
+}
+
+"Represents input value for extension point assignment creation."
+input GloCusAddAssignmentInput {
+  "Values for extension point configuration."
+  configurationParameters: [GloCusAssignmentParameterInput!]!
+  "Identifier of the extension point."
+  extensionPointId: String!
+}
+
+input GloCusAssignmentExecutionParameterInput {
+  name: String!
+  value: String!
+}
+
+input GloCusAssignmentFilterInput {
+  active: GloCusBooleanOperationFilterInput
+  and: [GloCusAssignmentFilterInput!]
+  assignmentId: GloCusStringTypeFilterInput
+  createdAt: DateTimeOperationFilterInput
+  createdBy: GloCusStringTypeFilterInput
+  lastModifiedAt: DateTimeOperationFilterInput
+  lastModifiedBy: GloCusStringTypeFilterInput
+  name: GloCusStringTypeFilterInput
+  or: [GloCusAssignmentFilterInput!]
+  type: GloCusAssignmentTypeOperationFilterInput
+}
+
+"Parameter for the assignment."
+input GloCusAssignmentParameterInput {
+  "Name of the parameter."
+  name: String!
+  "Value of the parameter."
+  value: String!
+}
+
+input GloCusAssignmentSortInput {
+  active: SortEnumType
+  assignmentId: SortEnumType
+  createdAt: SortEnumType
+  createdBy: SortEnumType
+  lastModifiedAt: SortEnumType
+  lastModifiedBy: SortEnumType
+  name: SortEnumType
+  type: SortEnumType
+}
+
+input GloCusAssignmentTypeOperationFilterInput {
+  eq: GloCusAssignmentType
+  in: [GloCusAssignmentType!]
+  neq: GloCusAssignmentType
+  nin: [GloCusAssignmentType!]
+}
+
+input GloCusBooleanOperationFilterInput {
+  eq: Boolean
+  neq: Boolean
+}
+
+"Represents input value for assignment deletion."
+input GloCusDeleteAssignmentInput {
+  "Identifier of the assignment."
+  assignmentId: String!
+}
+
+"Represents input value for assignment execution."
+input GloCusExecuteAssignmentInput {
+  "Identifier of the assignment."
+  assignmentId: String!
+  "Represent parameters needed for execution."
+  parameters: [GloCusAssignmentExecutionParameterInput!]
+}
+
+"Represents input value for extension point execution."
+input GloCusExecuteExtensionPointInput {
+  "Identifier of the extension point."
+  extensionPointId: String!
+  "Parameters passed to every dispatched assignment."
+  parameters: [GloCusAssignmentExecutionParameterInput!]
+}
+
+input GloCusExecutionContextOperationFilterInput {
+  eq: GloCusExecutionContext
+  in: [GloCusExecutionContext!]
+  neq: GloCusExecutionContext
+  nin: [GloCusExecutionContext!]
+}
+
+input GloCusExtensionPointFilterInput {
+  and: [GloCusExtensionPointFilterInput!]
+  entityType: GloCusStringTypeFilterInput
+  executionContext: GloCusExecutionContextOperationFilterInput
+  extensionPointId: GloCusStringTypeFilterInput
+  name: GloCusStringTypeFilterInput
+  or: [GloCusExtensionPointFilterInput!]
+  type: GloCusStringTypeFilterInput
+}
+
+input GloCusExtensionPointSortInput {
+  entityType: SortEnumType
+  executionContext: SortEnumType
+  extensionPointId: SortEnumType
+  name: SortEnumType
+  type: SortEnumType
+}
+
+input GloCusStringTypeFilterInput {
+  and: [GloCusStringTypeFilterInput!]
+  eq: String
+  or: [GloCusStringTypeFilterInput!]
+}
+
+"Represents input value for updating assignment configuration."
+input GloCusUpdateAssignmentConfigurationInput {
+  "Identifier of the extension point."
+  assignmentId: String!
+  "Extension point configuration parameters."
+  configurationParameters: [GloCusAssignmentParameterInput!]!
+}
+
+"Represents input value for updating multiple eassignment configuration."
+input GloCusUpdateAssignmentConfigurationsInput {
+  "Represents input value for updating assignment configuration."
+  configurations: [GloCusUpdateAssignmentConfigurationInput!]!
+}
+
+"Represents input value for extension point assignment update."
+input GloCusUpdateAssignmentInput {
+  "Represents input value for assignment update with script id."
+  script: GloCusUpdateWithScriptAssignmentInput
+  "Represents input value for assignment update with script file."
+  scriptFile: GloCusUpdateWithScriptFileAssignmentInput
+  "Represents input value for assignment update with workflow."
+  workflow: GloCusUpdateWorkflowAssignmentInput
+}
+
+"Represents input value for updating with script assignment."
+input GloCusUpdateWithScriptAssignmentInput {
+  "Identifier of the assignment."
+  assignmentId: String!
+  "Description of the assignment."
+  description: String
+  "Name of the assignment."
+  name: String
+  "Script Id."
+  scriptId: String!
+  "Script Version Id."
+  scriptVersionId: String!
+}
+
+"Represents input value for updating with script file assignment."
+input GloCusUpdateWithScriptFileAssignmentInput {
+  "Identifier of the assignment."
+  assignmentId: String!
+  "Description of the assignment."
+  description: String
+  "Name of the assignment."
+  name: String
+  "Script file token."
+  scriptFileToken: String
+}
+
+"Represents input value for updating with workflow assignment."
+input GloCusUpdateWorkflowAssignmentInput {
+  "Identifier of the assignment."
+  assignmentId: String!
+  "Description of the assignment."
+  description: String
+  "Name of the assignment."
+  name: String
+  "Workflow Id."
+  workflowId: String!
+}
+
+input GloScrCreateScriptInput {
+  description: String
+  name: String!
+  package: GloScrScriptPackageInput!
+}
+
+input GloScrCreateSecretInput {
+  name: String!
+  value: String!
+}
+
+input GloScrDeleteScriptInput {
+  scriptId: String!
+}
+
+input GloScrDeleteSecretInput {
+  name: String!
+}
+
+input GloScrExecuteScriptInput {
+  parameters: [GloScrScriptParameterInput!]
+  scriptId: String!
+  scriptVersionId: String
+}
+
+input GloScrRenameScriptInput {
+  name: String!
+  onlyIfProvisional: Boolean
+  scriptId: String!
+}
+
+"Represents the result of a script execution."
+input GloScrScriptExecutionResultSortInput {
+  exitCode: SortEnumType
+}
+
+"Represents the execution of a script with status and result information."
+input GloScrScriptExecutionSortInput {
+  createdAt: SortEnumType
+  result: GloScrScriptExecutionResultSortInput
+  scriptExecutionId: SortEnumType
+  status: SortEnumType
+  updatedAt: SortEnumType
+}
+
+"Input for defining a script package, including the file token required for retrieval."
+input GloScrScriptPackageInput {
+  "The token used to access the script package file."
+  fileToken: String!
+}
+
+"Details of a script package including download information."
+input GloScrScriptPackageSortInput {
+  fileToken: SortEnumType
+}
+
+"Script execution parameter, defining a name-value pair."
+input GloScrScriptParameterInput {
+  key: String!
+  value: String!
+}
+
+"Represents a script with details including its versions."
+input GloScrScriptSortInput {
+  createdAt: SortEnumType
+  description: SortEnumType
+  name: SortEnumType
+  scriptId: SortEnumType
+}
+
+"Represents a version of a script."
+input GloScrScriptVersionSortInput {
+  comment: SortEnumType
+  package: GloScrScriptPackageSortInput
+  scriptVersionId: SortEnumType
+  timestamp: SortEnumType
+}
+
+input GloScrSetScriptSecretsInput {
+  scriptId: String!
+  scriptVersionId: String!
+  secretNames: [String!]!
+}
+
+input GloScrUpdateScriptInput {
+  comment: String
+  package: GloScrScriptPackageInput!
+  scriptId: String!
+}
+
+enum GloCusAssignmentType {
+  DEFAULT
+  SCRIPT
+  WORKFLOW
+}
+
+"Represents the types of execution context for extension points."
+enum GloCusExecutionContext {
+  "Extension points assignments are executed under the system context."
+  SYSTEM
+  "Extension point assignments are executed under the user context."
+  USER
+}
+
+enum GloCusScriptExecutionStatus {
+  ACTIVATING
+  DEACTIVATING
+  DEPROVISIONING
+  PENDING
+  PROVISIONING
+  RUNNING
+  STOPPED
+  STOPPING
+  UNKNOWN
+}

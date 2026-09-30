@@ -1,0 +1,40 @@
+---
+title: "RsaMotorStudioCreateProjectInput"
+url: "https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-project-input"
+bounded_context: "Renesas (preview)"
+kind: "inputs"
+experimental: true
+deprecated: false
+---
+
+# RsaMotorStudioCreateProjectInput
+
+**EXPERIMENTAL**
+
+### Experimental
+
+> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
+
+Represents input value for motor studio project creation.
+
+### Member Of
+
+[`rsaMotorStudioCreateProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-create-project.md) mutation
+
+```graphql
+input RsaMotorStudioCreateProjectInput {
+  description: String
+  folderId: String!
+  name: String!
+}
+```
+
+### Fields
+
+#### `RsaMotorStudioCreateProjectInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+
+#### `RsaMotorStudioCreateProjectInput.folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+
+#### `RsaMotorStudioCreateProjectInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+
+Name of the project.

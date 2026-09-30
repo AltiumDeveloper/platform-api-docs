@@ -1,0 +1,314 @@
+# Platform — types
+> Types of the Platform bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/llms.txt).
+
+- [DesAddUsersToGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-add-users-to-group-payload.md): Payload associated with adding users to group.
+- [DesCreateFolderPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-folder-payload.md): Payload associated with creating a folder.
+- [DesCreateLifeCycleDefinitionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-life-cycle-definition-payload.md): Payload associated with creating a life cycle definition.
+- [DesCreateRevisionNamingSchemePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-revision-naming-scheme-payload.md): Payload associated with creating a revision naming scheme.
+- [DesCreateUserGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-user-group-payload.md): Payload associated with creating a user group.
+- [DesCreateUserPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-user-payload.md): Payload associated with creating a user.
+- [DesDeleteFolderPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-folder-payload.md): Payload associated with deleting a folder.
+- [DesDeleteLifeCycleDefinitionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-life-cycle-definition-payload.md): Payload associated with deleting a life cycle definition.
+- [DesDeleteRevisionNamingSchemePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-revision-naming-scheme-payload.md): Payload associated with deleting a revision naming scheme.
+- [DesDeleteUserGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-user-group-payload.md): Payload associated with deleting a user group.
+- [DesDeleteUserPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-user-payload.md): Payload associated with deleting a user.
+- [DesExternalUserPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-external-user-permission.md)
+- [DesFolder](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md): Information about a specific folder.
+- [DesFolderPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder-permission.md): Information about a folder permission.
+- [DesLifeCycleStateTransition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition.md): Information about the life cycle state transition.
+- [DesLifeCycleStateTransitionApprovalGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition-approval-group.md): Information about the life cycle state transition approval groups.
+- [DesLifeCycleStateTransitionController](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition-controller.md): Information about the life cycle state transition controllers.
+- [DesMoveFolderPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-move-folder-payload.md): Payload associated with moving a folder.
+- [DesOrganizationPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-organization-permission.md)
+- [DesOwnerPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-owner-permission.md)
+- [DesPermissionAvailableActions](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-permission-available-actions.md)
+- [DesRemoveUsersFromGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-remove-users-from-group-payload.md): Payload associated with removing users from a group.
+- [DesRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision.md): Revision details identifier for later use or full details.
+- [DesRevisionDetails](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-details.md): Revision details.
+- [DesRevisionNamingSchemeLevel](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme-level.md): Information on the revision naming scheme level.
+- [DesSetting](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-setting.md): Setting information.
+- [DesTeam](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-team.md): Information about a team in a workspace.
+- [DesTrusteePermissions](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-trustee-permissions.md)
+- [DesUpdateFolderPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-folder-payload.md): Payload associated with updating a folder.
+- [DesUpdateFolderPermissionsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-folder-permissions-payload.md): Payload associated with updating folder permissions.
+- [DesUpdateLifeCycleDefinitionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-life-cycle-definition-payload.md): Payload associated with updating a life cycle definition.
+- [DesUpdatePermissionsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-permissions-payload.md)
+- [DesUpdateRevisionNamingSchemePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-revision-naming-scheme-payload.md): Payload associated with updating revision naming scheme.
+- [DesUpdateSettingPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-setting-payload.md): Payload associated with updating a setting.
+- [DesUpdateUserGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-user-group-payload.md): Payload associated with updating user group.
+- [DesUpdateUserPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-user-payload.md): Payload associated with updating a user.
+- [DesUser](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md): User details with the identifier and nullable extra fields.
+- [DesUserGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user-group.md): A user group information.
+- [DesWorkspaceGroupPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group-permission.md)
+- [DesWorkspaceInfo](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-info.md): A workspace provides a flexible and secure method for managing design, manufacturing and supply content.
+- [DesWorkspaceLocation](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-location.md): A region in which workspaces can be located.
+- [DesWorkspaceMembersPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-members-permission.md)
+- [DesWorkspaceTeam](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-team.md): Represents a team of collaborators in a given workspace.
+- [DesWorkspaceUserPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user-permission.md)
+- [GloAddAppClientSecretPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-client-secret-payload.md)
+- [GloAddAppGrantTypePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-grant-type-payload.md)
+- [GloAddAppRedirectUriPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-redirect-uri-payload.md)
+- [GloAddAppScopePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-scope-payload.md)
+- [GloAddress](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-address.md)
+- [GloAddUsersToGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-users-to-group-payload.md): Represents output value for add user to group.
+- [GloAppAlreadyInstalledError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-already-installed-error.md): Error that occurs when a `GloApp` cannot be installed into a workspace as it has already been installed.
+- [GloAppClientExistsError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-client-exists-error.md): Error that occurs when attempting to create a new `GloApp` with an *OAuth client* that is already associated with another `GloApp`.
+- [GloAppClientSecretNotAddedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-client-secret-not-added-error.md): Error that occurs when attempting to add a client secret to a `GloApp` *OAuth client* but the secret could not be added.
+- [GloAppClientSecretNotRemovedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-client-secret-not-removed-error.md): Error that occurs when the *OAuth client* secret was not removed as expected from a `GloApp`.
+- [GloAppDeletedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md): Error that occurs when attempting to update a deleted `GloApp`.
+- [GloAppGrantTypeNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-grant-type-not-updated-error.md): Error that occurs when updating the grant type for a `GloApp` is unsuccessful.
+- [GloAppHridExistsError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-hrid-exists-error.md): Error that occurs when the input hrid already exists.
+- [GloAppInstallDeniedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-install-denied-error.md): Error that occurs when a `GloApp` cannot be installed into a workspace due to insufficient permissions.
+- [GloAppInvalidEmailError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-invalid-email-error.md): Error that occurs when the input email is invalid.
+- [GloAppInvalidHridError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-invalid-hrid-error.md): Error that occurs when the input hrid is invalid.
+- [GloAppInvalidOAuthError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-invalid-oauth-error.md): Error that occurs when an *OAuth client* is invalid.
+- [GloAppMissingOAuthClientError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-missing-oauth-client-error.md): Error that occurs when an *OAuth client* is missing.
+- [GloAppNameNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-name-not-updated-error.md): Error that occurs when updating the name for a `GloApp` is unsuccessful.
+- [GloAppNotDeletedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-deleted-error.md): Error that occurs when a `GloApp` cannot be deleted.
+- [GloAppNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-found-error.md): Error that occurs when a `GloApp` is not found.
+- [GloAppNotInstalledError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-installed-error.md): Error that occurs when a `GloApp` cannot be installed into a workspace.
+- [GloAppNotUninstalledError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-uninstalled-error.md): Error that occurs when a `GloApp` cannot be uninstalled from a workspace.
+- [GloAppOAuthClientGrantAccessError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-grant-access-error.md): Error that occurs when granting access to a *OAuth client* fails.
+- [GloAppOAuthClientNotDeletedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-deleted-error.md): Error that occurs when an *OAuth client* cannot be deleted.
+- [GloAppOAuthClientNotRestoredError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-restored-error.md): Error that occurs when an *OAuth client* cannot be restored.
+- [GloAppRedirectUriNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-redirect-uri-not-updated-error.md): Error that occurs when updating the redirect URI for a `GloApp` is unsuccessful.
+- [GloAppScopeNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-scope-not-updated-error.md): Error that occurs when updating the scope for a `GloApp` is unsuccessful.
+- [GloCreateAppFromOAuthClientPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-from-oauth-client-payload.md)
+- [GloCreateAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-payload.md)
+- [GloCreateAppWarning](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-warning.md)
+- [GloCreateUserGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-user-group-payload.md): Represents output value for creation of a new group.
+- [GloCreateUserPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-user-payload.md): Represents output value for creating new user.
+- [GloDeleteAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-delete-app-payload.md)
+- [GloEvtCreateSubscriptionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-create-subscription-payload.md): Represents the result of subscription creation operation.
+- [GloEvtDeleteSubscriptionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-delete-subscription-payload.md): Represents the result of subscription deletion operation.
+- [GloEvtError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-error.md): Represents the information about an error.
+- [GloEvtPublishEventPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-publish-event-payload.md): Represents the result of event publishing operation.
+- [GloEvtWebhookSubscription](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-webhook-subscription.md): Represents the webhook-based subscription.
+- [GloInstallAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-install-app-payload.md)
+- [GloNtfPayloadError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-ntf-payload-error.md): Represents the information about a payload error.
+- [GloNtfSendEmailPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-ntf-send-email-payload.md)
+- [GloOAuthClient](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-oauth-client.md): Represents an *OAuth 2.0 client*.
+- [GloParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-parameter.md)
+- [GloRemoveAppClientSecretPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-client-secret-payload.md)
+- [GloRemoveAppGrantTypePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-grant-type-payload.md)
+- [GloRemoveAppRedirectUriPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-redirect-uri-payload.md)
+- [GloRemoveAppScopePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-scope-payload.md)
+- [GloRemoveUsersFromGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-users-from-group-payload.md): Represents output value for remove users from group.
+- [GloRestoreAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-restore-app-payload.md)
+- [GloSamlSettings](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-saml-settings.md)
+- [GloUninstallAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-uninstall-app-payload.md)
+- [GloUpdateAppContactEmailPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-contact-email-payload.md)
+- [GloUpdateAppDescriptionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-description-payload.md)
+- [GloUpdateAppHridPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-hrid-payload.md)
+- [GloUpdateAppNamePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-name-payload.md)
+- [GloUserSpace](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-space.md)
+- [KgAccessLevel](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-access-level.md) [EXPERIMENTAL]
+- [KgAddNodePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-add-node-payload.md) [EXPERIMENTAL]
+- [KgAnchorNode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-anchor-node.md) [EXPERIMENTAL]
+- [KgDeleteNodePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-delete-node-payload.md) [EXPERIMENTAL]
+- [KgNodeQueries](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-node-queries.md) [EXPERIMENTAL]
+- [KgRelation](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-relation.md) [EXPERIMENTAL]
+- [KgRelationQueries](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-relation-queries.md) [EXPERIMENTAL]
+- [PlatformRefreshTokenCreateNewSecretError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-refresh-token-create-new-secret-error.md): Error returned by the Token API when a new client secret for a `PlatformWorkspaceRefreshToken` could not be created.
+- [PlatformTokenDeleteFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-failed-error.md): Error returned by the Token API when a `PlatformToken` could not be deleted.
+- [PlatformTokenDeletePartiallyFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-partially-failed-error.md): Error returned by the Token API when a `PlatformToken` could not be fully deleted, leaving it in an inconsistent state.
+- [PlatformTokenDeletePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-payload.md)
+- [PlatformTokenDeleteRefreshTokenSecretError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-refresh-token-secret-error.md): Error returned by the Token API when a client secret for a `PlatformWorkspaceRefreshToken` could not be deleted.
+- [PlatformTokenGenerationError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-generation-error.md): Error that occurs when the `PlatformToken` has not been successfully generated.
+- [PlatformTokenInvalidTokenLifetimeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-invalid-token-lifetime-error.md): Error returned by the Token API when an input token lifetime for a new `PlatformToken` is invalid.
+- [PlatformTokenNameExistsError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-name-exists-error.md): Error that occurs when the input `PlatformToken` name already exists.
+- [PlatformTokenNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-not-found-error.md): Error that occurs when a `PlatformToken` with the specified identifier could not be found.
+- [PlatformTokenQuotaExceededError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-quota-exceeded-error.md): Error that occurs when the maximum number of `PlatformToken` for a workspace has been reached.
+- [PlatformTokenUpdateFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-failed-error.md): Error that occurs when no `PlatformToken` exists with the specified identifier.
+- [PlatformTokenUpdateInvalidError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-invalid-error.md): Error that occurs when a `PlatformToken` update request specifies no fields to update.
+- [PlatformTokenUpdatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-payload.md)
+- [PlatformTokenWorkspaceAccessDeniedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-workspace-access-denied-error.md): Error that occurs when access to a workspace is denied for a `PlatformToken`.
+- [PlatformWorkspaceRefreshToken](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md): Represents a `PlatformWorkspaceRefreshToken`, which is used for authentication and authorization when accessing the Altium platform.
+- [PlatformWorkspaceRefreshTokenCreateNewSecretPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token-create-new-secret-payload.md): Payload for creating a new client secret for a `PlatformWorkspaceRefreshToken`.
+- [PlatformWorkspaceRefreshTokenCreatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token-create-payload.md)
+- [PlatformWorkspaceRefreshTokenDeleteSecretPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token-delete-secret-payload.md)
+- [PlatformWorkspaceToken](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token.md): Represents a `PlatformWorkspaceToken`, which is used for authentication and authorization when accessing the Altium platform.
+- [PlatformWorkspaceTokenCreatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token-create-payload.md)
+- [PlatformWorkspaceTokenQuota](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token-quota.md): Represents the quota for the number of active `PlatformToken`s allowed in a Workspace.
+- [SolAddAttachmentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-add-attachment-payload.md)
+- [SolAttachment](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-attachment.md)
+- [SolBldCreateSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-create-solution-payload.md)
+- [SolBldEntityScaffoldingStatusPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-entity-scaffolding-status-payload.md)
+- [SolBldImportRefDesignsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-import-ref-designs-payload.md)
+- [SolBldImportSoftwareProjectsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-import-software-projects-payload.md)
+- [SolBldLinkSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-link-solution-payload.md)
+- [SolBldScaffoldingByConfigurationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-configuration-payload.md)
+- [SolBldScaffoldingByExistingEsdPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-existing-esd-payload.md)
+- [SolBldScaffoldingBySdmPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-sdm-payload.md)
+- [SolBldScaffoldingBySoftwareProjectAndEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-software-project-and-eval-kit-payload.md)
+- [SolBldScaffoldingBySolutionTemplatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-solution-template-payload.md)
+- [SolBldScaffoldingExistingSolutionBySolutionTemplatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-existing-solution-by-solution-template-payload.md)
+- [SolBldScaffoldingJobStatusPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-job-status-payload.md)
+- [SolBldScaffoldingPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-payload.md)
+- [SolBldScaffoldingStatusMessageParameterPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-message-parameter-payload.md)
+- [SolBldScaffoldingStatusMessagePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-message-payload.md)
+- [SolBldScaffoldingStatusPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-payload.md)
+- [SolBldScaffoldingWithEmptyEsdPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-with-empty-esd-payload.md)
+- [SolCreateSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-create-solution-payload.md)
+- [SolDeleteAttachmentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-delete-attachment-payload.md)
+- [SolDeleteSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-delete-solution-payload.md)
+- [SolLinkItemsToSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-link-items-to-solution-payload.md)
+- [SolLinkItemToSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-link-item-to-solution-payload.md)
+- [SolParameterBundleValue](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-parameter-bundle-value.md)
+- [SolSolutionsByPagePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solutions-by-page-payload.md)
+- [SolStringKeyValue](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-string-key-value.md)
+- [SolUnlinkItemFromSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-unlink-item-from-solution-payload.md)
+- [SolUpdateSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-update-solution-payload.md)
+- [DesPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/des-permission.md)
+- [GloNtfError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-ntf-error.md): Represents the information about an error.
+- [KgNode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) [EXPERIMENTAL]
+- [PlatformToken](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md): Represents a `PlatformToken`, which is used for authentication and authorization when accessing the Altium platform.
+- [GloAddAppClientSecretError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-client-secret-error.md)
+- [GloAddAppGrantTypeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-grant-type-error.md)
+- [GloAddAppRedirectUriError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-redirect-uri-error.md)
+- [GloAddAppScopeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-scope-error.md)
+- [GloCreateAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-error.md)
+- [GloCreateAppFromOAuthClientError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-from-oauth-client-error.md)
+- [GloDeleteAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-delete-app-error.md)
+- [GloInstallAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-install-app-error.md)
+- [GloRemoveAppClientSecretError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-client-secret-error.md)
+- [GloRemoveAppGrantTypeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-grant-type-error.md)
+- [GloRemoveAppRedirectUriError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-redirect-uri-error.md)
+- [GloRemoveAppScopeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-scope-error.md)
+- [GloRestoreAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-restore-app-error.md)
+- [GloUninstallAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-uninstall-app-error.md)
+- [GloUpdateAppContactEmailError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-contact-email-error.md)
+- [GloUpdateAppDescriptionError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-description-error.md)
+- [GloUpdateAppHridError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-hrid-error.md)
+- [GloUpdateAppNameError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-name-error.md)
+- [PlatformTokenDeleteError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-token-delete-error.md)
+- [PlatformTokenUpdateError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-token-update-error.md)
+- [PlatformWorkspaceRefreshTokenCreateError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-create-error.md)
+- [PlatformWorkspaceRefreshTokenCreateNewSecretError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-create-new-secret-error.md)
+- [PlatformWorkspaceRefreshTokenDeleteSecretError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-delete-secret-error.md)
+- [PlatformWorkspaceTokenCreateError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-token-create-error.md)
+- [DesAddUsersToGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-add-users-to-group-input.md): Input for adding users to a group.
+- [DesCreateFolderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-folder-input.md): Input for folder creation.
+- [DesCreateLifeCycleDefinitionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-life-cycle-definition-input.md): Input for creating a life cycle definition.
+- [DesCreateRevisionNamingSchemeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-revision-naming-scheme-input.md): Input for revision naming scheme creation.
+- [DesCreateRevisionNamingSchemeLevelInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-revision-naming-scheme-level-input.md): Input for revision naming scheme level creation.
+- [DesCreateUserGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-user-group-input.md): Input for user group creation.
+- [DesCreateUserInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-user-input.md): Input for user creation.
+- [DesDeleteFolderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-folder-input.md): Input for deleting a folder.
+- [DesDeleteLifeCycleDefinitionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-life-cycle-definition-input.md): Input for deleting a life cycle definition.
+- [DesDeleteRevisionNamingSchemeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-revision-naming-scheme-input.md): Input for deleting a revision naming scheme.
+- [DesDeleteUserGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-user-group-input.md): Input for deleting a user group.
+- [DesDeleteUserInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-user-input.md): Input for deleting a user.
+- [DesFolderFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-folder-filter-input.md): Input type for filtering folders in the design library.
+- [DesLifeCycleDefinitionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-definition-input.md): Input for life cycle definition.
+- [DesLifeCycleStageInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-stage-input.md): Input for life cycle stage.
+- [DesLifeCycleStateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-input.md): Input for life cycle state.
+- [DesLifeCycleStateTransitionApprovalGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-approval-group-input.md): Input for the life cycle state transition approval group.
+- [DesLifeCycleStateTransitionControllerInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-controller-input.md): Input for life cycle state transition controller.
+- [DesLifeCycleStateTransitionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-input.md): Input for life cycle state transition.
+- [DesMoveFolderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-move-folder-input.md): Input for moving a folder.
+- [DesPermissionUpsertInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-permission-upsert-input.md)
+- [DesRemoveUsersFromGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-remove-users-from-group-input.md): Input to remove users from group.
+- [DesUpdateFolderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-input.md): Input for updating folder.
+- [DesUpdateFolderPermissionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-permission-input.md): Input for updating folder permission.
+- [DesUpdateFolderPermissionsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-permissions-input.md): Input for updating folder permissions.
+- [DesUpdateLifeCycleDefinitionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-life-cycle-definition-input.md): Input for updating life cycle definition.
+- [DesUpdatePermissionsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-permissions-input.md)
+- [DesUpdateRevisionNamingSchemeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-revision-naming-scheme-input.md): Input for updating revision naming scheme.
+- [DesUpdateRevisionNamingSchemeLevelInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-revision-naming-scheme-level-input.md): Input for updating revision naming scheme level.
+- [DesUpdateSettingInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-setting-input.md): Input for updating a setting.
+- [DesUpdateUserGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-user-group-input.md): Input for updating a user group.
+- [DesUpdateUserInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-user-input.md): Input for updating a user.
+- [DesWorkspaceUserFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-workspace-user-filter-input.md): Specifies the filtering criteria for the workspace user list.
+- [DesWorkspaceUserSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-workspace-user-sort-input.md) [EXPERIMENTAL]
+- [GloAddAppClientSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-client-secret-input.md)
+- [GloAddAppGrantTypeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-grant-type-input.md)
+- [GloAddAppRedirectUriInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-redirect-uri-input.md)
+- [GloAddAppScopeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-scope-input.md)
+- [GloAddUsersToGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-users-to-group-input.md): Represents input value for adding user into group.
+- [GloAppFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-app-filter-input.md): Represents an Altium application.
+- [GloAppSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-app-sort-input.md): Represents an Altium application.
+- [GloCreateAppFromOAuthClientInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-from-oauth-client-input.md): Input for creating a new `GloApp`.
+- [GloCreateAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-input.md): Input for creating a new `GloApp`.
+- [GloCreateAppOAuthClientInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-oauth-client-input.md): Input for creating a new *OAuth 2.0 client*.
+- [GloCreateUserGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-user-group-input.md): Represents input value for creation of a new group.
+- [GloCreateUserInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-user-input.md): Represents input value for creating new user.
+- [GloDeleteAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-delete-app-input.md)
+- [GloEvtCreateWebhookSubscriptionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-evt-create-webhook-subscription-input.md): Represents the information required to create a webhook-based subscription.
+- [GloEvtDeleteSubscriptionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-evt-delete-subscription-input.md): Information required to delete a subscription.
+- [GloEvtPublishEventInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-evt-publish-event-input.md): Represents the information about an event to be dispatched to consumers.
+- [GloInstallAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-install-app-input.md)
+- [GloNtfEmailAttachmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-ntf-email-attachment-input.md)
+- [GloNtfSendEmailInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-ntf-send-email-input.md)
+- [GloOAuthClientFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-oauth-client-filter-input.md): Represents an *OAuth 2.0 client*.
+- [GloOAuthClientSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-oauth-client-sort-input.md): Represents an *OAuth 2.0 client*.
+- [GloParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-parameter-input.md)
+- [GloRemoveAppClientSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-client-secret-input.md)
+- [GloRemoveAppGrantTypeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-grant-type-input.md)
+- [GloRemoveAppRedirectUriInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-redirect-uri-input.md)
+- [GloRemoveAppScopeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-scope-input.md)
+- [GloRemoveUsersFromGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-users-from-group-input.md): Represents input value for removing user from group.
+- [GloRestoreAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-restore-app-input.md)
+- [GloUninstallAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-uninstall-app-input.md)
+- [GloUpdateAppContactEmailInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-contact-email-input.md)
+- [GloUpdateAppDescriptionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-description-input.md)
+- [GloUpdateAppHridInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-hrid-input.md)
+- [GloUpdateAppNameInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-name-input.md)
+- [GloUserGroupInputFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-user-group-input-filter-input.md)
+- [GloUserGroupSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-user-group-sort-input.md)
+- [GloUserInputFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-user-input-filter-input.md)
+- [GloUserSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-user-sort-input.md)
+- [KgAddNodeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-add-node-input.md) [EXPERIMENTAL]
+- [KgDeleteNodeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-delete-node-input.md) [EXPERIMENTAL]
+- [KgNodeParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-node-parameter-input.md) [EXPERIMENTAL]
+- [PlatformTokenDeleteInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-delete-input.md)
+- [PlatformTokenFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-filter-input.md)
+- [PlatformTokenSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-sort-input.md)
+- [PlatformTokenUpdateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-update-input.md): Input for updating an existing `PlatformToken`.
+- [PlatformWorkspaceRefreshTokenCreateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-create-input.md): Input for creating a new `PlatformWorkspaceRefreshToken`.
+- [PlatformWorkspaceRefreshTokenCreateNewSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-create-new-secret-input.md)
+- [PlatformWorkspaceRefreshTokenDeleteSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-delete-secret-input.md)
+- [PlatformWorkspaceTokenCreateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-token-create-input.md): Input for creating a new `PlatformWorkspaceToken`.
+- [SolAccessibleToInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-accessible-to-input.md)
+- [SolAddAttachmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-add-attachment-input.md)
+- [SolBldCreateSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-create-solution-input.md)
+- [SolBldImportRefDesignsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-import-ref-designs-input.md)
+- [SolBldImportSoftwareProjectsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-import-software-projects-input.md)
+- [SolBldLinkSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-link-solution-input.md)
+- [SolBldScaffoldingByConfigurationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-configuration-input.md)
+- [SolBldScaffoldingByExistingEsdInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-existing-esd-input.md)
+- [SolBldScaffoldingBySdmInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-sdm-input.md)
+- [SolBldScaffoldingBySoftwareProjectAndEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-software-project-and-eval-kit-input.md)
+- [SolBldScaffoldingBySolutionTemplateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-solution-template-input.md)
+- [SolBldScaffoldingExistingSolutionBySolutionTemplateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-existing-solution-by-solution-template-input.md)
+- [SolBldScaffoldingInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-input.md)
+- [SolCreateSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-create-solution-input.md)
+- [SolDeleteAttachmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-delete-attachment-input.md)
+- [SolDeleteSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-delete-solution-input.md)
+- [SolLinkItemsToSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-link-items-to-solution-input.md)
+- [SolLinkItemToSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-link-item-to-solution-input.md)
+- [SolSolutionFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-solution-filter-input.md): A filter input type for querying solutions.
+- [SolSolutionSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-solution-sort-input.md): A sorting input type for querying solutions.
+- [SolUnlinkItemFromSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-unlink-item-from-solution-input.md)
+- [SolUpdateSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-update-solution-input.md)
+- [DesContentTypeKind](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md): Kinds of content types stored in the library.
+- [DesFolderFilterMatchMode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-folder-filter-match-mode.md): The filter match mode.
+- [DesFolderType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-folder-type.md): Folder category used in the library.
+- [DesLifeCycleManagementType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-life-cycle-management-type.md): Type of lifecycle management strategy.
+- [DesLifeCycleStateTransitionKind](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-life-cycle-state-transition-kind.md): The kind of life cycle state transition.
+- [DesPermissionScope](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-permission-scope.md): Scope for permission checks (user, group, organisation, etc.).
+- [DesRevisionNamingPolicy](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-revision-naming-policy.md): Describes the naming policy for design revisions.
+- [DesUserPictureSize](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-user-picture-size.md): Sizes for user profile pictures.
+- [DesWorkspaceGroupOrderBy](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-group-order-by.md): Specifies the sort order field for the result set of workspace groups.
+- [DesWorkspaceTeamSortDirection](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-team-sort-direction.md): Specifies the sort direction that applies to the corresponding sort order field.
+- [DesWorkspaceUserOrderBy](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-order-by.md): Specifies the sort order field for the result set of workspace members.
+- [DesWorkspaceUserProfilePictureSize](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-profile-picture-size.md)
+- [DesWorkspaceUserType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-type.md): Specifies the type of the user in the workspace.
+- [DesWorkspaceVendor](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-vendor.md): Workspace vendors.
+- [GloAccountType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-account-type.md)
+- [GloAuthType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-auth-type.md)
+- [GloEvtSubscriptionState](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-evt-subscription-state.md): Represents the state of the subscription.
+- [GloNtfBodyEmailFormat](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-ntf-body-email-format.md)
+- [GloOAuthClientRefreshTokenExpirationType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-oauth-client-refresh-token-expiration-type.md)
+- [KgNodeType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/kg-node-type.md) [EXPERIMENTAL]
+- [KgRelationSemantic](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/kg-relation-semantic.md): Defines the semantic meaning of the relation. [EXPERIMENTAL]

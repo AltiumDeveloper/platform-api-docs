@@ -1,0 +1,37 @@
+# Deprecated — Altium Platform API
+> Operations marked @deprecated. They still work; migrate to the replacement named in each reason.
+
+## Platform
+- [desFolderById](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/des-folder-by-id.md) (deprecated: Use `DesFolderByFolderId` instead.)
+- [solSolutionsByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/sol-solutions-by-ids.md): Gets solutions by IDs. (deprecated: Internal resolver used by the Fusion gateway for batched entity resolution. Not intended for direct client use.)
+- [solSolutionsByPage](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/sol-solutions-by-page.md): Gets all available solutions with pagination. (deprecated: Use solSolutionsByPagev2 query)
+
+## Design
+- [desComparisonHealthcheck](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/des-comparison-healthcheck.md) (deprecated: No longer supported)
+- [design.preview.latestGeneration](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/latest-generation.md): Retrieves the design data generation. [EXPERIMENTAL] (deprecated: Use design.latestGeneration.byDesignId instead.)
+- [design.preview.latestGenerationByUploadId](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/latest-generation-by-upload-id.md): Retrieves the design data generation for the upload. [EXPERIMENTAL] (deprecated: Use design.latestGeneration.byUploadId instead.)
+- [design.preview.ruleCheckAggregateResultsByDesignId](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-aggregate-results-by-design-id.md): Retrieves the aggregated rule check results for a design. [EXPERIMENTAL] (deprecated: Use design.ruleCheckExecution.byDesignIdAggregated instead.)
+- [design.preview.ruleCheckAggregateResultsByReleaseId](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-aggregate-results-by-release-id.md): Retrieves the aggregated rule check results for a design. [EXPERIMENTAL] (deprecated: Use design.ruleCheckExecution.byReleaseIdAggregated instead.)
+- [design.preview.ruleCheckById](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-by-id.md): Retrieves a rule check by its identifier. [EXPERIMENTAL] (deprecated: Use design.ruleCheck.byId instead.)
+- [design.preview.ruleCheckConfiguration](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-configuration.md): Retrieves current rule check configuration. [EXPERIMENTAL] (deprecated: Use design.ruleCheck.configuration instead.)
+- [design.preview.ruleCheckExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-execution.md): Retrieves a rule check execution by its identifier. [EXPERIMENTAL] (deprecated: Use design.ruleCheckExecution.byId instead.)
+- [design.preview.ruleCheckExecutions](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-executions.md): Retrieves multiple rule check executions by their identifiers. [EXPERIMENTAL] (deprecated: Use design.ruleCheckExecution.byIds instead.)
+- [design.preview.ruleCheckExecutionsByDesignId](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-executions-by-design-id.md): Retrieves all rule check executions for a design's revision. [EXPERIMENTAL] (deprecated: Use design.ruleCheckExecution.byDesignId instead.)
+- [design.preview.ruleCheckExecutionsByReleaseId](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-executions-by-release-id.md): Retrieves all rule check executions for a design's revision. [EXPERIMENTAL] (deprecated: Use design.ruleCheckExecution.byReleaseId instead.)
+- [design.preview.ruleCheckLatestExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-latest-execution.md): Retrieves the latest rule check execution for a WIP design. [EXPERIMENTAL] (deprecated: Use design.ruleCheckExecution.byDesignIdAggregated instead.)
+- [design.preview.ruleChecksByAuth](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-checks-by-auth.md): Retrieves all rule checks contained in the workspace. [EXPERIMENTAL] (deprecated: Use design.ruleCheck.byAuth instead.)
+- [design.preview.ruleChecksByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-checks-by-ids.md): Retrieves rule checks by their identifiers. [EXPERIMENTAL] (deprecated: Use design.ruleCheck.byIds instead.)
+- [desManufacturePackages](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/des-manufacture-packages.md): Gets manufacture packages. (deprecated: Not implemented. Will soon be removed.)
+
+## Procurement
+- [bomBom](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/procurement/operations/queries/bom-bom.md): Get the specified BOM. (deprecated: Use bomBomById(id: "grid:...") instead.)
+- [bomBomRelease](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/procurement/operations/queries/bom-bom-release.md): Get the specified BOM release. (deprecated: Use bomBomById(id: "grid:...") instead.)
+- [bomExportBom](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/procurement/operations/mutations/bom-export-bom.md): Exports the specified BOM into a file and provides a download URL. (deprecated: Use bomExportBomById() instead.)
+- [bomExportBomRelease](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/procurement/operations/mutations/bom-export-bom-release.md): Exports the specified BOM release into a file and provides a download URL. (deprecated: Use bomExportBomById() instead.)
+
+## Supply
+- [supRefDesignByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/supply/operations/queries/sup-ref-design-by-ids.md): Search a specific reference designs by its unique identifiers. (deprecated: Use 'supRefDesignsByIds' instead.)
+
+## Renesas (preview)
+- [dmExecuteDeviceEvaluationFromESD](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/renesas-preview/operations/mutations/dm-execute-device-evaluation-from-esd.md) [EXPERIMENTAL] (deprecated: Use dmExecuteDeviceEvaluationFromESDv2 mutation instead)
+- [dmSoftwareModelFromConfigurationXml](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/renesas-preview/operations/queries/dm-software-model-from-configuration-xml.md) [EXPERIMENTAL] (deprecated: For internal use only. Will be removed in next few weeks.)

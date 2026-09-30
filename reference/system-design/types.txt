@@ -1,0 +1,49 @@
+# System Design — types
+> Types of the System Design bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/llms.txt).
+
+- [SchemaRegistryEntry](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/schema-registry-entry.md) [EXPERIMENTAL]
+- [SysEsdCompiledMetadata](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-compiled-metadata.md)
+- [SysEsdCreateDocumentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-create-document-payload.md): Result of creating a new ESD document.
+- [SysEsdDeleteDocumentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-delete-document-payload.md): Result of deleting an ESD document.
+- [SysEsdExportDocumentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-export-document-payload.md): Result of exporting an ESD document.
+- [SysEsdFunctionalBlock](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-functional-block.md)
+- [SysEsdImportDocumentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-import-document-payload.md): Result of importing content into an ESD document.
+- [SysEsdKeyComponent](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-key-component.md)
+- [SysEsdParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-parameter.md)
+- [SysEsdPort](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-port.md)
+- [SysEsdPortAssociation](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-port-association.md)
+- [SysEsdSoftwareComponent](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-software-component.md)
+- [SysEsdUpdateDocumentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-update-document-payload.md): Result of updating an ESD document.
+- [SysLibDeleteSoftwareLibraryPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-delete-software-library-payload.md) [EXPERIMENTAL]
+- [SysLibSoftwareComponent](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-component.md) [EXPERIMENTAL]
+- [SysLibSoftwareComponentSpecification](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-component-specification.md) [EXPERIMENTAL]
+- [SysLibSoftwareLibraryDownload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-library-download.md) [EXPERIMENTAL]
+- [SysLibUploadSoftwareLibraryPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-upload-software-library-payload.md) [EXPERIMENTAL]
+- [SysSdmAuthoringApplication](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-authoring-application.md) [EXPERIMENTAL]
+- [SysSdmCreateSystemModelVersionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-create-system-model-version-payload.md) [EXPERIMENTAL]
+- [SysSdmDmPeripheralConfiguration](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-configuration.md) [EXPERIMENTAL]
+- [SysSdmDmPeripheralInstance](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-instance.md) [EXPERIMENTAL]
+- [SysSdmDmPeripheralMode](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-mode.md) [EXPERIMENTAL]
+- [SysSdmDmPeripheralParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-parameter.md) [EXPERIMENTAL]
+- [SysSdmDmPeripheralPinConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-pin-config.md) [EXPERIMENTAL]
+- [SysSdmDmPeripheralPinDependencyConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-pin-dependency-config.md) [EXPERIMENTAL]
+- [SysSdmDmPort](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port.md) [EXPERIMENTAL]
+- [SysSdmDmPortConfiguration](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-configuration.md) [EXPERIMENTAL]
+- [SysSdmDmPortConfigurationDependency](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-configuration-dependency.md) [EXPERIMENTAL]
+- [SysSdmDmPortConfigurationEnumValue](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-configuration-enum-value.md) [EXPERIMENTAL]
+- [SysSdmDmPortFunction](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-function.md) [EXPERIMENTAL]
+- [SysSdmParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) [EXPERIMENTAL]
+- [SysSdmPeripheral](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-peripheral.md) [EXPERIMENTAL]
+- [SysSdmSystemModelVersionMetadata](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version-metadata.md) [EXPERIMENTAL]
+- [SysEsdCreateDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-create-document-input.md): Input for creating a new ESD document.
+- [SysEsdDeleteDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-delete-document-input.md): Input for deleting an ESD document.
+- [SysEsdExportDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-export-document-input.md): Input for exporting an ESD document.
+- [SysEsdImportDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-import-document-input.md): Input for importing content into an existing ESD document.
+- [SysEsdUpdateDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-update-document-input.md): Input for updating an existing ESD document.
+- [SysLibDeleteSoftwareLibraryInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-lib-delete-software-library-input.md) [EXPERIMENTAL]
+- [SysLibUploadSoftwareLibraryInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-lib-upload-software-library-input.md) [EXPERIMENTAL]
+- [SysSdmCreateSystemModelVersionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-sdm-create-system-model-version-input.md) [EXPERIMENTAL]
+- [SysSdmDmGpioMode](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-dm-gpio-mode.md) [EXPERIMENTAL]
+- [SysSdmDmPeripheralVirtualization](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-dm-peripheral-virtualization.md) [EXPERIMENTAL]
+- [SysSdmDmPortMode](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-dm-port-mode.md) [EXPERIMENTAL]
+- [SysSdmSoftwareComponentCategory](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-software-component-category.md) [EXPERIMENTAL]

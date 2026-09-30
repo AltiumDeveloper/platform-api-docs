@@ -1,0 +1,92 @@
+# Altium Platform API — Configuration Management schema slice (~806 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesDownloadableFile → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesFolder → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
+#   Node → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+
+type Query {
+  "Searches for a project template by its identifier."
+  desProjectTemplateById(
+    "The project template node identifier."
+    id: ID!
+  ): DesProjectTemplate
+  "Searches for a project template revision by its identifier."
+  desProjectTemplateRevisionById(
+    "The project template revision identifier."
+    id: ID!
+  ): DesProjectTemplateRevision
+  "Gets the workspace configuration."
+  desWorkspaceConfiguration(
+    "The workspace URL."
+    workspaceUrl: String
+  ): DesWorkspaceConfiguration!
+}
+
+"Information about a project template."
+type DesProjectTemplate implements Node {
+  "Project template description."
+  description: String!
+  "Project template folder."
+  folder: DesFolder
+  "The node identifier (used by `desProjectTemplateById`)."
+  id: ID!
+  "Project template latest revision."
+  latestRevision: DesProjectTemplateRevision!
+  "Project template name."
+  name: String!
+}
+
+"A connection to a list of items."
+type DesProjectTemplateConnection {
+  "A list of edges."
+  edges: [DesProjectTemplateEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesProjectTemplate!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesProjectTemplateEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesProjectTemplate!
+}
+
+"Project template revision information."
+type DesProjectTemplateRevision implements Node {
+  "Project template revision comment."
+  comment: String!
+  "Creation date for project template revision."
+  createdAt: DateTime!
+  "Project template revision description."
+  description: String!
+  "Project template revision downloadable file."
+  downloadableFile: DesDownloadableFile!
+  "Project template revision identifier."
+  id: ID!
+  "Project template revision name."
+  name: String!
+}
+
+"Information about workspace configuration."
+type DesWorkspaceConfiguration {
+  "Gets project templates."
+  projectTemplates(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): DesProjectTemplateConnection
+}

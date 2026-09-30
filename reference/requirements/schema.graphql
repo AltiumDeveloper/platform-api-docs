@@ -1,0 +1,28 @@
+# Altium Platform API — Requirements schema slice (~183 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+
+type Query {
+  requirements: RequirementsQueries!
+}
+
+type RequirementsProject {
+  id: ID!
+  name: String!
+}
+
+type RequirementsProjectQueries {
+  "Gets Requirements project by GRID."
+  byId(id: ID!): RequirementsProject
+  "Gets Requirements projects by GRIDs."
+  byIds(ids: [ID!]!): [RequirementsProject]!
+}
+
+type RequirementsQueries {
+  project: RequirementsProjectQueries!
+}
+
+input RequirementFilterInput {
+  "List of requirement IDs to use for filtering."
+  requirementIds: [String!]
+}

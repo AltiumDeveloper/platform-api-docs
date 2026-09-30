@@ -1,0 +1,18 @@
+# Configuration Management — Altium Platform API
+> Environment configuration and templates: project templates, settings templates, managed sheet templates and their revisions.
+
+Concepts: [configuration](https://altiumdeveloper.github.io/cdm/subsets/configuration/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/schema.graphql) (~806 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/overview.md).
+
+## Entities
+- [DesProjectTemplate](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md): Project Template — A project template includes document configurations and settings that you know you will frequently apply to various projects. GRID `grid:workspace:{workspace-id}:design:project-template/{id}`. Via: desProjectTemplateById, DesWorkspaceConfiguration.projectTemplates
+- [DesProjectTemplateRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template-revision.md): Project Template Revision — An immutable revision of a project template. GRID `grid:workspace:{workspace-id}:design:project-template-revision/{id}`. Via: desProjectTemplateRevisionById, DesProjectTemplate.latestRevision
+
+## Entry points
+- [desProjectTemplateById](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/operations/queries/des-project-template-by-id.md): Searches for a project template by its identifier.
+- [desProjectTemplateRevisionById](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/operations/queries/des-project-template-revision-by-id.md): Searches for a project template revision by its identifier.
+
+## Queries
+- [desWorkspaceConfiguration](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/operations/queries/des-workspace-configuration.md): Gets the workspace configuration.
+
+## Optional
+- [All types in Configuration Management](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types.txt): one line per type (~134 tokens)

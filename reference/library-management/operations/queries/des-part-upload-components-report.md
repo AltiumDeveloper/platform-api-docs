@@ -1,0 +1,30 @@
+---
+title: "desPartUploadComponentsReport"
+url: "https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/queries/des-part-upload-components-report"
+bounded_context: "Library Management"
+kind: "queries"
+experimental: false
+deprecated: false
+---
+
+# desPartUploadComponentsReport
+
+Returns the result of a completed components upload, or 'null' when there is no such report. EXPERIMENTAL: this query may change or be removed without notice.
+
+```graphql
+desPartUploadComponentsReport(
+  operationId: UUID!
+): DesPartUploadComponentsPayload
+```
+
+### Arguments
+
+#### `desPartUploadComponentsReport.operationId` · [`UUID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) non-null scalar common
+
+The operation to read the result of, as returned by `desPartUploadOperation`.
+
+### Type
+
+#### [`DesPartUploadComponentsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-components-payload.md) object library-management
+
+Payload produced when uploading components.

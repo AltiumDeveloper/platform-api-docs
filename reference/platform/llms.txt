@@ -1,0 +1,151 @@
+# Platform — Altium Platform API
+> Workspaces, users and organizations, apps and tokens, folders, generic revisions, permissions and settings, lifecycle definitions and revision naming schemes, domain events, notifications, solutions and the knowledge graph.
+
+Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~30398 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
+
+## Entities
+- [DesLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md): Lifecycle Definition — Defines the set of states that an entity can transition through in its lifecycle. GRID `grid:workspace:{workspace-id}:platform:lifecycle-definition/{id}`. Via: desLifeCycleDefinitionById, desLifeCycleDefinitionByContentTypeKind, desLifeCycleDefinitions, DesPartLifecycle.definition
+- [DesLifeCycleStage](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-stage.md): Lifecycle Stage. Via: DesLifeCycleDefinition.stages
+- [DesLifeCycleState](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md): Lifecycle State. Via: DesLifeCycleStage.states, DesLifeCycleStateTransition.lifeCycleStateAfter, DesLifeCycleStateTransition.lifeCycleStateBefore, …
+- [DesRevisionNamingScheme](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme.md): Revision Naming Scheme. GRID `grid:workspace:{workspace-id}:platform:revision-naming-scheme/{id}`. Via: desRevisionNamingSchemeById, desRevisionNamingSchemeByContentTypeKind, desRevisionNamingSchemes
+- [DesWorkspace](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace.md): Workspace — The top-level entity that plays a role of a closed environment for other entities (members, projects, components, etc.). GRID `grid:global::platform:workspace/{id}`. Via: desWorkspaceById, desWorkspaceByUrl
+- [DesWorkspaceGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md): Workspace Group — Workspace Group represents a logical collection of users within a workspace, used to manage access control, permissions, and collaboration roles across projects and data assets. GRID `grid:workspace:{workspace-id}:team:group/{id}`. Via: desWorkspaceGroupById, desWorkspaceGroupsByIds, DesWorkspaceGroupPermission.group, DesWorkspaceTeam.workspaceGroups, DesWorkspaceUser.groups
+- [DesWorkspaceUser](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md): Workspace User. GRID `grid:workspace:{workspace-id}:team:user/{id}`. Via: desWorkspaceUserById, desWorkspaceUsersByIds, desWorkspaceUserByAuth, DesOwnerPermission.owner, DesWorkspaceGroup.members, …
+- [GloApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md): Application. GRID `grid:global::platform:application/{id}`. Via: gloAppById, gloAppByClientId, gloAppInstalledApps, gloApps
+- [GloEvtSubscription](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md): Subscription. GRID `grid:global::events:subscription/{id}`. Via: gloEvtSubscriptionById
+- [GloOrganization](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md): Organization. GRID `grid:global::platform:organization/{id}`. Via: gloOrganizationById, gloOrganization, DesOrganizationPermission.organization, GloUser.organization, GloUserGroup.organization
+- [GloUser](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md): User. GRID `grid:global::platform:user/{id}`. Via: gloUserById, gloUsersByIds, gloUsers, DesExternalUserPermission.user, GloOrganization.users, …
+- [GloUserGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-group.md): User Group — A way to group multiple users together (e.g. for the purposes of SCIM syncrhonization). GRID `grid:global::platform:group/{id}`. Via: gloUserGroups, GloOrganization.groups, GloUser.groups
+- [SolSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md): Solution. GRID `grid:workspace:{workspace-id}:platform:solution/{id}`. Via: solSolutionById, solSolutions, RsaMotorStudioProject.parentSolutions, SftSoftwareProject.parentSolutions
+
+## Entry points
+- [desLifeCycleDefinitionById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-life-cycle-definition-by-id.md): Gets a life cycle definition based on the identifier provided.
+- [desPermissionsById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-permissions-by-id.md): Gets all permissions by ID. [EXPERIMENTAL]
+- [desRevisionNamingSchemeById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-revision-naming-scheme-by-id.md): Gets a revision naming scheme based on the identifier provided.
+- [desWorkspaceById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-by-id.md): Search a specific workspace by its unique identifier.
+- [desWorkspaceGroupById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-group-by-id.md): Retrieves a workspace group by ID.
+- [desWorkspaceGroupsByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-groups-by-ids.md): Retrieves workspace groups by IDs.
+- [desWorkspaceUserById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-user-by-id.md): Retrieves a workspace user by ID.
+- [desWorkspaceUsersByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-users-by-ids.md): Retrieves workspace users by their IDs.
+- [gloAppById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-app-by-id.md): Gets the `GloApp` with the specified identifier.
+- [gloEvtSubscriptionById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-evt-subscription-by-id.md): Retrieves the information about subscription with given identifier.
+- [gloOrganizationById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-organization-by-id.md): Retrieves an organization by its global resource identifier.
+- [gloUserById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-user-by-id.md): Retrieves user by identifier.
+- [gloUsersByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-users-by-ids.md): Retrieves list of users by their identifiers.
+- [solSolutionById](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-solution-by-id.md): Gets solution by ID.
+- [desLifeCycleDefinitions](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-life-cycle-definitions.md) (list): Gets life cycle definitions.
+- [desRevisionNamingSchemes](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-revision-naming-schemes.md) (list): Gets revision naming schemes.
+- [gloAppInstalledApps](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-app-installed-apps.md) (list): Gets a list of `GloApp` installed in a workspace.
+- [gloApps](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-apps.md) (list): Gets a list of `GloApp`.
+- [gloUserGroups](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-user-groups.md) (list): Retrieves user groups.
+- [gloUsers](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-users.md) (list): Retrieves list of users by filter.
+- [solSolutions](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-solutions.md) (list): Gets all available solutions.
+
+## Queries
+- [desFolderByFolderId](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-folder-by-folder-id.md): Searches for a specific folder by its reference identifier.
+- [desLifeCycleDefinitionByContentTypeKind](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-life-cycle-definition-by-content-type-kind.md): Gets the first allowed life cycle by the content kind.
+- [desRevisionDetailsByRevisionId](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-revision-details-by-revision-id.md): Searches details of a revision by its reference identifier.
+- [desRevisionNamingSchemeByContentTypeKind](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-revision-naming-scheme-by-content-type-kind.md): Gets the first allowed naming scheme by the content kind.
+- [desSettings](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-settings.md): Gets the specified settings.
+- [desTeam](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-team.md): Gets the specified workspace team.
+- [desUserByAuth](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-user-by-auth.md): Gets the authorized user.
+- [desUserByGlobalId](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-user-by-global-id.md): Gets a user by the specified global identifier.
+- [desUsers](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-users.md): Gets the specified workspace users by identifiers.
+- [desWorkspaceByUrl](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-by-url.md): Search a specific workspace by its URL.
+- [desWorkspaceInfos](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-infos.md): Search for workspaces associated with this account.
+- [desWorkspaceLocations](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-locations.md): Get a list of workspace locations.
+- [desWorkspaceTeamByAuth](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-team-by-auth.md): Retrieves a workspace team based on the authenticity of the requester.
+- [desWorkspaceUserByAuth](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-user-by-auth.md): Retrieves a workspace user associated with the identity of the requester.
+- [gloAppByClientId](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-app-by-client-id.md): Gets the `GloApp` with a `GloOAuthClient` that has the specified Client identifier.
+- [gloOrganization](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-organization.md): Retrieves an organization by its identifier.
+- [kgNode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/kg-node.md) [EXPERIMENTAL]
+- [kgNodes](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/kg-nodes.md) [EXPERIMENTAL]
+- [node](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/node.md): Fetches an object given its ID.
+- [platform.token.byTokenId](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/token/by-token-id.md): Gets the `PlatformToken` with the specified identifier.
+- [platform.token.byWorkspace](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/token/by-workspace.md): Gets a list of `PlatformToken` the user has access to in the Workspace, determined by the access token.
+- [platform.token.workspaceTokenQuota](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/token/workspace-token-quota.md): Gets the `PlatformToken` quota for the Workspace.
+- [solBldEntityScaffoldingStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-bld-entity-scaffolding-status.md): Retrieves a entity scaffolding status.
+- [solBldScaffoldingStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-bld-scaffolding-status.md): Retrieves a job status.
+- [solBldScaffoldingStatusesBySolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-bld-scaffolding-statuses-by-solution.md): Retrieves cached job statuses for a solution.
+- [solEnvironmentLinks](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-environment-links.md): Gets environment links.
+- [solSolutionsByPagev2](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-solutions-by-pagev-2.md): Gets all available solutions with pagination.
+
+## Mutations
+- [desAddUsersToGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-add-users-to-group.md): Adds users to the specified group.
+- [desCreateFolder](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-create-folder.md): Creates a folder in the library.
+- [desCreateLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-create-life-cycle-definition.md): Creates the provided life cycle definition, with associated states, stages and state transitions.
+- [desCreateRevisionNamingScheme](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-create-revision-naming-scheme.md): Creates a revision naming scheme.
+- [desCreateUser](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-create-user.md): Creates a user.
+- [desCreateUserGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-create-user-group.md): Creates a new user group.
+- [desDeleteFolder](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-delete-folder.md): Deletes the specified folder from the library.
+- [desDeleteLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-delete-life-cycle-definition.md): Deletes the provided life cycle definitions.
+- [desDeleteRevisionNamingScheme](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-delete-revision-naming-scheme.md): Deletes the revision naming scheme.
+- [desDeleteUser](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-delete-user.md): Deletes the specified user.
+- [desDeleteUserGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-delete-user-group.md): Deletes the specified user group.
+- [desMoveFolder](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-move-folder.md): Moves the specified folder in the library.
+- [desRemoveUsersFromGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-remove-users-from-group.md): Removes users from the specified group.
+- [desUpdateFolder](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-update-folder.md): Updates the specified folder in the library.
+- [desUpdateFolderPermissions](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-update-folder-permissions.md): Updates the permissions for the associated folder.
+- [desUpdateLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-update-life-cycle-definition.md): Updates the defined life cycle definition with those provided.
+- [desUpdatePermissions](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-update-permissions.md): Updates entity's permissions.
+- [desUpdateRevisionNamingScheme](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-update-revision-naming-scheme.md): Updates a revision naming scheme.
+- [desUpdateSetting](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-update-setting.md): Updates the value associated with the specified setting.
+- [desUpdateUser](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-update-user.md): Updates the specified user properties.
+- [desUpdateUserGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-update-user-group.md): Updates the specified user group.
+- [gloAddAppClientSecret](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-app-client-secret.md): Adds a new client secret to an existing App.
+- [gloAddAppGrantType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-app-grant-type.md): Adds a new grant type to an existing App.
+- [gloAddAppRedirectUri](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-app-redirect-uri.md): Adds a new redirect URI to an existing App.
+- [gloAddAppScope](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-app-scope.md): Adds a new scope to an existing App.
+- [gloAddUsersToGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-users-to-group.md): Add users to group.
+- [gloCreateApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-create-app.md): Creates a new App with an *OAuth 2.0 client*.
+- [gloCreateAppFromOAuthClient](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-create-app-from-oauth-client.md): Creates a new App with an existing *OAuth 2.0 client*.
+- [gloCreateUser](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-create-user.md): Create new user.
+- [gloCreateUserGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-create-user-group.md): Create new user group.
+- [gloDeleteApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-delete-app.md): Deletes an App.
+- [gloEvtCreateWebhookSubscription](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-evt-create-webhook-subscription.md): Creates webhook-based subscription with given parameters.
+- [gloEvtDeleteSubscription](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-evt-delete-subscription.md): Deletes the subscription with given identifier.
+- [gloEvtPublishEvent](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-evt-publish-event.md): Publishes an event.
+- [gloInstallApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-install-app.md): Installs an App into a Workspace.
+- [gloNtfSendEmail](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-ntf-send-email.md): Sends e-mail to specified recipients.
+- [gloRemoveAppClientSecret](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-client-secret.md): Removes an existing client secret from an existing App.
+- [gloRemoveAppGrantType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-grant-type.md): Removes an existing grant type from an existing App.
+- [gloRemoveAppRedirectUri](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-redirect-uri.md): Removes an existing redirect URI from an existing App.
+- [gloRemoveAppScope](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-scope.md): Removes an existing scope from an existing App.
+- [gloRemoveUsersFromGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-users-from-group.md): Remove users from group.
+- [gloRestoreApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-restore-app.md): Restores an App.
+- [gloUninstallApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-uninstall-app.md): Uninstalls an App from a Workspace.
+- [gloUpdateAppContactEmail](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-update-app-contact-email.md): Updates the contact email of an existing App.
+- [gloUpdateAppDescription](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-update-app-description.md): Updates the description of an existing App.
+- [gloUpdateAppHrid](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-update-app-hrid.md): Updates the human-readable identifier of an existing App.
+- [gloUpdateAppName](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-update-app-name.md): Updates the name of an existing App.
+- [kgAddNode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/kg-add-node.md): Registers a new knowledge graph node. [EXPERIMENTAL]
+- [kgDeleteNode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/kg-delete-node.md): Deletes a Vault entity registered in the knowledge graph. [EXPERIMENTAL]
+- [platformTokenDelete](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-token-delete.md): Deletes a `PlatformToken`.
+- [platformTokenUpdate](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-token-update.md): Updates the name and/or description of an existing `PlatformToken`.
+- [platformWorkspaceRefreshTokenCreate](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-workspace-refresh-token-create.md): Creates a new `PlatformWorkspaceRefreshToken`.
+- [platformWorkspaceRefreshTokenCreateNewSecret](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-workspace-refresh-token-create-new-secret.md): Creates a new client secret for an existing `PlatformWorkspaceRefreshToken`.
+- [platformWorkspaceRefreshTokenDeleteSecret](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-workspace-refresh-token-delete-secret.md): Deletes a client secret for an existing `PlatformWorkspaceRefreshToken`.
+- [platformWorkspaceTokenCreate](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-workspace-token-create.md): Creates a new `PlatformWorkspaceToken`.
+- [solAddAttachment](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-add-attachment.md): Adds an attachment to the solution.
+- [solBldCreateSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-create-solution.md): Scaffolds a new solution with projects and optional empty linked ESD document.
+- [solBldImportRefDesigns](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-import-ref-designs.md): Imports a reference design into an existing solution.
+- [solBldImportSoftwareProjects](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-import-software-projects.md): Imports software projects into an existing solution.
+- [solBldLinkSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-link-solution.md): Links projects to an existing solution and optionally creates an empty ESD document if none exists.
+- [solBldScaffolding](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-scaffolding.md): Scaffolds a new solution.
+- [solBldScaffoldingByConfiguration](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-scaffolding-by-configuration.md): Scaffolds a new solution by provided configuration file.
+- [solBldScaffoldingByExistingEsd](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-scaffolding-by-existing-esd.md): Updates existing solution from linked ESD document.
+- [solBldScaffoldingBySdm](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-scaffolding-by-sdm.md): Generates software project based on SDM document.
+- [solBldScaffoldingBySoftwareProjectAndEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-scaffolding-by-software-project-and-eval-kit.md): Scaffolds a new solution by software project and eval kit.
+- [solBldScaffoldingBySolutionTemplate](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-scaffolding-by-solution-template.md): Scaffolds a new solution by solution template.
+- [solBldScaffoldingExistingSolutionBySolutionTemplate](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-scaffolding-existing-solution-by-solution-template.md): Scaffolds additional data into an existing solution using a solution template.
+- [solBldScaffoldingWithEmptyEsd](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-bld-scaffolding-with-empty-esd.md): Scaffolds a new solution with an empty linked ESD document.
+- [solCreateSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-create-solution.md): Adds new solution.
+- [solDeleteAttachment](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-delete-attachment.md): Deletes existing attachment.
+- [solDeleteSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-delete-solution.md): Deletes existing solution.
+- [solLinkItemsToSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-link-items-to-solution.md): Creates a link between solution and other items.
+- [solLinkItemToSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-link-item-to-solution.md): Creates a link between solution and other item.
+- [solUnlinkItemFromSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-unlink-item-from-solution.md): Removes a link between solution and other item.
+- [solUpdateSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-update-solution.md): Updates existing solution.
+
+## Optional
+- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~13897 tokens)

@@ -1,0 +1,276 @@
+# Supply — types
+> Types of the Supply bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/llms.txt).
+
+- [SupDocument](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-document.md)
+- [SupEvalKitAddDevicesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-devices-payload.md): Payload returned after adding devices to the evaluation kit.
+- [SupEvalKitAddPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-preview-images-payload.md)
+- [SupEvalKitAddRefDesignCompatibleEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-ref-design-compatible-eval-kit-payload.md)
+- [SupEvalKitAddRefDesignCompatibleEvalKitsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-ref-design-compatible-eval-kits-payload.md)
+- [SupEvalKitCreateEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-create-eval-kit-payload.md): Payload associated with creating a evaluation kit.
+- [SupEvalKitDeleteDevicesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-devices-payload.md): Payload returned after deleting devices from an evaluation kit.
+- [SupEvalKitDeleteEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-eval-kit-payload.md): Payload associated with deleting a evaluation kit.
+- [SupEvalKitDeletePreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-preview-images-payload.md)
+- [SupEvalKitDeleteRefDesignCompatibleEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-ref-design-compatible-eval-kit-payload.md)
+- [SupEvalKitDeleteRefDesignCompatibleEvalKitsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-ref-design-compatible-eval-kits-payload.md)
+- [SupEvalKitDevice](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-device.md)
+- [SupEvalKitESDSource](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-esdsource.md)
+- [SupEvalKitNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-not-found-error.md)
+- [SupEvalKitOperationFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-operation-failed-error.md)
+- [SupEvalKitParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-parameter.md): Represents a parameter in the evaluation kit.
+- [SupEvalKitParameterInfo](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-parameter-info.md): Represents the information of a parameter in the evaluation kit.
+- [SupEvalKitPatchParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-patch-parameters-payload.md): Payload returned after patching parameters on an evaluation kit.
+- [SupEvalKitSetMainRefDesignPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-set-main-ref-design-payload.md): Payload returned after setting the main reference design of an evaluation kit.
+- [SupEvalKitSetParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-set-parameters-payload.md): Payload returned after setting parameters on an evaluation kit.
+- [SupEvalKitSoftwareProjectCompatibleEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-software-project-compatible-eval-kit-payload.md): Payload associated with updating a software project compatible evaluation kits.
+- [SupEvalKitSortPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-sort-preview-images-payload.md)
+- [SupEvalKitUnsetMainRefDesignPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-unset-main-ref-design-payload.md): Payload returned after unsetting the main reference design of an evaluation kit.
+- [SupEvalKitUpdateEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-update-eval-kit-payload.md): Payload associated with updating a evaluation kit.
+- [SupImage](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-image.md)
+- [SupPartFamilyDocument](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-document.md): `SupPartFamilyDocument` contains the details for the documentation provided for a Part Family.
+- [SupPartFamilyFeatureMetadata](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-feature-metadata.md): `SupPartFamilyFeatureMetadata` contains additional information about a given feature.
+- [SupPartFamilyKeyFeature](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-key-feature.md): `SupPartFamilyKeyFeature` contains the key details for a Part Family feature.
+- [SupPartFamilyTag](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-tag.md): `SupPartFamilyTag` represents additional metadata for a Part Family.
+- [SupRefApplicationBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-application-bucket.md): Aggregation bucket for reference design applications with application identifier + counts.
+- [SupRefCategoryBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-category-bucket.md): Aggregation bucket for reference design categories with category identifier + counts.
+- [SupRefDesign](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md): A reference design model aggregates the relevant documents, files and parts.
+- [SupRefDesignFile](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-file.md): Represents a design file belonging to a reference design.
+- [SupRefDesignNote](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-note.md): Represents a note attached to a reference design file.
+- [SupRefDesignResultSet](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-result-set.md): Reference designs with pagination, aggregation information.
+- [SupRefDesignTypeBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-type-bucket.md): Aggregation bucket for reference design types with type + counts.
+- [SupRefEvaluationKit](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-evaluation-kit.md)
+- [SupRefFaq](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-faq.md): Represents a frequently asked question for a reference design.
+- [SupRefKeyFeature](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-key-feature.md): Represents a key feature of a reference design.
+- [SupRefPart](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-part.md)
+- [SupRefPoint2D](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-point-2-d.md): Represents a 2D point for a file note.
+- [SupRefPublisherBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-publisher-bucket.md): Aggregation bucket for reference design publishers with company identifier + counts.
+- [SupRefResource](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-resource.md): Represents a resource related to a reference design.
+- [SupRefTag](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-tag.md): Represents a tag for categorizing a reference design.
+- [SupRefTagBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-tag-bucket.md): Aggregation bucket for reference design tags with name + counts.
+- [SupSoftwareProjectCreateSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-create-software-project-payload.md): Payload associated with creating a software project.
+- [SupSoftwareProjectDeleteSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-delete-software-project-payload.md): Payload associated with deleting a software project.
+- [SupSoftwareProjectEvalKitProjectSource](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-project-source.md)
+- [SupSoftwareProjectEvalKitSource](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source.md)
+- [SupSoftwareProjectNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-not-found-error.md)
+- [SupSoftwareProjectOperationFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-operation-failed-error.md)
+- [SupSoftwareProjectParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-parameter.md): Represents a parameter in the software project.
+- [SupSoftwareProjectParameterInfo](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-parameter-info.md): Represents the information of a parameter in the software project.
+- [SupSoftwareProjectPatchParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-patch-parameters-payload.md): Payload returned after patching parameters on a software project.
+- [SupSoftwareProjectPatchPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-patch-preview-images-payload.md): Payload for patching preview images on a software project.
+- [SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-patch-software-project-solution-templates-payload.md): Payload returned after patching software projects on a solution template.
+- [SupSoftwareProjectSetParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-set-parameters-payload.md): Payload returned after setting parameters on a software project.
+- [SupSoftwareProjectSetPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-set-preview-images-payload.md): Payload for replacing all preview images on a software project.
+- [SupSoftwareProjectSetSoftwareProjectSolutionTemplatesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-set-software-project-solution-templates-payload.md): Payload returned after setting software projects on a solution template.
+- [SupSoftwareProjectSolutionTemplateSoftwareProjectsResult](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-solution-template-software-projects-result.md)
+- [SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-update-eval-kit-compatible-software-project-payload.md): Payload associated with updating a evaluation kit compatible software projects.
+- [SupSoftwareProjectUpdateSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-update-software-project-payload.md): Payload associated with updating a software project.
+- [SupSolutionTemplateApplication](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application.md)
+- [SupSolutionTemplateApplicationIsExistedError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application-is-existed-error.md)
+- [SupSolutionTemplateApplicationNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application-not-found-error.md)
+- [SupSolutionTemplateApplicationParameterBundle](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application-parameter-bundle.md)
+- [SupSolutionTemplateCompatibleEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-compatible-eval-kit.md)
+- [SupSolutionTemplateCreateSolutionTemplateApplicationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-create-solution-template-application-payload.md): Payload associated with creating a solution template application.
+- [SupSolutionTemplateCreateSolutionTemplatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-create-solution-template-payload.md): Payload associated with creating a solution template.
+- [SupSolutionTemplateDeleteSolutionTemplateApplicationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-delete-solution-template-application-payload.md): Payload associated with deleting a solution template application.
+- [SupSolutionTemplateDeleteSolutionTemplatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-delete-solution-template-payload.md): Payload associated with deleting a solution template.
+- [SupSolutionTemplateESDSource](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-esdsource.md)
+- [SupSolutionTemplateIndexSolutionTemplatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-index-solution-template-payload.md): Payload associated with indexing a solution template.
+- [SupSolutionTemplateInvalidDataError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-invalid-data-error.md)
+- [SupSolutionTemplateKeyFeatureGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-key-feature-group.md)
+- [SupSolutionTemplateKeyFeatureGroupAttribute](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-key-feature-group-attribute.md)
+- [SupSolutionTemplateNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-not-found-error.md)
+- [SupSolutionTemplateOperationFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md)
+- [SupSolutionTemplateParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter.md)
+- [SupSolutionTemplateParameterBundle](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-bundle.md): The parameter bundle's list of values.
+- [SupSolutionTemplateParameterInfo](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-info.md)
+- [SupSolutionTemplateParameterValue](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-value.md)
+- [SupSolutionTemplatePatchCompatibleEvalKitsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-compatible-eval-kits-payload.md): Payload for patching compatible eval kits on a solution template.
+- [SupSolutionTemplatePatchEsdSourcePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-esd-source-payload.md): Payload for patching the ESD source of a solution template.
+- [SupSolutionTemplatePatchKeyFeatureGroupsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-key-feature-groups-payload.md)
+- [SupSolutionTemplatePatchParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-parameters-payload.md): Payload for patching parameters on a solution template.
+- [SupSolutionTemplatePatchPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-preview-images-payload.md): Payload for patching preview images on a solution template.
+- [SupSolutionTemplatePatchTagsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-tags-payload.md)
+- [SupSolutionTemplateRefDesignApplicationBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-application-bucket.md): Aggregation bucket for applications with application identifier + counts.
+- [SupSolutionTemplateRefDesignCategoryBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-category-bucket.md): Aggregation bucket for reference design categories with category identifier + counts.
+- [SupSolutionTemplateRefDesignPublisherBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-publisher-bucket.md): Aggregation bucket for reference design publishers with company identifier + counts.
+- [SupSolutionTemplateRefDesignResultSet](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-result-set.md): Reference designs with pagination, aggregation information.
+- [SupSolutionTemplateRefDesignTagBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-tag-bucket.md): Aggregation bucket for reference design tags with name + counts.
+- [SupSolutionTemplateRefDesignTypeBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-type-bucket.md): Aggregation bucket for reference design types with type + counts.
+- [SupSolutionTemplateResultPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-result-payload.md)
+- [SupSolutionTemplateSetCompatibleEvalKitsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-compatible-eval-kits-payload.md): Payload for replacing all compatible eval kits on a solution template.
+- [SupSolutionTemplateSetKeyFeatureGroupsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-key-feature-groups-payload.md)
+- [SupSolutionTemplateSetParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-parameters-payload.md): Payload for replacing all parameters on a solution template.
+- [SupSolutionTemplateSetPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-preview-images-payload.md): Payload for replacing all preview images on a solution template.
+- [SupSolutionTemplateSetTagsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-tags-payload.md)
+- [SupSolutionTemplateTag](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-tag.md): Represents a tag for categorizing a solution template.
+- [SupSolutionTemplateUpdateSolutionTemplateApplicationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-update-solution-template-application-payload.md): Payload associated with updating a solution template application.
+- [SupSolutionTemplateUpdateSolutionTemplatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-update-solution-template-payload.md): Payload associated with updating a solution template.
+- [SupSolutionTemplateUpdateSolutionTemplateStatusPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-update-solution-template-status-payload.md): Payload associated with updating the status of a solution template.
+- [SupPartFamilyEntity](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/interfaces/sup-part-family-entity.md): Shared Fields between `SupPartFamily` and `SupPartGroup`.
+- [SupEvalKitAddDevicesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-devices-error.md)
+- [SupEvalKitAddPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-preview-images-error.md)
+- [SupEvalKitAddRefDesignCompatibleEvalKitError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-ref-design-compatible-eval-kit-error.md)
+- [SupEvalKitCreateEvalKitError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-create-eval-kit-error.md)
+- [SupEvalKitDeleteDevicesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-devices-error.md)
+- [SupEvalKitDeleteEvalKitError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-eval-kit-error.md)
+- [SupEvalKitDeletePreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-preview-images-error.md)
+- [SupEvalKitDeleteRefDesignCompatibleEvalKitError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-ref-design-compatible-eval-kit-error.md)
+- [SupEvalKitPatchParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-patch-parameters-error.md)
+- [SupEvalKitSetMainRefDesignError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-set-main-ref-design-error.md)
+- [SupEvalKitSetParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-set-parameters-error.md)
+- [SupEvalKitSoftwareProjectCompatibleEvalKitError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-software-project-compatible-eval-kit-error.md)
+- [SupEvalKitSortPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-sort-preview-images-error.md)
+- [SupEvalKitUnsetMainRefDesignError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-unset-main-ref-design-error.md)
+- [SupEvalKitUpdateEvalKitError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-update-eval-kit-error.md)
+- [SupSoftwareProjectCreateSoftwareProjectError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-create-software-project-error.md)
+- [SupSoftwareProjectDeleteSoftwareProjectError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-delete-software-project-error.md)
+- [SupSoftwareProjectPatchParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-patch-parameters-error.md)
+- [SupSoftwareProjectPatchPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-patch-preview-images-error.md)
+- [SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-patch-software-project-solution-templates-error.md)
+- [SupSoftwareProjectSetParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-set-parameters-error.md)
+- [SupSoftwareProjectSetPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-set-preview-images-error.md)
+- [SupSoftwareProjectSetSoftwareProjectSolutionTemplatesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-set-software-project-solution-templates-error.md)
+- [SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-update-eval-kit-compatible-software-project-error.md)
+- [SupSoftwareProjectUpdateSoftwareProjectError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-update-software-project-error.md)
+- [SupSolutionTemplateCreateSolutionTemplateApplicationError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-create-solution-template-application-error.md)
+- [SupSolutionTemplateCreateSolutionTemplateError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-create-solution-template-error.md)
+- [SupSolutionTemplateDeleteSolutionTemplateApplicationError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-delete-solution-template-application-error.md)
+- [SupSolutionTemplateDeleteSolutionTemplateError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-delete-solution-template-error.md)
+- [SupSolutionTemplateIndexSolutionTemplateError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-index-solution-template-error.md)
+- [SupSolutionTemplatePatchCompatibleEvalKitsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-compatible-eval-kits-error.md)
+- [SupSolutionTemplatePatchEsdSourceError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-esd-source-error.md)
+- [SupSolutionTemplatePatchKeyFeatureGroupsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-key-feature-groups-error.md)
+- [SupSolutionTemplatePatchParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-parameters-error.md)
+- [SupSolutionTemplatePatchPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-preview-images-error.md)
+- [SupSolutionTemplatePatchTagsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-tags-error.md)
+- [SupSolutionTemplateRefDesign](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-ref-design.md): Union type for solution template and reference design types.
+- [SupSolutionTemplateSetCompatibleEvalKitsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-compatible-eval-kits-error.md)
+- [SupSolutionTemplateSetKeyFeatureGroupsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-key-feature-groups-error.md)
+- [SupSolutionTemplateSetParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-parameters-error.md)
+- [SupSolutionTemplateSetPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-preview-images-error.md)
+- [SupSolutionTemplateSetTagsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-tags-error.md)
+- [SupSolutionTemplateUpdateSolutionTemplateApplicationError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-update-solution-template-application-error.md)
+- [SupSolutionTemplateUpdateSolutionTemplateError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-update-solution-template-error.md)
+- [SupSolutionTemplateUpdateSolutionTemplateStatusError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-update-solution-template-status-error.md)
+- [SupEvalKitAddDevicesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-add-devices-input.md): Input for adding devices to an evaluation kit.
+- [SupEvalKitAddPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-add-preview-images-input.md): Input for adding preview images to an evaluation kit.
+- [SupEvalKitAddRefDesignCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-add-ref-design-compatible-eval-kit-input.md): Input for adding compatible evaluation kits to a reference design.
+- [SupEvalKitByRefDesignFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-by-ref-design-filter-input.md): Represents the filter for searching evaluation kits.
+- [SupEvalKitCompatibleSoftwareProjectFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-compatible-software-project-filter-input.md): Represents the filter for searching compatible software projects.
+- [SupEvalKitCreateEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-create-eval-kit-input.md): Input for evaluation kit creation.
+- [SupEvalKitCreateSoftwareProjectCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-create-software-project-compatible-eval-kit-input.md)
+- [SupEvalKitDeleteDevicesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-devices-input.md): Input for deleting devices from an evaluation kit.
+- [SupEvalKitDeleteEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-eval-kit-input.md): Input for evaluation kit delete.
+- [SupEvalKitDeletePreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-preview-images-input.md): Input for deleting preview images from an evaluation kit.
+- [SupEvalKitDeleteRefDesignCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-ref-design-compatible-eval-kit-input.md): Input for deleting compatible evaluation kits from a reference design.
+- [SupEvalKitDeviceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-device-input.md): Input type for device mutation.
+- [SupEvalKitFileInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-file-input.md)
+- [SupEvalKitFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-filter-input.md): Input for filtering evaluation kits by additional conditions.
+- [SupEvalKitOrderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-order-input.md): Input type for ordering.
+- [SupEvalKitParameterInfoInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-parameter-info-input.md): Identifies a parameter by its title.
+- [SupEvalKitParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-parameter-input.md): A parameter and its values.
+- [SupEvalKitPatchParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-patch-parameters-input.md): Input for patching parameters on an evaluation kit.
+- [SupEvalKitRemoveSoftwareProjectCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-remove-software-project-compatible-eval-kit-input.md)
+- [SupEvalKitSearchFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-search-filter-input.md): Represents the filter for searching evaluation kits.
+- [SupEvalKitSetMainRefDesignInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-set-main-ref-design-input.md): Input for setting the main reference design of an evaluation kit.
+- [SupEvalKitSetParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-set-parameters-input.md): Input for replacing all parameters on an evaluation kit.
+- [SupEvalKitSoftwareProjectCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-software-project-compatible-eval-kit-input.md): Input for software project update.
+- [SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-software-project-compatible-eval-kit-project-source-input.md)
+- [SupEvalKitSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-input.md): Input type for sorting.
+- [SupEvalKitSortPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-preview-images-input.md): Input for reordering preview images of an evaluation kit.
+- [SupEvalKitUnsetMainRefDesignInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-unset-main-ref-design-input.md): Input for unsetting the main reference design of an evaluation kit.
+- [SupEvalKitUpdateEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-eval-kit-input.md): Input for evaluation kit update.
+- [SupEvalKitUpdateSoftwareProjectCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-software-project-compatible-eval-kit-input.md)
+- [SupRefDesignFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-ref-design-filter-input.md): Input for filtering reference designs by additional conditions.
+- [SupRefDesignOrderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-ref-design-order-input.md): Input for ordering reference designs by one or more fields.
+- [SupSoftwareProjectCompatibleEvalKitFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-compatible-eval-kit-filter-input.md): Represents the filter for searching compatible software projects.
+- [SupSoftwareProjectCompatibleEvalKitSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-compatible-eval-kit-sort-input.md): Input type for sorting.
+- [SupSoftwareProjectCreateEvalKitSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-create-eval-kit-source-input.md)
+- [SupSoftwareProjectCreateSoftwareProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-create-software-project-input.md): Input for software project creation.
+- [SupSoftwareProjectDeleteSoftwareProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-delete-software-project-input.md): Input for software project delete.
+- [SupSoftwareProjectEvalKitProjectSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-eval-kit-project-source-input.md)
+- [SupSoftwareProjectEvalKitSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-eval-kit-source-input.md)
+- [SupSoftwareProjectFileInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-file-input.md)
+- [SupSoftwareProjectFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-filter-input.md): Input for filtering software projects by additional conditions.
+- [SupSoftwareProjectOrderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-order-input.md): Input type for ordering.
+- [SupSoftwareProjectParameterInfoInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-parameter-info-input.md): Identifies a parameter by its title.
+- [SupSoftwareProjectParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-parameter-input.md): A parameter and its values.
+- [SupSoftwareProjectPatchParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-patch-parameters-input.md): Input for patching parameters on a software project.
+- [SupSoftwareProjectPatchPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-patch-preview-images-input.md): Input for patching preview images on a software project.
+- [SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-patch-software-project-solution-templates-input.md): Input for patching software project associations on a solution template.
+- [SupSoftwareProjectRemoveEvalKitSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-remove-eval-kit-source-input.md)
+- [SupSoftwareProjectSearchFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-search-filter-input.md): Represents the filter for searching software projects.
+- [SupSoftwareProjectSetParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-set-parameters-input.md): Input for replacing all parameters on a software project.
+- [SupSoftwareProjectSetPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-set-preview-images-input.md): Input for replacing all preview images on a software project.
+- [SupSoftwareProjectSetSoftwareProjectSolutionTemplatesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-set-software-project-solution-templates-input.md): Input for replacing all software project associations on a solution template.
+- [SupSoftwareProjectSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-sort-input.md): Input type for sorting.
+- [SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-update-eval-kit-compatible-software-project-input.md): Input for evaluation kit compatible software project update.
+- [SupSoftwareProjectUpdateEvalKitSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-update-eval-kit-source-input.md)
+- [SupSoftwareProjectUpdateSoftwareProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-update-software-project-input.md): Input for software project update.
+- [SupSolutionTemplateApplicationCreateParameterBundleInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-create-parameter-bundle-input.md)
+- [SupSolutionTemplateApplicationRemoveParameterBundleInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-remove-parameter-bundle-input.md)
+- [SupSolutionTemplateApplicationSearchFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-search-filter-input.md): Represents the filter for searching solution template applications.
+- [SupSolutionTemplateApplicationSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-sort-input.md): Input type for solution template application sorting.
+- [SupSolutionTemplateApplicationUpdateParameterBundleInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-update-parameter-bundle-input.md)
+- [SupSolutionTemplateCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md)
+- [SupSolutionTemplateCompatibleEvalKitUpdateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-update-input.md): Input for updating an existing compatible eval kit on a solution template.
+- [SupSolutionTemplateCreateParameterInfoInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-info-input.md)
+- [SupSolutionTemplateCreateParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-input.md)
+- [SupSolutionTemplateCreateParameterValueInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-value-input.md)
+- [SupSolutionTemplateCreateSolutionTemplateApplicationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-solution-template-application-input.md)
+- [SupSolutionTemplateCreateSolutionTemplateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-solution-template-input.md): Input for solution template creation.
+- [SupSolutionTemplateDeleteSolutionTemplateApplicationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-delete-solution-template-application-input.md): Input for solution template application delete.
+- [SupSolutionTemplateDeleteSolutionTemplateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-delete-solution-template-input.md): Input for solution template delete.
+- [SupSolutionTemplateEsdSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-esd-source-input.md)
+- [SupSolutionTemplateEsdSourcePatchInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-esd-source-patch-input.md): Input for patching the ESD source of a solution template.
+- [SupSolutionTemplateFileInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md)
+- [SupSolutionTemplateFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-filter-input.md): Input for filtering solution templates by additional conditions.
+- [SupSolutionTemplateIndexSolutionTemplateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-index-solution-template-input.md)
+- [SupSolutionTemplateKeyFeatureGroupAttributeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-key-feature-group-attribute-input.md)
+- [SupSolutionTemplateKeyFeatureGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-key-feature-group-input.md)
+- [SupSolutionTemplateParameterBundleInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-bundle-input.md)
+- [SupSolutionTemplateParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-input.md)
+- [SupSolutionTemplateParameterValueInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-value-input.md)
+- [SupSolutionTemplatePatchCompatibleEvalKitsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-compatible-eval-kits-input.md): Input for adding or removing individual compatible eval kits on a solution template.
+- [SupSolutionTemplatePatchEsdSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-esd-source-input.md)
+- [SupSolutionTemplatePatchKeyFeatureGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-key-feature-group-input.md)
+- [SupSolutionTemplatePatchKeyFeatureGroupsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-key-feature-groups-input.md)
+- [SupSolutionTemplatePatchParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-parameters-input.md): Input for adding or removing individual parameters on a solution template.
+- [SupSolutionTemplatePatchPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-preview-images-input.md): Input for patching preview images on a solution template.
+- [SupSolutionTemplatePatchTagsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-tags-input.md)
+- [SupSolutionTemplateRefDesignFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-ref-design-filter-input.md): Input for filtering reference designs by additional conditions.
+- [SupSolutionTemplateRefDesignOrderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-ref-design-order-input.md): Input for ordering solution templates or reference designs by one or more fields.
+- [SupSolutionTemplateRemoveKeyFeatureGroupAttributeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-remove-key-feature-group-attribute-input.md)
+- [SupSolutionTemplateSearchFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-search-filter-input.md): Represents the filter for searching solution templates.
+- [SupSolutionTemplateSetCompatibleEvalKitsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-compatible-eval-kits-input.md): Input for replacing all compatible eval kits on a solution template.
+- [SupSolutionTemplateSetKeyFeatureGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-key-feature-group-input.md)
+- [SupSolutionTemplateSetKeyFeatureGroupsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-key-feature-groups-input.md)
+- [SupSolutionTemplateSetParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-parameters-input.md): Input for replacing all parameters on a solution template.
+- [SupSolutionTemplateSetPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-preview-images-input.md): Input for replacing all preview images on a solution template.
+- [SupSolutionTemplateSetTagsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-tags-input.md)
+- [SupSolutionTemplateSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-sort-input.md): Input type for solution template sorting.
+- [SupSolutionTemplateTagInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-tag-input.md)
+- [SupSolutionTemplateUpdateParameterInfoInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-parameter-info-input.md)
+- [SupSolutionTemplateUpdateParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-parameter-input.md)
+- [SupSolutionTemplateUpdateSolutionTemplateApplicationInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-solution-template-application-input.md)
+- [SupSolutionTemplateUpdateSolutionTemplateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-solution-template-input.md): Input for solution template update.
+- [SupSolutionTemplateUpdateSolutionTemplateStatusInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-solution-template-status-input.md): Input for solution template status update.
+- [SupEvalKitErrorCode](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-error-code.md)
+- [SupEvalKitOrderDirection](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-order-direction.md)
+- [SupEvalKitOrderField](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-order-field.md)
+- [SupPartFamilyDocumentType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-part-family-document-type.md): Valid document types for Part Family documentation.
+- [SupPartFamilyFeatureValueType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-part-family-feature-value-type.md): Valid types a features value can take.
+- [SupRefDesignStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-status.md)
+- [SupRefDesignType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-type.md)
+- [SupRefPartType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-part-type.md)
+- [SupRefSortDirection](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md): Specifies the sort direction for ordering results.
+- [SupSoftwareProjectErrorCode](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-error-code.md)
+- [SupSoftwareProjectEvalKitProjectSourceDeviceFamily](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-device-family.md)
+- [SupSoftwareProjectEvalKitProjectSourceFramework](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-framework.md)
+- [SupSoftwareProjectEvalKitProjectSourceType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-type.md)
+- [SupSoftwareProjectOrderDirection](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-order-direction.md)
+- [SupSoftwareProjectOrderField](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-order-field.md)
+- [SupSoftwareProjectType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-type.md)
+- [SupSolutionTemplateErrorCode](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-error-code.md)
+- [SupSolutionTemplateRefDesignSortDirection](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md): Specifies the sort direction for ordering results.
+- [SupSolutionTemplateRefDesignType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-type.md)
+- [SupSolutionTemplateStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md)

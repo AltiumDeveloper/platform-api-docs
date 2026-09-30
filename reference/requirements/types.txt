@@ -1,0 +1,5 @@
+# Requirements — types
+> Types of the Requirements bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/llms.txt).
+
+- [RequirementsProject](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/types/objects/requirements-project.md)
+- [RequirementFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/types/inputs/requirement-filter-input.md)

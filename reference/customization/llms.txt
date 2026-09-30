@@ -1,0 +1,43 @@
+# Customization — Altium Platform API
+> Extension points, scripts, script executions and workflows.
+
+Concepts: [customization](https://altiumdeveloper.github.io/cdm/subsets/customization/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql) (~7313 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/overview.md).
+
+## Entities
+- [DesWorkflowDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-definition.md): Workflow. GRID `grid:workspace:{workspace-id}:customization:workflow/{id}`. Via: DesWorkspace.workflowDefinitions
+- [GloScrScript](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md): Script. GRID `grid:workspace:{workspace-id}:scripts:script/{id}`. Via: gloScrScript, gloScrScripts
+- [GloScrScriptExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md): Script Execution. GRID `grid:workspace:{workspace-id}:scripts:script-execution/{id}`. Via: gloScrScriptExecutionResult, gloScrScriptExecutionResults
+- [GloScrScriptVersion](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version.md): Script Version. GRID `grid:workspace:{workspace-id}:scripts:script-version/{id}`. Via: GloScrScript.versionById, GloScrScript.versions
+
+## Entry points
+- [gloScrScriptExecutionResults](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/queries/glo-scr-script-execution-results.md) (list): Retrieves the execution results of a script by its script ID and version ID.
+- [gloScrScripts](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/queries/glo-scr-scripts.md) (list): Retrieves a list of scripts with pagination options.
+
+## Queries
+- [gloCusExtensionPoints](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/queries/glo-cus-extension-points.md): Retrieves a list of registered extension points.
+- [gloCusScriptExecutionInfo](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/queries/glo-cus-script-execution-info.md): Retrieves the execution info by execution identifier.
+- [gloScrScript](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/queries/glo-scr-script.md): Retrieves a script by its ID.
+- [gloScrScriptExecutionResult](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/queries/glo-scr-script-execution-result.md): Retrieves the execution result of a script by its execution ID.
+- [gloScrScriptSecrets](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/queries/glo-scr-script-secrets.md): Retrieves the secrets a script revision declares.
+- [gloScrSecrets](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/queries/glo-scr-secrets.md): Retrieves the names of the workspace secrets.
+
+## Mutations
+- [desLaunchWorkflow](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/des-launch-workflow.md): Launches a workflow.
+- [desTerminateWorkflows](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/des-terminate-workflows.md): Terminates a workflow.
+- [gloCusAddAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-cus-add-assignment.md): Add new assignment to extension point.
+- [gloCusDeleteAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-cus-delete-assignment.md): Deletes an existing assignment.
+- [gloCusExecuteAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-cus-execute-assignment.md): Executes an existing assignment.
+- [gloCusExecuteExtensionPoint](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-cus-execute-extension-point.md): Dispatches all active assignments of the given extension point in run-and-forget mode.
+- [gloCusUpdateAssignment](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-cus-update-assignment.md): Updates an existing assignment.
+- [gloCusUpdateAssignmentConfigurations](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-cus-update-assignment-configurations.md): Updates configuration parameters of an Extension point.
+- [gloScrCreateScript](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-scr-create-script.md): Creates a new script.
+- [gloScrCreateSecret](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-scr-create-secret.md): Creates a workspace secret.
+- [gloScrDeleteScript](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-scr-delete-script.md): Deletes a script by its identifier.
+- [gloScrDeleteSecret](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-scr-delete-secret.md): Deletes a workspace secret by name.
+- [gloScrExecuteScript](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-scr-execute-script.md): Executes a script asynchronously.
+- [gloScrRenameScript](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-scr-rename-script.md): Renames an existing script without creating a new version.
+- [gloScrSetScriptSecrets](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-scr-set-script-secrets.md): Replaces the set of secrets a script revision declares.
+- [gloScrUpdateScript](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/operations/mutations/glo-scr-update-script.md): Updates an existing script, creating a new version.
+
+## Optional
+- [All types in Customization](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types.txt): one line per type (~4009 tokens)

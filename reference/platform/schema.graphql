@@ -1,0 +1,3641 @@
+# Altium Platform API — Platform schema slice (~30398 tokens)
+# Not a complete schema: types from other contexts are referenced, not defined.
+# Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
+# Referenced from other contexts:
+#   BooleanOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DateTimeOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesColor → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesColorInput → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesDownloadableFile → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesLibrary → Library Management: https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/schema.graphql
+#   DesLibraryArgsInput → Library Management: https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/schema.graphql
+#   DesPayloadError → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   DesProject → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesProjectFilterInput → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesProjectGuestConnection → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesProjectGuestFilterInput → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesProjectGuestOrderBy → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesProjectSortInput → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesTask → Collaboration: https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/schema.graphql
+#   DesWorkflow → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
+#   DesWorkflowDefinition → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
+#   DesWorkflowDefinitionFilterInput → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
+#   DesWorkflowFilterByVariableInput → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
+#   DesWorkflowFilterInput → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
+#   DesWorkspaceConfiguration → Configuration Management: https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/schema.graphql
+#   Error → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   GridFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Long → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   Node → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   RsaMotorStudioProject → Renesas (preview): https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/schema.graphql
+#   SftAIModel → Renesas (preview): https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/schema.graphql
+#   SftSimSimulation → Renesas (preview): https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/schema.graphql
+#   SftSoftwareProject → Renesas (preview): https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/schema.graphql
+#   SortEnumType → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   StringOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+#   SysEsdDocument → System Design: https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/schema.graphql
+#   SysSdmSystemModel → System Design: https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/schema.graphql
+#   URL → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
+
+type Query {
+  "Searches for a specific folder by its reference identifier."
+  desFolderByFolderId(
+    "The folder reference identifier."
+    folderId: String!
+    "The workspace URL."
+    workspaceUrl: String!
+  ): DesFolder
+  desFolderById(
+    "The node identifier for a folder."
+    id: ID!
+  ): DesFolder @deprecated(reason: "Use `DesFolderByFolderId` instead.")
+  "Gets the first allowed life cycle by the content kind."
+  desLifeCycleDefinitionByContentTypeKind(
+    "The content kind."
+    kind: DesContentTypeKind!
+    "The workspace URL."
+    workspaceUrl: String
+  ): DesLifeCycleDefinition!
+  "Gets a life cycle definition based on the identifier provided."
+  desLifeCycleDefinitionById(
+    "The life cycle definition identifier."
+    id: ID!
+  ): DesLifeCycleDefinition
+  "Gets life cycle definitions."
+  desLifeCycleDefinitions(
+    "The workspace URL."
+    workspaceUrl: String
+  ): [DesLifeCycleDefinition!]!
+  "**Experimental** Gets all permissions by ID."
+  desPermissionsById(id: ID!): [DesPermission!]! @experimental
+  "Searches details of a revision by its reference identifier."
+  desRevisionDetailsByRevisionId(
+    "The reference identifier for a specific revision."
+    revisionId: String!
+    "The workspace in which the revision exists."
+    workspaceUrl: String
+  ): DesRevisionDetails
+  "Gets the first allowed naming scheme by the content kind."
+  desRevisionNamingSchemeByContentTypeKind(
+    "The content kind."
+    kind: DesContentTypeKind!
+    "The workspace URL."
+    workspaceUrl: String
+  ): DesRevisionNamingScheme!
+  "Gets a revision naming scheme based on the identifier provided."
+  desRevisionNamingSchemeById(
+    "The naming scheme identifier."
+    id: ID!
+  ): DesRevisionNamingScheme
+  "Gets revision naming schemes."
+  desRevisionNamingSchemes(
+    "The workspace URL."
+    workspaceUrl: String
+  ): [DesRevisionNamingScheme!]!
+  "Gets the specified settings."
+  desSettings(
+    "The setting names to retrieve."
+    names: [String!]!
+    "The workspace URL."
+    workspaceUrl: String
+  ): [String]!
+  "Gets the specified workspace team."
+  desTeam(
+    "The workspace URL."
+    workspaceUrl: String
+  ): DesTeam!
+  "Gets the authorized user."
+  desUserByAuth: DesUser!
+  "Gets a user by the specified global identifier."
+  desUserByGlobalId(
+    "The global user identifier."
+    id: String!
+  ): DesUser
+  "Gets the specified workspace users by identifiers."
+  desUsers(
+    "The list of user identifiers."
+    ids: [String!]!
+    "The workspace URL."
+    workspaceUrl: String
+  ): [DesUser]!
+  "Search a specific workspace by its unique identifier."
+  desWorkspaceById(
+    "The node identifier for a workspace."
+    id: ID!
+  ): DesWorkspace
+  "Search a specific workspace by its URL."
+  desWorkspaceByUrl(
+    "The workspace URL."
+    workspaceUrl: String!
+  ): DesWorkspace
+  "Retrieves a workspace group by ID."
+  desWorkspaceGroupById(id: ID!): DesWorkspaceGroup
+  "Retrieves workspace groups by IDs."
+  desWorkspaceGroupsByIds(ids: [ID!]!): [DesWorkspaceGroup]!
+  "Search for workspaces associated with this account."
+  desWorkspaceInfos: [DesWorkspaceInfo!]!
+  "Get a list of workspace locations."
+  desWorkspaceLocations: [DesWorkspaceLocation!]!
+  "Retrieves a workspace team based on the authenticity of the requester."
+  desWorkspaceTeamByAuth: DesWorkspaceTeam!
+  "Retrieves a workspace user associated with the identity of the requester."
+  desWorkspaceUserByAuth: DesWorkspaceUser!
+  "Retrieves a workspace user by ID."
+  desWorkspaceUserById(
+    "The ID of the workspace user."
+    id: ID!
+  ): DesWorkspaceUser
+  "Retrieves workspace users by their IDs."
+  desWorkspaceUsersByIds(
+    "The IDs of the workspace users."
+    ids: [ID!]!
+  ): [DesWorkspaceUser]!
+  "Gets the `GloApp` with a `GloOAuthClient` that has the specified Client identifier."
+  gloAppByClientId(
+    "The Client identifier of the `GloOAuthClient` associated with the App to be retrieved."
+    clientId: String!
+  ): GloApp
+  "Gets the `GloApp` with the specified identifier."
+  gloAppById(
+    "The GRID identifier for the App."
+    appId: ID!
+  ): GloApp
+  "Gets a list of `GloApp` installed in a workspace."
+  gloAppInstalledApps(order: [GloAppSortInput!], where: GloAppFilterInput): [GloApp!]
+  "Gets a list of `GloApp`."
+  gloApps(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [GloAppSortInput!]
+    where: GloAppFilterInput
+  ): GloAppsConnection
+  "Retrieves the information about subscription with given identifier."
+  gloEvtSubscriptionById(subscriptionId: String!): GloEvtSubscription
+  "Retrieves an organization by its identifier."
+  gloOrganization(organizationId: String): GloOrganization
+  "Retrieves an organization by its global resource identifier."
+  gloOrganizationById(organizationId: ID!): GloOrganization
+  "Retrieves user by identifier."
+  gloUserById(userId: ID!): GloUser
+  "Retrieves user groups."
+  gloUserGroups(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    filter: GloUserGroupInputFilterInput
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [GloUserGroupSortInput!]
+  ): GloUserGroupConnection
+  "Retrieves list of users by filter."
+  gloUsers(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    filter: GloUserInputFilterInput
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [GloUserSortInput!]
+  ): GloUserConnection
+  "Retrieves list of users by their identifiers."
+  gloUsersByIds(userIds: [ID!]!): [GloUser]!
+  "**Experimental**"
+  kgNode(id: ID!): KgNode! @experimental
+  "**Experimental**"
+  kgNodes(type: KgNodeType!): [KgNode!]! @experimental
+  "Fetches an object given its ID."
+  node(
+    "ID of the object."
+    id: ID!
+  ): Node
+  "Context for `PlatformQueries`."
+  platform: PlatformQueries!
+  "Retrieves a entity scaffolding status."
+  solBldEntityScaffoldingStatus(id: ID!): SolBldEntityScaffoldingStatusPayload!
+  "Retrieves a job status."
+  solBldScaffoldingStatus(jobId: ID!): SolBldScaffoldingStatusPayload!
+  "Retrieves cached job statuses for a solution."
+  solBldScaffoldingStatusesBySolution(solutionId: ID!): [SolBldScaffoldingJobStatusPayload!]!
+  "Gets environment links."
+  solEnvironmentLinks: [SolStringKeyValue!]!
+  "Gets solution by ID."
+  solSolutionById(id: ID!): SolSolution
+  "Gets all available solutions."
+  solSolutions: [SolSolution!]!
+  "Gets solutions by IDs."
+  solSolutionsByIds(ids: [ID!]!): [SolSolution]! @deprecated(reason: "Internal resolver used by the Fusion gateway for batched entity resolution. Not intended for direct client use.")
+  "Gets all available solutions with pagination."
+  solSolutionsByPage(pageNumber: Int!, pageSize: Int!): [SolSolution!]! @deprecated(reason: "Use solSolutionsByPagev2 query")
+  "Gets all available solutions with pagination."
+  solSolutionsByPagev2(order: SolSolutionSortInput, pageNumber: Int!, pageSize: Int!, where: SolSolutionFilterInput): SolSolutionsByPagePayload!
+}
+
+type Mutation {
+  "Adds users to the specified group."
+  desAddUsersToGroup(input: DesAddUsersToGroupInput!): DesAddUsersToGroupPayload!
+  "Creates a folder in the library."
+  desCreateFolder(input: DesCreateFolderInput!): DesCreateFolderPayload!
+  "Creates the provided life cycle definition, with associated states, stages and state transitions."
+  desCreateLifeCycleDefinition(input: DesCreateLifeCycleDefinitionInput!): DesCreateLifeCycleDefinitionPayload!
+  "Creates a revision naming scheme."
+  desCreateRevisionNamingScheme(input: DesCreateRevisionNamingSchemeInput!): DesCreateRevisionNamingSchemePayload!
+  "Creates a user."
+  desCreateUser(input: DesCreateUserInput!): DesCreateUserPayload!
+  "Creates a new user group."
+  desCreateUserGroup(input: DesCreateUserGroupInput!): DesCreateUserGroupPayload!
+  "Deletes the specified folder from the library."
+  desDeleteFolder(input: DesDeleteFolderInput!): DesDeleteFolderPayload!
+  "Deletes the provided life cycle definitions."
+  desDeleteLifeCycleDefinition(input: DesDeleteLifeCycleDefinitionInput!): DesDeleteLifeCycleDefinitionPayload!
+  "Deletes the revision naming scheme."
+  desDeleteRevisionNamingScheme(input: DesDeleteRevisionNamingSchemeInput!): DesDeleteRevisionNamingSchemePayload!
+  "Deletes the specified user."
+  desDeleteUser(input: DesDeleteUserInput!): DesDeleteUserPayload!
+  "Deletes the specified user group."
+  desDeleteUserGroup(input: DesDeleteUserGroupInput!): DesDeleteUserGroupPayload!
+  "Moves the specified folder in the library."
+  desMoveFolder(input: DesMoveFolderInput!): DesMoveFolderPayload!
+  "Removes users from the specified group."
+  desRemoveUsersFromGroup(input: DesRemoveUsersFromGroupInput!): DesRemoveUsersFromGroupPayload!
+  "Updates the specified folder in the library."
+  desUpdateFolder(input: DesUpdateFolderInput!): DesUpdateFolderPayload!
+  "Updates the permissions for the associated folder."
+  desUpdateFolderPermissions(input: DesUpdateFolderPermissionsInput!): DesUpdateFolderPermissionsPayload!
+  "Updates the defined life cycle definition with those provided."
+  desUpdateLifeCycleDefinition(input: DesUpdateLifeCycleDefinitionInput!): DesUpdateLifeCycleDefinitionPayload!
+  "Updates entity's permissions."
+  desUpdatePermissions(input: DesUpdatePermissionsInput!): DesUpdatePermissionsPayload!
+  "Updates a revision naming scheme."
+  desUpdateRevisionNamingScheme(input: DesUpdateRevisionNamingSchemeInput!): DesUpdateRevisionNamingSchemePayload!
+  "Updates the value associated with the specified setting."
+  desUpdateSetting(input: DesUpdateSettingInput!): DesUpdateSettingPayload!
+  "Updates the specified user properties."
+  desUpdateUser(input: DesUpdateUserInput!): DesUpdateUserPayload!
+  "Updates the specified user group."
+  desUpdateUserGroup(input: DesUpdateUserGroupInput!): DesUpdateUserGroupPayload!
+  "Adds a new client secret to an existing App."
+  gloAddAppClientSecret(input: GloAddAppClientSecretInput!): GloAddAppClientSecretPayload!
+  "Adds a new grant type to an existing App."
+  gloAddAppGrantType(input: GloAddAppGrantTypeInput!): GloAddAppGrantTypePayload!
+  "Adds a new redirect URI to an existing App."
+  gloAddAppRedirectUri(input: GloAddAppRedirectUriInput!): GloAddAppRedirectUriPayload!
+  "Adds a new scope to an existing App."
+  gloAddAppScope(input: GloAddAppScopeInput!): GloAddAppScopePayload!
+  "Add users to group."
+  gloAddUsersToGroup(input: GloAddUsersToGroupInput!): GloAddUsersToGroupPayload!
+  "Creates a new App with an *OAuth 2.0 client*."
+  gloCreateApp(input: GloCreateAppInput!): GloCreateAppPayload!
+  "Creates a new App with an existing *OAuth 2.0 client*."
+  gloCreateAppFromOAuthClient(input: GloCreateAppFromOAuthClientInput!): GloCreateAppFromOAuthClientPayload!
+  "Create new user."
+  gloCreateUser(input: GloCreateUserInput!): GloCreateUserPayload!
+  "Create new user group."
+  gloCreateUserGroup(input: GloCreateUserGroupInput!): GloCreateUserGroupPayload!
+  "Deletes an App."
+  gloDeleteApp(input: GloDeleteAppInput!): GloDeleteAppPayload!
+  "Creates webhook-based subscription with given parameters."
+  gloEvtCreateWebhookSubscription(input: GloEvtCreateWebhookSubscriptionInput!): GloEvtCreateSubscriptionPayload!
+  "Deletes the subscription with given identifier."
+  gloEvtDeleteSubscription(input: GloEvtDeleteSubscriptionInput!): GloEvtDeleteSubscriptionPayload!
+  "Publishes an event."
+  gloEvtPublishEvent(input: GloEvtPublishEventInput!): GloEvtPublishEventPayload!
+  "Installs an App into a Workspace."
+  gloInstallApp(input: GloInstallAppInput!): GloInstallAppPayload!
+  "Sends e-mail to specified recipients."
+  gloNtfSendEmail(input: GloNtfSendEmailInput!): GloNtfSendEmailPayload!
+  "Removes an existing client secret from an existing App."
+  gloRemoveAppClientSecret(input: GloRemoveAppClientSecretInput!): GloRemoveAppClientSecretPayload!
+  "Removes an existing grant type from an existing App."
+  gloRemoveAppGrantType(input: GloRemoveAppGrantTypeInput!): GloRemoveAppGrantTypePayload!
+  "Removes an existing redirect URI from an existing App."
+  gloRemoveAppRedirectUri(input: GloRemoveAppRedirectUriInput!): GloRemoveAppRedirectUriPayload!
+  "Removes an existing scope from an existing App."
+  gloRemoveAppScope(input: GloRemoveAppScopeInput!): GloRemoveAppScopePayload!
+  "Remove users from group."
+  gloRemoveUsersFromGroup(input: GloRemoveUsersFromGroupInput!): GloRemoveUsersFromGroupPayload!
+  "Restores an App."
+  gloRestoreApp(input: GloRestoreAppInput!): GloRestoreAppPayload!
+  "Uninstalls an App from a Workspace."
+  gloUninstallApp(input: GloUninstallAppInput!): GloUninstallAppPayload!
+  "Updates the contact email of an existing App."
+  gloUpdateAppContactEmail(input: GloUpdateAppContactEmailInput!): GloUpdateAppContactEmailPayload!
+  "Updates the description of an existing App."
+  gloUpdateAppDescription(input: GloUpdateAppDescriptionInput!): GloUpdateAppDescriptionPayload!
+  "Updates the human-readable identifier of an existing App."
+  gloUpdateAppHrid(input: GloUpdateAppHridInput!): GloUpdateAppHridPayload!
+  "Updates the name of an existing App."
+  gloUpdateAppName(input: GloUpdateAppNameInput!): GloUpdateAppNamePayload!
+  "**Experimental** Registers a new knowledge graph node."
+  kgAddNode(input: KgAddNodeInput!): KgAddNodePayload! @experimental
+  "**Experimental** Deletes a Vault entity registered in the knowledge graph."
+  kgDeleteNode(input: KgDeleteNodeInput!): KgDeleteNodePayload! @experimental
+  "Deletes a `PlatformToken`. Returns the identifier of the deleted token."
+  platformTokenDelete(input: PlatformTokenDeleteInput!): PlatformTokenDeletePayload!
+  "Updates the name and/or description of an existing `PlatformToken`."
+  platformTokenUpdate(input: PlatformTokenUpdateInput!): PlatformTokenUpdatePayload!
+  "Creates a new `PlatformWorkspaceRefreshToken`."
+  platformWorkspaceRefreshTokenCreate(input: PlatformWorkspaceRefreshTokenCreateInput!): PlatformWorkspaceRefreshTokenCreatePayload!
+  "Creates a new client secret for an existing `PlatformWorkspaceRefreshToken`. Returns the newly generated secret along with the `PlatformWorkspaceRefreshToken`."
+  platformWorkspaceRefreshTokenCreateNewSecret(input: PlatformWorkspaceRefreshTokenCreateNewSecretInput!): PlatformWorkspaceRefreshTokenCreateNewSecretPayload!
+  "Deletes a client secret for an existing `PlatformWorkspaceRefreshToken`."
+  platformWorkspaceRefreshTokenDeleteSecret(input: PlatformWorkspaceRefreshTokenDeleteSecretInput!): PlatformWorkspaceRefreshTokenDeleteSecretPayload!
+  "Creates a new `PlatformWorkspaceToken`."
+  platformWorkspaceTokenCreate(input: PlatformWorkspaceTokenCreateInput!): PlatformWorkspaceTokenCreatePayload!
+  "Adds an attachment to the solution."
+  solAddAttachment(input: SolAddAttachmentInput!): SolAddAttachmentPayload!
+  "Scaffolds a new solution with projects and optional empty linked ESD document."
+  solBldCreateSolution(input: SolBldCreateSolutionInput!): SolBldCreateSolutionPayload!
+  "Imports a reference design into an existing solution."
+  solBldImportRefDesigns(input: SolBldImportRefDesignsInput!): SolBldImportRefDesignsPayload!
+  "Imports software projects into an existing solution."
+  solBldImportSoftwareProjects(input: SolBldImportSoftwareProjectsInput!): SolBldImportSoftwareProjectsPayload!
+  "Links projects to an existing solution and optionally creates an empty ESD document if none exists."
+  solBldLinkSolution(input: SolBldLinkSolutionInput!): SolBldLinkSolutionPayload!
+  "Scaffolds a new solution."
+  solBldScaffolding(input: SolBldScaffoldingInput!): SolBldScaffoldingPayload!
+  "Scaffolds a new solution by provided configuration file."
+  solBldScaffoldingByConfiguration(input: SolBldScaffoldingByConfigurationInput!): SolBldScaffoldingByConfigurationPayload!
+  "Updates existing solution from linked ESD document."
+  solBldScaffoldingByExistingEsd(input: SolBldScaffoldingByExistingEsdInput!): SolBldScaffoldingByExistingEsdPayload!
+  "Generates software project based on SDM document."
+  solBldScaffoldingBySdm(input: SolBldScaffoldingBySdmInput!): SolBldScaffoldingBySdmPayload!
+  "Scaffolds a new solution by software project and eval kit."
+  solBldScaffoldingBySoftwareProjectAndEvalKit(input: SolBldScaffoldingBySoftwareProjectAndEvalKitInput!): SolBldScaffoldingBySoftwareProjectAndEvalKitPayload!
+  "Scaffolds a new solution by solution template."
+  solBldScaffoldingBySolutionTemplate(input: SolBldScaffoldingBySolutionTemplateInput!): SolBldScaffoldingBySolutionTemplatePayload!
+  "Scaffolds additional data into an existing solution using a solution template."
+  solBldScaffoldingExistingSolutionBySolutionTemplate(input: SolBldScaffoldingExistingSolutionBySolutionTemplateInput!): SolBldScaffoldingExistingSolutionBySolutionTemplatePayload!
+  "Scaffolds a new solution with an empty linked ESD document."
+  solBldScaffoldingWithEmptyEsd: SolBldScaffoldingWithEmptyEsdPayload!
+  "Adds new solution."
+  solCreateSolution(input: SolCreateSolutionInput!): SolCreateSolutionPayload!
+  "Deletes existing attachment."
+  solDeleteAttachment(input: SolDeleteAttachmentInput!): SolDeleteAttachmentPayload!
+  "Deletes existing solution."
+  solDeleteSolution(input: SolDeleteSolutionInput!): SolDeleteSolutionPayload!
+  "Creates a link between solution and other items."
+  solLinkItemsToSolution(input: SolLinkItemsToSolutionInput!): SolLinkItemsToSolutionPayload!
+  "Creates a link between solution and other item."
+  solLinkItemToSolution(input: SolLinkItemToSolutionInput!): SolLinkItemToSolutionPayload!
+  "Removes a link between solution and other item."
+  solUnlinkItemFromSolution(input: SolUnlinkItemFromSolutionInput!): SolUnlinkItemFromSolutionPayload!
+  "Updates existing solution."
+  solUpdateSolution(input: SolUpdateSolutionInput!): SolUpdateSolutionPayload!
+}
+
+interface DesPermission {
+  "Indicates what actions can be performed on the permission."
+  availableActions: DesPermissionAvailableActions!
+  "Trustee's indentificator."
+  trusteeId: ID!
+  "Indicates read/write permissions."
+  trusteePermissions: DesTrusteePermissions!
+}
+
+"Represents the application subscription to some events."
+interface GloEvtSubscription {
+  "Events of interest."
+  eventTypes: [String!]!
+  "State of the subscription."
+  state: GloEvtSubscriptionState!
+  "Subscription identifier."
+  subscriptionId: String!
+}
+
+"Represents the information about an error."
+interface GloNtfError {
+  "Description of the error occurred."
+  message: String!
+}
+
+"**Experimental**"
+interface KgNode @experimental {
+  "**Experimental**"
+  accessLevel: KgAccessLevel
+  "**Experimental** The unique identifier of the entity represented by this node."
+  entityGuid: String
+  "**Experimental**"
+  id: ID!
+  "**Experimental**"
+  relatedNodes: KgNodeQueries!
+  "**Experimental**"
+  relations: KgRelationQueries!
+}
+
+"Represents a `PlatformToken`, which is used for authentication and authorization when accessing the Altium platform."
+interface PlatformToken {
+  "The date-time that the `PlatformToken` was created."
+  createdAt: DateTime!
+  "The date-time that the `PlatformToken` was deleted. Null if the `PlatformToken` has not been deleted."
+  deletedAt: DateTime
+  "The description of the `PlatformToken`."
+  description: String!
+  "The date-time that the `PlatformToken` expires."
+  expiresAt: DateTime
+  "The name of the `PlatformToken`."
+  name: String!
+  "The identifier of the `PlatformToken`."
+  tokenId: String!
+  "The date-time that the `PlatformToken` was last updated."
+  updatedAt: DateTime!
+}
+
+"Payload associated with adding users to group."
+type DesAddUsersToGroupPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with creating a folder."
+type DesCreateFolderPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Reference identifier of the created folder."
+  folderId: String
+  id: ID @deprecated(reason: "Use `folderId` instead.")
+}
+
+"Payload associated with creating a life cycle definition."
+type DesCreateLifeCycleDefinitionPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Life cycle definition identifier."
+  id: ID!
+}
+
+"Payload associated with creating a revision naming scheme."
+type DesCreateRevisionNamingSchemePayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Identifier of the created revision naming scheme."
+  id: ID!
+}
+
+"Payload associated with creating a user group."
+type DesCreateUserGroupPayload {
+  "User group reference identifier."
+  userGroupId: String!
+}
+
+"Payload associated with creating a user."
+type DesCreateUserPayload {
+  "Workspace user identifier."
+  userId: String!
+}
+
+"Payload associated with deleting a folder."
+type DesDeleteFolderPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with deleting a life cycle definition."
+type DesDeleteLifeCycleDefinitionPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Life cycle definition identifier."
+  id: ID!
+}
+
+"Payload associated with deleting a revision naming scheme."
+type DesDeleteRevisionNamingSchemePayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with deleting a user group."
+type DesDeleteUserGroupPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with deleting a user."
+type DesDeleteUserPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+type DesExternalUserPermission implements DesPermission {
+  "Indicates what actions can be performed on the permission."
+  availableActions: DesPermissionAvailableActions!
+  "Trustee's indentificator."
+  trusteeId: ID!
+  "Indicates read/write permissions."
+  trusteePermissions: DesTrusteePermissions!
+  "The external user to whom the permission is granted."
+  user: GloUser!
+}
+
+"Information about a specific folder."
+type DesFolder implements Node {
+  "The `DateTime` this folder was created."
+  createdAt: DateTime!
+  "The user this folder was created by."
+  createdBy: DesUser!
+  "Folder description."
+  description: String!
+  "The reference identifier for this folder."
+  folderId: String!
+  "Folder permissions."
+  folderPermissions: [DesFolderPermission!]!
+  "Folder type."
+  folderType: DesFolderType!
+  id: ID! @deprecated(reason: "Use `folderId` instead.")
+  "The item naming scheme template this folder uses."
+  itemNamingSchemeTemplate: String
+  "Folder name."
+  name: String!
+  "Folder parent."
+  parent: DesFolder
+  "Folder path."
+  path: String!
+  "The `DateTime` this folder was last updated at."
+  updatedAt: DateTime!
+  "The user this folder was last updated by."
+  updatedBy: DesUser!
+}
+
+"Information about a folder permission."
+type DesFolderPermission {
+  "Tells if this permission allows creation of objects within the associated folder."
+  canCreate: Boolean!
+  "Tells if this permission allows deletion of the associated folder."
+  canDelete: Boolean!
+  "Tells if this permission allows editing the associated folder."
+  canEdit: Boolean!
+  "Tells if this permission allows reading of the associated folder."
+  canRead: Boolean!
+  "The `DesUserGroup` this permission is associated with."
+  group: DesUserGroup
+  "The name of this permission."
+  name: String!
+  "The permission scope to differentiate different permission types."
+  scope: DesPermissionScope!
+  "The user this permission is associated with."
+  user: DesUser
+}
+
+"Revision naming scheme details obtained by `desLifeCycleDefinitions`."
+type DesLifeCycleDefinition {
+  "The `DesContentTypeKind` list for this life cycle definition."
+  contentTypes: [DesContentTypeKind!]!
+  "The `DateTime` this life cycle definition was created."
+  createdAt: DateTime!
+  "The user this life cycle definition was created by."
+  createdBy: DesUser!
+  "The node identifier."
+  id: ID!
+  "Returns `true` if the life cycle definition is controlled per content type."
+  isControlledPerContentType: Boolean!
+  "Tells if this life cycle definition is automatically assigned the first `DesLifeCycleState` when a revision is released."
+  isRevisionSchemeAssigned: Boolean!
+  lifeCycleDefinitionId: String! @deprecated(reason: "Use `id` instead.")
+  "Type of life cycle management."
+  lifeCycleManagementType: DesLifeCycleManagementType!
+  "The name of this life cycle definition."
+  name: String!
+  "The `DesLifeCycleStage` list for this life cycle definition."
+  stages: [DesLifeCycleStage!]!
+  "The `DesLifeCycleStateTransition` list for this life cycle definition."
+  stateTransitions: [DesLifeCycleStateTransition!]!
+  "The `DateTime` this life cycle definition was last updated."
+  updatedAt: DateTime!
+  "The user this life cycle definition was last updated by."
+  updatedBy: DesUser!
+}
+
+"Information about the life cycle stage."
+type DesLifeCycleStage {
+  "The `DateTime` this life cycle stage was created."
+  createdAt: DateTime!
+  "The user this life cycle stage was created by."
+  createdBy: DesUser!
+  "The reference identifier for this life cycle stage."
+  lifeCycleStageId: String!
+  "The name of this life cycle stage."
+  name: String!
+  "The stage index for this life cycle stage."
+  stageIndex: Int!
+  "The `DesLifeCycleState` list for this life cycle stage."
+  states: [DesLifeCycleState!]!
+  "The `DateTime` this life cycle stage was last updated at."
+  updatedAt: DateTime!
+  "The user this life cycle stage was last updated by."
+  updatedBy: DesUser!
+}
+
+"Information about the life cycle state."
+type DesLifeCycleState {
+  "The background color for this life cycle state."
+  backgroundColor: DesColor!
+  "The `DateTime` this life cycle state was created."
+  createdAt: DateTime!
+  "The user this life cycle state was created by."
+  createdBy: DesUser!
+  "The description of this life cycle state."
+  description: String!
+  "The foreground color for this life cycle state."
+  foregroundColor: DesColor!
+  "Determines whether items in this life cycle state are allowed to be used in a design."
+  isAllowedInDesign: Boolean!
+  "Determines whether this life cycle state is the first of all the states for the associated life cycle definition."
+  isInitialState: Boolean!
+  "Determines whether this life cycle state is visible in the Altium Designer vault panel."
+  isVisible: Boolean!
+  "The reference identifier for this life cycle state."
+  lifeCycleStateId: String!
+  "The name of this life cycle state."
+  name: String!
+  "The state index for this life cycle state."
+  stateIndex: Int!
+  "The `DateTime` this life cycle state was last updated at."
+  updatedAt: DateTime!
+  "The user this life cycle state was last updated by."
+  updatedBy: DesUser!
+}
+
+"Information about the life cycle state transition."
+type DesLifeCycleStateTransition {
+  "The groups that must provide an approval for the transition to be applied. If using controlled transitions, this will return null."
+  approvals: [DesLifeCycleStateTransitionApprovalGroup!]
+  "The controllers who are allowed to perform this transition. If using approvals, this will return null."
+  controllers: [DesLifeCycleStateTransitionController!]
+  "The `DateTime` this life cycle state transition was created."
+  createdAt: DateTime!
+  "The user this life cycle state transition was created by."
+  createdBy: DesUser!
+  "Determines whether the transition is publicly accessible."
+  isPublic: Boolean!
+  "The `DesLifeCycleState` after the transition is applied."
+  lifeCycleStateAfter: DesLifeCycleState
+  "The `DesLifeCycleState` before the transition is applied."
+  lifeCycleStateBefore: DesLifeCycleState
+  "The reference identifier for this life cycle state transition."
+  lifeCycleStateTransitionId: String!
+  "The format string for the transition menu in Altium Designer."
+  menuTextFormat: String!
+  "The name of this life cycle state transition."
+  name: String!
+  "Determines how the permissions for the state transition are managed."
+  transitionKind: DesLifeCycleStateTransitionKind!
+  "The `DateTime` this life cycle state transition was last updated at."
+  updatedAt: DateTime!
+  "The user this life cycle state transition was last updated by."
+  updatedBy: DesUser!
+}
+
+"Information about the life cycle state transition approval groups."
+type DesLifeCycleStateTransitionApprovalGroup {
+  "The controllers that can provide an approval for this life cycle state transition approval group."
+  controllers: [DesLifeCycleStateTransitionController!]!
+  "The name of this life cycle state transition approval group."
+  name: String!
+}
+
+"Information about the life cycle state transition controllers."
+type DesLifeCycleStateTransitionController {
+  "The group this life cycle state transition controller is assigned to. It is null unless the scope is set to `GROUP`."
+  group: DesUserGroup
+  "The name of this life cycle state transition controller."
+  name: String!
+  "The scope of this life cycle state transition controller."
+  scope: DesPermissionScope!
+  "The user this life cycle state transition controller is assigned to. It is null unless the scope is set to `USER`."
+  user: DesUser
+}
+
+"Payload associated with moving a folder."
+type DesMoveFolderPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+type DesOrganizationPermission implements DesPermission {
+  "Indicates what actions can be performed on the permission."
+  availableActions: DesPermissionAvailableActions!
+  "The organization to which the permission is granted."
+  organization: GloOrganization!
+  "Trustee's indentificator."
+  trusteeId: ID!
+  "Indicates read/write permissions."
+  trusteePermissions: DesTrusteePermissions!
+}
+
+type DesOwnerPermission implements DesPermission {
+  "Indicates what actions can be performed on the permission."
+  availableActions: DesPermissionAvailableActions!
+  "The entity's owner."
+  owner: DesWorkspaceUser!
+  "Trustee's indentificator."
+  trusteeId: ID!
+  "Indicates read/write permissions."
+  trusteePermissions: DesTrusteePermissions!
+}
+
+type DesPermissionAvailableActions {
+  "Indicates whether the permission can be removed."
+  canBeRemoved: Boolean!
+  "Indicates whether the permission can be set as read-only."
+  canBeSetToReadOnly: Boolean!
+}
+
+"Payload associated with removing users from a group."
+type DesRemoveUsersFromGroupPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Revision details identifier for later use or full details."
+type DesRevision {
+  "The revision details or null for unmanaged components."
+  details: DesRevisionDetails
+  "The reference identifier for revision used in `desRevisionDetailsByRevisionId`. The instance may not exist for unmanaged components."
+  revisionId: String!
+}
+
+"Revision details."
+type DesRevisionDetails {
+  "Number of children associated with this revision."
+  childCount: Int!
+  "Revision comment."
+  comment: String
+  "The `DateTime` when this revision was created."
+  createdAt: DateTime!
+  "Revision description."
+  description: String
+  "Indicates whether this revision is deleted."
+  isDeleted: Boolean!
+  "The life cycle state information of the revision."
+  lifeCycleState: DesLifeCycleState!
+  "The `DateTime` when this revision was last modified."
+  modifiedAt: DateTime!
+  "The number of parents associated with this revision."
+  parentCount: Int!
+  "Reference file information and download URL."
+  references: [DesDownloadableFile!]!
+  "The `DateTime` when this revision was released."
+  releaseDate: DateTime!
+  "The reference identifier."
+  revisionId: String!
+}
+
+"Revision naming scheme details obtained by `desRevisionNamingSchemes`. More information is available on revision naming schemes at: https://www.altium.com/documentation/altium-designer/accessing-detailed-item-view#!revision_naming_scheme_dlg"
+type DesRevisionNamingScheme {
+  "The `DesContentTypeKind` list for this revision naming scheme."
+  contentTypes: [DesContentTypeKind!]!
+  "The `DateTime` this revision naming scheme was created."
+  createdAt: DateTime!
+  "The user this revision naming scheme was created by."
+  createdBy: DesUser!
+  "The node identifier."
+  id: ID!
+  "If true, the revision naming scheme is only applicable to objects of the content types specified by `contentTypes`."
+  isControlledPerContentType: Boolean!
+  "The separator used between item identifier and revision identifier."
+  itemRevisionSeparator: String!
+  "The `DesRevisionNamingSchemeLevel` list for this revision naming scheme."
+  levels: [DesRevisionNamingSchemeLevel!]!
+  "The name of this revision naming scheme."
+  name: String!
+  revisionNamingSchemeId: String! @deprecated(reason: "Use `id` instead.")
+  "The `DateTime` this revision naming scheme was last updated at."
+  updatedAt: DateTime!
+  "The user this revision naming scheme was last updated by."
+  updatedBy: DesUser!
+}
+
+"Information on the revision naming scheme level."
+type DesRevisionNamingSchemeLevel {
+  "The `DateTime` this revision naming scheme level was created."
+  createdAt: DateTime!
+  "The user this revision naming scheme level was created by."
+  createdBy: DesUser!
+  "The level index of this level in the revision naming scheme."
+  levelIndex: Int!
+  "The separator prefix character for this revision naming scheme level."
+  levelSeparator: String!
+  levelSequence: String! @deprecated(reason: "Use `RevisionNamingPolicy` instead.")
+  "The minimum character length allowed for this revision naming scheme level."
+  minimumWidth: Int!
+  "The name of this revision naming scheme level. In Altium Designer it is known as 'Caption'."
+  name: String!
+  "The reference identifier for this revision naming scheme level."
+  revisionNameLevelId: String!
+  "The naming policy for this revision naming scheme level."
+  revisionNamingPolicy: DesRevisionNamingPolicy!
+  "The `DateTime` this revision naming scheme level was last updated at."
+  updatedAt: DateTime!
+  "The user this revision naming scheme level was last updated by."
+  updatedBy: DesUser!
+}
+
+"Setting information."
+type DesSetting {
+  "The name of the setting."
+  name: String!
+  "The value of the setting."
+  value: String!
+}
+
+"Information about a team in a workspace."
+type DesTeam {
+  "List of user groups in the team."
+  groups: [DesUserGroup!]!
+  "List of users in the team."
+  users: [DesUser!]!
+}
+
+type DesTrusteePermissions {
+  "Indicates read/write permissions."
+  canEdit: Boolean!
+}
+
+"Payload associated with updating a folder."
+type DesUpdateFolderPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating folder permissions."
+type DesUpdateFolderPermissionsPayload {
+  folderId: ID! @deprecated(reason: "This value will soon change from folder node identifier to folder reference identifier (GUID).")
+}
+
+"Payload associated with updating a life cycle definition."
+type DesUpdateLifeCycleDefinitionPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "Life cycle definition identifier."
+  id: ID!
+}
+
+type DesUpdatePermissionsPayload {
+  "Indicates whether the permissions were updated successfully."
+  isUpdated: Boolean!
+}
+
+"Payload associated with updating revision naming scheme."
+type DesUpdateRevisionNamingSchemePayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a setting."
+type DesUpdateSettingPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+  "The setting that was updated."
+  setting: DesSetting!
+}
+
+"Payload associated with updating user group."
+type DesUpdateUserGroupPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"Payload associated with updating a user."
+type DesUpdateUserPayload {
+  "Payload errors."
+  errors: [DesPayloadError!]!
+}
+
+"User details with the identifier and nullable extra fields."
+type DesUser {
+  "Null if the user no longer exists."
+  email: String
+  "Null if the user no longer exists."
+  firstName: String
+  "The global user identifier. Common for this user across all workspaces."
+  globalUserId: String
+  "Null if the user no longer exists."
+  groups: [DesUserGroup!]
+  "Null if the user no longer exists."
+  lastName: String
+  "Null if the user no longer exists."
+  pictureUrl(
+    "The size of the picture to retrieve."
+    size: DesUserPictureSize
+  ): String
+  "The workspace specific user identifier."
+  userId: String
+  "Null if the user no longer exists."
+  userName: String
+}
+
+"A user group information."
+type DesUserGroup {
+  "The group name."
+  name: String!
+  "The reference identifier."
+  userGroupId: String!
+}
+
+"A workspace provides a flexible and secure method for managing design, manufacturing and supply content."
+type DesWorkspace implements Node {
+  "The identifier of this workspace used for authorization."
+  authId: String!
+  "The configuration of this workspace."
+  configuration: DesWorkspaceConfiguration!
+  "The summary of this workspace content or purpose."
+  description: String
+  "The node identifier for the workspace (used by `desWorkspaceById`)."
+  id: ID!
+  "Tells if the workspace is the current user default."
+  isDefault: Boolean!
+  "The resource managing components for this workspace."
+  library(args: DesLibraryArgsInput): DesLibrary!
+  "The location of this workspace."
+  location: DesWorkspaceLocation!
+  "The marketing badge of this workspace."
+  marketingBadge: String!
+  "The descriptive label for this workspace."
+  name: String!
+  "The list of projects managed in this workspace."
+  projects(order: [DesProjectSortInput!], where: DesProjectFilterInput): [DesProject!]!
+  "The list of workspace tasks. For a particular workspace consider using the more effective query `desWorkspaceTasks`."
+  tasks: [DesTask!]!
+  "The list of members authorized for this workspace."
+  team: DesTeam!
+  "The web address of this workspace."
+  url: String!
+  "The vendor of this workspace."
+  vendor: DesWorkspaceVendor!
+  "The list of workflow definitions in this workspace."
+  workflowDefinitions(where: DesWorkflowDefinitionFilterInput): [DesWorkflowDefinition!]
+  "The list of workflows in this workspace."
+  workflows(
+    "An option to search workflows that have been completed."
+    isClosed: Boolean! = false
+    where: DesWorkflowFilterInput
+    "Filter workflows by a variable."
+    withVariable: DesWorkflowFilterByVariableInput
+  ): [DesWorkflow!]
+}
+
+"The information about the workspace group."
+type DesWorkspaceGroup {
+  "A workspace-specific identifier."
+  groupId: String!
+  "Identifies a workspace group."
+  id: ID!
+  members(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    orderBy: DesWorkspaceUserOrderBy
+    sortDirection: DesWorkspaceTeamSortDirection
+  ): DesWorkspaceUserConnection
+  "A unique name of this group within the workspace."
+  name: String!
+}
+
+"A connection to a list of items."
+type DesWorkspaceGroupConnection {
+  "A list of edges."
+  edges: [DesWorkspaceGroupEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesWorkspaceGroup!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesWorkspaceGroupEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesWorkspaceGroup!
+}
+
+type DesWorkspaceGroupPermission implements DesPermission {
+  "Indicates what actions can be performed on the permission."
+  availableActions: DesPermissionAvailableActions!
+  "The workspace group to which the permission is granted."
+  group: DesWorkspaceGroup!
+  "Trustee's indentificator."
+  trusteeId: ID!
+  "Indicates read/write permissions."
+  trusteePermissions: DesTrusteePermissions!
+}
+
+"A workspace provides a flexible and secure method for managing design, manufacturing and supply content."
+type DesWorkspaceInfo {
+  "The identifier of this workspace used for authorization."
+  authId: String!
+  "The summary of this workspace content or purpose."
+  description: String
+  "Tells if the workspace is the current user default."
+  isDefault: Boolean!
+  "The location of this workspace."
+  location: DesWorkspaceLocation!
+  "The descriptive label for this workspace."
+  name: String!
+  "The web address of this workspace."
+  url: String!
+  "The vendor of this workspace."
+  vendor: DesWorkspaceVendor!
+  "The node identifier for the workspace (used by `desWorkspaceById`)."
+  workspaceId: ID!
+}
+
+"A region in which workspaces can be located."
+type DesWorkspaceLocation {
+  "The preferred Nexar API URL to use for this location."
+  apiServiceUrl: String!
+  "The voyager API schema explorer URL for this location."
+  apiVoyagerUrl: String!
+  "The preferred files service URL to use for this location."
+  filesServiceUrl: String!
+  "The name of the location."
+  name: String!
+}
+
+type DesWorkspaceMembersPermission implements DesPermission {
+  "Indicates what actions can be performed on the permission."
+  availableActions: DesPermissionAvailableActions!
+  "Trustee's indentificator."
+  trusteeId: ID!
+  "Indicates read/write permissions."
+  trusteePermissions: DesTrusteePermissions!
+}
+
+"Represents a team of collaborators in a given workspace."
+type DesWorkspaceTeam {
+  "Retrieves a list of Project Guests."
+  projectGuests(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Specifies the filter for the results."
+    filter: DesProjectGuestFilterInput
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Specifies the criteria for the result ordering."
+    orderBy: DesProjectGuestOrderBy
+    "Specifies the direction for the result ordering."
+    sortDirection: DesWorkspaceTeamSortDirection
+  ): DesProjectGuestConnection
+  "Retrieves a list of workspace groups."
+  workspaceGroups(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Specifies the criteria for the result ordering."
+    orderBy: DesWorkspaceGroupOrderBy
+    "Specifies the direction for the result ordering."
+    sortDirection: DesWorkspaceTeamSortDirection
+  ): DesWorkspaceGroupConnection
+  "Retrieves a list of workspace users."
+  workspaceUsers(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Specifies the filter for the results."
+    filter: DesWorkspaceUserFilterInput
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Specifies the criteria for the result ordering."
+    orderBy: DesWorkspaceUserOrderBy
+    "Specifies the direction for the result ordering."
+    sortDirection: DesWorkspaceTeamSortDirection
+  ): DesWorkspaceUserConnection
+}
+
+"Represents a user registered in a workspace."
+type DesWorkspaceUser {
+  "A composition of the first name and last name."
+  displayName: String!
+  "Email of the user."
+  email: String!
+  firstName: String!
+  """
+  The global user identifier. Null in case of some old workspaces that have never been migrated,
+  if the user has never logged into the workspace.
+  """
+  globalUserId: String
+  groups: [DesWorkspaceGroup!]!
+  "The node identifier for the workspace user."
+  id: ID!
+  "Indicates whether the user is currently a member of the workspace. False if the user has been removed."
+  isActive: Boolean!
+  """
+  Specifies whether the user is active within any of the workspaces. Null if the information is unavailable
+  (e.g. the requester does not belong to the user's organization).
+  """
+  isOnline: Boolean
+  lastName: String!
+  "The license features available to this user. Null if not the current user."
+  licenseFeatures: [String!]
+  "A URL for a picture of this user."
+  profilePicture(size: DesWorkspaceUserProfilePictureSize! = SIZE48X48): URL
+  "A specific role of this user within the workspace."
+  type: DesWorkspaceUserType!
+  "The workspace specific user identifier."
+  userId: String!
+}
+
+"A connection to a list of items."
+type DesWorkspaceUserConnection {
+  "A list of edges."
+  edges: [DesWorkspaceUserEdge!]
+  "A flattened list of the nodes."
+  nodes: [DesWorkspaceUser!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type DesWorkspaceUserEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: DesWorkspaceUser!
+}
+
+type DesWorkspaceUserPermission implements DesPermission {
+  "Indicates what actions can be performed on the permission."
+  availableActions: DesPermissionAvailableActions!
+  "Trustee's indentificator."
+  trusteeId: ID!
+  "Indicates read/write permissions."
+  trusteePermissions: DesTrusteePermissions!
+  "The workspace user to whom the permission is granted."
+  user: DesWorkspaceUser!
+}
+
+type GloAddAppClientSecretPayload {
+  errors: [GloAddAppClientSecretError!]
+  gloApp: GloApp
+}
+
+type GloAddAppGrantTypePayload {
+  errors: [GloAddAppGrantTypeError!]
+  gloApp: GloApp
+}
+
+type GloAddAppRedirectUriPayload {
+  errors: [GloAddAppRedirectUriError!]
+  gloApp: GloApp
+}
+
+type GloAddAppScopePayload {
+  errors: [GloAddAppScopeError!]
+  gloApp: GloApp
+}
+
+"Represents output value for add user to group."
+type GloAddUsersToGroupPayload {
+  "Status."
+  status: String
+}
+
+type GloAddress {
+  "City."
+  city: String
+  "Country."
+  country: String
+  "Postal code."
+  postalCode: String
+  "State."
+  state: String
+  "Street."
+  street: String
+}
+
+"Represents an Altium application."
+type GloApp {
+  "The contact email of the developer of the App."
+  contactEmail: String!
+  "The date-time that the App was created."
+  createdAt: DateTime!
+  "The ID of the User that created the App."
+  createdById: String!
+  "The date-time that the App was deleted. Null if the App has not been deleted."
+  deletedAt: DateTime
+  "The ID of the User that deleted the App. Null if the App has not been deleted."
+  deletedById: String
+  "A description of the App."
+  description: String!
+  "The human-readable identifier for the App. Must be unique."
+  hrid: String!
+  "The GRID identifier for the App."
+  id: ID!
+  "Whether the App is a Workspace PAT App."
+  isWorkspaceApp: Boolean!
+  "The name of the App."
+  name: String!
+  "Represents the *OAuth 2.0 client* for this `GloApp`."
+  oAuthClient: GloOAuthClient!
+  "Apps whose tokens can be exchanged to this app."
+  tokenExchangeSources: [GloApp!]!
+  "The date-time that the App was last updated."
+  updatedAt: DateTime!
+  "The ID of the User that last updated the App."
+  updatedById: String!
+}
+
+"Error that occurs when a `GloApp` cannot be installed into a workspace as it has already been installed."
+type GloAppAlreadyInstalledError implements Error {
+  message: String!
+}
+
+"Error that occurs when attempting to create a new `GloApp` with an *OAuth client* that is already associated with another `GloApp`."
+type GloAppClientExistsError implements Error {
+  message: String!
+}
+
+"Error that occurs when attempting to add a client secret to a `GloApp` *OAuth client* but the secret could not be added."
+type GloAppClientSecretNotAddedError implements Error {
+  message: String!
+}
+
+"Error that occurs when the *OAuth client* secret was not removed as expected from a `GloApp`."
+type GloAppClientSecretNotRemovedError implements Error {
+  message: String!
+}
+
+"Error that occurs when attempting to update a deleted `GloApp`."
+type GloAppDeletedError implements Error {
+  message: String!
+}
+
+"Error that occurs when updating the grant type for a `GloApp` is unsuccessful."
+type GloAppGrantTypeNotUpdatedError implements Error {
+  message: String!
+}
+
+"Error that occurs when the input hrid already exists."
+type GloAppHridExistsError implements Error {
+  message: String!
+}
+
+"Error that occurs when a `GloApp` cannot be installed into a workspace due to insufficient permissions."
+type GloAppInstallDeniedError implements Error {
+  message: String!
+}
+
+"Error that occurs when the input email is invalid."
+type GloAppInvalidEmailError implements Error {
+  message: String!
+}
+
+"Error that occurs when the input hrid is invalid."
+type GloAppInvalidHridError implements Error {
+  message: String!
+}
+
+"Error that occurs when an *OAuth client* is invalid."
+type GloAppInvalidOAuthError implements Error {
+  message: String!
+}
+
+"Error that occurs when an *OAuth client* is missing."
+type GloAppMissingOAuthClientError implements Error {
+  message: String!
+}
+
+"Error that occurs when updating the name for a `GloApp` is unsuccessful."
+type GloAppNameNotUpdatedError implements Error {
+  message: String!
+}
+
+"Error that occurs when a `GloApp` cannot be deleted."
+type GloAppNotDeletedError implements Error {
+  message: String!
+}
+
+"Error that occurs when a `GloApp` is not found."
+type GloAppNotFoundError implements Error {
+  message: String!
+}
+
+"Error that occurs when a `GloApp` cannot be installed into a workspace."
+type GloAppNotInstalledError implements Error {
+  message: String!
+}
+
+"Error that occurs when a `GloApp` cannot be uninstalled from a workspace."
+type GloAppNotUninstalledError implements Error {
+  message: String!
+}
+
+"Error that occurs when granting access to a *OAuth client* fails."
+type GloAppOAuthClientGrantAccessError implements Error {
+  message: String!
+}
+
+"Error that occurs when an *OAuth client* cannot be deleted."
+type GloAppOAuthClientNotDeletedError implements Error {
+  message: String!
+}
+
+"Error that occurs when an *OAuth client* cannot be restored."
+type GloAppOAuthClientNotRestoredError implements Error {
+  message: String!
+}
+
+"Error that occurs when updating the redirect URI for a `GloApp` is unsuccessful."
+type GloAppRedirectUriNotUpdatedError implements Error {
+  message: String!
+}
+
+"Error that occurs when updating the scope for a `GloApp` is unsuccessful."
+type GloAppScopeNotUpdatedError implements Error {
+  message: String!
+}
+
+"A connection to a list of items."
+type GloAppsConnection {
+  "A list of edges."
+  edges: [GloAppsEdge!]
+  "A flattened list of the nodes."
+  nodes: [GloApp!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+}
+
+"An edge in a connection."
+type GloAppsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: GloApp!
+}
+
+type GloCreateAppFromOAuthClientPayload {
+  errors: [GloCreateAppFromOAuthClientError!]
+  gloApp: GloApp
+}
+
+type GloCreateAppPayload {
+  errors: [GloCreateAppError!]
+  gloApp: GloApp
+  warnings: [GloCreateAppWarning!]
+}
+
+type GloCreateAppWarning {
+  message: String!
+}
+
+"Represents output value for creation of a new group."
+type GloCreateUserGroupPayload {
+  "User group."
+  userGroup: GloUserGroup
+}
+
+"Represents output value for creating new user."
+type GloCreateUserPayload {
+  "User identifier."
+  userId: String
+}
+
+type GloDeleteAppPayload {
+  errors: [GloDeleteAppError!]
+  id: ID
+}
+
+"Represents the result of subscription creation operation."
+type GloEvtCreateSubscriptionPayload {
+  "Errors that occurred during subscription creation (if any)."
+  errors: [GloEvtError!]!
+  "Information about created subscription."
+  subscription: GloEvtSubscription
+}
+
+"Represents the result of subscription deletion operation."
+type GloEvtDeleteSubscriptionPayload {
+  "Errors that occurred during subscription deletion (if any)."
+  errors: [GloEvtError!]!
+}
+
+"Represents the information about an error."
+type GloEvtError {
+  "Description of the error occurred."
+  message: String!
+}
+
+"Represents the result of event publishing operation."
+type GloEvtPublishEventPayload {
+  "Errors that occurred during event publishing (if any)."
+  errors: [GloEvtError!]!
+}
+
+"Represents the webhook-based subscription."
+type GloEvtWebhookSubscription implements GloEvtSubscription {
+  "Events of interest."
+  eventTypes: [String!]!
+  "State of the subscription."
+  state: GloEvtSubscriptionState!
+  "Subscription identifier."
+  subscriptionId: String!
+  "URL of the webhook where events are delivered."
+  webHookUrl: String!
+}
+
+type GloInstallAppPayload {
+  errors: [GloInstallAppError!]
+  gloApp: GloApp
+}
+
+"Represents the information about a payload error."
+type GloNtfPayloadError implements GloNtfError {
+  "Description of the error occurred."
+  message: String!
+}
+
+type GloNtfSendEmailPayload {
+  "Errors that occurred during sending an email."
+  errors: [GloNtfPayloadError!]!
+}
+
+"Represents an *OAuth 2.0 client*."
+type GloOAuthClient {
+  "The absolute lifetime of refresh tokens issued to this *OAuth 2.0 client*, in seconds."
+  absoluteRefreshTokenLifetime: Int!
+  "The lifetime of access tokens issued to this *OAuth 2.0 client*, in seconds."
+  accessTokenLifetime: Int!
+  "The lifetime of authorization codes issued to this *OAuth 2.0 client*, in seconds."
+  authorizationCodeLifetime: Int!
+  "The client identifier for this *OAuth 2.0 client*."
+  clientId: String!
+  "The client secret for this *OAuth 2.0 client*. Only available at client creation."
+  clientSecret: String
+  "The list of grant types this *OAuth 2.0 client* can use."
+  grantTypes: [String!]!
+  "The lifetime of identity tokens issued to this *OAuth 2.0 client*, in seconds."
+  identityTokenLifetime: Int!
+  "The list of redirect URIs associated with this *OAuth 2.0 client*."
+  redirectUris: [String!]!
+  "Whether this *OAuth 2.0* client requires consent to be approved before it can create user access tokens."
+  requireConsent: Boolean!
+  "Whether PKCE is required when this *OAuth 2.0 client* uses the authorization code grant."
+  requirePkce: Boolean!
+  "Whether this *OAuth 2.0 client* needs to use a client secret requesting tokens."
+  requireSecret: Boolean!
+  "The list of scopes this *OAuth 2.0 client* can use."
+  scopes: [String!]!
+  "The sliding lifetime of refresh tokens issued to this *OAuth 2.0 client*, in seconds."
+  slidingRefreshTokenLifetime: Int!
+}
+
+type GloOrganization {
+  "Type of account (e.g., personal, business)."
+  accountType: GloAccountType!
+  "Indicates whether this organization is active."
+  active: Boolean!
+  "Indicates whether users associated with this organization can be displayed publicly."
+  allowDisplayUsers: Boolean!
+  "Address associated with billing purposes."
+  billingAddress: GloAddress
+  "Preferred currency used by the organization."
+  currency: String
+  "Customer-specific reference number for external systems."
+  customerNumber: String
+  "General description or notes about the organization."
+  description: String
+  "Fax number associated with the organization."
+  fax: String
+  "User groups associated with this organization."
+  groups: [GloUserGroup]
+  "Organization global resource identifier."
+  id: ID!
+  "Whether this organization is publicly visible."
+  isPublic: Boolean!
+  "Name of the organization."
+  name: String
+  "Organization identifier."
+  organizationId: String
+  "List of parameters or configurations specific to the organization."
+  organizationParameters: [GloParameter]
+  "Primary contact phone number for the organization."
+  phone: String
+  "Profile picture or logo URL for the organization."
+  picture: String
+  "Configuration settings for SAML authentication."
+  samlSettings: GloSamlSettings
+  "Address used for shipping or delivery purposes."
+  shippingAddress: GloAddress
+  "Users belonging to this organization."
+  users: [GloUser]
+  "Official website URL of the organization."
+  webSite: String
+}
+
+type GloParameter {
+  "Parameter name."
+  name: String
+  "Parameter identifier."
+  parameterId: String
+  "Parameter value."
+  value: String
+}
+
+type GloRemoveAppClientSecretPayload {
+  errors: [GloRemoveAppClientSecretError!]
+  gloApp: GloApp
+}
+
+type GloRemoveAppGrantTypePayload {
+  errors: [GloRemoveAppGrantTypeError!]
+  gloApp: GloApp
+}
+
+type GloRemoveAppRedirectUriPayload {
+  errors: [GloRemoveAppRedirectUriError!]
+  gloApp: GloApp
+}
+
+type GloRemoveAppScopePayload {
+  errors: [GloRemoveAppScopeError!]
+  gloApp: GloApp
+}
+
+"Represents output value for remove users from group."
+type GloRemoveUsersFromGroupPayload {
+  "Status."
+  status: String
+}
+
+type GloRestoreAppPayload {
+  errors: [GloRestoreAppError!]
+  gloApp: GloApp
+}
+
+type GloSamlSettings {
+  "SAML configuration."
+  config: String
+  "Indicates if settings are enabled."
+  enabled: Boolean!
+  "Indicates if SCIM is enabled."
+  scimEnabled: Boolean!
+}
+
+type GloUninstallAppPayload {
+  errors: [GloUninstallAppError!]
+  gloApp: GloApp
+}
+
+type GloUpdateAppContactEmailPayload {
+  errors: [GloUpdateAppContactEmailError!]
+  gloApp: GloApp
+}
+
+type GloUpdateAppDescriptionPayload {
+  errors: [GloUpdateAppDescriptionError!]
+  gloApp: GloApp
+}
+
+type GloUpdateAppHridPayload {
+  errors: [GloUpdateAppHridError!]
+  gloApp: GloApp
+}
+
+type GloUpdateAppNamePayload {
+  errors: [GloUpdateAppNameError!]
+  gloApp: GloApp
+}
+
+type GloUser {
+  "Current activation status of the user."
+  activationStatus: String
+  "Indicates whether this user account is active."
+  active: Boolean!
+  "Authentication type (e.g., Windows, LDAP) used for this user account."
+  authType: GloAuthType!
+  "Indicates whether automatic synchronization is enabled for this user."
+  autoSync: Boolean!
+  "Badges or achievements associated with the user (e.g., professional certifications)."
+  badges: String
+  "Country or region associated with this user."
+  country: String
+  "Current job position or role held by the user."
+  currentPosition: String
+  "Display name shown publicly in interfaces."
+  displayName: String
+  "Domain associated with this user."
+  domain: String
+  "Email address associated with this user account."
+  email: String
+  "Example work or projects associated with this user."
+  exampleWork: String
+  "Professional experience summary for the user."
+  experience: String
+  "First name of the user."
+  firstName: String
+  "List of groups assigned to this user."
+  groups: [GloUserGroup]
+  "Indicates whether the user's email address should be hidden from public view."
+  hideEmail: Boolean!
+  "Hostname associated with this user's account (e.g., server name or domain)."
+  hostName: String
+  "User's global resource identifier."
+  id: ID!
+  "Last name of the user."
+  lastName: String
+  "Preferred language or regional locale setting for the user."
+  locale: String
+  "Organization to which this user belongs."
+  organization: GloOrganization
+  "Collection of parameters or settings specific to this user."
+  parameters: [GloParameter]
+  "Phone number associated with this user."
+  phone: String
+  "URL to a profile picture or avatar associated with this user."
+  profilePicture: String
+  "Salutation or title used when addressing the user (e.g., Dr., Mr.)."
+  salutation: String
+  "List of spaces associated with this user."
+  spaces: [GloUserSpace]
+  "Specialized skills or areas of expertise for the user."
+  specialties: String
+  "Preferred timezone for this user."
+  timezone: String
+  "User's identifier."
+  userId: String
+  "Username associated with the user account."
+  userName: String
+  "Website or personal URL associated with this user."
+  website: String
+}
+
+"A connection to a list of items."
+type GloUserConnection {
+  "A list of edges."
+  edges: [GloUserEdge!]
+  "A flattened list of the nodes."
+  nodes: [GloUser]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type GloUserEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: GloUser
+}
+
+type GloUserGroup {
+  "Amount og group users."
+  groupMemberCount: Int
+  "Group global resource identifier."
+  id: ID!
+  "Name of the group."
+  name: String
+  "Organization to which group belongs to."
+  organization: GloOrganization
+  "Group identifier."
+  userGroupId: String
+  "List of users in the group."
+  users: [GloUser]
+}
+
+"A connection to a list of items."
+type GloUserGroupConnection {
+  "A list of edges."
+  edges: [GloUserGroupEdge!]
+  "A flattened list of the nodes."
+  nodes: [GloUserGroup]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type GloUserGroupEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: GloUserGroup
+}
+
+type GloUserSpace {
+  "Default language for this user space."
+  defaultLanguage: String
+  "Domain associated with this user space."
+  domain: String
+  "User space global resource identifier."
+  id: ID!
+  "Whether this user space is publicly visible."
+  isPublic: Boolean!
+  "User space name."
+  name: String
+  "User space identifier."
+  userSpaceId: String
+}
+
+"**Experimental**"
+type KgAccessLevel @experimental {
+  "**Experimental**"
+  canEdit: Boolean!
+}
+
+"**Experimental**"
+type KgAddNodePayload @experimental {
+  "**Experimental** Whether the entity was successfully registered."
+  isAdded: Boolean!
+}
+
+"**Experimental**"
+type KgAnchorNode implements KgNode @experimental {
+  "**Experimental**"
+  accessLevel: KgAccessLevel
+  "**Experimental** The unique identifier of the entity represented by this node."
+  entityGuid: String
+  "**Experimental**"
+  id: ID!
+  "**Experimental**"
+  relatedNodes: KgNodeQueries!
+  "**Experimental**"
+  relations: KgRelationQueries!
+}
+
+"**Experimental**"
+type KgDeleteNodePayload @experimental {
+  "**Experimental** Whether the entity was successfully deleted."
+  isDeleted: Boolean!
+}
+
+"**Experimental**"
+type KgNodeQueries @experimental {
+  "**Experimental**"
+  usedBy: [KgNode!]!
+  "**Experimental**"
+  uses: [KgNode!]!
+}
+
+"**Experimental**"
+type KgRelation @experimental {
+  "**Experimental**"
+  object: KgNode
+  "**Experimental**"
+  semantic: KgRelationSemantic!
+  "**Experimental**"
+  subject: KgNode
+}
+
+"**Experimental**"
+type KgRelationQueries @experimental {
+  "**Experimental**"
+  all: [KgRelation!]!
+}
+
+type PlatformQueries {
+  "Context for `TokenQueries`."
+  token: TokenQueries!
+}
+
+"Error returned by the Token API when a new client secret for a `PlatformWorkspaceRefreshToken` could not be created."
+type PlatformRefreshTokenCreateNewSecretError implements Error {
+  message: String!
+}
+
+"A connection to a list of items."
+type PlatformTokenConnection {
+  "A list of edges."
+  edges: [PlatformTokenEdge!]
+  "A flattened list of the nodes."
+  nodes: [PlatformToken!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"Error returned by the Token API when a `PlatformToken` could not be deleted."
+type PlatformTokenDeleteFailedError implements Error {
+  message: String!
+}
+
+"Error returned by the Token API when a `PlatformToken` could not be fully deleted, leaving it in an inconsistent state."
+type PlatformTokenDeletePartiallyFailedError implements Error {
+  message: String!
+}
+
+type PlatformTokenDeletePayload {
+  errors: [PlatformTokenDeleteError!]
+  tokenId: String
+}
+
+"Error returned by the Token API when a client secret for a `PlatformWorkspaceRefreshToken` could not be deleted."
+type PlatformTokenDeleteRefreshTokenSecretError implements Error {
+  message: String!
+}
+
+"An edge in a connection."
+type PlatformTokenEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: PlatformToken!
+}
+
+"Error that occurs when the `PlatformToken` has not been successfully generated."
+type PlatformTokenGenerationError implements Error {
+  message: String!
+}
+
+"Error returned by the Token API when an input token lifetime for a new `PlatformToken` is invalid."
+type PlatformTokenInvalidTokenLifetimeError implements Error {
+  message: String!
+}
+
+"Error that occurs when the input `PlatformToken` name already exists."
+type PlatformTokenNameExistsError implements Error {
+  message: String!
+}
+
+"Error that occurs when a `PlatformToken` with the specified identifier could not be found."
+type PlatformTokenNotFoundError implements Error {
+  message: String!
+}
+
+"Error that occurs when the maximum number of `PlatformToken` for a workspace has been reached."
+type PlatformTokenQuotaExceededError implements Error {
+  message: String!
+}
+
+"Error that occurs when no `PlatformToken` exists with the specified identifier."
+type PlatformTokenUpdateFailedError implements Error {
+  message: String!
+}
+
+"Error that occurs when a `PlatformToken` update request specifies no fields to update."
+type PlatformTokenUpdateInvalidError implements Error {
+  message: String!
+}
+
+type PlatformTokenUpdatePayload {
+  errors: [PlatformTokenUpdateError!]
+  platformToken: PlatformToken
+}
+
+"Error that occurs when access to a workspace is denied for a `PlatformToken`."
+type PlatformTokenWorkspaceAccessDeniedError implements Error {
+  message: String!
+}
+
+"Represents a `PlatformWorkspaceRefreshToken`, which is used for authentication and authorization when accessing the Altium platform."
+type PlatformWorkspaceRefreshToken implements PlatformToken {
+  "The client identifier for the *OAuth 2.0 client* associated with this `PlatformWorkspaceRefreshToken`."
+  clientId: String
+  "The date-time that the `PlatformWorkspaceRefreshToken` was created."
+  createdAt: DateTime!
+  "The `DesUser` that created the `PlatformWorkspaceRefreshToken`."
+  createdBy: DesUser!
+  "The date-time that the `PlatformWorkspaceRefreshToken` was deleted. Null if the `PlatformWorkspaceRefreshToken` has not been deleted."
+  deletedAt: DateTime
+  "The `DesUser` that deleted the `PlatformWorkspaceRefreshToken`."
+  deletedBy: DesUser
+  "The description of the `PlatformWorkspaceRefreshToken`."
+  description: String!
+  "The date-time that the `PlatformWorkspaceRefreshToken` expires."
+  expiresAt: DateTime
+  "The masked value of the `PlatformWorkspaceRefreshToken`."
+  maskedRefreshToken: String
+  "The name of the `PlatformWorkspaceRefreshToken`."
+  name: String!
+  "The identifier of the `PlatformWorkspaceRefreshToken`."
+  tokenId: String!
+  "The date-time that the `PlatformWorkspaceRefreshToken` was last updated."
+  updatedAt: DateTime!
+  "The `DesUser` that last updated the `PlatformWorkspaceRefreshToken`."
+  updatedBy: DesUser!
+  "The identifier of the Workspace that the `PlatformWorkspaceRefreshToken` belongs to."
+  workspaceId: String!
+}
+
+"Payload for creating a new client secret for a `PlatformWorkspaceRefreshToken`."
+type PlatformWorkspaceRefreshTokenCreateNewSecretPayload {
+  "The newly generated client secret."
+  clientSecret: String
+  errors: [PlatformWorkspaceRefreshTokenCreateNewSecretError!]
+  "The `PlatformWorkspaceRefreshToken` for which the new secret was created."
+  refreshToken: PlatformWorkspaceRefreshToken
+}
+
+type PlatformWorkspaceRefreshTokenCreatePayload {
+  errors: [PlatformWorkspaceRefreshTokenCreateError!]
+  redirectUrl: String
+}
+
+type PlatformWorkspaceRefreshTokenDeleteSecretPayload {
+  errors: [PlatformWorkspaceRefreshTokenDeleteSecretError!]
+  refreshToken: PlatformWorkspaceRefreshToken
+}
+
+"Represents a `PlatformWorkspaceToken`, which is used for authentication and authorization when accessing the Altium platform."
+type PlatformWorkspaceToken implements PlatformToken {
+  "The date-time that the `PlatformWorkspaceToken` was created."
+  createdAt: DateTime!
+  "The `DesUser` that created the `PlatformWorkspaceToken`."
+  createdBy: DesUser!
+  "The date-time that the `PlatformWorkspaceToken` was deleted. Null if the `PlatformWorkspaceToken` has not been deleted."
+  deletedAt: DateTime
+  "The `DesUser` that deleted the `PlatformWorkspaceToken`."
+  deletedBy: DesUser
+  "The description of the `PlatformWorkspaceToken`."
+  description: String!
+  "The date-time that the `PlatformWorkspaceToken` expires."
+  expiresAt: DateTime
+  "The masked value of the `PlatformWorkspaceToken`."
+  maskedAccessToken: String
+  "The name of the `PlatformWorkspaceToken`."
+  name: String!
+  "The identifier of the `PlatformWorkspaceToken`."
+  tokenId: String!
+  "The date-time that the `PlatformWorkspaceToken` was last updated."
+  updatedAt: DateTime!
+  "The `DesUser` that last updated the `PlatformWorkspaceToken`."
+  updatedBy: DesUser!
+  "The identifier of the Workspace that the `PlatformWorkspaceToken` belongs to."
+  workspaceId: String!
+}
+
+type PlatformWorkspaceTokenCreatePayload {
+  errors: [PlatformWorkspaceTokenCreateError!]
+  redirectUrl: String
+}
+
+"Represents the quota for the number of active `PlatformToken`s allowed in a Workspace."
+type PlatformWorkspaceTokenQuota {
+  "The current number of `PlatformToken`s active in the Workspace."
+  activeTokenCount: Int!
+  "The maximum number of active `PlatformToken`s allowed in the Workspace."
+  maxActiveTokenCount: Int!
+}
+
+type SolAddAttachmentPayload {
+  data: SolAttachment!
+}
+
+type SolAttachment {
+  "Unique identifier of the attachment."
+  attachmentId: String!
+  "Display name of the attachment."
+  name: String!
+  "Size of the attachment represented in bytes."
+  size: Long!
+  "Type of the attachment."
+  type: String!
+  uploadedAt: DateTime!
+  uploadedBy: DesWorkspaceUser
+  uploadedById: ID! @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
+  "URL to access the attachment."
+  url: String!
+}
+
+type SolBldCreateSolutionPayload {
+  solutionId: ID!
+}
+
+type SolBldEntityScaffoldingStatusPayload {
+  isScaffolding: Boolean!
+}
+
+type SolBldImportRefDesignsPayload {
+  jobId: ID!
+}
+
+type SolBldImportSoftwareProjectsPayload {
+  jobId: ID!
+}
+
+type SolBldLinkSolutionPayload {
+  solutionId: ID!
+}
+
+type SolBldScaffoldingByConfigurationPayload {
+  jobId: ID!
+}
+
+type SolBldScaffoldingByExistingEsdPayload {
+  jobId: ID!
+}
+
+type SolBldScaffoldingBySdmPayload {
+  jobId: ID!
+}
+
+type SolBldScaffoldingBySoftwareProjectAndEvalKitPayload {
+  jobId: ID!
+}
+
+type SolBldScaffoldingBySolutionTemplatePayload {
+  jobId: ID!
+}
+
+type SolBldScaffoldingExistingSolutionBySolutionTemplatePayload {
+  jobId: ID!
+}
+
+type SolBldScaffoldingJobStatusPayload {
+  jobId: ID!
+  messages: [SolBldScaffoldingStatusMessagePayload!]
+  solutionId: ID!
+  status: String!
+}
+
+type SolBldScaffoldingPayload {
+  jobId: ID!
+}
+
+type SolBldScaffoldingStatusMessageParameterPayload {
+  name: String!
+  value: String!
+}
+
+type SolBldScaffoldingStatusMessagePayload {
+  messageCode: String!
+  parameters: [SolBldScaffoldingStatusMessageParameterPayload!]!
+}
+
+type SolBldScaffoldingStatusPayload {
+  messages: [SolBldScaffoldingStatusMessagePayload!]
+  solutionId: ID!
+  status: String!
+}
+
+type SolBldScaffoldingWithEmptyEsdPayload {
+  jobId: ID!
+}
+
+type SolCreateSolutionPayload {
+  data: SolSolution!
+}
+
+type SolDeleteAttachmentPayload {
+  "Indicates whether deletion completed successfuly."
+  isDeleted: Boolean!
+}
+
+type SolDeleteSolutionPayload {
+  isDeleted: Boolean!
+}
+
+type SolLinkItemToSolutionPayload {
+  isSuccess: Boolean!
+}
+
+type SolLinkItemsToSolutionPayload {
+  isSuccess: Boolean!
+}
+
+type SolParameterBundleValue {
+  key: String!
+  value: String
+}
+
+type SolSolution {
+  "AI models associated with the solution."
+  aiModels: [SftAIModel!]!
+  "Collection of attachments associated with the solution."
+  attachments: [SolAttachment!]!
+  createdAt: DateTime!
+  createdBy: DesWorkspaceUser!
+  createdById: ID! @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
+  description: String
+  "ESD documents associated with the solution."
+  esdDocuments: [SysEsdDocument!]!
+  evalKitId: ID
+  flowType: String
+  folderId: String!
+  "Hardware projects associated with the solution."
+  hardwareProjects: [DesProject!]!
+  id: ID!
+  "Gets current scaffolding status."
+  isScaffolding: Boolean!
+  modifiedAt: DateTime
+  modifiedBy: DesWorkspaceUser
+  modifiedById: ID @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
+  "Motor Studio projects associated with the solution."
+  motorStudioProjects: [RsaMotorStudioProject!]!
+  name: String!
+  "Owner of the solution."
+  owner: DesWorkspaceUser
+  parameterBundle: String
+  parameterBundleValues: [SolParameterBundleValue!]
+  "Collection of the solution's permissions."
+  permissions: [DesPermission!]
+  "Relative URL for the preview image. Ensure you use the appropriate workspace domain when constructing the full URL."
+  previewUrl: String!
+  "Workspace users with whom the solution has been shared."
+  sharedWith: [DesWorkspaceUser!]!
+  "Simulations associated with the solution."
+  simulations: [SftSimSimulation!]!
+  "Software projects associated with the solution."
+  softwareProjects: [SftSoftwareProject!]!
+  solutionTemplateId: ID
+  "System data model associated with the solution."
+  systemDataModel: SysSdmSystemModel
+}
+
+type SolSolutionsByPagePayload {
+  solutions: [SolSolution!]!
+  totalCount: Int!
+}
+
+type SolStringKeyValue {
+  key: String!
+  value: String!
+}
+
+type SolUnlinkItemFromSolutionPayload {
+  isSuccess: Boolean!
+}
+
+type SolUpdateSolutionPayload {
+  data: SolSolution!
+}
+
+type TokenQueries {
+  "Gets the `PlatformToken` with the specified identifier."
+  byTokenId(
+    "The identifier for the Token."
+    tokenId: String!
+  ): PlatformToken
+  "Gets a list of `PlatformToken` the user has access to in the Workspace, determined by the access token."
+  byWorkspace(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [PlatformTokenSortInput!]
+    where: PlatformTokenFilterInput
+  ): PlatformTokenConnection
+  "Gets the `PlatformToken` quota for the Workspace."
+  workspaceTokenQuota: PlatformWorkspaceTokenQuota
+}
+
+union GloAddAppClientSecretError = GloAppNotFoundError | GloAppMissingOAuthClientError | GloAppDeletedError | GloAppClientSecretNotAddedError
+
+union GloAddAppGrantTypeError = GloAppNotFoundError | GloAppDeletedError | GloAppGrantTypeNotUpdatedError
+
+union GloAddAppRedirectUriError = GloAppNotFoundError | GloAppDeletedError | GloAppRedirectUriNotUpdatedError
+
+union GloAddAppScopeError = GloAppNotFoundError | GloAppDeletedError | GloAppScopeNotUpdatedError
+
+union GloCreateAppError = GloAppInvalidOAuthError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppOAuthClientGrantAccessError
+
+union GloCreateAppFromOAuthClientError = GloAppMissingOAuthClientError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppClientExistsError | GloAppOAuthClientGrantAccessError
+
+union GloDeleteAppError = GloAppOAuthClientNotDeletedError | GloAppNotDeletedError
+
+union GloInstallAppError = GloAppNotInstalledError | GloAppAlreadyInstalledError | GloAppInstallDeniedError | GloAppDeletedError
+
+union GloRemoveAppClientSecretError = GloAppNotFoundError | GloAppDeletedError | GloAppClientSecretNotRemovedError
+
+union GloRemoveAppGrantTypeError = GloAppNotFoundError | GloAppDeletedError | GloAppGrantTypeNotUpdatedError
+
+union GloRemoveAppRedirectUriError = GloAppNotFoundError | GloAppDeletedError | GloAppRedirectUriNotUpdatedError
+
+union GloRemoveAppScopeError = GloAppNotFoundError | GloAppDeletedError | GloAppScopeNotUpdatedError
+
+union GloRestoreAppError = GloAppOAuthClientNotRestoredError | GloAppMissingOAuthClientError | GloAppNotFoundError | GloAppNotDeletedError
+
+union GloUninstallAppError = GloAppNotUninstalledError | GloAppDeletedError
+
+union GloUpdateAppContactEmailError = GloAppNotFoundError | GloAppDeletedError | GloAppInvalidEmailError
+
+union GloUpdateAppDescriptionError = GloAppNotFoundError | GloAppDeletedError
+
+union GloUpdateAppHridError = GloAppNotFoundError | GloAppDeletedError | GloAppHridExistsError | GloAppInvalidHridError
+
+union GloUpdateAppNameError = GloAppNotFoundError | GloAppDeletedError | GloAppNameNotUpdatedError
+
+union PlatformTokenDeleteError = PlatformTokenNotFoundError | PlatformTokenDeleteFailedError | PlatformTokenDeletePartiallyFailedError
+
+union PlatformTokenUpdateError = PlatformTokenUpdateInvalidError | PlatformTokenUpdateFailedError | PlatformTokenNameExistsError
+
+union PlatformWorkspaceRefreshTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError
+
+union PlatformWorkspaceRefreshTokenCreateNewSecretError = PlatformTokenNotFoundError | PlatformRefreshTokenCreateNewSecretError
+
+union PlatformWorkspaceRefreshTokenDeleteSecretError = PlatformTokenNotFoundError | PlatformTokenDeleteRefreshTokenSecretError
+
+union PlatformWorkspaceTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError
+
+"Input for adding users to a group."
+input DesAddUsersToGroupInput {
+  "The group reference identifier."
+  groupId: String!
+  "Workspace user identifiers."
+  userIds: [String!]!
+  "The workspace where the group exists."
+  workspaceUrl: String!
+}
+
+"Input for folder creation."
+input DesCreateFolderInput {
+  "Folder description."
+  description: String
+  "Folder type."
+  folderType: DesFolderType!
+  "Naming scheme for the folder items."
+  itemNamingSchemeTemplate: String
+  "Folder name."
+  name: String!
+  "Reference identifier of the parent folder. If both `parentId` and `parentFolderId` are omitted or set to `null`, the folder will be placed under the library root."
+  parentFolderId: String
+  parentId: ID @deprecated(reason: "Use `parentFolderId` instead.")
+  "Folder permissions (non recursive)."
+  permissions: [DesUpdateFolderPermissionInput!]
+  "URL of the workspace into which the folder has to be created."
+  workspaceUrl: String
+}
+
+"Input for creating a life cycle definition."
+input DesCreateLifeCycleDefinitionInput {
+  "The life cycle definition to create."
+  lifeCycleDefinition: DesLifeCycleDefinitionInput!
+  "Defines which workspace the life cycle definition should be created on."
+  workspaceUrl: String
+}
+
+"Input for revision naming scheme creation."
+input DesCreateRevisionNamingSchemeInput {
+  "If `isControlledPerContentType` is true, the list of content types for which this revision naming scheme is applicable."
+  contentTypes: [DesContentTypeKind!]
+  "If true, the revision naming scheme is only applicable to objects of the content types specified by `contentTypes`."
+  isControlledPerContentType: Boolean
+  "The separator used between item identifier and revision identifier. Allowed characters are: ',', '.', '-', '_'."
+  itemRevisionSeparator: String!
+  "The list of numbering levels for this revision naming scheme. Maximum of 3 levels."
+  levels: [DesCreateRevisionNamingSchemeLevelInput!]!
+  "The name of this revision naming scheme."
+  name: String!
+  "The workspace URL that the revision naming scheme should be created on."
+  workspaceUrl: String
+}
+
+"Input for revision naming scheme level creation."
+input DesCreateRevisionNamingSchemeLevelInput {
+  "The separator prefix character for this revision naming scheme level. Allowed characters are: ',', '.', '-', '_'."
+  levelSeparator: String!
+  "The minimum character length allowed for this revision naming scheme level."
+  minimumWidth: Int!
+  "The name of this revision naming level. In Altium Designer it is known as 'Caption'."
+  name: String!
+  "The naming policy for this revision naming scheme level."
+  revisionNamingPolicy: DesRevisionNamingPolicy!
+}
+
+"Input for user group creation."
+input DesCreateUserGroupInput {
+  "User group name."
+  name: String!
+  "URL for workspace in which the user group is to be created."
+  workspaceUrl: String
+}
+
+"Input for user creation."
+input DesCreateUserInput {
+  "New user email."
+  email: String!
+  "New user first name."
+  firstName: String!
+  "New user last name."
+  lastName: String!
+  "New user password."
+  password: String!
+  "New user username."
+  userName: String!
+  "URL for the workspace to add the new user into."
+  workspaceUrl: String
+}
+
+"Input for deleting a folder."
+input DesDeleteFolderInput {
+  "Reference identifier of the folder to delete."
+  folderId: String
+  id: ID @deprecated(reason: "Use `workspaceUrl` and `folderId` instead.")
+  "URL of the workspace in which the folder exists."
+  workspaceUrl: String
+}
+
+"Input for deleting a life cycle definition."
+input DesDeleteLifeCycleDefinitionInput {
+  "Defines which life cycle definition should be deleted."
+  id: ID!
+}
+
+"Input for deleting a revision naming scheme."
+input DesDeleteRevisionNamingSchemeInput {
+  "The revision naming scheme to be deleted."
+  id: ID!
+}
+
+"Input for deleting a user group."
+input DesDeleteUserGroupInput {
+  "The group reference identifier."
+  groupId: String!
+  "The workspace URL where group exists."
+  workspaceUrl: String!
+}
+
+"Input for deleting a user."
+input DesDeleteUserInput {
+  "Workspace user identifier."
+  userId: String!
+  "URL for the workspace to delete the user from."
+  workspaceUrl: String
+}
+
+"Input type for filtering folders in the design library."
+input DesFolderFilterInput {
+  "Filters folders by their type. If null, this condition is ignored."
+  folderType: DesFolderType
+  "Specifies how multiple conditions should be combined. Use AND to match all conditions, OR to match any condition. If null, AND operator is used."
+  matchMode: DesFolderFilterMatchMode
+  "Filters folders by their name. If null, this condition is ignored."
+  name: String
+  "Filters folders by the GUID of their parent folder. If null, this condition is ignored."
+  parentFolderGuid: String
+}
+
+"Input for life cycle definition."
+input DesLifeCycleDefinitionInput {
+  "Content types of life cycle definition."
+  contentTypes: [DesContentTypeKind!]
+  "Returns `true` if the life cycle definition is controlled per content type."
+  isControlledPerContentType: Boolean
+  "Returns `true` if a revision scheme is assigned to the life cycle definition."
+  isRevisionSchemeAssigned: Boolean!
+  "Name of life cycle definition."
+  name: String!
+  "Stages of life cycle definition."
+  stages: [DesLifeCycleStageInput!]
+  "State transitions of life cycle definition."
+  stateTransitions: [DesLifeCycleStateTransitionInput!]
+}
+
+"Input for life cycle stage."
+input DesLifeCycleStageInput {
+  "Name of life cycle stage."
+  name: String!
+  "Index of life cycle stage."
+  stageIndex: Int!
+  "States of life cycle stage."
+  states: [DesLifeCycleStateInput!]!
+}
+
+"Input for life cycle state."
+input DesLifeCycleStateInput {
+  "Background color of life cycle state."
+  backgroundColor: DesColorInput
+  "Description of life cycle state."
+  description: String!
+  "Foreground color of life cycle state."
+  foregroundColor: DesColorInput
+  "Returns `true` if this is the initial state."
+  isInitialState: Boolean
+  "Name of life cycle state."
+  name: String!
+  "State index of life cycle state."
+  stateIndex: Int!
+}
+
+"Input for the life cycle state transition approval group."
+input DesLifeCycleStateTransitionApprovalGroupInput {
+  "The controllers that can provide an approval for this life cycle state transition approval group."
+  controllers: [DesLifeCycleStateTransitionControllerInput!]!
+  "The name of this life cycle state transition approval group."
+  name: String!
+}
+
+"Input for life cycle state transition controller."
+input DesLifeCycleStateTransitionControllerInput {
+  "Group reference identifier."
+  groupId: String
+  "Scope of the transition controller."
+  scope: DesPermissionScope!
+  "Workspace user identifier."
+  userId: String
+}
+
+"Input for life cycle state transition."
+input DesLifeCycleStateTransitionInput {
+  "Approval groups for this life cycle definition transition. Mutually exclusive with controllers, if approvals are set, controllers must be omitted."
+  approvals: [DesLifeCycleStateTransitionApprovalGroupInput!]
+  "Controllers of this life cycle definition transition. If controllers and approvals are omitted, the controllers will default to ANYONE."
+  controllers: [DesLifeCycleStateTransitionControllerInput!]
+  "Menu text format for life cycle state transition."
+  menuTextFormat: String!
+  "Name of life cycle state transition."
+  name: String!
+  "The name of the life cycle state after the transition."
+  stateAfter: String!
+  "The name of the life cycle state before the transition."
+  stateBefore: String!
+}
+
+"Input for moving a folder."
+input DesMoveFolderInput {
+  "Reference identifier for the folder to update."
+  folderId: String
+  id: ID @deprecated(reason: "Use `workspaceUrl` and `folderId` instead.")
+  "Reference identifier of the parent folder. If both `parentId` and `parentFolderId` are omitted or set to `null`, the folder will be placed under the library root."
+  parentFolderId: String
+  parentId: ID @deprecated(reason: "Use `workspaceUrl` and `parentFolderId` instead.")
+  "URL of the workspace in which the folder and parent folder (if used) exist."
+  workspaceUrl: String
+}
+
+input DesPermissionUpsertInput {
+  "Indicates read/write permissions."
+  canEdit: Boolean!
+  "Email for inviting an external user."
+  email: String
+  "Id of known trustee."
+  trusteeId: ID
+}
+
+"Input to remove users from group."
+input DesRemoveUsersFromGroupInput {
+  "The group reference identifier."
+  groupId: String!
+  "Workspace user identifiers."
+  userIds: [String!]!
+  "The workspace where the group exists."
+  workspaceUrl: String!
+}
+
+"Input for updating folder."
+input DesUpdateFolderInput {
+  "New description of the folder. Not updated if omitted or set to `null`."
+  description: String
+  "Reference identifier for the folder to update."
+  folderId: String
+  "New folder type. Not updated if omitted or set to `null`."
+  folderType: DesFolderType
+  id: ID @deprecated(reason: "Use `workspaceUrl` and `folderId` instead.")
+  "New naming scheme for the folder items. Not updated if omitted or set to `null`."
+  itemNamingSchemeTemplate: String
+  "New name of the folder. Not updated if omitted or set to `null`."
+  name: String
+  "New folder permissions (non recursive). Not updated if omitted or set to `null`."
+  permissions: [DesUpdateFolderPermissionInput!]
+  "URL of the workspace in which the folder exists."
+  workspaceUrl: String
+}
+
+"Input for updating folder permission."
+input DesUpdateFolderPermissionInput {
+  "Allows updating, deleting and creating when set, otherwise only read permissions will be allowed."
+  canModify: Boolean!
+  "Group reference identifier."
+  groupId: String
+  "Scope of the permission."
+  scope: DesPermissionScope!
+  "Workspace user identifier."
+  userId: String
+}
+
+"Input for updating folder permissions."
+input DesUpdateFolderPermissionsInput {
+  "Folder identifier for updating folder permissions. Soon, `folderId` will be the reference identifier (GUID) instead of node identifier, and should be used along with `workspaceUrl`."
+  folderId: ID!
+  "Permissions to update."
+  permissions: [DesUpdateFolderPermissionInput!]!
+  "Tells to replace all existing permissions. By default permissions are added to existing."
+  replaceExisting: Boolean
+  "URL of the workspace in which the folder exists."
+  workspaceUrl: String
+}
+
+"Input for updating life cycle definition."
+input DesUpdateLifeCycleDefinitionInput {
+  "Life cycle definition identifier. Defines which life cycle definition should be updated."
+  id: ID!
+  "Life cycle definition."
+  lifeCycleDefinition: DesLifeCycleDefinitionInput!
+}
+
+input DesUpdatePermissionsInput {
+  "The entity's identificator."
+  entityId: ID!
+  "List of permissions to remove."
+  permissionsToRemove: [ID!]!
+  "List of permissions to upsert."
+  permissionsToUpsert: [DesPermissionUpsertInput!]!
+  "Indicates whether to replace existing permissions."
+  replaceExisiting: Boolean!
+}
+
+"Input for updating revision naming scheme."
+input DesUpdateRevisionNamingSchemeInput {
+  "If `isControlledPerContentType` is true, the list of content types for which this revision naming scheme is applicable."
+  contentTypes: [DesContentTypeKind!]
+  "The revision naming scheme to be updated."
+  id: ID!
+  "If true, the revision naming scheme is only applied to objects that are controlled by that content type. Otherwise, content types are ignored."
+  isControlledPerContentType: Boolean
+  "The separator used between item identifier and revision identifier. Allowed characters are: ',', '.', '-', '_'."
+  itemRevisionSeparator: String
+  "The list of numbering levels for this revision naming scheme. Maximum of 3 levels."
+  levels: [DesUpdateRevisionNamingSchemeLevelInput!]
+  "The name of this revision naming scheme."
+  name: String
+}
+
+"Input for updating revision naming scheme level."
+input DesUpdateRevisionNamingSchemeLevelInput {
+  "The separator prefix character for this revision naming scheme level. Allowed characters are: ',', '.', '-', '_'."
+  levelSeparator: String
+  "The minimum character length allowed for this revision naming scheme level."
+  minimumWidth: Int
+  "The name of this revision naming level. In Altium Designer it is known as 'Caption'."
+  name: String
+  "The naming policy for this revision naming scheme level."
+  revisionNamingPolicy: DesRevisionNamingPolicy
+}
+
+"Input for updating a setting."
+input DesUpdateSettingInput {
+  "The name of the setting to be updated."
+  name: String!
+  "The value that the setting should be replaced with."
+  value: String!
+  "The workspace URL that the setting should be updated on."
+  workspaceUrl: String
+}
+
+"Input for updating a user group."
+input DesUpdateUserGroupInput {
+  "The group reference identifier."
+  groupId: String!
+  "The group name."
+  name: String!
+  "The workspace URL where the group exists."
+  workspaceUrl: String!
+}
+
+"Input for updating a user."
+input DesUpdateUserInput {
+  "User first name."
+  firstName: String
+  "User last name."
+  lastName: String
+  "Workspace user identifier."
+  userId: String!
+  "Workspace URL."
+  workspaceUrl: String
+}
+
+"Specifies the filtering criteria for the workspace user list."
+input DesWorkspaceUserFilterInput {
+  "**Experimental**"
+  and: [DesWorkspaceUserFilterInput!] @experimental
+  "Workspace specific identifiers of the user groups (id or grid)."
+  groupIds: [String!]
+  "**Experimental**"
+  id: GridFilterInput @experimental
+  "**Experimental**"
+  or: [DesWorkspaceUserFilterInput!] @experimental
+  "The text that either the guest first or last names or emails must contain. Case-insensitive."
+  text: String
+  "Workspace specific identifiers of the users (id or grid)."
+  userIds: [String!]
+  "The specific types of users to search."
+  userTypes: [DesWorkspaceUserType!]
+}
+
+"**Experimental**"
+input DesWorkspaceUserSortInput @experimental {
+  "**Experimental**"
+  id: SortEnumType
+}
+
+input GloAddAppClientSecretInput {
+  "The GRID identifier for the App to be updated."
+  id: ID!
+}
+
+input GloAddAppGrantTypeInput {
+  "The new grant type to be added to the App."
+  grantType: String!
+  "The GRID identifier for the App to be updated."
+  id: ID!
+}
+
+input GloAddAppRedirectUriInput {
+  "The GRID identifier for the App to be updated."
+  id: ID!
+  "The new redirect URI to be added to the App."
+  redirectUri: String!
+}
+
+input GloAddAppScopeInput {
+  "The GRID identifier for the App to be updated."
+  id: ID!
+  "The new scope to be added to the App."
+  scope: String!
+}
+
+"Represents input value for adding user into group."
+input GloAddUsersToGroupInput {
+  "Group identifier."
+  groupId: String
+  "User identifiers."
+  userIds: [String]
+}
+
+"Represents an Altium application."
+input GloAppFilterInput {
+  and: [GloAppFilterInput!]
+  "The contact email of the developer of the App."
+  contactEmail: StringOperationFilterInput
+  "The date-time that the App was created."
+  createdAt: DateTimeOperationFilterInput
+  "The ID of the User that created the App."
+  createdById: StringOperationFilterInput
+  "The date-time that the App was deleted. Null if the App has not been deleted."
+  deletedAt: DateTimeOperationFilterInput
+  "The ID of the User that deleted the App. Null if the App has not been deleted."
+  deletedById: StringOperationFilterInput
+  "A description of the App."
+  description: StringOperationFilterInput
+  "The human-readable identifier for the App. Must be unique."
+  hrid: StringOperationFilterInput
+  "Whether the App is a Workspace PAT App."
+  isWorkspaceApp: BooleanOperationFilterInput
+  "The name of the App."
+  name: StringOperationFilterInput
+  oAuthClient: GloOAuthClientFilterInput
+  or: [GloAppFilterInput!]
+  "The date-time that the App was last updated."
+  updatedAt: DateTimeOperationFilterInput
+  "The ID of the User that last updated the App."
+  updatedById: StringOperationFilterInput
+}
+
+"Represents an Altium application."
+input GloAppSortInput {
+  "The contact email of the developer of the App."
+  contactEmail: SortEnumType
+  "The date-time that the App was created."
+  createdAt: SortEnumType
+  "The ID of the User that created the App."
+  createdById: SortEnumType
+  "The date-time that the App was deleted. Null if the App has not been deleted."
+  deletedAt: SortEnumType
+  "The ID of the User that deleted the App. Null if the App has not been deleted."
+  deletedById: SortEnumType
+  "A description of the App."
+  description: SortEnumType
+  "The human-readable identifier for the App. Must be unique."
+  hrid: SortEnumType
+  "Whether the App is a Workspace PAT App."
+  isWorkspaceApp: SortEnumType
+  "The name of the App."
+  name: SortEnumType
+  oAuthClient: GloOAuthClientSortInput
+  "The date-time that the App was last updated."
+  updatedAt: SortEnumType
+  "The ID of the User that last updated the App."
+  updatedById: SortEnumType
+}
+
+"Input for creating a new `GloApp`."
+input GloCreateAppFromOAuthClientInput {
+  "Client identifier of an existing OAuth 2 client to associate with the App."
+  clientId: String!
+  "Contact email address of the developer of the new App."
+  contactEmail: String!
+  "Description of the new App."
+  description: String!
+  "Unique human-readable identifier for the new App."
+  hrid: String!
+  "Name of the new App. If empty, the name of the OAuth 2.0 client will be used."
+  name: String
+}
+
+"Input for creating a new `GloApp`."
+input GloCreateAppInput {
+  "Contact email address of the developer of a new App."
+  contactEmail: String!
+  "Description of a new App."
+  description: String!
+  "Unique human-readable identifier for a new App."
+  hrid: String!
+  "Whether the new App is a Workspace App. Defaults to `false`."
+  isWorkspaceApp: Boolean
+  "Name of a new App."
+  name: String!
+  "Input for creating a new OAuth 2 client."
+  oAuthClient: GloCreateAppOAuthClientInput!
+}
+
+"Input for creating a new *OAuth 2.0 client*."
+input GloCreateAppOAuthClientInput {
+  "Maximum lifetime of access tokens issued to the new *OAuth 2.0 client* in seconds. Must be greater than zero. Defaults to 14400 (4 hours) when omitted."
+  accessTokenLifetime: Int
+  "Client identifier of the new *OAuth 2.0 client*."
+  clientId: String
+  "Grant types the new *OAuth 2.0 client* will be able to use."
+  grantTypes: [String!]!
+  "Post logout redirect URIs the new *OAuth 2.0 client* will be able to use."
+  postLogoutRedirectUris: [String!]
+  "Redirect URIs the new *OAuth 2.0 client* will be able to use."
+  redirectUris: [String!]!
+  "Maximum lifetime of refresh tokens issued to the new *OAuth 2.0 client* in seconds. Must be greater than zero. Defaults to 2147483647 (effectively unlimited) when omitted."
+  refreshTokenAbsoluteLifetime: Int
+  "The expiration type for refresh tokens issued to the new *OAuth 2.0 client*. Defaults to SLIDING when omitted."
+  refreshTokenExpirationType: GloOAuthClientRefreshTokenExpirationType
+  "Sliding lifetime of refresh tokens issued to the new *OAuth 2.0 client* in seconds. Must be greater than zero, and should not exceed the absolute lifetime. Defaults to 31536000 (365 days) when omitted."
+  refreshTokenSlidingLifetime: Int
+  "Whether the new *OAuth 2.0 client* will require user consent."
+  requireConsent: Boolean!
+  "Whether the new *OAuth 2.0 client* will need to use a client secret."
+  requireSecret: Boolean!
+  "Scopes the new *OAuth 2.0 client* will be able to use."
+  scopes: [String!]!
+}
+
+"Represents input value for creation of a new group."
+input GloCreateUserGroupInput {
+  "Group name."
+  groupName: String
+  "Organization identifier."
+  organizationId: String
+}
+
+"Represents input value for creating new user."
+input GloCreateUserInput {
+  "Activation Status."
+  activationStatus: String
+  "User Auth Type."
+  authType: GloAuthType!
+  "Auto Sync."
+  autoSync: Boolean!
+  "Badges."
+  badges: String
+  "Country."
+  country: String
+  "Current Position."
+  currentPosition: String
+  "Display Name."
+  displayName: String
+  "User Domain."
+  domain: String
+  "User Email."
+  email: String
+  "Example Work."
+  exampleWork: String
+  "Experience."
+  experience: String
+  "User Fax."
+  fax: String
+  "First Name."
+  firstName: String
+  "Groups identifiers."
+  groupsIds: [String]
+  "Hide Email."
+  hideEmail: Boolean!
+  "Host Name."
+  hostName: String
+  "User HRID."
+  hrid: String
+  "Language Locale."
+  languageLocale: String
+  "Last Name."
+  lastName: String
+  "Organisation identifier."
+  organisationId: String
+  "User Parameters."
+  parameters: [GloParameterInput]
+  "Password."
+  password: String
+  "User Phone."
+  phone: String
+  "Profile Picture."
+  profilePicture: String
+  "Salutation."
+  salutation: String
+  "Send Email."
+  sendEmail: Boolean!
+  "Space identifiers."
+  spaceIds: [String]
+  "Specialties."
+  specialties: String
+  "Timezone."
+  timezone: String
+  "User Name."
+  userName: String
+  "Website."
+  webSite: String
+}
+
+input GloDeleteAppInput {
+  "The GRID identifier for the App to be deleted."
+  id: ID!
+}
+
+"Represents the information required to create a webhook-based subscription."
+input GloEvtCreateWebhookSubscriptionInput {
+  "Events of interest."
+  eventTypes: [String!]!
+  "Optional JSON path expression for filtering events based on the content."
+  filter: String
+  "Optional subscription name."
+  name: String
+  "Secret key used for event signing to ensure the delivery integrity."
+  secretKey: String!
+  "URL of the webhook where events are delivered."
+  webhookUrl: String!
+}
+
+"Information required to delete a subscription."
+input GloEvtDeleteSubscriptionInput {
+  "Subscription identifier."
+  subscriptionId: String!
+}
+
+"Represents the information about an event to be dispatched to consumers."
+input GloEvtPublishEventInput {
+  "Data associated with the event."
+  data: String!
+  "Unique identifier of the event."
+  eventId: String!
+  "The type of the event."
+  eventType: String!
+  "The source of the event (in Uri format)."
+  source: String!
+  "Global resource identifier (GRID) of the entity associated with the event."
+  subject: String!
+}
+
+input GloInstallAppInput {
+  "The GRID identifier for the App to be installed."
+  id: ID!
+}
+
+input GloNtfEmailAttachmentInput {
+  "Name of the file as it should appear in the email attachment."
+  fileName: String!
+  "Identifier of the previously uploaded file to attach."
+  id: String!
+}
+
+input GloNtfSendEmailInput {
+  "Optional file attachments."
+  attachments: [GloNtfEmailAttachmentInput!]
+  "Recipients' BCC addresses."
+  bcc: [String!]
+  "Body of the email."
+  body: String!
+  "Format of the body."
+  bodyFormat: GloNtfBodyEmailFormat!
+  "Recipients' CC addresses."
+  cc: [String!]
+  "Sender address."
+  from: String!
+  "Subject of the email."
+  subject: String!
+  "Recipients' addresses."
+  to: [String!]!
+}
+
+"Represents an *OAuth 2.0 client*."
+input GloOAuthClientFilterInput {
+  and: [GloOAuthClientFilterInput!]
+  "The client identifier for this *OAuth 2.0 client*."
+  clientId: StringOperationFilterInput
+  or: [GloOAuthClientFilterInput!]
+}
+
+"Represents an *OAuth 2.0 client*."
+input GloOAuthClientSortInput {
+  "The client identifier for this *OAuth 2.0 client*."
+  clientId: SortEnumType
+}
+
+input GloParameterInput {
+  "Parameter name."
+  name: String
+  "Parameter identifier."
+  parameterId: String
+  "Parameter value."
+  value: String
+}
+
+input GloRemoveAppClientSecretInput {
+  "The client secret to be removed from the App."
+  clientSecret: String!
+  "The GRID identifier for the App to be updated."
+  id: ID!
+}
+
+input GloRemoveAppGrantTypeInput {
+  "The grant type to be removed from the App."
+  grantType: String!
+  "The GRID identifier for the App to be updated."
+  id: ID!
+}
+
+input GloRemoveAppRedirectUriInput {
+  "The GRID identifier for the App to be updated."
+  id: ID!
+  "The redirect URI to be removed from the App."
+  redirectUri: String!
+}
+
+input GloRemoveAppScopeInput {
+  "The GRID identifier for the App to be updated."
+  id: ID!
+  "The scope to be removed from the App."
+  scope: String!
+}
+
+"Represents input value for removing user from group."
+input GloRemoveUsersFromGroupInput {
+  "Group identifier."
+  groupId: String
+  "User identifiers."
+  userIds: [String]
+}
+
+input GloRestoreAppInput {
+  "The GRID identifier for the App to be restored."
+  id: ID!
+}
+
+input GloUninstallAppInput {
+  "The GRID identifier for the App to be uninstalled."
+  id: ID!
+}
+
+input GloUpdateAppContactEmailInput {
+  "The new contact email for the App."
+  contactEmail: String!
+  "The GRID identifier for the App to be updated."
+  id: ID!
+}
+
+input GloUpdateAppDescriptionInput {
+  "The new description for the App."
+  description: String!
+  "The GRID identifier for the App to be updated."
+  id: ID!
+}
+
+input GloUpdateAppHridInput {
+  "The new human-readable identifier for the App."
+  hrid: String!
+  "The GRID identifier for the App to be updated."
+  id: ID!
+}
+
+input GloUpdateAppNameInput {
+  "The GRID identifier for the App to be updated."
+  id: ID!
+  "The new name for the App."
+  name: String!
+}
+
+input GloUserGroupInputFilterInput {
+  "Indicates if group is global."
+  isGlobal: Boolean
+  "Organization identifier."
+  organizationId: String
+  "List of group identifiers."
+  userGroupIds: [String]
+  "Group name."
+  userGroupName: String
+}
+
+input GloUserGroupSortInput {
+  "Name of the group."
+  name: SortEnumType
+  "Group identifier."
+  userGroupId: SortEnumType
+}
+
+input GloUserInputFilterInput {
+  "User's activation status."
+  activationStatus: String
+  "User's e-mail domain."
+  emailDomain: String
+  "User's full name."
+  fullName: String
+  "Organization identifier."
+  organizationId: String
+  "Indicates if group is global."
+  userEmail: String
+  "List of user identifiers."
+  userIds: [String]
+  "Username."
+  userName: String
+}
+
+input GloUserSortInput {
+  "Email address associated with this user account."
+  email: SortEnumType
+  "User's identifier."
+  userId: SortEnumType
+  "Username associated with the user account."
+  userName: SortEnumType
+}
+
+"**Experimental**"
+input KgAddNodeInput @experimental {
+  "**Experimental** An optional description of the entity."
+  description: String
+  "**Experimental** The grid identifier of the entity to register."
+  id: ID!
+  "**Experimental** The display name of the entity."
+  name: String!
+  "**Experimental** Optional parameters to attach to the entity."
+  parameters: [KgNodeParameterInput!]
+  "**Experimental** The identifier of the parent folder that will contain the entity."
+  parentFolderGuid: String!
+}
+
+"**Experimental**"
+input KgDeleteNodeInput @experimental {
+  "**Experimental** When false, the entity is moved to the Vault recycle bin and can be restored; when true, it is permanently deleted."
+  hardDelete: Boolean! = false
+  "**Experimental** The grid identifier of the entity to delete."
+  id: ID!
+}
+
+"**Experimental**"
+input KgNodeParameterInput @experimental {
+  "**Experimental** The parameter name."
+  name: String!
+  "**Experimental** The parameter value."
+  value: String!
+}
+
+input PlatformTokenDeleteInput {
+  "The identifier of the `PlatformToken` to delete."
+  tokenId: String!
+}
+
+input PlatformTokenFilterInput {
+  and: [PlatformTokenFilterInput!]
+  createdAt: DateTimeOperationFilterInput
+  deletedAt: DateTimeOperationFilterInput
+  description: StringOperationFilterInput
+  expiresAt: DateTimeOperationFilterInput
+  name: StringOperationFilterInput
+  or: [PlatformTokenFilterInput!]
+  updatedAt: DateTimeOperationFilterInput
+}
+
+input PlatformTokenSortInput {
+  createdAt: SortEnumType
+  deletedAt: SortEnumType
+  description: SortEnumType
+  expiresAt: SortEnumType
+  name: SortEnumType
+  updatedAt: SortEnumType
+}
+
+"Input for updating an existing `PlatformToken`. At least one of `name` or `description` must be provided."
+input PlatformTokenUpdateInput {
+  "New description for the `PlatformToken`. Leave null to keep the current description."
+  description: String
+  "New name for the `PlatformToken`. Leave null to keep the current name."
+  name: String
+  "Identifier of the `PlatformToken` to update."
+  tokenId: String!
+}
+
+"Input for creating a new `PlatformWorkspaceRefreshToken`."
+input PlatformWorkspaceRefreshTokenCreateInput {
+  "Lifetime of the access token in seconds. Must be greater than zero. Defaults to 3600 (1 hour) when omitted."
+  accessTokenLifetime: Int
+  "Description of the new `PlatformWorkspaceRefreshToken`."
+  description: String!
+  "Name of the new `PlatformWorkspaceRefreshToken`."
+  name: String!
+  "Absolute lifetime of the refresh token in seconds. Must be greater than zero. Defaults to 2147483647 (effectively unlimited) when omitted."
+  refreshTokenAbsoluteLifetime: Int
+  "Sliding lifetime of the refresh token in seconds. Must be greater than zero. Defaults to 2592000 (30 days) when omitted."
+  refreshTokenSlidingLifetime: Int
+  "URL to redirect to after the authorization flow completes. Must be a trusted domain."
+  returnUrl: String!
+}
+
+input PlatformWorkspaceRefreshTokenCreateNewSecretInput {
+  "The identifier of the `PlatformWorkspaceRefreshToken` to create a new secret for."
+  tokenId: String!
+}
+
+input PlatformWorkspaceRefreshTokenDeleteSecretInput {
+  "The client secret to delete from the `PlatformWorkspaceRefreshToken`."
+  clientSecret: String!
+  "The identifier of the `PlatformWorkspaceRefreshToken` to delete the secret for."
+  tokenId: String!
+}
+
+"Input for creating a new `PlatformWorkspaceToken`."
+input PlatformWorkspaceTokenCreateInput {
+  "Lifetime of the access token in seconds. Must be greater than zero. Defaults to 3600 (1 hour) when omitted."
+  accessTokenLifetime: Int
+  "Description of the new `PlatformWorkspaceToken`."
+  description: String!
+  "Name of the new `PlatformWorkspaceToken`."
+  name: String!
+  "URL to redirect to after the authorization flow completes. Must be a trusted domain."
+  returnUrl: String!
+}
+
+input SolAccessibleToInput {
+  "The user, organization, or user group grids that must have access."
+  ids: [ID!]
+}
+
+input SolAddAttachmentInput {
+  "Original file name."
+  fileName: String!
+  "The token used to access the script package file."
+  fileToken: String!
+  "Display name of the attachment."
+  name: String!
+  "ID of the solution to which the attachment will be added."
+  solutionId: ID!
+  "Type of the attachment."
+  type: String!
+}
+
+input SolBldCreateSolutionInput {
+  includeEmptyEsd: Boolean!
+  solutionItems: [ID!]!
+}
+
+input SolBldImportRefDesignsInput {
+  refDesignIds: [ID!]!
+  solutionId: ID!
+}
+
+input SolBldImportSoftwareProjectsInput {
+  evalKitId: ID!
+  softwareProjectIds: [ID!]!
+  solutionId: ID!
+}
+
+input SolBldLinkSolutionInput {
+  ensureEsdExists: Boolean!
+  solutionId: ID!
+  solutionItems: [ID!]!
+}
+
+input SolBldScaffoldingByConfigurationInput {
+  configurationFileId: String!
+  name: String!
+  softwareProjectId: ID
+}
+
+input SolBldScaffoldingByExistingEsdInput {
+  solutionId: ID!
+}
+
+input SolBldScaffoldingBySdmInput {
+  "Whether to ignore existing sources when scaffolding. If true, the BSP is created from scratch. If false, changes are applied into existing software project. By default it's false."
+  ignoreExistingSources: Boolean
+  sdmReferenceDesignator: String!
+  solutionId: ID!
+}
+
+input SolBldScaffoldingBySoftwareProjectAndEvalKitInput {
+  evalKitId: ID!
+  parameterBundle: String
+  softwareProjectId: ID!
+}
+
+input SolBldScaffoldingBySolutionTemplateInput {
+  evalKitId: ID
+  parameterBundle: String
+  solutionTemplateId: ID!
+}
+
+input SolBldScaffoldingExistingSolutionBySolutionTemplateInput {
+  evalKitId: ID
+  parameterBundle: String
+  "The existing solution that scaffolding should be applied to."
+  solutionId: ID!
+  solutionTemplateId: ID!
+}
+
+input SolBldScaffoldingInput {
+  documentFileId: String!
+  parameterBundle: String
+  previewFileId: String
+}
+
+input SolCreateSolutionInput {
+  createSolutionFolder: Boolean @deprecated(reason: "The field is being removed as it is no longer required and does not serve any functional purpose in the current API design. To create solution folder use SolutionFolderName field.")
+  description: String
+  evalKitId: ID
+  flowType: String
+  folderId: String!
+  name: String!
+  parameterBundle: String
+  previewUrl: String @deprecated(reason: "The field is being removed as it is no longer required and does not serve any functional purpose in the current API design.")
+  runScaffolding: Boolean
+  sharedWith: [String!]
+  solutionFolderName: String
+  solutionTemplateId: ID
+}
+
+input SolDeleteAttachmentInput {
+  "Unique identifier of the attachment to be deleted."
+  id: String!
+  "ID of the solution from which the attachment will be deleted."
+  solutionId: ID!
+}
+
+input SolDeleteSolutionInput {
+  id: ID!
+}
+
+input SolLinkItemToSolutionInput {
+  itemId: ID!
+  solutionId: ID!
+}
+
+input SolLinkItemsToSolutionInput {
+  itemIds: [ID!]!
+  solutionId: ID!
+}
+
+"A filter input type for querying solutions. This class is used to specify filtering criteria when retrieving solutions."
+input SolSolutionFilterInput {
+  "Restricts results to solutions accessible through all specified targets."
+  accessibleTo: SolAccessibleToInput
+  "A filter by solution name. The filter is applied as a \"contains\" search, so it will return all solutions whose names contain the specified string."
+  name: String
+  "Restricts results to solutions owned by at least one of the specified users."
+  ownedBy: [ID!]
+}
+
+"""
+A sorting input type for querying solutions. This class is used to specify sorting criteria when retrieving solutions, allowing clients to sort results by modified date or name in ascending or descending order.
+Only one sorting criterion can be applied at a time. If both are provided, the API will prioritize one of them.
+"""
+input SolSolutionSortInput {
+  """
+  A filter for sorting by the modified date of the solution.
+  The value can be either "Asc" for ascending order or "Desc" for descending order.
+  """
+  modifiedAt: SortEnumType
+  """
+  A filter for sorting by the name of the solution.
+  The value can be either "Asc" for ascending order or "Desc" for descending order.
+  """
+  name: SortEnumType
+}
+
+input SolUnlinkItemFromSolutionInput {
+  itemId: ID!
+  solutionId: ID!
+}
+
+input SolUpdateSolutionInput {
+  description: String
+  evalKitId: ID
+  flowType: String
+  id: ID!
+  name: String
+  parameterBundle: String
+  previewUrl: String @deprecated(reason: "The field is being removed as it is no longer required and does not serve any functional purpose in the current API design.")
+  runScaffolding: Boolean
+  solutionTemplateId: ID
+}
+
+"Kinds of content types stored in the library."
+enum DesContentTypeKind {
+  AI_MODEL
+  BINARY_FILE
+  BMS_AUTO_GENERATED_COMPONENTS
+  BOM_TEMPLATE
+  COMPONENT
+  COMPONENT_TEMPLATE
+  COSTED_BOM
+  DATA_CLASS
+  DATA_SHEET
+  DEVICE_CLASS
+  DEVICE_CONFIGURATION
+  DRAFTSMAN_DOCUMENT_TEMPLATE
+  DRAFTSMAN_SHEET_TEMPLATE
+  DXP_ADDON
+  DXP_PLATFORM
+  DXP_PLUGIN
+  DXP_SDK
+  EAGLE_DESIGN
+  EAGLE_PROJECT
+  EMBEDDED_DESIGN
+  ESD_PROJECT
+  FABRICATION_FILE
+  FPGA_DESIGN
+  HARNESS_CONNECTIVITY
+  HARNESS_DESIGN
+  HARNESS_ENTITY
+  HARNESS_ENTITY_TEMPLATE
+  HARNESS_LAYOUT
+  HARNESS_LAYOUT_TEMPLATE
+  HARNESS_WIRING_TEMPLATE
+  KICAD_DESIGN
+  KICAD_PROJECT
+  LAYER_STACK
+  MANAGED_BOM
+  MANAGED_PART
+  MODEL3D
+  MORFIK_PACKAGE
+  MORFIK_WEB_RESOURCE
+  MORFIK_X_APP_DESIGN
+  MORFIK_X_APP_IMAGE
+  MORFIK_X_APP_SET
+  MOTOR_STUDIO_PROJECT
+  MULTIBOARD_DESIGN
+  OPEN_BUS
+  ORCAD_DESIGN
+  ORCAD_PROJECT
+  ORDER_BOM
+  OUTPUT_JOB
+  PACKAGE
+  PADS_PROJECT
+  PART_CHOICE_LIST
+  PART_REPORT
+  PCB_ASSEMBLY
+  PCB_BLANK
+  PCB_BLOCK
+  PCB_COMPONENT
+  PCB_DESIGN
+  PCB_DOCUMENT
+  PCB_MODEL3D
+  PCB_SNIPPET
+  PLM_INSTANCE
+  PLM_PUBLISH_TEMPLATE
+  PREFERENCES
+  PROJECT
+  PROJECT_REVIEW_PACKAGE
+  PROJECT_TEMPLATE
+  REQUIREMENTS_PROJECT
+  RICH_TEXT
+  SCHEMATIC_SHEET
+  SCHEMATIC_SNIPPET
+  SCHEMATIC_TEMPLATE
+  SCRIPT
+  SI_MODEL
+  SIMULATION
+  SIMULATION_MODEL
+  SOFTWARE_PROJECT
+  SOLUTION
+  SYMBOL
+  TUNING
+  WEB_ITEM
+}
+
+"The filter match mode."
+enum DesFolderFilterMatchMode {
+  AND
+  OR
+}
+
+"Folder category used in the library."
+enum DesFolderType {
+  ALTIUM_DESIGNER_PLUGIN_ZONE
+  BINARY_CATALOG
+  BOM_TEMPLATE_CATALOG
+  COMPONENT_LIBRARY
+  COMPONENT_MANAGEMENT_ZONE
+  COMPONENT_TEMPLATES_CATALOG
+  CONTENT_CART
+  DATA_CLASS_CATALOG
+  DATA_CLASS_ZONE
+  DATASHEET_CATALOG
+  DESIGN_CONTENT_MANAGEMENT_ZONE
+  DESIGN_REUSE_BLOCKS_CATALOG
+  DESIGN_TEMPLATES_CATALOG
+  DEVICE_CLASS_CATALOG
+  DEVICE_CLASS_ZONE
+  DRAFTSMAN_CATALOG
+  GENERIC_FOLDER
+  HARNESS_LAYOUT_TEMPLATES_CATALOG
+  HARNESS_MODEL_TEMPLATES_CATALOG
+  HARNESS_WIRING_TEMPLATES_CATALOG
+  LAYER_STACK_CATALOG
+  LIBRARY3_D
+  MANAGED_BOM_CATALOG
+  MANAGED_PARTS_CATALOG
+  MORFIK_APP_CATALOG
+  MORFIK_APP_SET_CATALOG
+  MORFIK_PACKAGE_CATALOG
+  MORFIK_PACKAGE_ZONE
+  OUTPUTJOBS_CATALOG
+  PART_CHOICE_LIST
+  PART_REPORTS_CATALOG
+  PCB_COMPONENT_LIBRARY
+  PCB_SNIPPETS_CATALOG
+  PCB3D_MODEL_LIBRARY
+  PREFERENCES_CATALOG
+  PRODUCTION_RELEASE_ZONE
+  PROJECT
+  PROJECT_CATALOG
+  PROJECT_TEMPLATE_CATALOG
+  SCHEMATIC_SHEETS_CATALOG
+  SCHEMATIC_SNIPPETS_CATALOG
+  SCHEMATIC_SYMBOL_LIBRARY
+  SCHEMATIC_TEMPLATES_CATALOG
+  SCRIPT_CATALOG
+  SHARED_FOLDER
+  SIGNAL_INTEGRITY_MODELS_LIBRARY
+  SIMULATION_MODELS_LIBRARY
+  TEXT_DOCUMENT_LIBRARY
+  WEB_APPLICATION_DEPLOYMENT_ZONE
+  WEB_CONTENT_LIBRARY
+}
+
+"Type of lifecycle management strategy."
+enum DesLifeCycleManagementType {
+  SIMPLE
+  STRUCTURED
+}
+
+"The kind of life cycle state transition."
+enum DesLifeCycleStateTransitionKind {
+  "The transition can be applied subject to receiving approvals granted by some approval groups."
+  APPROVALS
+  "The transition can be applied subject to default server permissions."
+  CONTROLLED
+}
+
+"Scope for permission checks (user, group, organisation, etc.)."
+enum DesPermissionScope {
+  ANYONE
+  COLLABORATOR
+  GROUP
+  GUEST
+  ORGANISATION
+  OWNER
+  USER
+}
+
+"Describes the naming policy for design revisions."
+enum DesRevisionNamingPolicy {
+  "Lower case letters."
+  ALPHA_LOWER
+  "Upper case letters."
+  ALPHA_UPPER
+  "Revision letters per ASME Y14.35M standard: ABCDEFGHJKLMNPRTUVWY."
+  ASME_Y14_35M
+  "Number whose sequence starts at 1."
+  NUMERIC_ONE
+  "Number whose sequence starts at 0."
+  NUMERIC_ZERO
+}
+
+"Sizes for user profile pictures."
+enum DesUserPictureSize {
+  ORIGINAL
+  SIZE128X128
+  SIZE48X48
+  SIZE70X70
+}
+
+"Specifies the sort order field for the result set of workspace groups."
+enum DesWorkspaceGroupOrderBy {
+  "Order by the date of creation of the group."
+  CREATED_AT
+  "Order by the workspace specific group identifier."
+  GROUP_ID
+  "Order by the group name."
+  NAME
+}
+
+"Specifies the sort direction that applies to the corresponding sort order field."
+enum DesWorkspaceTeamSortDirection {
+  "Ascending order."
+  ASC
+  "Descending order."
+  DESC
+}
+
+"Specifies the sort order field for the result set of workspace members."
+enum DesWorkspaceUserOrderBy {
+  "Order by the user display name."
+  DISPLAY_NAME
+  "Order by the user email."
+  EMAIL
+  "Order by the workspace specific user id."
+  USER_ID
+}
+
+enum DesWorkspaceUserProfilePictureSize {
+  ORIGINAL
+  SIZE128X128
+  SIZE48X48
+  SIZE70X70
+}
+
+"Specifies the type of the user in the workspace."
+enum DesWorkspaceUserType {
+  "The user is a workspace guest, i.e. a user some limitations apply, compared to the regular workspace members."
+  WORKSPACE_GUEST
+  "The user is a regular workspace member."
+  WORKSPACE_MEMBER
+}
+
+"Workspace vendors."
+enum DesWorkspaceVendor {
+  "Altium is the workspace vendor."
+  ALTIUM
+  "Renesas is the workspace vendor."
+  RENESAS
+}
+
+enum GloAccountType {
+  BUSINESS
+  PERSONAL
+}
+
+enum GloAuthType {
+  AT_LDAP
+  AT_NATIVE
+  AT_WINDOWS
+}
+
+"Represents the state of the subscription."
+enum GloEvtSubscriptionState {
+  "Subscription is active and events of interest are dispatched to consumers."
+  ACTIVE
+  "Subscription is not active and events are not dispatched to consumers."
+  INACTIVE
+}
+
+enum GloNtfBodyEmailFormat {
+  HTML
+  PLAIN
+}
+
+enum GloOAuthClientRefreshTokenExpirationType {
+  ABSOLUTE
+  SLIDING
+}
+
+"**Experimental**"
+enum KgNodeType @experimental {
+  "**Experimental**"
+  REQUIREMENTS_PROJECT
+}
+
+"""
+**Experimental** Defines the semantic meaning of the relation.
+See
+net/wiki/spaces/GE/pages/3358752783/Relation+types
+for details.
+"""
+enum KgRelationSemantic @experimental {
+  "**Experimental**"
+  DERIVES_FROM
+  "**Experimental**"
+  DERIVES_INTO
+  "**Experimental**"
+  HAS_INPUT
+  "**Experimental**"
+  HAS_OUTPUT
+  "**Experimental**"
+  HAS_PART
+  "**Experimental**"
+  INFORMED_BY
+  "**Experimental**"
+  INFORMS
+  "**Experimental**"
+  INPUT_OF
+  "**Experimental**"
+  OUTPUT_OF
+  "**Experimental**"
+  PART_OF
+  "**Experimental**"
+  UNKNOWN @deprecated(reason: "Primarily here for backward compatibility with Vault. Don't use in the new code.")
+}

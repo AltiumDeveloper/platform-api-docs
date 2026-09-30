@@ -1,0 +1,44 @@
+# Altium Platform API
+> GraphQL API for Altium 365 workspace data, organised into bounded contexts aligned with the Common Data Model (CDM).
+
+How to navigate (for assistants):
+1. Pick the bounded context for the task (list below; each links its CDM concepts).
+2. Read that context's llms.txt: entities, entry points, operations.
+3. Load its schema.graphql slice instead of the full schema.
+Conventions: prefer bounded-context queries (`platform.token.byWorkspace`, `requirements.project.byId`) over legacy prefixed ones (`desProjectById`) where both exist; most mutations take `input: XInput!` and return `XPayload!`; paged lists are Relay connections (`first`/`after`); look up by GRID with `node(id:)`; items marked EXPERIMENTAL are not production-ready. Endpoints are regional; auth is a Bearer token (see Developer Center).
+
+## Bounded contexts
+- [Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/llms.txt): Workspaces, users and organizations, apps and tokens, folders, generic revisions, permissions and settings, lifecycle definitions and revision naming schemes, domain events, notifications, solutions and the knowledge graph. (CDM: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/))
+- [Design](https://altiumdeveloper.github.io/platform-api-docs/reference/design/llms.txt): Hardware projects, design data, rule checks, comparisons and project releases. (CDM: [design](https://altiumdeveloper.github.io/cdm/subsets/design/))
+- [Insights](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/llms.txt): Workspace insights about parts and designs. (CDM: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/))
+- [Library Management](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/llms.txt): Managed components, component templates, parts, symbols, footprints, datasheets, reuse blocks and library search. (CDM: [library](https://altiumdeveloper.github.io/cdm/subsets/library/))
+- [Collaboration](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/llms.txt): Comments, comment threads, mentions, annotations and tasks. (CDM: [collaboration](https://altiumdeveloper.github.io/cdm/subsets/collaboration/))
+- [Configuration Management](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/llms.txt): Environment configuration and templates: project templates, settings templates, managed sheet templates and their revisions. (CDM: [configuration](https://altiumdeveloper.github.io/cdm/subsets/configuration/))
+- [Procurement](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/llms.txt): Managed BOMs, BOM releases and BOM items. (CDM: [procurement](https://altiumdeveloper.github.io/cdm/subsets/procurement/))
+- [Supply](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/llms.txt): Parts, offers, part families, reference designs, evaluation kits, software projects and solution templates. (CDM: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/))
+- [Customization](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/llms.txt): Extension points, scripts, script executions and workflows. (CDM: [customization](https://altiumdeveloper.github.io/cdm/subsets/customization/))
+- [System Design](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/llms.txt): Electronic system design documents, system models and software libraries. (CDM: [system](https://altiumdeveloper.github.io/cdm/subsets/system/), [system-sdm](https://altiumdeveloper.github.io/cdm/subsets/system-sdm/))
+- [Requirements](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/llms.txt): Requirements projects and requirements data. (CDM: [requirements](https://altiumdeveloper.github.io/cdm/subsets/requirements/))
+- [Renesas (preview)](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/llms.txt): Renesas-specific device models, software projects and tools. Parked; not yet organised into bounded contexts. (preview, Renesas-specific) (CDM: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceModel/), [software](https://altiumdeveloper.github.io/cdm/subsets/software/), [ota](https://altiumdeveloper.github.io/cdm/subsets/ota/))
+
+## Guides
+- [Getting started](https://altiumdeveloper.github.io/platform-api-docs/guides/getting-started.md): Regional and workspace endpoints, the Authorization header, a first query, and the Nitro and Voyager tools.
+- [Bounded contexts and the CDM](https://altiumdeveloper.github.io/platform-api-docs/guides/bounded-contexts.md): How the API is organised into bounded contexts aligned with the Common Data Model, how API types map to CDM entities and GRIDs, and how to find the operations for a concept.
+- [Naming conventions](https://altiumdeveloper.github.io/platform-api-docs/guides/naming-conventions.md): What operation and type names tell you — legacy prefixes, namespaced bounded-context queries, the mutation input/payload convention and preview names.
+- [Identifiers and lookups](https://altiumdeveloper.github.io/platform-api-docs/guides/identifiers.md): Entity IDs and GRIDs, node(id:), byId/byIds lookup patterns and the workspaceUrl argument on legacy queries.
+- [Pagination](https://altiumdeveloper.github.io/platform-api-docs/guides/pagination.md): Relay cursor connections (first/after, pageInfo, nodes and edges, totalCount) and index-based start/limit lists.
+- [Errors](https://altiumdeveloper.github.io/platform-api-docs/guides/errors.md): The errors array and partial data, extensions.code values, mutation payload errors, and HTTP status codes.
+- [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md): Experimental, stable, deprecated and removed — what each stage means and how it is shown in the SDL, this reference and llms.txt.
+
+## Developer Center
+- [Using an access token](https://www.altium.com/documentation/altium-developer-center/altium-365/key-concepts/tokens/access)
+- [Quick start (Altium 365 API)](https://www.altium.com/documentation/altium-developer-center/quick-starts/365-api)
+- [Pagination](https://www.altium.com/documentation/altium-developer-center/altium-365/api/pagination)
+- [Examples](https://www.altium.com/documentation/altium-developer-center/altium-365/api/examples)
+- [Altium 365 API overview](https://www.altium.com/documentation/altium-developer-center/altium-365/api)
+
+## Optional
+- [Common types](https://altiumdeveloper.github.io/platform-api-docs/reference/common/llms.txt): Shared scalars, paging, errors, filtering and sorting types, and directives used across all bounded contexts.
+- [Deprecated](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/llms.txt): deprecated operations by bounded context
+- [Full schema SDL](https://altiumdeveloper.github.io/platform-api-docs/schema.graphql): ~165703 tokens — prefer per-context slices
+- [llms-full.txt](https://altiumdeveloper.github.io/platform-api-docs/llms-full.txt): all guides and reference pages as markdown (~942429 tokens)

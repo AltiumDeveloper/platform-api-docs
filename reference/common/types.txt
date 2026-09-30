@@ -1,0 +1,35 @@
+# Common — types
+> Types of the Common bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/common/llms.txt).
+
+- [DesPayloadError](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md): Payload error.
+- [PageInfo](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md): Information about pagination in a connection.
+- [Error](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md)
+- [Node](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md): The node interface is implemented by entities that have a global unique identifier.
+- [BooleanOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md)
+- [DateTimeOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/date-time-operation-filter-input.md)
+- [GridFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) [EXPERIMENTAL]
+- [IntOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/int-operation-filter-input.md)
+- [ListFilterInputTypeOfDesDesignItemParameterFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/list-filter-input-type-of-des-design-item-parameter-filter-input.md)
+- [PathFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/path-filter-input.md) [EXPERIMENTAL]
+- [StringOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md)
+- [UuidOperationFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/uuid-operation-filter-input.md) [EXPERIMENTAL]
+- [SortEnumType](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md): Represents the sort direction.
+- [Boolean](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md): The `Boolean` scalar type represents `true` or `false`.
+- [DateTime](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md): The `DateTime` scalar represents an ISO-8601 compliant date time type.
+- [Decimal](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md): The `Decimal` scalar type represents a decimal floating-point number.
+- [Float](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md): The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+- [ID](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md): The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache.
+- [Int](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md): The `Int` scalar type represents non-fractional signed whole numeric values.
+- [JSON](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md)
+- [LocalDate](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/local-date.md): The `LocalDate` scalar type represents a ISO date string, represented as UTF-8 character sequences YYYY-MM-DD.
+- [Long](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md): The `Long` scalar type represents non-fractional signed whole 64-bit numeric values.
+- [String](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md): The `String` scalar type represents textual data, represented as UTF-8 character sequences.
+- [Upload](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/upload.md): The `Upload` scalar type represents a file upload. [EXPERIMENTAL]
+- [URL](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md)
+- [UUID](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md)
+- [deprecated](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/directives/deprecated.md): Marks an element of a GraphQL schema as no longer supported.
+- [experimental](https://altiumdeveloper.github.io/platform-api-docs/reference/common/operations/directives/experimental.md)
+- [include](https://altiumdeveloper.github.io/platform-api-docs/reference/common/operations/directives/include.md): Directs the executor to include this field or fragment only when the `if` argument is true.
+- [oneOf](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/directives/one-of.md): Indicates exactly one field must be supplied and this field must not be `null`.
+- [skip](https://altiumdeveloper.github.io/platform-api-docs/reference/common/operations/directives/skip.md): Directs the executor to skip this field or fragment when the `if` argument is true.
+- [specifiedBy](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/directives/specified-by.md): The `@specifiedBy` directive is used within the type system definition language to provide a URL for specifying the behavior of custom scalar definitions.
