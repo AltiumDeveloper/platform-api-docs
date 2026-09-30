@@ -6,7 +6,7 @@ const PAGE_KINDS = ['queries', 'mutations', 'subscriptions', 'objects', 'inputs'
 
 const EXPERIMENTAL_NOTE = [
   ':::caution',
-  'Not production-ready. It may change or be removed without notice. See [Lifecycle](/#lifecycle).',
+  'Not production-ready. It may change or be removed without notice. See [Lifecycle](/guides/lifecycle).',
   ':::',
 ].join('\n');
 

@@ -77,11 +77,11 @@ test('renders a GRID containing a backtick as a padded double-backtick code span
   );
 });
 
-test('experimental note is a caution admonition linking to the lifecycle section', () => {
+test('experimental note is a caution admonition linking to the Lifecycle guide', () => {
   const { experimentalNote } = buildDecorators({ cdmIndex });
   assert.equal(experimentalNote.render(), EXPERIMENTAL_NOTE);
   assert.match(EXPERIMENTAL_NOTE, /^:::caution\n/);
-  assert.match(EXPERIMENTAL_NOTE, /\(\/#lifecycle\)/);
+  assert.match(EXPERIMENTAL_NOTE, /\(\/guides\/lifecycle\)/);
 });
 
 test('badge uses the formatter provided by graphql-markdown', () => {

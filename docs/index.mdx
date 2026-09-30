@@ -15,15 +15,24 @@ the reference for every query, mutation and type it exposes, generated nightly f
 
 ## Endpoint and access
 
-```text
-https://eur.365.altium.com/napi/gateway/graphql
-```
+The API is served per region: use the endpoint of the region that hosts your workspace.
 
-The gateway is regional: use the endpoint of the region that hosts your workspace. Requests are
-authenticated with an access token issued to an application registered with Altium. See the
+| Region | Endpoint |
+| --- | --- |
+| Europe | `https://eur.365.altium.com/api/graphql` |
+| US West | `https://usw.365.altium.com/api/graphql` |
+| US East | `https://use.365.altium.com/api/graphql` |
+| Asia Pacific | `https://asp.365.altium.com/api/graphql` |
+| GovCloud | `https://use.365-gov.altium.com/api/graphql` |
+
+Each workspace also has its own endpoint, `https://{workspace-domain}/api/graphql`. Requests carry an access
+token in an `Authorization: Bearer {access-token}` header; see the
 [Altium Developer Center](https://developer.altium.com/) and its
 [documentation](https://www.altium.com/documentation/altium-developer-center) for registering an
-application and obtaining tokens.
+application and obtaining tokens, and [Getting started](/guides/getting-started) for a first query.
+
+**For AI assistants:** start at [llms.txt](pathname:///llms.txt) — an index of the bounded contexts, each with
+its own `llms.txt` and a compact `schema.graphql` slice. Every page is also available as Markdown (`.md`).
 
 ## How this reference is organised
 
@@ -53,12 +62,15 @@ the entity definition.
 Names tell you where an operation belongs:
 
 - **Bounded-context queries** are nested by context and entity:
-  `design.project.byId(id: ID!)`, `platform.token.byId(id: ID!)`.
-- **Legacy queries** use a short prefix: `desProjectById`, `supSearchMpn`, `bomBoms`
+  `requirements.project.byId(id: ID!)`, `platform.token.byWorkspace(first: Int)`.
+- **Legacy queries** use a short prefix: `desProjectById`, `supRefDesigns`, `bomBoms`
   (`des` = design, `sup` = supply, `glo` = global/platform, `bom` = procurement).
 - **Mutations** are top-level and named `{boundedContext}{Entity}{Action}`, for example
   `designRuleCheckExecute`. Each takes a single `input: <Name>Input!` argument and returns a `<Name>Payload!`.
 - Types and operations whose names end in `_Preview` belong to preview schemas.
+
+More in the guides: [Naming conventions](/guides/naming-conventions), [Identifiers and lookups](/guides/identifiers),
+[Pagination](/guides/pagination), [Errors](/guides/errors) and [Lifecycle](/guides/lifecycle).
 
 ## Lifecycle
 
@@ -72,4 +84,5 @@ Names tell you where an operation belongs:
 ## Machine-readable schema
 
 Download the full schema in SDL form: [schema.graphql](pathname:///schema.graphql). It is regenerated
-together with this site and is the best input for code generators and AI assistants.
+together with this site and is the best input for code generators. Each bounded context also publishes a
+smaller slice at `/reference/<context>/schema.graphql`, listed in [llms.txt](pathname:///llms.txt).
