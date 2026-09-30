@@ -1,0 +1,31 @@
+id: https://w3id.org/altium/cdm/design/
+name: cdm-design
+subsets:
+  design:
+    description: Design.
+classes:
+  des_project:
+    in_subset: design
+    class_uri: des:Project
+    title: Hardware Project
+    description: TBD
+    annotations:
+      grid: grid:workspace:{workspace-id}:design:project/{id}
+      platformAPI: DesProject
+  des_harness_project:
+    in_subset: design
+    class_uri: des:HarnessProject
+    title: Harness Project
+    description: A cable and wiring harness design.
+    annotations:
+      platformAPI: DesProject
+  des_gone:
+    in_subset: design
+    class_uri: des:Gone
+    title: Gone Entity
+    annotations:
+      platformAPI: DesGone
+  des_no_api:
+    in_subset: design
+    class_uri: des:NoApi
+    title: No API

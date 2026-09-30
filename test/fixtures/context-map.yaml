@@ -1,0 +1,57 @@
+contexts:
+  - id: platform
+    title: Platform
+    description: Workspaces and apps.
+    cdm: [platform]
+    query: ['^node$', '^platform', '^glo', '^desWorkspace']
+    mutation: ['^platform', '^glo']
+    type: ['^Platform', '^Glo', '^DesWorkspace']
+  - id: design
+    title: Design
+    description: Hardware projects and rule checks.
+    cdm: [design]
+    query: ['^design', '^des']
+    mutation: ['^design', '^des']
+    type: ['^Design', '^Des']
+  - id: insights
+    title: Insights
+    description: Workspace insights.
+    cdm: [insights]
+    query: ['^desWorkspaceIns']
+    mutation: ['^desWorkspaceIns']
+    type: ['^DesWorkspaceIns']
+  - id: collaboration
+    title: Collaboration
+    description: Comments and tasks.
+    cdm: [collaboration]
+    query: ['^desComment']
+    mutation: ['^des.*Comment']
+    type: ['^DesComment']
+  - id: procurement
+    title: Procurement
+    description: Managed BOMs.
+    cdm: [procurement]
+    query: ['^bom']
+    mutation: ['^bom']
+    type: ['^Bom']
+  - id: customization
+    title: Customization
+    description: Extension points and scripts.
+    cdm: [customization]
+    query: ['^gloCus']
+    mutation: ['^gloCus']
+    type: ['^GloCus']
+  - id: renesas-preview
+    title: Renesas (preview)
+    description: Parked Renesas-specific APIs.
+    cdm: [deviceModel]
+    query: ['^dm']
+    mutation: ['^dm']
+    type: ['^Dm']
+common:
+  title: Common
+  description: Shared scalars, paging and filtering types.
+  names: [Node, PageInfo, Long]
+  type: ['OperationFilterInput$']
+overrides:
+  zzzOverridden: design

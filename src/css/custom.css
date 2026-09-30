@@ -37,3 +37,40 @@ html[data-theme='dark'] {
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* "View as Markdown": right-aligned on the breadcrumbs row */
+.doc-markdown-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.doc-markdown-row__crumbs {
+  min-width: 0;
+}
+
+.doc-markdown-link {
+  flex-shrink: 0;
+  margin-bottom: 0.8rem;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+  white-space: nowrap;
+}
+
+.doc-markdown-link:hover {
+  color: var(--ifm-link-color);
+}
+
+/* Experimental markers */
+.sidebar-exp > .menu__link::after {
+  content: 'EXP';
+  margin-left: 0.4rem;
+  padding: 0 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  color: var(--ifm-color-warning-contrast-foreground);
+  background: var(--ifm-color-warning-contrast-background);
+}

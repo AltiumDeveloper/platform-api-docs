@@ -1,0 +1,3 @@
+# Names allowed to stay unassigned (shown under Common). One per line.
+zzzUnknown
+ZzzOrphanType

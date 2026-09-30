@@ -1,0 +1,15 @@
+diff --git a/node_modules/@graphql-markdown/graphql/dist/introspection.js b/node_modules/@graphql-markdown/graphql/dist/introspection.js
+index be691f2..a534cd9 100644
+--- a/node_modules/@graphql-markdown/graphql/dist/introspection.js
++++ b/node_modules/@graphql-markdown/graphql/dist/introspection.js
+@@ -406,7 +406,9 @@ const isNestedOperationNamespaceType = (type, operationKind, rootTypeName) => {
+         typeName === rootTypeName) {
+         return false;
+     }
+-    return typeName.toLowerCase().endsWith(operationKind);
++    const lowerName = typeName.toLowerCase();
++    const pluralSuffix = operationKind === "query" ? "queries" : `${operationKind}s`;
++    return lowerName.endsWith(operationKind) || lowerName.endsWith(pluralSuffix);
+ };
+ /**
+  * Recursively collects operation fields, including nested namespace fields,

@@ -2,37 +2,174 @@ name: GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # Set a branch name to trigger deployment
+    branches: [main]
+  pull_request:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      allow_shrink:
+        description: Bypass the schema-shrink guard (use only for a legitimate large removal)
+        type: boolean
+        default: false
+
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
     permissions:
-      contents: write
+      contents: read
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          node-version: 22
+          cache: npm
 
-      - name: Dependencies
-        run: npm i -ci
+      - name: Install
+        run: npm ci
 
-      - name: Build
-        run: |
-          npm run doc
-          npm run build
+      - name: Unit tests
+        run: npm test
+
+      - name: Restore previous schema size
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .schema/last-size
+            .schema/cdm-index.json
+            .schema/cdm-meta.json
+          key: schema-size-${{ github.run_id }}
+          restore-keys: schema-size-
+
+      - name: Generate API reference
+        run: npm run apidocs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APIDOCS_ALLOW_SHRINK: ${{ inputs.allow_shrink && '1' || '' }}
+
+      - name: Build site
+        run: npm run build
+
+      - name: Generate LLM files
+        run: npm run llms
+
+      - name: Check LLM files
+        run: npm run llms:check
+
+      - name: Upload site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: build
+
+      - name: Save schema size
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .schema/last-size
+            .schema/cdm-index.json
+            .schema/cdm-meta.json
+          key: schema-size-${{ github.run_id }}
+
+      - name: Upload classification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apidocs-report
+          path: |
+            .schema/report.json
+            notes/cdm-mismatches.md
+          include-hidden-files: true
+          if-no-files-found: ignore
+
+  # Guide examples are validated against the SDL of the site just built. A failure shows as a failed check but
+  # does not block publishing: deploy needs only build.
+  validate-guides:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Download site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: build
+
+      - name: Validate guide examples
+        run: npm run test:guides
+        env:
+          APIDOCS_GUIDES_SCHEMA: build/schema.graphql
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - name: Download site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        # If you're changing the branch from main,
-        # also change the `main` in `refs/heads/main`
-        # below accordingly.
-        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+
+  # Opens (or comments on) an issue per failing track, and closes it again once the track passes.
+  # Logic lives in .github/scripts/report-failures.cjs.
+  report-failures:
+    needs: [build, validate-guides, deploy]
+    if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      issues: write
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+
+      - name: Download classification report
+        if: needs.build.result == 'failure' || needs.deploy.result == 'failure'
+        continue-on-error: true
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: apidocs-report
+          path: apidocs-report
+
+      - name: Report failures
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          NEEDS_JSON: ${{ toJSON(needs) }}
+        with:
+          script: |
+            const inputs = {
+              needs: JSON.parse(process.env.NEEDS_JSON),
+              reportDir: 'apidocs-report',
+            };
+            await require('./.github/scripts/report-failures.cjs')({ github, context, core, inputs });
