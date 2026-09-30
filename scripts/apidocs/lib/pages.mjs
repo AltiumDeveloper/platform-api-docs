@@ -28,7 +28,7 @@ export function retitleNamespacedOperation(text, name) {
   const eol = match[1];
   const lines = match[2].split(/\r?\n/).filter((line) => !/^sidebar_label:/.test(line));
   const leaf = name.split('.').at(-1);
-  const rewritten = lines.flatMap((line) => (/^title:/.test(line) ? [`title: ${name}`, `sidebar_label: ${leaf}`] : [line]));
+  const rewritten = lines.flatMap((line) => (/^title:/.test(line) ? [`title: ${JSON.stringify(name)}`, `sidebar_label: ${leaf}`] : [line]));
   return `---${eol}${rewritten.join(eol)}${eol}---${text.slice(match[0].length)}`;
 }
 

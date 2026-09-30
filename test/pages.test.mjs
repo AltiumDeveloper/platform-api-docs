@@ -36,7 +36,7 @@ test('readFrontMatter parses the YAML block', () => {
 test('retitleNamespacedOperation uses the dotted name as title and the leaf as sidebar label', () => {
   const text = '---\nhide_table_of_contents: true\nid: by-id\ntitle: byId\n---\n\nbody\n';
   const out = retitleNamespacedOperation(text, 'design.ruleCheck.byId');
-  assert.equal(out, '---\nhide_table_of_contents: true\nid: by-id\ntitle: design.ruleCheck.byId\nsidebar_label: byId\n---\n\nbody\n');
+  assert.equal(out, '---\nhide_table_of_contents: true\nid: by-id\ntitle: "design.ruleCheck.byId"\nsidebar_label: byId\n---\n\nbody\n');
   assert.equal(retitleNamespacedOperation(out, 'design.ruleCheck.byId'), out);
   assert.deepEqual(readFrontMatter(out), {
     hide_table_of_contents: true, id: 'by-id', title: 'design.ruleCheck.byId', sidebar_label: 'byId',
