@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// Runs after `docusaurus graphql-to-doc`: removes the synthetic @doc directive page, writes BC overview
-// pages, the pages index used by the sidebar, and legacy-URL redirects.
+// Runs after `docusaurus graphql-to-doc`: removes the synthetic @doc directive page, retitles namespaced
+// operation pages, writes BC overview pages, the pages index used by the sidebar, and legacy-URL redirects.
 import { existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   buildPagesIndex, buildRedirects, isDocDirectivePage, readFrontMatter, renderContextOverview,
-  stripDocDirectiveLinks,
+  retitleNamespacedOperation, stripDocDirectiveLinks,
 } from './lib/pages.mjs';
 
 const readJson = (path, fallback) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : fallback);
@@ -36,6 +36,12 @@ export function runPostprocess({ docsDir = 'docs', schemaDir = '.schema' } = {})
   }
 
   const pages = buildPagesIndex(kept, manifest);
+  pages.forEach((page, index) => {
+    if (page.section !== 'operations' || !page.name.includes('.')) return;
+    const text = readFileSync(kept[index].abs, 'utf8');
+    const retitled = retitleNamespacedOperation(text, page.name);
+    if (retitled !== text) writeFileSync(kept[index].abs, retitled);
+  });
   for (const context of manifest.contexts) {
     mkdirSync(join(referenceDir, context.slug), { recursive: true });
     writeFileSync(join(referenceDir, context.slug, 'overview.md'), renderContextOverview(context, pages, cdmIndex));

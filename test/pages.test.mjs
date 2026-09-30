@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildPagesIndex, buildRedirects, renderContextOverview, readFrontMatter, isDocDirectivePage, stripDocDirectiveLinks,
+  retitleNamespacedOperation,
 } from '../scripts/apidocs/lib/pages.mjs';
 
 const manifest = {
@@ -30,6 +31,17 @@ const files = [
 test('readFrontMatter parses the YAML block', () => {
   assert.deepEqual(readFrontMatter('---\nid: by-id\ntitle: byId\n---\n\nbody'), { id: 'by-id', title: 'byId' });
   assert.deepEqual(readFrontMatter('no front matter'), {});
+});
+
+test('retitleNamespacedOperation uses the dotted name as title and the leaf as sidebar label', () => {
+  const text = '---\nhide_table_of_contents: true\nid: by-id\ntitle: byId\n---\n\nbody\n';
+  const out = retitleNamespacedOperation(text, 'design.ruleCheck.byId');
+  assert.equal(out, '---\nhide_table_of_contents: true\nid: by-id\ntitle: design.ruleCheck.byId\nsidebar_label: byId\n---\n\nbody\n');
+  assert.equal(retitleNamespacedOperation(out, 'design.ruleCheck.byId'), out);
+  assert.deepEqual(readFrontMatter(out), {
+    hide_table_of_contents: true, id: 'by-id', title: 'design.ruleCheck.byId', sidebar_label: 'byId',
+  });
+  assert.equal(retitleNamespacedOperation('no front matter', 'a.b'), 'no front matter');
 });
 
 test('isDocDirectivePage detects the synthetic @doc directive page', () => {

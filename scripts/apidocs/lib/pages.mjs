@@ -19,6 +19,18 @@ export function readFrontMatter(text) {
   return match ? parse(match[1]) ?? {} : {};
 }
 
+// graphql-markdown titles namespaced operation pages with the leaf field (`byId`): use the dotted name as the
+// page title and keep the leaf as the sidebar label. Idempotent; other front-matter keys are left untouched.
+export function retitleNamespacedOperation(text, name) {
+  const match = /^---(\r?\n)([\s\S]*?)\r?\n---/.exec(text);
+  if (!match) return text;
+  const eol = match[1];
+  const lines = match[2].split(/\r?\n/).filter((line) => !/^sidebar_label:/.test(line));
+  const leaf = name.split('.').at(-1);
+  const rewritten = lines.flatMap((line) => (/^title:/.test(line) ? [`title: ${name}`, `sidebar_label: ${leaf}`] : [line]));
+  return `---${eol}${rewritten.join(eol)}${eol}---${text.slice(match[0].length)}`;
+}
+
 export function isDocDirectivePage({ path, frontMatter }) {
   return /\/types\/directives\//.test(path) && frontMatter.title === 'doc';
 }
