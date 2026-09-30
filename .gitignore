@@ -11,6 +11,10 @@
 /docs/reference/
 /static/schema.graphql
 
+# Internal design notes and working logs (never published)
+/docs/superpowers/
+/notes/
+
 # Misc
 .DS_Store
 .env.local
