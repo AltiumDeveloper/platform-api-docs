@@ -13,11 +13,13 @@ const EXPERIMENTAL_NOTE = [
 function renderCdmEntries(entries) {
   return entries
     .map((entry) => {
-      const parts = [`[${escapeMDX(entry.title)}](${entry.url})`];
-      if (entry.subset) parts.push(`bounded context \`${entry.subset}\``);
-      if (entry.grid) parts.push(`GRID \`${entry.grid}\``);
-      const line = `- ${parts.join(' · ')}`;
-      return entry.description ? `${line}\n  ${escapeMDX(entry.description)}` : line;
+      let line = `- **[${escapeMDX(entry.title)}](${entry.url})**`;
+      if (entry.description) line += ` — ${escapeMDX(entry.description)}`;
+      const details = [];
+      if (entry.subset) details.push(`bounded context \`${entry.subset}\``);
+      if (entry.grid) details.push(`GRID \`${entry.grid}\``);
+      if (details.length) line += ` (${details.join('; ')})`;
+      return line;
     })
     .join('\n');
 }

@@ -33,8 +33,25 @@ test('CDM predicate and resolve use the type name', () => {
 test('renders CDM entries as a markdown list', () => {
   assert.equal(
     renderCdmEntries(cdmIndex.DesProject),
-    '- [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/) · bounded context `design` · GRID `grid:workspace:{workspace-id}:design:project/{id}`',
+    '- **[Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/)** (bounded context `design`; GRID `grid:workspace:{workspace-id}:design:project/{id}`)',
   );
+});
+
+test('renders the description right after the title and omits empty parts', () => {
+  const url = 'https://example.com/x';
+  assert.equal(
+    renderCdmEntries([{ title: 'Thing', url, subset: 'design', grid: 'g:1', description: 'A thing.' }]),
+    '- **[Thing](https://example.com/x)** — A thing. (bounded context `design`; GRID `g:1`)',
+  );
+  assert.equal(
+    renderCdmEntries([{ title: 'Thing', url, subset: 'design', description: 'A thing.' }]),
+    '- **[Thing](https://example.com/x)** — A thing. (bounded context `design`)',
+  );
+  assert.equal(
+    renderCdmEntries([{ title: 'Thing', url, description: 'A thing.' }]),
+    '- **[Thing](https://example.com/x)** — A thing.',
+  );
+  assert.equal(renderCdmEntries([{ title: 'Thing', url }]), '- **[Thing](https://example.com/x)**');
 });
 
 test('experimental note is a caution admonition linking to the lifecycle section', () => {
