@@ -10,6 +10,9 @@ const readJson = (path, fallback) => (existsSync(path) ? JSON.parse(readFileSync
 const cdmIndex = readJson('./.schema/cdm-index.json', {});
 const redirects = readJson('./.schema/redirects.json', []);
 
+// Local-only planning notes live in docs/superpowers; exclude them only when present so CI builds don't embed the name.
+const docsExclude = existsSync('./docs/superpowers') ? [...GlobExcludeDefault, 'superpowers/**'] : GlobExcludeDefault;
+
 const DEVELOPER_CENTER = 'https://developer.altium.com/';
 const DEVELOPER_CENTER_DOCS = 'https://www.altium.com/documentation/altium-developer-center';
 const CDM_DOCS = 'https://altiumdeveloper.github.io/cdm/';
@@ -65,7 +68,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: false,
-        docs: { routeBasePath: '/', sidebarPath: './sidebars.js', sidebarItemsGenerator, exclude: [...GlobExcludeDefault, 'superpowers/**'] },
+        docs: { routeBasePath: '/', sidebarPath: './sidebars.js', sidebarItemsGenerator, exclude: docsExclude },
         theme: { customCss: './src/css/custom.css' },
       }),
     ],
