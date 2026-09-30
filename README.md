@@ -53,6 +53,11 @@ the public SDL by `npm run test:guides`; mark schema excerpts with ` ```graphql 
 
 It prints token estimates (characters / 4). `npm run serve` serves the files locally.
 
+`npm run llms:check` (run by CI after `npm run llms`) scans every `.md` page, `llms*.txt` / `types.txt` index and
+schema slice in `build/`: it fails on JSX, `export const`, zero-width characters, Docusaurus anchors
+(`hash-link`, "Direct link to"), relative or `.mdx` links, internal absolute links that do not resolve to a file
+in `build/`, and slices that do not parse.
+
 ## Changing the grouping
 
 Edit `config/context-map.yaml`. Each context has regexes for query, mutation and type names; the most

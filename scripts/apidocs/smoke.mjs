@@ -6,6 +6,7 @@ import { cpSync, existsSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parse } from 'graphql';
+import { runCheck } from './llms-check.mjs';
 
 const env = {
   ...process.env,
@@ -47,7 +48,7 @@ try {
   if (hadSchemaDir) {
     cpSync(backup, SCHEMA_DIR, { recursive: true });
     rmSync(backup, { recursive: true, force: true });
-    console.log('smoke: restored .schema and static/schema.graphql; run `npm run apidocs:generate && npm run apidocs:postprocess && npm run build && npm run llms` to rebuild live docs');
+    console.log('smoke: restored .schema and static/schema.graphql; run `npm run apidocs:generate && npm run apidocs:postprocess && npm run build && npm run llms && npm run llms:check` to rebuild live docs');
   }
 }
 
@@ -146,6 +147,14 @@ function runSmoke() {
   assert.match(text('reference/design/operations/queries/design/project/by-id.md'), /\*\*EXPERIMENTAL\*\*/);
   assert.match(text('index.md'), /^---\ntitle: "Altium Platform API"/);
   assert.match(text('llms-full.txt'), /title: "Getting started"/);
+  // llms:check. The landing page and guides link to live pages the fixture schema does not produce (Docusaurus warns
+  // about the same links): only those broken internal links are tolerated here.
+  const check = runCheck({ buildDir: 'build' });
+  const handWritten = (file) => file === 'index.md' || file.startsWith('guides/') || file === 'llms-full.txt';
+  const unexpected = check.problems.filter((problem) => !(problem.message.startsWith('broken internal link ') && handWritten(problem.file)));
+  assert.deepEqual(unexpected, [], 'llms:check problems');
+  assert.ok(check.files > 0 && check.links > 0);
+  console.log(`smoke: llms:check ${check.files} files, ${check.links} distinct links; ${check.problems.length - unexpected.length} tolerated links from hand-written pages to live-only pages`);
 
   console.log('smoke: OK');
 }
