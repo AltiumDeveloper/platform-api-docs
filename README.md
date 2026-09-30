@@ -91,6 +91,14 @@ with `.schema/report.json` as the `apidocs-report` artifact). It records the CDM
 
 Use it as the to-do list when fixing the CDM or the context map. Set `APIDOCS_MISMATCHES_FILE` to write it elsewhere.
 
+## Failure notifications
+
+On `main` (push, nightly schedule, manual run) the `report-failures` job files GitHub issues automatically: a
+`docs-build-failure` issue when the build or deploy fails and a `guide-examples-failure` issue when guide examples
+fail validation. A repeated failure comments on the open issue instead of opening a new one; the first green run
+comments "Resolved by ..." and closes it. Build issues include a summary of the `apidocs-report` artifact. The logic
+is in `.github/scripts/report-failures.cjs`.
+
 ## Troubleshooting
 
 ### "SDL shrank ... refusing to publish"

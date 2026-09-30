@@ -137,3 +137,38 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+
+  # Opens (or comments on) an issue per failing track, and closes it again once the track passes.
+  # Logic lives in .github/scripts/report-failures.cjs.
+  report-failures:
+    needs: [build, validate-guides, deploy]
+    if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+
+      - name: Download classification report
+        if: needs.build.result == 'failure' || needs.deploy.result == 'failure'
+        continue-on-error: true
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: apidocs-report
+          path: apidocs-report
+
+      - name: Report failures
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          NEEDS_JSON: ${{ toJSON(needs) }}
+        with:
+          script: |
+            const inputs = {
+              needs: JSON.parse(process.env.NEEDS_JSON),
+              reportDir: 'apidocs-report',
+            };
+            await require('./.github/scripts/report-failures.cjs')({ github, context, core, inputs });
