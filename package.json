@@ -23,6 +23,7 @@
     "apidocs:annotate": "node scripts/apidocs/annotate.mjs",
     "apidocs:generate": "docusaurus graphql-to-doc --force",
     "apidocs:postprocess": "node scripts/apidocs/postprocess.mjs",
+    "llms": "node scripts/apidocs/llms.mjs",
     "test": "node --test \"test/**/*.test.mjs\"",
     "test:smoke": "node scripts/apidocs/smoke.mjs"
   },
