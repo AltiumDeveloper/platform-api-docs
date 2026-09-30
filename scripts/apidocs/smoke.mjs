@@ -38,35 +38,35 @@ try {
 }
 
 function runSmoke() {
-run('npm run apidocs');
-run('npm run build');
+  run('npm run apidocs');
+  run('npm run build');
 
-const byId = page('reference/design/operations/queries/design/project/by-id');
-assert.match(byId, /EXPERIMENTAL/);
-assert.match(byId, /Not production-ready/);
-assert.match(byId, /sidebar-exp/);
+  const byId = page('reference/design/operations/queries/design/project/by-id');
+  assert.match(byId, /EXPERIMENTAL/);
+  assert.match(byId, /Not production-ready/);
+  assert.match(byId, /sidebar-exp/);
 
-const project = page('reference/design/types/objects/des-project');
-assert.match(project, /Common Data Model/);
-assert.match(project, /Hardware Project/);
-assert.doesNotMatch(project, /id="comments"/);
-// Member headings keep graphql-markdown's explicit IDs, so `#name`-style links resolve.
-assert.match(project, /id="name"/);
+  const project = page('reference/design/types/objects/des-project');
+  assert.match(project, /Common Data Model/);
+  assert.match(project, /Hardware Project/);
+  assert.doesNotMatch(project, /id="comments"/);
+  // Member headings keep graphql-markdown's explicit IDs, so `#name`-style links resolve.
+  assert.match(project, /id="name"/);
 
-const drc = page('reference/design/operations/mutations/design-rule-check-execute');
-assert.match(drc, /id="input"/);
+  const drc = page('reference/design/operations/mutations/design-rule-check-execute');
+  assert.match(drc, /id="input"/);
 
-const overview = page('reference/design/overview');
-assert.match(overview, /Entry points/);
+  const overview = page('reference/design/overview');
+  assert.match(overview, /Entry points/);
 
-const home = page('');
-assert.match(home, /How this reference is organised/);
+  const home = page('');
+  assert.match(home, /How this reference is organised/);
 
-const redirect = page('types/objects/DesProject');
-assert.match(redirect, /reference\/design\/types\/objects\/des-project/);
+  const redirect = page('types/objects/DesProject');
+  assert.match(redirect, /reference\/design\/types\/objects\/des-project/);
 
-const sdl = readFileSync('build/schema.graphql', 'utf8');
-assert.doesNotMatch(sdl, /@authorize|@cost|@doc\(/);
+  const sdl = readFileSync('build/schema.graphql', 'utf8');
+  assert.doesNotMatch(sdl, /@authorize|@cost|@doc\(/);
 
-console.log('smoke: OK');
+  console.log('smoke: OK');
 }
