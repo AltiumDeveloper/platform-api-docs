@@ -67,6 +67,31 @@ test('readGuides returns guides in sidebar order with route and description', ()
   assert.deepEqual(readGuides(join(guidesDir, 'missing')), []);
 });
 
+test('readGuides recurses into folders, honours id/slug front matter and strips number prefixes', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'apidocs-guides-'));
+  const guide = (path, fields) => writeFile(join(dir, path),
+    `---\n${Object.entries(fields).map(([key, value]) => `${key}: ${value}`).join('\n')}\n---\n\nText.\n`);
+  guide('getting-started.mdx', { title: 'Getting started', description: 'd', sidebar_position: 1 });
+  guide('03-pagination.mdx', { title: 'Pagination', description: 'd' }); // position 3 from the number prefix
+  guide('errors.mdx', { title: 'Errors', description: 'd', sidebar_position: 6 });
+  guide('absolute.mdx', { title: 'Absolute', description: 'd', slug: '/top/absolute' });
+  guide('02-advanced/index.mdx', { title: 'Advanced', description: 'd', sidebar_position: 1 });
+  guide('02-advanced/01-webhooks.mdx', { title: 'Webhooks', description: 'd' });
+  guide('02-advanced/custom.mdx', { title: 'Custom', description: 'd', id: 'tuned', sidebar_position: 5 });
+  guide('02-advanced/relative.md', { title: 'Relative', description: 'd', slug: 'other-name', sidebar_position: 7 });
+  writeFile(join(dir, '02-advanced/_category_.json'), '{}');
+  assert.deepEqual(readGuides(dir).map((g) => g.route), [
+    'guides/getting-started',
+    'guides/pagination',
+    'guides/errors',
+    'top/absolute',
+    'guides/advanced',
+    'guides/advanced/webhooks',
+    'guides/advanced/tuned',
+    'guides/advanced/other-name',
+  ]);
+});
+
 test('runLlms writes .md pages, slices, per-context and root indexes and llms-full.txt', () => {
   const { schemaDir, buildDir, guidesDir } = setup();
   const result = runLlms({ buildDir, schemaDir, guidesDir, siteUrl: SITE });

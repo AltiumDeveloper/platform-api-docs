@@ -24,22 +24,56 @@ export function siteUrlFromConfig() {
   return `${config.url}${config.baseUrl}`.replace(/\/+$/, '');
 }
 
-// Hand-written guides in sidebar order (sidebar_position, then title).
-export function readGuides(guidesDir) {
+// Docusaurus number prefixes (`01-foo.mdx`, `02-advanced/`): stripped from ids and routes, used as default position.
+const NUMBER_PREFIX = /^(\d+)\s*[-_.]+\s*(?=[^-_.\s])/;
+const unprefixed = (name) => name.replace(NUMBER_PREFIX, '');
+const prefixNumber = (name) => {
+  const match = NUMBER_PREFIX.exec(name);
+  return match ? Number(match[1]) : null;
+};
+const LAST = Number.MAX_SAFE_INTEGER;
+
+function guideFiles(dir, parents = []) {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    if (entry.isDirectory()) return guideFiles(join(dir, entry.name), [...parents, entry.name]);
+    return /\.mdx?$/.test(entry.name) ? [{ path: join(dir, entry.name), parents, file: entry.name }] : [];
+  });
+}
+
+// Site route of a guide, as Docusaurus computes it (docs routeBasePath '/', guides under `routeBase`):
+// absolute `slug` from the docs root, relative `slug` from the guide's folder, else the folder plus `id` (or the file
+// name); `index`, `README` or a file named like its folder is the folder's own page. Number prefixes are stripped.
+function guideRoute({ parents, file }, frontMatter, routeBase) {
+  const dirs = parents.map(unprefixed);
+  const routePath = (...parts) => parts.flat().filter(Boolean).join('/').replace(/\/{2,}/g, '/').replace(/^\/+|\/+$/g, '');
+  const slug = frontMatter.slug == null ? null : String(frontMatter.slug);
+  if (slug !== null) return slug.startsWith('/') ? routePath(slug) : routePath(routeBase, dirs, slug);
+  const name = unprefixed(basename(file).replace(/\.mdx?$/, ''));
+  if (frontMatter.id != null) return routePath(routeBase, dirs, String(frontMatter.id));
+  const folderPage = /^(index|readme)$/i.test(name) || (dirs.length > 0 && name === dirs.at(-1));
+  return routePath(routeBase, dirs, folderPage ? [] : name);
+}
+
+// Hand-written guides in sidebar order: top-level guides first, then each subfolder (by its number prefix, then
+// name); within a folder by sidebar_position (default: the file's number prefix), then title.
+export function readGuides(guidesDir, { routeBase = 'guides' } = {}) {
   if (!existsSync(guidesDir)) return [];
-  return readdirSync(guidesDir)
-    .filter((file) => /\.mdx?$/.test(file))
-    .map((file) => {
-      const frontMatter = readFrontMatter(readFileSync(join(guidesDir, file), 'utf8'));
-      const slug = frontMatter.slug ?? basename(file).replace(/\.mdx?$/, '');
+  return guideFiles(guidesDir)
+    .map((entry) => {
+      const frontMatter = readFrontMatter(readFileSync(entry.path, 'utf8'));
+      const route = guideRoute(entry, frontMatter, routeBase);
       return {
-        route: `guides/${String(slug).replace(/^\/+/, '')}`,
-        title: frontMatter.title ?? slug,
+        route,
+        title: frontMatter.title ?? route.split('/').pop(),
         description: frontMatter.description ?? '',
-        position: frontMatter.sidebar_position ?? Number.MAX_SAFE_INTEGER,
+        position: frontMatter.sidebar_position ?? prefixNumber(entry.file) ?? LAST,
+        folder: entry.parents.join('/'),
+        folderPosition: entry.parents.length ? prefixNumber(entry.parents[0]) ?? LAST : -1,
       };
     })
-    .sort((a, b) => a.position - b.position || a.title.localeCompare(b.title));
+    .sort((a, b) => a.folderPosition - b.folderPosition || a.folder.localeCompare(b.folder)
+      || a.position - b.position || a.title.localeCompare(b.title))
+    .map(({ folder, folderPosition, ...guide }) => guide);
 }
 
 const rank = (list, value) => {

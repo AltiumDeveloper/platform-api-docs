@@ -35,7 +35,7 @@ function mdxHazards(text) {
 }
 
 const guides = existsSync(GUIDES_DIR)
-  ? readdirSync(GUIDES_DIR).filter((file) => /\.mdx?$/.test(file)).sort()
+  ? readdirSync(GUIDES_DIR, { recursive: true }).map(String).filter((file) => /\.mdx?$/.test(file)).sort()
   : [];
 
 test('graphqlBlocks, isSdlBlock and mdxHazards', () => {
