@@ -10,7 +10,7 @@ import { buildSchema } from 'graphql';
 import { readFrontMatter } from './lib/pages.mjs';
 import { htmlToMarkdown, markdownFileFor } from './lib/html-to-md.mjs';
 import { buildSlice, estimateTokens, parseSdl } from './lib/sdl-slice.mjs';
-import { renderContextIndex, renderDeprecatedIndex, renderRootIndex } from './lib/llms-index.mjs';
+import { renderContextIndex, renderContextTypes, renderDeprecatedIndex, renderRootIndex } from './lib/llms-index.mjs';
 
 const require = createRequire(import.meta.url);
 const readJson = (path, fallback) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : fallback);
@@ -98,13 +98,17 @@ export function runLlms({
   }
 
   // 2. Per-context schema slices and llms.txt; the deprecated index.
-  const tokens = { contexts: {}, slices: {} };
+  const tokens = { contexts: {}, slices: {}, types: {} };
   for (const context of contexts) {
     const slice = buildSlice({ document, manifest, contextId: context.id, siteUrl });
     write(join(buildDir, 'reference', context.slug, 'schema.graphql'), slice.text);
-    const index = renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, sliceTokens: slice.tokens });
+    const types = renderContextTypes({ context, pages, schema, cdmIndex, siteUrl });
+    write(join(buildDir, 'reference', context.slug, 'types.txt'), types);
+    const typesTokens = estimateTokens(types);
+    const index = renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, sliceTokens: slice.tokens, typesTokens });
     write(join(buildDir, 'reference', context.slug, 'llms.txt'), index);
     tokens.slices[context.slug] = slice.tokens;
+    tokens.types[context.slug] = typesTokens;
     tokens.contexts[context.slug] = estimateTokens(index);
   }
   const deprecated = renderDeprecatedIndex({ contexts, pages, schema, siteUrl });
@@ -134,7 +138,7 @@ if (process.argv[1] && realpathSync(fileURLToPath(import.meta.url)) === realpath
   const { pages, tokens } = runLlms();
   console.log(`llms: ${pages} markdown pages; llms.txt ~${tokens.root} tokens; llms-full.txt ~${tokens.full} tokens`);
   for (const [slug, count] of Object.entries(tokens.contexts)) {
-    console.log(`  reference/${slug}/llms.txt ~${count} tokens, schema.graphql ~${tokens.slices[slug]} tokens`);
+    console.log(`  reference/${slug}/llms.txt ~${count} tokens, types.txt ~${tokens.types[slug]} tokens, schema.graphql ~${tokens.slices[slug]} tokens`);
   }
   console.log(`  reference/deprecated/llms.txt ~${tokens.deprecated} tokens`);
 }

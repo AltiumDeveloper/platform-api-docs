@@ -39,6 +39,8 @@ function setup() {
       name: 'desProjectById', section: 'operations', kind: 'queries', context: 'design', experimental: false, deprecated: false, legacyUrl: null },
     { docId: 'reference/design/types/objects/des-project', url: '/reference/design/types/objects/des-project',
       name: 'DesProject', section: 'types', kind: 'objects', context: 'design', experimental: false, deprecated: false, legacyUrl: null },
+    { docId: 'reference/common/types/objects/page-info', url: '/reference/common/types/objects/page-info',
+      name: 'PageInfo', section: 'types', kind: 'objects', context: 'common', experimental: false, deprecated: false, legacyUrl: null },
   ];
   writeFileSync(join(schemaDir, 'pages.json'), JSON.stringify(pages));
   writeFile(join(buildDir, 'index.html'), page('Altium Platform API', 'Home.'));
@@ -70,7 +72,7 @@ test('runLlms writes .md pages, slices, per-context and root indexes and llms-fu
   const result = runLlms({ buildDir, schemaDir, guidesDir, siteUrl: SITE });
   const read = (path) => readFileSync(join(buildDir, path), 'utf8');
 
-  assert.equal(result.pages, 1 + 2 + 8 + 2); // home, guides, 8 overviews (7 contexts + Common), pages
+  assert.equal(result.pages, 1 + 2 + 8 + 3); // home, guides, 8 overviews (7 contexts + Common), pages
   assert.match(read('index.md'), /^---\ntitle: "Altium Platform API"\nurl: "https:\/\/example\.test\/docs\/"\nbounded_context: "none"\nkind: "overview"/);
   assert.match(read('guides/getting-started.md'), /kind: "guide"/);
   assert.match(read('reference/design/overview.md'), /bounded_context: "Design"\nkind: "overview"/);
@@ -87,6 +89,11 @@ test('runLlms writes .md pages, slices, per-context and root indexes and llms-fu
   assert.match(designIndex, /^# Design — Altium Platform API/);
   assert.match(designIndex, new RegExp(`## Entry points\\n- \\[desProjectById\\]\\(${SITE}/reference/design/operations/queries/des-project-by-id\\.md\\): Gets a project by its identifier\\.`));
   assert.match(designIndex, /## Entities\n- \[DesProject\]/);
+  const commonTypes = read('reference/common/types.txt');
+  assert.match(commonTypes, /^# Common — types\n[\s\S]*\n- \[PageInfo\]/);
+  assert.ok(read('reference/common/llms.txt').includes(
+    `- [All types in Common](${SITE}/reference/common/types.txt): one line per type (~${result.tokens.types.common} tokens)`));
+  assert.equal(result.tokens.types.common, Math.ceil(commonTypes.length / 4));
   assert.ok(existsSync(join(buildDir, 'reference/deprecated/llms.txt')));
 
   const full = read('llms-full.txt');

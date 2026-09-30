@@ -77,19 +77,44 @@ function entityLine(page, entries, siteUrl) {
 }
 
 const section = (title, lines) => (lines.length ? [`## ${title}`, ...lines, ''] : []);
+// Relay wrappers: mechanical, and reachable from the entity or operation that returns them.
+const RELAY_WRAPPER = /(Connection|Edge)$/;
 
-// Per-context llms.txt. `pages` is .schema/pages.json; `sliceTokens` the size of the context's schema slice.
-export function renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, sliceTokens }) {
-  const mine = pages.filter((page) => page.context === context.id && !page.deprecated);
+const livePages = (pages, context) => pages.filter((page) => page.context === context.id && !page.deprecated);
+const typeRank = (page) => TYPE_KIND_ORDER.indexOf(page.kind);
+
+// Non-deprecated type and directive pages of the context that are not CDM entities, in kind order.
+function otherTypePages(pages, context, cdmIndex) {
+  return livePages(pages, context)
+    .filter((page) => (page.section === 'types' && !cdmIndex[page.name]) || page.kind === 'directives')
+    .sort((a, b) => typeRank(a) - typeRank(b) || a.name.localeCompare(b.name));
+}
+
+// Pages listed in /reference/<slug>/types.txt: other types without Relay Connection/Edge objects.
+const listedTypePages = (pages, context, cdmIndex) => otherTypePages(pages, context, cdmIndex)
+  .filter((page) => !(page.kind === 'objects' && RELAY_WRAPPER.test(page.name)));
+
+// /reference/<slug>/types.txt: one line per non-entity type of the context.
+export function renderContextTypes({ context, pages, schema, cdmIndex, siteUrl }) {
+  const ctx = { schema, siteUrl };
+  const lines = [
+    `# ${context.title} — types`,
+    `> Types of the ${context.title} bounded context that are not entities, one line each; Relay \`*Connection\` and \`*Edge\` types are omitted. Entities, entry points and operations: [llms.txt](${siteUrl}/reference/${context.slug}/llms.txt).`,
+    '',
+    ...listedTypePages(pages, context, cdmIndex).map((page) => pageLine(page, ctx)),
+  ];
+  return `${lines.join('\n').trimEnd()}\n`;
+}
+
+// Per-context llms.txt. `pages` is .schema/pages.json; `sliceTokens` / `typesTokens` the size of the context's
+// schema slice and types.txt.
+export function renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, sliceTokens, typesTokens }) {
+  const mine = livePages(pages, context);
   const operations = (kind) => mine.filter((page) => page.section === 'operations' && page.kind === kind).sort(byName);
   const entryPoints = operations('queries').filter((page) => ENTRY_POINT.test(page.name));
   const entryNames = new Set(entryPoints.map((page) => page.name));
-  const typePages = mine.filter((page) => page.section === 'types' || page.kind === 'directives');
-  const entities = typePages.filter((page) => page.section === 'types' && cdmIndex[page.name]).sort(byName);
-  const entityNames = new Set(entities.map((page) => page.name));
-  const rank = (page) => TYPE_KIND_ORDER.indexOf(page.kind);
-  const others = typePages.filter((page) => !entityNames.has(page.name))
-    .sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name));
+  const entities = mine.filter((page) => page.section === 'types' && cdmIndex[page.name]).sort(byName);
+  const hasTypes = listedTypePages(pages, context, cdmIndex).length > 0;
   const ctx = { schema, siteUrl };
   const base = `${siteUrl}/reference/${context.slug}`;
   const cdm = concepts(context);
@@ -108,7 +133,9 @@ export function renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, 
     ...section('Entry points', entryPoints.map((page) => pageLine(page, ctx))),
     ...OPERATION_SECTIONS.flatMap(([kind, title]) =>
       section(title, operations(kind).filter((page) => kind !== 'queries' || !entryNames.has(page.name)).map((page) => pageLine(page, ctx)))),
-    ...section('Optional', others.map((page) => pageLine(page, ctx))),
+    ...section('Optional', hasTypes
+      ? [`- [All types in ${context.title}](${base}/types.txt): one line per type (~${typesTokens} tokens)`]
+      : []),
   ];
   return `${lines.join('\n').trimEnd()}\n`;
 }

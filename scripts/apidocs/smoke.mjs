@@ -133,6 +133,7 @@ function runSmoke() {
   assert.match(llms, /\[Design\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/llms\.txt\)/);
   assert.match(llms, /\[Getting started\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/guides\/getting-started\.md\)/);
   assert.match(text('reference/design/llms.txt'), /^# Design — Altium Platform API\n/);
+  assert.match(text('reference/common/types.txt'), /^# Common — types\n/);
   const slice = text('reference/design/schema.graphql');
   parse(slice);
   assert.match(slice, /^type DesProject implements Node/m);

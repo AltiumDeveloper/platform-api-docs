@@ -2,8 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildSchema } from 'graphql';
 import {
-  DEVELOPER_CENTER_LINKS, firstSentence, operationField, pageDescription, renderContextIndex, renderDeprecatedIndex,
-  renderRootIndex,
+  DEVELOPER_CENTER_LINKS, firstSentence, operationField, pageDescription, renderContextIndex, renderContextTypes,
+  renderDeprecatedIndex, renderRootIndex,
 } from '../scripts/apidocs/lib/llms-index.mjs';
 
 const SITE = 'https://example.test/docs';
@@ -37,6 +37,10 @@ const schema = buildSchema(`
   input DesignRuleCheckExecuteInput { id: ID! }
   "Shared paging info."
   type PageInfo { hasNextPage: Boolean! }
+  "A connection to a list of items."
+  type DesProjectConnection { nodes: [DesProject!] }
+  "An edge in a connection."
+  type DesProjectEdge { node: DesProject! }
 `);
 
 const design = { id: 'design', title: 'Design', slug: 'design', description: 'Hardware projects.', cdm: ['design'] };
@@ -55,6 +59,8 @@ const pages = [
   page('/reference/design/types/objects/des-project', 'DesProject', 'types', 'objects', 'design'),
   page('/reference/design/types/objects/rule-check', 'RuleCheck', 'types', 'objects', 'design', { experimental: true }),
   page('/reference/design/types/inputs/design-rule-check-execute-input', 'DesignRuleCheckExecuteInput', 'types', 'inputs', 'design'),
+  page('/reference/design/types/objects/des-project-connection', 'DesProjectConnection', 'types', 'objects', 'design'),
+  page('/reference/design/types/objects/des-project-edge', 'DesProjectEdge', 'types', 'objects', 'design'),
   page('/reference/common/types/objects/page-info', 'PageInfo', 'types', 'objects', 'common'),
 ];
 const cdmIndex = {
@@ -79,7 +85,7 @@ test('operationField walks namespaced operations', () => {
 });
 
 test('renderContextIndex renders the per-context llms.txt', () => {
-  const text = renderContextIndex({ context: design, pages, schema, cdmIndex, siteUrl: SITE, sliceTokens: 123 });
+  const text = renderContextIndex({ context: design, pages, schema, cdmIndex, siteUrl: SITE, sliceTokens: 123, typesTokens: 45 });
   const expected = [
     '# Design — Altium Platform API',
     '> Hardware projects.',
@@ -101,6 +107,18 @@ test('renderContextIndex renders the per-context llms.txt', () => {
     `- [designRuleCheckExecute](${SITE}/reference/design/operations/mutations/design-rule-check-execute.md): Runs a rule check.`,
     '',
     '## Optional',
+    `- [All types in Design](${SITE}/reference/design/types.txt): one line per type (~45 tokens)`,
+    '',
+  ].join('\n');
+  assert.equal(text, expected);
+});
+
+test('renderContextTypes lists non-entity types, one line each, without Connection and Edge types', () => {
+  const text = renderContextTypes({ context: design, pages, schema, cdmIndex, siteUrl: SITE });
+  const expected = [
+    '# Design — types',
+    `> Types of the Design bounded context that are not entities, one line each; Relay \`*Connection\` and \`*Edge\` types are omitted. Entities, entry points and operations: [llms.txt](${SITE}/reference/design/llms.txt).`,
+    '',
     `- [RuleCheck](${SITE}/reference/design/types/objects/rule-check.md): A rule check. [EXPERIMENTAL]`,
     `- [DesignRuleCheckExecuteInput](${SITE}/reference/design/types/inputs/design-rule-check-execute-input.md): Input for designRuleCheckExecute.`,
     '',
@@ -109,9 +127,12 @@ test('renderContextIndex renders the per-context llms.txt', () => {
 });
 
 test('renderContextIndex omits empty sections and deprecated pages', () => {
-  const text = renderContextIndex({ context: common, pages, schema, cdmIndex, siteUrl: SITE, sliceTokens: 5 });
+  const text = renderContextIndex({ context: common, pages, schema, cdmIndex, siteUrl: SITE, sliceTokens: 5, typesTokens: 7 });
   assert.doesNotMatch(text, /Concepts:|## Entities|## Entry points|## Queries|## Mutations|## Subscriptions/);
-  assert.match(text, /## Optional\n- \[PageInfo\]/);
+  assert.ok(text.includes(`## Optional\n- [All types in Common](${SITE}/reference/common/types.txt): one line per type (~7 tokens)`));
+  assert.match(renderContextTypes({ context: common, pages, schema, cdmIndex, siteUrl: SITE }), /^# Common — types\n[\s\S]*\n- \[PageInfo\]/);
+  const empty = { id: 'empty', title: 'Empty', slug: 'empty', description: 'Nothing.', cdm: [] };
+  assert.doesNotMatch(renderContextIndex({ context: empty, pages, schema, cdmIndex, siteUrl: SITE, sliceTokens: 1, typesTokens: 1 }), /## Optional/);
   const designText = renderContextIndex({ context: design, pages, schema, cdmIndex, siteUrl: SITE, sliceTokens: 1 });
   assert.doesNotMatch(designText, /desOldProject|## Subscriptions/);
 });

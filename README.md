@@ -45,7 +45,8 @@ the public SDL by `npm run test:guides`; mark schema excerpts with ` ```graphql 
 
 - `build/llms.txt` — site index for coding assistants (bounded contexts, guides, Developer Center links);
 - `build/reference/<context>/llms.txt` and `build/reference/<context>/schema.graphql` — per-context index and
-  SDL slice (types from other contexts are referenced, not defined); `build/reference/deprecated/llms.txt`;
+  SDL slice (types from other contexts are referenced, not defined); `build/reference/<context>/types.txt` — one
+  line per non-entity type (without Relay `*Connection`/`*Edge` types); `build/reference/deprecated/llms.txt`;
 - a `.md` twin of every docs page (`/reference/design/overview` → `/reference/design/overview.md`, home →
   `/index.md`), advertised by `<link rel="alternate" type="text/markdown">`;
 - `build/llms-full.txt` — all guides and reference pages as Markdown.
