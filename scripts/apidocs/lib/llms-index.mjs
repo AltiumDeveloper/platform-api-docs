@@ -111,20 +111,32 @@ function concepts(context) {
   return subsets.map((subset) => `[${subset}](${cdmSubsetUrl(subset)})`).join(', ');
 }
 
+// How well a CDM class name (`des_Project`) matches an API type name (`DesProject`): 0 same name without the
+// underscore, 1 the type ends with the class's local name, 2 otherwise.
+export function cdmClassMatch(cdmClass, typeName) {
+  const type = typeName.toLowerCase();
+  const name = String(cdmClass ?? '').toLowerCase();
+  if (name.replace(/[^a-z0-9]/g, '') === type) return 0;
+  const local = name.slice(name.lastIndexOf('_') + 1);
+  return local && type.endsWith(local) ? 1 : 2;
+}
+
 function entityLine(page, entries, siteUrl, via) {
-  const described = entries.map((entry) => {
+  const ordered = [...entries].sort((a, b) => cdmClassMatch(a.cdmClass, page.name) - cdmClassMatch(b.cdmClass, page.name));
+  const described = ordered.map((entry) => {
     let text = entry.title;
     if (entry.description) text += ` — ${firstSentence(entry.description)}`;
-    if (entry.grid) text += ` GRID \`${entry.grid}\``;
+    if (entry.grid) text = appendSentence(text, `GRID \`${entry.grid}\``);
     return text;
   });
   return `- [${page.name}](${mdUrl(siteUrl, page)}): ${appendSentence(described.join('; '), via)}`;
 }
 
-// `text` followed by the sentence `extra`, with a full stop in between unless `text` already ends one.
+// `text` followed by the sentence `extra`, with a full stop in between unless `text` already ends one (or was
+// truncated with "…").
 function appendSentence(text, extra) {
   if (!extra) return text;
-  return /[.!?]$/.test(text) ? `${text} ${extra}` : `${text}. ${extra}`;
+  return /[.!?…]$/.test(text) ? `${text} ${extra}` : `${text}. ${extra}`;
 }
 
 const section = (title, lines) => (lines.length ? [`## ${title}`, ...lines, ''] : []);

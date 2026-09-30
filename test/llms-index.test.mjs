@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildSchema } from 'graphql';
 import {
-  DEVELOPER_CENTER_LINKS, entityVia, firstSentence, operationField, pageDescription, renderContextIndex, renderContextTypes,
+  cdmClassMatch, DEVELOPER_CENTER_LINKS, entityVia, firstSentence, operationField, pageDescription, renderContextIndex, renderContextTypes,
   renderDeprecatedIndex, renderRootIndex,
 } from '../scripts/apidocs/lib/llms-index.mjs';
 
@@ -137,6 +137,23 @@ test('renderContextIndex renders the per-context llms.txt', () => {
     '',
   ].join('\n');
   assert.equal(text, expected);
+});
+
+test('entity lines: the CDM class matching the API type comes first; ". GRID" when there is no description', () => {
+  // Shape of the real DesProject entry in .schema/cdm-index.json.
+  const real = {
+    DesProject: [
+      { cdmClass: 'des_HarnessProject', title: 'Harness Project', description: 'Harness Project defines a harness. More.', grid: null },
+      { cdmClass: 'des_MultiboardProject', title: 'Multiboard Project', description: 'Multiboard Project coordinates boards.', grid: null },
+      { cdmClass: 'des_Project', title: 'Hardware Project', description: '', grid: 'grid:workspace:{workspace-id}:design:project/{id}' },
+    ],
+  };
+  const text = renderContextIndex({ context: design, pages, schema, cdmIndex: real, siteUrl: SITE, sliceTokens: 1, typesTokens: 1 });
+  assert.ok(text.includes(`- [DesProject](${SITE}/reference/design/types/objects/des-project.md): Hardware Project. GRID \`grid:workspace:{workspace-id}:design:project/{id}\`; Harness Project — Harness Project defines a harness.; Multiboard Project — Multiboard Project coordinates boards. Via: desProjectById, desProjects\n`), text);
+  assert.deepEqual(['des_Project', 'lib_Project', 'des_HarnessProject', undefined].map((name) => cdmClassMatch(name, 'DesProject')), [0, 1, 2, 2]);
+  const titleOnly = { DesProject: [{ cdmClass: 'des_Project', title: 'Hardware Project', description: '', grid: null }] };
+  assert.match(renderContextIndex({ context: design, pages, schema, cdmIndex: titleOnly, siteUrl: SITE, sliceTokens: 1, typesTokens: 1 }),
+    /\): Hardware Project\. Via: desProjectById, desProjects\n/);
 });
 
 test('entityVia: root queries (by-id first), then up to 3 references (same context first), at most 5 entries', () => {
