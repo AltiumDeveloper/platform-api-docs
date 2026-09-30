@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     permissions:
-      contents: write
+      contents: read
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
@@ -54,6 +54,12 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Upload site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: build
+
       - name: Save schema size
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/cache/save@v4
@@ -71,16 +77,22 @@ jobs:
           path: .schema/report.json
           if-no-files-found: ignore
 
-      - name: Upload site for review
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - name: Download site
+        uses: actions/download-artifact@v4
         with:
           name: site
           path: build
 
       - name: Deploy
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
