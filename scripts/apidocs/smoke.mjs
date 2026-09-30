@@ -2,7 +2,9 @@
 // End-to-end check: fixture SDL → full pipeline → Docusaurus build → assertions on the output.
 import assert from 'node:assert/strict';
 import { execSync } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
+import { cpSync, existsSync, readFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const env = {
   ...process.env,
@@ -18,6 +20,24 @@ const page = (path) => {
   return readFileSync(file, 'utf8');
 };
 
+// The pipeline overwrites .schema/ (raw SDL, manifest, CDM index, size baseline): keep the live copy safe.
+const SCHEMA_DIR = '.schema';
+const backup = join(process.env.TMPDIR || tmpdir(), `apidocs-smoke-backup-${process.pid}`);
+const hadSchemaDir = existsSync(SCHEMA_DIR);
+if (hadSchemaDir) cpSync(SCHEMA_DIR, backup, { recursive: true });
+
+try {
+  runSmoke();
+} finally {
+  rmSync(SCHEMA_DIR, { recursive: true, force: true });
+  if (hadSchemaDir) {
+    cpSync(backup, SCHEMA_DIR, { recursive: true });
+    rmSync(backup, { recursive: true, force: true });
+    console.log('smoke: restored .schema; run `npm run apidocs:generate && npm run apidocs:postprocess && npm run build` to rebuild live docs');
+  }
+}
+
+function runSmoke() {
 run('npm run apidocs');
 run('npm run build');
 
@@ -49,3 +69,4 @@ const sdl = readFileSync('build/schema.graphql', 'utf8');
 assert.doesNotMatch(sdl, /@authorize|@cost|@doc\(/);
 
 console.log('smoke: OK');
+}
