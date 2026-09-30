@@ -48,6 +48,16 @@ test('report exposes CDM conflicts and formatReport warns about them', () => {
   assert.deepEqual(buildReport({ classification, cdmIndex, schema, contextMap, allowlist: new Set() }).cdmConflicts, []);
 });
 
+test('report exposes overrides that contradict the CDM and formatReport warns about them', () => {
+  const overridden = parseContextMap(`${read('context-map.yaml')}  DesProject: platform\n`);
+  const report = buildReport({
+    classification: classifySchema(schema, overridden, cdmIndex), cdmIndex, schema, contextMap: overridden, allowlist: new Set(),
+  });
+  assert.deepEqual(report.overrideConflicts, [{ name: 'DesProject', override: 'platform', cdm: 'design' }]);
+  assert.match(formatReport(report), /Warning: 1 overrides contradict the CDM[\s\S]*DesProject: override=platform, cdm=design/);
+  assert.deepEqual(buildReport({ classification, cdmIndex, schema, contextMap, allowlist: new Set() }).overrideConflicts, []);
+});
+
 test('reports stale overrides and stale allowlist entries', () => {
   const stale = parseContextMap(`${read('context-map.yaml')}  removedType: design\n  gone.nested: design\n`);
   const report = buildReport({

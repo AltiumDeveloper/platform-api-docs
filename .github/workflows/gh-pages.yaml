@@ -42,6 +42,7 @@ jobs:
           path: |
             .schema/last-size
             .schema/cdm-index.json
+            .schema/cdm-meta.json
           key: schema-size-${{ github.run_id }}
           restore-keys: schema-size-
 
@@ -67,6 +68,7 @@ jobs:
           path: |
             .schema/last-size
             .schema/cdm-index.json
+            .schema/cdm-meta.json
           key: schema-size-${{ github.run_id }}
 
       - name: Upload classification report
@@ -74,7 +76,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: apidocs-report
-          path: .schema/report.json
+          path: |
+            .schema/report.json
+            notes/cdm-mismatches.md
+          include-hidden-files: true
           if-no-files-found: ignore
 
   deploy:

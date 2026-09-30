@@ -38,6 +38,21 @@ names. Run `npm run apidocs:fetch && npm run apidocs:annotate` to see the effect
 
 Keep the context map public-safe: no owner or team names, OAuth resources or internal links.
 
+## CDM alignment
+
+Every `annotate` run rewrites `notes/cdm-mismatches.md` (git-ignored, never published; in CI it is uploaded
+with `.schema/report.json` as the `apidocs-report` artifact). It records the CDM ref it was built from
+(`.schema/cdm-meta.json`, written by `fetch-cdm`) and lists, one bullet per name:
+
+- CDM `platformAPI` mappings to API types that do not exist;
+- `Node` entities without a CDM mapping;
+- `overrides` in the context map that contradict the CDM bounded context;
+- CDM/regex classification conflicts (the CDM wins);
+- API types mapped by CDM classes from different subsets;
+- CDM subsets that no context lists in `cdm:`, and listed subsets that map no API type.
+
+Use it as the to-do list when fixing the CDM or the context map. Set `APIDOCS_MISMATCHES_FILE` to write it elsewhere.
+
 ## Troubleshooting
 
 ### "SDL shrank ... refusing to publish"

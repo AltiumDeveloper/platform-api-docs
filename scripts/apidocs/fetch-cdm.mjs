@@ -4,12 +4,14 @@
 // Set APIDOCS_CDM_DIR to read *.yaml from a local directory instead.
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { buildCdmIndex } from './lib/cdm.mjs';
+import { buildCdmIndex, DEFAULT_CDM_REF } from './lib/cdm.mjs';
 
 const REPO = 'AltiumDeveloper/cdm';
-const REF = process.env.CDM_REF || 'v0.10.0';
+const REF = process.env.CDM_REF || DEFAULT_CDM_REF;
 const DIR = 'src/common_data_model/schema';
 const OUT = '.schema/cdm-index.json';
+// {ref, fetchedAt, source} of the CDM the index was built from; read by annotate for notes/cdm-mismatches.md.
+const META = '.schema/cdm-meta.json';
 
 async function fetchOk(url) {
   const headers = { 'user-agent': 'platform-api-docs' };
@@ -30,10 +32,14 @@ async function loadTexts() {
     (await fetchOk(`https://raw.githubusercontent.com/${REPO}/${REF}/${DIR}/${entry.name}`)).text()));
 }
 
+const writeMeta = (meta) => writeFileSync(META, JSON.stringify(meta, null, 2));
+const SOURCE = process.env.APIDOCS_CDM_DIR ? `dir:${process.env.APIDOCS_CDM_DIR}` : `github:${REPO}`;
+
 mkdirSync('.schema', { recursive: true });
 try {
   const index = buildCdmIndex(await loadTexts());
   writeFileSync(OUT, JSON.stringify(index, null, 2));
+  writeMeta({ ref: process.env.APIDOCS_CDM_DIR ? 'local' : REF, fetchedAt: new Date().toISOString(), source: SOURCE });
   console.log(`fetch-cdm: ${Object.keys(index).length} API types mapped (CDM ${process.env.APIDOCS_CDM_DIR ?? REF})`);
 } catch (error) {
   if (existsSync(OUT)) {
@@ -41,5 +47,6 @@ try {
   } else {
     console.warn(`fetch-cdm: ${error.message}; continuing without CDM cross-references`);
     writeFileSync(OUT, '{}');
+    writeMeta({ ref: REF, fetchedAt: null, source: 'unavailable (empty index)' });
   }
 }

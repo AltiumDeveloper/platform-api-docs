@@ -117,6 +117,15 @@ test('records a conflict with regex null when only CDM knows the type', () => {
 
 test('no conflicts when CDM agrees with regex (fixture)', () => {
   assert.deepEqual(classifySchema(schema, map, cdmIndex).cdmConflicts, []);
+  assert.deepEqual(classifySchema(schema, map, cdmIndex).overrideConflicts, []);
+});
+
+test('records an override that contradicts the CDM bounded context; the override still wins', () => {
+  const overridden = parseContextMap(`${read('context-map.yaml')}  DesProject: platform\n  DesOrphanEntity: design\n`);
+  const c = classifySchema(schema, overridden, { ...cdmIndex, DesOrphanEntity: [{ subset: 'design' }] });
+  assert.deepEqual(c.overrideConflicts, [{ name: 'DesProject', override: 'platform', cdm: 'design' }]);
+  assert.equal(c.types.get('DesProject'), 'platform');
+  assert.deepEqual(c.cdmConflicts, []);
 });
 
 test('reports ambiguity when CDM entries of one type span different contexts', () => {

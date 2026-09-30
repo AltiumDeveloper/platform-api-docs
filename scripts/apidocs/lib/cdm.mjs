@@ -1,6 +1,7 @@
 import { parse } from 'yaml';
 
 export const CDM_SITE = 'https://altiumdeveloper.github.io/cdm';
+export const DEFAULT_CDM_REF = 'v0.10.0';
 
 const annotationValue = (annotation) =>
   annotation && typeof annotation === 'object' ? annotation.value ?? null : annotation ?? null;

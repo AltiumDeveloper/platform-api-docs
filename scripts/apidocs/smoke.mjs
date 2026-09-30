@@ -12,6 +12,8 @@ const env = {
   APIDOCS_CDM_DIR: 'test/fixtures/cdm',
   APIDOCS_CONTEXT_MAP: 'test/fixtures/context-map.yaml',
   APIDOCS_ALLOWLIST: 'test/fixtures/unassigned-allowlist.txt',
+  // Keep the live notes/cdm-mismatches.md untouched by fixture runs.
+  APIDOCS_MISMATCHES_FILE: join(process.env.TMPDIR || tmpdir(), `apidocs-smoke-mismatches-${process.pid}.md`),
 };
 const run = (command) => execSync(command, { stdio: 'inherit', env });
 const page = (path) => {

@@ -45,6 +45,7 @@ export function buildReport({ classification, cdmIndex, schema, contextMap, allo
     blocking: classification.unassigned.filter((item) => !allowlist.has(item.name)),
     ambiguous: classification.ambiguous,
     cdmConflicts: classification.cdmConflicts,
+    overrideConflicts: classification.overrideConflicts ?? [],
     staleOverrides,
     staleAllowlist,
     staleCdm: Object.keys(cdmIndex).filter((name) => !typeMap[name]).sort(),
@@ -72,6 +73,10 @@ export function formatReport(report) {
   if (report.cdmConflicts.length) {
     lines.push(`Warning: ${report.cdmConflicts.length} CDM/regex classification conflicts (CDM wins):`);
     for (const c of report.cdmConflicts) lines.push(`  - ${c.name}: cdm=${c.cdm}, regex=${c.regex ?? 'none'}`);
+  }
+  if (report.overrideConflicts?.length) {
+    lines.push(`Warning: ${report.overrideConflicts.length} overrides contradict the CDM bounded context (override wins):`);
+    for (const c of report.overrideConflicts) lines.push(`  - ${c.name}: override=${c.override}, cdm=${c.cdm}`);
   }
   if (report.staleOverrides.length) {
     lines.push(`Warning: overrides naming no type or root field: ${report.staleOverrides.join(', ')}`);

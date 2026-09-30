@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { copyFileSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -56,6 +56,29 @@ test('strips the **Experimental** prefix from annotated SDL only, keeping the pu
   assert.match(annotated, /"Gets a project by its identifier\."/);
   assert.doesNotMatch(annotated, /\*\*Experimental\*\*/);
   assert.match(readFileSync(publicSchemaPath, 'utf8'), /"\*\*Experimental\*\* Gets a project by its identifier\."/);
+});
+
+test('writes the CDM mismatch log only when a path is given, using cdm-meta.json when present', () => {
+  const dir = setup();
+  const options = {
+    schemaDir: dir,
+    contextMapPath: fixture('context-map.yaml'),
+    allowlistPath: fixture('unassigned-allowlist.txt'),
+    publicSchemaPath: join(dir, 'schema.graphql'),
+    now: new Date('2026-09-30T00:00:00Z'),
+  };
+  runAnnotate(options);
+  assert.equal(existsSync(join(dir, 'notes')), false);
+
+  const mismatchesPath = join(dir, 'notes', 'cdm-mismatches.md');
+  runAnnotate({ ...options, mismatchesPath });
+  const fallback = readFileSync(mismatchesPath, 'utf8');
+  assert.match(fallback, /Generated 2026-09-30T00:00:00\.000Z from CDM `(v0\.10\.0|[^`]+)`\./);
+  assert.match(fallback, /## CDM mappings to missing API types \(1\)\n\n[^#]*- `DesGone`\n/);
+
+  writeFileSync(join(dir, 'cdm-meta.json'), JSON.stringify({ ref: 'v9.9.9', fetchedAt: '2026-09-29T00:00:00Z', source: 'github:x' }));
+  runAnnotate({ ...options, mismatchesPath });
+  assert.match(readFileSync(mismatchesPath, 'utf8'), /from CDM `v9\.9\.9` \(github:x, fetched 2026-09-29T00:00:00Z\)\./);
 });
 
 test('reports blocking names when the allowlist is missing', () => {

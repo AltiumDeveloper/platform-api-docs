@@ -49,6 +49,7 @@ export function classifySchema(schema, map, cdmIndex = {}) {
     unassigned: [],
     ambiguous: [],
     cdmConflicts: [],
+    overrideConflicts: [],
     experimental: { operations: new Set(), types: new Set() },
   };
 
@@ -61,13 +62,22 @@ export function classifySchema(schema, map, cdmIndex = {}) {
     return { id: null, ambiguous: null };
   };
 
+  const cdmContextOf = (name) => {
+    const subset = (cdmIndex[name] ?? [])[0]?.subset;
+    return subset ? contextForCdm(map, subset) : null;
+  };
+
   const assign = (name, kind) => {
-    if (map.overrides.has(name)) return map.overrides.get(name);
+    if (map.overrides.has(name)) {
+      const override = map.overrides.get(name);
+      const cdm = kind === 'type' ? cdmContextOf(name) : null;
+      if (cdm && cdm !== override) result.overrideConflicts.push({ name, override, cdm });
+      return override;
+    }
     const regex = byRegex(name, kind);
     if (kind === 'type') {
       const entries = cdmIndex[name] ?? [];
-      const subset = entries[0]?.subset;
-      const fromCdm = subset ? contextForCdm(map, subset) : null;
+      const fromCdm = cdmContextOf(name);
       if (fromCdm) {
         const candidates = [...new Set(entries.map((entry) => (entry.subset ? contextForCdm(map, entry.subset) : null)).filter(Boolean))];
         if (candidates.length > 1) result.ambiguous.push({ kind, name, candidates, source: 'cdm' });
