@@ -1,0 +1,61 @@
+---
+title: Bounded contexts and the CDM
+description: How the API is organised into bounded contexts aligned with the Common Data Model, how API types map to CDM entities and GRIDs, and how to find the operations for a concept.
+sidebar_position: 2
+---
+
+A **bounded context** is a business area with its own entities and vocabulary — design, library
+management, procurement and so on. The Platform API, this reference and the
+[Common Data Model (CDM)](https://altiumdeveloper.github.io/cdm/) are organised by the same bounded
+contexts, so a concept you find in the CDM leads you straight to the API types and operations for it.
+
+## The bounded contexts
+
+| Bounded context | Covers | Start here |
+| --- | --- | --- |
+| Platform | Workspaces, users, organizations, apps and tokens, folders, events, notifications, solutions, knowledge graph | [Overview](/reference/platform/overview) |
+| Design | Hardware projects, design data, rule checks, comparisons, releases | [Overview](/reference/design/overview) |
+| Insights | Workspace insights about parts and designs | [Overview](/reference/insights/overview) |
+| Library Management | Components, parts, symbols, footprints, datasheets, reuse blocks, library search | [Overview](/reference/library-management/overview) |
+| Collaboration | Comments, comment threads, annotations, tasks | [Overview](/reference/collaboration/overview) |
+| Configuration Management | Project, settings and sheet templates | [Overview](/reference/configuration-management/overview) |
+| Procurement | Managed BOMs and BOM releases | [Overview](/reference/procurement/overview) |
+| Supply | Parts, offers, part families, reference designs, evaluation kits, solution templates | [Overview](/reference/supply/overview) |
+| Customization | Extension points, scripts, workflows | [Overview](/reference/customization/overview) |
+| System Design | System design documents, system models, software libraries | [Overview](/reference/system-design/overview) |
+| Requirements | Requirements projects and data | [Overview](/reference/requirements/overview) |
+| Renesas (preview) | Renesas-specific device models, software projects and tools | [Overview](/reference/renesas-preview/overview) |
+| Common | Shared scalars, paging, errors, filtering and sorting types, directives | [Overview](/reference/common/overview) |
+
+Each context's overview page links its concepts in the CDM, lists the API types that represent CDM
+entities, and names the entry-point queries that look entities up by identifier.
+
+## API types and CDM entities
+
+A CDM entity (for example *Hardware Project*) is represented in the API by one or more GraphQL types
+(for example [`DesProject`](/reference/design/types/objects/des-project)). The type's reference page has a
+**Common Data Model** section that links the entity definition and shows its **GRID** pattern — the
+global resource identifier format, such as `grid:workspace:{workspace-id}:design:project/{id}`.
+See [Identifiers and lookups](./identifiers.mdx) for how GRIDs are used in queries.
+
+## From a concept to a query
+
+1. Find the concept in the [CDM](https://altiumdeveloper.github.io/cdm/) and note its bounded context.
+2. Open that context's overview page here and find the API type in **Entities**.
+3. Pick an operation from **Entry points** (lookups by identifier) or the context's queries.
+4. Check the fields on the type page, then write the query:
+
+```graphql
+query ProjectById($id: ID!) {
+  desProjectById(id: $id) {
+    id
+    name
+    workspaceUrl
+    updatedAt
+  }
+}
+```
+
+Coding assistants can follow the same path through [llms.txt](pathname:///llms.txt): each context has an
+`llms.txt` with its entities, entry points and operations, and a `schema.graphql` slice with only that
+context's part of the schema.
