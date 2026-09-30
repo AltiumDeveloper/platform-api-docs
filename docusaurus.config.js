@@ -99,6 +99,7 @@ const config = {
             title: 'This site',
             items: [
               { label: 'Schema (SDL)', href: 'pathname:///schema.graphql' },
+              { label: 'For AI assistants (llms.txt)', href: 'pathname:///llms.txt' },
               { label: 'Source on GitHub', href: REPO },
             ],
           },
