@@ -68,7 +68,7 @@ function runSmoke() {
   // Member headings keep graphql-markdown's explicit IDs, so `#name`-style links resolve.
   assert.match(project, /id="name"/);
 
-  // Section order: Returned By, then Fields, then the SDL code block.
+  // Section order: Returned By, then the SDL code block, then Fields.
   const heading = (html, text) => {
     const at = html.search(new RegExp(`<h[1-6][^>]*>\\s*${text}\\b`));
     assert.notEqual(at, -1, `missing "${text}" heading`);
@@ -76,8 +76,8 @@ function runSmoke() {
   };
   const sdlAt = project.indexOf('language-graphql');
   assert.notEqual(sdlAt, -1, 'missing SDL code block');
-  assert.ok(heading(project, 'Returned By') < heading(project, 'Fields'), 'Returned By must precede Fields');
-  assert.ok(heading(project, 'Fields') < sdlAt, 'Fields must precede the SDL code block');
+  assert.ok(heading(project, 'Returned By') < sdlAt, 'Returned By must precede the SDL code block');
+  assert.ok(sdlAt < heading(project, 'Fields'), 'the SDL code block must precede Fields');
 
   // Namespaced operation pages are titled with the dotted name, not the leaf.
   assert.match(byId, /<h1[^>]*>[^<]*design\.project\.byId/);

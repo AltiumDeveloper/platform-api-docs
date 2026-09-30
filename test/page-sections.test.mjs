@@ -20,13 +20,13 @@ const objectSections = () => ({
   customDirectives: undefined,
 });
 
-test('orders an object page: CDM, Returned By, Member Of, Interfaces, Implemented By, Fields, then the rest', () => {
+test('orders an object page: CDM, Returned By, Member Of, Interfaces, Implemented By, SDL code, Fields, then the rest', () => {
   const sections = objectSections();
   const order = reorderTypePageSections(sections, DEFAULT_ORDER);
   assert.deepEqual(order, [
     'tags', 'experimentalNote', 'description', 'cdmEntity',
     'relations:Returned By', 'relations:Member Of', 'metadata:Interfaces', 'relations:Implemented By',
-    'metadata:Fields', 'code', 'example', 'customDirectives',
+    'code', 'metadata:Fields', 'example', 'customDirectives',
   ]);
   assert.deepEqual(sections['metadata:Fields'], { title: 'Fields', content: 'f', level: 3 });
   assert.deepEqual(sections['relations:Returned By'], { content: '### Returned By\n\n[`a`](/a)' });
@@ -41,7 +41,7 @@ test('keeps member sections in printer order and skips missing relations (operat
     relations: undefined,
   };
   const order = reorderTypePageSections(sections, ['tags', 'description', 'code', 'metadata', 'example', 'relations']);
-  assert.deepEqual(order, ['tags', 'description', 'metadata:Arguments', 'metadata:Type', 'code', 'example']);
+  assert.deepEqual(order, ['tags', 'description', 'code', 'metadata:Arguments', 'metadata:Type', 'example']);
 });
 
 test('handles a single metadata section object (enum page) and unknown relation headings', () => {
@@ -50,12 +50,12 @@ test('handles a single metadata section object (enum page) and unknown relation 
     relations: { content: '### Member Of\n\nm\n\n### Something Else\n\ns\n' },
   };
   const order = reorderTypePageSections(sections, ['description', 'code', 'metadata', 'relations']);
-  assert.deepEqual(order, ['description', 'relations:Member Of', 'metadata:Values', 'relations:Something Else', 'code']);
+  assert.deepEqual(order, ['description', 'relations:Member Of', 'code', 'metadata:Values', 'relations:Something Else']);
 });
 
-test('leaves unsplittable metadata in the member position', () => {
+test('leaves unsplittable metadata after the code block', () => {
   const sections = { metadata: { content: 'raw' } };
-  assert.deepEqual(reorderTypePageSections(sections, ['description', 'code', 'metadata']), ['description', 'metadata', 'code']);
+  assert.deepEqual(reorderTypePageSections(sections, ['description', 'code', 'metadata']), ['description', 'code', 'metadata']);
 });
 
 test('hook rewrites the event output from the event sections', async () => {
