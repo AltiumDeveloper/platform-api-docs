@@ -1,4 +1,5 @@
-// Validates every GraphQL operation in docs/guides against the public SDL (static/schema.graphql).
+// Validates every GraphQL operation in docs/guides against the public SDL (static/schema.graphql, or the file named by
+// APIDOCS_GUIDES_SCHEMA — CI uses the built site's build/schema.graphql).
 // Not part of `npm test` (a fresh checkout has no SDL yet): run `npm run apidocs` first, then `npm run test:guides`.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -8,7 +9,7 @@ import { buildSchema, parse, validate } from 'graphql';
 import { readFrontMatter } from '../scripts/apidocs/lib/pages.mjs';
 
 const GUIDES_DIR = 'docs/guides';
-const SDL = 'static/schema.graphql';
+const SDL = process.env.APIDOCS_GUIDES_SCHEMA || 'static/schema.graphql';
 const SDL_KEYWORD = /^\s*(?:"""[\s\S]*?"""\s*|"[^"\n]*"\s*)?(type|input|enum|interface|union|scalar|schema|directive|extend)\b/;
 
 // ```graphql fences with their info string (e.g. title="SDL") and 1-based line number.

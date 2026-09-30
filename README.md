@@ -29,8 +29,9 @@ npm run apidocs
 npm start
 ```
 
-Tests: `npm test` (unit), `npm run test:guides` (guide examples against `static/schema.graphql`; run
-`npm run apidocs` first) and `npm run test:smoke` (full build from test fixtures, including `npm run llms`).
+Tests: `npm test` (unit), `npm run test:guides` (guide examples against `static/schema.graphql`, or the file
+in `APIDOCS_GUIDES_SCHEMA`; run `npm run apidocs` first) and `npm run test:smoke` (full build from test fixtures,
+including `npm run llms` and `npm run llms:check`).
 
 ## Guides
 
@@ -38,6 +39,11 @@ Hand-written pages live in `docs/guides/*.mdx` (sidebar order from `sidebar_posi
 `description` is reused in `llms.txt`). Every ` ```graphql ` block that is an operation is validated against
 the public SDL by `npm run test:guides`; mark schema excerpts with ` ```graphql title="SDL" `. Keep `{`, `}`,
 `<` and `>` inside code spans (MDX). Use only public-safe facts.
+
+In CI the guide examples are validated by a separate `validate-guides` job against the `schema.graphql` of the
+site that was just built (`APIDOCS_GUIDES_SCHEMA=build/schema.graphql`). A schema change that breaks an example
+shows up as a failed check on the workflow run, but it does not stop publishing: `deploy` depends only on
+`build`. Fix the guide in a follow-up.
 
 ## LLM surface
 
