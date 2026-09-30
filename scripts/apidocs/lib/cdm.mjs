@@ -24,8 +24,8 @@ export function buildCdmIndex(yamlTexts) {
       if (!apiType) continue;
       const page = cdmClassPageName(key, cls);
       const subset = Array.isArray(cls.in_subset) ? cls.in_subset[0] : cls.in_subset ?? null;
-      const description =
-        typeof cls.description === 'string' && cls.description.trim() !== 'TBD' ? cls.description.trim() : '';
+      const text = typeof cls.description === 'string' ? cls.description.replace(/\s+/g, ' ').trim() : '';
+      const description = text === 'TBD' ? '' : text;
       (index[apiType] ??= []).push({
         cdmClass: page,
         title: cls.title ?? page,

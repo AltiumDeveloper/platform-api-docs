@@ -35,6 +35,22 @@ test('reads { tag, value } annotation objects', () => {
   assert.equal(workspace.cdmClass, 'plt_Workspace');
 });
 
+test('collapses whitespace in block-scalar descriptions', () => {
+  const yaml = [
+    'classes:',
+    '  Thing:',
+    '    annotations:',
+    '      platformAPI: DesThing',
+    '    description: |',
+    '      A thing that',
+    '        spans   several',
+    '',
+    '      lines.',
+    '',
+  ].join('\n');
+  assert.equal(buildCdmIndex([yaml]).DesThing[0].description, 'A thing that spans several lines.');
+});
+
 test('tolerates empty documents', () => {
   assert.deepEqual(buildCdmIndex(['', 'classes: {}']), {});
 });
