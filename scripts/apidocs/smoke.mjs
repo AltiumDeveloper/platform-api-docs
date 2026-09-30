@@ -31,6 +31,7 @@ if (hadSchemaDir) cpSync(SCHEMA_DIR, backup, { recursive: true });
 try {
   runSmoke();
 } finally {
+  rmSync(env.APIDOCS_MISMATCHES_FILE, { force: true });
   rmSync(SCHEMA_DIR, { recursive: true, force: true });
   if (hadSchemaDir) {
     cpSync(backup, SCHEMA_DIR, { recursive: true });
@@ -55,11 +56,33 @@ function runSmoke() {
   // Member headings keep graphql-markdown's explicit IDs, so `#name`-style links resolve.
   assert.match(project, /id="name"/);
 
+  // Section order: Returned By, then Fields, then the SDL code block.
+  const heading = (html, text) => {
+    const at = html.search(new RegExp(`<h[1-6][^>]*>\\s*${text}\\b`));
+    assert.notEqual(at, -1, `missing "${text}" heading`);
+    return at;
+  };
+  const sdlAt = project.indexOf('language-graphql');
+  assert.notEqual(sdlAt, -1, 'missing SDL code block');
+  assert.ok(heading(project, 'Returned By') < heading(project, 'Fields'), 'Returned By must precede Fields');
+  assert.ok(heading(project, 'Fields') < sdlAt, 'Fields must precede the SDL code block');
+
+  // Namespaced operation pages are titled with the dotted name, not the leaf.
+  assert.match(byId, /<h1[^>]*>[^<]*design\.project\.byId/);
+
   const drc = page('reference/design/operations/mutations/design-rule-check-execute');
   assert.match(drc, /id="input"/);
 
   const overview = page('reference/design/overview');
   assert.match(overview, /Entry points/);
+  const at = (text) => {
+    const index = overview.indexOf(text);
+    assert.notEqual(index, -1, `overview is missing "${text}"`);
+    return index;
+  };
+  assert.ok(at('Concepts:') < at('Entities'), 'overview: Concepts before Entities');
+  assert.ok(at('Entities') < at('Entry points'), 'overview: Entities before Entry points');
+  assert.ok(at('Entry points') < at('Contents'), 'overview: Entry points before Contents');
 
   const home = page('');
   assert.match(home, /How this reference is organised/);
