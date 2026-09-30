@@ -148,10 +148,11 @@ contexts:
     description: "Environment configuration and templates: project templates, settings templates, managed sheet templates and their revisions."
     cdm: [configuration]
     # Templates are configuration-management by owner decision, even where the CDM says otherwise
-    # (see overrides). Solution templates belong to Supply.
-    query: ['^desEnvironment', '^desWorkspaceConfiguration$', '^desProjectTemplate', '^desComponentTemplate', '^des.*SheetTemplate', '^des.*SettingsTemplate']
-    mutation: ['^desEnvironment', '^desUpdateComponentTemplate', '^desReleaseComponentTemplate', '^des.*ProjectTemplate', '^des.*SheetTemplate', '^des.*SettingsTemplate']
-    type: ['^DesEnvironment', '^DesWorkspaceConfiguration$', '^DesProjectTemplate', '^DesComponentTemplate', '^DesUpdateComponentTemplate', '^DesReleaseComponentTemplate', '^Des.*ProjectTemplate', '^Des.*SheetTemplate', '^Des.*SettingsTemplate']
+    # (see overrides). Exceptions: component templates belong to Library Management (library entities
+    # in the CDM); solution templates belong to Supply.
+    query: ['^desEnvironment', '^desWorkspaceConfiguration$', '^desProjectTemplate', '^des.*SheetTemplate', '^des.*SettingsTemplate']
+    mutation: ['^desEnvironment', '^des.*ProjectTemplate', '^des.*SheetTemplate', '^des.*SettingsTemplate']
+    type: ['^DesEnvironment', '^DesWorkspaceConfiguration$', '^DesProjectTemplate', '^Des.*ProjectTemplate', '^Des.*SheetTemplate', '^Des.*SettingsTemplate']
   - id: procurement
     title: Procurement
     description: Managed BOMs, BOM releases and BOM items.
