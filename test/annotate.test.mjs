@@ -35,6 +35,7 @@ test('writes annotated SDL, public SDL, report and manifest', () => {
     ['platform', 'design', 'insights', 'collaboration', 'procurement', 'customization', 'renesas-preview', 'common']);
   assert.equal(manifest.operations.query['design.project.byId'], 'design');
   assert.equal(manifest.types.DesProject, 'design');
+  assert.deepEqual(manifest.namespaceTypes, { DesignQueries: 'design', DesignProjectQueries: 'design' });
   assert.ok(manifest.experimental.operations.includes('design.project.byId'));
   assert.deepEqual(JSON.parse(readFileSync(join(dir, 'report.json'), 'utf8')).blocking, []);
 });

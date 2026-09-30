@@ -12,7 +12,7 @@ const KIND_LABELS = [
   ['objects', 'Objects'], ['inputs', 'Inputs'], ['enums', 'Enums'], ['interfaces', 'Interfaces'],
   ['unions', 'Unions'], ['scalars', 'Scalars'], ['directives', 'Directives'],
 ];
-const ENTRY_POINT = /(ById|ByIds|\.byId|\.byIds)$/;
+export const ENTRY_POINT = /(ById|ByIds|\.byId|\.byIds)$/;
 const byName = (a, b) => a.name.localeCompare(b.name);
 
 export function readFrontMatter(text) {

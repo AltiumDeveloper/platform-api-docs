@@ -20,6 +20,8 @@ export function buildManifest({ contextMap, classification, cdmIndex }) {
     contexts,
     operations,
     types: Object.fromEntries(classification.types),
+    // Namespace wrapper types (DesignQueries, TokenQueries, ...) → context; used for per-context schema slices.
+    namespaceTypes: Object.fromEntries(classification.namespaceTypes),
     experimental: {
       operations: [...classification.experimental.operations].sort(),
       types: [...classification.experimental.types].sort(),
