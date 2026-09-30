@@ -62,6 +62,21 @@ test('escapes MDX in CDM titles and descriptions', () => {
   );
 });
 
+test('escapes brackets in link text', () => {
+  assert.equal(
+    renderCdmEntries([{ title: 'Part [v2]', url: 'https://example.com/x' }]),
+    '- [Part \\[v2\\]](https://example.com/x)',
+  );
+});
+
+test('renders a GRID containing a backtick as a padded double-backtick code span', () => {
+  const url = 'https://example.com/x';
+  assert.equal(
+    renderCdmEntries([{ title: 'T', url, grid: 'a`b' }]),
+    '- [T](https://example.com/x)\n  - GRID: `` a`b ``',
+  );
+});
+
 test('experimental note is a caution admonition linking to the lifecycle section', () => {
   const { experimentalNote } = buildDecorators({ cdmIndex });
   assert.equal(experimentalNote.render(), EXPERIMENTAL_NOTE);
