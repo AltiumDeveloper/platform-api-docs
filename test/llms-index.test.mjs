@@ -80,6 +80,28 @@ test('firstSentence strips the Experimental prefix and keeps the first sentence,
   assert.ok(long.endsWith('…'));
 });
 
+test('firstSentence drops all-caps emphasis prefixes and does not stop at abbreviations or inside parentheses', () => {
+  // Real descriptions from the public SDL.
+  assert.equal(
+    firstSentence('*PROTOTYPE, SUBJECT TO CHANGE*. Searches for components where one of the provided MPNs matches a part choice.'),
+    'Searches for components where one of the provided MPNs matches a part choice.',
+  );
+  assert.equal(
+    firstSentence('Annotation is like a sticky note you can place in the design, attaching it to design entities (e.g. schematic document, BOM line, design review, etc.). Annotation is a high-level concept that represents different facets of collaboration on the platform - comment threads, tasks to be completed, links or references to other related entities.'),
+    'Annotation is like a sticky note you can place in the design, attaching it to design entities (e.g. schematic document, BOM line, design review, etc.).',
+  );
+  assert.equal(
+    firstSentence('**Experimental** A supported device family (e.g. RA, RX) with display metadata and total device count.'),
+    'A supported device family (e.g. RA, RX) with display metadata and total device count.',
+  );
+  assert.equal(firstSentence('**DEPRECATED**. Use `x` instead. More.'), 'Use `x` instead.');
+  // A prefix that is the whole description is kept.
+  assert.equal(firstSentence('*PROTOTYPE, SUBJECT TO CHANGE*'), '*PROTOTYPE, SUBJECT TO CHANGE*');
+  assert.equal(firstSentence('Compares A vs. B, i.e. two things. Second.'), 'Compares A vs. B, i.e. two things.');
+  assert.equal(firstSentence('Ends here (see below. really) now. Next.'), 'Ends here (see below. really) now.');
+  assert.equal(firstSentence('Version 1.2 is current. Next.'), 'Version 1.2 is current.');
+});
+
 test('operationField walks namespaced operations', () => {
   assert.equal(operationField(schema, 'queries', 'design.ruleCheck.byId').name, 'byId');
   assert.equal(operationField(schema, 'mutations', 'designRuleCheckExecute').name, 'designRuleCheckExecute');

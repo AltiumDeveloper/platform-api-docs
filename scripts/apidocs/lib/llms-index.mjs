@@ -21,12 +21,34 @@ const byName = (a, b) => a.name.localeCompare(b.name);
 export const cdmSubsetUrl = (subset) => `${CDM_SITE}/subsets/${encodeURIComponent(subset)}/`;
 export const mdUrl = (siteUrl, page) => `${siteUrl}${page.url}.md`;
 
-// First sentence of an SDL description, without the `**Experimental**` prefix, at most 200 characters.
+// `*PROTOTYPE, SUBJECT TO CHANGE*.`, `**DEPRECATED**.` …: an italic/bold all-caps phrase ending with a full stop.
+const CAPS_PREFIX = /^(\*{1,2})[A-Z][A-Z0-9 ,'/-]*\1\.\s+/;
+const ABBREVIATION = /(?:^|[\s(])(?:e\.g|i\.e|etc|vs)\.$/i;
+
+// Index just past the first sentence end: [.!?] followed by whitespace or the end, outside parentheses and not
+// closing an abbreviation (e.g., i.e., etc., vs.). -1 when there is none.
+function sentenceEnd(text) {
+  let depth = 0;
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+    if (char === '(') depth += 1;
+    else if (char === ')') depth = Math.max(0, depth - 1);
+    else if ('.!?'.includes(char) && depth === 0 && (index + 1 === text.length || /\s/.test(text[index + 1]))) {
+      if (char === '.' && ABBREVIATION.test(text.slice(0, index + 1))) continue;
+      return index + 1;
+    }
+  }
+  return -1;
+}
+
+// First sentence of an SDL description, without the `**Experimental**` prefix or an all-caps emphasis prefix
+// (`*PROTOTYPE, SUBJECT TO CHANGE*.`), at most 200 characters.
 export function firstSentence(description) {
-  const text = String(description ?? '').replace(EXPERIMENTAL_PREFIX, '').replace(/\s+/g, ' ').trim();
+  const text = String(description ?? '').replace(EXPERIMENTAL_PREFIX, '').replace(/\s+/g, ' ').trim()
+    .replace(CAPS_PREFIX, '');
   if (!text) return '';
-  const match = /^(.+?[.!?])(?=\s|$)/.exec(text);
-  const sentence = match ? match[1] : text;
+  const end = sentenceEnd(text);
+  const sentence = end === -1 ? text : text.slice(0, end);
   return sentence.length > MAX_DESCRIPTION ? `${sentence.slice(0, MAX_DESCRIPTION - 1).trimEnd()}…` : sentence;
 }
 
