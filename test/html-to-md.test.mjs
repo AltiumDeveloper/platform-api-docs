@@ -92,6 +92,24 @@ test('plain text code blocks, tables and images', () => {
   assert.match(md, /^url: "https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/"$/m);
 });
 
+test('drops graphql-markdown "No description" placeholders', () => {
+  // From build/reference/collaboration/types/objects/des-annotation-requirements/index.html.
+  const md = convert(wrap('<header><h1>DesAnnotationRequirements</h1></header><p>No description</p>\n<h3 class="anchor">Member Of</h3><p>No description here is kept.</p>'));
+  assert.doesNotMatch(md, /^No description$/m);
+  assert.match(md, /^# DesAnnotationRequirements\n\n### Member Of\n\nNo description here is kept\.$/m);
+});
+
+test('decodes HTML-escaped characters inside link URLs (autolinks)', () => {
+  // From build/reference/platform/types/objects/des-revision-naming-scheme/index.html: the SDL has
+  // `#!revision_naming_scheme_dlg`, graphql-markdown escapes `_` as `&#x005F;` and the HTML escapes the `&`.
+  const url = 'https://www.altium.com/documentation/altium-designer/accessing-detailed-item-view#!revision&amp;#x005F;naming&amp;#x005F;scheme&amp;#x005F;dlg';
+  const md = convert(wrap(`<header><h1>DesRevisionNamingScheme</h1></header><p>Revision naming scheme details obtained by <code>desRevisionNamingSchemes</code>. More information is available on revision naming schemes at: <a href="${url}" target="_blank" rel="noopener noreferrer" class="">${url}</a></p>`));
+  assert.ok(md.includes('at: <https://www.altium.com/documentation/altium-designer/accessing-detailed-item-view#!revision_naming_scheme_dlg>'), md);
+  assert.doesNotMatch(md, /&#x/);
+  const labelled = convert(wrap('<p><a href="https://example.com/a&amp;#x005F;b">see &amp;#95;docs</a></p>'));
+  assert.ok(labelled.includes('[see \\_docs](https://example.com/a_b)'), labelled);
+});
+
 test('falls back to <title> for the title and fails without article content', () => {
   const md = convert(wrap('<p>No heading.</p>'));
   assert.match(md, /^title: "T"$/m);

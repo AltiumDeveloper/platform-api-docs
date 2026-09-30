@@ -97,6 +97,20 @@ function badge(node) {
   return [text(` ${label} `)];
 }
 
+const NO_DESCRIPTION = 'No description';
+
+// graphql-markdown escapes some characters in descriptions as numeric entities (`_` → `&#x005F;`), and the page
+// then escapes the `&`, so links (autolinks in particular) keep a literal `&#x005F;`: decode those.
+export const decodeNumericEntities = (value) => value
+  .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(Number.parseInt(hex, 16)))
+  .replace(/&#([0-9]+);/g, (_, decimal) => String.fromCodePoint(Number.parseInt(decimal, 10)));
+
+function decodeTextEntities(node) {
+  if (node.type === 'text') return { ...node, value: decodeNumericEntities(node.value) };
+  if (node.children) return { ...node, children: node.children.map(decodeTextEntities) };
+  return node;
+}
+
 // graphql-markdown separates items with a small ` ● ` span.
 const isSeparator = (node) => node.tagName === 'span' && /font-size:\s*\.5em/.test(String(node.properties?.style ?? ''));
 
@@ -110,9 +124,11 @@ function clean(node, ctx) {
   if (hasClass(node, 'theme-code-block') || node.tagName === 'pre') return codeBlock(node);
   if (hasClass(node, 'badge')) return badge(node);
   if (isSeparator(node)) return [text(' · ')];
+  // graphql-markdown's "No description" placeholder carries no information.
+  if (node.tagName === 'p' && toText(node).trim() === NO_DESCRIPTION) return [];
   if (node.tagName === 'a') {
-    const href = String(node.properties?.href ?? '');
-    const children = node.children.flatMap((child) => clean(child, ctx));
+    const href = decodeNumericEntities(String(node.properties?.href ?? ''));
+    const children = node.children.flatMap((child) => clean(child, ctx)).map(decodeTextEntities);
     // Self-links on member headings (`#name`) add nothing in Markdown.
     if (ctx.inHeading && href.startsWith('#')) return children;
     return [{ ...node, properties: { href: rewriteHref(href, ctx) }, children }];
