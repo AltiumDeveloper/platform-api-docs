@@ -250,7 +250,7 @@ export function renderRootIndex({ contexts, guides, siteUrl, schemaTokens, fullT
     '1. Pick the bounded context for the task (list below; each links its CDM concepts).',
     "2. Read that context's llms.txt: entities, entry points, operations.",
     '3. Load its schema.graphql slice instead of the full schema.',
-    'Conventions: prefer bounded-context queries (`platform.token.byWorkspace`, `requirements.project.byId`) over legacy prefixed ones (`desProjectById`) where both exist; mutations take `input: XInput!` and return `XPayload!`; list fields are Relay connections (`first`/`after`); look up by GRID with `node(id:)`; items marked EXPERIMENTAL are not production-ready. Endpoints are regional; auth is a Bearer token (see Developer Center).',
+    'Conventions: prefer bounded-context queries (`platform.token.byWorkspace`, `requirements.project.byId`) over legacy prefixed ones (`desProjectById`) where both exist; most mutations take `input: XInput!` and return `XPayload!`; paged lists are Relay connections (`first`/`after`); look up by GRID with `node(id:)`; items marked EXPERIMENTAL are not production-ready. Endpoints are regional; auth is a Bearer token (see Developer Center).',
     '',
     ...section('Bounded contexts', bcs),
     ...section('Guides', guides.map((guide) => `- [${guide.title}](${siteUrl}/${guide.route}.md): ${guide.description}`)),

@@ -9,7 +9,7 @@ pagination_next: null
 pagination_prev: null
 ---
 
-The **Altium Platform API** is a single GraphQL endpoint that brings together the services behind
+The **Altium Platform API** is a GraphQL API, served from regional endpoints, that brings together the services behind
 Altium 365: design projects, libraries, collaboration, procurement, supply data and more. This site is
 the reference for every query, mutation and type it exposes, generated nightly from the production schema.
 
@@ -66,7 +66,8 @@ Names tell you where an operation belongs:
 - **Legacy queries** use a short prefix: `desProjectById`, `supRefDesigns`, `bomBoms`
   (`des` = design, `sup` = supply, `glo` = global/platform, `bom` = procurement).
 - **Mutations** are top-level and named `{boundedContext}{Entity}{Action}`, for example
-  `designRuleCheckExecute`. Each takes a single `input: <Name>Input!` argument and returns a `<Name>Payload!`.
+  `designRuleCheckExecute`. Most take a single `input: <Name>Input!` argument and return a `<Name>Payload!`.
+- Paged lists are Relay connections (`first`/`after`, `pageInfo`); see [Pagination](/guides/pagination).
 - Types and operations whose names end in `_Preview` belong to preview schemas.
 
 More in the guides: [Naming conventions](/guides/naming-conventions), [Identifiers and lookups](/guides/identifiers),

@@ -108,6 +108,9 @@ function runSmoke() {
   assert.match(home, /eur\.365\.altium\.com\/api\/graphql/);
   assert.match(home, /For AI assistants/);
   assert.doesNotMatch(home, /napi\/gateway/);
+  assert.match(home, /served from regional endpoints/);
+  assert.doesNotMatch(home, /single GraphQL endpoint/);
+  assert.match(home, /Most take a single/);
 
   // Guides are in the sidebar, before the reference.
   const guide = page('guides/getting-started');

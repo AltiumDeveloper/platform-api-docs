@@ -214,6 +214,8 @@ test('renderRootIndex lists contexts, guides, Developer Center and optional file
   });
   assert.match(text, /^# Altium Platform API\n> GraphQL API for Altium 365/);
   assert.match(text, /How to navigate \(for assistants\):/);
+  assert.ok(text.includes('most mutations take `input: XInput!` and return `XPayload!`; paged lists are Relay connections (`first`/`after`)'));
+  assert.doesNotMatch(text, /list fields are Relay|; mutations take/);
   assert.ok(text.includes(`- [Design](${SITE}/reference/design/llms.txt): Hardware projects. (CDM: [design](https://altiumdeveloper.github.io/cdm/subsets/design/))`));
   assert.ok(text.includes(`- [Renesas (preview)](${SITE}/reference/renesas-preview/llms.txt): Renesas APIs. (preview, Renesas-specific) (CDM: [ota](https://altiumdeveloper.github.io/cdm/subsets/ota/))`));
   assert.ok(!/## Bounded contexts[\s\S]*\[Common\][\s\S]*## Guides/.test(text), 'Common is listed under Optional, not as a bounded context');
