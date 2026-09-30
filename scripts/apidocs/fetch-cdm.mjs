@@ -44,9 +44,14 @@ try {
 } catch (error) {
   if (existsSync(OUT)) {
     console.warn(`fetch-cdm: ${error.message}; reusing previous ${OUT}`);
+    if (!existsSync(META)) writeMeta({ ref: 'unknown (cached)', fetchedAt: null, source: SOURCE });
   } else {
     console.warn(`fetch-cdm: ${error.message}; continuing without CDM cross-references`);
     writeFileSync(OUT, '{}');
-    writeMeta({ ref: REF, fetchedAt: null, source: 'unavailable (empty index)' });
+    writeMeta({
+      ref: null,
+      fetchedAt: null,
+      source: process.env.APIDOCS_CDM_DIR ? `${SOURCE} (unavailable, empty index)` : 'unavailable (empty index)',
+    });
   }
 }
