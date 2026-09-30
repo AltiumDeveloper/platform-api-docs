@@ -125,6 +125,18 @@ function runSmoke() {
   assert.ok(alternate(project, '/platform-api-docs/reference/design/types/objects/des-project.md'), 'type page: markdown alternate link');
   assert.ok(alternate(home, '/platform-api-docs/index.md'), 'home page: markdown alternate link');
 
+  // Human-visible links to the LLM files: footer, context overview, and "View as Markdown" on every doc page.
+  const anchor = (html, pattern) => (html.match(/<a\b[^>]*>/g) ?? []).some((tag) => pattern.test(tag));
+  assert.ok(anchor(home, /href="\/platform-api-docs\/llms\.txt"/), 'footer: llms.txt link');
+  assert.ok(anchor(overview, /href="\/platform-api-docs\/reference\/design\/llms\.txt"/), 'overview: llms.txt link');
+  assert.ok(anchor(overview, /href="\/platform-api-docs\/reference\/design\/schema\.graphql"/), 'overview: schema slice link');
+  assert.ok(anchor(overview, /href="\/platform-api-docs\/reference\/design\/types\.txt"/), 'overview: types link');
+  const viewAsMarkdown = (html, href) => (html.match(/<a\b[^>]*>View as Markdown<\/a>/g) ?? []).some((tag) => tag.includes(`href="${href}"`));
+  assert.ok(viewAsMarkdown(project, '/platform-api-docs/reference/design/types/objects/des-project.md'), 'type page: View as Markdown link');
+  assert.ok(viewAsMarkdown(guide, '/platform-api-docs/guides/getting-started.md'), 'guide: View as Markdown link');
+  assert.ok(viewAsMarkdown(overview, '/platform-api-docs/reference/design/overview.md'), 'overview: View as Markdown link');
+  assert.ok(viewAsMarkdown(home, '/platform-api-docs/index.md'), 'home page: View as Markdown link');
+
   // LLM surface.
   run('npm run llms');
   const text = (path) => {
@@ -144,6 +156,14 @@ function runSmoke() {
   const projectMd = text('reference/design/types/objects/des-project.md');
   assert.match(projectMd, /^---\ntitle: "DesProject"\nurl: "https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/types\/objects\/des-project"\nbounded_context: "Design"\nkind: "objects"\n/);
   assert.doesNotMatch(projectMd, /<Badge|export const|hash-link/);
+  // The UI-only "View as Markdown" link never reaches the Markdown twins; the overview's LLM links become absolute URLs.
+  for (const file of ['reference/design/types/objects/des-project.md', 'index.md', 'reference/design/overview.md', 'guides/getting-started.md']) {
+    assert.doesNotMatch(text(file), /View as Markdown/, `${file} must not contain the View as Markdown link`);
+  }
+  const overviewMd = text('reference/design/overview.md');
+  assert.match(overviewMd, /\[llms\.txt\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/llms\.txt\)/);
+  assert.match(overviewMd, /\[schema slice\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/schema\.graphql\)/);
+  assert.match(overviewMd, /\[all types\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/types\.txt\)/);
   assert.match(text('reference/design/operations/queries/design/project/by-id.md'), /\*\*EXPERIMENTAL\*\*/);
   assert.match(text('index.md'), /^---\ntitle: "Altium Platform API"/);
   assert.match(text('llms-full.txt'), /title: "Getting started"/);
