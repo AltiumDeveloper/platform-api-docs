@@ -12,7 +12,9 @@ const DIR = 'src/common_data_model/schema';
 const OUT = '.schema/cdm-index.json';
 
 async function fetchOk(url) {
-  const response = await fetch(url, { headers: { 'user-agent': 'platform-api-docs' } });
+  const headers = { 'user-agent': 'platform-api-docs' };
+  if (process.env.GITHUB_TOKEN) headers.authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const response = await fetch(url, { headers, signal: AbortSignal.timeout(60000) });
   if (!response.ok) throw new Error(`${response.status} ${response.statusText} for ${url}`);
   return response;
 }

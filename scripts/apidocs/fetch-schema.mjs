@@ -16,7 +16,16 @@ if (process.env.APIDOCS_SCHEMA_FILE) {
   text = readFileSync(source, 'utf8');
 } else {
   source = `${GATEWAY}?sdl`;
-  const response = await fetch(source);
+  const attempt = () => fetch(source, { signal: AbortSignal.timeout(60000) });
+  let response;
+  try {
+    response = await attempt();
+    if (response.status >= 500) throw new Error(`${response.status} ${response.statusText}`);
+  } catch (error) {
+    console.warn(`fetch-schema: ${error.message}; retrying in 5 s`);
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    response = await attempt();
+  }
   if (!response.ok) {
     console.error(`fetch-schema: ${response.status} ${response.statusText} from ${source}`);
     process.exit(1);

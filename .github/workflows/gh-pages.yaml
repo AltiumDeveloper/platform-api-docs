@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    timeout-minutes: 45
     permissions:
       contents: write
     concurrency:
@@ -33,12 +34,16 @@ jobs:
       - name: Restore previous schema size
         uses: actions/cache/restore@v4
         with:
-          path: .schema/last-size
+          path: |
+            .schema/last-size
+            .schema/cdm-index.json
           key: schema-size-${{ github.run_id }}
           restore-keys: schema-size-
 
       - name: Generate API reference
         run: npm run apidocs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build site
         run: npm run build
@@ -47,7 +52,9 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/cache/save@v4
         with:
-          path: .schema/last-size
+          path: |
+            .schema/last-size
+            .schema/cdm-index.json
           key: schema-size-${{ github.run_id }}
 
       - name: Upload classification report
