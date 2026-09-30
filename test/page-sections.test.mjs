@@ -65,6 +65,41 @@ test('hook rewrites the event output from the event sections', async () => {
   assert.ok(event.data.sections['metadata:Interfaces']);
 });
 
+test('hook leaves malformed events untouched and does not throw', async () => {
+  const warn = console.warn;
+  const warnings = [];
+  console.warn = (...args) => warnings.push(args.join(' '));
+  try {
+    const noSections = { data: {}, output: [...DEFAULT_ORDER] };
+    await beforeComposePageTypeHook(noSections);
+    assert.deepEqual(noSections.output, DEFAULT_ORDER);
+
+    const badOutput = { data: { sections: objectSections() }, output: 'nope' };
+    await beforeComposePageTypeHook(badOutput);
+    assert.equal(badOutput.output, 'nope');
+
+    await beforeComposePageTypeHook(undefined);
+    assert.equal(warnings.length, 0);
+
+    const throwing = { output: [...DEFAULT_ORDER] };
+    Object.defineProperty(throwing, 'data', { get() { throw new Error('boom'); }, enumerable: true });
+    await beforeComposePageTypeHook(throwing);
+    assert.deepEqual(throwing.output, DEFAULT_ORDER);
+    assert.equal(warnings.length, 1);
+    assert.match(warnings[0], /boom/);
+
+    const sections = objectSections();
+    sections.relations = { get content() { throw new Error('bad relations'); } };
+    const inner = { data: { name: 'DesProject', sections }, output: [...DEFAULT_ORDER] };
+    await beforeComposePageTypeHook(inner);
+    assert.deepEqual(inner.output, DEFAULT_ORDER);
+    assert.equal(warnings.length, 2);
+    assert.match(warnings[1], /DesProject/);
+  } finally {
+    console.warn = warn;
+  }
+});
+
 test('formatter module re-exports the Docusaurus MDX formatter and adds the hook', () => {
   assert.equal(typeof mdx.createMDXFormatter, 'function');
   assert.equal(typeof mdx.formatMDXBadge, 'function');

@@ -52,8 +52,21 @@ function reorderTypePageSections(sections, order) {
   return [...head, ...lead, ...remaining, ...rest];
 }
 
+// Never breaks page generation: a malformed event (or any error while reordering) leaves the default order.
 function beforeComposePageTypeHook(event) {
-  event.output = reorderTypePageSections(event.data.sections, event.output);
+  try {
+    const sections = event?.data?.sections;
+    if (!Array.isArray(event?.output) || !sections || typeof sections !== 'object') return;
+    event.output = reorderTypePageSections(sections, event.output);
+  } catch (error) {
+    let name;
+    try {
+      name = event?.data?.name ?? event?.data?.type?.name;
+    } catch {
+      name = undefined;
+    }
+    console.warn(`page-sections: keeping default section order${name ? ` for ${name}` : ''}: ${error?.message ?? error}`);
+  }
 }
 
 module.exports = { reorderTypePageSections, beforeComposePageTypeHook };
