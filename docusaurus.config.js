@@ -1,5 +1,6 @@
 // @ts-check
 const { existsSync, readFileSync } = require('node:fs');
+const { GlobExcludeDefault } = require('@docusaurus/utils');
 const { themes } = require('prism-react-renderer');
 const { buildDecorators } = require('./scripts/apidocs/decorators.cjs');
 const { sidebarItemsGenerator } = require('./scripts/apidocs/sidebar.cjs');
@@ -61,7 +62,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: false,
-        docs: { routeBasePath: '/', sidebarPath: './sidebars.js', sidebarItemsGenerator, exclude: ['superpowers/**'] },
+        docs: { routeBasePath: '/', sidebarPath: './sidebars.js', sidebarItemsGenerator, exclude: [...GlobExcludeDefault, 'superpowers/**'] },
         theme: { customCss: './src/css/custom.css' },
       }),
     ],
