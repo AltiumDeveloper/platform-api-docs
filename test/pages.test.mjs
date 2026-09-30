@@ -76,7 +76,21 @@ test('renderContextOverview lists counts, entry points and CDM entities', () => 
   assert.match(md, /\| Objects \| 1 \| 0 \|/);
   assert.match(md, /- \[`desProjectById`\]\(\/reference\/design\/operations\/queries\/des-project-by-id\)/);
   assert.match(md, /- \[`design\.ruleCheck\.byId`\]/);
-  assert.match(md, /\[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) — \[Hardware Project\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/classes\/des_Project\/\)/);
+  assert.match(md, /\n- \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) — \[Hardware Project\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/classes\/des_Project\/\)\n/);
+});
+
+test('renderContextOverview renders CDM descriptions and GRIDs, nesting multiple entities', () => {
+  const pages = buildPagesIndex(files, manifest);
+  const url = 'https://example.com/x';
+  const single = renderContextOverview(manifest.contexts[0], pages, {
+    DesProject: [{ title: 'Hardware Project', url, subset: 'design', grid: 'g:1', description: 'A project.' }],
+  });
+  assert.match(single, /\n- \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) — \[Hardware Project\]\(https:\/\/example\.com\/x\): A project\.\n  - GRID: `g:1`\n/);
+  assert.doesNotMatch(single, /bounded context `design`/);
+  const multi = renderContextOverview(manifest.contexts[0], pages, {
+    DesProject: [{ title: 'Harness Project', url, description: 'Harness.' }, { title: 'Hardware Project', url, grid: 'g:1' }],
+  });
+  assert.match(multi, /\n- \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\)\n  - \[Harness Project\]\(https:\/\/example\.com\/x\): Harness\.\n  - \[Hardware Project\]\(https:\/\/example\.com\/x\)\n    - GRID: `g:1`\n/);
 });
 
 const REAL_LINE = '[`DmDeviceModel`](/reference/renesas-preview/types/objects/dm-device-model.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`doc`](/reference/common/types/directives/doc.mdx)  <Badge class="badge badge--secondary badge--relation" text="directive"/><Bullet />[`gloCusCreateExtensionPoint`](/reference/customization/operations/mutations/glo-cus-create-extension-point.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>';

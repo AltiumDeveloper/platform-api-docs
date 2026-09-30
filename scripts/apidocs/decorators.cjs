@@ -1,6 +1,6 @@
 // graphql-markdown decorators: experimental markers and the Common Data Model section.
 const { and, hasDirectiveNamed, isEntity } = require('@graphql-markdown/graphql');
-const { escapeMDX } = require('@graphql-markdown/utils');
+const { renderCdmEntries } = require('./lib/cdm-render.cjs');
 
 const PAGE_KINDS = ['queries', 'mutations', 'subscriptions', 'objects', 'inputs', 'enums', 'interfaces', 'unions', 'scalars', 'directives'];
 
@@ -9,20 +9,6 @@ const EXPERIMENTAL_NOTE = [
   'Not production-ready. It may change or be removed without notice. See [Lifecycle](/#lifecycle).',
   ':::',
 ].join('\n');
-
-function renderCdmEntries(entries) {
-  return entries
-    .map((entry) => {
-      let line = `- **[${escapeMDX(entry.title)}](${entry.url})**`;
-      if (entry.description) line += ` — ${escapeMDX(entry.description)}`;
-      const details = [];
-      if (entry.subset) details.push(`bounded context \`${entry.subset}\``);
-      if (entry.grid) details.push(`GRID \`${entry.grid}\``);
-      if (details.length) line += ` (${details.join('; ')})`;
-      return line;
-    })
-    .join('\n');
-}
 
 function buildDecorators({ cdmIndex }) {
   return {

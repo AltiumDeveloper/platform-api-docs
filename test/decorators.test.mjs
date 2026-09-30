@@ -30,28 +30,36 @@ test('CDM predicate and resolve use the type name', () => {
   assert.equal(cdmEntity.resolve({ name: 'DesProject' }), cdmIndex.DesProject);
 });
 
-test('renders CDM entries as a markdown list', () => {
+test('renders CDM entries as a markdown list with GRID as a nested bullet', () => {
   assert.equal(
     renderCdmEntries(cdmIndex.DesProject),
-    '- **[Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/)** (bounded context `design`; GRID `grid:workspace:{workspace-id}:design:project/{id}`)',
+    '- [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/)\n'
+      + '  - GRID: `grid:workspace:{workspace-id}:design:project/{id}`',
   );
 });
 
-test('renders the description right after the title and omits empty parts', () => {
+test('renders the description after the title, omits empty parts and never shows the bounded context', () => {
   const url = 'https://example.com/x';
   assert.equal(
     renderCdmEntries([{ title: 'Thing', url, subset: 'design', grid: 'g:1', description: 'A thing.' }]),
-    '- **[Thing](https://example.com/x)** — A thing. (bounded context `design`; GRID `g:1`)',
+    '- [Thing](https://example.com/x) — A thing.\n  - GRID: `g:1`',
   );
   assert.equal(
     renderCdmEntries([{ title: 'Thing', url, subset: 'design', description: 'A thing.' }]),
-    '- **[Thing](https://example.com/x)** — A thing. (bounded context `design`)',
+    '- [Thing](https://example.com/x) — A thing.',
   );
+  assert.equal(renderCdmEntries([{ title: 'Thing', url }]), '- [Thing](https://example.com/x)');
   assert.equal(
-    renderCdmEntries([{ title: 'Thing', url, description: 'A thing.' }]),
-    '- **[Thing](https://example.com/x)** — A thing.',
+    renderCdmEntries([{ title: 'A', url, description: 'First.' }, { title: 'B', url, grid: 'g:2' }]),
+    '- [A](https://example.com/x) — First.\n- [B](https://example.com/x)\n  - GRID: `g:2`',
   );
-  assert.equal(renderCdmEntries([{ title: 'Thing', url }]), '- **[Thing](https://example.com/x)**');
+});
+
+test('escapes MDX in CDM titles and descriptions', () => {
+  assert.equal(
+    renderCdmEntries([{ title: 'Odd {t}', url: 'https://example.com/x', description: 'Uses <tags>.' }]),
+    '- [Odd &#x007B;t&#x007D;](https://example.com/x) — Uses &#x003C;tags&#x003E;.',
+  );
 });
 
 test('experimental note is a caution admonition linking to the lifecycle section', () => {

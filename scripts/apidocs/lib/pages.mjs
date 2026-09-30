@@ -3,6 +3,7 @@ import { parse } from 'yaml';
 
 const require = createRequire(import.meta.url);
 const { escapeMDX, slugify } = require('@graphql-markdown/utils');
+const { renderCdmTypeItem } = require('./cdm-render.cjs');
 
 const OPERATION_KINDS = { queries: 'query', mutations: 'mutation', subscriptions: 'subscription' };
 const KIND_LABELS = [
@@ -129,10 +130,7 @@ export function renderContextOverview(context, pages, cdmIndex) {
   }
   if (cdmTypes.length) {
     lines.push('', '## Common Data Model', '', 'API types in this bounded context that represent CDM entities:', '');
-    for (const page of cdmTypes) {
-      const entities = cdmIndex[page.name].map((entry) => `[${escapeMDX(entry.title)}](${entry.url})`).join(', ');
-      lines.push(`- [\`${page.name}\`](${page.url}) — ${entities}`);
-    }
+    for (const page of cdmTypes) lines.push(renderCdmTypeItem(`[\`${page.name}\`](${page.url})`, cdmIndex[page.name]));
     lines.push('', 'Browse all entities in the [Common Data Model](https://altiumdeveloper.github.io/cdm/).');
   }
   return `${lines.join('\n')}\n`;
