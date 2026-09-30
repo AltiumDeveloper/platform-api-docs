@@ -1,6 +1,7 @@
 // llms.txt rendering (llmstxt.org format): the site root index and one index per bounded context.
 import { getNamedType, isObjectType } from 'graphql';
 import { ENTRY_POINT } from './pages.mjs';
+import { buildSchemaGraph, fieldTarget } from './schema-graph.mjs';
 import { estimateTokens } from './sdl-slice.mjs';
 
 export const DEVELOPER_CENTER_LINKS = [
@@ -55,10 +56,32 @@ function deprecationReason(schema, page) {
   return operationField(schema, page.kind, page.name)?.deprecationReason ?? '';
 }
 
-function pageLine(page, { schema, siteUrl }) {
+function pageLine(page, { schema, siteUrl }, label = '') {
   const description = firstSentence(pageDescription(schema, page));
   const suffix = page.experimental ? ' [EXPERIMENTAL]' : '';
-  return `- [${page.name}](${mdUrl(siteUrl, page)})${description ? `: ${description}` : ''}${suffix}`;
+  return `- [${page.name}](${mdUrl(siteUrl, page)})${label ? ` ${label}` : ''}${description ? `: ${description}` : ''}${suffix}`;
+}
+
+const MAX_VIA = 5;
+const MAX_VIA_REFERENCES = 3;
+
+// "Via: …" hint for an entity: root queries that return it (by-id lookups first), then up to 3 `Parent.field`
+// references (types of the same context first, then by name); at most 5 entries, "…" when some were left out.
+// `graph` is a schema-graph index; `typeContexts` maps type names to context ids.
+export function entityVia(typeName, { graph, contextId, typeContexts }) {
+  const lookup = (entry) => (ENTRY_POINT.test(entry.operation) ? 0 : 1);
+  const operations = [...graph.returns(typeName)]
+    .sort((a, b) => lookup(a) - lookup(b) || a.operation.localeCompare(b.operation))
+    .map((entry) => entry.operation);
+  const local = (entry) => (typeContexts.get(entry.parent) === contextId ? 0 : 1);
+  const references = [...graph.references(typeName)]
+    .sort((a, b) => local(a) - local(b) || a.parent.localeCompare(b.parent) || a.field.localeCompare(b.field))
+    .map((entry) => `${entry.parent}.${entry.field}`);
+  const all = [...operations, ...references.slice(0, MAX_VIA_REFERENCES)];
+  if (!all.length) return '';
+  const shown = all.slice(0, MAX_VIA);
+  const more = all.length > shown.length || references.length > MAX_VIA_REFERENCES;
+  return `Via: ${[...shown, ...(more ? ['…'] : [])].join(', ')}`;
 }
 
 function concepts(context) {
@@ -66,14 +89,20 @@ function concepts(context) {
   return subsets.map((subset) => `[${subset}](${cdmSubsetUrl(subset)})`).join(', ');
 }
 
-function entityLine(page, entries, siteUrl) {
+function entityLine(page, entries, siteUrl, via) {
   const described = entries.map((entry) => {
     let text = entry.title;
     if (entry.description) text += ` — ${firstSentence(entry.description)}`;
     if (entry.grid) text += ` GRID \`${entry.grid}\``;
     return text;
   });
-  return `- [${page.name}](${mdUrl(siteUrl, page)}): ${described.join('; ')}`;
+  return `- [${page.name}](${mdUrl(siteUrl, page)}): ${appendSentence(described.join('; '), via)}`;
+}
+
+// `text` followed by the sentence `extra`, with a full stop in between unless `text` already ends one.
+function appendSentence(text, extra) {
+  if (!extra) return text;
+  return /[.!?]$/.test(text) ? `${text} ${extra}` : `${text}. ${extra}`;
 }
 
 const section = (title, lines) => (lines.length ? [`## ${title}`, ...lines, ''] : []);
@@ -106,14 +135,25 @@ export function renderContextTypes({ context, pages, schema, cdmIndex, siteUrl }
   return `${lines.join('\n').trimEnd()}\n`;
 }
 
+// Whether a query returns a list or a Relay connection of CDM entities.
+function isEntityList(schema, page, cdmIndex) {
+  const field = operationField(schema, 'queries', page.name);
+  if (!field) return false;
+  const target = fieldTarget(field.type);
+  return target.shape !== 'single' && Boolean(cdmIndex[target.name]);
+}
+
 // Per-context llms.txt. `pages` is .schema/pages.json; `sliceTokens` / `typesTokens` the size of the context's
-// schema slice and types.txt.
-export function renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, sliceTokens, typesTokens }) {
+// schema slice and types.txt; `graph` a schema-graph index of `schema` (built when omitted).
+export function renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, sliceTokens, typesTokens, graph = buildSchemaGraph(schema) }) {
   const mine = livePages(pages, context);
   const operations = (kind) => mine.filter((page) => page.section === 'operations' && page.kind === kind).sort(byName);
-  const entryPoints = operations('queries').filter((page) => ENTRY_POINT.test(page.name));
-  const entryNames = new Set(entryPoints.map((page) => page.name));
+  const lookups = operations('queries').filter((page) => ENTRY_POINT.test(page.name));
+  const lists = operations('queries').filter((page) => !ENTRY_POINT.test(page.name) && isEntityList(schema, page, cdmIndex));
+  const entryNames = new Set([...lookups, ...lists].map((page) => page.name));
   const entities = mine.filter((page) => page.section === 'types' && cdmIndex[page.name]).sort(byName);
+  const typeContexts = new Map(pages.filter((page) => page.section === 'types').map((page) => [page.name, page.context]));
+  const via = (page) => entityVia(page.name, { graph, contextId: context.id, typeContexts });
   const hasTypes = listedTypePages(pages, context, cdmIndex).length > 0;
   const ctx = { schema, siteUrl };
   const base = `${siteUrl}/reference/${context.slug}`;
@@ -129,8 +169,11 @@ export function renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, 
       `Overview: [overview](${base}/overview.md).`,
     ].filter(Boolean).join(' '),
     '',
-    ...section('Entities', entities.map((page) => entityLine(page, cdmIndex[page.name], siteUrl))),
-    ...section('Entry points', entryPoints.map((page) => pageLine(page, ctx))),
+    ...section('Entities', entities.map((page) => entityLine(page, cdmIndex[page.name], siteUrl, via(page)))),
+    ...section('Entry points', [
+      ...lookups.map((page) => pageLine(page, ctx)),
+      ...lists.map((page) => pageLine(page, ctx, '(list)')),
+    ]),
     ...OPERATION_SECTIONS.flatMap(([kind, title]) =>
       section(title, operations(kind).filter((page) => kind !== 'queries' || !entryNames.has(page.name)).map((page) => pageLine(page, ctx)))),
     ...section('Optional', hasTypes

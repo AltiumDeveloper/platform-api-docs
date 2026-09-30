@@ -10,6 +10,7 @@ import { buildSchema } from 'graphql';
 import { readFrontMatter } from './lib/pages.mjs';
 import { htmlToMarkdown, markdownFileFor } from './lib/html-to-md.mjs';
 import { buildSlice, estimateTokens, parseSdl } from './lib/sdl-slice.mjs';
+import { buildSchemaGraph } from './lib/schema-graph.mjs';
 import { renderContextIndex, renderContextTypes, renderDeprecatedIndex, renderRootIndex } from './lib/llms-index.mjs';
 
 const require = createRequire(import.meta.url);
@@ -99,13 +100,15 @@ export function runLlms({
 
   // 2. Per-context schema slices and llms.txt; the deprecated index.
   const tokens = { contexts: {}, slices: {}, types: {} };
+  const namespaceTypes = new Set(Object.keys(manifest.namespaceTypes ?? {}));
+  const graph = buildSchemaGraph(schema, { isNamespace: (type) => namespaceTypes.has(type.name) });
   for (const context of contexts) {
     const slice = buildSlice({ document, manifest, contextId: context.id, siteUrl });
     write(join(buildDir, 'reference', context.slug, 'schema.graphql'), slice.text);
     const types = renderContextTypes({ context, pages, schema, cdmIndex, siteUrl });
     write(join(buildDir, 'reference', context.slug, 'types.txt'), types);
     const typesTokens = estimateTokens(types);
-    const index = renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, sliceTokens: slice.tokens, typesTokens });
+    const index = renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, sliceTokens: slice.tokens, typesTokens, graph });
     write(join(buildDir, 'reference', context.slug, 'llms.txt'), index);
     tokens.slices[context.slug] = slice.tokens;
     tokens.types[context.slug] = typesTokens;

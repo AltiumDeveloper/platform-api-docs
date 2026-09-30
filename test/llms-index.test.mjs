@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildSchema } from 'graphql';
 import {
-  DEVELOPER_CENTER_LINKS, firstSentence, operationField, pageDescription, renderContextIndex, renderContextTypes,
+  DEVELOPER_CENTER_LINKS, entityVia, firstSentence, operationField, pageDescription, renderContextIndex, renderContextTypes,
   renderDeprecatedIndex, renderRootIndex,
 } from '../scripts/apidocs/lib/llms-index.mjs';
 
@@ -17,6 +17,8 @@ const schema = buildSchema(`
     design: DesignQueries @experimental
     "Lists projects."
     desProjects: [DesProject!]!
+    "Lists project names."
+    desProjectNames: [String!]!
     "Old lookup."
     desOldProject(id: ID!): DesProject @deprecated(reason: "Use desProjectById.")
   }
@@ -62,6 +64,7 @@ const pages = [
   page('/reference/design/types/objects/des-project-connection', 'DesProjectConnection', 'types', 'objects', 'design'),
   page('/reference/design/types/objects/des-project-edge', 'DesProjectEdge', 'types', 'objects', 'design'),
   page('/reference/common/types/objects/page-info', 'PageInfo', 'types', 'objects', 'common'),
+  page('/reference/design/operations/queries/des-project-names', 'desProjectNames', 'operations', 'queries', 'design'),
 ];
 const cdmIndex = {
   DesProject: [{ title: 'Hardware Project', description: 'A hardware design project. It has variants.', grid: 'grid:workspace:{workspace-id}:design:project/{id}' }],
@@ -93,15 +96,16 @@ test('renderContextIndex renders the per-context llms.txt', () => {
     `Concepts: [design](https://altiumdeveloper.github.io/cdm/subsets/design/). Schema slice: [schema.graphql](${SITE}/reference/design/schema.graphql) (~123 tokens). Overview: [overview](${SITE}/reference/design/overview.md).`,
     '',
     '## Entities',
-    `- [DesProject](${SITE}/reference/design/types/objects/des-project.md): Hardware Project — A hardware design project. GRID \`grid:workspace:{workspace-id}:design:project/{id}\``,
+    `- [DesProject](${SITE}/reference/design/types/objects/des-project.md): Hardware Project — A hardware design project. GRID \`grid:workspace:{workspace-id}:design:project/{id}\`. Via: desProjectById, desProjects`,
     '',
     '## Entry points',
-    // Sorted with localeCompare, as on the overview pages.
+    // By-id lookups first, then list queries; each sorted with localeCompare, as on the overview pages.
     `- [design.ruleCheck.byId](${SITE}/reference/design/operations/queries/design/rule-check/by-id.md): Gets a rule check. [EXPERIMENTAL]`,
     `- [desProjectById](${SITE}/reference/design/operations/queries/des-project-by-id.md): Gets a project by its identifier.`,
+    `- [desProjects](${SITE}/reference/design/operations/queries/des-projects.md) (list): Lists projects.`,
     '',
     '## Queries',
-    `- [desProjects](${SITE}/reference/design/operations/queries/des-projects.md): Lists projects.`,
+    `- [desProjectNames](${SITE}/reference/design/operations/queries/des-project-names.md): Lists project names.`,
     '',
     '## Mutations',
     `- [designRuleCheckExecute](${SITE}/reference/design/operations/mutations/design-rule-check-execute.md): Runs a rule check.`,
@@ -111,6 +115,23 @@ test('renderContextIndex renders the per-context llms.txt', () => {
     '',
   ].join('\n');
   assert.equal(text, expected);
+});
+
+test('entityVia: root queries (by-id first), then up to 3 references (same context first), at most 5 entries', () => {
+  const graph = {
+    returns: () => [
+      { operation: 'a.list', shape: 'list' }, { operation: 'b', shape: 'single' }, { operation: 'xById', shape: 'single' },
+    ],
+    references: () => [
+      { parent: 'AOther', field: 'x', shape: 'single' }, { parent: 'BMine', field: 'x', shape: 'list' },
+      { parent: 'CMine', field: 'y', shape: 'connection' }, { parent: 'DMine', field: 'z', shape: 'single' },
+    ],
+  };
+  const typeContexts = new Map([['AOther', 'other'], ['BMine', 'design'], ['CMine', 'design'], ['DMine', 'design']]);
+  assert.equal(entityVia('X', { graph, contextId: 'design', typeContexts }), 'Via: xById, a.list, b, BMine.x, CMine.y, …');
+  const few = { returns: () => [{ operation: 'xById', shape: 'single' }], references: () => [{ parent: 'P', field: 'x', shape: 'single' }] };
+  assert.equal(entityVia('X', { graph: few, contextId: 'design', typeContexts }), 'Via: xById, P.x');
+  assert.equal(entityVia('X', { graph: { returns: () => [], references: () => [] }, contextId: 'design', typeContexts }), '');
 });
 
 test('renderContextTypes lists non-entity types, one line each, without Connection and Edge types', () => {
