@@ -91,6 +91,31 @@ test('renderContextOverview lists counts, entry points and CDM entities', () => 
   assert.match(md, /\n- \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) — \[Hardware Project\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/classes\/des_Project\/\)\n/);
 });
 
+test('renderContextOverview orders description, CDM link, Entities, Entry points, Contents', () => {
+  const pages = buildPagesIndex(files, manifest);
+  const cdmIndex = { DesProject: [{ title: 'Hardware Project', url: 'https://altiumdeveloper.github.io/cdm/classes/des_Project/' }] };
+  const md = renderContextOverview(manifest.contexts[0], pages, cdmIndex);
+  const body = md.split('\n---\n')[1];
+  const at = (needle) => {
+    const index = body.indexOf(needle);
+    assert.notEqual(index, -1, `missing ${needle}`);
+    return index;
+  };
+  assert.match(body, /^\nHardware projects\.\n\nConcepts: see the \*\*Design\*\* bounded context in the \[Common Data Model\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/subsets\/design\/\)\n/);
+  assert.ok(at('Concepts: see') < at('## Entities'));
+  assert.ok(at('## Entities') < at('## Entry points'));
+  assert.ok(at('## Entry points') < at('## Contents'));
+  assert.ok(at('## Contents') < at('| Kind | Items | Experimental |'));
+  assert.doesNotMatch(md, /## Common Data Model/);
+});
+
+test('renderContextOverview links every CDM subset of a multi-subset context and none for a context without', () => {
+  const context = { ...manifest.contexts[0], title: 'System Design', cdm: ['system', 'system-sdm'] };
+  const md = renderContextOverview(context, [], {});
+  assert.match(md, /\nConcepts: see the \*\*System Design\*\* bounded context in the Common Data Model: \[system\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/subsets\/system\/\), \[system-sdm\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/subsets\/system-sdm\/\)\n/);
+  assert.doesNotMatch(renderContextOverview(manifest.contexts[1], [], {}), /Concepts:/);
+});
+
 test('renderContextOverview renders CDM descriptions and GRIDs, nesting multiple entities', () => {
   const pages = buildPagesIndex(files, manifest);
   const url = 'https://example.com/x';

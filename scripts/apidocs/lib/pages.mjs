@@ -1,5 +1,6 @@
 import { createRequire } from 'node:module';
 import { parse } from 'yaml';
+import { CDM_SITE } from './cdm.mjs';
 
 const require = createRequire(import.meta.url);
 const { escapeMDX, slugify } = require('@graphql-markdown/utils');
@@ -131,19 +132,33 @@ export function renderContextOverview(context, pages, cdmIndex) {
     escapeMDX(context.description),
     '',
   ];
+  const concepts = cdmConceptsLine(context);
+  if (concepts) lines.push(concepts, '');
   if (!mine.length) {
     lines.push('No operations or types are currently published in this bounded context.');
     return `${lines.join('\n')}\n`;
   }
-  lines.push('| Kind | Items | Experimental |', '| --- | --- | --- |', ...rows);
-  if (entryPoints.length) {
-    lines.push('', '## Entry points', '', 'Look up entities by identifier:', '');
-    for (const page of entryPoints) lines.push(`- [\`${page.name}\`](${page.url})`);
-  }
   if (cdmTypes.length) {
-    lines.push('', '## Common Data Model', '', 'API types in this bounded context that represent CDM entities:', '');
+    lines.push('## Entities', '', 'API types in this bounded context that represent CDM entities:', '');
     for (const page of cdmTypes) lines.push(renderCdmTypeItem(`[\`${page.name}\`](${page.url})`, cdmIndex[page.name]));
-    lines.push('', 'Browse all entities in the [Common Data Model](https://altiumdeveloper.github.io/cdm/).');
+    lines.push('');
   }
+  if (entryPoints.length) {
+    lines.push('## Entry points', '', 'Look up entities by identifier:', '');
+    for (const page of entryPoints) lines.push(`- [\`${page.name}\`](${page.url})`);
+    lines.push('');
+  }
+  lines.push('## Contents', '', '| Kind | Items | Experimental |', '| --- | --- | --- |', ...rows);
   return `${lines.join('\n')}\n`;
 }
+
+// The CDM site has one page per bounded context (LinkML subset): <CDM_SITE>/subsets/<subset>/.
+function cdmConceptsLine(context) {
+  const subsets = context.cdm ?? [];
+  if (!subsets.length) return null;
+  const lead = `Concepts: see the **${escapeMDX(context.title)}** bounded context in the`;
+  if (subsets.length === 1) return `${lead} [Common Data Model](${cdmSubsetUrl(subsets[0])})`;
+  return `${lead} Common Data Model: ${subsets.map((subset) => `[${subset}](${cdmSubsetUrl(subset)})`).join(', ')}`;
+}
+
+const cdmSubsetUrl = (subset) => `${CDM_SITE}/subsets/${encodeURIComponent(subset)}/`;
