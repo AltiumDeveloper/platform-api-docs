@@ -1,0 +1,67 @@
+---
+title: Identifiers and lookups
+description: Entity IDs and GRIDs, node(id:), byId/byIds lookup patterns and the workspaceUrl argument on legacy queries.
+sidebar_position: 4
+---
+
+## Entity identifiers
+
+Entities — types that implement the [`Node`](/reference/common/types/interfaces/node) interface — have an
+`id: ID!` field. For newer APIs this value is a **GRID**, a global resource identifier such as
+`grid:workspace:{workspace-id}:design:project/{id}`; the GRID pattern of each CDM-mapped type is shown on its
+reference page. Some older APIs still return identifiers that are not GRIDs. Treat every `ID` as an opaque
+string: store it and pass it back, never build or parse it.
+
+Types that are not entities have no `id`; they expose explicit identifier fields such as `tokenId` or `userId`.
+
+## Look up any entity
+
+`node(id:)` returns the entity with the given ID. Select fields of the concrete type with an inline fragment:
+
+```graphql
+query NodeById($id: ID!) {
+  node(id: $id) {
+    id
+    ... on DesProject {
+      name
+    }
+  }
+}
+```
+
+## byId and byIds
+
+Lookups follow two patterns:
+
+- `…ById(id: ID!)` / `….byId(id: ID!)` returns one entity, or `null` if it is not found.
+- `…ByIds(ids: [ID!]!)` / `….byIds(ids: [ID!]!)` returns a list with one item per requested ID, in the same
+  order; an item is `null` when that ID was not found.
+
+```graphql
+query ProjectsByIds($ids: [ID!]!) {
+  desProjectsByIds(ids: $ids) {
+    id
+    name
+  }
+}
+```
+
+Other lookups have descriptive names, for example `desWorkspaceByUrl` or `desUserByAuth` (the authenticated user).
+Each bounded-context overview lists its **Entry points** — the `byId`/`byIds` lookups of that context.
+
+## Workspace-scoped legacy queries
+
+Many legacy queries take a `workspaceUrl` argument that selects the workspace:
+
+```graphql
+query Workspace($workspaceUrl: String!) {
+  desWorkspaceByUrl(workspaceUrl: $workspaceUrl) {
+    id
+    name
+    url
+  }
+}
+```
+
+Use the workspace `url` returned by [`desWorkspaceInfos`](/reference/platform/operations/queries/des-workspace-infos)
+(see [Getting started](./getting-started.mdx)).
