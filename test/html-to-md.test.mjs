@@ -36,6 +36,15 @@ test('rewriteHref makes internal links absolute .md URLs and leaves the rest alo
   assert.equal(rewriteHref('mailto:someone@example.com', ctx), 'mailto:someone@example.com');
 });
 
+test('the "View as Markdown" link beside the breadcrumbs is not copied into the Markdown', () => {
+  const page = `<html><head><title>T | Site</title></head><body><div class="doc-markdown-row"><nav class="theme-doc-breadcrumbs"></nav>`
+    + `<a class="doc-markdown-link" href="/platform-api-docs/reference/design/overview.md">View as Markdown</a></div>`
+    + `<article><div class="theme-doc-markdown markdown"><h1>Design</h1><p>Body.</p></div></article></body></html>`;
+  const md = convert(page);
+  assert.doesNotMatch(md, /View as Markdown/);
+  assert.match(md, /Body\./);
+});
+
 test('renderFrontMatter writes strings as JSON and booleans bare', () => {
   assert.equal(renderFrontMatter({ title: 'A "b"', experimental: true }), '---\ntitle: "A \\"b\\""\nexperimental: true\n---\n');
 });
