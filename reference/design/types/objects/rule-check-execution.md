@@ -17,6 +17,11 @@ deprecated: false
 
 Represents the execution of rule checks against a design.
 
+### Common Data Model
+
+- [Rule Check Execution](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheckExecution/) — Execution of a rule check against a project to validate design integrity and compliance with specified constraints.
+  - GRID: `grid:workspace:{workspace-id}:design:rule-check-execution/{id}`
+
 ### Returned By
 
 [`design.ruleCheckExecution.byDesignId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id.md) query · [`design.ruleCheckExecution.byId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-id.md) query · [`design.ruleCheckExecution.byIds`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-ids.md) query · [`design.ruleCheckExecution.byReleaseId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-release-id.md) query

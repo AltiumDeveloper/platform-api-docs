@@ -13,7 +13,7 @@ Alternate is a global replacement of a part by another in all BOMs where it's us
 
 ### Common Data Model
 
-- [BOM Item Alternate](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemAlternate/) — Alternate is a global replacement of a part by another in all BOMs where it's used.
+- [BOM Item Alternate](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemAlternate/) — An alternate part recorded for one BOM line: another manufacturer part that could be used instead of the line's primary part. Alternates belong to the individual BOM line rather than applying across BOMs. They can come from an uploaded BOM file, be added by hand, or be filled in automatically from the linked component's Part Choices and from suggested alternates, and an alternate can be promoted to become the line's primary part.
 
 ### Interfaces
 

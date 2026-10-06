@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Solution](https://altiumdeveloper.github.io/cdm/classes/plt_Solution/)
+- [Solution](https://altiumdeveloper.github.io/cdm/classes/plt_Solution/) — A Renesas 365 solution: the main, top-level object of a Renesas 365 Workspace, which brings together the system design (an ESD document), PCB projects and software projects of one system. System designs and software projects both push their changes to the solution's System Data Model (SDM) and pull from it; Altium Designer can open a solution's PCB projects and pull SDM changes into them.
   - GRID: `grid:workspace:{workspace-id}:platform:solution/{id}`
 
 ### Returned By

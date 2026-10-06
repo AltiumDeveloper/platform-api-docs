@@ -13,7 +13,7 @@ A workflow definition contains a logical sequence of tasks.
 
 ### Common Data Model
 
-- [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/)
+- [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/) — A process workflow of an Altium 365 Workspace: the workflow that belongs to a process definition and steps designers through an everyday design process (e.g. requesting a new part, a design review or creating a new project). Workspace administrators build process definitions in the Process Workflow Editor, grouped by process theme (Part Requests, Project Activities, Project Creations), and activate them; each started instance of a process follows the workflow and creates tasks for the users whose action is needed to move it on.
   - GRID: `grid:workspace:{workspace-id}:customization:workflow/{id}`
 
 ### Member Of

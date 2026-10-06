@@ -13,7 +13,7 @@ Information about a project template.
 
 ### Common Data Model
 
-- [Project Template](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplate/) — A project template includes document configurations and settings that you know you will frequently apply to various projects.
+- [Project Template](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplate/) — A reusable starting point for new design projects that bundles the documents, files and project settings a team wants to apply again and again. A project created from a template receives the template's documents and its project options.
   - GRID: `grid:workspace:{workspace-id}:design:project-template/{id}`
 
 ### Returned By

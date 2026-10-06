@@ -15,7 +15,7 @@ A project manages all development stages of the PCB/PCA product lifecycle.
 
 - [Harness Project](https://altiumdeveloper.github.io/cdm/classes/des_HarnessProject/) — Harness Project defines the design of a cable and wiring harness as a standalone yet integrable artifact, capturing connectors, wires, splices, and pin-to-pin mappings required to implement electrical interconnects between boards and system elements.
 - [Multiboard Project](https://altiumdeveloper.github.io/cdm/classes/des_MultiboardProject/) — Multiboard Project represents the coordinated design of multiple interconnected PCB projects assembled into a single system, capturing both their logical interconnects and physical arrangements.
-- [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/)
+- [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/) — A design project stored in a Workspace, normally under its built-in version control, such as a PCB project. It groups the design documents that together define one implementation of a product, along with its project parameters and variants; it is the source from which releases are made and from which Managed BOMs can be created.
   - GRID: `grid:workspace:{workspace-id}:design:project/{id}`
 
 ### Returned By

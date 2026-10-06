@@ -17,6 +17,10 @@ deprecated: false
 
 GraphQL type that exposes the device model as configured, typically after user or tool selections.
 
+### Common Data Model
+
+- [ConfiguredDeviceModel](https://altiumdeveloper.github.io/cdm/classes/dm_ConfiguredDeviceModel/) — A digital twin of an embedded hardware device as configured for a specific use-case. It exposes the device model filtered to specific device configuration.
+
 ### Returned By
 
 [`dmConfiguredDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/dm-configured-device-model.md) query · [`dmConfiguredDeviceModelAllDevices`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/dm-configured-device-model-all-devices.md) query

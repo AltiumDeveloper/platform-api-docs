@@ -32,7 +32,6 @@
 - [SupPartFamilyTag](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-tag.md): `SupPartFamilyTag` represents additional metadata for a Part Family.
 - [SupRefApplicationBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-application-bucket.md): Aggregation bucket for reference design applications with application identifier + counts.
 - [SupRefCategoryBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-category-bucket.md): Aggregation bucket for reference design categories with category identifier + counts.
-- [SupRefDesign](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md): A reference design model aggregates the relevant documents, files and parts.
 - [SupRefDesignFile](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-file.md): Represents a design file belonging to a reference design.
 - [SupRefDesignNote](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-note.md): Represents a note attached to a reference design file.
 - [SupRefDesignResultSet](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-result-set.md): Reference designs with pagination, aggregation information.

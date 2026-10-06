@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Solution Template](https://altiumdeveloper.github.io/cdm/classes/sup_SolutionTemplate/)
+- [Solution Template](https://altiumdeveloper.github.io/cdm/classes/sup_SolutionTemplate/) — A publisher's template for a solution, held in the supply catalog. It brings together catalog software projects, evaluation kits and a system design (ESD) source, and users can clone it.
   - GRID: `grid:supply::platform:solution-template/{id}`
 
 ### Returned By

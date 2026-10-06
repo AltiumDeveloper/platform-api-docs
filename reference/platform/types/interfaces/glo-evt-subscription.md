@@ -13,7 +13,7 @@ Represents the application subscription to some events.
 
 ### Common Data Model
 
-- [Subscription](https://altiumdeveloper.github.io/cdm/classes/plt_EventSubscription/)
+- [Event Subscription](https://altiumdeveloper.github.io/cdm/classes/plt_EventSubscription/)
   - GRID: `grid:global::events:subscription/{id}`
 
 ### Returned By

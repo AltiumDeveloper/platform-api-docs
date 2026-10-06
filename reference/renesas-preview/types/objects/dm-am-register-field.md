@@ -17,6 +17,10 @@ deprecated: false
 
 Bit field within a register.
 
+### Common Data Model
+
+- [RegisterField](https://altiumdeveloper.github.io/cdm/classes/dm_RegisterField/) — A bit field within a register.
+
 ### Member Of
 
 [`DmAmRegister`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register.md) object

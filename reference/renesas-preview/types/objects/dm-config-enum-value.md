@@ -17,6 +17,10 @@ deprecated: false
 
 Configuration enumeration value for a port setting.
 
+### Common Data Model
+
+- [PortConfigurationEnumValue](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfigurationEnumValue/) — An enumerated value for a port configuration.
+
 ### Member Of
 
 [`DmPortConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-configuration.md) object

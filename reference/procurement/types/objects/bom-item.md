@@ -13,7 +13,7 @@ BOM items are the components of a product.
 
 ### Common Data Model
 
-- [BOM Item](https://altiumdeveloper.github.io/cdm/classes/pro_BomItem/)
+- [BOM Item](https://altiumdeveloper.github.io/cdm/classes/pro_BomItem/) — One line of a BOM: its designators and quantity, the primary manufacturer part used for it (identified by manufacturer and manufacturer part number), and any alternate parts recorded for that line. A line can be linked to a Workspace component that lists its part among its Part Choices, and BOM checks report issues against individual lines.
 
 ### Member Of
 

@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Device Configuration](https://altiumdeveloper.github.io/cdm/classes/sft_DeviceConfiguration/)
+- [Device Configuration](https://altiumdeveloper.github.io/cdm/classes/sft_DeviceConfiguration/) — The configuration of a device (e.g. an MCU placed as a hardware component in an ESD document), covering its ports, package information, peripherals and pin assignments. It is viewed and edited on the hardware component in the ESD document, and the pin functions it defines can be pulled from the solution's SDM onto the pins of the associated component in a hardware project in Altium Designer.
   - GRID: `grid:workspace:{workspace-id}:software:device-configuration/{id}`
 
 ### Returned By

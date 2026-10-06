@@ -13,7 +13,7 @@ Represents an ESD (Electronic System Design) document stored in a regional works
 
 ### Common Data Model
 
-- [ESD Document](https://altiumdeveloper.github.io/cdm/classes/sys_ESDDocument/)
+- [ESD Document](https://altiumdeveloper.github.io/cdm/classes/sys_ESDDocument/) — A system-level block diagram document used in a Renesas 365 solution (listed there as a System Design project) to describe the architecture of the system at a functional level. It holds functional blocks with their hardware components, software components and ports, the connections between blocks, and blankets through which parts of the design can be linked to PCB or software projects. Pushing to and pulling from the solution's System Data Model (SDM) for the system design is done from the ESD document. Blankets are not modelled as a separate entity here (see MF-068).
   - GRID: `grid:workspace:{workspace-id}:system-design:esd/{id}`
 
 ### Returned By

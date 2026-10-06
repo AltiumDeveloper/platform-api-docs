@@ -13,7 +13,7 @@ Parameter describing a component.
 
 ### Common Data Model
 
-- [Component Parameter](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentParameter/)
+- [Component Parameter](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentParameter/) — A named parameter of a Workspace component, holding a value and, optionally, a data type. Parameters can be inherited from a component template or added directly to the component; a template can give them unit-aware (e.g. Farad, Ohm) or dictionary-defined types.
 
 ### Member Of
 

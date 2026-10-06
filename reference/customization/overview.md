@@ -19,7 +19,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 API types in this bounded context that represent CDM entities:
 
-- [`DesWorkflowDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-definition.md) — [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/)
+- [`DesWorkflowDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-definition.md) — [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/): A process workflow of an Altium 365 Workspace: the workflow that belongs to a process definition and steps designers through an everyday design process (e.g. requesting a new part, a design review or creating a new project). Workspace administrators build process definitions in the Process Workflow Editor, grouped by process theme (Part Requests, Project Activities, Project Creations), and activate them; each started instance of a process follows the workflow and creates tasks for the users whose action is needed to move it on.
   - GRID: `grid:workspace:{workspace-id}:customization:workflow/{id}`
 - [`GloScrScript`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md) — [Script](https://altiumdeveloper.github.io/cdm/classes/cus_Script/)
   - GRID: `grid:workspace:{workspace-id}:scripts:script/{id}`

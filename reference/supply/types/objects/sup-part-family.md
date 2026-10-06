@@ -13,7 +13,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Part Family](https://altiumdeveloper.github.io/cdm/classes/sup_PartFamily/)
+- [Part Family](https://altiumdeveloper.github.io/cdm/classes/sup_PartFamily/) — A manufacturer's grouping of parts in the supply data, where the kind of family is vendor-specific (e.g. Series or Family). Part families form a hierarchy: a family has either child families or, at the lowest level, Part Groups. Families sharing the same parent are usually close alternatives to one another.
   - GRID: `grid:supply::platform:part-family/{id}`
 
 ### Member Of

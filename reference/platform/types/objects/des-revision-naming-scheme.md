@@ -13,7 +13,7 @@ Revision naming scheme details obtained by `desRevisionNamingSchemes`. More info
 
 ### Common Data Model
 
-- [Revision Naming Scheme](https://altiumdeveloper.github.io/cdm/classes/plt_NamingScheme/)
+- [Revision Naming Scheme](https://altiumdeveloper.github.io/cdm/classes/plt_NamingScheme/) — Defines the format of Revision IDs for the Items that use it: one to three levels (e.g. Model, Prototype and Revision), each with its own format, separator and minimum width. The scheme is chosen per Item when the Item is created and cannot be changed after its first release. It is distinct from the Item Naming Scheme, which determines the Item ID rather than the revision's ID.
   - GRID: `grid:workspace:{workspace-id}:platform:revision-naming-scheme/{id}`
 
 ### Returned By

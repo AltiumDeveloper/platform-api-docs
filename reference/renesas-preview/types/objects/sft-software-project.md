@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Software Project](https://altiumdeveloper.github.io/cdm/classes/sft_SoftwareProject/)
+- [Software Project](https://altiumdeveloper.github.io/cdm/classes/sft_SoftwareProject/) — The software part of a Renesas 365 solution, developed in the built-in Web IDE (based on the Theia framework) or in e² studio; it can also be created with an external repository type. In the solution's ESD document it can be linked to a software blanket, and generating a board support package (BSP) from that blanket pushes the SDM and applies the changes to the linked project, creating the project first if none exists yet.
   - GRID: `grid:workspace:{workspace-id}:software:software-project/{id}`
 
 ### Returned By

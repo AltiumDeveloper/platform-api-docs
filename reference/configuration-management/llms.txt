@@ -4,7 +4,7 @@
 Concepts: [configuration](https://altiumdeveloper.github.io/cdm/subsets/configuration/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/schema.graphql) (~806 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/overview.md).
 
 ## Entities
-- [DesProjectTemplate](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md): Project Template — A project template includes document configurations and settings that you know you will frequently apply to various projects. GRID `grid:workspace:{workspace-id}:design:project-template/{id}`. Via: desProjectTemplateById, DesWorkspaceConfiguration.projectTemplates
+- [DesProjectTemplate](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md): Project Template — A reusable starting point for new design projects that bundles the documents, files and project settings a team wants to apply again and again. GRID `grid:workspace:{workspace-id}:design:project-template/{id}`. Via: desProjectTemplateById, DesWorkspaceConfiguration.projectTemplates
 - [DesProjectTemplateRevision](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template-revision.md): Project Template Revision — An immutable revision of a project template. GRID `grid:workspace:{workspace-id}:design:project-template-revision/{id}`. Via: desProjectTemplateRevisionById, DesProjectTemplate.latestRevision
 
 ## Entry points

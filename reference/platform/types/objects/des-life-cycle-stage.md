@@ -13,7 +13,7 @@ Information about the life cycle stage.
 
 ### Common Data Model
 
-- [Lifecycle Stage](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleStage/)
+- [Lifecycle Stage](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleStage/) — A named stage that groups lifecycle states in a lifecycle definition using the Advanced management style (e.g. Design, Prototype, Production), indicating how far a revision has progressed in its development. Stages can be linked to the levels of the revision naming scheme. Definitions using the Simple style have states and transitions but no stages.
 
 ### Member Of
 

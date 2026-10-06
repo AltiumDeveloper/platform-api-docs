@@ -13,7 +13,7 @@ Component template revision information.
 
 ### Common Data Model
 
-- [Component Template Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/)
+- [Component Template Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/) — A revision of a Component Template: the template definition, stored as a \*.CMPT document, saved into the Workspace at one point in time. A component revision can be linked to a specific template revision, from which it takes its predefined parameters, models and settings.
   - GRID: `grid:workspace:{workspace-id}:library:component-template-revision/{id}`
 
 ### Returned By

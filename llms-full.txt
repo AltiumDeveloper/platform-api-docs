@@ -554,27 +554,27 @@ API types in this bounded context that represent CDM entities:
 
 - [`DesLifeCycleDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md) — [Lifecycle Definition](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleDefinition/): Defines the set of states that an entity can transition through in its lifecycle. This definition clarifies what stage a revision of an entity has reached in its 'life' and what it can be safely used for. Different entities can have different lifecycle definitions assigned to them.
   - GRID: `grid:workspace:{workspace-id}:platform:lifecycle-definition/{id}`
-- [`DesLifeCycleStage`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-stage.md) — [Lifecycle Stage](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleStage/)
-- [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) — [Lifecycle State](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleState/)
-- [`DesRevisionNamingScheme`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme.md) — [Revision Naming Scheme](https://altiumdeveloper.github.io/cdm/classes/plt_NamingScheme/)
+- [`DesLifeCycleStage`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-stage.md) — [Lifecycle Stage](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleStage/): A named stage that groups lifecycle states in a lifecycle definition using the Advanced management style (e.g. Design, Prototype, Production), indicating how far a revision has progressed in its development. Stages can be linked to the levels of the revision naming scheme. Definitions using the Simple style have states and transitions but no stages.
+- [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) — [Lifecycle State](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleState/): A named point in an Item Revision's lifecycle (e.g. Planned, New From Design, In Production, Obsolete) that shows its status from a business perspective. Each state's properties include whether revisions in that state are shown in the Explorer panel and whether they may be used in designs; a revision moves to another state only through a transition defined in its lifecycle definition.
+- [`DesRevisionNamingScheme`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme.md) — [Revision Naming Scheme](https://altiumdeveloper.github.io/cdm/classes/plt_NamingScheme/): Defines the format of Revision IDs for the Items that use it: one to three levels (e.g. Model, Prototype and Revision), each with its own format, separator and minimum width. The scheme is chosen per Item when the Item is created and cannot be changed after its first release. It is distinct from the Item Naming Scheme, which determines the Item ID rather than the revision's ID.
   - GRID: `grid:workspace:{workspace-id}:platform:revision-naming-scheme/{id}`
 - [`DesWorkspace`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace.md) — [Workspace](https://altiumdeveloper.github.io/cdm/classes/plt_Workspace/): The top-level entity that plays a role of a closed environment for other entities (members, projects, components, etc.).
   - GRID: `grid:global::platform:workspace/{id}`
 - [`DesWorkspaceGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md) — [Workspace Group](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceGroup/): Workspace Group represents a logical collection of users within a workspace, used to manage access control, permissions, and collaboration roles across projects and data assets.
   - GRID: `grid:workspace:{workspace-id}:team:group/{id}`
-- [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) — [Workspace User](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceUser/)
+- [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) — [Workspace User](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceUser/): A person's membership in a particular Workspace, connecting their Altium Account to that Workspace and to the Workspace groups they are assigned to. Members can come from the organization that owns the Workspace or from other organizations, and inviting an outside user does not add them to the owning organization. People who only have a project shared with them (External Share guests) are not members.
   - GRID: `grid:workspace:{workspace-id}:team:user/{id}`
 - [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) — [Application](https://altiumdeveloper.github.io/cdm/classes/plt_Application/)
   - GRID: `grid:global::platform:application/{id}`
-- [`GloEvtSubscription`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md) — [Subscription](https://altiumdeveloper.github.io/cdm/classes/plt_EventSubscription/)
+- [`GloEvtSubscription`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md) — [Event Subscription](https://altiumdeveloper.github.io/cdm/classes/plt_EventSubscription/)
   - GRID: `grid:global::events:subscription/{id}`
-- [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) — [Organization](https://altiumdeveloper.github.io/cdm/classes/plt_Organization/)
+- [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) — [Organization](https://altiumdeveloper.github.io/cdm/classes/plt_Organization/): An Altium customer organization, represented by its Company Account. The Company Account brings together the organization's users and groups of users, its purchased licenses and the Altium 365 Workspaces created for it, along with a company profile (e.g. name, logo and website). Administrators manage it through the Company Dashboard.
   - GRID: `grid:global::platform:organization/{id}`
-- [`GloUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md) — [User](https://altiumdeveloper.github.io/cdm/classes/plt_User/)
+- [`GloUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md) — [User](https://altiumdeveloper.github.io/cdm/classes/plt_User/): A person identified by a global Altium Account, the identity used for signing in to Altium services. A user can be registered in an organization's Company Account, either added by an administrator or admitted through an approved join request, and can then be given access to licenses through the Company Account's user groups. Access to a Workspace is granted separately, by making the user a member of that Workspace.
   - GRID: `grid:global::platform:user/{id}`
-- [`GloUserGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-group.md) — [User Group](https://altiumdeveloper.github.io/cdm/classes/plt_UserGroup/): A way to group multiple users together (e.g. for the purposes of SCIM syncrhonization). User may be a member of multiple groups.
+- [`GloUserGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-group.md) — [User Group](https://altiumdeveloper.github.io/cdm/classes/plt_UserGroup/): A named group of users within an organization's Company Account, managed in the Company Dashboard. Licenses can be allocated to a group so that its members can use them, and the Group Administrators system group gives its members Dashboard administration rights. A user can belong to any number of groups, groups can be provisioned from an identity provider via SCIM, and they are distinct from the groups defined inside a Workspace.
   - GRID: `grid:global::platform:group/{id}`
-- [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) — [Solution](https://altiumdeveloper.github.io/cdm/classes/plt_Solution/)
+- [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) — [Solution](https://altiumdeveloper.github.io/cdm/classes/plt_Solution/): A Renesas 365 solution: the main, top-level object of a Renesas 365 Workspace, which brings together the system design (an ESD document), PCB projects and software projects of one system. System designs and software projects both push their changes to the solution's System Data Model (SDM) and pull from it; Altium Designer can open a solution's PCB projects and pull SDM changes into them.
   - GRID: `grid:workspace:{workspace-id}:platform:solution/{id}`
 
 ## Entry points
@@ -4879,7 +4879,7 @@ Information about the life cycle stage.
 
 ### Common Data Model
 
-- [Lifecycle Stage](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleStage/)
+- [Lifecycle Stage](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleStage/) — A named stage that groups lifecycle states in a lifecycle definition using the Advanced management style (e.g. Design, Prototype, Production), indicating how far a revision has progressed in its development. Stages can be linked to the levels of the revision naming scheme. Definitions using the Simple style have states and transitions but no stages.
 
 ### Member Of
 
@@ -4947,7 +4947,7 @@ Information about the life cycle state.
 
 ### Common Data Model
 
-- [Lifecycle State](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleState/)
+- [Lifecycle State](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleState/) — A named point in an Item Revision's lifecycle (e.g. Planned, New From Design, In Production, Obsolete) that shows its status from a business perspective. Each state's properties include whether revisions in that state are shown in the Explorer panel and whether they may be used in designs; a revision moves to another state only through a transition defined in its lifecycle definition.
 
 ### Member Of
 
@@ -5498,7 +5498,7 @@ Revision naming scheme details obtained by `desRevisionNamingSchemes`. More info
 
 ### Common Data Model
 
-- [Revision Naming Scheme](https://altiumdeveloper.github.io/cdm/classes/plt_NamingScheme/)
+- [Revision Naming Scheme](https://altiumdeveloper.github.io/cdm/classes/plt_NamingScheme/) — Defines the format of Revision IDs for the Items that use it: one to three levels (e.g. Model, Prototype and Revision), each with its own format, separator and minimum width. The scheme is chosen per Item when the Item is created and cannot be changed after its first release. It is distinct from the Item Naming Scheme, which determines the Item ID rather than the revision's ID.
   - GRID: `grid:workspace:{workspace-id}:platform:revision-naming-scheme/{id}`
 
 ### Returned By
@@ -6707,7 +6707,7 @@ Represents a user registered in a workspace.
 
 ### Common Data Model
 
-- [Workspace User](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceUser/)
+- [Workspace User](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceUser/) — A person's membership in a particular Workspace, connecting their Altium Account to that Workspace and to the Workspace groups they are assigned to. Members can come from the organization that owns the Workspace or from other organizations, and inviting an outside user does not add them to the owning organization. People who only have a project shared with them (External Share guests) are not members.
   - GRID: `grid:workspace:{workspace-id}:team:user/{id}`
 
 ### Returned By
@@ -8483,7 +8483,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Organization](https://altiumdeveloper.github.io/cdm/classes/plt_Organization/)
+- [Organization](https://altiumdeveloper.github.io/cdm/classes/plt_Organization/) — An Altium customer organization, represented by its Company Account. The Company Account brings together the organization's users and groups of users, its purchased licenses and the Altium 365 Workspaces created for it, along with a company profile (e.g. name, logo and website). Administrators manage it through the Company Dashboard.
   - GRID: `grid:global::platform:organization/{id}`
 
 ### Returned By
@@ -8997,7 +8997,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [User](https://altiumdeveloper.github.io/cdm/classes/plt_User/)
+- [User](https://altiumdeveloper.github.io/cdm/classes/plt_User/) — A person identified by a global Altium Account, the identity used for signing in to Altium services. A user can be registered in an organization's Company Account, either added by an administrator or admitted through an approved join request, and can then be given access to licenses through the Company Account's user groups. Access to a Workspace is granted separately, by making the user a member of that Workspace.
   - GRID: `grid:global::platform:user/{id}`
 
 ### Returned By
@@ -9256,7 +9256,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [User Group](https://altiumdeveloper.github.io/cdm/classes/plt_UserGroup/) — A way to group multiple users together (e.g. for the purposes of SCIM syncrhonization). User may be a member of multiple groups.
+- [User Group](https://altiumdeveloper.github.io/cdm/classes/plt_UserGroup/) — A named group of users within an organization's Company Account, managed in the Company Dashboard. Licenses can be allocated to a group so that its members can use them, and the Group Administrators system group gives its members Dashboard administration rights. A user can belong to any number of groups, groups can be provisioned from an identity provider via SCIM, and they are distinct from the groups defined inside a Workspace.
   - GRID: `grid:global::platform:group/{id}`
 
 ### Member Of
@@ -11215,7 +11215,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Solution](https://altiumdeveloper.github.io/cdm/classes/plt_Solution/)
+- [Solution](https://altiumdeveloper.github.io/cdm/classes/plt_Solution/) — A Renesas 365 solution: the main, top-level object of a Renesas 365 Workspace, which brings together the system design (an ESD document), PCB projects and software projects of one system. System designs and software projects both push their changes to the solution's System Data Model (SDM) and pull from it; Altium Designer can open a solution's PCB projects and pull SDM changes into them.
   - GRID: `grid:workspace:{workspace-id}:platform:solution/{id}`
 
 ### Returned By
@@ -11515,7 +11515,7 @@ Represents the application subscription to some events.
 
 ### Common Data Model
 
-- [Subscription](https://altiumdeveloper.github.io/cdm/classes/plt_EventSubscription/)
+- [Event Subscription](https://altiumdeveloper.github.io/cdm/classes/plt_EventSubscription/)
   - GRID: `grid:global::events:subscription/{id}`
 
 ### Returned By
@@ -18001,17 +18001,20 @@ API types in this bounded context that represent CDM entities:
 
   - [Harness Project](https://altiumdeveloper.github.io/cdm/classes/des_HarnessProject/): Harness Project defines the design of a cable and wiring harness as a standalone yet integrable artifact, capturing connectors, wires, splices, and pin-to-pin mappings required to implement electrical interconnects between boards and system elements.
   - [Multiboard Project](https://altiumdeveloper.github.io/cdm/classes/des_MultiboardProject/): Multiboard Project represents the coordinated design of multiple interconnected PCB projects assembled into a single system, capturing both their logical interconnects and physical arrangements.
-  - [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/)
+  - [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/): A design project stored in a Workspace, normally under its built-in version control, such as a PCB project. It groups the design documents that together define one implementation of a product, along with its project parameters and variants; it is the source from which releases are made and from which Managed BOMs can be created.
     - GRID: `grid:workspace:{workspace-id}:design:project/{id}`
 
-- [`DesProjectParameter`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-parameter.md) — [Project Parameter](https://altiumdeveloper.github.io/cdm/classes/des_ProjectParameter/)
+- [`DesProjectParameter`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-parameter.md) — [Project Parameter](https://altiumdeveloper.github.io/cdm/classes/des_ProjectParameter/): A name/value parameter defined at the level of a design project. It is either a Workspace-side (server-side) parameter, kept with the project in the Workspace and editable only there, or a design-side parameter, kept in the project file (e.g. \*.PrjPcb) and editable in Altium Designer. Both kinds appear in the project options and can be used as special strings in design documents.
 
 - [`DesRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release.md) — [Hardware Project Release](https://altiumdeveloper.github.io/cdm/classes/des_ProjectRelease/): Project Release captures an immutable snapshot of a PCB design project at a specific point in its lifecycle, packaging all design data, outputs, and metadata required for manufacturing, assembly, and downstream processes.
   - GRID: `grid:workspace:{workspace-id}:design:project-release/{id}`
 
-- [`DesWipVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md) — [Hardware Project Variant](https://altiumdeveloper.github.io/cdm/classes/des_ProjectVariant/)
+- [`DesWipVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md) — [Hardware Project Variant](https://altiumdeveloper.github.io/cdm/classes/des_ProjectVariant/): A design variant of a project: a named variation of the same base design that is assembled with a different set of components. Within a variant, each component can be fitted, not fitted, fitted with varied parameters, or replaced by an alternate part, and the variant can define its own variant-level parameters. Assembly variants share one bare board, whereas fabrication variants also change overlay information and so need a different board.
 
-- [`RuleCheckExecution_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-preview.md) — [Rule Check Execution](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheckExecution/): Execution of a rule check against a project to validate design integrity and compliance with specified constraints.
+- [`RuleCheck`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check.md) — [Rule Check](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheck/): Rule check definitions that can be executed against a project to validate design integrity and compliance with specified constraints.
+  - GRID: `grid:workspace:{workspace-id}:design:rule-check/{id}`
+
+- [`RuleCheckExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md) — [Rule Check Execution](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheckExecution/): Execution of a rule check against a project to validate design integrity and compliance with specified constraints.
   - GRID: `grid:workspace:{workspace-id}:design:rule-check-execution/{id}`
 
 ## Entry points
@@ -24504,7 +24507,7 @@ A project manages all development stages of the PCB/PCA product lifecycle.
 
 - [Harness Project](https://altiumdeveloper.github.io/cdm/classes/des_HarnessProject/) — Harness Project defines the design of a cable and wiring harness as a standalone yet integrable artifact, capturing connectors, wires, splices, and pin-to-pin mappings required to implement electrical interconnects between boards and system elements.
 - [Multiboard Project](https://altiumdeveloper.github.io/cdm/classes/des_MultiboardProject/) — Multiboard Project represents the coordinated design of multiple interconnected PCB projects assembled into a single system, capturing both their logical interconnects and physical arrangements.
-- [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/)
+- [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/) — A design project stored in a Workspace, normally under its built-in version control, such as a PCB project. It groups the design documents that together define one implementation of a product, along with its project parameters and variants; it is the source from which releases are made and from which Managed BOMs can be created.
   - GRID: `grid:workspace:{workspace-id}:design:project/{id}`
 
 ### Returned By
@@ -25010,7 +25013,7 @@ A parameter describing the project.
 
 ### Common Data Model
 
-- [Project Parameter](https://altiumdeveloper.github.io/cdm/classes/des_ProjectParameter/)
+- [Project Parameter](https://altiumdeveloper.github.io/cdm/classes/des_ProjectParameter/) — A name/value parameter defined at the level of a design project. It is either a Workspace-side (server-side) parameter, kept with the project in the Workspace and editable only there, or a design-side parameter, kept in the project file (e.g. \*.PrjPcb) and editable in Altium Designer. Both kinds appear in the project options and can be used as special strings in design documents.
 
 ### Member Of
 
@@ -26403,7 +26406,7 @@ A variant contains a specific configuration of a base design.
 
 ### Common Data Model
 
-- [Hardware Project Variant](https://altiumdeveloper.github.io/cdm/classes/des_ProjectVariant/)
+- [Hardware Project Variant](https://altiumdeveloper.github.io/cdm/classes/des_ProjectVariant/) — A design variant of a project: a named variation of the same base design that is assembled with a different set of components. Within a variant, each component can be fitted, not fitted, fitted with varied parameters, or replaced by an alternate part, and the variant can define its own variant-level parameters. Assembly variants share one bare board, whereas fabrication variants also change overlay information and so need a different board.
 
 ### Returned By
 
@@ -26512,6 +26515,11 @@ deprecated: false
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 Represents a rule check definition.
+
+### Common Data Model
+
+- [Rule Check](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheck/) — Rule check definitions that can be executed against a project to validate design integrity and compliance with specified constraints.
+  - GRID: `grid:workspace:{workspace-id}:design:rule-check/{id}`
 
 ### Returned By
 
@@ -26732,6 +26740,11 @@ deprecated: false
 
 Represents the execution of rule checks against a design.
 
+### Common Data Model
+
+- [Rule Check Execution](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheckExecution/) — Execution of a rule check against a project to validate design integrity and compliance with specified constraints.
+  - GRID: `grid:workspace:{workspace-id}:design:rule-check-execution/{id}`
+
 ### Returned By
 
 [`design.ruleCheckExecution.byDesignId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id.md) query · [`design.ruleCheckExecution.byId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-id.md) query · [`design.ruleCheckExecution.byIds`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-ids.md) query · [`design.ruleCheckExecution.byReleaseId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-release-id.md) query
@@ -26823,11 +26836,6 @@ deprecated: false
 ### Experimental
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
-
-### Common Data Model
-
-- [Rule Check Execution](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheckExecution/) — Execution of a rule check against a project to validate design integrity and compliance with specified constraints.
-  - GRID: `grid:workspace:{workspace-id}:design:rule-check-execution/{id}`
 
 ### Returned By
 
@@ -34250,22 +34258,22 @@ API types in this bounded context that represent CDM entities:
 
 - [`DesComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) — [Component Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentRevision/): Revision of a Component.
   - GRID: `grid:workspace:{workspace-id}:library:component-revision/{id}`
-- [`DesComponentParameter`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-parameter.md) — [Component Parameter](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentParameter/)
+- [`DesComponentParameter`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-parameter.md) — [Component Parameter](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentParameter/): A named parameter of a Workspace component, holding a value and, optionally, a data type. Parameters can be inherited from a component template or added directly to the component; a template can give them unit-aware (e.g. Farad, Ohm) or dictionary-defined types.
 - [`DesComponentTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template.md) — [Component Template](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplate/): Component Template defines a reusable blueprint for creating and managing electronic components with consistent parameters, metadata, and lifecycle policies.
   - GRID: `grid:workspace:{workspace-id}:library:component-template/{id}`
-- [`DesComponentTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-revision.md) — [Component Template Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/)
+- [`DesComponentTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-revision.md) — [Component Template Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/): A revision of a Component Template: the template definition, stored as a \*.CMPT document, saved into the Workspace at one point in time. A component revision can be linked to a specific template revision, from which it takes its predefined parameters, models and settings.
   - GRID: `grid:workspace:{workspace-id}:library:component-template-revision/{id}`
 - [`DesDatasheet`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet.md) — [Datasheet](https://altiumdeveloper.github.io/cdm/classes/lib_Datasheet/): Datasheet represents a technical document associated with a Component or Part, providing authoritative specifications, electrical characteristics, and manufacturer information.
   - GRID: `grid:workspace:{workspace-id}:library:datasheet/{id}`
-- [`DesFootprint`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) — [Footprint Revision](https://altiumdeveloper.github.io/cdm/classes/lib_FootprintRevision/)
+- [`DesFootprint`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) — [Footprint Revision](https://altiumdeveloper.github.io/cdm/classes/lib_FootprintRevision/): A revision of a Footprint: the PCB footprint as saved into the Workspace at one point in time, with its own lifecycle state. Editing a Workspace Footprint saves it into the next revision; components that still link to an earlier revision become out of date until they are updated.
   - GRID: `grid:workspace:{workspace-id}:library:footprint-revision/{id}`
-- [`DesPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) — [Part](https://altiumdeveloper.github.io/cdm/classes/lib_Part/)
+- [`DesPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) — [Part](https://altiumdeveloper.github.io/cdm/classes/lib_Part/): A manufacturer part, identified by manufacturer and part number, as held in the Workspace's Part Catalog together with the supplier parts through which it is sold. Workspace components reference manufacturer parts through their Part Choices.
   - GRID: `grid:workspace:{workspace-id}:library:part/{id}`
-- [`DesReuseBlock`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) — [Reuse Block](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlock/)
+- [`DesReuseBlock`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) — [Reuse Block](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlock/): A reusable section of a design stored in a Workspace, typically combining schematic circuitry with its PCB representation; a block can also be schematic-only or PCB-only. Placing a reuse block on a schematic sheet brings its PCB content into the board design when changes are transferred through an ECO.
   - GRID: `grid:workspace:{workspace-id}:library:reuse-block/{id}`
-- [`DesReuseBlockRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block-revision.md) — [Reuse Block Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlockRevision/)
+- [`DesReuseBlockRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block-revision.md) — [Reuse Block Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlockRevision/): A revision of a Reuse Block: its schematic and/or PCB content as saved into the Workspace at one point in time, with its own lifecycle state. Editing a reuse block saves it into the next revision.
   - GRID: `grid:workspace:{workspace-id}:library:reuse-block-revision/{id}`
-- [`DesSymbol`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-symbol.md) — [Symbol Revision](https://altiumdeveloper.github.io/cdm/classes/lib_SymbolRevision/)
+- [`DesSymbol`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-symbol.md) — [Symbol Revision](https://altiumdeveloper.github.io/cdm/classes/lib_SymbolRevision/): A revision of a Symbol: the schematic symbol as saved into the Workspace at one point in time, with its own lifecycle state. Editing a Workspace Symbol saves it into the next revision; components that still link to an earlier revision become out of date until they are updated.
   - GRID: `grid:workspace:{workspace-id}:library:symbol-revision/{id}`
 
 ## Entry points
@@ -36736,7 +36744,7 @@ Parameter describing a component.
 
 ### Common Data Model
 
-- [Component Parameter](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentParameter/)
+- [Component Parameter](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentParameter/) — A named parameter of a Workspace component, holding a value and, optionally, a data type. Parameters can be inherited from a component template or added directly to the component; a template can give them unit-aware (e.g. Farad, Ohm) or dictionary-defined types.
 
 ### Member Of
 
@@ -36926,7 +36934,7 @@ Component template revision information.
 
 ### Common Data Model
 
-- [Component Template Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/)
+- [Component Template Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/) — A revision of a Component Template: the template definition, stored as a \*.CMPT document, saved into the Workspace at one point in time. A component revision can be linked to a specific template revision, from which it takes its predefined parameters, models and settings.
   - GRID: `grid:workspace:{workspace-id}:library:component-template-revision/{id}`
 
 ### Returned By
@@ -37435,7 +37443,7 @@ A component footprint. Footprints define the space a component occupies.
 
 ### Common Data Model
 
-- [Footprint Revision](https://altiumdeveloper.github.io/cdm/classes/lib_FootprintRevision/)
+- [Footprint Revision](https://altiumdeveloper.github.io/cdm/classes/lib_FootprintRevision/) — A revision of a Footprint: the PCB footprint as saved into the Workspace at one point in time, with its own lifecycle state. Editing a Workspace Footprint saves it into the next revision; components that still link to an earlier revision become out of date until they are updated.
   - GRID: `grid:workspace:{workspace-id}:library:footprint-revision/{id}`
 
 ### Returned By
@@ -38017,7 +38025,7 @@ Represents a part.
 
 ### Common Data Model
 
-- [Part](https://altiumdeveloper.github.io/cdm/classes/lib_Part/)
+- [Part](https://altiumdeveloper.github.io/cdm/classes/lib_Part/) — A manufacturer part, identified by manufacturer and part number, as held in the Workspace's Part Catalog together with the supplier parts through which it is sold. Workspace components reference manufacturer parts through their Part Choices.
   - GRID: `grid:workspace:{workspace-id}:library:part/{id}`
 
 ### Returned By
@@ -41900,7 +41908,7 @@ Reuse blocks are items that can be reused in future board-level design projects.
 
 ### Common Data Model
 
-- [Reuse Block](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlock/)
+- [Reuse Block](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlock/) — A reusable section of a design stored in a Workspace, typically combining schematic circuitry with its PCB representation; a block can also be schematic-only or PCB-only. Placing a reuse block on a schematic sheet brings its PCB content into the board design when changes are transferred through an ECO.
   - GRID: `grid:workspace:{workspace-id}:library:reuse-block/{id}`
 
 ### Returned By
@@ -42042,7 +42050,7 @@ Reuse block revision information.
 
 ### Common Data Model
 
-- [Reuse Block Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlockRevision/)
+- [Reuse Block Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlockRevision/) — A revision of a Reuse Block: its schematic and/or PCB content as saved into the Workspace at one point in time, with its own lifecycle state. Editing a reuse block saves it into the next revision.
   - GRID: `grid:workspace:{workspace-id}:library:reuse-block-revision/{id}`
 
 ### Returned By
@@ -42358,7 +42366,7 @@ A component symbol. These represent the body and the pins on the physical compon
 
 ### Common Data Model
 
-- [Symbol Revision](https://altiumdeveloper.github.io/cdm/classes/lib_SymbolRevision/)
+- [Symbol Revision](https://altiumdeveloper.github.io/cdm/classes/lib_SymbolRevision/) — A revision of a Symbol: the schematic symbol as saved into the Workspace at one point in time, with its own lifecycle state. Editing a Workspace Symbol saves it into the next revision; components that still link to an earlier revision become out of date until they are updated.
   - GRID: `grid:workspace:{workspace-id}:library:symbol-revision/{id}`
 
 ### Returned By
@@ -46794,7 +46802,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 API types in this bounded context that represent CDM entities:
 
-- [`DesComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) — [Comment](https://altiumdeveloper.github.io/cdm/classes/col_Comment/)
+- [`DesComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) — [Comment](https://altiumdeveloper.github.io/cdm/classes/col_Comment/): A single entry in a comment thread: either the initial comment, pinned to a point, an object or an area of a design document (or to a BOM line), or a reply to it. A comment can mention people or groups using @, and it can be assigned to a Workspace member as a task, either when it is posted or later by converting it. Only the author can edit or delete a comment, and deleting the initial comment also deletes its replies.
 - [`DesCommentThread`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread.md) — [Comment Thread](https://altiumdeveloper.github.io/cdm/classes/col_CommentThread/): Comment Thread represents a structured discussion linked to a specific design object, document, or workspace item, capturing feedback, decisions, and context directly within the collaborative design environment.
   - GRID: `grid:workspace:{workspace-id}:collaboration:comment-thread/{id}`
 - [`DesTask`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-task.md) — [Task](https://altiumdeveloper.github.io/cdm/classes/col_Task/): Task represents a discrete unit of work assigned to a user or team within the design workflow, used to track progress, responsibility, and completion status for design, review, or management activities.
@@ -47788,7 +47796,7 @@ A comment is one of remarks associated with a comment thread or task.
 
 ### Common Data Model
 
-- [Comment](https://altiumdeveloper.github.io/cdm/classes/col_Comment/)
+- [Comment](https://altiumdeveloper.github.io/cdm/classes/col_Comment/) — A single entry in a comment thread: either the initial comment, pinned to a point, an object or an area of a design document (or to a BOM line), or a reply to it. A comment can mention people or groups using @, and it can be assigned to a Workspace member as a task, either when it is posted or later by converting it. Only the author can edit or delete a comment, and deleting the initial comment also deletes its replies.
 
 ### Member Of
 
@@ -49496,7 +49504,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 API types in this bounded context that represent CDM entities:
 
-- [`DesProjectTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md) — [Project Template](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplate/): A project template includes document configurations and settings that you know you will frequently apply to various projects.
+- [`DesProjectTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md) — [Project Template](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplate/): A reusable starting point for new design projects that bundles the documents, files and project settings a team wants to apply again and again. A project created from a template receives the template's documents and its project options.
   - GRID: `grid:workspace:{workspace-id}:design:project-template/{id}`
 - [`DesProjectTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template-revision.md) — [Project Template Revision](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplateRevision/): An immutable revision of a project template.
   - GRID: `grid:workspace:{workspace-id}:design:project-template-revision/{id}`
@@ -49623,7 +49631,7 @@ Information about a project template.
 
 ### Common Data Model
 
-- [Project Template](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplate/) — A project template includes document configurations and settings that you know you will frequently apply to various projects.
+- [Project Template](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplate/) — A reusable starting point for new design projects that bundles the documents, files and project settings a team wants to apply again and again. A project created from a template receives the template's documents and its project options.
   - GRID: `grid:workspace:{workspace-id}:design:project-template/{id}`
 
 ### Returned By
@@ -49894,24 +49902,24 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 API types in this bounded context that represent CDM entities:
 
-- [`BomIssue`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-issue.md) — [BOM Issue](https://altiumdeveloper.github.io/cdm/classes/pro_BomIssue/)
+- [`BomIssue`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-issue.md) — [BOM Issue](https://altiumdeveloper.github.io/cdm/classes/pro_BomIssue/): A problem found when a BOM is analysed, usually against a particular BOM line: for example an unknown part number, a duplicated designator, or a part that is deprecated, low in stock or not compliant with a standard such as REACH. The level at which each kind of check reports (Fatal Error, Error or Warning, or No Report to ignore it) is configurable, and an individual issue can be waived.
 
-- [`BomItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item.md) — [BOM Item](https://altiumdeveloper.github.io/cdm/classes/pro_BomItem/)
+- [`BomItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item.md) — [BOM Item](https://altiumdeveloper.github.io/cdm/classes/pro_BomItem/): One line of a BOM: its designators and quantity, the primary manufacturer part used for it (identified by manufacturer and manufacturer part number), and any alternate parts recorded for that line. A line can be linked to a Workspace component that lists its part among its Part Choices, and BOM checks report issues against individual lines.
 
-- [`BomItemAlternate`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-alternate.md) — [BOM Item Alternate](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemAlternate/): Alternate is a global replacement of a part by another in all BOMs where it's used.
+- [`BomItemAlternate`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-alternate.md) — [BOM Item Alternate](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemAlternate/): An alternate part recorded for one BOM line: another manufacturer part that could be used instead of the line's primary part. Alternates belong to the individual BOM line rather than applying across BOMs. They can come from an uploaded BOM file, be added by hand, or be filled in automatically from the linked component's Part Choices and from suggested alternates, and an alternate can be promoted to become the line's primary part.
 
 - [`BomItemElement`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) — [BOM Item Element](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemElement/): An element (part) that might be used for a particular BOM item.
 
 - [`BomItemSubstitute`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-substitute.md) — [BOM Item Substitute](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemSubstitute/): Substitute is a replacement of a part by another within an individual BOM.
 
-- [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) — [BOM Release](https://altiumdeveloper.github.io/cdm/classes/pro_BomRelease/)
+- [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) — [BOM Release](https://altiumdeveloper.github.io/cdm/classes/pro_BomRelease/): A static snapshot of a Managed BOM's data, saved under a release name with an incremented revision number and optional notes. The BOM Portal makes a release automatically when a Managed BOM is first created and again once its data has been mapped, and further releases can be made whenever needed. Each release moves through its own lifecycle states (by default Draft, Approved and Obsolete), and a Workspace can be configured to block releasing while the BOM has Error or Fatal Error issues.
   - GRID: `grid:workspace:{workspace-id}:procurement:bom-release/{id}`
 
 - [`BomWip`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md)
 
   - [Consolidated BOM](https://altiumdeveloper.github.io/cdm/classes/pro_ConsolidatedBOM/): Consolidated BOM represents the aggregated bill of materials across one or more Projects or variants, combining all required Parts into a single, unified view for procurement and manufacturing.
     - GRID: `grid:workspace:{workspace-id}:procurement:bom/{id}`
-  - [Managed BOM](https://altiumdeveloper.github.io/cdm/classes/pro_ManagedBOM/): Managed BOM represents a version-controlled, workspace-stored bill of materials derived from a specific Project, preserving all Part selections, metadata, and supply chain links at a fixed point in time.
+  - [Managed BOM](https://altiumdeveloper.github.io/cdm/classes/pro_ManagedBOM/): A bill of materials kept in a Workspace and worked on in the BOM Portal, where its lines are enriched with manufacturer and supplier data for review and procurement. It can be created from a design project (one of its variants or releases) or uploaded as a CSV/XLS file from any source. A Managed BOM made from a project keeps a link to that project, so it can be updated when the project changes, either in place or as a new revision; snapshots of its data at a point in time are kept as BOM releases.
     - GRID: `grid:workspace:{workspace-id}:procurement:bom/{id}`
 
 ## Entry points
@@ -50723,7 +50731,7 @@ Issue details.
 
 ### Common Data Model
 
-- [BOM Issue](https://altiumdeveloper.github.io/cdm/classes/pro_BomIssue/)
+- [BOM Issue](https://altiumdeveloper.github.io/cdm/classes/pro_BomIssue/) — A problem found when a BOM is analysed, usually against a particular BOM line: for example an unknown part number, a duplicated designator, or a part that is deprecated, low in stock or not compliant with a standard such as REACH. The level at which each kind of check reports (Fatal Error, Error or Warning, or No Report to ignore it) is configurable, and an individual issue can be waived.
 
 ### Member Of
 
@@ -50790,7 +50798,7 @@ BOM items are the components of a product.
 
 ### Common Data Model
 
-- [BOM Item](https://altiumdeveloper.github.io/cdm/classes/pro_BomItem/)
+- [BOM Item](https://altiumdeveloper.github.io/cdm/classes/pro_BomItem/) — One line of a BOM: its designators and quantity, the primary manufacturer part used for it (identified by manufacturer and manufacturer part number), and any alternate parts recorded for that line. A line can be linked to a Workspace component that lists its part among its Part Choices, and BOM checks report issues against individual lines.
 
 ### Member Of
 
@@ -50872,7 +50880,7 @@ Alternate is a global replacement of a part by another in all BOMs where it's us
 
 ### Common Data Model
 
-- [BOM Item Alternate](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemAlternate/) — Alternate is a global replacement of a part by another in all BOMs where it's used.
+- [BOM Item Alternate](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemAlternate/) — An alternate part recorded for one BOM line: another manufacturer part that could be used instead of the line's primary part. Alternates belong to the individual BOM line rather than applying across BOMs. They can come from an uploaded BOM file, be added by hand, or be filled in automatically from the linked component's Part Choices and from suggested alternates, and an alternate can be promoted to become the line's primary part.
 
 ### Interfaces
 
@@ -51621,7 +51629,7 @@ Represents a release of the BOM (i.e., a snapshot of a work-in-progress BOM).
 
 ### Common Data Model
 
-- [BOM Release](https://altiumdeveloper.github.io/cdm/classes/pro_BomRelease/)
+- [BOM Release](https://altiumdeveloper.github.io/cdm/classes/pro_BomRelease/) — A static snapshot of a Managed BOM's data, saved under a release name with an incremented revision number and optional notes. The BOM Portal makes a release automatically when a Managed BOM is first created and again once its data has been mapped, and further releases can be made whenever needed. Each release moves through its own lifecycle states (by default Draft, Approved and Obsolete), and a Workspace can be configured to block releasing while the BOM has Error or Fatal Error issues.
   - GRID: `grid:workspace:{workspace-id}:procurement:bom-release/{id}`
 
 ### Returned By
@@ -52060,7 +52068,7 @@ Represents a work-in-progress BOM (i.e., it is mutable and could change dynamica
 
 - [Consolidated BOM](https://altiumdeveloper.github.io/cdm/classes/pro_ConsolidatedBOM/) — Consolidated BOM represents the aggregated bill of materials across one or more Projects or variants, combining all required Parts into a single, unified view for procurement and manufacturing.
   - GRID: `grid:workspace:{workspace-id}:procurement:bom/{id}`
-- [Managed BOM](https://altiumdeveloper.github.io/cdm/classes/pro_ManagedBOM/) — Managed BOM represents a version-controlled, workspace-stored bill of materials derived from a specific Project, preserving all Part selections, metadata, and supply chain links at a fixed point in time.
+- [Managed BOM](https://altiumdeveloper.github.io/cdm/classes/pro_ManagedBOM/) — A bill of materials kept in a Workspace and worked on in the BOM Portal, where its lines are enriched with manufacturer and supplier data for review and procurement. It can be created from a design project (one of its variants or releases) or uploaded as a CSV/XLS file from any source. A Managed BOM made from a project keeps a link to that project, so it can be updated when the project changes, either in place or as a new revision; snapshots of its data at a point in time are kept as BOM releases.
   - GRID: `grid:workspace:{workspace-id}:procurement:bom/{id}`
 
 ### Returned By
@@ -53524,15 +53532,17 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 API types in this bounded context that represent CDM entities:
 
-- [`SupEvalKit`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) — [Evaluation Kit](https://altiumdeveloper.github.io/cdm/classes/sup_EvalKit/)
+- [`SupEvalKit`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) — [Evaluation Kit](https://altiumdeveloper.github.io/cdm/classes/sup_EvalKit/): A vendor evaluation kit in the supply catalog, described by its associated devices, its reference designs (including a main one) and the software projects compatible with it. In Renesas 365 an eval kit can be linked to a solution, and the browser can connect to the kit over J-Link.
   - GRID: `grid:supply::platform:eval-kit/{id}`
-- [`SupPartFamily`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family.md) — [Part Family](https://altiumdeveloper.github.io/cdm/classes/sup_PartFamily/)
+- [`SupPartFamily`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family.md) — [Part Family](https://altiumdeveloper.github.io/cdm/classes/sup_PartFamily/): A manufacturer's grouping of parts in the supply data, where the kind of family is vendor-specific (e.g. Series or Family). Part families form a hierarchy: a family has either child families or, at the lowest level, Part Groups. Families sharing the same parent are usually close alternatives to one another.
   - GRID: `grid:supply::platform:part-family/{id}`
-- [`SupPartGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-group.md) — [Part Group](https://altiumdeveloper.github.io/cdm/classes/sup_PartGroup/)
+- [`SupPartGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-group.md) — [Part Group](https://altiumdeveloper.github.io/cdm/classes/sup_PartGroup/): A leaf of the part family hierarchy in the supply data, holding the parts that belong to it together with group-level information such as its manufacturer, overview, key features and documents. Groups sharing the same parent family are usually close alternatives to one another.
   - GRID: `grid:supply::platform:part-group/{id}`
-- [`SupSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) — [Software Project](https://altiumdeveloper.github.io/cdm/classes/sup_SoftwareProject/)
+- [`SupRefDesign`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) — [Reference Design](https://altiumdeveloper.github.io/cdm/classes/sup_ReferenceDesign/): An example design published in the supply catalog, bringing together its design files (e.g. schematics and layouts), documentation and the parts it uses. In Renesas 365 a reference design can be imported into a solution, which adds it to the Workspace as a PCB project linked to that solution.
+  - GRID: `grid:supply::platform:ref-design/{id}`
+- [`SupSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) — [Software Project](https://altiumdeveloper.github.io/cdm/classes/sup_SoftwareProject/): A software project published in the supply catalog, together with the evaluation kits it is compatible with. In Renesas 365 it can be imported into a solution with a compatible eval kit; the import places the project in the Workspace and links it to the solution (see sft\_SoftwareProject).
   - GRID: `grid:supply::platform:software-project/{id}`
-- [`SupSolutionTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template.md) — [Solution Template](https://altiumdeveloper.github.io/cdm/classes/sup_SolutionTemplate/)
+- [`SupSolutionTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template.md) — [Solution Template](https://altiumdeveloper.github.io/cdm/classes/sup_SolutionTemplate/): A publisher's template for a solution, held in the supply catalog. It brings together catalog software projects, evaluation kits and a system design (ESD) source, and users can clone it.
   - GRID: `grid:supply::platform:solution-template/{id}`
 
 ## Entry points
@@ -56257,7 +56267,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Evaluation Kit](https://altiumdeveloper.github.io/cdm/classes/sup_EvalKit/)
+- [Evaluation Kit](https://altiumdeveloper.github.io/cdm/classes/sup_EvalKit/) — A vendor evaluation kit in the supply catalog, described by its associated devices, its reference designs (including a main one) and the software projects compatible with it. In Renesas 365 an eval kit can be linked to a solution, and the browser can connect to the kit over J-Link.
   - GRID: `grid:supply::platform:eval-kit/{id}`
 
 ### Returned By
@@ -57374,7 +57384,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Part Family](https://altiumdeveloper.github.io/cdm/classes/sup_PartFamily/)
+- [Part Family](https://altiumdeveloper.github.io/cdm/classes/sup_PartFamily/) — A manufacturer's grouping of parts in the supply data, where the kind of family is vendor-specific (e.g. Series or Family). Part families form a hierarchy: a family has either child families or, at the lowest level, Part Groups. Families sharing the same parent are usually close alternatives to one another.
   - GRID: `grid:supply::platform:part-family/{id}`
 
 ### Member Of
@@ -57617,7 +57627,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Part Group](https://altiumdeveloper.github.io/cdm/classes/sup_PartGroup/)
+- [Part Group](https://altiumdeveloper.github.io/cdm/classes/sup_PartGroup/) — A leaf of the part family hierarchy in the supply data, holding the parts that belong to it together with group-level information such as its manufacturer, overview, key features and documents. Groups sharing the same parent family are usually close alternatives to one another.
   - GRID: `grid:supply::platform:part-group/{id}`
 
 ### Returned By
@@ -57795,6 +57805,11 @@ deprecated: false
 # SupRefDesign
 
 A reference design model aggregates the relevant documents, files and parts.
+
+### Common Data Model
+
+- [Reference Design](https://altiumdeveloper.github.io/cdm/classes/sup_ReferenceDesign/) — An example design published in the supply catalog, bringing together its design files (e.g. schematics and layouts), documentation and the parts it uses. In Renesas 365 a reference design can be imported into a solution, which adds it to the Workspace as a PCB project linked to that solution.
+  - GRID: `grid:supply::platform:ref-design/{id}`
 
 ### Returned By
 
@@ -58588,7 +58603,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Software Project](https://altiumdeveloper.github.io/cdm/classes/sup_SoftwareProject/)
+- [Software Project](https://altiumdeveloper.github.io/cdm/classes/sup_SoftwareProject/) — A software project published in the supply catalog, together with the evaluation kits it is compatible with. In Renesas 365 it can be imported into a solution with a compatible eval kit; the import places the project in the Workspace and links it to the solution (see sft\_SoftwareProject).
   - GRID: `grid:supply::platform:software-project/{id}`
 
 ### Returned By
@@ -59540,7 +59555,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Solution Template](https://altiumdeveloper.github.io/cdm/classes/sup_SolutionTemplate/)
+- [Solution Template](https://altiumdeveloper.github.io/cdm/classes/sup_SolutionTemplate/) — A publisher's template for a solution, held in the supply catalog. It brings together catalog software projects, evaluation kits and a system design (ESD) source, and users can clone it.
   - GRID: `grid:supply::platform:solution-template/{id}`
 
 ### Returned By
@@ -67599,7 +67614,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 API types in this bounded context that represent CDM entities:
 
-- [`DesWorkflowDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-definition.md) — [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/)
+- [`DesWorkflowDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-definition.md) — [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/): A process workflow of an Altium 365 Workspace: the workflow that belongs to a process definition and steps designers through an everyday design process (e.g. requesting a new part, a design review or creating a new project). Workspace administrators build process definitions in the Process Workflow Editor, grouped by process theme (Part Requests, Project Activities, Project Creations), and activate them; each started instance of a process follows the workflow and creates tasks for the users whose action is needed to move it on.
   - GRID: `grid:workspace:{workspace-id}:customization:workflow/{id}`
 - [`GloScrScript`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md) — [Script](https://altiumdeveloper.github.io/cdm/classes/cus_Script/)
   - GRID: `grid:workspace:{workspace-id}:scripts:script/{id}`
@@ -68542,7 +68557,7 @@ A workflow definition contains a logical sequence of tasks.
 
 ### Common Data Model
 
-- [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/)
+- [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/) — A process workflow of an Altium 365 Workspace: the workflow that belongs to a process definition and steps designers through an everyday design process (e.g. requesting a new part, a design review or creating a new project). Workspace administrators build process definitions in the Process Workflow Editor, grouped by process theme (Part Requests, Project Activities, Project Creations), and activate them; each started instance of a process follows the workflow and creates tasks for the users whose action is needed to move it on.
   - GRID: `grid:workspace:{workspace-id}:customization:workflow/{id}`
 
 ### Member Of
@@ -72015,7 +72030,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 API types in this bounded context that represent CDM entities:
 
-- [`SysEsdDocument`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) — [ESD Document](https://altiumdeveloper.github.io/cdm/classes/sys_ESDDocument/)
+- [`SysEsdDocument`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) — [ESD Document](https://altiumdeveloper.github.io/cdm/classes/sys_ESDDocument/): A system-level block diagram document used in a Renesas 365 solution (listed there as a System Design project) to describe the architecture of the system at a functional level. It holds functional blocks with their hardware components, software components and ports, the connections between blocks, and blankets through which parts of the design can be linked to PCB or software projects. Pushing to and pulling from the solution's System Data Model (SDM) for the system design is done from the ESD document. Blankets are not modelled as a separate entity here (see MF-068).
   - GRID: `grid:workspace:{workspace-id}:system-design:esd/{id}`
 - [`SysSdmConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-connection.md) — [Connection](https://altiumdeveloper.github.io/cdm/classes/sys_SdmConnection/): Represents a connection between functional blocks.
 - [`SysSdmDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-device-model.md) — [Device Model](https://altiumdeveloper.github.io/cdm/classes/sys_SdmDeviceModel/): Represents a device model within the system design.
@@ -72024,7 +72039,7 @@ API types in this bounded context that represent CDM entities:
 - [`SysSdmFunctionalModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-functional-model.md) — [Functional Model](https://altiumdeveloper.github.io/cdm/classes/sys_SdmFunctionalModel/): Captures the functional aspects of the system design, focusing on the behavior and interactions of functional blocks.
 - [`SysSdmHardwareComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-hardware-component.md) — [Hardware Component](https://altiumdeveloper.github.io/cdm/classes/sys_SdmHardwareComponent/): Represents a hardware component / part.
 - [`SysSdmHardwareModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-hardware-model.md) — [Hardware Model](https://altiumdeveloper.github.io/cdm/classes/sys_SdmHardwareModel/): Captures the hardware components and their interactions within the system design.
-- [`SysSdmPort`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-port.md) — [Port](https://altiumdeveloper.github.io/cdm/classes/sys_SdmPort/): Represents a port within a system design.
+- [`SysSdmPort`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-port.md) — [Port](https://altiumdeveloper.github.io/cdm/classes/sys_SdmPort/): Represents a port within a system design. It is a logical interface of a functional block, distinct from dm\_Port, which is a physical port of a device.
 - [`SysSdmSoftwareComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-component.md) — [Software Component](https://altiumdeveloper.github.io/cdm/classes/sys_SdmSoftwareComponent/): Represents a software component instance and its dependencies.
 - [`SysSdmSoftwareModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-model.md) — [Software Model](https://altiumdeveloper.github.io/cdm/classes/sys_SdmSoftwareModel/): Captures the software components and their interactions within the system design.
 - [`SysSdmSoftwareSpecification`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-specification.md) — [Software Specification](https://altiumdeveloper.github.io/cdm/classes/sys_SdmSoftwareSpecification/): The "blueprint" for a software component. Captures the identity and classification of the software independently of any specific instance.
@@ -72786,7 +72801,7 @@ Represents an ESD (Electronic System Design) document stored in a regional works
 
 ### Common Data Model
 
-- [ESD Document](https://altiumdeveloper.github.io/cdm/classes/sys_ESDDocument/)
+- [ESD Document](https://altiumdeveloper.github.io/cdm/classes/sys_ESDDocument/) — A system-level block diagram document used in a Renesas 365 solution (listed there as a System Design project) to describe the architecture of the system at a functional level. It holds functional blocks with their hardware components, software components and ports, the connections between blocks, and blankets through which parts of the design can be linked to PCB or software projects. Pushing to and pulling from the solution's System Data Model (SDM) for the system design is done from the ESD document. Blankets are not modelled as a separate entity here (see MF-068).
   - GRID: `grid:workspace:{workspace-id}:system-design:esd/{id}`
 
 ### Returned By
@@ -74320,7 +74335,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Port](https://altiumdeveloper.github.io/cdm/classes/sys_SdmPort/) — Represents a port within a system design.
+- [Port](https://altiumdeveloper.github.io/cdm/classes/sys_SdmPort/) — Represents a port within a system design. It is a logical interface of a functional block, distinct from dm\_Port, which is a physical port of a device.
 
 ### Member Of
 
@@ -75326,7 +75341,15 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 API types in this bounded context that represent CDM entities:
 
 - [`DmAddressBlock`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-block.md) — [AddressBlock](https://altiumdeveloper.github.io/cdm/classes/dm_AddressBlock/): Address block with start, size, and optional registers and peripherals.
+- [`DmAddressMapModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-map-model.md) — [AddressMap](https://altiumdeveloper.github.io/cdm/classes/dm_AddressMap/): Address map for the device including memory and peripheral regions.
 - [`DmAddressSegment`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-segment.md) — [AddressSegment](https://altiumdeveloper.github.io/cdm/classes/dm_AddressSegment/): A contiguous region of the device's memory map. Each segment can represent either a memory or a peripheral region.
+- [`DmAmFieldEnum`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-field-enum.md) — [FieldEnum](https://altiumdeveloper.github.io/cdm/classes/dm_FieldEnum/): An enumerated value for a register field.
+- [`DmAmMemory`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-memory.md) — [Memory](https://altiumdeveloper.github.io/cdm/classes/dm_Memory/): A memory entry within an address block.
+- [`DmAmRegister`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register.md) — [Register](https://altiumdeveloper.github.io/cdm/classes/dm_Register/): A hardware register within an address block.
+- [`DmAmRegisterField`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register-field.md) — [RegisterField](https://altiumdeveloper.github.io/cdm/classes/dm_RegisterField/): A bit field within a register.
+- [`DmConfigDependency`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-dependency.md) — [PortConfigurationDependency](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfigurationDependency/): A dependency describing how a configuration value maps to GPIO or alternate function usage.
+- [`DmConfigEnumValue`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-enum-value.md) — [PortConfigurationEnumValue](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfigurationEnumValue/): An enumerated value for a port configuration.
+- [`DmDeviceModelAsConfigured`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-model-as-configured.md) — [ConfiguredDeviceModel](https://altiumdeveloper.github.io/cdm/classes/dm_ConfiguredDeviceModel/): A digital twin of an embedded hardware device as configured for a specific use-case. It exposes the device model filtered to specific device configuration.
 - [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) — [FullStackDeviceModel](https://altiumdeveloper.github.io/cdm/classes/dm_FullStackDeviceModel/): A digital twin of an embedded hardware device. It exposes the full device model, including interfaces, peripherals, and ports.
   - GRID: `grid:global::device-model:fullstack-dm/{id}`
 - [`DmPeripheral`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral.md) — [Peripheral](https://altiumdeveloper.github.io/cdm/classes/dm_Peripheral/): A single peripheral definition, including its instances and properties.
@@ -75337,11 +75360,11 @@ API types in this bounded context that represent CDM entities:
 - [`DmPortConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-configuration.md) — [PortConfiguration](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfiguration/): A specific configuration for a port.
 - [`DmPortConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-connection.md) — [PortConnection](https://altiumdeveloper.github.io/cdm/classes/dm_PortConnection/): A connection from this port to another component or signal.
 - [`DmPortFunction`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-function.md) — [PortFunction](https://altiumdeveloper.github.io/cdm/classes/dm_PortFunction/): A specific function that a port can perform.
-- [`SftDevCfgDeviceConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration.md) — [Device Configuration](https://altiumdeveloper.github.io/cdm/classes/sft_DeviceConfiguration/)
+- [`SftDevCfgDeviceConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration.md) — [Device Configuration](https://altiumdeveloper.github.io/cdm/classes/sft_DeviceConfiguration/): The configuration of a device (e.g. an MCU placed as a hardware component in an ESD document), covering its ports, package information, peripherals and pin assignments. It is viewed and edited on the hardware component in the ESD document, and the pin functions it defines can be pulled from the solution's SDM onto the pins of the associated component in a hardware project in Altium Designer.
   - GRID: `grid:workspace:{workspace-id}:software:device-configuration/{id}`
 - [`SftDevCfgDeviceConfigurationRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration-revision.md) — [Device Configuration Revision](https://altiumdeveloper.github.io/cdm/classes/sft_DeviceConfigurationRevision/)
   - GRID: `grid:workspace:{workspace-id}:software:device-configuration-revision/{id}`
-- [`SftSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) — [Software Project](https://altiumdeveloper.github.io/cdm/classes/sft_SoftwareProject/)
+- [`SftSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) — [Software Project](https://altiumdeveloper.github.io/cdm/classes/sft_SoftwareProject/): The software part of a Renesas 365 solution, developed in the built-in Web IDE (based on the Theia framework) or in e² studio; it can also be created with an external repository type. In the solution's ESD document it can be linked to a software blanket, and generating a board support package (BSP) from that blanket pushes the SDM and applies the changes to the linked project, creating the project first if none exists yet.
   - GRID: `grid:workspace:{workspace-id}:software:software-project/{id}`
 
 ## Entry points
@@ -78388,6 +78411,10 @@ deprecated: false
 
 Address map for the device including memory and peripheral regions.
 
+### Common Data Model
+
+- [AddressMap](https://altiumdeveloper.github.io/cdm/classes/dm_AddressMap/) — Address map for the device including memory and peripheral regions.
+
 ### Member Of
 
 [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) object
@@ -78498,6 +78525,10 @@ deprecated: false
 
 Enumerated value for a register field.
 
+### Common Data Model
+
+- [FieldEnum](https://altiumdeveloper.github.io/cdm/classes/dm_FieldEnum/) — An enumerated value for a register field.
+
 ### Member Of
 
 [`DmAmRegisterField`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register-field.md) object
@@ -78543,6 +78574,10 @@ deprecated: false
 
 Memory entry with name, size and type.
 
+### Common Data Model
+
+- [Memory](https://altiumdeveloper.github.io/cdm/classes/dm_Memory/) — A memory entry within an address block.
+
 ### Member Of
 
 [`DmAddressBlock`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-block.md) object
@@ -78587,6 +78622,10 @@ deprecated: false
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 Register entry within an address block.
+
+### Common Data Model
+
+- [Register](https://altiumdeveloper.github.io/cdm/classes/dm_Register/) — A hardware register within an address block.
 
 ### Member Of
 
@@ -78668,6 +78707,10 @@ deprecated: false
 
 Bit field within a register.
 
+### Common Data Model
+
+- [RegisterField](https://altiumdeveloper.github.io/cdm/classes/dm_RegisterField/) — A bit field within a register.
+
 ### Member Of
 
 [`DmAmRegister`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register.md) object
@@ -78727,6 +78770,10 @@ deprecated: false
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 Dependency describing how a configuration value maps to GPIO or alternate function usage.
+
+### Common Data Model
+
+- [PortConfigurationDependency](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfigurationDependency/) — A dependency describing how a configuration value maps to GPIO or alternate function usage.
 
 ### Member Of
 
@@ -78792,6 +78839,10 @@ deprecated: false
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 Configuration enumeration value for a port setting.
+
+### Common Data Model
+
+- [PortConfigurationEnumValue](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfigurationEnumValue/) — An enumerated value for a port configuration.
 
 ### Member Of
 
@@ -79050,6 +79101,10 @@ deprecated: false
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 GraphQL type that exposes the device model as configured, typically after user or tool selections.
+
+### Common Data Model
+
+- [ConfiguredDeviceModel](https://altiumdeveloper.github.io/cdm/classes/dm_ConfiguredDeviceModel/) — A digital twin of an embedded hardware device as configured for a specific use-case. It exposes the device model filtered to specific device configuration.
 
 ### Returned By
 
@@ -84193,7 +84248,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Device Configuration](https://altiumdeveloper.github.io/cdm/classes/sft_DeviceConfiguration/)
+- [Device Configuration](https://altiumdeveloper.github.io/cdm/classes/sft_DeviceConfiguration/) — The configuration of a device (e.g. an MCU placed as a hardware component in an ESD document), covering its ports, package information, peripherals and pin assignments. It is viewed and edited on the hardware component in the ESD document, and the pin functions it defines can be pulled from the solution's SDM onto the pins of the associated component in a hardware project in Altium Designer.
   - GRID: `grid:workspace:{workspace-id}:software:device-configuration/{id}`
 
 ### Returned By
@@ -84843,7 +84898,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Software Project](https://altiumdeveloper.github.io/cdm/classes/sft_SoftwareProject/)
+- [Software Project](https://altiumdeveloper.github.io/cdm/classes/sft_SoftwareProject/) — The software part of a Renesas 365 solution, developed in the built-in Web IDE (based on the Theia framework) or in e² studio; it can also be created with an external repository type. In the solution's ESD document it can be linked to a software blanket, and generating a board support package (BSP) from that blanket pushes the SDM and applies the changes to the linked project, creating the project first if none exists yet.
   - GRID: `grid:workspace:{workspace-id}:software:software-project/{id}`
 
 ### Returned By

@@ -13,7 +13,7 @@ Represents a user registered in a workspace.
 
 ### Common Data Model
 
-- [Workspace User](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceUser/)
+- [Workspace User](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceUser/) — A person's membership in a particular Workspace, connecting their Altium Account to that Workspace and to the Workspace groups they are assigned to. Members can come from the organization that owns the Workspace or from other organizations, and inviting an outside user does not add them to the owning organization. People who only have a project shared with them (External Share guests) are not members.
   - GRID: `grid:workspace:{workspace-id}:team:user/{id}`
 
 ### Returned By

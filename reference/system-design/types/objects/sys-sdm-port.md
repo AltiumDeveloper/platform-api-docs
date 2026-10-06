@@ -17,7 +17,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Port](https://altiumdeveloper.github.io/cdm/classes/sys_SdmPort/) — Represents a port within a system design.
+- [Port](https://altiumdeveloper.github.io/cdm/classes/sys_SdmPort/) — Represents a port within a system design. It is a logical interface of a functional block, distinct from dm\_Port, which is a physical port of a device.
 
 ### Member Of
 

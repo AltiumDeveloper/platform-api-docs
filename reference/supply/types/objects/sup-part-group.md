@@ -13,7 +13,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Part Group](https://altiumdeveloper.github.io/cdm/classes/sup_PartGroup/)
+- [Part Group](https://altiumdeveloper.github.io/cdm/classes/sup_PartGroup/) — A leaf of the part family hierarchy in the supply data, holding the parts that belong to it together with group-level information such as its manufacturer, overview, key features and documents. Groups sharing the same parent family are usually close alternatives to one another.
   - GRID: `grid:supply::platform:part-group/{id}`
 
 ### Returned By

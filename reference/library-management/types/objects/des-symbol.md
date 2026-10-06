@@ -13,7 +13,7 @@ A component symbol. These represent the body and the pins on the physical compon
 
 ### Common Data Model
 
-- [Symbol Revision](https://altiumdeveloper.github.io/cdm/classes/lib_SymbolRevision/)
+- [Symbol Revision](https://altiumdeveloper.github.io/cdm/classes/lib_SymbolRevision/) — A revision of a Symbol: the schematic symbol as saved into the Workspace at one point in time, with its own lifecycle state. Editing a Workspace Symbol saves it into the next revision; components that still link to an earlier revision become out of date until they are updated.
   - GRID: `grid:workspace:{workspace-id}:library:symbol-revision/{id}`
 
 ### Returned By

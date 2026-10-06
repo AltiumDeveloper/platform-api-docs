@@ -17,6 +17,10 @@ deprecated: false
 
 Dependency describing how a configuration value maps to GPIO or alternate function usage.
 
+### Common Data Model
+
+- [PortConfigurationDependency](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfigurationDependency/) — A dependency describing how a configuration value maps to GPIO or alternate function usage.
+
 ### Member Of
 
 [`DmConfigEnumValue`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-enum-value.md) object

@@ -17,6 +17,10 @@ deprecated: false
 
 Memory entry with name, size and type.
 
+### Common Data Model
+
+- [Memory](https://altiumdeveloper.github.io/cdm/classes/dm_Memory/) — A memory entry within an address block.
+
 ### Member Of
 
 [`DmAddressBlock`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-block.md) object

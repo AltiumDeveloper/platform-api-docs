@@ -17,6 +17,10 @@ deprecated: false
 
 Address map for the device including memory and peripheral regions.
 
+### Common Data Model
+
+- [AddressMap](https://altiumdeveloper.github.io/cdm/classes/dm_AddressMap/) — Address map for the device including memory and peripheral regions.
+
 ### Member Of
 
 [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) object

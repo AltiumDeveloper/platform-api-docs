@@ -13,7 +13,7 @@ A comment is one of remarks associated with a comment thread or task.
 
 ### Common Data Model
 
-- [Comment](https://altiumdeveloper.github.io/cdm/classes/col_Comment/)
+- [Comment](https://altiumdeveloper.github.io/cdm/classes/col_Comment/) — A single entry in a comment thread: either the initial comment, pinned to a point, an object or an area of a design document (or to a BOM line), or a reply to it. A comment can mention people or groups using @, and it can be assigned to a Workspace member as a task, either when it is posted or later by converting it. Only the author can edit or delete a comment, and deleting the initial comment also deletes its replies.
 
 ### Member Of
 

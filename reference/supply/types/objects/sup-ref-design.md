@@ -11,6 +11,11 @@ deprecated: false
 
 A reference design model aggregates the relevant documents, files and parts.
 
+### Common Data Model
+
+- [Reference Design](https://altiumdeveloper.github.io/cdm/classes/sup_ReferenceDesign/) — An example design published in the supply catalog, bringing together its design files (e.g. schematics and layouts), documentation and the parts it uses. In Renesas 365 a reference design can be imported into a solution, which adds it to the Workspace as a PCB project linked to that solution.
+  - GRID: `grid:supply::platform:ref-design/{id}`
+
 ### Returned By
 
 [`supRefDesignById`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-ref-design-by-id.md) query · [`supRefDesignByIds`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/supply/operations/queries/sup-ref-design-by-ids.md) query · [`supRefDesignByName`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-ref-design-by-name.md) query · [`supRefDesignsByIds`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-ref-designs-by-ids.md) query

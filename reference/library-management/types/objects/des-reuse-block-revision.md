@@ -13,7 +13,7 @@ Reuse block revision information.
 
 ### Common Data Model
 
-- [Reuse Block Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlockRevision/)
+- [Reuse Block Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlockRevision/) — A revision of a Reuse Block: its schematic and/or PCB content as saved into the Workspace at one point in time, with its own lifecycle state. Editing a reuse block saves it into the next revision.
   - GRID: `grid:workspace:{workspace-id}:library:reuse-block-revision/{id}`
 
 ### Returned By

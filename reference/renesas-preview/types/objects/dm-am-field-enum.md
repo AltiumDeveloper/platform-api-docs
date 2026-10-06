@@ -17,6 +17,10 @@ deprecated: false
 
 Enumerated value for a register field.
 
+### Common Data Model
+
+- [FieldEnum](https://altiumdeveloper.github.io/cdm/classes/dm_FieldEnum/) — An enumerated value for a register field.
+
 ### Member Of
 
 [`DmAmRegisterField`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register-field.md) object

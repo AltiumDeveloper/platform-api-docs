@@ -13,7 +13,7 @@ Information about the life cycle state.
 
 ### Common Data Model
 
-- [Lifecycle State](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleState/)
+- [Lifecycle State](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleState/) — A named point in an Item Revision's lifecycle (e.g. Planned, New From Design, In Production, Obsolete) that shows its status from a business perspective. Each state's properties include whether revisions in that state are shown in the Explorer panel and whether they may be used in designs; a revision moves to another state only through a transition defined in its lifecycle definition.
 
 ### Member Of
 

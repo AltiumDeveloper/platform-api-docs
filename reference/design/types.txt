@@ -113,11 +113,10 @@
 - [DesVia](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-via.md): PCB design via information.
 - [DesWeight](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-weight.md): Weight in grams and ounces.
 - [DesWorkInProgress](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-work-in-progress.md): The most recent version of a design.
-- [RuleCheck](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check.md): Represents a rule check definition. [EXPERIMENTAL]
 - [RuleCheckAggregateExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-aggregate-execution.md): Represents the aggregated result of one or more rule check executions for a design. [EXPERIMENTAL]
 - [RuleCheckAggregateExecution_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-aggregate-execution-preview.md) [EXPERIMENTAL]
 - [RuleCheckConfiguration](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-configuration.md): Represents current rule check configuration. [EXPERIMENTAL]
-- [RuleCheckExecution](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md): Represents the execution of rule checks against a design. [EXPERIMENTAL]
+- [RuleCheckExecution_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-preview.md) [EXPERIMENTAL]
 - [RuleCheckExecutionPart](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md): Represents the definition of a single rule check (one part of the execution) at the time of execution and it's current status. [EXPERIMENTAL]
 - [RuleViolation](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation.md): Represents a violation detected during a rule check execution. [EXPERIMENTAL]
 - [RuleViolation_Preview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-preview.md) [EXPERIMENTAL]

@@ -15,11 +15,6 @@ deprecated: false
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
-### Common Data Model
-
-- [Rule Check Execution](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheckExecution/) — Execution of a rule check against a project to validate design integrity and compliance with specified constraints.
-  - GRID: `grid:workspace:{workspace-id}:design:rule-check-execution/{id}`
-
 ### Returned By
 
 [`design.preview.ruleCheckExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-execution.md) query · [`design.preview.ruleCheckExecutions`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-executions.md) query · [`design.preview.ruleCheckExecutionsByDesignId`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-executions-by-design-id.md) query · [`design.preview.ruleCheckExecutionsByReleaseId`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-executions-by-release-id.md) query · [`design.preview.ruleCheckLatestExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-latest-execution.md) query

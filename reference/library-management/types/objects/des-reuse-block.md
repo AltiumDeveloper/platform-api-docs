@@ -13,7 +13,7 @@ Reuse blocks are items that can be reused in future board-level design projects.
 
 ### Common Data Model
 
-- [Reuse Block](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlock/)
+- [Reuse Block](https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlock/) — A reusable section of a design stored in a Workspace, typically combining schematic circuitry with its PCB representation; a block can also be schematic-only or PCB-only. Placing a reuse block on a schematic sheet brings its PCB content into the board design when changes are transferred through an ECO.
   - GRID: `grid:workspace:{workspace-id}:library:reuse-block/{id}`
 
 ### Returned By

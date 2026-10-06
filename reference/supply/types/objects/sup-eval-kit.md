@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Evaluation Kit](https://altiumdeveloper.github.io/cdm/classes/sup_EvalKit/)
+- [Evaluation Kit](https://altiumdeveloper.github.io/cdm/classes/sup_EvalKit/) — A vendor evaluation kit in the supply catalog, described by its associated devices, its reference designs (including a main one) and the software projects compatible with it. In Renesas 365 an eval kit can be linked to a solution, and the browser can connect to the kit over J-Link.
   - GRID: `grid:supply::platform:eval-kit/{id}`
 
 ### Returned By

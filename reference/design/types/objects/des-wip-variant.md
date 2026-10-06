@@ -13,7 +13,7 @@ A variant contains a specific configuration of a base design.
 
 ### Common Data Model
 
-- [Hardware Project Variant](https://altiumdeveloper.github.io/cdm/classes/des_ProjectVariant/)
+- [Hardware Project Variant](https://altiumdeveloper.github.io/cdm/classes/des_ProjectVariant/) — A design variant of a project: a named variation of the same base design that is assembled with a different set of components. Within a variant, each component can be fitted, not fitted, fitted with varied parameters, or replaced by an alternate part, and the variant can define its own variant-level parameters. Assembly variants share one bare board, whereas fabrication variants also change overlay information and so need a different board.
 
 ### Returned By
 

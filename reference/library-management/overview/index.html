@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Library Management | Altium Platform API</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Library Management | Altium Platform API"><meta data-rh="true" name="description" content="Managed components, component templates, parts, symbols, footprints, datasheets, reuse blocks and library search."><meta data-rh="true" property="og:description" content="Managed components, component templates, parts, symbols, footprints, datasheets, reuse blocks and library search."><link data-rh="true" rel="icon" href="/platform-api-docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview"><link data-rh="true" rel="alternate" href="https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview" hreflang="en"><link data-rh="true" rel="alternate" href="https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview" hreflang="x-default"><link data-rh="true" rel="alternate" type="text/markdown" href="/platform-api-docs/reference/library-management/overview.md"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Library Management","item":"https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview"}]}</script><link rel="stylesheet" href="/platform-api-docs/assets/css/styles.a7d0182a.css">
-<script src="/platform-api-docs/assets/js/runtime~main.8b1eccab.js" defer="defer"></script>
+<script src="/platform-api-docs/assets/js/runtime~main.00c6b739.js" defer="defer"></script>
 <script src="/platform-api-docs/assets/js/main.20ff10b6.js" defer="defer"></script>
 </head>
 <body>
@@ -22,13 +22,13 @@
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:component-revision/{id}</code></li>
 </ul>
 </li>
-<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-component-parameter"><code>DesComponentParameter</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ComponentParameter/" target="_blank" rel="noopener noreferrer" class="">Component Parameter</a></li>
+<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-component-parameter"><code>DesComponentParameter</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ComponentParameter/" target="_blank" rel="noopener noreferrer" class="">Component Parameter</a>: A named parameter of a Workspace component, holding a value and, optionally, a data type. Parameters can be inherited from a component template or added directly to the component; a template can give them unit-aware (e.g. Farad, Ohm) or dictionary-defined types.</li>
 <li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-component-template"><code>DesComponentTemplate</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplate/" target="_blank" rel="noopener noreferrer" class="">Component Template</a>: Component Template defines a reusable blueprint for creating and managing electronic components with consistent parameters, metadata, and lifecycle policies.<!-- -->
 <ul>
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:component-template/{id}</code></li>
 </ul>
 </li>
-<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-component-template-revision"><code>DesComponentTemplateRevision</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/" target="_blank" rel="noopener noreferrer" class="">Component Template Revision</a>
+<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-component-template-revision"><code>DesComponentTemplateRevision</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/" target="_blank" rel="noopener noreferrer" class="">Component Template Revision</a>: A revision of a Component Template: the template definition, stored as a *.CMPT document, saved into the Workspace at one point in time. A component revision can be linked to a specific template revision, from which it takes its predefined parameters, models and settings.<!-- -->
 <ul>
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:component-template-revision/{id}</code></li>
 </ul>
@@ -38,27 +38,27 @@
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:datasheet/{id}</code></li>
 </ul>
 </li>
-<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-footprint"><code>DesFootprint</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_FootprintRevision/" target="_blank" rel="noopener noreferrer" class="">Footprint Revision</a>
+<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-footprint"><code>DesFootprint</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_FootprintRevision/" target="_blank" rel="noopener noreferrer" class="">Footprint Revision</a>: A revision of a Footprint: the PCB footprint as saved into the Workspace at one point in time, with its own lifecycle state. Editing a Workspace Footprint saves it into the next revision; components that still link to an earlier revision become out of date until they are updated.<!-- -->
 <ul>
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:footprint-revision/{id}</code></li>
 </ul>
 </li>
-<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-part"><code>DesPart</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_Part/" target="_blank" rel="noopener noreferrer" class="">Part</a>
+<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-part"><code>DesPart</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_Part/" target="_blank" rel="noopener noreferrer" class="">Part</a>: A manufacturer part, identified by manufacturer and part number, as held in the Workspace&#x27;s Part Catalog together with the supplier parts through which it is sold. Workspace components reference manufacturer parts through their Part Choices.<!-- -->
 <ul>
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:part/{id}</code></li>
 </ul>
 </li>
-<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-reuse-block"><code>DesReuseBlock</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlock/" target="_blank" rel="noopener noreferrer" class="">Reuse Block</a>
+<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-reuse-block"><code>DesReuseBlock</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlock/" target="_blank" rel="noopener noreferrer" class="">Reuse Block</a>: A reusable section of a design stored in a Workspace, typically combining schematic circuitry with its PCB representation; a block can also be schematic-only or PCB-only. Placing a reuse block on a schematic sheet brings its PCB content into the board design when changes are transferred through an ECO.<!-- -->
 <ul>
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:reuse-block/{id}</code></li>
 </ul>
 </li>
-<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-reuse-block-revision"><code>DesReuseBlockRevision</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlockRevision/" target="_blank" rel="noopener noreferrer" class="">Reuse Block Revision</a>
+<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-reuse-block-revision"><code>DesReuseBlockRevision</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_ReuseBlockRevision/" target="_blank" rel="noopener noreferrer" class="">Reuse Block Revision</a>: A revision of a Reuse Block: its schematic and/or PCB content as saved into the Workspace at one point in time, with its own lifecycle state. Editing a reuse block saves it into the next revision.<!-- -->
 <ul>
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:reuse-block-revision/{id}</code></li>
 </ul>
 </li>
-<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-symbol"><code>DesSymbol</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_SymbolRevision/" target="_blank" rel="noopener noreferrer" class="">Symbol Revision</a>
+<li class=""><a class="" href="/platform-api-docs/reference/library-management/types/objects/des-symbol"><code>DesSymbol</code></a> — <a href="https://altiumdeveloper.github.io/cdm/classes/lib_SymbolRevision/" target="_blank" rel="noopener noreferrer" class="">Symbol Revision</a>: A revision of a Symbol: the schematic symbol as saved into the Workspace at one point in time, with its own lifecycle state. Editing a Workspace Symbol saves it into the next revision; components that still link to an earlier revision become out of date until they are updated.<!-- -->
 <ul>
 <li class="">GRID: <code>grid:workspace:{workspace-id}:library:symbol-revision/{id}</code></li>
 </ul>

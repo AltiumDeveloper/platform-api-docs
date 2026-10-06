@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a rule check definition.
 
+### Common Data Model
+
+- [Rule Check](https://altiumdeveloper.github.io/cdm/classes/des_RuleCheck/) — Rule check definitions that can be executed against a project to validate design integrity and compliance with specified constraints.
+  - GRID: `grid:workspace:{workspace-id}:design:rule-check/{id}`
+
 ### Returned By
 
 [`design.preview.ruleCheckById`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-check-by-id.md) query · [`design.preview.ruleChecksByAuth`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-checks-by-auth.md) query · [`design.preview.ruleChecksByIds`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/preview/rule-checks-by-ids.md) query · [`design.ruleCheck.byAuth`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check/by-auth.md) query · [`design.ruleCheck.byId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check/by-id.md) query · [`design.ruleCheck.byIds`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check/by-ids.md) query

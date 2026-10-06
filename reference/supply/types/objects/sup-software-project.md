@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Software Project](https://altiumdeveloper.github.io/cdm/classes/sup_SoftwareProject/)
+- [Software Project](https://altiumdeveloper.github.io/cdm/classes/sup_SoftwareProject/) — A software project published in the supply catalog, together with the evaluation kits it is compatible with. In Renesas 365 it can be imported into a solution with a compatible eval kit; the import places the project in the Workspace and links it to the solution (see sft\_SoftwareProject).
   - GRID: `grid:supply::platform:software-project/{id}`
 
 ### Returned By

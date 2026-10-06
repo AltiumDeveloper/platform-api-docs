@@ -13,7 +13,7 @@ Represents a part.
 
 ### Common Data Model
 
-- [Part](https://altiumdeveloper.github.io/cdm/classes/lib_Part/)
+- [Part](https://altiumdeveloper.github.io/cdm/classes/lib_Part/) — A manufacturer part, identified by manufacturer and part number, as held in the Workspace's Part Catalog together with the supplier parts through which it is sold. Workspace components reference manufacturer parts through their Part Choices.
   - GRID: `grid:workspace:{workspace-id}:library:part/{id}`
 
 ### Returned By

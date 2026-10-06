@@ -13,7 +13,7 @@ A component footprint. Footprints define the space a component occupies.
 
 ### Common Data Model
 
-- [Footprint Revision](https://altiumdeveloper.github.io/cdm/classes/lib_FootprintRevision/)
+- [Footprint Revision](https://altiumdeveloper.github.io/cdm/classes/lib_FootprintRevision/) — A revision of a Footprint: the PCB footprint as saved into the Workspace at one point in time, with its own lifecycle state. Editing a Workspace Footprint saves it into the next revision; components that still link to an earlier revision become out of date until they are updated.
   - GRID: `grid:workspace:{workspace-id}:library:footprint-revision/{id}`
 
 ### Returned By

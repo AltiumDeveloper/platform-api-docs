@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [Organization](https://altiumdeveloper.github.io/cdm/classes/plt_Organization/)
+- [Organization](https://altiumdeveloper.github.io/cdm/classes/plt_Organization/) — An Altium customer organization, represented by its Company Account. The Company Account brings together the organization's users and groups of users, its purchased licenses and the Altium 365 Workspaces created for it, along with a company profile (e.g. name, logo and website). Administrators manage it through the Company Dashboard.
   - GRID: `grid:global::platform:organization/{id}`
 
 ### Returned By

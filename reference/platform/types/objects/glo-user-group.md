@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [User Group](https://altiumdeveloper.github.io/cdm/classes/plt_UserGroup/) — A way to group multiple users together (e.g. for the purposes of SCIM syncrhonization). User may be a member of multiple groups.
+- [User Group](https://altiumdeveloper.github.io/cdm/classes/plt_UserGroup/) — A named group of users within an organization's Company Account, managed in the Company Dashboard. Licenses can be allocated to a group so that its members can use them, and the Group Administrators system group gives its members Dashboard administration rights. A user can belong to any number of groups, groups can be provisioned from an identity provider via SCIM, and they are distinct from the groups defined inside a Workspace.
   - GRID: `grid:global::platform:group/{id}`
 
 ### Member Of

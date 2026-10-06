@@ -11,7 +11,7 @@ deprecated: false
 
 ### Common Data Model
 
-- [User](https://altiumdeveloper.github.io/cdm/classes/plt_User/)
+- [User](https://altiumdeveloper.github.io/cdm/classes/plt_User/) — A person identified by a global Altium Account, the identity used for signing in to Altium services. A user can be registered in an organization's Company Account, either added by an administrator or admitted through an approved join request, and can then be given access to licenses through the Company Account's user groups. Access to a Workspace is granted separately, by making the user a member of that Workspace.
   - GRID: `grid:global::platform:user/{id}`
 
 ### Returned By

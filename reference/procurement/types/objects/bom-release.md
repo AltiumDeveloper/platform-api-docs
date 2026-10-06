@@ -13,7 +13,7 @@ Represents a release of the BOM (i.e., a snapshot of a work-in-progress BOM).
 
 ### Common Data Model
 
-- [BOM Release](https://altiumdeveloper.github.io/cdm/classes/pro_BomRelease/)
+- [BOM Release](https://altiumdeveloper.github.io/cdm/classes/pro_BomRelease/) — A static snapshot of a Managed BOM's data, saved under a release name with an incremented revision number and optional notes. The BOM Portal makes a release automatically when a Managed BOM is first created and again once its data has been mapped, and further releases can be made whenever needed. Each release moves through its own lifecycle states (by default Draft, Approved and Obsolete), and a Workspace can be configured to block releasing while the BOM has Error or Fatal Error issues.
   - GRID: `grid:workspace:{workspace-id}:procurement:bom-release/{id}`
 
 ### Returned By
