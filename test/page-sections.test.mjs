@@ -26,14 +26,16 @@ test('orders an object page: CDM, Returned By, Member Of, Interfaces, Implemente
   assert.deepEqual(order, [
     'tags', 'experimentalNote', 'description', 'cdmEntity',
     'relations:Returned By', 'relations:Member Of', 'metadata:Interfaces', 'relations:Implemented By',
-    'code', 'metadata:Fields', 'example', 'customDirectives',
+    'split:open', 'code', 'split:mid', 'metadata:Fields', 'split:close', 'example', 'customDirectives',
   ]);
+  assert.match(sections['split:open'].content, /^<div className="ref-split">\n\n<div className="ref-split__code">\n$/);
+  assert.match(sections['split:mid'].content, /ref-split__fields/);
   assert.deepEqual(sections['metadata:Fields'], { title: 'Fields', content: 'f', level: 3 });
   assert.deepEqual(sections['relations:Returned By'], { content: '### Returned By\n\n[`a`](/a)' });
   assert.deepEqual(sections['relations:Implemented By'], { content: '### Implemented By\n\n[`U`](/u)' });
 });
 
-test('keeps member sections in printer order and skips missing relations (operation page)', () => {
+test('operation page: Type first, then SDL beside Arguments; missing relations are skipped', () => {
   const sections = {
     description: { content: 'Desc.' },
     code: { content: 'code' },
@@ -41,7 +43,9 @@ test('keeps member sections in printer order and skips missing relations (operat
     relations: undefined,
   };
   const order = reorderTypePageSections(sections, ['tags', 'description', 'code', 'metadata', 'example', 'relations']);
-  assert.deepEqual(order, ['tags', 'description', 'code', 'metadata:Arguments', 'metadata:Type', 'example']);
+  assert.deepEqual(order, [
+    'tags', 'description', 'metadata:Type', 'split:open', 'code', 'split:mid', 'metadata:Arguments', 'split:close', 'example',
+  ]);
 });
 
 test('handles a single metadata section object (enum page) and unknown relation headings', () => {
@@ -50,7 +54,7 @@ test('handles a single metadata section object (enum page) and unknown relation 
     relations: { content: '### Member Of\n\nm\n\n### Something Else\n\ns\n' },
   };
   const order = reorderTypePageSections(sections, ['description', 'code', 'metadata', 'relations']);
-  assert.deepEqual(order, ['description', 'relations:Member Of', 'code', 'metadata:Values', 'relations:Something Else']);
+  assert.deepEqual(order, ['description', 'relations:Member Of', 'split:open', 'code', 'split:mid', 'metadata:Values', 'split:close', 'relations:Something Else']);
 });
 
 test('leaves unsplittable metadata after the code block', () => {
@@ -62,6 +66,7 @@ test('hook rewrites the event output from the event sections', async () => {
   const event = { data: { sections: objectSections() }, output: [...DEFAULT_ORDER] };
   await beforeComposePageTypeHook(event);
   assert.equal(event.output[4], 'relations:Returned By');
+  assert.ok(event.output.includes('split:open'));
   assert.ok(event.data.sections['metadata:Interfaces']);
 });
 
@@ -106,4 +111,9 @@ test('formatter module re-exports the Docusaurus MDX formatter and adds the hook
   assert.equal(typeof mdx.beforeGenerateIndexMetafileHook, 'function');
   assert.equal(typeof mdx.mdxDeclaration, 'string');
   assert.equal(mdx.beforeComposePageTypeHook, beforeComposePageTypeHook);
+});
+
+test('operation page without arguments is not split', () => {
+  const sections = { code: { content: 'c' }, metadata: { content: [{ title: 'Type', content: 't', level: 3 }] } };
+  assert.deepEqual(reorderTypePageSections(sections, ['description', 'code', 'metadata']), ['description', 'code', 'metadata:Type']);
 });

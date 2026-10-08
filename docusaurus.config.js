@@ -23,8 +23,8 @@ const brokenLinks = process.env.APIDOCS_SCHEMA_FILE ? 'warn' : 'throw';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Altium Platform API',
-  tagline: 'GraphQL reference for the Altium Platform API, organised by bounded context',
+  title: 'Altium 365 API',
+  tagline: 'GraphQL reference for the Altium 365 API, organised by bounded context',
   url: 'https://altiumdeveloper.github.io',
   baseUrl: '/platform-api-docs/',
   organizationName: 'AltiumDeveloper',
@@ -76,16 +76,17 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: { respectPrefersColorScheme: true },
       navbar: {
-        title: 'Altium Platform API',
+        title: 'Altium 365 API - Reference Documentation',
+        logo: { alt: 'Altium', src: 'img/altium-logo.svg', width: 90, height: 20 },
         items: [
-          { type: 'docSidebar', sidebarId: 'docs', label: 'Reference', position: 'left' },
           { href: DEVELOPER_CENTER, label: 'Developer Center', position: 'right' },
           { href: REPO, label: 'GitHub', position: 'right' },
         ],
       },
       footer: {
-        style: 'light',
+        style: 'dark',
         links: [
           {
             title: 'Altium',
@@ -106,7 +107,7 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Altium.`,
       },
-      prism: { theme: themes.github, darkTheme: themes.dracula },
+      prism: { theme: themes.github, darkTheme: themes.oneDark },
     }),
 };
 

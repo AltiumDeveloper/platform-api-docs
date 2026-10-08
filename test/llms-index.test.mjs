@@ -112,7 +112,7 @@ test('operationField walks namespaced operations', () => {
 test('renderContextIndex renders the per-context llms.txt', () => {
   const text = renderContextIndex({ context: design, pages, schema, cdmIndex, siteUrl: SITE, sliceTokens: 123, typesTokens: 45 });
   const expected = [
-    '# Design — Altium Platform API',
+    '# Design — Altium 365 API',
     '> Hardware projects.',
     '',
     `Concepts: [design](https://altiumdeveloper.github.io/cdm/subsets/design/). Schema slice: [schema.graphql](${SITE}/reference/design/schema.graphql) (~123 tokens). Overview: [overview](${SITE}/reference/design/overview.md).`,
@@ -199,7 +199,7 @@ test('renderContextIndex omits empty sections and deprecated pages', () => {
 
 test('renderDeprecatedIndex groups deprecated operations by context with their reason', () => {
   const text = renderDeprecatedIndex({ contexts: [design, common], pages, schema, siteUrl: SITE });
-  assert.match(text, /^# Deprecated — Altium Platform API\n/);
+  assert.match(text, /^# Deprecated — Altium 365 API\n/);
   assert.match(text, new RegExp(`## Design\n- \\[desOldProject\\]\\(${SITE}/reference/deprecated/design/operations/queries/des-old-project\\.md\\): Old lookup\\. \\(deprecated: Use desProjectById\\.\\)`));
   assert.doesNotMatch(text, /## Common/);
 });
@@ -212,7 +212,7 @@ test('renderRootIndex lists contexts, guides, Developer Center and optional file
     schemaTokens: 1000,
     fullTokens: 2000,
   });
-  assert.match(text, /^# Altium Platform API\n> GraphQL API for Altium 365/);
+  assert.match(text, /^# Altium 365 API\n> GraphQL API for Altium 365/);
   assert.match(text, /How to navigate \(for assistants\):/);
   assert.ok(text.includes('most mutations take `input: XInput!` and return `XPayload!`; paged lists are Relay connections (`first`/`after`)'));
   assert.doesNotMatch(text, /list fields are Relay|; mutations take/);

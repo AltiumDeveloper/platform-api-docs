@@ -1,7 +1,7 @@
-# Altium Platform API documentation
+# Altium 365 API documentation
 
 Source for https://altiumdeveloper.github.io/platform-api-docs/ — the GraphQL reference for the
-Altium Platform API, grouped by bounded context and cross-linked with the
+Altium 365 API, grouped by bounded context and cross-linked with the
 [Common Data Model](https://altiumdeveloper.github.io/cdm/).
 
 ## How it works

@@ -78,7 +78,7 @@ test('design slice excludes other contexts', () => {
 test('the header names the slice, its size, the full schema and external references', () => {
   const { text, tokens, externals } = slice('design');
   const lines = text.split('\n');
-  assert.equal(lines[0], `# Altium Platform API — Design schema slice (~${tokens} tokens)`);
+  assert.equal(lines[0], `# Altium 365 API — Design schema slice (~${tokens} tokens)`);
   assert.ok(tokens > 0);
   assert.equal(lines[1], '# Not a complete schema: types from other contexts are referenced, not defined.');
   assert.equal(lines[2], `# Full schema for code generation: ${SITE}/schema.graphql`);

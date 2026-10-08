@@ -4,7 +4,7 @@ import { CDM_SITE } from './cdm.mjs';
 
 const require = createRequire(import.meta.url);
 const { escapeMDX, slugify } = require('@graphql-markdown/utils');
-const { renderCdmTypeItem } = require('./cdm-render.cjs');
+const { renderCdmTypeRow } = require('./cdm-render.cjs');
 
 const OPERATION_KINDS = { queries: 'query', mutations: 'mutation', subscriptions: 'subscription' };
 const KIND_LABELS = [
@@ -59,6 +59,56 @@ export function stripDocDirectiveLinks(text) {
     .join('\n');
 }
 
+const CONTEXT_BADGE = /[ \t]*<Badge class="badge badge--secondary " text="([^"]*)"\/>/g;
+
+// graphql-markdown tags every type reference with the slug of the bounded context that defines it (`design`,
+// `common`, ...), which reads as noise. Drops the tag for the page's own context and for the shared `common`
+// context, and shows the others as a readable cross-context chip ("Platform context").
+export function rewriteContextBadges(text, ownSlug, contexts) {
+  const titles = new Map(contexts.map((context) => [context.slug, context.title]));
+  return text.replace(CONTEXT_BADGE, (badge, slug) => {
+    if (!titles.has(slug)) return badge;
+    if (slug === ownSlug || slug === 'common') return '';
+    const title = escapeMDX(titles.get(slug));
+    return ` <Badge class="badge badge--secondary badge--context bc-${slug}" text="${title}" title="Defined in the ${title} bounded context" href="/reference/${slug}/overview"/>`;
+  });
+}
+
+const MEMBER_PREFIX = /(<code style=\{\{ fontWeight: 'normal' \}\}>)[A-Za-z_][\w.]*\.(<b>)/g;
+
+// Field and argument headings read `DesProject.collaborationRevisions.after`: the page is already about
+// DesProject, so the parent path is noise. Keeps only the member name; anchors are unaffected.
+export const stripMemberPrefixes = (text) => text.replace(MEMBER_PREFIX, '$1$2');
+
+const BACKTICK_NAME = /(?<![\[`\w])`([A-Za-z_][\w.]*)`(?!\]\(|\w)/g;
+
+// name -> url of every documented type and operation; a live page wins over a deprecated one of the same name.
+export function buildLinkTargets(pages) {
+  const targets = new Map();
+  for (const page of pages) {
+    if (!page.name || (targets.has(page.name) && page.deprecated)) continue;
+    targets.set(page.name, page.url);
+  }
+  return targets;
+}
+
+// Descriptions refer to other operations and types as backticked names (see also `desProjectRevisions`). Links
+// every such name that is a documented page. Leaves code blocks, headings, existing links and the page itself alone.
+export function linkCodeReferences(text, targets, ownUrl) {
+  let fenced = false;
+  return text
+    .split('\n')
+    .map((line) => {
+      if (/^\s*(```|~~~)/.test(line)) fenced = !fenced;
+      if (fenced || /^\s*(#|export |import |---)/.test(line)) return line;
+      return line.replace(BACKTICK_NAME, (match, name) => {
+        const url = targets.get(name);
+        return url && url !== ownUrl ? `[${match}](${url})` : match;
+      });
+    })
+    .join('\n');
+}
+
 export function buildPagesIndex(files, manifest) {
   const contextBySlug = new Map(manifest.contexts.map((c) => [c.slug, c.id]));
   const operationByPath = Object.fromEntries(
@@ -108,7 +158,7 @@ export function buildRedirects(pages) {
   return redirects.sort((a, b) => a.from.localeCompare(b.from));
 }
 
-export function renderContextOverview(context, pages, cdmIndex) {
+export function renderContextOverview(context, pages, cdmIndex, cdmSubsets = {}) {
   const mine = pages.filter((page) => page.context === context.id && !page.deprecated);
   const rows = KIND_LABELS.map(([kind, label]) => {
     const ofKind = mine.filter((page) => page.kind === kind);
@@ -132,19 +182,25 @@ export function renderContextOverview(context, pages, cdmIndex) {
     escapeMDX(context.description),
     '',
   ];
-  const concepts = cdmConceptsLine(context);
+  const cdmCard = cdmSubsetCard(context, cdmSubsets);
+  const concepts = cdmCard ? null : cdmConceptsLine(context);
   if (concepts) lines.push(concepts, '');
   // `npm run llms` writes these after the Docusaurus build, so they must be plain (non-router) links; it writes
   // all three files for every context.
   const base = `pathname:///reference/${context.slug}`;
   lines.push(`For AI assistants: [llms.txt](${base}/llms.txt) · [schema slice](${base}/schema.graphql) · [all types](${base}/types.txt)`, '');
+  if (cdmCard) lines.push(cdmCard, '');
   if (!mine.length) {
     lines.push('No operations or types are currently published in this bounded context.');
     return `${lines.join('\n')}\n`;
   }
   if (cdmTypes.length) {
-    lines.push('## Entities', '', 'API types in this bounded context that represent CDM entities:', '');
-    for (const page of cdmTypes) lines.push(renderCdmTypeItem(`[\`${page.name}\`](${page.url})`, cdmIndex[page.name]));
+    lines.push(
+      '## Entities', '',
+      'API types in this bounded context that represent Common Data Model (CDM) entities. The IRI is the entity\'s stable identifier in the CDM.', '',
+      '| API type | CDM entity |', '| --- | --- |',
+    );
+    for (const page of cdmTypes) lines.push(renderCdmTypeRow(`[\`${page.name}\`](${page.url})`, cdmIndex[page.name]));
     lines.push('');
   }
   if (entryPoints.length) {
@@ -154,6 +210,20 @@ export function renderContextOverview(context, pages, cdmIndex) {
   }
   lines.push('## Contents', '', '| Kind | Items | Experimental |', '| --- | --- | --- |', ...rows);
   return `${lines.join('\n')}\n`;
+}
+
+// "Common Data Model" section of an overview: one entry per CDM subset of the context, with the description the CDM
+// publishes for it, in the same card style as the type pages. The title links to the subset page on the CDM site (the
+// subsets' module IRIs are not resolvable links yet, so they are not shown). Null when the CDM data has none.
+function cdmSubsetCard(context, cdmSubsets) {
+  const subsets = (context.cdm ?? []).filter((key) => cdmSubsets[key]?.description);
+  if (!subsets.length) return null;
+  const items = subsets.map((key) => {
+    const subset = cdmSubsets[key];
+    const title = subsets.length === 1 ? context.title : subset.title ?? key;
+    return `- [${escapeMDX(title).replace(/[[\]]/g, '\\$&')}](${subset.url}) — ${escapeMDX(subset.description)}`;
+  });
+  return ['## Common Data Model', '', ...items].join('\n');
 }
 
 // The CDM site has one page per bounded context (LinkML subset): <CDM_SITE>/subsets/<subset>/.

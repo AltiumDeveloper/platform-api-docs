@@ -1,4 +1,4 @@
-# Bounded-context mapping for the Platform API reference.
+# Bounded-context mapping for the Altium 365 API reference.
 # Public-safe: no owners, teams, OAuth resources or internal links.
 # Matching: overrides > CDM mapping (types) > most specific anchored regex > common > unassigned.
 # "Most specific" = longest literal prefix after '^', then longest match. So '^desWorkspace' beats

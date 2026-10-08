@@ -12,7 +12,7 @@ import { readGuides, runLlms, siteUrlFromConfig } from '../scripts/apidocs/llms.
 const SITE = 'https://example.test/docs';
 const fixture = (p) => fileURLToPath(new URL(`./fixtures/${p}`, import.meta.url));
 const page = (title, body = '') =>
-  `<html><head><title>${title} | Altium Platform API</title></head><body><article><div class="theme-doc-markdown markdown"><header><h1>${title}</h1></header><p>${body}</p></div></article></body></html>`;
+  `<html><head><title>${title} | Altium 365 API</title></head><body><article><div class="theme-doc-markdown markdown"><header><h1>${title}</h1></header><p>${body}</p></div></article></body></html>`;
 
 function writeFile(path, text) {
   mkdirSync(join(path, '..'), { recursive: true });
@@ -43,7 +43,7 @@ function setup() {
       name: 'PageInfo', section: 'types', kind: 'objects', context: 'common', experimental: false, deprecated: false, legacyUrl: null },
   ];
   writeFileSync(join(schemaDir, 'pages.json'), JSON.stringify(pages));
-  writeFile(join(buildDir, 'index.html'), page('Altium Platform API', 'Home.'));
+  writeFile(join(buildDir, 'index.html'), page('Altium 365 API', 'Home.'));
   writeFile(join(buildDir, 'guides/getting-started/index.html'), page('Getting started', 'See <a href="/docs/reference/design/overview">Design</a>.'));
   const manifest = JSON.parse(readFileSync(join(schemaDir, 'manifest.json'), 'utf8'));
   for (const context of manifest.contexts) writeFile(join(buildDir, 'reference', context.slug, 'overview/index.html'), page(context.title));
@@ -98,7 +98,7 @@ test('runLlms writes .md pages, slices, per-context and root indexes and llms-fu
   const read = (path) => readFileSync(join(buildDir, path), 'utf8');
 
   assert.equal(result.pages, 1 + 2 + 8 + 3); // home, guides, 8 overviews (7 contexts + Common), pages
-  assert.match(read('index.md'), /^---\ntitle: "Altium Platform API"\nurl: "https:\/\/example\.test\/docs\/"\nbounded_context: "none"\nkind: "overview"/);
+  assert.match(read('index.md'), /^---\ntitle: "Altium 365 API"\nurl: "https:\/\/example\.test\/docs\/"\nbounded_context: "none"\nkind: "overview"/);
   assert.match(read('guides/getting-started.md'), /kind: "guide"/);
   assert.match(read('reference/design/overview.md'), /bounded_context: "Design"\nkind: "overview"/);
   const project = read('reference/design/types/objects/des-project.md');
@@ -106,12 +106,12 @@ test('runLlms writes .md pages, slices, per-context and root indexes and llms-fu
 
   const slice = read('reference/design/schema.graphql');
   parse(slice);
-  assert.match(slice, /^# Altium Platform API — Design schema slice/);
+  assert.match(slice, /^# Altium 365 API — Design schema slice/);
   assert.match(slice, /^type DesProject implements Node/m);
   assert.ok(existsSync(join(buildDir, 'reference/common/schema.graphql')));
 
   const designIndex = read('reference/design/llms.txt');
-  assert.match(designIndex, /^# Design — Altium Platform API/);
+  assert.match(designIndex, /^# Design — Altium 365 API/);
   assert.match(designIndex, new RegExp(`## Entry points\\n- \\[desProjectById\\]\\(${SITE}/reference/design/operations/queries/des-project-by-id\\.md\\): Gets a project by its identifier\\.`));
   assert.match(designIndex, /## Entities\n- \[DesProject\]/);
   const commonTypes = read('reference/common/types.txt');
@@ -127,10 +127,10 @@ test('runLlms writes .md pages, slices, per-context and root indexes and llms-fu
   assert.ok(at('title: "Errors"') < at('title: "Platform"'), 'guides before reference');
   assert.ok(at('title: "Design"') < at('title: "desProjectById"'), 'overview before operations');
   assert.ok(at('title: "desProjectById"') < at('title: "DesProject"'), 'operations before types');
-  assert.equal(at('title: "Altium Platform API"'), -1, 'home page is not part of llms-full');
+  assert.equal(at('title: "Altium 365 API"'), -1, 'home page is not part of llms-full');
 
   const root = read('llms.txt');
-  assert.match(root, /^# Altium Platform API\n/);
+  assert.match(root, /^# Altium 365 API\n/);
   assert.ok(root.includes(`- [Design](${SITE}/reference/design/llms.txt)`));
   assert.ok(root.includes(`- [Getting started](${SITE}/guides/getting-started.md): Endpoints and a first query.`));
   assert.ok(root.includes(`(~${result.tokens.full} tokens)`));

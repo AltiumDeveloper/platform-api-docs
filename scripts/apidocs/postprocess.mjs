@@ -5,8 +5,8 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, unlinkS
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  buildPagesIndex, buildRedirects, isDocDirectivePage, readFrontMatter, renderContextOverview,
-  retitleNamespacedOperation, stripDocDirectiveLinks,
+  buildLinkTargets, buildPagesIndex, buildRedirects, linkCodeReferences, isDocDirectivePage, readFrontMatter, renderContextOverview,
+  retitleNamespacedOperation, rewriteContextBadges, stripDocDirectiveLinks, stripMemberPrefixes,
 } from './lib/pages.mjs';
 
 const readJson = (path, fallback) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : fallback);
@@ -15,6 +15,7 @@ export function runPostprocess({ docsDir = 'docs', schemaDir = '.schema' } = {})
   const manifest = readJson(join(schemaDir, 'manifest.json'), null);
   if (!manifest) throw new Error(`postprocess: ${schemaDir}/manifest.json not found; run apidocs:annotate first`);
   const cdmIndex = readJson(join(schemaDir, 'cdm-index.json'), {});
+  const cdmSubsets = readJson(join(schemaDir, 'cdm-subsets.json'), {});
   const referenceDir = join(docsDir, 'reference');
 
   const files = readdirSync(referenceDir, { recursive: true })
@@ -31,11 +32,19 @@ export function runPostprocess({ docsDir = 'docs', schemaDir = '.schema' } = {})
   }
   for (const file of kept) {
     const text = readFileSync(file.abs, 'utf8');
-    const stripped = stripDocDirectiveLinks(text);
+    const segments = file.path.split('/');
+    const ownSlug = segments[1] === 'deprecated' ? segments[2] : segments[1];
+    const stripped = stripMemberPrefixes(rewriteContextBadges(stripDocDirectiveLinks(text), ownSlug, manifest.contexts));
     if (stripped !== text) writeFileSync(file.abs, stripped);
   }
 
   const pages = buildPagesIndex(kept, manifest);
+  const linkTargets = buildLinkTargets(pages);
+  pages.forEach((page, index) => {
+    const text = readFileSync(kept[index].abs, 'utf8');
+    const linked = linkCodeReferences(text, linkTargets, page.url);
+    if (linked !== text) writeFileSync(kept[index].abs, linked);
+  });
   pages.forEach((page, index) => {
     if (page.section !== 'operations' || !page.name.includes('.')) return;
     const text = readFileSync(kept[index].abs, 'utf8');
@@ -44,7 +53,7 @@ export function runPostprocess({ docsDir = 'docs', schemaDir = '.schema' } = {})
   });
   for (const context of manifest.contexts) {
     mkdirSync(join(referenceDir, context.slug), { recursive: true });
-    writeFileSync(join(referenceDir, context.slug, 'overview.md'), renderContextOverview(context, pages, cdmIndex));
+    writeFileSync(join(referenceDir, context.slug, 'overview.md'), renderContextOverview(context, pages, cdmIndex, cdmSubsets));
   }
   const redirects = buildRedirects(pages);
   writeFileSync(join(schemaDir, 'pages.json'), JSON.stringify(pages, null, 2));

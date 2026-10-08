@@ -7,11 +7,13 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
-  buildCdmIndex, buildCdmMeta, cdmListUrl, cdmRawUrl, cdmResolveUrl, CDM_REPO, DEFAULT_CDM_REF,
+  buildCdmIndex, buildCdmMeta, buildCdmSubsets, cdmListUrl, cdmRawUrl, cdmResolveUrl, CDM_REPO, DEFAULT_CDM_REF,
 } from './lib/cdm.mjs';
 
 const REF = process.env.CDM_REF || DEFAULT_CDM_REF;
 const OUT = '.schema/cdm-index.json';
+// Subset (bounded context) descriptions for the overview pages; like the index, kept from the previous run on failure.
+const OUT_SUBSETS = '.schema/cdm-subsets.json';
 // {ref, sha, fetchedAt, source} of the CDM the index was built from; read by annotate for notes/cdm-mismatches.md.
 const META = '.schema/cdm-meta.json';
 
@@ -47,6 +49,7 @@ try {
   const { texts, sha } = await loadCdm();
   const index = buildCdmIndex(texts);
   writeFileSync(OUT, JSON.stringify(index, null, 2));
+  writeFileSync(OUT_SUBSETS, JSON.stringify(buildCdmSubsets(texts), null, 2));
   writeMeta(buildCdmMeta({
     ref: process.env.APIDOCS_CDM_DIR ? 'local' : REF, sha, fetchedAt: new Date().toISOString(), source: SOURCE,
   }));
@@ -58,6 +61,7 @@ try {
   } else {
     console.warn(`fetch-cdm: ${error.message}; continuing without CDM cross-references`);
     writeFileSync(OUT, '{}');
+    if (!existsSync(OUT_SUBSETS)) writeFileSync(OUT_SUBSETS, '{}');
     writeMeta(buildCdmMeta({
       ref: null,
       source: process.env.APIDOCS_CDM_DIR ? `${SOURCE} (unavailable, empty index)` : 'unavailable (empty index)',
