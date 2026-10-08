@@ -1,4 +1,4 @@
-# Altium Platform API — Design schema slice (~30731 tokens)
+# Altium Platform API — Design schema slice (~30797 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -2398,6 +2398,13 @@ type RuleCheckExecutionQueries @experimental {
     releaseId: ID!
     where: RuleCheckExecutionFilterInput
   ): RuleCheckAggregateExecution!
+  "**Experimental** Retrieves combined custom and default ERC results for a design release."
+  byReleaseIdCombinedErc(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the release."
+    releaseId: ID!
+  ): DesignDataCombinedErcExecution!
 }
 
 "**Experimental**"

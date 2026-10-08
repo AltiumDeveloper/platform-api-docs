@@ -1,7 +1,7 @@
 # Supply — Altium Platform API
 > Parts, offers, part families, reference designs, evaluation kits, software projects and solution templates.
 
-Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/schema.graphql) (~28571 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/overview.md).
+Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/schema.graphql) (~29089 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/overview.md).
 
 ## Entities
 - [SupEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md): Evaluation Kit — A vendor evaluation kit in the supply catalog, described by its associated devices, its reference designs (including a main one) and the software projects compatible with it. GRID `grid:supply::platform:eval-kit/{id}`. Via: supEvalKitById, supEvalKitsByIds, supEvalKitDetailsByRefDesignId, supEvalKits, supEvalKitSearch, …
@@ -90,15 +90,17 @@ Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schem
 - [supSolutionTemplatePatchKeyFeatureGroups](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-patch-key-feature-groups.md): Add or remove list of key feature groups related to a solution template.
 - [supSolutionTemplatePatchParameters](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-patch-parameters.md): Add, update, or remove individual parameters on a solution template.
 - [supSolutionTemplatePatchPreviewImages](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-patch-preview-images.md): Patch preview images on a solution template: add, delete, or reorder.
+- [supSolutionTemplatePatchRefDesigns](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-patch-ref-designs.md): Add or remove individual reference designs on a solution template.
 - [supSolutionTemplatePatchTags](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-patch-tags.md): Add or remove list of tags related to a solution template.
 - [supSolutionTemplateSetCompatibleEvalKits](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-set-compatible-eval-kits.md): Replace all compatible eval kits on a solution template.
 - [supSolutionTemplateSetKeyFeatureGroups](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-set-key-feature-groups.md): Replace existing list of key feature groups by new one related to a solution template.
 - [supSolutionTemplateSetParameters](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-set-parameters.md): Replace all parameters on a solution template.
 - [supSolutionTemplateSetPreviewImages](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-set-preview-images.md): Replace all preview images on a solution template.
+- [supSolutionTemplateSetRefDesigns](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-set-ref-designs.md): Replace all reference designs on a solution template.
 - [supSolutionTemplateSetTags](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-set-tags.md): Replace existing list of tags by new one related to a solution template.
 - [supSolutionTemplateUpdateSolutionTemplate](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-update-solution-template.md): Update a solution template.
 - [supSolutionTemplateUpdateSolutionTemplateApplication](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-update-solution-template-application.md): Update a new solution template application.
 - [supSolutionTemplateUpdateSolutionTemplateStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-update-solution-template-status.md): Update the status of a solution template.
 
 ## Optional
-- [All types in Supply](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types.txt): one line per type (~13692 tokens)
+- [All types in Supply](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types.txt): one line per type (~14025 tokens)

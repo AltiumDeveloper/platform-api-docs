@@ -1,4 +1,4 @@
-# Altium Platform API — Supply schema slice (~28571 tokens)
+# Altium Platform API — Supply schema slice (~29089 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -293,6 +293,8 @@ type Mutation {
   supSolutionTemplatePatchParameters(input: SupSolutionTemplatePatchParametersInput!): SupSolutionTemplatePatchParametersPayload!
   "Patch preview images on a solution template: add, delete, or reorder."
   supSolutionTemplatePatchPreviewImages(input: SupSolutionTemplatePatchPreviewImagesInput!): SupSolutionTemplatePatchPreviewImagesPayload!
+  "Add or remove individual reference designs on a solution template."
+  supSolutionTemplatePatchRefDesigns(input: SupSolutionTemplatePatchRefDesignsInput!): SupSolutionTemplatePatchRefDesignsPayload!
   "Add or remove list of tags related to a solution template."
   supSolutionTemplatePatchTags(input: SupSolutionTemplatePatchTagsInput!): SupSolutionTemplatePatchTagsPayload!
   "Replace all compatible eval kits on a solution template."
@@ -303,6 +305,8 @@ type Mutation {
   supSolutionTemplateSetParameters(input: SupSolutionTemplateSetParametersInput!): SupSolutionTemplateSetParametersPayload!
   "Replace all preview images on a solution template."
   supSolutionTemplateSetPreviewImages(input: SupSolutionTemplateSetPreviewImagesInput!): SupSolutionTemplateSetPreviewImagesPayload!
+  "Replace all reference designs on a solution template."
+  supSolutionTemplateSetRefDesigns(input: SupSolutionTemplateSetRefDesignsInput!): SupSolutionTemplateSetRefDesignsPayload!
   "Replace existing list of tags by new one related to a solution template."
   supSolutionTemplateSetTags(input: SupSolutionTemplateSetTagsInput!): SupSolutionTemplateSetTagsPayload!
   "Update a solution template."
@@ -1200,6 +1204,10 @@ type SupSolutionTemplate {
   previewImages: [SupImage!]
   "The publisher identifier."
   publisherId: String!
+  "The list of reference design identifiers associated with the solution template."
+  refDesignIds: [String!]! @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
+  "The list of reference designs associated with the solution template."
+  refDesigns: [SupRefDesign!]!
   "The optional release date."
   releaseDate: DateTime
   "The default requirement string used when a user first clones the solution template."
@@ -1453,6 +1461,13 @@ type SupSolutionTemplatePatchPreviewImagesPayload {
   success: Boolean
 }
 
+"Payload for patching reference designs on a solution template."
+type SupSolutionTemplatePatchRefDesignsPayload {
+  errors: [SupSolutionTemplatePatchRefDesignsError!]
+  "Return true if operation succeeded."
+  success: Boolean
+}
+
 type SupSolutionTemplatePatchTagsPayload {
   errors: [SupSolutionTemplatePatchTagsError!]
   result: SupSolutionTemplateResultPayload
@@ -1543,6 +1558,13 @@ type SupSolutionTemplateSetParametersPayload {
 "Payload for replacing all preview images on a solution template."
 type SupSolutionTemplateSetPreviewImagesPayload {
   errors: [SupSolutionTemplateSetPreviewImagesError!]
+  "Return true if operation succeeded."
+  success: Boolean
+}
+
+"Payload for replacing reference designs on a solution template."
+type SupSolutionTemplateSetRefDesignsPayload {
+  errors: [SupSolutionTemplateSetRefDesignsError!]
   "Return true if operation succeeded."
   success: Boolean
 }
@@ -1645,6 +1667,8 @@ union SupSolutionTemplatePatchParametersError = SupSolutionTemplateOperationFail
 
 union SupSolutionTemplatePatchPreviewImagesError = SupSolutionTemplateOperationFailedError | SupSolutionTemplateNotFoundError
 
+union SupSolutionTemplatePatchRefDesignsError = SupSolutionTemplateOperationFailedError | SupSolutionTemplateNotFoundError
+
 union SupSolutionTemplatePatchTagsError = SupSolutionTemplateNotFoundError | SupSolutionTemplateOperationFailedError
 
 "Union type for solution template and reference design types."
@@ -1657,6 +1681,8 @@ union SupSolutionTemplateSetKeyFeatureGroupsError = SupSolutionTemplateNotFoundE
 union SupSolutionTemplateSetParametersError = SupSolutionTemplateOperationFailedError | SupSolutionTemplateNotFoundError
 
 union SupSolutionTemplateSetPreviewImagesError = SupSolutionTemplateOperationFailedError | SupSolutionTemplateNotFoundError
+
+union SupSolutionTemplateSetRefDesignsError = SupSolutionTemplateOperationFailedError | SupSolutionTemplateNotFoundError
 
 union SupSolutionTemplateSetTagsError = SupSolutionTemplateNotFoundError | SupSolutionTemplateOperationFailedError
 
@@ -2532,6 +2558,16 @@ input SupSolutionTemplatePatchPreviewImagesInput {
   solutionTemplateId: ID!
 }
 
+"Input for adding or removing individual reference designs on a solution template."
+input SupSolutionTemplatePatchRefDesignsInput {
+  "The identifier(s) of the reference designs to add."
+  addRefDesignIds: [ID!]
+  "The identifier(s) of the reference designs to remove."
+  removeRefDesignIds: [ID!]
+  "The unique identifier of the solution template."
+  solutionTemplateId: ID!
+}
+
 input SupSolutionTemplatePatchTagsInput {
   "List of new tags for categorizing a solution template."
   addTags: [SupSolutionTemplateTagInput!]
@@ -2637,6 +2673,14 @@ input SupSolutionTemplateSetParametersInput {
 input SupSolutionTemplateSetPreviewImagesInput {
   "The new set of preview images. Replaces all existing preview images."
   previewImages: [SupSolutionTemplateFileInput!]
+  "The unique identifier of the solution template."
+  solutionTemplateId: ID!
+}
+
+"Input for replacing all reference designs on a solution template."
+input SupSolutionTemplateSetRefDesignsInput {
+  "The identifier(s) of the reference designs. An empty list removes all reference designs."
+  refDesignIds: [ID!]!
   "The unique identifier of the solution template."
   solutionTemplateId: ID!
 }

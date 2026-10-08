@@ -44,6 +44,8 @@ type SupSolutionTemplate {
   parameters: [SupSolutionTemplateParameterBundle!]!
   previewImages: [SupImage!]
   publisherId: String!
+  refDesignIds: [String!]! @deprecated
+  refDesigns: [SupRefDesign!]!
   releaseDate: DateTime
   requirementTemplate: String
   softwareProjectIds: [ID!]! @deprecated
@@ -110,6 +112,10 @@ The list of solution template images.
 
 The publisher identifier.
 
+#### `SupSolutionTemplate.refDesigns` · [`[SupRefDesign!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) non-null object supply
+
+The list of reference designs associated with the solution template.
+
 #### `SupSolutionTemplate.releaseDate` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
 
 The optional release date.
@@ -169,6 +175,12 @@ The list of part identifiers associated with the solution template.
 The list of evaluation kits associated with the solution template.
 
 ##### `SupSolutionTemplate.evalKits.id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+
+#### `SupSolutionTemplate.refDesignIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+
+> **Deprecated:** Fields play a technical role for schema stitching purposes.
+
+The list of reference design identifiers associated with the solution template.
 
 #### `SupSolutionTemplate.softwareProjectIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar common
 

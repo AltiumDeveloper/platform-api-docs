@@ -19,7 +19,7 @@ Represents the combined custom and default ERC results for a design revision.
 
 ### Returned By
 
-[`design.ruleCheckExecution.byDesignIdCombinedErc`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id-combined-erc.md) query
+[`design.ruleCheckExecution.byDesignIdCombinedErc`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id-combined-erc.md) query · [`design.ruleCheckExecution.byReleaseIdCombinedErc`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-release-id-combined-erc.md) query
 
 ```graphql
 type DesignDataCombinedErcExecution {

@@ -87,6 +87,7 @@
 - [SupSolutionTemplatePatchKeyFeatureGroupsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-key-feature-groups-payload.md)
 - [SupSolutionTemplatePatchParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-parameters-payload.md): Payload for patching parameters on a solution template.
 - [SupSolutionTemplatePatchPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-preview-images-payload.md): Payload for patching preview images on a solution template.
+- [SupSolutionTemplatePatchRefDesignsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-ref-designs-payload.md): Payload for patching reference designs on a solution template.
 - [SupSolutionTemplatePatchTagsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-tags-payload.md)
 - [SupSolutionTemplateRefDesignApplicationBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-application-bucket.md): Aggregation bucket for applications with application identifier + counts.
 - [SupSolutionTemplateRefDesignCategoryBucket](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-category-bucket.md): Aggregation bucket for reference design categories with category identifier + counts.
@@ -99,6 +100,7 @@
 - [SupSolutionTemplateSetKeyFeatureGroupsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-key-feature-groups-payload.md)
 - [SupSolutionTemplateSetParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-parameters-payload.md): Payload for replacing all parameters on a solution template.
 - [SupSolutionTemplateSetPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-preview-images-payload.md): Payload for replacing all preview images on a solution template.
+- [SupSolutionTemplateSetRefDesignsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-ref-designs-payload.md): Payload for replacing reference designs on a solution template.
 - [SupSolutionTemplateSetTagsPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-tags-payload.md)
 - [SupSolutionTemplateTag](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-tag.md): Represents a tag for categorizing a solution template.
 - [SupSolutionTemplateUpdateSolutionTemplateApplicationPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-update-solution-template-application-payload.md): Payload associated with updating a solution template application.
@@ -140,12 +142,14 @@
 - [SupSolutionTemplatePatchKeyFeatureGroupsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-key-feature-groups-error.md)
 - [SupSolutionTemplatePatchParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-parameters-error.md)
 - [SupSolutionTemplatePatchPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-preview-images-error.md)
+- [SupSolutionTemplatePatchRefDesignsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-ref-designs-error.md)
 - [SupSolutionTemplatePatchTagsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-tags-error.md)
 - [SupSolutionTemplateRefDesign](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-ref-design.md): Union type for solution template and reference design types.
 - [SupSolutionTemplateSetCompatibleEvalKitsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-compatible-eval-kits-error.md)
 - [SupSolutionTemplateSetKeyFeatureGroupsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-key-feature-groups-error.md)
 - [SupSolutionTemplateSetParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-parameters-error.md)
 - [SupSolutionTemplateSetPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-preview-images-error.md)
+- [SupSolutionTemplateSetRefDesignsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-ref-designs-error.md)
 - [SupSolutionTemplateSetTagsError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-tags-error.md)
 - [SupSolutionTemplateUpdateSolutionTemplateApplicationError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-update-solution-template-application-error.md)
 - [SupSolutionTemplateUpdateSolutionTemplateError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-update-solution-template-error.md)
@@ -235,6 +239,7 @@
 - [SupSolutionTemplatePatchKeyFeatureGroupsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-key-feature-groups-input.md)
 - [SupSolutionTemplatePatchParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-parameters-input.md): Input for adding or removing individual parameters on a solution template.
 - [SupSolutionTemplatePatchPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-preview-images-input.md): Input for patching preview images on a solution template.
+- [SupSolutionTemplatePatchRefDesignsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-ref-designs-input.md): Input for adding or removing individual reference designs on a solution template.
 - [SupSolutionTemplatePatchTagsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-tags-input.md)
 - [SupSolutionTemplateRefDesignFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-ref-design-filter-input.md): Input for filtering reference designs by additional conditions.
 - [SupSolutionTemplateRefDesignOrderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-ref-design-order-input.md): Input for ordering solution templates or reference designs by one or more fields.
@@ -245,6 +250,7 @@
 - [SupSolutionTemplateSetKeyFeatureGroupsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-key-feature-groups-input.md)
 - [SupSolutionTemplateSetParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-parameters-input.md): Input for replacing all parameters on a solution template.
 - [SupSolutionTemplateSetPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-preview-images-input.md): Input for replacing all preview images on a solution template.
+- [SupSolutionTemplateSetRefDesignsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-ref-designs-input.md): Input for replacing all reference designs on a solution template.
 - [SupSolutionTemplateSetTagsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-tags-input.md)
 - [SupSolutionTemplateSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-sort-input.md): Input type for solution template sorting.
 - [SupSolutionTemplateTagInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-tag-input.md)
