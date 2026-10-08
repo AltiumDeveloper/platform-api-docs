@@ -90,7 +90,7 @@ export function buildSlice({ document, manifest, contextId, siteUrl }) {
 
   const body = definitions.length ? `${print({ kind: Kind.DOCUMENT, definitions })}\n` : '';
   const header = (tokens) => [
-    `# Altium Platform API — ${context.title} schema slice (~${tokens} tokens)`,
+    `# Altium 365 API — ${context.title} schema slice (~${tokens} tokens)`,
     '# Not a complete schema: types from other contexts are referenced, not defined.',
     `# Full schema for code generation: ${siteUrl}/schema.graphql`,
     ...(externals.length

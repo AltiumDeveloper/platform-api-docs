@@ -1,38 +1,37 @@
 ---
 id: index
 slug: /
-title: Altium Platform API
-description: GraphQL reference for the Altium Platform API, organised by bounded context.
+title: Altium 365 API
+description: GraphQL reference for the Altium 365 API, organised by bounded context.
 sidebar_label: Overview
 hide_table_of_contents: false
 pagination_next: null
 pagination_prev: null
 ---
 
-The **Altium Platform API** is a GraphQL API, served from regional endpoints, that brings together the services behind
-Altium 365: design projects, libraries, collaboration, procurement, supply data and more. This site is
-the reference for every query, mutation and type it exposes, generated nightly from the production schema.
+The **Altium 365 API** is a GraphQL API for reading and writing Altium 365 workspace data: design projects,
+libraries, collaboration, procurement, supply data and more. This site is the reference for every query,
+mutation and type it exposes, generated nightly from the production schema.
 
-## Endpoint and access
+<div className="hero-actions">
 
-The API is served per region: use the endpoint of the region that hosts your workspace.
+[Quick start](https://www.altium.com/documentation/altium-developer-center/quick-starts/365-api)
+[Browse the reference](/reference/platform/overview)
+[Download schema.graphql](pathname:///schema.graphql)
 
-| Region | Endpoint |
-| --- | --- |
-| Europe | `https://eur.365.altium.com/api/graphql` |
-| US West | `https://usw.365.altium.com/api/graphql` |
-| US East | `https://use.365.altium.com/api/graphql` |
-| Asia Pacific | `https://asp.365.altium.com/api/graphql` |
-| GovCloud | `https://use.365-gov.altium.com/api/graphql` |
+</div>
 
-Each workspace also has its own endpoint, `https://{workspace-domain}/api/graphql`. Requests carry an access
-token in an `Authorization: Bearer {access-token}` header; see the
-[Altium Developer Center](https://developer.altium.com/) and its
-[documentation](https://www.altium.com/documentation/altium-developer-center) for registering an
-application and obtaining tokens, and [Getting started](/guides/getting-started) for a first query.
+## Get started
 
-**For AI assistants:** start at [llms.txt](pathname:///llms.txt) — an index of the bounded contexts, each with
-its own `llms.txt` and a compact `schema.graphql` slice. Every page is also available as Markdown (`.md`).
+Registering an application, obtaining an access token and calling the API for the first time are covered in
+the Altium Developer Center:
+
+- [Quick start](https://www.altium.com/documentation/altium-developer-center/quick-starts/365-api)
+- [Altium 365 API overview](https://www.altium.com/documentation/altium-developer-center/altium-365/api)
+- [Using an access token](https://www.altium.com/documentation/altium-developer-center/altium-365/key-concepts/tokens/access)
+- [Examples](https://www.altium.com/documentation/altium-developer-center/altium-365/api/examples)
+
+Regional endpoints, a first query and the Nitro and Voyager tools are in [Getting started](/guides/getting-started).
 
 ## How this reference is organised
 
@@ -41,49 +40,45 @@ aligned with the [Common Data Model (CDM)](https://altiumdeveloper.github.io/cdm
 lists its queries, mutations and types. Where an API type represents a CDM entity, its page links to
 the entity definition.
 
-| Bounded context | Covers |
-| --- | --- |
-| [Platform](/reference/platform/overview) | Workspaces, users and organizations, folders, apps and tokens, events, notifications, solutions, knowledge graph, lifecycle definitions, revision naming schemes |
-| [Design](/reference/design/overview) | Hardware projects, design data, rule checks, comparisons, releases |
-| [Insights](/reference/insights/overview) | Workspace insights |
-| [Library Management](/reference/library-management/overview) | Components, component templates, parts, symbols, footprints, datasheets, reuse blocks, library search |
-| [Collaboration](/reference/collaboration/overview) | Comments, annotations, tasks |
-| [Configuration Management](/reference/configuration-management/overview) | Environment configuration; project, settings and sheet templates |
-| [Procurement](/reference/procurement/overview) | Managed BOMs and BOM releases |
-| [Supply](/reference/supply/overview) | Parts, offers, part families, reference designs, evaluation kits, solution templates |
-| [Customization](/reference/customization/overview) | Extension points, scripts, workflows |
-| [System Design](/reference/system-design/overview) | System design documents and system models |
-| [Requirements](/reference/requirements/overview) | Requirements projects and data |
-| [Renesas (preview)](/reference/renesas-preview/overview) | Renesas-specific device models, software projects and tools |
-| [Common](/reference/common/overview) | Shared scalars, paging, filtering and directives |
+<div className="bc-grid">
 
-## Naming conventions
+[<i className="bc-icon bc-platform"></i><strong>Platform</strong> <span>Workspaces, users and organizations, folders, apps and tokens, events, notifications, solutions, knowledge graph, lifecycle definitions, revision naming schemes</span>](/reference/platform/overview)
 
-Names tell you where an operation belongs:
+[<i className="bc-icon bc-design"></i><strong>Design</strong> <span>Hardware projects, design data, rule checks, comparisons, releases</span>](/reference/design/overview)
 
-- **Bounded-context queries** are nested by context and entity:
-  `requirements.project.byId(id: ID!)`, `platform.token.byWorkspace(first: Int)`.
-- **Legacy queries** use a short prefix: `desProjectById`, `supRefDesigns`, `bomBoms`
-  (`des` = design, `sup` = supply, `glo` = global/platform, `bom` = procurement).
-- **Mutations** are top-level and named `{boundedContext}{Entity}{Action}`, for example
-  `designRuleCheckExecute`. Most take a single `input: <Name>Input!` argument and return a `<Name>Payload!`.
-- Paged lists are Relay connections (`first`/`after`, `pageInfo`); see [Pagination](/guides/pagination).
-- Types and operations whose names end in `_Preview` belong to preview schemas.
+[<i className="bc-icon bc-insights"></i><strong>Insights</strong> <span>Workspace insights</span>](/reference/insights/overview)
 
-More in the guides: [Naming conventions](/guides/naming-conventions), [Identifiers and lookups](/guides/identifiers),
-[Pagination](/guides/pagination), [Errors](/guides/errors) and [Lifecycle](/guides/lifecycle).
+[<i className="bc-icon bc-library-management"></i><strong>Library Management</strong> <span>Components, component templates, parts, symbols, footprints, datasheets, reuse blocks, library search</span>](/reference/library-management/overview)
 
-## Lifecycle
+[<i className="bc-icon bc-collaboration"></i><strong>Collaboration</strong> <span>Comments, annotations, tasks</span>](/reference/collaboration/overview)
 
-| Stage | What it means for you |
-| --- | --- |
-| **Experimental** | Marked with an `EXPERIMENTAL` badge. Not production-ready: it may change or be removed without notice. Do not build production integrations on it. |
-| **Stable** | Evolves only in backward-compatible ways. |
-| **Deprecated** | Still works, but marked `@deprecated` with a reason and a replacement. Migrate before it is removed. |
-| **Removed** | No longer part of the schema. |
+[<i className="bc-icon bc-configuration-management"></i><strong>Configuration Management</strong> <span>Environment configuration; project, settings and sheet templates</span>](/reference/configuration-management/overview)
 
-## Machine-readable schema
+[<i className="bc-icon bc-procurement"></i><strong>Procurement</strong> <span>Managed BOMs and BOM releases</span>](/reference/procurement/overview)
 
-Download the full schema in SDL form: [schema.graphql](pathname:///schema.graphql). It is regenerated
-together with this site and is the best input for code generators. Each bounded context also publishes a
-smaller slice at `/reference/<context>/schema.graphql`, listed in [llms.txt](pathname:///llms.txt).
+[<i className="bc-icon bc-supply"></i><strong>Supply</strong> <span>Parts, offers, part families, reference designs, evaluation kits, solution templates</span>](/reference/supply/overview)
+
+[<i className="bc-icon bc-customization"></i><strong>Customization</strong> <span>Extension points, scripts, workflows</span>](/reference/customization/overview)
+
+[<i className="bc-icon bc-system-design"></i><strong>System Design</strong> <span>System design documents and system models</span>](/reference/system-design/overview)
+
+[<i className="bc-icon bc-requirements"></i><strong>Requirements</strong> <span>Requirements projects and data</span>](/reference/requirements/overview)
+
+[<i className="bc-icon bc-renesas-preview"></i><strong>Renesas (preview)</strong> <span>Renesas-specific device models, software projects and tools</span>](/reference/renesas-preview/overview)
+
+[<i className="bc-icon bc-common"></i><strong>Common</strong> <span>Shared scalars, paging, filtering and directives</span>](/reference/common/overview)
+
+</div>
+
+## Guides
+
+[Naming conventions](/guides/naming-conventions), [Identifiers and lookups](/guides/identifiers),
+[Pagination](/guides/pagination), [Errors](/guides/errors) and [Lifecycle](/guides/lifecycle)
+explain how the API is shaped and how to use it.
+
+## For AI assistants and code generators
+
+Start at [llms.txt](pathname:///llms.txt): an index of the bounded contexts, each with its own `llms.txt` and a
+compact `schema.graphql` slice. Every page is also available as Markdown (`.md`). The full schema in SDL form is
+[schema.graphql](pathname:///schema.graphql), regenerated together with this site; each bounded context also
+publishes a smaller slice at `/reference/<context>/schema.graphql`.

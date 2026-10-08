@@ -194,7 +194,7 @@ export function renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, 
   const cdm = concepts(context);
 
   const lines = [
-    `# ${context.title} — Altium Platform API`,
+    `# ${context.title} — Altium 365 API`,
     `> ${context.description}`,
     '',
     [
@@ -220,7 +220,7 @@ export function renderContextIndex({ context, pages, schema, cdmIndex, siteUrl, 
 // /reference/deprecated/llms.txt: deprecated operations grouped by context (context-map order).
 export function renderDeprecatedIndex({ contexts, pages, schema, siteUrl }) {
   const lines = [
-    '# Deprecated — Altium Platform API',
+    '# Deprecated — Altium 365 API',
     '> Operations marked @deprecated. They still work; migrate to the replacement named in each reason.',
     '',
   ];
@@ -243,7 +243,7 @@ export function renderRootIndex({ contexts, guides, siteUrl, schemaTokens, fullT
   });
   const common = contexts.find((context) => context.id === 'common');
   const lines = [
-    '# Altium Platform API',
+    '# Altium 365 API',
     '> GraphQL API for Altium 365 workspace data, organised into bounded contexts aligned with the Common Data Model (CDM).',
     '',
     'How to navigate (for assistants):',

@@ -2,7 +2,7 @@
   "name": "platform-api-docs",
   "version": "1.0.0",
   "private": true,
-  "description": "Altium Platform API GraphQL reference documentation, organised by bounded context.",
+  "description": "Altium 365 API GraphQL reference documentation, organised by bounded context.",
   "repository": {
     "type": "git",
     "url": "https://github.com/AltiumDeveloper/platform-api-docs.git"

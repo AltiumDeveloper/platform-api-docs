@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 
 A **bounded context** is a business area with its own entities and vocabulary — design, library
-management, procurement and so on. The Platform API, this reference and the
+management, procurement and so on. The Altium 365 API, this reference and the
 [Common Data Model (CDM)](https://altiumdeveloper.github.io/cdm/) are organised by the same bounded
 contexts, so a concept you find in the CDM leads you straight to the API types and operations for it.
 
@@ -34,8 +34,10 @@ entities, and names the entry-point queries that look entities up by identifier.
 
 A CDM entity (for example *Hardware Project*) is represented in the API by one or more GraphQL types
 (for example [`DesProject`](/reference/design/types/objects/des-project)). The type's reference page has a
-**Common Data Model** section that links the entity definition and shows its **GRID** pattern — the
-global resource identifier format, such as `grid:workspace:{workspace-id}:design:project/{id}`.
+**Common Data Model** section that lists the entity's **IRI**, which links to its definition in the CDM,
+and its **GRID** pattern. The IRI (for example `https://w3id.org/altium/cdm/design/Project`) is the
+entity's stable identifier in the CDM; the GRID is the global resource identifier format of its
+instances, such as `grid:workspace:{workspace-id}:design:project/{id}`.
 See [Identifiers and lookups](./identifiers.mdx) for how GRIDs are used in queries.
 
 ## From a concept to a query
