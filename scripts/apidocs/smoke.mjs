@@ -97,7 +97,10 @@ function runSmoke() {
     assert.notEqual(index, -1, `overview is missing "${text}"`);
     return index;
   };
-  assert.ok(at('Concepts:') < at('Entities'), 'overview: Concepts before Entities');
+  // The CDM subset description (a "Common Data Model" section) comes before the entities.
+  const cdmHeading = overview.search(/<h2[^>]*>Common Data Model/);
+  assert.notEqual(cdmHeading, -1, 'overview is missing the Common Data Model section');
+  assert.ok(cdmHeading < at('Entities'), 'overview: Common Data Model before Entities');
   assert.ok(at('Entities') < at('Entry points'), 'overview: Entities before Entry points');
   assert.ok(at('Entry points') < at('Contents'), 'overview: Entry points before Contents');
 
@@ -110,13 +113,12 @@ function runSmoke() {
   const sdl = readFileSync('build/schema.graphql', 'utf8');
   assert.doesNotMatch(sdl, /@authorize|@cost|@doc\(/);
 
-  // Landing page: public endpoints, a pointer for assistants, no gateway URL.
-  assert.match(home, /eur\.365\.altium\.com\/api\/graphql/);
+  // Landing page: points to the Developer Center instead of repeating endpoints, and to assistants; no gateway URL.
+  assert.match(home, /documentation\/altium-developer-center\/quick-starts\/365-api/);
+  assert.doesNotMatch(home, /eur\.365\.altium\.com\/api\/graphql/);
   assert.match(home, /For AI assistants/);
   assert.doesNotMatch(home, /napi\/gateway/);
-  assert.match(home, /served from regional endpoints/);
   assert.doesNotMatch(home, /single GraphQL endpoint/);
-  assert.match(home, /Most take a single/);
 
   // Guides are in the sidebar, before the reference.
   const guide = page('guides/getting-started');
