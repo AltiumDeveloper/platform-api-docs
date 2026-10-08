@@ -22,6 +22,6 @@ input SftSimSimulationCreatePropertiesInput {
 
 ### Fields
 
-#### `SftSimSimulationCreatePropertiesInput.customProperties` · [`[SftSimSimulationCustomPropertyInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-custom-property-input.md) non-null input renesas-preview
+#### `customProperties` · [`[SftSimSimulationCustomPropertyInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-custom-property-input.md) non-null input
 
-#### `SftSimSimulationCreatePropertiesInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

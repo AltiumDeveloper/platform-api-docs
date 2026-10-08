@@ -17,6 +17,10 @@ deprecated: false
 
 Create a tuning.
 
+### Type
+
+#### [`RsaMotorStudioCreateTuningPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-tuning-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioCreateTuning(
   input: RsaMotorStudioCreateTuningInput!
@@ -25,8 +29,4 @@ rsaMotorStudioCreateTuning(
 
 ### Arguments
 
-#### `rsaMotorStudioCreateTuning.input` · [`RsaMotorStudioCreateTuningInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-tuning-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioCreateTuningPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-tuning-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioCreateTuningInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-tuning-input.md) non-null input

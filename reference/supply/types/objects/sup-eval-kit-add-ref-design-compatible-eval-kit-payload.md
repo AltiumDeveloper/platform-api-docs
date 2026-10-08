@@ -22,6 +22,6 @@ type SupEvalKitAddRefDesignCompatibleEvalKitPayload {
 
 ### Fields
 
-#### `SupEvalKitAddRefDesignCompatibleEvalKitPayload.errors` · [`[SupEvalKitAddRefDesignCompatibleEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-ref-design-compatible-eval-kit-error.md) list union supply
+#### `errors` · [`[SupEvalKitAddRefDesignCompatibleEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-ref-design-compatible-eval-kit-error.md) list union
 
-#### `SupEvalKitAddRefDesignCompatibleEvalKitPayload.supEvalKitAddRefDesignCompatibleEvalKitsPayload` · [`SupEvalKitAddRefDesignCompatibleEvalKitsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-ref-design-compatible-eval-kits-payload.md) object supply
+#### `supEvalKitAddRefDesignCompatibleEvalKitsPayload` · [`SupEvalKitAddRefDesignCompatibleEvalKitsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-ref-design-compatible-eval-kits-payload.md) object

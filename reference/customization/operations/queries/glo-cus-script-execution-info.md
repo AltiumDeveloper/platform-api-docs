@@ -11,6 +11,10 @@ deprecated: false
 
 Retrieves the execution info by execution identifier.
 
+### Type
+
+#### [`GloCusScriptExecutionInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-info.md) object
+
 ```graphql
 gloCusScriptExecutionInfo(
   scriptExecutionId: String!
@@ -19,8 +23,4 @@ gloCusScriptExecutionInfo(
 
 ### Arguments
 
-#### `gloCusScriptExecutionInfo.scriptExecutionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`GloCusScriptExecutionInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-info.md) object customization
+#### `scriptExecutionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

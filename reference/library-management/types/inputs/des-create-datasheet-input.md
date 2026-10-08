@@ -30,34 +30,34 @@ input DesCreateDatasheetInput {
 
 ### Fields
 
-#### `DesCreateDatasheetInput.comment` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `comment` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Comment for datasheet revision.
 
-#### `DesCreateDatasheetInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Description for datasheet revision.
 
-#### `DesCreateDatasheetInput.file` · [`DesCreateDatasheetFileInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-create-datasheet-file-input.md) non-null input library-management
+#### `file` · [`DesCreateDatasheetFileInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-create-datasheet-file-input.md) non-null input
 
 The datasheet file (typically a PDF or document).
 
-#### `DesCreateDatasheetInput.folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The destination folder identifier.
 
-#### `DesCreateDatasheetInput.lifeCycleDefinitionId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `lifeCycleDefinitionId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The datasheet life cycle definition identifier.
 
-#### `DesCreateDatasheetInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The datasheet name. Use null to be generated, provided that the destination folder defines an item naming scheme.
 
-#### `DesCreateDatasheetInput.revisionNamingSchemeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `revisionNamingSchemeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The datasheet revision naming scheme identifier.
 
-#### `DesCreateDatasheetInput.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The workspace URL.

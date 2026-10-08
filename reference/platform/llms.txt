@@ -1,7 +1,7 @@
-# Platform — Altium Platform API
+# Platform — Altium 365 API
 > Workspaces, users and organizations, apps and tokens, folders, generic revisions, permissions and settings, lifecycle definitions and revision naming schemes, domain events, notifications, solutions and the knowledge graph.
 
-Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~30398 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
+Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~30397 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
 
 ## Entities
 - [DesLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md): Lifecycle Definition — Defines the set of states that an entity can transition through in its lifecycle. GRID `grid:workspace:{workspace-id}:platform:lifecycle-definition/{id}`. Via: desLifeCycleDefinitionById, desLifeCycleDefinitionByContentTypeKind, desLifeCycleDefinitions, DesPartLifecycle.definition

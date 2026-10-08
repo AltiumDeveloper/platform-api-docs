@@ -29,20 +29,20 @@ enum GloCusScriptExecutionStatus {
 
 ### Values
 
-#### `GloCusScriptExecutionStatus.ACTIVATING`
+#### `ACTIVATING`
 
-#### `GloCusScriptExecutionStatus.DEACTIVATING`
+#### `DEACTIVATING`
 
-#### `GloCusScriptExecutionStatus.DEPROVISIONING`
+#### `DEPROVISIONING`
 
-#### `GloCusScriptExecutionStatus.PENDING`
+#### `PENDING`
 
-#### `GloCusScriptExecutionStatus.PROVISIONING`
+#### `PROVISIONING`
 
-#### `GloCusScriptExecutionStatus.RUNNING`
+#### `RUNNING`
 
-#### `GloCusScriptExecutionStatus.STOPPED`
+#### `STOPPED`
 
-#### `GloCusScriptExecutionStatus.STOPPING`
+#### `STOPPING`
 
-#### `GloCusScriptExecutionStatus.UNKNOWN`
+#### `UNKNOWN`

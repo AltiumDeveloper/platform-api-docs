@@ -11,6 +11,12 @@ deprecated: false
 
 Uploads a datasheet file for a custom part and returns its public service URL.
 
+### Type
+
+#### [`DesPartUploadCustomPartFilePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-custom-part-file-payload.md) object
+
+Payload produced when uploading a custom part file.
+
 ```graphql
 desPartUploadCustomPartDatasheet(
   input: DesPartUploadCustomPartFileInput!
@@ -19,12 +25,6 @@ desPartUploadCustomPartDatasheet(
 
 ### Arguments
 
-#### `desPartUploadCustomPartDatasheet.input` · [`DesPartUploadCustomPartFileInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upload-custom-part-file-input.md) non-null input library-management
+#### `input` · [`DesPartUploadCustomPartFileInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upload-custom-part-file-input.md) non-null input
 
 The datasheet file to upload.
-
-### Type
-
-#### [`DesPartUploadCustomPartFilePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-custom-part-file-payload.md) object library-management
-
-Payload produced when uploading a custom part file.

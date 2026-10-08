@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a symbol.
 
+### Type
+
+#### [`DesCreateSymbolPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-create-symbol-payload.md) object
+
+Payload associated with creating a symbol.
+
 ```graphql
 desCreateSymbol(
   input: DesCreateSymbolInput!
@@ -19,10 +25,4 @@ desCreateSymbol(
 
 ### Arguments
 
-#### `desCreateSymbol.input` · [`DesCreateSymbolInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-create-symbol-input.md) non-null input library-management
-
-### Type
-
-#### [`DesCreateSymbolPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-create-symbol-payload.md) object library-management
-
-Payload associated with creating a symbol.
+#### `input` · [`DesCreateSymbolInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-create-symbol-input.md) non-null input

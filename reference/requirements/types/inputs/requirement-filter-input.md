@@ -21,6 +21,6 @@ input RequirementFilterInput {
 
 ### Fields
 
-#### `RequirementFilterInput.requirementIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `requirementIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 List of requirement IDs to use for filtering.

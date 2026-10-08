@@ -30,10 +30,10 @@ enum SysSdmDmGpioMode {
 
 ### Values
 
-#### `SysSdmDmGpioMode.INPUT`
+#### `INPUT`
 
-#### `SysSdmDmGpioMode.NONE`
+#### `NONE`
 
-#### `SysSdmDmGpioMode.OUTPUT_HIGH`
+#### `OUTPUT_HIGH`
 
-#### `SysSdmDmGpioMode.OUTPUT_LOW`
+#### `OUTPUT_LOW`

@@ -19,7 +19,8 @@ GraphQL type that exposes the device model as configured, typically after user o
 
 ### Common Data Model
 
-- [ConfiguredDeviceModel](https://altiumdeveloper.github.io/cdm/classes/dm_ConfiguredDeviceModel/) — A digital twin of an embedded hardware device as configured for a specific use-case. It exposes the device model filtered to specific device configuration.
+- [ConfiguredDeviceModel](https://w3id.org/altium/cdm/deviceModel/ConfiguredDeviceModel) — A digital twin of an embedded hardware device as configured for a specific use-case. It exposes the device model filtered to specific device configuration.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/ConfiguredDeviceModel`](https://w3id.org/altium/cdm/deviceModel/ConfiguredDeviceModel)
 
 ### Returned By
 
@@ -45,32 +46,32 @@ type DmDeviceModelAsConfigured {
 
 ### Fields
 
-#### `DmDeviceModelAsConfigured.board` · [`DmDeviceBoard`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-board.md) object renesas-preview
+#### `board` · [`DmDeviceBoard`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-board.md) object
 
 An evaluation kit or specific hardware design that the MCU is soldered onto
 
-#### `DmDeviceModelAsConfigured.deviceInterfaces` · [`[DmFspModule!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md) non-null object renesas-preview
+#### `deviceInterfaces` · [`[DmFspModule!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md) non-null object
 
 Collection of Flexible Software Package (FSP) modules that represent device interfaces.
 
-#### `DmDeviceModelAsConfigured.deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Device part number.
 
-#### `DmDeviceModelAsConfigured.devicePeripherals` · [`DmPeripheralModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-model.md) object renesas-preview
+#### `devicePeripherals` · [`DmPeripheralModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-model.md) object
 
 Peripherals as configured for the device.
 
-#### `DmDeviceModelAsConfigured.devicePorts` · [`DmPortModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-model.md) object renesas-preview
+#### `devicePorts` · [`DmPortModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-model.md) object
 
 Ports as configured for the device.
 
-##### `DmDeviceModelAsConfigured.devicePorts.includeBoardFixedPorts` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+##### `includeBoardFixedPorts` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
-#### `DmDeviceModelAsConfigured.familyPart` · [`DmFamilyPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md) object renesas-preview
+#### `familyPart` · [`DmFamilyPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md) object
 
 Family part details for the device.
 
-#### `DmDeviceModelAsConfigured.softwareStack` · [`DmStackModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-model.md) object renesas-preview
+#### `softwareStack` · [`DmStackModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-model.md) object
 
 Software stack as configured for the device.

@@ -13,7 +13,7 @@ Describes a problem with the provided input (validation error).
 
 ### Interfaces
 
-#### [`BomError`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-error.md) interface procurement
+#### [`BomError`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-error.md) interface
 
 A common interface for all errors that might occur in mutations.
 
@@ -26,10 +26,10 @@ type BomInputValidationError implements BomError {
 
 ### Fields
 
-#### `BomInputValidationError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Error message.
 
-#### `BomInputValidationError.path` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `path` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The path in the input where the validation failed.

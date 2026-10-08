@@ -15,6 +15,10 @@ deprecated: false
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
+### Type
+
+#### [`DmExecuteDeviceExtractionFromConfigurationUrlPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-extraction-from-configuration-url-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 dmExecuteDeviceExtractionFromConfigurationUrl(
   input: DmExecuteDeviceExtractionFromConfigurationUrlInput!
@@ -23,8 +27,4 @@ dmExecuteDeviceExtractionFromConfigurationUrl(
 
 ### Arguments
 
-#### `dmExecuteDeviceExtractionFromConfigurationUrl.input` · [`DmExecuteDeviceExtractionFromConfigurationUrlInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-extraction-from-configuration-url-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`DmExecuteDeviceExtractionFromConfigurationUrlPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-extraction-from-configuration-url-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`DmExecuteDeviceExtractionFromConfigurationUrlInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-extraction-from-configuration-url-input.md) non-null input

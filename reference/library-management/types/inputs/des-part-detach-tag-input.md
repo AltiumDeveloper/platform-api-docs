@@ -24,10 +24,10 @@ input DesPartDetachTagInput {
 
 ### Fields
 
-#### `DesPartDetachTagInput.partIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `partIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifiers of the parts to unassign the tag from. Parts that do not have the tag are left as they are.
 
-#### `DesPartDetachTagInput.tagId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tagId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the tag to unassign.

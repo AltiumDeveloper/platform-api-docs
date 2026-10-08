@@ -17,6 +17,6 @@ desWorkspaceInsInitializeInsightsIfRequired: DesWorkspaceInsInitializeInsightsIf
 
 ### Type
 
-#### [`DesWorkspaceInsInitializeInsightsIfRequiredPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-initialize-insights-if-required-payload.md) object insights
+#### [`DesWorkspaceInsInitializeInsightsIfRequiredPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-initialize-insights-if-required-payload.md) object
 
 Payload returned when initializing insights on first use.

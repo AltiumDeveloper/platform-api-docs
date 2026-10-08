@@ -17,6 +17,10 @@ deprecated: false
 
 Fast, family-scoped feasibility evaluation. Returns candidate devices with feasibility and a lean feasibleModel (no configured ports/peripherals). An empty family yields an empty summary so callers can fall back to the next family.
 
+### Type
+
+#### [`DmExecuteDeviceEvaluationByFamilyPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-by-family-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 dmExecuteDeviceEvaluationByFamily(
   input: DmExecuteDeviceEvaluationByFamilyInput!
@@ -25,8 +29,4 @@ dmExecuteDeviceEvaluationByFamily(
 
 ### Arguments
 
-#### `dmExecuteDeviceEvaluationByFamily.input` · [`DmExecuteDeviceEvaluationByFamilyInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-by-family-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`DmExecuteDeviceEvaluationByFamilyPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-by-family-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`DmExecuteDeviceEvaluationByFamilyInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-by-family-input.md) non-null input

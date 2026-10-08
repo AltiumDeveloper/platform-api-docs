@@ -25,14 +25,14 @@ input DesPartManufacturerPartIdWithLastSyncTimeInput {
 
 ### Fields
 
-#### `DesPartManufacturerPartIdWithLastSyncTimeInput.lastSyncTime` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `lastSyncTime` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The last synchronization time.
 
-#### `DesPartManufacturerPartIdWithLastSyncTimeInput.manufacturerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `manufacturerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the manufacturer.
 
-#### `DesPartManufacturerPartIdWithLastSyncTimeInput.mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The manufacturer part number.

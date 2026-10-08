@@ -9,11 +9,11 @@ deprecated: false
 
 # PlatformTokenWorkspaceAccessDeniedError
 
-Error that occurs when access to a workspace is denied for a `PlatformToken`.
+Error that occurs when access to a workspace is denied for a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md).
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type PlatformTokenWorkspaceAccessDeniedError implements Error {
 
 ### Fields
 
-#### `PlatformTokenWorkspaceAccessDeniedError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

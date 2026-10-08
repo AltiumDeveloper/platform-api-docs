@@ -25,14 +25,14 @@ input DesPartUploadLibraryPartsInput {
 
 ### Fields
 
-#### `DesPartUploadLibraryPartsInput.columnMapping` · [`DesPartUploadLibraryPartsColumnMappingInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upload-library-parts-column-mapping-input.md) non-null input library-management
+#### `columnMapping` · [`DesPartUploadLibraryPartsColumnMappingInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upload-library-parts-column-mapping-input.md) non-null input
 
 Column mapping. Maps file column headers to part fields.
 
-#### `DesPartUploadLibraryPartsInput.fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 File identifier with parts for upload.
 
-#### `DesPartUploadLibraryPartsInput.fileName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 File name with parts for upload.

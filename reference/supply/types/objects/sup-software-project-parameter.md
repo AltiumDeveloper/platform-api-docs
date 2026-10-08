@@ -24,10 +24,10 @@ type SupSoftwareProjectParameter {
 
 ### Fields
 
-#### `SupSoftwareProjectParameter.parameter` · [`SupSoftwareProjectParameterInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-parameter-info.md) non-null object supply
+#### `parameter` · [`SupSoftwareProjectParameterInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-parameter-info.md) non-null object
 
 The parameter definition.
 
-#### `SupSoftwareProjectParameter.values` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `values` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 The parameter values.

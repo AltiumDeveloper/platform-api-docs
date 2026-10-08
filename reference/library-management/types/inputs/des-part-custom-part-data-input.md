@@ -32,42 +32,42 @@ input DesPartCustomPartDataInput {
 
 ### Fields
 
-#### `DesPartCustomPartDataInput.categoryName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `categoryName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The category name of the part.
 
-#### `DesPartCustomPartDataInput.datasheetUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `datasheetUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of datasheet for sync systems.
 
-#### `DesPartCustomPartDataInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The description of the part.
 
-#### `DesPartCustomPartDataInput.documents` · [`[DesPartCustomPartDocumentInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-document-input.md) non-null input library-management
+#### `documents` · [`[DesPartCustomPartDocumentInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-document-input.md) non-null input
 
 A collection of datasheet URLs.
 
-#### `DesPartCustomPartDataInput.imageUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `imageUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL for the part image.
 
-#### `DesPartCustomPartDataInput.manufacturerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `manufacturerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The manufacturer name of the part.
 
-#### `DesPartCustomPartDataInput.mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The manufacturer part number of the part.
 
-#### `DesPartCustomPartDataInput.sellers` · [`[DesPartCustomPartSellerInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-seller-input.md) non-null input library-management
+#### `sellers` · [`[DesPartCustomPartSellerInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-seller-input.md) non-null input
 
 A collection of sellers.
 
-#### `DesPartCustomPartDataInput.specs` · [`[DesPartCustomPartSpecInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-spec-input.md) non-null input library-management
+#### `specs` · [`[DesPartCustomPartSpecInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-spec-input.md) non-null input
 
 A collection of part specifications.
 
-#### `DesPartCustomPartDataInput.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The last update time.

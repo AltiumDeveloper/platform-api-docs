@@ -23,14 +23,14 @@ input SupSolutionTemplatePatchTagsInput {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchTagsInput.addTags` · [`[SupSolutionTemplateTagInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-tag-input.md) list input supply
+#### `addTags` · [`[SupSolutionTemplateTagInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-tag-input.md) list input
 
 List of new tags for categorizing a solution template.
 
-#### `SupSolutionTemplatePatchTagsInput.removeTags` · [`[SupSolutionTemplateTagInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-tag-input.md) list input supply
+#### `removeTags` · [`[SupSolutionTemplateTagInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-tag-input.md) list input
 
 List of existing tags will be removed from a solution template.
 
-#### `SupSolutionTemplatePatchTagsInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The solution template identifier.

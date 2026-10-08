@@ -13,6 +13,10 @@ deprecated: true
 
 Gets all available solutions with pagination.
 
+### Type
+
+#### [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) object
+
 ```graphql
 solSolutionsByPage(
   pageNumber: Int!
@@ -22,10 +26,6 @@ solSolutionsByPage(
 
 ### Arguments
 
-#### `solSolutionsByPage.pageNumber` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `pageNumber` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `solSolutionsByPage.pageSize` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
-
-### Type
-
-#### [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) object platform
+#### `pageSize` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar

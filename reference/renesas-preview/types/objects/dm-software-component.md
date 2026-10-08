@@ -31,14 +31,14 @@ type DmSoftwareComponent {
 
 ### Fields
 
-#### `DmSoftwareComponent.componentLibraryId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `componentLibraryId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The component library ID that this software component belongs to.
 
-#### `DmSoftwareComponent.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Id of the software component
 
-#### `DmSoftwareComponent.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the software component (e.g. a middleware or driver) defined in the configuration.xml for this device.

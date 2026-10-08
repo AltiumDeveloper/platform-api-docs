@@ -24,10 +24,10 @@ type DesPartStartUploadPayload {
 
 ### Fields
 
-#### `DesPartStartUploadPayload.errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object library-management
+#### `errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.
 
-#### `DesPartStartUploadPayload.operationId` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `operationId` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
 The identifier of the started operation. 'null' when the upload was not started; the reason is then in 'errors'.

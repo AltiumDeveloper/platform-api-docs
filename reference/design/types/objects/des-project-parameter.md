@@ -13,7 +13,8 @@ A parameter describing the project.
 
 ### Common Data Model
 
-- [Project Parameter](https://altiumdeveloper.github.io/cdm/classes/des_ProjectParameter/) — A name/value parameter defined at the level of a design project. It is either a Workspace-side (server-side) parameter, kept with the project in the Workspace and editable only there, or a design-side parameter, kept in the project file (e.g. \*.PrjPcb) and editable in Altium Designer. Both kinds appear in the project options and can be used as special strings in design documents.
+- [Project Parameter](https://w3id.org/altium/cdm/design/ProjectParameter) — A name/value parameter defined at the level of a design project. It is either a Workspace-side (server-side) parameter, kept with the project in the Workspace and editable only there, or a design-side parameter, kept in the project file (e.g. \*.PrjPcb) and editable in Altium Designer. Both kinds appear in the project options and can be used as special strings in design documents.
+  - IRI: [`https://w3id.org/altium/cdm/design/ProjectParameter`](https://w3id.org/altium/cdm/design/ProjectParameter)
 
 ### Member Of
 
@@ -28,10 +29,10 @@ type DesProjectParameter {
 
 ### Fields
 
-#### `DesProjectParameter.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Parameter name.
 
-#### `DesProjectParameter.value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Parameter value.

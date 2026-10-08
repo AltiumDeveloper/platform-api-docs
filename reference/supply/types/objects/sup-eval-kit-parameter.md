@@ -24,10 +24,10 @@ type SupEvalKitParameter {
 
 ### Fields
 
-#### `SupEvalKitParameter.parameter` · [`SupEvalKitParameterInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-parameter-info.md) non-null object supply
+#### `parameter` · [`SupEvalKitParameterInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-parameter-info.md) non-null object
 
 The parameter definition.
 
-#### `SupEvalKitParameter.values` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `values` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 The parameter values.

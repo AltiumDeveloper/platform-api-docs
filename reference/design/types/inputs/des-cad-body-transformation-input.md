@@ -31,38 +31,38 @@ input DesCadBodyTransformationInput {
 
 ### Fields
 
-#### `DesCadBodyTransformationInput.rotationX` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `rotationX` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body rotation in X direction.
 
-#### `DesCadBodyTransformationInput.rotationY` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `rotationY` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body rotation in Y direction.
 
-#### `DesCadBodyTransformationInput.rotationZ` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `rotationZ` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body rotation in Z direction.
 
-#### `DesCadBodyTransformationInput.scaleX` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `scaleX` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body scale in X direction.
 
-#### `DesCadBodyTransformationInput.scaleY` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `scaleY` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body scale in Y direction.
 
-#### `DesCadBodyTransformationInput.scaleZ` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `scaleZ` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body scale in Z direction.
 
-#### `DesCadBodyTransformationInput.translationX` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `translationX` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body translation in X direction.
 
-#### `DesCadBodyTransformationInput.translationY` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `translationY` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body translation in Y direction.
 
-#### `DesCadBodyTransformationInput.translationZ` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `translationZ` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD body translation in Z direction.

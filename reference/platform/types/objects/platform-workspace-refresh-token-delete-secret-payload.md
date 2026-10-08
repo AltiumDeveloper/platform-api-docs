@@ -22,6 +22,6 @@ type PlatformWorkspaceRefreshTokenDeleteSecretPayload {
 
 ### Fields
 
-#### `PlatformWorkspaceRefreshTokenDeleteSecretPayload.errors` · [`[PlatformWorkspaceRefreshTokenDeleteSecretError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-delete-secret-error.md) list union platform
+#### `errors` · [`[PlatformWorkspaceRefreshTokenDeleteSecretError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-delete-secret-error.md) list union
 
-#### `PlatformWorkspaceRefreshTokenDeleteSecretPayload.refreshToken` · [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) object platform
+#### `refreshToken` · [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) object

@@ -17,4 +17,4 @@ sftDevCfgDeviceConfigurations: [SftDevCfgDeviceConfiguration!]!
 
 ### Type
 
-#### [`SftDevCfgDeviceConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration.md) object renesas-preview
+#### [`SftDevCfgDeviceConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration.md) object

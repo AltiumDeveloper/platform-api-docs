@@ -11,6 +11,10 @@ deprecated: false
 
 Sort preview images of an evaluation kit.
 
+### Type
+
+#### [`SupEvalKitSortPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-sort-preview-images-payload.md) object
+
 ```graphql
 supEvalKitSortPreviewImages(
   input: SupEvalKitSortPreviewImagesInput!
@@ -19,8 +23,4 @@ supEvalKitSortPreviewImages(
 
 ### Arguments
 
-#### `supEvalKitSortPreviewImages.input` · [`SupEvalKitSortPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-preview-images-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitSortPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-sort-preview-images-payload.md) object supply
+#### `input` · [`SupEvalKitSortPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-preview-images-input.md) non-null input

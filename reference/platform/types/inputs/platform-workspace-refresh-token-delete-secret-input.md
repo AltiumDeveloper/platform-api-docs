@@ -22,10 +22,10 @@ input PlatformWorkspaceRefreshTokenDeleteSecretInput {
 
 ### Fields
 
-#### `PlatformWorkspaceRefreshTokenDeleteSecretInput.clientSecret` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `clientSecret` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The client secret to delete from the `PlatformWorkspaceRefreshToken`.
+The client secret to delete from the [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md).
 
-#### `PlatformWorkspaceRefreshTokenDeleteSecretInput.tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The identifier of the `PlatformWorkspaceRefreshToken` to delete the secret for.
+The identifier of the [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) to delete the secret for.

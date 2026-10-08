@@ -30,34 +30,34 @@ type DesWorkspaceInfo {
 
 ### Fields
 
-#### `DesWorkspaceInfo.authId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `authId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of this workspace used for authorization.
 
-#### `DesWorkspaceInfo.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The summary of this workspace content or purpose.
 
-#### `DesWorkspaceInfo.isDefault` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isDefault` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Tells if the workspace is the current user default.
 
-#### `DesWorkspaceInfo.location` · [`DesWorkspaceLocation!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-location.md) non-null object platform
+#### `location` · [`DesWorkspaceLocation!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-location.md) non-null object
 
 The location of this workspace.
 
-#### `DesWorkspaceInfo.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The descriptive label for this workspace.
 
-#### `DesWorkspaceInfo.url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The web address of this workspace.
 
-#### `DesWorkspaceInfo.vendor` · [`DesWorkspaceVendor!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-vendor.md) non-null enum platform
+#### `vendor` · [`DesWorkspaceVendor!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-vendor.md) non-null enum
 
 The vendor of this workspace.
 
-#### `DesWorkspaceInfo.workspaceId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `workspaceId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-The node identifier for the workspace (used by `desWorkspaceById`).
+The node identifier for the workspace (used by [`desWorkspaceById`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-by-id.md)).

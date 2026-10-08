@@ -13,7 +13,9 @@ Represents the execution of a script with status and result information.
 
 ### Common Data Model
 
-- [Script Execution](https://altiumdeveloper.github.io/cdm/classes/cus_ScriptExecution/)
+- [Script Execution](https://w3id.org/altium/cdm/customization/ScriptExecution)
+
+  - IRI: [`https://w3id.org/altium/cdm/customization/ScriptExecution`](https://w3id.org/altium/cdm/customization/ScriptExecution)
   - GRID: `grid:workspace:{workspace-id}:scripts:script-execution/{id}`
 
 ### Returned By
@@ -41,22 +43,22 @@ type GloScrScriptExecution {
 
 ### Fields
 
-#### `GloScrScriptExecution.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-#### `GloScrScriptExecution.executionResult` · [`GloScrScriptExecutionResult!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution-result.md) non-null object customization
+#### `executionResult` · [`GloScrScriptExecutionResult!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution-result.md) non-null object
 
-#### `GloScrScriptExecution.failureReason` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `failureReason` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `GloScrScriptExecution.logs` · [`GloScrScriptExecutionLogPage!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution-log-page.md) non-null object customization
+#### `logs` · [`GloScrScriptExecutionLogPage!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution-log-page.md) non-null object
 
 Retrieves a page of execution logs with a specified limit.
 
-##### `GloScrScriptExecution.logs.limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+##### `limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-##### `GloScrScriptExecution.logs.nextToken` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `nextToken` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `GloScrScriptExecution.scriptExecutionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `scriptExecutionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `GloScrScriptExecution.status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `GloScrScriptExecution.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar

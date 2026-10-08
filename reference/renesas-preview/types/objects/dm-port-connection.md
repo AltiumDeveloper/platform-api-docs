@@ -19,7 +19,8 @@ A connection associated with a port (display-only in this schema).
 
 ### Common Data Model
 
-- [PortConnection](https://altiumdeveloper.github.io/cdm/classes/dm_PortConnection/) — A connection from this port to another component or signal.
+- [PortConnection](https://w3id.org/altium/cdm/deviceModel/PortConnection) — A connection from this port to another component or signal.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/PortConnection`](https://w3id.org/altium/cdm/deviceModel/PortConnection)
 
 ### Member Of
 
@@ -34,10 +35,10 @@ type DmPortConnection {
 
 ### Fields
 
-#### `DmPortConnection.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier for the port connection.
 
-#### `DmPortConnection.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the port connection.

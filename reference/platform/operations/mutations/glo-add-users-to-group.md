@@ -11,6 +11,12 @@ deprecated: false
 
 Add users to group.
 
+### Type
+
+#### [`GloAddUsersToGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-users-to-group-payload.md) object
+
+Represents output value for add user to group.
+
 ```graphql
 gloAddUsersToGroup(
   input: GloAddUsersToGroupInput!
@@ -19,10 +25,4 @@ gloAddUsersToGroup(
 
 ### Arguments
 
-#### `gloAddUsersToGroup.input` · [`GloAddUsersToGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-users-to-group-input.md) non-null input platform
-
-### Type
-
-#### [`GloAddUsersToGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-users-to-group-payload.md) object platform
-
-Represents output value for add user to group.
+#### `input` · [`GloAddUsersToGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-users-to-group-input.md) non-null input

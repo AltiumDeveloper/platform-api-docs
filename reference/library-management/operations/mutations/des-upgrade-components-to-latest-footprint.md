@@ -11,6 +11,12 @@ deprecated: false
 
 Upgrades components to use the latest footprint revision. This operation updates the link to the footprint and does not create new component revisions.
 
+### Type
+
+#### [`DesUpgradeComponentsToLatestFootprintPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-upgrade-components-to-latest-footprint-payload.md) object
+
+Payload for upgrading components to use the latest footprint revision.
+
 ```graphql
 desUpgradeComponentsToLatestFootprint(
   input: DesUpgradeComponentsToLatestFootprintInput!
@@ -19,10 +25,4 @@ desUpgradeComponentsToLatestFootprint(
 
 ### Arguments
 
-#### `desUpgradeComponentsToLatestFootprint.input` · [`DesUpgradeComponentsToLatestFootprintInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-upgrade-components-to-latest-footprint-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpgradeComponentsToLatestFootprintPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-upgrade-components-to-latest-footprint-payload.md) object library-management
-
-Payload for upgrading components to use the latest footprint revision.
+#### `input` · [`DesUpgradeComponentsToLatestFootprintInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-upgrade-components-to-latest-footprint-input.md) non-null input

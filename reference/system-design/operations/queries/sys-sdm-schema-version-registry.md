@@ -23,4 +23,4 @@ sysSdmSchemaVersionRegistry: [SchemaRegistryEntry!]!
 
 ### Type
 
-#### [`SchemaRegistryEntry`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/schema-registry-entry.md) object system-design **EXPERIMENTAL**
+#### [`SchemaRegistryEntry`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/schema-registry-entry.md) object **EXPERIMENTAL**

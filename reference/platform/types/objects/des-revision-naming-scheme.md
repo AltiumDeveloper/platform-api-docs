@@ -9,11 +9,13 @@ deprecated: false
 
 # DesRevisionNamingScheme
 
-Revision naming scheme details obtained by `desRevisionNamingSchemes`. More information is available on revision naming schemes at: <https://www.altium.com/documentation/altium-designer/accessing-detailed-item-view#!revision_naming_scheme_dlg>
+Revision naming scheme details obtained by [`desRevisionNamingSchemes`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-revision-naming-schemes.md). More information is available on revision naming schemes at: <https://www.altium.com/documentation/altium-designer/accessing-detailed-item-view#!revision_naming_scheme_dlg>
 
 ### Common Data Model
 
-- [Revision Naming Scheme](https://altiumdeveloper.github.io/cdm/classes/plt_NamingScheme/) — Defines the format of Revision IDs for the Items that use it: one to three levels (e.g. Model, Prototype and Revision), each with its own format, separator and minimum width. The scheme is chosen per Item when the Item is created and cannot be changed after its first release. It is distinct from the Item Naming Scheme, which determines the Item ID rather than the revision's ID.
+- [Revision Naming Scheme](https://w3id.org/altium/cdm/platform/NamingScheme) — Defines the format of Revision IDs for the Items that use it: one to three levels (e.g. Model, Prototype and Revision), each with its own format, separator and minimum width. The scheme is chosen per Item when the Item is created and cannot be changed after its first release. It is distinct from the Item Naming Scheme, which determines the Item ID rather than the revision's ID.
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/NamingScheme`](https://w3id.org/altium/cdm/platform/NamingScheme)
   - GRID: `grid:workspace:{workspace-id}:platform:revision-naming-scheme/{id}`
 
 ### Returned By
@@ -38,48 +40,48 @@ type DesRevisionNamingScheme {
 
 ### Fields
 
-#### `DesRevisionNamingScheme.contentTypes` · [`[DesContentTypeKind!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) non-null enum platform
+#### `contentTypes` · [`[DesContentTypeKind!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) non-null enum
 
-The `DesContentTypeKind` list for this revision naming scheme.
+The [`DesContentTypeKind`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) list for this revision naming scheme.
 
-#### `DesRevisionNamingScheme.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` this revision naming scheme was created.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) this revision naming scheme was created.
 
-#### `DesRevisionNamingScheme.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 The user this revision naming scheme was created by.
 
-#### `DesRevisionNamingScheme.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The node identifier.
 
-#### `DesRevisionNamingScheme.isControlledPerContentType` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isControlledPerContentType` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 If true, the revision naming scheme is only applicable to objects of the content types specified by `contentTypes`.
 
-#### `DesRevisionNamingScheme.itemRevisionSeparator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `itemRevisionSeparator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The separator used between item identifier and revision identifier.
 
-#### `DesRevisionNamingScheme.levels` · [`[DesRevisionNamingSchemeLevel!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme-level.md) non-null object platform
+#### `levels` · [`[DesRevisionNamingSchemeLevel!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme-level.md) non-null object
 
-The `DesRevisionNamingSchemeLevel` list for this revision naming scheme.
+The [`DesRevisionNamingSchemeLevel`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme-level.md) list for this revision naming scheme.
 
-#### `DesRevisionNamingScheme.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this revision naming scheme.
 
-#### `DesRevisionNamingScheme.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` this revision naming scheme was last updated at.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) this revision naming scheme was last updated at.
 
-#### `DesRevisionNamingScheme.updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 The user this revision naming scheme was last updated by.
 
 #### Deprecated
 
-#### `DesRevisionNamingScheme.revisionNamingSchemeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `revisionNamingSchemeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Use `id` instead.

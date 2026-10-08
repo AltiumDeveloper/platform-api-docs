@@ -25,14 +25,14 @@ type DesBomItem {
 
 ### Fields
 
-#### `DesBomItem.bomItemInstances` · [`[DesBomItemInstance!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item-instance.md) non-null object design
+#### `bomItemInstances` · [`[DesBomItemInstance!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item-instance.md) non-null object
 
 The list of each instance of this BOM item.
 
-#### `DesBomItem.component` · [`DesComponent!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) non-null object library-management
+#### `component` · [`DesComponent!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) non-null object Library Management
 
 The detailed component information for this BOM item.
 
-#### `DesBomItem.quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The total number of times this item is used.

@@ -33,16 +33,16 @@ type DmInterfaceSupportSummary {
 
 ### Fields
 
-#### `DmInterfaceSupportSummary.interfaces` · [`[DmInterfaceSummary!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-summary.md) non-null object renesas-preview
+#### `interfaces` · [`[DmInterfaceSummary!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-summary.md) non-null object
 
 List of supported generic interfaces with per-device support details. Optionally filter by interface type.
 
-##### `DmInterfaceSupportSummary.interfaces.interfaceType` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `interfaceType` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `DmInterfaceSupportSummary.totalBoards` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalBoards` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Total number of boards in the catalog.
 
-#### `DmInterfaceSupportSummary.totalDevices` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalDevices` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Total number of devices in the catalog.

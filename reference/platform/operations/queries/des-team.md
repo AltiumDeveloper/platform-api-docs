@@ -11,6 +11,12 @@ deprecated: false
 
 Gets the specified workspace team.
 
+### Type
+
+#### [`DesTeam`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-team.md) object
+
+Information about a team in a workspace.
+
 ```graphql
 desTeam(
   workspaceUrl: String
@@ -19,12 +25,6 @@ desTeam(
 
 ### Arguments
 
-#### `desTeam.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The workspace URL.
-
-### Type
-
-#### [`DesTeam`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-team.md) object platform
-
-Information about a team in a workspace.

@@ -25,14 +25,14 @@ type DesWorkspaceInsNotificationRecipientSettings {
 
 ### Fields
 
-#### `DesWorkspaceInsNotificationRecipientSettings.groups` · [`[DesWorkspaceInsRecipientGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-recipient-group.md) non-null object insights
+#### `groups` · [`[DesWorkspaceInsRecipientGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-recipient-group.md) non-null object
 
 Recipient groups included in notifications.
 
-#### `DesWorkspaceInsNotificationRecipientSettings.sendToOwners` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `sendToOwners` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Send notifications to the insight owners automatically.
 
-#### `DesWorkspaceInsNotificationRecipientSettings.users` · [`[DesWorkspaceInsRecipientUser!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-recipient-user.md) non-null object insights
+#### `users` · [`[DesWorkspaceInsRecipientUser!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-recipient-user.md) non-null object
 
 Explicit user recipients for notifications.

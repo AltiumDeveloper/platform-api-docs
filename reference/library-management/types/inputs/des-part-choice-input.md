@@ -25,14 +25,14 @@ input DesPartChoiceInput {
 
 ### Fields
 
-#### `DesPartChoiceInput.companyName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `companyName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of company for part choice.
 
-#### `DesPartChoiceInput.partNumber` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partNumber` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Part number for part choice.
 
-#### `DesPartChoiceInput.partSourceId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `partSourceId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the part source that provides this part choice. If omitted or set to `null`, the default Altium Parts Provider will be used.

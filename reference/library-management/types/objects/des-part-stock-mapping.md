@@ -24,10 +24,10 @@ type DesPartStockMapping {
 
 ### Fields
 
-#### `DesPartStockMapping.locationColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `locationColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for the location. When absent or unreadable, location is left empty.
 
-#### `DesPartStockMapping.qtyColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `qtyColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Column header for the quantity.

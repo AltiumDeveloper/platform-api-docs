@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the value associated with the specified setting.
 
+### Type
+
+#### [`DesUpdateSettingPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-setting-payload.md) object
+
+Payload associated with updating a setting.
+
 ```graphql
 desUpdateSetting(
   input: DesUpdateSettingInput!
@@ -19,10 +25,4 @@ desUpdateSetting(
 
 ### Arguments
 
-#### `desUpdateSetting.input` · [`DesUpdateSettingInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-setting-input.md) non-null input platform
-
-### Type
-
-#### [`DesUpdateSettingPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-setting-payload.md) object platform
-
-Payload associated with updating a setting.
+#### `input` · [`DesUpdateSettingInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-setting-input.md) non-null input

@@ -24,10 +24,10 @@ type DesLifeCycleStateTransitionApprovalGroup {
 
 ### Fields
 
-#### `DesLifeCycleStateTransitionApprovalGroup.controllers` · [`[DesLifeCycleStateTransitionController!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition-controller.md) non-null object platform
+#### `controllers` · [`[DesLifeCycleStateTransitionController!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition-controller.md) non-null object
 
 The controllers that can provide an approval for this life cycle state transition approval group.
 
-#### `DesLifeCycleStateTransitionApprovalGroup.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this life cycle state transition approval group.

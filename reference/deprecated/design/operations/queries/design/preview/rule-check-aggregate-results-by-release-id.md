@@ -19,6 +19,10 @@ deprecated: true
 
 Retrieves the aggregated rule check results for a design.
 
+### Type
+
+#### [`RuleCheckAggregateExecution_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-aggregate-execution-preview.md) object **EXPERIMENTAL**
+
 ```graphql
 design {
   preview {
@@ -33,16 +37,12 @@ design {
 
 ### Arguments
 
-#### `ruleCheckAggregateResultsByReleaseId.designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the design.
 
-#### `ruleCheckAggregateResultsByReleaseId.releaseId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `releaseId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the project release.
 
-#### `ruleCheckAggregateResultsByReleaseId.where` · [`RuleCheckExecutionFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-filter-input.md) input design
-
-### Type
-
-#### [`RuleCheckAggregateExecution_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-aggregate-execution-preview.md) object design **EXPERIMENTAL**
+#### `where` · [`RuleCheckExecutionFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-filter-input.md) input

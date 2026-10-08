@@ -11,6 +11,12 @@ deprecated: false
 
 Reads column headers from a previously uploaded CSV or Excel file. EXPERIMENTAL: this query may change or be removed without notice.
 
+### Type
+
+#### [`DesPartUploadPartFileColumnsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-part-file-columns-payload.md) object
+
+Payload produced when reading columns from an uploaded file.
+
 ```graphql
 desPartUploadPartFileColumns(
   fileId: String!
@@ -20,16 +26,10 @@ desPartUploadPartFileColumns(
 
 ### Arguments
 
-#### `desPartUploadPartFileColumns.fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 File identifier to read columns from.
 
-#### `desPartUploadPartFileColumns.fileName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 File name to read columns from.
-
-### Type
-
-#### [`DesPartUploadPartFileColumnsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-part-file-columns-payload.md) object library-management
-
-Payload produced when reading columns from an uploaded file.

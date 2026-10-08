@@ -21,6 +21,6 @@ type SupEvalKitAddRefDesignCompatibleEvalKitsPayload {
 
 ### Fields
 
-#### `SupEvalKitAddRefDesignCompatibleEvalKitsPayload.success` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `success` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Return true if operation succeeded.

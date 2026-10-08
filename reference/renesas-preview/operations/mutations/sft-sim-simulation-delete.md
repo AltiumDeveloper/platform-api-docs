@@ -11,6 +11,10 @@ deprecated: false
 
 Deletes simulation by identifier.
 
+### Type
+
+#### [`SftSimSimulationDeletePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-delete-payload.md) object
+
 ```graphql
 sftSimSimulationDelete(
   input: SftSimSimulationDeleteInput!
@@ -19,8 +23,4 @@ sftSimSimulationDelete(
 
 ### Arguments
 
-#### `sftSimSimulationDelete.input` · [`SftSimSimulationDeleteInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-delete-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSimSimulationDeletePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-delete-payload.md) object renesas-preview
+#### `input` · [`SftSimSimulationDeleteInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-delete-input.md) non-null input

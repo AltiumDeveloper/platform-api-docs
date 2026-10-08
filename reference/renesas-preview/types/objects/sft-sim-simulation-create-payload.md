@@ -21,4 +21,4 @@ type SftSimSimulationCreatePayload {
 
 ### Fields
 
-#### `SftSimSimulationCreatePayload.data` · [`SftSimSimulation!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md) non-null object renesas-preview
+#### `data` · [`SftSimSimulation!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md) non-null object

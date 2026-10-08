@@ -24,10 +24,10 @@ type DesReuseBlockEdge {
 
 ### Fields
 
-#### `DesReuseBlockEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesReuseBlockEdge.node` · [`DesReuseBlock!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) non-null object library-management
+#### `node` · [`DesReuseBlock!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) non-null object
 
 The item at the end of the edge.

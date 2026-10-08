@@ -26,18 +26,18 @@ input DesCadBoardTrackInput {
 
 ### Fields
 
-#### `DesCadBoardTrackInput.layerName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `layerName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board track layer name.
 
-#### `DesCadBoardTrackInput.netName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `netName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board track net name.
 
-#### `DesCadBoardTrackInput.points` · [`[DesCadBoardPointInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) list input design
+#### `points` · [`[DesCadBoardPointInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) list input
 
 CAD board track points.
 
-#### `DesCadBoardTrackInput.width` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `width` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 CAD board track width.

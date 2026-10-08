@@ -11,6 +11,10 @@ deprecated: false
 
 Removes an existing redirect URI from an existing App.
 
+### Type
+
+#### [`GloRemoveAppRedirectUriPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-redirect-uri-payload.md) object
+
 ```graphql
 gloRemoveAppRedirectUri(
   input: GloRemoveAppRedirectUriInput!
@@ -19,8 +23,4 @@ gloRemoveAppRedirectUri(
 
 ### Arguments
 
-#### `gloRemoveAppRedirectUri.input` · [`GloRemoveAppRedirectUriInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-redirect-uri-input.md) non-null input platform
-
-### Type
-
-#### [`GloRemoveAppRedirectUriPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-redirect-uri-payload.md) object platform
+#### `input` · [`GloRemoveAppRedirectUriInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-redirect-uri-input.md) non-null input

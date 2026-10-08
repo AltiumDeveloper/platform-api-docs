@@ -22,6 +22,6 @@ enum GloOAuthClientRefreshTokenExpirationType {
 
 ### Values
 
-#### `GloOAuthClientRefreshTokenExpirationType.ABSOLUTE`
+#### `ABSOLUTE`
 
-#### `GloOAuthClientRefreshTokenExpirationType.SLIDING`
+#### `SLIDING`

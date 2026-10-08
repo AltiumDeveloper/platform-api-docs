@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Endpoint](https://altiumdeveloper.github.io/cdm/classes/sys_SdmEndpoint/) — Represents an endpoint of a connection.
+- [Endpoint](https://w3id.org/altium/cdm/system/SdmEndpoint) — Represents an endpoint of a connection.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmEndpoint`](https://w3id.org/altium/cdm/system/SdmEndpoint)
 
 ### Member Of
 
@@ -32,6 +33,6 @@ type SysSdmEndpoint {
 
 ### Fields
 
-#### `SysSdmEndpoint.functionalBlockId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `functionalBlockId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmEndpoint.portId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `portId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

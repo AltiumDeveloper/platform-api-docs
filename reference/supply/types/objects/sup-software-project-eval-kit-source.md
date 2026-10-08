@@ -34,49 +34,49 @@ type SupSoftwareProjectEvalKitSource {
 
 ### Fields
 
-#### `SupSoftwareProjectEvalKitSource.evalKit` · [`SupEvalKit!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) non-null object supply
+#### `evalKit` · [`SupEvalKit!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) non-null object
 
 The evaluation kit associated with the software project.
 
-#### `SupSoftwareProjectEvalKitSource.projectSources` · [`[SupSoftwareProjectEvalKitProjectSource!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-project-source.md) list object supply
+#### `projectSources` · [`[SupSoftwareProjectEvalKitProjectSource!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-project-source.md) list object
 
 The list of evaluation kit project sources.
 
-##### `SupSoftwareProjectEvalKitSource.projectSources.types` · [`[SupSoftwareProjectEvalKitProjectSourceType]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-type.md) list enum supply
+##### `types` · [`[SupSoftwareProjectEvalKitProjectSourceType]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-type.md) list enum
 
 #### Deprecated
 
-#### `SupSoftwareProjectEvalKitSource.compatibleEvalKitId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `compatibleEvalKitId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Fields play a technical role for internal uses.
 
 The compatible evaluation kit identifier.
 
-#### `SupSoftwareProjectEvalKitSource.configUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `configUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Use 'projectSources' instead.
 
 The URL of the config associated with the software project.
 
-#### `SupSoftwareProjectEvalKitSource.configXmlUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `configXmlUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Use 'projectSources' instead.
 
 The URL of the config XML associated with the software project.
 
-#### `SupSoftwareProjectEvalKitSource.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Fields play a technical role for schema stitching purposes.
 
 The evaluation kit identifier.
 
-#### `SupSoftwareProjectEvalKitSource.readmeUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `readmeUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Use 'projectSources' instead.
 
 The URL of the readme associated with the software project.
 
-#### `SupSoftwareProjectEvalKitSource.sourceUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `sourceUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Use 'projectSources' instead.
 

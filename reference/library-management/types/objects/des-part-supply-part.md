@@ -23,6 +23,6 @@ type DesPartSupplyPart {
 
 ### Fields
 
-#### `DesPartSupplyPart.supplyPartId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `supplyPartId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the supply part.

@@ -23,6 +23,6 @@ input GloOAuthClientSortInput {
 
 ### Fields
 
-#### `GloOAuthClientSortInput.clientId` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum common
+#### `clientId` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
 The client identifier for this \*OAuth 2.0 client\*.

@@ -13,7 +13,9 @@ Task activities in Altium 365 workspace for workspace members.
 
 ### Common Data Model
 
-- [Task](https://altiumdeveloper.github.io/cdm/classes/col_Task/) — Task represents a discrete unit of work assigned to a user or team within the design workflow, used to track progress, responsibility, and completion status for design, review, or management activities.
+- [Task](https://w3id.org/altium/cdm/collaboration/Task) — Task represents a discrete unit of work assigned to a user or team within the design workflow, used to track progress, responsibility, and completion status for design, review, or management activities.
+
+  - IRI: [`https://w3id.org/altium/cdm/collaboration/Task`](https://w3id.org/altium/cdm/collaboration/Task)
   - GRID: `grid:workspace:{workspace-id}:collaboration:task/{id}`
 
 ### Member Of
@@ -22,7 +24,7 @@ Task activities in Altium 365 workspace for workspace members.
 
 ### Interfaces
 
-#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface common
+#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface
 
 The node interface is implemented by entities that have a global unique identifier.
 
@@ -45,50 +47,50 @@ type DesTask implements Node {
 
 ### Fields
 
-#### `DesTask.assignee` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `assignee` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The assigned user.
 
-#### `DesTask.comments` · [`[DesComment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) non-null object collaboration
+#### `comments` · [`[DesComment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) non-null object
 
 The list of task comments.
 
-#### `DesTask.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The creation date.
 
-#### `DesTask.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The user who created the task.
 
-#### `DesTask.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The task description.
 
-#### `DesTask.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The node identifier.
 
-#### `DesTask.modifiedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `modifiedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The last modification date.
 
-#### `DesTask.modifiedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `modifiedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The user who modified the task.
 
-#### `DesTask.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The task name.
 
-#### `DesTask.priority` · [`DesTaskPriority!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-priority.md) non-null enum collaboration
+#### `priority` · [`DesTaskPriority!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-priority.md) non-null enum
 
 The task priority.
 
-#### `DesTask.refId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `refId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The task identifier shown in Altium 365.
 
-#### `DesTask.status` · [`DesTaskStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-status.md) non-null enum collaboration
+#### `status` · [`DesTaskStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-status.md) non-null enum
 
 The task status.

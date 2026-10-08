@@ -24,8 +24,8 @@ type SupSolutionTemplatePatchParametersPayload {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchParametersPayload.errors` · [`[SupSolutionTemplatePatchParametersError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-parameters-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplatePatchParametersError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-parameters-error.md) list union
 
-#### `SupSolutionTemplatePatchParametersPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

@@ -15,6 +15,10 @@ deprecated: false
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
+### Type
+
+#### [`RsaMotorStudioUnlinkTuningFromProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-unlink-tuning-from-project-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioUnlinkTuningFromProject(
   input: RsaMotorStudioUnlinkTuningFromProjectInput!
@@ -23,8 +27,4 @@ rsaMotorStudioUnlinkTuningFromProject(
 
 ### Arguments
 
-#### `rsaMotorStudioUnlinkTuningFromProject.input` · [`RsaMotorStudioUnlinkTuningFromProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-unlink-tuning-from-project-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioUnlinkTuningFromProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-unlink-tuning-from-project-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioUnlinkTuningFromProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-unlink-tuning-from-project-input.md) non-null input

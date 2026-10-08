@@ -11,6 +11,10 @@ deprecated: false
 
 Updates existing solution from linked ESD document.
 
+### Type
+
+#### [`SolBldScaffoldingByExistingEsdPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-existing-esd-payload.md) object
+
 ```graphql
 solBldScaffoldingByExistingEsd(
   input: SolBldScaffoldingByExistingEsdInput!
@@ -19,8 +23,4 @@ solBldScaffoldingByExistingEsd(
 
 ### Arguments
 
-#### `solBldScaffoldingByExistingEsd.input` · [`SolBldScaffoldingByExistingEsdInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-existing-esd-input.md) non-null input platform
-
-### Type
-
-#### [`SolBldScaffoldingByExistingEsdPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-existing-esd-payload.md) object platform
+#### `input` · [`SolBldScaffoldingByExistingEsdInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-existing-esd-input.md) non-null input

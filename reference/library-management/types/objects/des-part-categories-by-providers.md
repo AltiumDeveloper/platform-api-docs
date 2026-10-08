@@ -26,18 +26,18 @@ type DesPartCategoriesByProviders {
 
 ### Fields
 
-#### `DesPartCategoriesByProviders.customPart` · [`[DesPartCategory!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) list object library-management
+#### `customPart` · [`[DesPartCategory!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) list object
 
 Categories from custom parts.
 
-#### `DesPartCategoriesByProviders.siliconExpertPart` · [`[DesPartCategory!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) list object library-management
+#### `siliconExpertPart` · [`[DesPartCategory!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) list object
 
 Categories from \*SiliconExpert\* parts.
 
-#### `DesPartCategoriesByProviders.supplyPart` · [`[DesPartCategory!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) non-null object library-management
+#### `supplyPart` · [`[DesPartCategory!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) non-null object
 
 Categories from supply parts.
 
-#### `DesPartCategoriesByProviders.z2DataPart` · [`[DesPartCategory!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) list object library-management
+#### `z2DataPart` · [`[DesPartCategory!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) list object
 
 Categories from \*Z2Data\* parts.

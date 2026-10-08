@@ -24,10 +24,10 @@ enum BomIssueSeverity {
 
 ### Values
 
-#### `BomIssueSeverity.ERROR`
+#### `ERROR`
 
-#### `BomIssueSeverity.FATAL`
+#### `FATAL`
 
-#### `BomIssueSeverity.INFORMATION`
+#### `INFORMATION`
 
-#### `BomIssueSeverity.WARNING`
+#### `WARNING`

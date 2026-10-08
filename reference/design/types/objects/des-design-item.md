@@ -42,78 +42,78 @@ type DesDesignItem {
 
 ### Fields
 
-#### `DesDesignItem.boundingBox` · [`DesRectangle`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-rectangle.md) object design
+#### `boundingBox` · [`DesRectangle`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-rectangle.md) object
 
 The axis-aligned bounding box.
 
-#### `DesDesignItem.comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The additional information for this design item.
 
-#### `DesDesignItem.commentThreads` · [`[DesCommentThread!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread.md) list object collaboration
+#### `commentThreads` · [`[DesCommentThread!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread.md) list object Collaboration
 
 The list of all comment threads related to this design item.
 
-#### `DesDesignItem.component` · [`DesComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) object library-management
+#### `component` · [`DesComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) object Library Management
 
 The detailed component information for this design item.
 
-#### `DesDesignItem.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The summary of function or other performance details for this design item.
 
-#### `DesDesignItem.designator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `designator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The unique label for this design item.
 
-#### `DesDesignItem.footprintName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `footprintName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Design area footprint name.
 
-#### `DesDesignItem.layer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object design
+#### `layer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object
 
 The layer(side) placement for this design item.
 
-#### `DesDesignItem.mesh3D` · [`DesMesh3D`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-mesh-3-d.md) object design
+#### `mesh3D` · [`DesMesh3D`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-mesh-3-d.md) object
 
 \*PROTOTYPE, SUBJECT TO CHANGE\*
 
-#### `DesDesignItem.pads` · [`[DesPad!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pad.md) non-null object design
+#### `pads` · [`[DesPad!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pad.md) non-null object
 
 The list of connection targets for this design item.
 
-#### `DesDesignItem.parameters` · [`[DesDesignItemParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item-parameter.md) non-null object design
+#### `parameters` · [`[DesDesignItemParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item-parameter.md) non-null object
 
 The list of parameters describing the design item.
 
-#### `DesDesignItem.pcbId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `pcbId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The PCB identifier.
 
-#### `DesDesignItem.position` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object design
+#### `position` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object
 
 The planar location for this design item.
 
-#### `DesDesignItem.rotation` · [`Decimal`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) scalar common
+#### `rotation` · [`Decimal`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) scalar
 
 The rotation in degrees.
 
-#### `DesDesignItem.schId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `schId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The schematic identifier.
 
-#### `DesDesignItem.tracks` · [`[DesTrack!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-track.md) non-null object design
+#### `tracks` · [`[DesTrack!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-track.md) non-null object
 
 The list of conductor segments for this design item.
 
-##### `DesDesignItem.tracks.where` · [`DesTrackFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-track-filter-input.md) input design
+##### `where` · [`DesTrackFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-track-filter-input.md) input
 
-#### `DesDesignItem.vias` · [`[DesVia!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-via.md) non-null object design
+#### `vias` · [`[DesVia!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-via.md) non-null object
 
 The list of multiple layer connections for this design item.
 
 #### Deprecated
 
-#### `DesDesignItem.area` · [`DesRectangle`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-rectangle.md) **DEPRECATED** object design
+#### `area` · [`DesRectangle`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-rectangle.md) **DEPRECATED** object
 
 > **Deprecated:** Use `boundingBox`.

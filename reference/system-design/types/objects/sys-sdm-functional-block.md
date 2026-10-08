@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Functional Block](https://altiumdeveloper.github.io/cdm/classes/sys_SdmFunctionalBlock/) — Represents a logical block within a system functional model.
+- [Functional Block](https://w3id.org/altium/cdm/system/SdmFunctionalBlock) — Represents a logical block within a system functional model.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmFunctionalBlock`](https://w3id.org/altium/cdm/system/SdmFunctionalBlock)
 
 ### Member Of
 
@@ -36,14 +37,14 @@ type SysSdmFunctionalBlock {
 
 ### Fields
 
-#### `SysSdmFunctionalBlock.hardwareComponentIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `hardwareComponentIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-#### `SysSdmFunctionalBlock.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmFunctionalBlock.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmFunctionalBlock.parameters` · [`[SysSdmParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) list object system-design
+#### `parameters` · [`[SysSdmParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) list object
 
-#### `SysSdmFunctionalBlock.ports` · [`[SysSdmPort!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-port.md) list object system-design
+#### `ports` · [`[SysSdmPort!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-port.md) list object
 
-#### `SysSdmFunctionalBlock.sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

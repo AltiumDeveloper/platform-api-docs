@@ -33,46 +33,46 @@ input DesCadBoard3DBodyModelDataInput {
 
 ### Fields
 
-#### `DesCadBoard3DBodyModelDataInput.color` · [`Long`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) scalar common
+#### `color` · [`Long`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) scalar
 
 Model color.
 
-#### `DesCadBoard3DBodyModelDataInput.isEcadProvidesRaw3DModel` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isEcadProvidesRaw3DModel` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 True if ECAD provides the raw 3D model.
 
-#### `DesCadBoard3DBodyModelDataInput.localTestFileName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `localTestFileName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Local test file name.
 
-#### `DesCadBoard3DBodyModelDataInput.modelDisplayName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `modelDisplayName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Model display name.
 
-#### `DesCadBoard3DBodyModelDataInput.modelFileExtension` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `modelFileExtension` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Model file extension.
 
-#### `DesCadBoard3DBodyModelDataInput.modelFileHash` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `modelFileHash` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 File hash for model.
 
-#### `DesCadBoard3DBodyModelDataInput.modelFilePath` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `modelFilePath` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 File path for model.
 
-#### `DesCadBoard3DBodyModelDataInput.modelIdOnServer` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `modelIdOnServer` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Unique identifier for model on server.
 
-#### `DesCadBoard3DBodyModelDataInput.modelNetName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `modelNetName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Model net name.
 
-#### `DesCadBoard3DBodyModelDataInput.modelPartName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `modelPartName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Model part name.
 
-#### `DesCadBoard3DBodyModelDataInput.opacity` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar common
+#### `opacity` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar
 
 Model opacity.

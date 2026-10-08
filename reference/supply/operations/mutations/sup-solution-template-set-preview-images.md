@@ -11,6 +11,12 @@ deprecated: false
 
 Replace all preview images on a solution template.
 
+### Type
+
+#### [`SupSolutionTemplateSetPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-preview-images-payload.md) object
+
+Payload for replacing all preview images on a solution template.
+
 ```graphql
 supSolutionTemplateSetPreviewImages(
   input: SupSolutionTemplateSetPreviewImagesInput!
@@ -19,10 +25,4 @@ supSolutionTemplateSetPreviewImages(
 
 ### Arguments
 
-#### `supSolutionTemplateSetPreviewImages.input` · [`SupSolutionTemplateSetPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-preview-images-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateSetPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-preview-images-payload.md) object supply
-
-Payload for replacing all preview images on a solution template.
+#### `input` · [`SupSolutionTemplateSetPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-preview-images-input.md) non-null input

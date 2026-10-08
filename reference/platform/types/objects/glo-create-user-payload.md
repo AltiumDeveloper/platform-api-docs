@@ -23,6 +23,6 @@ type GloCreateUserPayload {
 
 ### Fields
 
-#### `GloCreateUserPayload.userId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `userId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 User identifier.

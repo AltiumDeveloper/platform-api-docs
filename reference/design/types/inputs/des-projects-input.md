@@ -9,7 +9,7 @@ deprecated: false
 
 # DesProjectsInput
 
-`desProjects` extra arguments.
+[`desProjects`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-projects.md) extra arguments.
 
 ### Member Of
 
@@ -23,6 +23,6 @@ input DesProjectsInput {
 
 ### Fields
 
-#### `DesProjectsInput.hasLayers` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasLayers` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Tells to get projects with layers.

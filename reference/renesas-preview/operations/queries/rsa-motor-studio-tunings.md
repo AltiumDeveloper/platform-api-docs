@@ -23,4 +23,4 @@ rsaMotorStudioTunings: [RsaMotorStudioTuning!]!
 
 ### Type
 
-#### [`RsaMotorStudioTuning`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning.md) object renesas-preview **EXPERIMENTAL**
+#### [`RsaMotorStudioTuning`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning.md) object **EXPERIMENTAL**

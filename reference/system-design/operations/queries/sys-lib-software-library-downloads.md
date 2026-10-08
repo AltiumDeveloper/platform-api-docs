@@ -17,6 +17,10 @@ deprecated: false
 
 Resolves uploaded user libraries to presigned archive download urls
 
+### Type
+
+#### [`SysLibSoftwareLibraryDownload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-library-download.md) object **EXPERIMENTAL**
+
 ```graphql
 sysLibSoftwareLibraryDownloads(
   ids: [ID!]!
@@ -25,8 +29,4 @@ sysLibSoftwareLibraryDownloads(
 
 ### Arguments
 
-#### `sysLibSoftwareLibraryDownloads.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SysLibSoftwareLibraryDownload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-library-download.md) object system-design **EXPERIMENTAL**
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

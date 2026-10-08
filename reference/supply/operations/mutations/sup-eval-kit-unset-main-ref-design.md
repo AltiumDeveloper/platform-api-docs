@@ -11,6 +11,12 @@ deprecated: false
 
 Unset a specific main reference design for an evaluation kit.
 
+### Type
+
+#### [`SupEvalKitUnsetMainRefDesignPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-unset-main-ref-design-payload.md) object
+
+Payload returned after unsetting the main reference design of an evaluation kit.
+
 ```graphql
 supEvalKitUnsetMainRefDesign(
   input: SupEvalKitUnsetMainRefDesignInput!
@@ -19,10 +25,4 @@ supEvalKitUnsetMainRefDesign(
 
 ### Arguments
 
-#### `supEvalKitUnsetMainRefDesign.input` · [`SupEvalKitUnsetMainRefDesignInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-unset-main-ref-design-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitUnsetMainRefDesignPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-unset-main-ref-design-payload.md) object supply
-
-Payload returned after unsetting the main reference design of an evaluation kit.
+#### `input` · [`SupEvalKitUnsetMainRefDesignInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-unset-main-ref-design-input.md) non-null input

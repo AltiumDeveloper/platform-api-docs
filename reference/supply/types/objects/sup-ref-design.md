@@ -13,7 +13,9 @@ A reference design model aggregates the relevant documents, files and parts.
 
 ### Common Data Model
 
-- [Reference Design](https://altiumdeveloper.github.io/cdm/classes/sup_ReferenceDesign/) — An example design published in the supply catalog, bringing together its design files (e.g. schematics and layouts), documentation and the parts it uses. In Renesas 365 a reference design can be imported into a solution, which adds it to the Workspace as a PCB project linked to that solution.
+- [Reference Design](https://w3id.org/altium/cdm/supply/ReferenceDesign) — An example design published in the supply catalog, bringing together its design files (e.g. schematics and layouts), documentation and the parts it uses. In Renesas 365 a reference design can be imported into a solution, which adds it to the Workspace as a PCB project linked to that solution.
+
+  - IRI: [`https://w3id.org/altium/cdm/supply/ReferenceDesign`](https://w3id.org/altium/cdm/supply/ReferenceDesign)
   - GRID: `grid:supply::platform:ref-design/{id}`
 
 ### Returned By
@@ -78,151 +80,151 @@ type SupRefDesign {
 
 ### Fields
 
-#### `SupRefDesign.applicationIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `applicationIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The list of application identifiers related to the reference design.
 
-#### `SupRefDesign.bomId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `bomId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The bill of materials (BOM) identifier.
 
-#### `SupRefDesign.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The creation date.
 
-#### `SupRefDesign.defaultSchematicFile` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `defaultSchematicFile` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The default schematic file associated with the reference design.
 
-#### `SupRefDesign.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The detailed description.
 
-#### `SupRefDesign.designFiles` · [`[SupRefDesignFile]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-file.md) non-null object supply
+#### `designFiles` · [`[SupRefDesignFile]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-file.md) non-null object
 
 Design files, such as schematics and layouts, for the reference design.
 
-##### `SupRefDesign.designFiles.extensions` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+##### `extensions` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-##### `SupRefDesign.designFiles.type` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `type` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SupRefDesign.documentations` · [`[SupDocument]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-document.md) non-null object supply
+#### `documentations` · [`[SupDocument]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-document.md) non-null object
 
 Documentation resources related to the reference design.
 
-#### `SupRefDesign.evalKitDetails` · [`SupEvalKitConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-connection.md) object supply
+#### `evalKitDetails` · [`SupEvalKitConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-connection.md) object
 
 The evaluation kits of reference design.
 
-##### `SupRefDesign.evalKitDetails.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-##### `SupRefDesign.evalKitDetails.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-##### `SupRefDesign.evalKitDetails.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-##### `SupRefDesign.evalKitDetails.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-##### `SupRefDesign.evalKitDetails.where` · [`SupEvalKitByRefDesignFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-by-ref-design-filter-input.md) input supply
+##### `where` · [`SupEvalKitByRefDesignFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-by-ref-design-filter-input.md) input
 
-#### `SupRefDesign.evaluationKits` · [`[SupRefEvaluationKit!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-evaluation-kit.md) list object supply
+#### `evaluationKits` · [`[SupRefEvaluationKit!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-evaluation-kit.md) list object
 
 The list of evaluation kits associated with the reference design.
 
-#### `SupRefDesign.faqs` · [`[SupRefFaq!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-faq.md) non-null object supply
+#### `faqs` · [`[SupRefFaq!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-faq.md) non-null object
 
 Frequently asked questions about the reference design.
 
-#### `SupRefDesign.hasEvalBoard` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `hasEvalBoard` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates if an evaluation board is available.
 
-#### `SupRefDesign.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The evaluation kit identifier.
 
-#### `SupRefDesign.isVerified` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isVerified` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the reference design is verified.
 
-#### `SupRefDesign.keyFeatures` · [`[SupRefKeyFeature]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-key-feature.md) non-null object supply
+#### `keyFeatures` · [`[SupRefKeyFeature]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-key-feature.md) non-null object
 
 Key features highlighting the capabilities of the reference design.
 
-#### `SupRefDesign.parts` · [`[SupRefPart]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-part.md) non-null object supply
+#### `parts` · [`[SupRefPart]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-part.md) non-null object
 
 Part identifiers of the reference design, including their designators.
 
-##### `SupRefDesign.parts.designators` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+##### `designators` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-##### `SupRefDesign.parts.limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+##### `limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-##### `SupRefDesign.parts.start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+##### `start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-##### `SupRefDesign.parts.type` · [`SupRefPartType`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-part-type.md) **DEPRECATED** enum supply
+##### `type` · [`SupRefPartType`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-part-type.md) **DEPRECATED** enum
 
 > **Deprecated:** Use 'types' instead
 
-##### `SupRefDesign.parts.types` · [`[SupRefPartType]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-part-type.md) list enum supply
+##### `types` · [`[SupRefPartType]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-part-type.md) list enum
 
-#### `SupRefDesign.previewImages` · [`[SupImage]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-image.md) list object supply
+#### `previewImages` · [`[SupImage]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-image.md) list object
 
 Preview images that provide a visual overview of the reference design.
 
-#### `SupRefDesign.publisherId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `publisherId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The publisher identifier.
 
-#### `SupRefDesign.releaseDate` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `releaseDate` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The release date of the reference design.
 
-#### `SupRefDesign.softwares` · [`[SupRefResource]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-resource.md) non-null object supply
+#### `softwares` · [`[SupRefResource]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-resource.md) non-null object
 
 Software packages and resources associated with the reference design.
 
-#### `SupRefDesign.sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The source URL where the reference design is published.
 
-#### `SupRefDesign.stableName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `stableName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The stable name identifier.
 
-#### `SupRefDesign.status` · [`SupRefDesignStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-status.md) enum supply
+#### `status` · [`SupRefDesignStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-status.md) enum
 
 The status name.
 
-#### `SupRefDesign.subtitle` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `subtitle` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The subtitle providing context.
 
-#### `SupRefDesign.tags` · [`[SupRefTag]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-tag.md) list object supply
+#### `tags` · [`[SupRefTag]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-tag.md) list object
 
 Tags categorizing the reference design for search and organization.
 
-#### `SupRefDesign.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The reference design title.
 
-#### `SupRefDesign.type` · [`SupRefDesignType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-type.md) non-null enum supply
+#### `type` · [`SupRefDesignType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-type.md) non-null enum
 
 The type identifier of this reference design.
 
-#### `SupRefDesign.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The last updated date.
 
 #### Deprecated
 
-#### `SupRefDesign.evaluationKitIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `evaluationKitIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Use 'evaluationKits' instead.
 

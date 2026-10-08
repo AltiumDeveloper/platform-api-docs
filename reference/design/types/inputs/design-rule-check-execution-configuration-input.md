@@ -29,6 +29,6 @@ input DesignRuleCheckExecutionConfigurationInput {
 
 ### Fields
 
-#### `DesignRuleCheckExecutionConfigurationInput.ruleChecks` · [`[DesignRuleCheckExecutionConfigurationItemInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execution-configuration-item-input.md) list input design
+#### `ruleChecks` · [`[DesignRuleCheckExecutionConfigurationItemInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execution-configuration-item-input.md) list input
 
 The error report level overrides for specific rule checks, identified by their identifiers. When null, the design's default rule check configuration is used.

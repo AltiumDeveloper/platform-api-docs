@@ -24,10 +24,10 @@ type DesRectangle {
 
 ### Fields
 
-#### `DesRectangle.pos1` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object design
+#### `pos1` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object
 
 Rectangle corner point 1.
 
-#### `DesRectangle.pos2` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object design
+#### `pos2` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object
 
 Rectangle corner point 2.

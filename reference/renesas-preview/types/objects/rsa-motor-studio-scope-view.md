@@ -28,6 +28,6 @@ type RsaMotorStudioScopeView {
 
 ### Fields
 
-#### `RsaMotorStudioScopeView.channelIndexes` · [`[Int!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `channelIndexes` · [`[Int!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `RsaMotorStudioScopeView.viewId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `viewId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

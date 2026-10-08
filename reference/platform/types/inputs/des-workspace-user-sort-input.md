@@ -27,4 +27,4 @@ input DesWorkspaceUserSortInput {
 
 ### Fields
 
-#### `DesWorkspaceUserSortInput.id` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum common
+#### `id` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum

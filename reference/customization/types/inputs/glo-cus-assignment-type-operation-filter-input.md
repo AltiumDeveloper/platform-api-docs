@@ -24,10 +24,10 @@ input GloCusAssignmentTypeOperationFilterInput {
 
 ### Fields
 
-#### `GloCusAssignmentTypeOperationFilterInput.eq` · [`GloCusAssignmentType`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md) enum customization
+#### `eq` · [`GloCusAssignmentType`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md) enum
 
-#### `GloCusAssignmentTypeOperationFilterInput.in` · [`[GloCusAssignmentType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md) list enum customization
+#### `in` · [`[GloCusAssignmentType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md) list enum
 
-#### `GloCusAssignmentTypeOperationFilterInput.neq` · [`GloCusAssignmentType`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md) enum customization
+#### `neq` · [`GloCusAssignmentType`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md) enum
 
-#### `GloCusAssignmentTypeOperationFilterInput.nin` · [`[GloCusAssignmentType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md) list enum customization
+#### `nin` · [`[GloCusAssignmentType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-assignment-type.md) list enum

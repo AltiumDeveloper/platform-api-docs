@@ -30,10 +30,10 @@ type DmModelSupportEntry {
 
 ### Fields
 
-#### `DmModelSupportEntry.maxInstances` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `maxInstances` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Maximum number of candidate instances this model supports for the interface.
 
-#### `DmModelSupportEntry.model` · [`DmFullStackDeviceModel!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) non-null object renesas-preview
+#### `model` · [`DmFullStackDeviceModel!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) non-null object
 
 Full device or board model.

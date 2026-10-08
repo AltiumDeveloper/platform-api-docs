@@ -23,6 +23,6 @@ input GloCusUpdateAssignmentConfigurationsInput {
 
 ### Fields
 
-#### `GloCusUpdateAssignmentConfigurationsInput.configurations` · [`[GloCusUpdateAssignmentConfigurationInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-configuration-input.md) non-null input customization
+#### `configurations` · [`[GloCusUpdateAssignmentConfigurationInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-configuration-input.md) non-null input
 
 Represents input value for updating assignment configuration.

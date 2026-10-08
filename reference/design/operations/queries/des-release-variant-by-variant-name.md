@@ -11,6 +11,12 @@ deprecated: false
 
 Searches a project release variant by its name.
 
+### Type
+
+#### [`DesReleaseVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release-variant.md) object
+
+A variant contains a specific configuration of a base design.
+
 ```graphql
 desReleaseVariantByVariantName(
   releaseId: ID!
@@ -20,16 +26,10 @@ desReleaseVariantByVariantName(
 
 ### Arguments
 
-#### `desReleaseVariantByVariantName.releaseId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `releaseId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The project release identifier.
 
-#### `desReleaseVariantByVariantName.variantName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `variantName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The variant name.
-
-### Type
-
-#### [`DesReleaseVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release-variant.md) object design
-
-A variant contains a specific configuration of a base design.

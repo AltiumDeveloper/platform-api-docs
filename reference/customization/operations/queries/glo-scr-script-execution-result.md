@@ -11,6 +11,12 @@ deprecated: false
 
 Retrieves the execution result of a script by its execution ID.
 
+### Type
+
+#### [`GloScrScriptExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md) object
+
+Represents the execution of a script with status and result information.
+
 ```graphql
 gloScrScriptExecutionResult(
   scriptExecutionId: String!
@@ -19,10 +25,4 @@ gloScrScriptExecutionResult(
 
 ### Arguments
 
-#### `gloScrScriptExecutionResult.scriptExecutionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`GloScrScriptExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md) object customization
-
-Represents the execution of a script with status and result information.
+#### `scriptExecutionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

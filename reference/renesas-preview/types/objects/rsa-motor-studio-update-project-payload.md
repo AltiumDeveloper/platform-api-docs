@@ -27,4 +27,4 @@ type RsaMotorStudioUpdateProjectPayload {
 
 ### Fields
 
-#### `RsaMotorStudioUpdateProjectPayload.project` · [`RsaMotorStudioProject!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) non-null object renesas-preview
+#### `project` · [`RsaMotorStudioProject!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) non-null object

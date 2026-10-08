@@ -27,22 +27,22 @@ type DesPartHealthCheckResult {
 
 ### Fields
 
-#### `DesPartHealthCheckResult.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The detailed description of the health check result.
 
-#### `DesPartHealthCheckResult.healthCheckId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `healthCheckId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the health check.
 
-#### `DesPartHealthCheckResult.severity` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `severity` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The severity level of the health check (e.g., \*Clean\*, \*Warning\*, \*Error\*, \*FatalError\*).
 
-#### `DesPartHealthCheckResult.shortDescription` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `shortDescription` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The short description of the health check result.
 
-#### `DesPartHealthCheckResult.source` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `source` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The source of the health check result (e.g., \*SupplyPart\*, \*CustomPart\*, \*SiliconExpertPart\*, \*Z2DataPart\*).

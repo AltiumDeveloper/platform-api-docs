@@ -24,10 +24,10 @@ input SolSolutionSortInput {
 
 ### Fields
 
-#### `SolSolutionSortInput.modifiedAt` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum common
+#### `modifiedAt` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
 A filter for sorting by the modified date of the solution. The value can be either "Asc" for ascending order or "Desc" for descending order.
 
-#### `SolSolutionSortInput.name` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum common
+#### `name` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
 A filter for sorting by the name of the solution. The value can be either "Asc" for ascending order or "Desc" for descending order.

@@ -40,38 +40,38 @@ enum DesParameterType {
 
 ### Values
 
-#### `DesParameterType.CAPACITANCE`
+#### `CAPACITANCE`
 
-#### `DesParameterType.CHARGE`
+#### `CHARGE`
 
-#### `DesParameterType.CONDUCTANCE`
+#### `CONDUCTANCE`
 
-#### `DesParameterType.CURRENT`
+#### `CURRENT`
 
-#### `DesParameterType.DECIBELS`
+#### `DECIBELS`
 
-#### `DesParameterType.FREQUENCY`
+#### `FREQUENCY`
 
-#### `DesParameterType.IMPEDANCE`
+#### `IMPEDANCE`
 
-#### `DesParameterType.INDUCTANCE`
+#### `INDUCTANCE`
 
-#### `DesParameterType.LENGTH`
+#### `LENGTH`
 
-#### `DesParameterType.MASS`
+#### `MASS`
 
-#### `DesParameterType.NONE`
+#### `NONE`
 
-#### `DesParameterType.PERCENT`
+#### `PERCENT`
 
-#### `DesParameterType.POWER`
+#### `POWER`
 
-#### `DesParameterType.RESISTANCE`
+#### `RESISTANCE`
 
-#### `DesParameterType.TEMPERATURE`
+#### `TEMPERATURE`
 
-#### `DesParameterType.TEXT`
+#### `TEXT`
 
-#### `DesParameterType.TIME`
+#### `TIME`
 
-#### `DesParameterType.VOLTAGE`
+#### `VOLTAGE`

@@ -24,10 +24,10 @@ input DesLifeCycleStateTransitionApprovalGroupInput {
 
 ### Fields
 
-#### `DesLifeCycleStateTransitionApprovalGroupInput.controllers` · [`[DesLifeCycleStateTransitionControllerInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-controller-input.md) non-null input platform
+#### `controllers` · [`[DesLifeCycleStateTransitionControllerInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-controller-input.md) non-null input
 
 The controllers that can provide an approval for this life cycle state transition approval group.
 
-#### `DesLifeCycleStateTransitionApprovalGroupInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this life cycle state transition approval group.

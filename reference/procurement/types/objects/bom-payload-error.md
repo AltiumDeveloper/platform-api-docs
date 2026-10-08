@@ -13,7 +13,7 @@ Describes an error occurred while executing a mutation.
 
 ### Interfaces
 
-#### [`BomError`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-error.md) interface procurement
+#### [`BomError`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-error.md) interface
 
 A common interface for all errors that might occur in mutations.
 
@@ -25,6 +25,6 @@ type BomPayloadError implements BomError {
 
 ### Fields
 
-#### `BomPayloadError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Error message.

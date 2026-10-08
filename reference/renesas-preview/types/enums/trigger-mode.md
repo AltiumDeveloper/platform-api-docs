@@ -29,8 +29,8 @@ enum TriggerMode {
 
 ### Values
 
-#### `TriggerMode.AUTO`
+#### `AUTO`
 
-#### `TriggerMode.NORMAL`
+#### `NORMAL`
 
-#### `TriggerMode.SINGLE`
+#### `SINGLE`

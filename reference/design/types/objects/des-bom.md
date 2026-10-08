@@ -29,28 +29,28 @@ type DesBom {
 
 ### Fields
 
-#### `DesBom.items` · [`DesBomItemConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item-connection.md) object design
+#### `items` · [`DesBomItemConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item-connection.md) object
 
 The list of BOM items returned by pages.
 
-##### `DesBom.items.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-##### `DesBom.items.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-##### `DesBom.items.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-##### `DesBom.items.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
 #### Deprecated
 
-#### `DesBom.bomItems` · [`[DesBomItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item.md) **DEPRECATED** non-null object design
+#### `bomItems` · [`[DesBomItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `items`.

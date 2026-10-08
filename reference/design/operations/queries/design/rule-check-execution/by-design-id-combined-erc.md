@@ -17,6 +17,12 @@ deprecated: false
 
 Retrieves combined custom and default ERC results for a design.
 
+### Type
+
+#### [`DesignDataCombinedErcExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-combined-erc-execution.md) object **EXPERIMENTAL**
+
+Represents the combined custom and default ERC results for a design revision.
+
 ```graphql
 design {
   ruleCheckExecution {
@@ -30,16 +36,10 @@ design {
 
 ### Arguments
 
-#### `byDesignIdCombinedErc.designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the design.
 
-#### `byDesignIdCombinedErc.revisionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `revisionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the project commit.
-
-### Type
-
-#### [`DesignDataCombinedErcExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-combined-erc-execution.md) object design **EXPERIMENTAL**
-
-Represents the combined custom and default ERC results for a design revision.

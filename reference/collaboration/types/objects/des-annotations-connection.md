@@ -25,14 +25,14 @@ type DesAnnotationsConnection {
 
 ### Fields
 
-#### `DesAnnotationsConnection.edges` · [`[DesAnnotationsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotations-edge.md) list object collaboration
+#### `edges` · [`[DesAnnotationsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotations-edge.md) list object
 
 A list of edges.
 
-#### `DesAnnotationsConnection.nodes` · [`[DesAnnotation!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation.md) list object collaboration
+#### `nodes` · [`[DesAnnotation!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation.md) list object
 
 A flattened list of the nodes.
 
-#### `DesAnnotationsConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.

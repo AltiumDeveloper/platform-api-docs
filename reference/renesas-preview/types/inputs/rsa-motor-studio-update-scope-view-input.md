@@ -28,6 +28,6 @@ input RsaMotorStudioUpdateScopeViewInput {
 
 ### Fields
 
-#### `RsaMotorStudioUpdateScopeViewInput.channelIndexes` · [`[Int!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `channelIndexes` · [`[Int!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `RsaMotorStudioUpdateScopeViewInput.viewId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `viewId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

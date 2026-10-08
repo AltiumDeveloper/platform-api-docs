@@ -9,7 +9,7 @@ deprecated: false
 
 # PlatformTokenUpdateInput
 
-Input for updating an existing `PlatformToken`. At least one of `name` or `description` must be provided.
+Input for updating an existing [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md). At least one of `name` or `description` must be provided.
 
 ### Member Of
 
@@ -25,14 +25,14 @@ input PlatformTokenUpdateInput {
 
 ### Fields
 
-#### `PlatformTokenUpdateInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-New description for the `PlatformToken`. Leave null to keep the current description.
+New description for the [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md). Leave null to keep the current description.
 
-#### `PlatformTokenUpdateInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-New name for the `PlatformToken`. Leave null to keep the current name.
+New name for the [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md). Leave null to keep the current name.
 
-#### `PlatformTokenUpdateInput.tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Identifier of the `PlatformToken` to update.
+Identifier of the [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) to update.

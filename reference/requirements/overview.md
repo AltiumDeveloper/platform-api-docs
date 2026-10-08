@@ -11,9 +11,11 @@ deprecated: false
 
 Requirements projects and requirements data.
 
-Concepts: see the **Requirements** bounded context in the [Common Data Model](https://altiumdeveloper.github.io/cdm/subsets/requirements/)
-
 For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/llms.txt) · [schema slice](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/schema.graphql) · [all types](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/types.txt)
+
+## Common Data Model
+
+- [Requirements](https://altiumdeveloper.github.io/cdm/subsets/requirements/) — Models requirements and their revisions, the specifications that group them, baselines approved for execution, change requests, the requirements projects that scope this work, and verification cases that provide evidence against requirements; most of its classes are experimental. It corresponds to requirements management and verification & validation in the Altium 365 Requirements Portal.
 
 ## Entry points
 

@@ -25,14 +25,14 @@ input SupSoftwareProjectPatchParametersInput {
 
 ### Fields
 
-#### `SupSoftwareProjectPatchParametersInput.addParameters` · [`[SupSoftwareProjectParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-parameter-input.md) list input supply
+#### `addParameters` · [`[SupSoftwareProjectParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-parameter-input.md) list input
 
 Parameters to add or update. Creates the parameter if new, replaces its values if it already exists.
 
-#### `SupSoftwareProjectPatchParametersInput.removeParameters` · [`[SupSoftwareProjectParameterInfoInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-parameter-info-input.md) list input supply
+#### `removeParameters` · [`[SupSoftwareProjectParameterInfoInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-parameter-info-input.md) list input
 
 Titles of parameters to remove entirely from this software project.
 
-#### `SupSoftwareProjectPatchParametersInput.softwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `softwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the software project.

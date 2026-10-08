@@ -11,6 +11,10 @@ deprecated: false
 
 Get evaluation kit compatible software projects.
 
+### Type
+
+#### [`SupSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) object
+
 ```graphql
 supSoftwareProjectEvalKitCompatibleSoftwareProjectsByEvalKitId(
   evalKitId: ID!
@@ -21,12 +25,8 @@ supSoftwareProjectEvalKitCompatibleSoftwareProjectsByEvalKitId(
 
 ### Arguments
 
-#### `supSoftwareProjectEvalKitCompatibleSoftwareProjectsByEvalKitId.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `supSoftwareProjectEvalKitCompatibleSoftwareProjectsByEvalKitId.limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `supSoftwareProjectEvalKitCompatibleSoftwareProjectsByEvalKitId.start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
-
-### Type
-
-#### [`SupSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) object supply
+#### `start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar

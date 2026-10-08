@@ -11,6 +11,12 @@ deprecated: false
 
 Search a specific component by its unique identifier.
 
+### Type
+
+#### [`DesComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) object
+
+A component contains the parametric details of a PCB part.
+
 ```graphql
 desComponentById(
   id: ID!
@@ -19,12 +25,6 @@ desComponentById(
 
 ### Arguments
 
-#### `desComponentById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier for a component.
-
-### Type
-
-#### [`DesComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) object library-management
-
-A component contains the parametric details of a PCB part.

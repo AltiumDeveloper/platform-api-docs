@@ -21,4 +21,4 @@ type SftAIModelUpdatePayload {
 
 ### Fields
 
-#### `SftAIModelUpdatePayload.data` · [`SftAIModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md) object renesas-preview
+#### `data` · [`SftAIModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md) object

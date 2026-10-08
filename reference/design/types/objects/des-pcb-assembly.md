@@ -29,32 +29,32 @@ type DesPcbAssembly {
 
 ### Fields
 
-#### `DesPcbAssembly.downloadUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `downloadUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Download URL.
 
-#### `DesPcbAssembly.folders` · [`[DesDownloadableFolder!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-folder.md) non-null object design
+#### `folders` · [`[DesDownloadableFolder!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-folder.md) non-null object
 
 Downloadable folders.
 
-#### `DesPcbAssembly.lifeCycleStateName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `lifeCycleStateName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Life cycle state name.
 
-#### `DesPcbAssembly.packageName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `packageName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the PCB assembly package.
 
-#### `DesPcbAssembly.version` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `version` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Version.
 
 #### Deprecated
 
-#### `DesPcbAssembly.assemblyDrawings` · [`DesAssemblyDrawings!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-assembly-drawings.md) **DEPRECATED** non-null object design
+#### `assemblyDrawings` · [`DesAssemblyDrawings!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-assembly-drawings.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `folders`.
 
-#### `DesPcbAssembly.pickAndPlace` · [`DesPickAndPlace!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pick-and-place.md) **DEPRECATED** non-null object design
+#### `pickAndPlace` · [`DesPickAndPlace!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pick-and-place.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `folders`.

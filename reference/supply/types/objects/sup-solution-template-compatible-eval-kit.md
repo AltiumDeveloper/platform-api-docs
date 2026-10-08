@@ -24,21 +24,21 @@ type SupSolutionTemplateCompatibleEvalKit {
 
 ### Fields
 
-#### `SupSolutionTemplateCompatibleEvalKit.evalKit` · [`SupEvalKit!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) non-null object supply
+#### `evalKit` · [`SupEvalKit!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) non-null object
 
 The evaluation kit associated with the solution template.
 
-#### `SupSolutionTemplateCompatibleEvalKit.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The evaluation kit identifier associated with the solution template.
 
-#### `SupSolutionTemplateCompatibleEvalKit.parameters` · [`[SupSolutionTemplateParameterBundle!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-bundle.md) non-null object supply
+#### `parameters` · [`[SupSolutionTemplateParameterBundle!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-bundle.md) non-null object
 
 The list of parameters.
 
 #### Deprecated
 
-#### `SupSolutionTemplateCompatibleEvalKit.compatibleEvalKitId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `compatibleEvalKitId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Fields play a technical role for internal uses.
 

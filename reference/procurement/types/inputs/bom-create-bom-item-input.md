@@ -26,18 +26,18 @@ input BomCreateBomItemInput {
 
 ### Fields
 
-#### `BomCreateBomItemInput.designators` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `designators` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A list of designators that specify the placements of the item within the schematic.
 
-#### `BomCreateBomItemInput.elements` · [`[BomCreateBomItemElementInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-element-input.md) non-null input procurement
+#### `elements` · [`[BomCreateBomItemElementInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-element-input.md) non-null input
 
 All elements that could be used for this item.
 
-#### `BomCreateBomItemInput.extraQuantity` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `extraQuantity` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Extra quantity of the item to order. This is added to the product of 'Quantity' and 'BOM Production Quantity' to calculate the 'Total Quantity'.
 
-#### `BomCreateBomItemInput.quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The quantity of the item required to produce one unit.

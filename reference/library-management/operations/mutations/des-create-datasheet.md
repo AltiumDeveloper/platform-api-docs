@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a datasheet.
 
+### Type
+
+#### [`DesCreateDatasheetPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-create-datasheet-payload.md) object
+
+Payload associated with creating datasheet.
+
 ```graphql
 desCreateDatasheet(
   input: DesCreateDatasheetInput!
@@ -19,10 +25,4 @@ desCreateDatasheet(
 
 ### Arguments
 
-#### `desCreateDatasheet.input` · [`DesCreateDatasheetInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-create-datasheet-input.md) non-null input library-management
-
-### Type
-
-#### [`DesCreateDatasheetPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-create-datasheet-payload.md) object library-management
-
-Payload associated with creating datasheet.
+#### `input` · [`DesCreateDatasheetInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-create-datasheet-input.md) non-null input

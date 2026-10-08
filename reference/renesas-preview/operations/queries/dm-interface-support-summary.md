@@ -23,6 +23,6 @@ dmInterfaceSupportSummary: DmInterfaceSupportSummary!
 
 ### Type
 
-#### [`DmInterfaceSupportSummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-support-summary.md) object renesas-preview **EXPERIMENTAL**
+#### [`DmInterfaceSupportSummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-support-summary.md) object **EXPERIMENTAL**
 
 Summary of supported interfaces across all devices in the catalog.

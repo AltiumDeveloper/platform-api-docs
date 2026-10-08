@@ -24,10 +24,10 @@ type DesCreateRevisionNamingSchemePayload {
 
 ### Fields
 
-#### `DesCreateRevisionNamingSchemePayload.errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object common
+#### `errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object
 
 Payload errors.
 
-#### `DesCreateRevisionNamingSchemePayload.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Identifier of the created revision naming scheme.

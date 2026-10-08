@@ -11,6 +11,12 @@ deprecated: false
 
 \*PROTOTYPE, SUBJECT TO CHANGE\*
 
+### Type
+
+#### [`DesCollaborationSimulationRevisionConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision-connection.md) object
+
+A connection to a list of items.
+
 ```graphql
 desProjectCollaborationSimulationRevisions(
   after: String
@@ -24,32 +30,26 @@ desProjectCollaborationSimulationRevisions(
 
 ### Arguments
 
-#### `desProjectCollaborationSimulationRevisions.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-#### `desProjectCollaborationSimulationRevisions.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-#### `desProjectCollaborationSimulationRevisions.domainName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `domainName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The collaboration domain name.
 
-#### `desProjectCollaborationSimulationRevisions.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-#### `desProjectCollaborationSimulationRevisions.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-#### `desProjectCollaborationSimulationRevisions.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The project identifier.
-
-### Type
-
-#### [`DesCollaborationSimulationRevisionConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision-connection.md) object design
-
-A connection to a list of items.

@@ -11,6 +11,10 @@ deprecated: false
 
 Restores an App.
 
+### Type
+
+#### [`GloRestoreAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-restore-app-payload.md) object
+
 ```graphql
 gloRestoreApp(
   input: GloRestoreAppInput!
@@ -19,8 +23,4 @@ gloRestoreApp(
 
 ### Arguments
 
-#### `gloRestoreApp.input` · [`GloRestoreAppInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-restore-app-input.md) non-null input platform
-
-### Type
-
-#### [`GloRestoreAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-restore-app-payload.md) object platform
+#### `input` · [`GloRestoreAppInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-restore-app-input.md) non-null input

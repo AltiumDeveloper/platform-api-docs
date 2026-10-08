@@ -13,6 +13,10 @@ deprecated: true
 
 Exports the specified BOM release into a file and provides a download URL.
 
+### Type
+
+#### [`BomExportBomReleasePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-export-bom-release-payload.md) object
+
 ```graphql
 bomExportBomRelease(
   input: BomExportBomReleaseInput!
@@ -21,8 +25,4 @@ bomExportBomRelease(
 
 ### Arguments
 
-#### `bomExportBomRelease.input` · [`BomExportBomReleaseInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-export-bom-release-input.md) non-null input procurement
-
-### Type
-
-#### [`BomExportBomReleasePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-export-bom-release-payload.md) object procurement
+#### `input` · [`BomExportBomReleaseInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-export-bom-release-input.md) non-null input

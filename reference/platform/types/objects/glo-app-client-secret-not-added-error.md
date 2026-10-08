@@ -9,11 +9,11 @@ deprecated: false
 
 # GloAppClientSecretNotAddedError
 
-Error that occurs when attempting to add a client secret to a `GloApp` \*OAuth client\* but the secret could not be added.
+Error that occurs when attempting to add a client secret to a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) \*OAuth client\* but the secret could not be added.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type GloAppClientSecretNotAddedError implements Error {
 
 ### Fields
 
-#### `GloAppClientSecretNotAddedError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

@@ -19,7 +19,8 @@ Address segment which can contain child blocks and has a total segment size.
 
 ### Common Data Model
 
-- [AddressSegment](https://altiumdeveloper.github.io/cdm/classes/dm_AddressSegment/) — A contiguous region of the device's memory map. Each segment can represent either a memory or a peripheral region.
+- [AddressSegment](https://w3id.org/altium/cdm/deviceModel/AddressSegment) — A contiguous region of the device's memory map. Each segment can represent either a memory or a peripheral region.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/AddressSegment`](https://w3id.org/altium/cdm/deviceModel/AddressSegment)
 
 ### Member Of
 
@@ -41,34 +42,34 @@ type DmAddressSegment {
 
 ### Fields
 
-#### `DmAddressSegment.blocks` · [`[DmAddressBlock!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-block.md) non-null object renesas-preview
+#### `blocks` · [`[DmAddressBlock!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-block.md) non-null object
 
 Nested address blocks within the segment.
 
-#### `DmAddressSegment.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Segment description.
 
-#### `DmAddressSegment.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Segment name.
 
-#### `DmAddressSegment.nameAliases` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `nameAliases` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Segment aliases.
 
-#### `DmAddressSegment.peripherals` · [`[DmPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral.md) non-null object renesas-preview
+#### `peripherals` · [`[DmPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral.md) non-null object
 
 Peripherals associated with this segment.
 
-#### `DmAddressSegment.size` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar common
+#### `size` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar
 
 Total segment size in bytes.
 
-#### `DmAddressSegment.sizeHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sizeHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Total segment size formatted as hex (0x...).
 
-#### `DmAddressSegment.startAddress` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar common
+#### `startAddress` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar
 
-#### `DmAddressSegment.startAddressHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `startAddressHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

@@ -19,6 +19,6 @@ desManufacturePackages: [DesManufacturePackage!]! @deprecated
 
 ### Type
 
-#### [`DesManufacturePackage`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-manufacture-package.md) object design
+#### [`DesManufacturePackage`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-manufacture-package.md) object
 
 Information about the manufacture package.

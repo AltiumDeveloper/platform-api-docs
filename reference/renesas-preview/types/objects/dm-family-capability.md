@@ -30,10 +30,10 @@ type DmFamilyCapability {
 
 ### Fields
 
-#### `DmFamilyCapability.key` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `key` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Capability identifier, e.g. "bspGeneration".
 
-#### `DmFamilyCapability.value` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `value` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Whether the capability is available for devices in this family.

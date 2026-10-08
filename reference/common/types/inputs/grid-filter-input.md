@@ -33,16 +33,16 @@ input GridFilterInput {
 
 ### Fields
 
-#### `GridFilterInput.and` · [`[GridFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) list input common
+#### `and` · [`[GridFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) list input
 
-#### `GridFilterInput.hasTenant` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input common
+#### `hasTenant` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input
 
-#### `GridFilterInput.isInvalid` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input common
+#### `isInvalid` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input
 
-#### `GridFilterInput.isWellFormed` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input common
+#### `isWellFormed` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input
 
-#### `GridFilterInput.or` · [`[GridFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) list input common
+#### `or` · [`[GridFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) list input
 
-#### `GridFilterInput.resourcePath` · [`PathFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/path-filter-input.md) input common
+#### `resourcePath` · [`PathFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/path-filter-input.md) input
 
-#### `GridFilterInput.value` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `value` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input

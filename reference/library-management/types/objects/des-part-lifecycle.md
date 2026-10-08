@@ -24,10 +24,10 @@ type DesPartLifecycle {
 
 ### Fields
 
-#### `DesPartLifecycle.currentLifecycleStateId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `currentLifecycleStateId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the current lifecycle state.
 
-#### `DesPartLifecycle.definition` · [`DesLifeCycleDefinition!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md) non-null object platform
+#### `definition` · [`DesLifeCycleDefinition!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md) non-null object Platform
 
 The lifecycle definition of the part.

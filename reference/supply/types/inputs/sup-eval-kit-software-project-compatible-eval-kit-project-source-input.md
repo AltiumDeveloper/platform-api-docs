@@ -27,30 +27,30 @@ input SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput {
 
 ### Fields
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput.artifactVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `artifactVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The artifact version associated with the evaluation kit source.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput.configXmlUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `configXmlUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The URL of the config XML associated with the evaluation kit source.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput.family` · [`SupSoftwareProjectEvalKitProjectSourceDeviceFamily`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-device-family.md) enum supply
+#### `family` · [`SupSoftwareProjectEvalKitProjectSourceDeviceFamily`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-device-family.md) enum
 
 The device family of the project source.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput.framework` · [`SupSoftwareProjectEvalKitProjectSourceFramework`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-framework.md) enum supply
+#### `framework` · [`SupSoftwareProjectEvalKitProjectSourceFramework`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-framework.md) enum
 
 The driver framework of the project source.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput.sourceFile` · [`SupEvalKitFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-file-input.md) input supply
+#### `sourceFile` · [`SupEvalKitFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-file-input.md) input
 
 The upload file of the source associated with the evaluation kit source.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput.sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of the source associated with the evaluation kit source.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput.type` · [`SupSoftwareProjectEvalKitProjectSourceType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-type.md) non-null enum supply
+#### `type` · [`SupSoftwareProjectEvalKitProjectSourceType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-type.md) non-null enum
 
 The project source type.

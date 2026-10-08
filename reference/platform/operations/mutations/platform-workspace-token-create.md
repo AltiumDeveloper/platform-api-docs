@@ -9,7 +9,11 @@ deprecated: false
 
 # platformWorkspaceTokenCreate
 
-Creates a new `PlatformWorkspaceToken`.
+Creates a new [`PlatformWorkspaceToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token.md).
+
+### Type
+
+#### [`PlatformWorkspaceTokenCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token-create-payload.md) object
 
 ```graphql
 platformWorkspaceTokenCreate(
@@ -19,8 +23,4 @@ platformWorkspaceTokenCreate(
 
 ### Arguments
 
-#### `platformWorkspaceTokenCreate.input` · [`PlatformWorkspaceTokenCreateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-token-create-input.md) non-null input platform
-
-### Type
-
-#### [`PlatformWorkspaceTokenCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token-create-payload.md) object platform
+#### `input` · [`PlatformWorkspaceTokenCreateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-token-create-input.md) non-null input

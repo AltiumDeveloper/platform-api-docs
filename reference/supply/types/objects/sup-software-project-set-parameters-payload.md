@@ -24,8 +24,8 @@ type SupSoftwareProjectSetParametersPayload {
 
 ### Fields
 
-#### `SupSoftwareProjectSetParametersPayload.errors` · [`[SupSoftwareProjectSetParametersError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-set-parameters-error.md) list union supply
+#### `errors` · [`[SupSoftwareProjectSetParametersError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-set-parameters-error.md) list union
 
-#### `SupSoftwareProjectSetParametersPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

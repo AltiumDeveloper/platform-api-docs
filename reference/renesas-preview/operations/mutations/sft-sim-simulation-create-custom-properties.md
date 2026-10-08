@@ -11,6 +11,10 @@ deprecated: false
 
 Creates the simulation custom properties.
 
+### Type
+
+#### [`SftSimSimulationCreatePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-create-properties-payload.md) object
+
 ```graphql
 sftSimSimulationCreateCustomProperties(
   input: SftSimSimulationCreatePropertiesInput!
@@ -19,8 +23,4 @@ sftSimSimulationCreateCustomProperties(
 
 ### Arguments
 
-#### `sftSimSimulationCreateCustomProperties.input` · [`SftSimSimulationCreatePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-create-properties-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSimSimulationCreatePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-create-properties-payload.md) object renesas-preview
+#### `input` · [`SftSimSimulationCreatePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-create-properties-input.md) non-null input

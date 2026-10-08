@@ -27,4 +27,4 @@ type RsaMotorStudioCreateTuningRevisionPayload {
 
 ### Fields
 
-#### `RsaMotorStudioCreateTuningRevisionPayload.revision` · [`RsaMotorStudioTuningRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-revision.md) non-null object renesas-preview
+#### `revision` · [`RsaMotorStudioTuningRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-revision.md) non-null object

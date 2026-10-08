@@ -24,6 +24,6 @@ enum DesCadBoardCollaborationFlag {
 
 ### Values
 
-#### `DesCadBoardCollaborationFlag.BASELINE_UNIT_IMPERIAL`
+#### `BASELINE_UNIT_IMPERIAL`
 
-#### `DesCadBoardCollaborationFlag.IGNORE_DUPLICATE_PAD_DESIGNATORS`
+#### `IGNORE_DUPLICATE_PAD_DESIGNATORS`

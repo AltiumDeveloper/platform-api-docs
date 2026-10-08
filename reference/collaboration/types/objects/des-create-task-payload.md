@@ -24,10 +24,10 @@ type DesCreateTaskPayload {
 
 ### Fields
 
-#### `DesCreateTaskPayload.errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object common
+#### `errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object
 
 Payload errors.
 
-#### `DesCreateTaskPayload.task` · [`DesTask!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-task.md) non-null object collaboration
+#### `task` · [`DesTask!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-task.md) non-null object
 
 The created task.

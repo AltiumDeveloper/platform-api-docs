@@ -24,8 +24,8 @@ type SupSoftwareProjectPatchPreviewImagesPayload {
 
 ### Fields
 
-#### `SupSoftwareProjectPatchPreviewImagesPayload.errors` · [`[SupSoftwareProjectPatchPreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-patch-preview-images-error.md) list union supply
+#### `errors` · [`[SupSoftwareProjectPatchPreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-patch-preview-images-error.md) list union
 
-#### `SupSoftwareProjectPatchPreviewImagesPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

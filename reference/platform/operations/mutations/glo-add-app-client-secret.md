@@ -11,6 +11,10 @@ deprecated: false
 
 Adds a new client secret to an existing App.
 
+### Type
+
+#### [`GloAddAppClientSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-client-secret-payload.md) object
+
 ```graphql
 gloAddAppClientSecret(
   input: GloAddAppClientSecretInput!
@@ -19,8 +23,4 @@ gloAddAppClientSecret(
 
 ### Arguments
 
-#### `gloAddAppClientSecret.input` · [`GloAddAppClientSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-client-secret-input.md) non-null input platform
-
-### Type
-
-#### [`GloAddAppClientSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-client-secret-payload.md) object platform
+#### `input` · [`GloAddAppClientSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-client-secret-input.md) non-null input

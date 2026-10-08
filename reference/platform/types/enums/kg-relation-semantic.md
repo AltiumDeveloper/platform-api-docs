@@ -39,28 +39,28 @@ enum KgRelationSemantic {
 
 ### Values
 
-#### `KgRelationSemantic.DERIVES_FROM`
+#### `DERIVES_FROM`
 
-#### `KgRelationSemantic.DERIVES_INTO`
+#### `DERIVES_INTO`
 
-#### `KgRelationSemantic.HAS_INPUT`
+#### `HAS_INPUT`
 
-#### `KgRelationSemantic.HAS_OUTPUT`
+#### `HAS_OUTPUT`
 
-#### `KgRelationSemantic.HAS_PART`
+#### `HAS_PART`
 
-#### `KgRelationSemantic.INFORMED_BY`
+#### `INFORMED_BY`
 
-#### `KgRelationSemantic.INFORMS`
+#### `INFORMS`
 
-#### `KgRelationSemantic.INPUT_OF`
+#### `INPUT_OF`
 
-#### `KgRelationSemantic.OUTPUT_OF`
+#### `OUTPUT_OF`
 
-#### `KgRelationSemantic.PART_OF`
+#### `PART_OF`
 
 #### Deprecated
 
-#### `KgRelationSemantic.UNKNOWN` **DEPRECATED**
+#### `UNKNOWN` **DEPRECATED**
 
 > **Deprecated:** Primarily here for backward compatibility with Vault. Don't use in the new code.

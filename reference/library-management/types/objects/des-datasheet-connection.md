@@ -26,18 +26,18 @@ type DesDatasheetConnection {
 
 ### Fields
 
-#### `DesDatasheetConnection.edges` · [`[DesDatasheetEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet-edge.md) list object library-management
+#### `edges` · [`[DesDatasheetEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet-edge.md) list object
 
 A list of edges.
 
-#### `DesDatasheetConnection.nodes` · [`[DesDatasheet!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet.md) list object library-management
+#### `nodes` · [`[DesDatasheet!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet.md) list object
 
 A flattened list of the nodes.
 
-#### `DesDatasheetConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesDatasheetConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

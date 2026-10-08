@@ -24,10 +24,10 @@ input GloCusExecutionContextOperationFilterInput {
 
 ### Fields
 
-#### `GloCusExecutionContextOperationFilterInput.eq` · [`GloCusExecutionContext`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md) enum customization
+#### `eq` · [`GloCusExecutionContext`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md) enum
 
-#### `GloCusExecutionContextOperationFilterInput.in` · [`[GloCusExecutionContext!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md) list enum customization
+#### `in` · [`[GloCusExecutionContext!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md) list enum
 
-#### `GloCusExecutionContextOperationFilterInput.neq` · [`GloCusExecutionContext`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md) enum customization
+#### `neq` · [`GloCusExecutionContext`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md) enum
 
-#### `GloCusExecutionContextOperationFilterInput.nin` · [`[GloCusExecutionContext!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md) list enum customization
+#### `nin` · [`[GloCusExecutionContext!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-execution-context.md) list enum

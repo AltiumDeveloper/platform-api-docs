@@ -27,22 +27,22 @@ type SupRefDesignNote {
 
 ### Fields
 
-#### `SupRefDesignNote.attachment` · [`SupDocument`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-document.md) object supply
+#### `attachment` · [`SupDocument`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-document.md) object
 
 The attached resource for the note.
 
-#### `SupRefDesignNote.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The note description.
 
-#### `SupRefDesignNote.objectId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `objectId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The note identifier.
 
-#### `SupRefDesignNote.points` · [`[SupRefPoint2D]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-point-2-d.md) non-null object supply
+#### `points` · [`[SupRefPoint2D]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-point-2-d.md) non-null object
 
 Points representing the position of the note attached on the design file.
 
-#### `SupRefDesignNote.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The note title.

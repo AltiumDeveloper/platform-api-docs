@@ -13,7 +13,9 @@ Represents an Altium application.
 
 ### Common Data Model
 
-- [Application](https://altiumdeveloper.github.io/cdm/classes/plt_Application/)
+- [Application](https://w3id.org/altium/cdm/platform/Application)
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/Application`](https://w3id.org/altium/cdm/platform/Application)
   - GRID: `grid:global::platform:application/{id}`
 
 ### Returned By
@@ -45,58 +47,58 @@ type GloApp {
 
 ### Fields
 
-#### `GloApp.contactEmail` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `contactEmail` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The contact email of the developer of the App.
 
-#### `GloApp.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The date-time that the App was created.
 
-#### `GloApp.createdById` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `createdById` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The ID of the User that created the App.
 
-#### `GloApp.deletedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `deletedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The date-time that the App was deleted. Null if the App has not been deleted.
 
-#### `GloApp.deletedById` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `deletedById` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The ID of the User that deleted the App. Null if the App has not been deleted.
 
-#### `GloApp.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A description of the App.
 
-#### `GloApp.hrid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `hrid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The human-readable identifier for the App. Must be unique.
 
-#### `GloApp.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The GRID identifier for the App.
 
-#### `GloApp.isWorkspaceApp` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isWorkspaceApp` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Whether the App is a Workspace PAT App.
 
-#### `GloApp.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the App.
 
-#### `GloApp.oAuthClient` · [`GloOAuthClient!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-oauth-client.md) non-null object platform
+#### `oAuthClient` · [`GloOAuthClient!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-oauth-client.md) non-null object
 
 Represents the \*OAuth 2.0 client\* for this `GloApp`.
 
-#### `GloApp.tokenExchangeSources` · [`[GloApp!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) non-null object platform
+#### `tokenExchangeSources` · [`[GloApp!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) non-null object
 
 Apps whose tokens can be exchanged to this app.
 
-#### `GloApp.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The date-time that the App was last updated.
 
-#### `GloApp.updatedById` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `updatedById` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The ID of the User that last updated the App.

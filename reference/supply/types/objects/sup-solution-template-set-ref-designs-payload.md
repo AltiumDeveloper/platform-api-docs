@@ -24,8 +24,8 @@ type SupSolutionTemplateSetRefDesignsPayload {
 
 ### Fields
 
-#### `SupSolutionTemplateSetRefDesignsPayload.errors` · [`[SupSolutionTemplateSetRefDesignsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-ref-designs-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplateSetRefDesignsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-ref-designs-error.md) list union
 
-#### `SupSolutionTemplateSetRefDesignsPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

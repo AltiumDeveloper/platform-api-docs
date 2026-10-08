@@ -24,10 +24,10 @@ input SupSoftwareProjectCompatibleEvalKitFilterInput {
 
 ### Fields
 
-#### `SupSoftwareProjectCompatibleEvalKitFilterInput.evalKitIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `evalKitIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Searches by evaluation kit identifiers.
 
-#### `SupSoftwareProjectCompatibleEvalKitFilterInput.q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Searches by important fields (evaluation kit title, evaluation kit description).

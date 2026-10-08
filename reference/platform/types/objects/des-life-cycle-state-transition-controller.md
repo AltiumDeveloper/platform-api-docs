@@ -26,18 +26,18 @@ type DesLifeCycleStateTransitionController {
 
 ### Fields
 
-#### `DesLifeCycleStateTransitionController.group` · [`DesUserGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user-group.md) object platform
+#### `group` · [`DesUserGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user-group.md) object
 
 The group this life cycle state transition controller is assigned to. It is null unless the scope is set to `GROUP`.
 
-#### `DesLifeCycleStateTransitionController.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this life cycle state transition controller.
 
-#### `DesLifeCycleStateTransitionController.scope` · [`DesPermissionScope!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-permission-scope.md) non-null enum platform
+#### `scope` · [`DesPermissionScope!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-permission-scope.md) non-null enum
 
 The scope of this life cycle state transition controller.
 
-#### `DesLifeCycleStateTransitionController.user` · [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object platform
+#### `user` · [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object
 
 The user this life cycle state transition controller is assigned to. It is null unless the scope is set to `USER`.

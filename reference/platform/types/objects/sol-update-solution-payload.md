@@ -21,4 +21,4 @@ type SolUpdateSolutionPayload {
 
 ### Fields
 
-#### `SolUpdateSolutionPayload.data` · [`SolSolution!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) non-null object platform
+#### `data` · [`SolSolution!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) non-null object

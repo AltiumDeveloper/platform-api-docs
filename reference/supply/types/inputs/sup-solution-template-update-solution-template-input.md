@@ -40,87 +40,87 @@ input SupSolutionTemplateUpdateSolutionTemplateInput {
 
 ### Fields
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.addApplicationIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `addApplicationIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Remove list of application identifiers associated with the solution template.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The solution template description.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.publisherId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `publisherId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The publisher identifier.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.releaseDate` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `releaseDate` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The optional release date of the solution template.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.removeApplicationIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `removeApplicationIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Remove list of application identifiers associated with the solution template.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.requirementTemplate` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `requirementTemplate` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The default requirement string used when a user first clones the solution template.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The source URL where the solution template is published.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.stableName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `stableName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The solution template stable name identifier.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.status` · [`SupSolutionTemplateStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md) enum supply
+#### `status` · [`SupSolutionTemplateStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md) enum
 
 The solution template status.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The solution template title.
 
 #### Deprecated
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.addSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar common
+#### `addSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar
 
 > **Deprecated:** Use the SoftwareProject service to manage software project associations.
 
 Add list of software project identifiers associated with the solution template.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.newCompatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md) **DEPRECATED** list input supply
+#### `newCompatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md) **DEPRECATED** list input
 
 > **Deprecated:** Use the SupSolutionTemplateSetCompatibleEvalKits/SupSolutionTemplatePatchCompatibleEvalKits mutations instead.
 
 Replace the current solution template compatible eval kits with these ones.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.newEsdSource` · [`SupSolutionTemplatePatchEsdSourceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-esd-source-input.md) **DEPRECATED** input supply
+#### `newEsdSource` · [`SupSolutionTemplatePatchEsdSourceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-esd-source-input.md) **DEPRECATED** input
 
 > **Deprecated:** Use the SupSolutionTemplatePatchEsdSource mutation instead.
 
 The ESD source.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.newParameters` · [`[SupSolutionTemplateParameterBundleInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-bundle-input.md) **DEPRECATED** list input supply
+#### `newParameters` · [`[SupSolutionTemplateParameterBundleInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-bundle-input.md) **DEPRECATED** list input
 
 > **Deprecated:** Use the SupSolutionTemplateSetParameters/SupSolutionTemplatePatchParameters mutations instead.
 
 Replace the current solution template parameters with these ones.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.newPreviewImages` · [`[SupSolutionTemplateFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) **DEPRECATED** list input supply
+#### `newPreviewImages` · [`[SupSolutionTemplateFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) **DEPRECATED** list input
 
 > **Deprecated:** Use the SupSolutionTemplateSetPreviewImages/SupSolutionTemplatePatchPreviewImages mutations instead.
 
 Replace the current solution template preview images with these ones. The first image will be used as a best preview image.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.removeSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar common
+#### `removeSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar
 
 > **Deprecated:** Use the SoftwareProject service to manage software project associations.
 
 Remove list of software project identifiers associated with the solution template.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateInput.solutionSourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar common
+#### `solutionSourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar
 
 > **Deprecated:** Use 'sourceUrl' instead.
 

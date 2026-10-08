@@ -25,14 +25,14 @@ input SupSolutionTemplatePatchRefDesignsInput {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchRefDesignsInput.addRefDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `addRefDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 The identifier(s) of the reference designs to add.
 
-#### `SupSolutionTemplatePatchRefDesignsInput.removeRefDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `removeRefDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 The identifier(s) of the reference designs to remove.
 
-#### `SupSolutionTemplatePatchRefDesignsInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the solution template.

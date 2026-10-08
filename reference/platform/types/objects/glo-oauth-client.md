@@ -35,54 +35,54 @@ type GloOAuthClient {
 
 ### Fields
 
-#### `GloOAuthClient.absoluteRefreshTokenLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `absoluteRefreshTokenLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The absolute lifetime of refresh tokens issued to this \*OAuth 2.0 client\*, in seconds.
 
-#### `GloOAuthClient.accessTokenLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `accessTokenLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The lifetime of access tokens issued to this \*OAuth 2.0 client\*, in seconds.
 
-#### `GloOAuthClient.authorizationCodeLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `authorizationCodeLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The lifetime of authorization codes issued to this \*OAuth 2.0 client\*, in seconds.
 
-#### `GloOAuthClient.clientId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `clientId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The client identifier for this \*OAuth 2.0 client\*.
 
-#### `GloOAuthClient.clientSecret` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `clientSecret` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The client secret for this \*OAuth 2.0 client\*. Only available at client creation.
 
-#### `GloOAuthClient.grantTypes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `grantTypes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The list of grant types this \*OAuth 2.0 client\* can use.
 
-#### `GloOAuthClient.identityTokenLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `identityTokenLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The lifetime of identity tokens issued to this \*OAuth 2.0 client\*, in seconds.
 
-#### `GloOAuthClient.redirectUris` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `redirectUris` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The list of redirect URIs associated with this \*OAuth 2.0 client\*.
 
-#### `GloOAuthClient.requireConsent` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `requireConsent` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Whether this \*OAuth 2.0\* client requires consent to be approved before it can create user access tokens.
 
-#### `GloOAuthClient.requirePkce` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `requirePkce` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Whether PKCE is required when this \*OAuth 2.0 client\* uses the authorization code grant.
 
-#### `GloOAuthClient.requireSecret` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `requireSecret` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Whether this \*OAuth 2.0 client\* needs to use a client secret requesting tokens.
 
-#### `GloOAuthClient.scopes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `scopes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The list of scopes this \*OAuth 2.0 client\* can use.
 
-#### `GloOAuthClient.slidingRefreshTokenLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `slidingRefreshTokenLifetime` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The sliding lifetime of refresh tokens issued to this \*OAuth 2.0 client\*, in seconds.

@@ -17,6 +17,10 @@ deprecated: false
 
 Create a variable set for the specified project.
 
+### Type
+
+#### [`RsaMotorStudioCreateVariableSetPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-variable-set-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioCreateVariableSet(
   input: RsaMotorStudioCreateVariableSetInput!
@@ -25,8 +29,4 @@ rsaMotorStudioCreateVariableSet(
 
 ### Arguments
 
-#### `rsaMotorStudioCreateVariableSet.input` · [`RsaMotorStudioCreateVariableSetInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-variable-set-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioCreateVariableSetPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-variable-set-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioCreateVariableSetInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-variable-set-input.md) non-null input

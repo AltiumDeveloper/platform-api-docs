@@ -28,14 +28,14 @@ type SupPartFamilyKeyFeature {
 
 ### Fields
 
-#### `SupPartFamilyKeyFeature.group` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `group` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SupPartFamilyKeyFeature.metadata` · [`[SupPartFamilyFeatureMetadata!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-feature-metadata.md) non-null object supply
+#### `metadata` · [`[SupPartFamilyFeatureMetadata!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-feature-metadata.md) non-null object
 
-#### `SupPartFamilyKeyFeature.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SupPartFamilyKeyFeature.units` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `units` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SupPartFamilyKeyFeature.value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SupPartFamilyKeyFeature.valueType` · [`SupPartFamilyFeatureValueType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-part-family-feature-value-type.md) non-null enum supply
+#### `valueType` · [`SupPartFamilyFeatureValueType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-part-family-feature-value-type.md) non-null enum

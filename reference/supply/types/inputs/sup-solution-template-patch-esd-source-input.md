@@ -25,22 +25,22 @@ input SupSolutionTemplatePatchEsdSourceInput {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchEsdSourceInput.clearCompileModel` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `clearCompileModel` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Clear the existing ESD compile model file when true.
 
-#### `SupSolutionTemplatePatchEsdSourceInput.clearPreviewImage` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `clearPreviewImage` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Clear the existing ESD preview image file when true.
 
-#### `SupSolutionTemplatePatchEsdSourceInput.compileModel` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input supply
+#### `compileModel` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input
 
 The ESD compile model file to update if specified.
 
-#### `SupSolutionTemplatePatchEsdSourceInput.documentFile` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input supply
+#### `documentFile` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input
 
 The ESD document file to update if specified.
 
-#### `SupSolutionTemplatePatchEsdSourceInput.previewImageFile` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input supply
+#### `previewImageFile` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input
 
 The ESD preview image file to update if specified.

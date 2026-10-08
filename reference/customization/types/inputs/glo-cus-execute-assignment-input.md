@@ -24,10 +24,10 @@ input GloCusExecuteAssignmentInput {
 
 ### Fields
 
-#### `GloCusExecuteAssignmentInput.assignmentId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `assignmentId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier of the assignment.
 
-#### `GloCusExecuteAssignmentInput.parameters` · [`[GloCusAssignmentExecutionParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-execution-parameter-input.md) list input customization
+#### `parameters` · [`[GloCusAssignmentExecutionParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-execution-parameter-input.md) list input
 
 Represent parameters needed for execution.

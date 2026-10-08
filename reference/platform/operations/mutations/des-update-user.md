@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the specified user properties.
 
+### Type
+
+#### [`DesUpdateUserPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-user-payload.md) object
+
+Payload associated with updating a user.
+
 ```graphql
 desUpdateUser(
   input: DesUpdateUserInput!
@@ -19,10 +25,4 @@ desUpdateUser(
 
 ### Arguments
 
-#### `desUpdateUser.input` · [`DesUpdateUserInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-user-input.md) non-null input platform
-
-### Type
-
-#### [`DesUpdateUserPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-user-payload.md) object platform
-
-Payload associated with updating a user.
+#### `input` · [`DesUpdateUserInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-user-input.md) non-null input

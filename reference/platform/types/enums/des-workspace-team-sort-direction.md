@@ -20,10 +20,10 @@ enum DesWorkspaceTeamSortDirection {
 
 ### Values
 
-#### `DesWorkspaceTeamSortDirection.ASC`
+#### `ASC`
 
 Ascending order.
 
-#### `DesWorkspaceTeamSortDirection.DESC`
+#### `DESC`
 
 Descending order.

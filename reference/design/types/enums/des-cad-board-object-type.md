@@ -34,26 +34,26 @@ enum DesCadBoardObjectType {
 
 ### Values
 
-#### `DesCadBoardObjectType.BENDING_LINE`
+#### `BENDING_LINE`
 
-#### `DesCadBoardObjectType.BOARD_AREA`
+#### `BOARD_AREA`
 
-#### `DesCadBoardObjectType.BOARD_OUTLINE`
+#### `BOARD_OUTLINE`
 
-#### `DesCadBoardObjectType.BOARD_VIA`
+#### `BOARD_VIA`
 
-#### `DesCadBoardObjectType.COMPONENT`
+#### `COMPONENT`
 
-#### `DesCadBoardObjectType.COMPONENT_TYPE`
+#### `COMPONENT_TYPE`
 
-#### `DesCadBoardObjectType.CUTOUT`
+#### `CUTOUT`
 
-#### `DesCadBoardObjectType.HOLE`
+#### `HOLE`
 
-#### `DesCadBoardObjectType.LAYER`
+#### `LAYER`
 
-#### `DesCadBoardObjectType.REGION`
+#### `REGION`
 
-#### `DesCadBoardObjectType.SPLIT_LINE`
+#### `SPLIT_LINE`
 
-#### `DesCadBoardObjectType.TRACK`
+#### `TRACK`

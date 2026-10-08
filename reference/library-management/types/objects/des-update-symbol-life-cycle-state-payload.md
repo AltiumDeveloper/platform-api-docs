@@ -24,10 +24,10 @@ type DesUpdateSymbolLifeCycleStatePayload {
 
 ### Fields
 
-#### `DesUpdateSymbolLifeCycleStatePayload.errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object common
+#### `errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object
 
 Payload errors.
 
-#### `DesUpdateSymbolLifeCycleStatePayload.symbolId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `symbolId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Symbol identifier.

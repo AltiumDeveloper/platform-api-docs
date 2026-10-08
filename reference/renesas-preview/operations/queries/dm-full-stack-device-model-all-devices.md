@@ -21,6 +21,6 @@ dmFullStackDeviceModelAllDevices: [DmFullStackDeviceModel]!
 
 ### Type
 
-#### [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) object renesas-preview **EXPERIMENTAL**
+#### [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) object **EXPERIMENTAL**
 
 Root GraphQL type that exposes the full device model, including interfaces, peripherals, and ports.

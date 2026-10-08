@@ -28,10 +28,10 @@ type DesTeam {
 
 ### Fields
 
-#### `DesTeam.groups` · [`[DesUserGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user-group.md) non-null object platform
+#### `groups` · [`[DesUserGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user-group.md) non-null object
 
 List of user groups in the team.
 
-#### `DesTeam.users` · [`[DesUser!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `users` · [`[DesUser!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 List of users in the team.

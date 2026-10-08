@@ -11,6 +11,10 @@ deprecated: false
 
 Deletes existing attachment.
 
+### Type
+
+#### [`SolDeleteAttachmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-delete-attachment-payload.md) object
+
 ```graphql
 solDeleteAttachment(
   input: SolDeleteAttachmentInput!
@@ -19,8 +23,4 @@ solDeleteAttachment(
 
 ### Arguments
 
-#### `solDeleteAttachment.input` · [`SolDeleteAttachmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-delete-attachment-input.md) non-null input platform
-
-### Type
-
-#### [`SolDeleteAttachmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-delete-attachment-payload.md) object platform
+#### `input` · [`SolDeleteAttachmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-delete-attachment-input.md) non-null input

@@ -25,22 +25,22 @@ type SupSolutionTemplateApplicationParameterBundle {
 
 ### Fields
 
-#### `SupSolutionTemplateApplicationParameterBundle.order` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `order` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The display order of the parameter bundle.
 
-#### `SupSolutionTemplateApplicationParameterBundle.parameter` · [`SupSolutionTemplateParameter!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter.md) non-null object supply
+#### `parameter` · [`SupSolutionTemplateParameter!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter.md) non-null object
 
 Details about the parameter of the parameter bundle.
 
-#### `SupSolutionTemplateApplicationParameterBundle.question` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `question` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The content of the question associated with this parameter bundle.
 
-#### `SupSolutionTemplateApplicationParameterBundle.required` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `required` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the parameter bundle is mandatory.
 
-#### `SupSolutionTemplateApplicationParameterBundle.values` · [`[SupSolutionTemplateParameterValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-value.md) non-null object supply
+#### `values` · [`[SupSolutionTemplateParameterValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-value.md) non-null object
 
 The parameter's list of values.

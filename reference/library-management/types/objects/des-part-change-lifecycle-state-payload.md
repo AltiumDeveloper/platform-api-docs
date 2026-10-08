@@ -24,10 +24,10 @@ type DesPartChangeLifecycleStatePayload {
 
 ### Fields
 
-#### `DesPartChangeLifecycleStatePayload.errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object library-management
+#### `errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.
 
-#### `DesPartChangeLifecycleStatePayload.isSuccessful` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isSuccessful` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the lifecycle state of the part was changed. Always `false` when `errors` is not empty.

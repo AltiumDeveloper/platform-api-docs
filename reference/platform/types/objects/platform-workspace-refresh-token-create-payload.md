@@ -22,6 +22,6 @@ type PlatformWorkspaceRefreshTokenCreatePayload {
 
 ### Fields
 
-#### `PlatformWorkspaceRefreshTokenCreatePayload.errors` · [`[PlatformWorkspaceRefreshTokenCreateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-create-error.md) list union platform
+#### `errors` · [`[PlatformWorkspaceRefreshTokenCreateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-create-error.md) list union
 
-#### `PlatformWorkspaceRefreshTokenCreatePayload.redirectUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `redirectUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

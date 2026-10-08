@@ -1,7 +1,7 @@
-# Renesas (preview) — Altium Platform API
+# Renesas (preview) — Altium 365 API
 > Renesas-specific device models, software projects and tools. Parked; not yet organised into bounded contexts.
 
-Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceModel/), [software](https://altiumdeveloper.github.io/cdm/subsets/software/), [ota](https://altiumdeveloper.github.io/cdm/subsets/ota/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/schema.graphql) (~24372 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/overview.md).
+Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceModel/), [software](https://altiumdeveloper.github.io/cdm/subsets/software/), [ota](https://altiumdeveloper.github.io/cdm/subsets/ota/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/schema.graphql) (~24371 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/overview.md).
 
 ## Entities
 - [DmAddressBlock](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-block.md): AddressBlock — Address block with start, size, and optional registers and peripherals. Via: DmAddressSegment.blocks, DmPeripheralInstance.addressBlocks

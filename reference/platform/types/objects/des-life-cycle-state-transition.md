@@ -35,54 +35,54 @@ type DesLifeCycleStateTransition {
 
 ### Fields
 
-#### `DesLifeCycleStateTransition.approvals` · [`[DesLifeCycleStateTransitionApprovalGroup!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition-approval-group.md) list object platform
+#### `approvals` · [`[DesLifeCycleStateTransitionApprovalGroup!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition-approval-group.md) list object
 
 The groups that must provide an approval for the transition to be applied. If using controlled transitions, this will return null.
 
-#### `DesLifeCycleStateTransition.controllers` · [`[DesLifeCycleStateTransitionController!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition-controller.md) list object platform
+#### `controllers` · [`[DesLifeCycleStateTransitionController!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition-controller.md) list object
 
 The controllers who are allowed to perform this transition. If using approvals, this will return null.
 
-#### `DesLifeCycleStateTransition.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` this life cycle state transition was created.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) this life cycle state transition was created.
 
-#### `DesLifeCycleStateTransition.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 The user this life cycle state transition was created by.
 
-#### `DesLifeCycleStateTransition.isPublic` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isPublic` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Determines whether the transition is publicly accessible.
 
-#### `DesLifeCycleStateTransition.lifeCycleStateAfter` · [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) object platform
+#### `lifeCycleStateAfter` · [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) object
 
-The `DesLifeCycleState` after the transition is applied.
+The [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) after the transition is applied.
 
-#### `DesLifeCycleStateTransition.lifeCycleStateBefore` · [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) object platform
+#### `lifeCycleStateBefore` · [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) object
 
-The `DesLifeCycleState` before the transition is applied.
+The [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) before the transition is applied.
 
-#### `DesLifeCycleStateTransition.lifeCycleStateTransitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `lifeCycleStateTransitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The reference identifier for this life cycle state transition.
 
-#### `DesLifeCycleStateTransition.menuTextFormat` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `menuTextFormat` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The format string for the transition menu in Altium Designer.
 
-#### `DesLifeCycleStateTransition.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this life cycle state transition.
 
-#### `DesLifeCycleStateTransition.transitionKind` · [`DesLifeCycleStateTransitionKind!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-life-cycle-state-transition-kind.md) non-null enum platform
+#### `transitionKind` · [`DesLifeCycleStateTransitionKind!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-life-cycle-state-transition-kind.md) non-null enum
 
 Determines how the permissions for the state transition are managed.
 
-#### `DesLifeCycleStateTransition.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` this life cycle state transition was last updated at.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) this life cycle state transition was last updated at.
 
-#### `DesLifeCycleStateTransition.updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 The user this life cycle state transition was last updated by.

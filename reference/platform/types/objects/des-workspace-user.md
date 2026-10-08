@@ -13,7 +13,9 @@ Represents a user registered in a workspace.
 
 ### Common Data Model
 
-- [Workspace User](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceUser/) — A person's membership in a particular Workspace, connecting their Altium Account to that Workspace and to the Workspace groups they are assigned to. Members can come from the organization that owns the Workspace or from other organizations, and inviting an outside user does not add them to the owning organization. People who only have a project shared with them (External Share guests) are not members.
+- [Workspace User](https://w3id.org/altium/cdm/platform/WorkspaceUser) — A person's membership in a particular Workspace, connecting their Altium Account to that Workspace and to the Workspace groups they are assigned to. Members can come from the organization that owns the Workspace or from other organizations, and inviting an outside user does not add them to the owning organization. People who only have a project shared with them (External Share guests) are not members.
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/WorkspaceUser`](https://w3id.org/altium/cdm/platform/WorkspaceUser)
   - GRID: `grid:workspace:{workspace-id}:team:user/{id}`
 
 ### Returned By
@@ -46,50 +48,50 @@ type DesWorkspaceUser {
 
 ### Fields
 
-#### `DesWorkspaceUser.displayName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `displayName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A composition of the first name and last name.
 
-#### `DesWorkspaceUser.email` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `email` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Email of the user.
 
-#### `DesWorkspaceUser.firstName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `firstName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `DesWorkspaceUser.globalUserId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `globalUserId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The global user identifier. Null in case of some old workspaces that have never been migrated, if the user has never logged into the workspace.
 
-#### `DesWorkspaceUser.groups` · [`[DesWorkspaceGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md) non-null object platform
+#### `groups` · [`[DesWorkspaceGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md) non-null object
 
-#### `DesWorkspaceUser.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The node identifier for the workspace user.
 
-#### `DesWorkspaceUser.isActive` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isActive` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the user is currently a member of the workspace. False if the user has been removed.
 
-#### `DesWorkspaceUser.isOnline` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isOnline` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies whether the user is active within any of the workspaces. Null if the information is unavailable (e.g. the requester does not belong to the user's organization).
 
-#### `DesWorkspaceUser.lastName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `lastName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `DesWorkspaceUser.licenseFeatures` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `licenseFeatures` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 The license features available to this user. Null if not the current user.
 
-#### `DesWorkspaceUser.profilePicture` · [`URL`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) scalar common
+#### `profilePicture` · [`URL`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) scalar
 
 A URL for a picture of this user.
 
-##### `DesWorkspaceUser.profilePicture.size` · [`DesWorkspaceUserProfilePictureSize!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-profile-picture-size.md) non-null enum platform
+##### `size` · [`DesWorkspaceUserProfilePictureSize!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-profile-picture-size.md) non-null enum
 
-#### `DesWorkspaceUser.type` · [`DesWorkspaceUserType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-type.md) non-null enum platform
+#### `type` · [`DesWorkspaceUserType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-type.md) non-null enum
 
 A specific role of this user within the workspace.
 
-#### `DesWorkspaceUser.userId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `userId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The workspace specific user identifier.

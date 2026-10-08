@@ -21,4 +21,4 @@ type DesAnnotationUser {
 
 ### Fields
 
-#### `DesAnnotationUser.displayName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `displayName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

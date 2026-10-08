@@ -26,18 +26,18 @@ type DesSharedWithMeProjectInfoConnection {
 
 ### Fields
 
-#### `DesSharedWithMeProjectInfoConnection.edges` · [`[DesSharedWithMeProjectInfoEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info-edge.md) list object design
+#### `edges` · [`[DesSharedWithMeProjectInfoEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info-edge.md) list object
 
 A list of edges.
 
-#### `DesSharedWithMeProjectInfoConnection.nodes` · [`[DesSharedWithMeProjectInfo!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info.md) list object design
+#### `nodes` · [`[DesSharedWithMeProjectInfo!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info.md) list object
 
 A flattened list of the nodes.
 
-#### `DesSharedWithMeProjectInfoConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesSharedWithMeProjectInfoConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

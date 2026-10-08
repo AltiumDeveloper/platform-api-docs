@@ -24,10 +24,10 @@ type SupSoftwareProjectEvalKitSourceEdge {
 
 ### Fields
 
-#### `SupSoftwareProjectEvalKitSourceEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `SupSoftwareProjectEvalKitSourceEdge.node` · [`SupSoftwareProjectEvalKitSource!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source.md) non-null object supply
+#### `node` · [`SupSoftwareProjectEvalKitSource!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source.md) non-null object
 
 The item at the end of the edge.

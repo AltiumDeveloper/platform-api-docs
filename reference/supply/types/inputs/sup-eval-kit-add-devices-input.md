@@ -24,10 +24,10 @@ input SupEvalKitAddDevicesInput {
 
 ### Fields
 
-#### `SupEvalKitAddDevicesInput.devices` · [`[SupEvalKitDeviceInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-device-input.md) non-null input supply
+#### `devices` · [`[SupEvalKitDeviceInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-device-input.md) non-null input
 
 The list of devices to add.
 
-#### `SupEvalKitAddDevicesInput.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the evaluation kit.

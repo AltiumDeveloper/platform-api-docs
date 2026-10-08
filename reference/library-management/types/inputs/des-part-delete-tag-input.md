@@ -23,6 +23,6 @@ input DesPartDeleteTagInput {
 
 ### Fields
 
-#### `DesPartDeleteTagInput.tagId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tagId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the tag to delete.

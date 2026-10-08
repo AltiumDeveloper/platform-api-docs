@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the specified component template.
 
+### Type
+
+#### [`DesUpdateComponentTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-template-payload.md) object
+
+Payload associated with updating a component template.
+
 ```graphql
 desUpdateComponentTemplate(
   input: DesUpdateComponentTemplateInput!
@@ -19,10 +25,4 @@ desUpdateComponentTemplate(
 
 ### Arguments
 
-#### `desUpdateComponentTemplate.input` · [`DesUpdateComponentTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-template-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateComponentTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-template-payload.md) object library-management
-
-Payload associated with updating a component template.
+#### `input` · [`DesUpdateComponentTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-template-input.md) non-null input

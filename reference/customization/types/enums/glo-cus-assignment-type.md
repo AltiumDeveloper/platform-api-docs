@@ -23,8 +23,8 @@ enum GloCusAssignmentType {
 
 ### Values
 
-#### `GloCusAssignmentType.DEFAULT`
+#### `DEFAULT`
 
-#### `GloCusAssignmentType.SCRIPT`
+#### `SCRIPT`
 
-#### `GloCusAssignmentType.WORKFLOW`
+#### `WORKFLOW`

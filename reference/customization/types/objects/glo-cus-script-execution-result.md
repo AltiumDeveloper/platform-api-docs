@@ -22,6 +22,6 @@ type GloCusScriptExecutionResult {
 
 ### Fields
 
-#### `GloCusScriptExecutionResult.exitCode` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `exitCode` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `GloCusScriptExecutionResult.returnValues` · [`[GloCusScriptExecutionOutput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-output.md) list object customization
+#### `returnValues` · [`[GloCusScriptExecutionOutput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-output.md) list object

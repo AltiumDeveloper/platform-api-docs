@@ -24,10 +24,10 @@ type DesCreateTaskCommentPayload {
 
 ### Fields
 
-#### `DesCreateTaskCommentPayload.comment` · [`DesComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) object collaboration
+#### `comment` · [`DesComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) object
 
 Task comment.
 
-#### `DesCreateTaskCommentPayload.errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object common
+#### `errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object
 
 Payload errors.

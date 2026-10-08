@@ -22,6 +22,6 @@ enum SftSimSimulationType {
 
 ### Values
 
-#### `SftSimSimulationType.MATLAB`
+#### `MATLAB`
 
-#### `SftSimSimulationType.UNKNOWN`
+#### `UNKNOWN`

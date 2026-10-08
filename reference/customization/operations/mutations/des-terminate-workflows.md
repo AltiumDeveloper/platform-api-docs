@@ -11,6 +11,12 @@ deprecated: false
 
 Terminates a workflow. Workflows allow you to automate design processes, and are created in Altium 365.
 
+### Type
+
+#### [`DesTerminateWorkflowsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-terminate-workflows-payload.md) object
+
+Payload associated with terminating a workflow.
+
 ```graphql
 desTerminateWorkflows(
   input: DesTerminateWorkflowsInput!
@@ -19,10 +25,4 @@ desTerminateWorkflows(
 
 ### Arguments
 
-#### `desTerminateWorkflows.input` · [`DesTerminateWorkflowsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-terminate-workflows-input.md) non-null input customization
-
-### Type
-
-#### [`DesTerminateWorkflowsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-terminate-workflows-payload.md) object customization
-
-Payload associated with terminating a workflow.
+#### `input` · [`DesTerminateWorkflowsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-terminate-workflows-input.md) non-null input

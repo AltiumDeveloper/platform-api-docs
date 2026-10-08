@@ -25,10 +25,10 @@ input DesReleaseVariantFilterInput {
 
 ### Fields
 
-#### `DesReleaseVariantFilterInput.and` · [`[DesReleaseVariantFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-release-variant-filter-input.md) list input design
+#### `and` · [`[DesReleaseVariantFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-release-variant-filter-input.md) list input
 
-#### `DesReleaseVariantFilterInput.name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 The descriptive label for this design variant.
 
-#### `DesReleaseVariantFilterInput.or` · [`[DesReleaseVariantFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-release-variant-filter-input.md) list input design
+#### `or` · [`[DesReleaseVariantFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-release-variant-filter-input.md) list input

@@ -24,10 +24,10 @@ type SupEvalKitCompatibleSoftwareProjectEdge {
 
 ### Fields
 
-#### `SupEvalKitCompatibleSoftwareProjectEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `SupEvalKitCompatibleSoftwareProjectEdge.node` · [`SupSoftwareProject!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) non-null object supply
+#### `node` · [`SupSoftwareProject!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) non-null object
 
 The item at the end of the edge.

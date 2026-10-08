@@ -29,8 +29,8 @@ input RsaMotorStudioCreateVariableSetRevisionInput {
 
 ### Fields
 
-#### `RsaMotorStudioCreateVariableSetRevisionInput.entries` · [`[RsaMotorStudioVariableSetEntryInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-variable-set-entry-input.md) non-null input renesas-preview
+#### `entries` · [`[RsaMotorStudioVariableSetEntryInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-variable-set-entry-input.md) non-null input
 
-#### `RsaMotorStudioCreateVariableSetRevisionInput.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `RsaMotorStudioCreateVariableSetRevisionInput.variableSetId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `variableSetId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

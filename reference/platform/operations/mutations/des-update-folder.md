@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the specified folder in the library.
 
+### Type
+
+#### [`DesUpdateFolderPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-folder-payload.md) object
+
+Payload associated with updating a folder.
+
 ```graphql
 desUpdateFolder(
   input: DesUpdateFolderInput!
@@ -19,10 +25,4 @@ desUpdateFolder(
 
 ### Arguments
 
-#### `desUpdateFolder.input` · [`DesUpdateFolderInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-input.md) non-null input platform
-
-### Type
-
-#### [`DesUpdateFolderPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-folder-payload.md) object platform
-
-Payload associated with updating a folder.
+#### `input` · [`DesUpdateFolderInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-input.md) non-null input

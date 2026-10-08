@@ -27,22 +27,22 @@ type DesCadComponentBodyShape {
 
 ### Fields
 
-#### `DesCadComponentBodyShape.height` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `height` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 CAD component body height.
 
-#### `DesCadComponentBodyShape.isBodylessOnEcad` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isBodylessOnEcad` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 True if CAD component is bodyless on ECAD.
 
-#### `DesCadComponentBodyShape.isHidden` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isHidden` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 True if CAD component body is hidden.
 
-#### `DesCadComponentBodyShape.modelData` · [`DesCadBoard3DBodyModelData`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-3-dbody-model-data.md) object design
+#### `modelData` · [`DesCadBoard3DBodyModelData`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-3-dbody-model-data.md) object
 
 CAD component model data.
 
-#### `DesCadComponentBodyShape.shapeJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `shapeJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 JSON serialized \*GeometricShape\*.

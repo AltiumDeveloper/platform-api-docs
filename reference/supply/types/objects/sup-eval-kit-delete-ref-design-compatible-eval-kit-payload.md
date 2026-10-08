@@ -22,6 +22,6 @@ type SupEvalKitDeleteRefDesignCompatibleEvalKitPayload {
 
 ### Fields
 
-#### `SupEvalKitDeleteRefDesignCompatibleEvalKitPayload.errors` · [`[SupEvalKitDeleteRefDesignCompatibleEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-ref-design-compatible-eval-kit-error.md) list union supply
+#### `errors` · [`[SupEvalKitDeleteRefDesignCompatibleEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-ref-design-compatible-eval-kit-error.md) list union
 
-#### `SupEvalKitDeleteRefDesignCompatibleEvalKitPayload.supEvalKitDeleteRefDesignCompatibleEvalKitsPayload` · [`SupEvalKitDeleteRefDesignCompatibleEvalKitsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-ref-design-compatible-eval-kits-payload.md) object supply
+#### `supEvalKitDeleteRefDesignCompatibleEvalKitsPayload` · [`SupEvalKitDeleteRefDesignCompatibleEvalKitsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-ref-design-compatible-eval-kits-payload.md) object

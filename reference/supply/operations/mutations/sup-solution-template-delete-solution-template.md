@@ -11,6 +11,12 @@ deprecated: false
 
 Delete a solution template.
 
+### Type
+
+#### [`SupSolutionTemplateDeleteSolutionTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-delete-solution-template-payload.md) object
+
+Payload associated with deleting a solution template.
+
 ```graphql
 supSolutionTemplateDeleteSolutionTemplate(
   input: SupSolutionTemplateDeleteSolutionTemplateInput!
@@ -19,10 +25,4 @@ supSolutionTemplateDeleteSolutionTemplate(
 
 ### Arguments
 
-#### `supSolutionTemplateDeleteSolutionTemplate.input` · [`SupSolutionTemplateDeleteSolutionTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-delete-solution-template-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateDeleteSolutionTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-delete-solution-template-payload.md) object supply
-
-Payload associated with deleting a solution template.
+#### `input` · [`SupSolutionTemplateDeleteSolutionTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-delete-solution-template-input.md) non-null input

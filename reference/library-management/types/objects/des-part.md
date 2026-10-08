@@ -13,7 +13,9 @@ Represents a part.
 
 ### Common Data Model
 
-- [Part](https://altiumdeveloper.github.io/cdm/classes/lib_Part/) — A manufacturer part, identified by manufacturer and part number, as held in the Workspace's Part Catalog together with the supplier parts through which it is sold. Workspace components reference manufacturer parts through their Part Choices.
+- [Part](https://w3id.org/altium/cdm/library/Part) — A manufacturer part, identified by manufacturer and part number, as held in the Workspace's Part Catalog together with the supplier parts through which it is sold. Workspace components reference manufacturer parts through their Part Choices.
+
+  - IRI: [`https://w3id.org/altium/cdm/library/Part`](https://w3id.org/altium/cdm/library/Part)
   - GRID: `grid:workspace:{workspace-id}:library:part/{id}`
 
 ### Returned By
@@ -46,62 +48,62 @@ type DesPart {
 
 ### Fields
 
-#### `DesPart.alternatives` · [`DesPartAlternativesResult`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-alternatives-result.md) object library-management
+#### `alternatives` · [`DesPartAlternativesResult`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-alternatives-result.md) object
 
 The alternatives for this part.
 
-#### `DesPart.customPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object library-management
+#### `customPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object
 
 The custom part details.
 
-#### `DesPart.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A description of the part.
 
-#### `DesPart.healthChecks` · [`[DesPartHealthCheckResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-health-check-result.md) non-null object library-management
+#### `healthChecks` · [`[DesPartHealthCheckResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-health-check-result.md) non-null object
 
 The health check results for the part.
 
-#### `DesPart.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the part.
 
-#### `DesPart.imageUrl` · [`URL`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) scalar common
+#### `imageUrl` · [`URL`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) scalar
 
 The URL for the part image.
 
-#### `DesPart.lifecycle` · [`DesPartLifecycle`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-lifecycle.md) object library-management
+#### `lifecycle` · [`DesPartLifecycle`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-lifecycle.md) object
 
 The lifecycle of the part. `null` when the part has no vault item yet.
 
-#### `DesPart.localSupplyPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object library-management
+#### `localSupplyPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object
 
 The cached subset of `supplyPart`.
 
-#### `DesPart.manufacturerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `manufacturerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The manufacturer name of the part.
 
-#### `DesPart.mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The manufacturer part number of the part.
 
-#### `DesPart.siliconExpertPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object library-management
+#### `siliconExpertPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object
 
 The \*SiliconExpert\* part details.
 
-#### `DesPart.supplyPart` · [`DesPartSupplyPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-supply-part.md) object library-management
+#### `supplyPart` · [`DesPartSupplyPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-supply-part.md) object
 
 The supply part details.
 
-#### `DesPart.tags` · [`[DesPartTag!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-tag.md) non-null object library-management
+#### `tags` · [`[DesPartTag!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-tag.md) non-null object
 
 The tags assigned to the part. Empty when the part has no vault item yet.
 
-#### `DesPart.usages` · [`DesPartUsages`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-usages.md) object library-management
+#### `usages` · [`DesPartUsages`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-usages.md) object
 
 The usage information for the part.
 
-#### `DesPart.z2DataPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object library-management
+#### `z2DataPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object
 
 The \*Z2Data\* part details.

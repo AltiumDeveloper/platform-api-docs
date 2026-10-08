@@ -22,6 +22,6 @@ type GloCusJsonArrayOfAssignmentConfigurationParameter {
 
 ### Fields
 
-#### `GloCusJsonArrayOfAssignmentConfigurationParameter.gloCusValue` · [`[GloCusAssignmentConfigurationParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-assignment-configuration-parameter.md) non-null object customization
+#### `gloCusValue` · [`[GloCusAssignmentConfigurationParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-assignment-configuration-parameter.md) non-null object
 
-#### `GloCusJsonArrayOfAssignmentConfigurationParameter.json` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `json` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

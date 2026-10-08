@@ -17,6 +17,6 @@ desWorkspaceInfos: [DesWorkspaceInfo!]!
 
 ### Type
 
-#### [`DesWorkspaceInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-info.md) object platform
+#### [`DesWorkspaceInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-info.md) object
 
 A workspace provides a flexible and secure method for managing design, manufacturing and supply content.

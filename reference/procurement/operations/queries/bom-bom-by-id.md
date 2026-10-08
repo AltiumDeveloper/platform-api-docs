@@ -11,6 +11,12 @@ deprecated: false
 
 Get the specified BOM.
 
+### Type
+
+#### [`Bom`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom.md) interface
+
+Represents a shared part of work-in-progress BOMs and releases of BOMs.
+
 ```graphql
 bomBomById(
   id: ID!
@@ -19,12 +25,6 @@ bomBomById(
 
 ### Arguments
 
-#### `bomBomById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 ID of the BOM.
-
-### Type
-
-#### [`Bom`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom.md) interface procurement
-
-Represents a shared part of work-in-progress BOMs and releases of BOMs.

@@ -19,14 +19,14 @@ union PlatformTokenUpdateError = PlatformTokenUpdateInvalidError | PlatformToken
 
 ### Possible types
 
-#### [`PlatformTokenUpdateError.PlatformTokenUpdateInvalidError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-invalid-error.md) object platform
+#### [`PlatformTokenUpdateInvalidError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-invalid-error.md) object
 
-Error that occurs when a `PlatformToken` update request specifies no fields to update.
+Error that occurs when a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) update request specifies no fields to update.
 
-#### [`PlatformTokenUpdateError.PlatformTokenUpdateFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-failed-error.md) object platform
+#### [`PlatformTokenUpdateFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-failed-error.md) object
 
-Error that occurs when no `PlatformToken` exists with the specified identifier.
+Error that occurs when no [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) exists with the specified identifier.
 
-#### [`PlatformTokenUpdateError.PlatformTokenNameExistsError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-name-exists-error.md) object platform
+#### [`PlatformTokenNameExistsError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-name-exists-error.md) object
 
-Error that occurs when the input `PlatformToken` name already exists.
+Error that occurs when the input [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) name already exists.

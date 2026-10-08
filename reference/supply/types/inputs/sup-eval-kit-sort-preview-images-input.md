@@ -24,10 +24,10 @@ input SupEvalKitSortPreviewImagesInput {
 
 ### Fields
 
-#### `SupEvalKitSortPreviewImagesInput.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the evaluation kit.
 
-#### `SupEvalKitSortPreviewImagesInput.sortedImageUrls` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sortedImageUrls` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The collection of image URLs in the desired sort order.

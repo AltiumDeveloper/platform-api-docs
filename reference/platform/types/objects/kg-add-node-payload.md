@@ -27,6 +27,6 @@ type KgAddNodePayload {
 
 ### Fields
 
-#### `KgAddNodePayload.isAdded` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isAdded` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Whether the entity was successfully registered.

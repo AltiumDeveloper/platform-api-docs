@@ -24,10 +24,10 @@ enum SupRefSortDirection {
 
 ### Values
 
-#### `SupRefSortDirection.ASC`
+#### `ASC`
 
 Ascending order.
 
-#### `SupRefSortDirection.DESC`
+#### `DESC`
 
 Descending order.

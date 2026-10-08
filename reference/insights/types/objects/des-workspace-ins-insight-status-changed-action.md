@@ -24,10 +24,10 @@ type DesWorkspaceInsInsightStatusChangedAction {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightStatusChangedAction.newStatus` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `newStatus` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Status value after the change.
 
-#### `DesWorkspaceInsInsightStatusChangedAction.oldStatus` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `oldStatus` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Status value before the change, if any.

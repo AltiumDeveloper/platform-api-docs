@@ -30,10 +30,10 @@ type DesignDataComponentParameter_Preview {
 
 ### Fields
 
-#### `DesignDataComponentParameter_Preview.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignDataComponentParameter_Preview.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The name of the parameter.
 
-#### `DesignDataComponentParameter_Preview.value` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignDataComponentParameter_Preview.value` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The value of the parameter.

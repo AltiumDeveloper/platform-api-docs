@@ -21,4 +21,4 @@ type GloScrCreateSecretPayload {
 
 ### Fields
 
-#### `GloScrCreateSecretPayload.gloScrSecret` · [`GloScrSecret`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-secret.md) object customization
+#### `gloScrSecret` · [`GloScrSecret`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-secret.md) object

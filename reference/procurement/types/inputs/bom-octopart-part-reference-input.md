@@ -23,6 +23,6 @@ input BomOctopartPartReferenceInput {
 
 ### Fields
 
-#### `BomOctopartPartReferenceInput.partId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the part in Octopart.

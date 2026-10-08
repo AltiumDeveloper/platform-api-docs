@@ -23,6 +23,6 @@ type DesWorkspaceInsInsightErrorPayload {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightErrorPayload.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Human-readable description of the error.

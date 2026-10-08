@@ -22,6 +22,6 @@ type GloAddAppGrantTypePayload {
 
 ### Fields
 
-#### `GloAddAppGrantTypePayload.errors` · [`[GloAddAppGrantTypeError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-grant-type-error.md) list union platform
+#### `errors` · [`[GloAddAppGrantTypeError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-grant-type-error.md) list union
 
-#### `GloAddAppGrantTypePayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

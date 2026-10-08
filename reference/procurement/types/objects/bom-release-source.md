@@ -13,7 +13,7 @@ Describes the source BOM release used to create the current BOM.
 
 ### Interfaces
 
-#### [`BomSource`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-source.md) interface procurement
+#### [`BomSource`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-source.md) interface
 
 Describes the source used to create the current BOM (e.g., a file, a design, or other BOM).
 
@@ -26,10 +26,10 @@ type BomReleaseSource implements BomSource {
 
 ### Fields
 
-#### `BomReleaseSource.bom` · [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) object procurement
+#### `bom` · [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) object
 
 The source BOM release. Could be null if deleted or not accessible.
 
-#### `BomReleaseSource.quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Quantity of the source (i.e., how many times the source is included into this BOM).

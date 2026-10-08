@@ -22,6 +22,6 @@ type SupSolutionTemplateSetTagsPayload {
 
 ### Fields
 
-#### `SupSolutionTemplateSetTagsPayload.errors` · [`[SupSolutionTemplateSetTagsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-tags-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplateSetTagsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-tags-error.md) list union
 
-#### `SupSolutionTemplateSetTagsPayload.result` · [`SupSolutionTemplateResultPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-result-payload.md) object supply
+#### `result` · [`SupSolutionTemplateResultPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-result-payload.md) object

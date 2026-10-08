@@ -22,10 +22,10 @@ input SupSolutionTemplateParameterBundleInput {
 
 ### Fields
 
-#### `SupSolutionTemplateParameterBundleInput.parameter` · [`SupSolutionTemplateParameterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-input.md) non-null input supply
+#### `parameter` · [`SupSolutionTemplateParameterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-input.md) non-null input
 
 The parameter to be bundled.
 
-#### `SupSolutionTemplateParameterBundleInput.values` · [`[SupSolutionTemplateParameterValueInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-value-input.md) non-null input supply
+#### `values` · [`[SupSolutionTemplateParameterValueInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-value-input.md) non-null input
 
 The list of parameter values associated with the parameter bundle.

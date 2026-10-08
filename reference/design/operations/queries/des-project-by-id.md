@@ -11,6 +11,12 @@ deprecated: false
 
 Searches a project by its identifier.
 
+### Type
+
+#### [`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) object
+
+A project manages all development stages of the PCB/PCA product lifecycle.
+
 ```graphql
 desProjectById(
   id: ID!
@@ -19,12 +25,6 @@ desProjectById(
 
 ### Arguments
 
-#### `desProjectById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The project identifier.
-
-### Type
-
-#### [`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) object design
-
-A project manages all development stages of the PCB/PCA product lifecycle.

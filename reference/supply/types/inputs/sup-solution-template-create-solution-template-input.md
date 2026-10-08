@@ -36,63 +36,63 @@ input SupSolutionTemplateCreateSolutionTemplateInput {
 
 ### Fields
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.applicationIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `applicationIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 The list of application identifiers associated with the solution template.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.compatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md) list input supply
+#### `compatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md) list input
 
 The list of evaluation kit associated with the solution template.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The solution template description.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.esdSource` · [`SupSolutionTemplateEsdSourceInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-esd-source-input.md) non-null input supply
+#### `esdSource` · [`SupSolutionTemplateEsdSourceInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-esd-source-input.md) non-null input
 
 The ESD source.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.parameters` · [`[SupSolutionTemplateParameterBundleInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-bundle-input.md) list input supply
+#### `parameters` · [`[SupSolutionTemplateParameterBundleInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-parameter-bundle-input.md) list input
 
 The list of parameters associated with the solution template application.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.previewImages` · [`[SupSolutionTemplateFileInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) non-null input supply
+#### `previewImages` · [`[SupSolutionTemplateFileInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) non-null input
 
 The list of solution template images input. The first image will be the best preview image.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.publisherId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `publisherId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The publisher identifier.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.releaseDate` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `releaseDate` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The optional release date of the solution template.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.requirementTemplate` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `requirementTemplate` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The default requirement string used when a user first clones the solution template.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The source URL where the solution template is published.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.stableName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `stableName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The solution template stable name identifier.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The solution template title.
 
 #### Deprecated
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.softwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar common
+#### `softwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar
 
 > **Deprecated:** Use the SoftwareProject service to manage software project associations.
 
 The list of software project identifiers associated with the solution template.
 
-#### `SupSolutionTemplateCreateSolutionTemplateInput.solutionSourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar common
+#### `solutionSourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar
 
 > **Deprecated:** Use 'sourceUrl' instead.
 

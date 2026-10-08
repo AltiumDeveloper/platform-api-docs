@@ -17,6 +17,10 @@ deprecated: false
 
 Update a scope configuration for the specified project (provided views/channels become the entire list).
 
+### Type
+
+#### [`RsaMotorStudioUpdateScopeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-scope-config-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioUpdateScopeConfig(
   input: RsaMotorStudioUpdateScopeConfigInput!
@@ -25,8 +29,4 @@ rsaMotorStudioUpdateScopeConfig(
 
 ### Arguments
 
-#### `rsaMotorStudioUpdateScopeConfig.input` · [`RsaMotorStudioUpdateScopeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-scope-config-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioUpdateScopeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-scope-config-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioUpdateScopeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-scope-config-input.md) non-null input

@@ -17,6 +17,10 @@ deprecated: false
 
 Get a scope configuration by id.
 
+### Type
+
+#### [`RsaMotorStudioScopeConfig`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioScopeConfigById(
   configId: String!
@@ -26,10 +30,6 @@ rsaMotorStudioScopeConfigById(
 
 ### Arguments
 
-#### `rsaMotorStudioScopeConfigById.configId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `configId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `rsaMotorStudioScopeConfigById.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`RsaMotorStudioScopeConfig`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) object renesas-preview **EXPERIMENTAL**
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

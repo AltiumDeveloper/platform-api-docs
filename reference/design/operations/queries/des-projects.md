@@ -11,6 +11,12 @@ deprecated: false
 
 Search projects within a workspace with results in paged groups.
 
+### Type
+
+#### [`DesProjectConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-connection.md) object
+
+A connection to a list of items.
+
 ```graphql
 desProjects(
   after: String
@@ -27,40 +33,34 @@ desProjects(
 
 ### Arguments
 
-#### `desProjects.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-#### `desProjects.args` · [`DesProjectsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-projects-input.md) input design
+#### `args` · [`DesProjectsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-projects-input.md) input
 
 Extra arguments.
 
-#### `desProjects.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-#### `desProjects.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-#### `desProjects.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-#### `desProjects.order` · [`[DesProjectSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-sort-input.md) list input design
+#### `order` · [`[DesProjectSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-sort-input.md) list input
 
-#### `desProjects.requirementsBlockFilter` · [`DesProjectsRequirementsBlockFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-projects-requirements-block-filter-input.md) input design
+#### `requirementsBlockFilter` · [`DesProjectsRequirementsBlockFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-projects-requirements-block-filter-input.md) input
 
 Requirements block filter.
 
-#### `desProjects.where` · [`DesProjectFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-filter-input.md) input design
+#### `where` · [`DesProjectFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-filter-input.md) input
 
-#### `desProjects.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The web address of a workspace.
-
-### Type
-
-#### [`DesProjectConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-connection.md) object design
-
-A connection to a list of items.

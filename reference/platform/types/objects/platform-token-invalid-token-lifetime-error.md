@@ -9,11 +9,11 @@ deprecated: false
 
 # PlatformTokenInvalidTokenLifetimeError
 
-Error returned by the Token API when an input token lifetime for a new `PlatformToken` is invalid.
+Error returned by the Token API when an input token lifetime for a new [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) is invalid.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type PlatformTokenInvalidTokenLifetimeError implements Error {
 
 ### Fields
 
-#### `PlatformTokenInvalidTokenLifetimeError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

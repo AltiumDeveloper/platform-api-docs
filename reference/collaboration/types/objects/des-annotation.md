@@ -30,24 +30,24 @@ type DesAnnotation {
 
 ### Fields
 
-#### `DesAnnotation.bindings` · [`[DesAnnotationBinding!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/unions/des-annotation-binding.md) non-null union collaboration
+#### `bindings` · [`[DesAnnotationBinding!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/unions/des-annotation-binding.md) non-null union
 
 Bindings define the 'location' of the annotation, its 'address' in context of the design.
 
-#### `DesAnnotation.createdAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `createdAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DesAnnotation.createdBy` · [`DesAnnotationUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-user.md) object collaboration
+#### `createdBy` · [`DesAnnotationUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-user.md) object
 
-#### `DesAnnotation.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `DesAnnotation.requirements` · [`DesAnnotationRequirements`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirements.md) object collaboration
+#### `requirements` · [`DesAnnotationRequirements`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirements.md) object
 
 Requirements, associated with the annotation.
 
-#### `DesAnnotation.updatedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `updatedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DesAnnotation.updatedBy` · [`DesAnnotationUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-user.md) object collaboration
+#### `updatedBy` · [`DesAnnotationUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-user.md) object
 
-#### `DesAnnotation.url` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `url` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Deep link to the annotation - can be used to navigate to the annotation in the context of its placement.

@@ -11,6 +11,10 @@ deprecated: false
 
 Search a specific solution template by its unique identifier.
 
+### Type
+
+#### [`SupSolutionTemplateApplication`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application.md) object
+
 ```graphql
 supSolutionTemplateApplicationById(
   id: ID!
@@ -19,8 +23,4 @@ supSolutionTemplateApplicationById(
 
 ### Arguments
 
-#### `supSolutionTemplateApplicationById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SupSolutionTemplateApplication`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application.md) object supply
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

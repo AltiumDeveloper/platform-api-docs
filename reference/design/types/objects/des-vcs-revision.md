@@ -27,22 +27,22 @@ type DesVcsRevision {
 
 ### Fields
 
-#### `DesVcsRevision.author` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `author` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 User that created the VCS revision.
 
-#### `DesVcsRevision.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-`DateTime` when VCS revision was created.
+[`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) when VCS revision was created.
 
-#### `DesVcsRevision.files` · [`[DesVcsRevisionFileChange!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision-file-change.md) non-null object design
+#### `files` · [`[DesVcsRevisionFileChange!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision-file-change.md) non-null object
 
 VCS revision files.
 
-#### `DesVcsRevision.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 VCS revision message.
 
-#### `DesVcsRevision.revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 VCS revision identifier.

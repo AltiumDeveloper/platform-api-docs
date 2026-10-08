@@ -11,6 +11,10 @@ deprecated: false
 
 Creates a link between solution and other items.
 
+### Type
+
+#### [`SolLinkItemsToSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-link-items-to-solution-payload.md) object
+
 ```graphql
 solLinkItemsToSolution(
   input: SolLinkItemsToSolutionInput!
@@ -19,8 +23,4 @@ solLinkItemsToSolution(
 
 ### Arguments
 
-#### `solLinkItemsToSolution.input` · [`SolLinkItemsToSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-link-items-to-solution-input.md) non-null input platform
-
-### Type
-
-#### [`SolLinkItemsToSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-link-items-to-solution-payload.md) object platform
+#### `input` · [`SolLinkItemsToSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-link-items-to-solution-input.md) non-null input

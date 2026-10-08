@@ -24,10 +24,10 @@ type SupRefDesignTypeBucket {
 
 ### Fields
 
-#### `SupRefDesignTypeBucket.count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Number of items in the bucket.
 
-#### `SupRefDesignTypeBucket.type` · [`SupRefDesignType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-type.md) non-null enum supply
+#### `type` · [`SupRefDesignType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-type.md) non-null enum
 
 Reference design type.

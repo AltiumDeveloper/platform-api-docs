@@ -23,6 +23,6 @@ type GloEvtError {
 
 ### Fields
 
-#### `GloEvtError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of the error occurred.

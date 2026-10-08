@@ -9,7 +9,11 @@ deprecated: false
 
 # platformWorkspaceRefreshTokenDeleteSecret
 
-Deletes a client secret for an existing `PlatformWorkspaceRefreshToken`.
+Deletes a client secret for an existing [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md).
+
+### Type
+
+#### [`PlatformWorkspaceRefreshTokenDeleteSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token-delete-secret-payload.md) object
 
 ```graphql
 platformWorkspaceRefreshTokenDeleteSecret(
@@ -19,8 +23,4 @@ platformWorkspaceRefreshTokenDeleteSecret(
 
 ### Arguments
 
-#### `platformWorkspaceRefreshTokenDeleteSecret.input` · [`PlatformWorkspaceRefreshTokenDeleteSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-delete-secret-input.md) non-null input platform
-
-### Type
-
-#### [`PlatformWorkspaceRefreshTokenDeleteSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token-delete-secret-payload.md) object platform
+#### `input` · [`PlatformWorkspaceRefreshTokenDeleteSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-delete-secret-input.md) non-null input

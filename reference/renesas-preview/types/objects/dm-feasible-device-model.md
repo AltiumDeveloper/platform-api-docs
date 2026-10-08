@@ -31,14 +31,14 @@ type DmFeasibleDeviceModel {
 
 ### Fields
 
-#### `DmFeasibleDeviceModel.board` · [`DmDeviceBoard`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-board.md) object renesas-preview
+#### `board` · [`DmDeviceBoard`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-board.md) object
 
 Device board evaluated for this candidate, with configuration-compatibility. Null when the family has no board variant or the DevicesOnly strategy was used.
 
-#### `DmFeasibleDeviceModel.deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Device part number.
 
-#### `DmFeasibleDeviceModel.familyPart` · [`DmFamilyPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md) object renesas-preview
+#### `familyPart` · [`DmFamilyPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md) object
 
 Family part details for the device (manufacturer, partial MPN, part-number details).

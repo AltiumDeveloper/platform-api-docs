@@ -11,6 +11,10 @@ deprecated: false
 
 List a evaluation kits.
 
+### Type
+
+#### [`SupEvalKit`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) object
+
 ```graphql
 supEvalKits(
   filter: SupEvalKitFilterInput
@@ -23,26 +27,22 @@ supEvalKits(
 
 ### Arguments
 
-#### `supEvalKits.filter` · [`SupEvalKitFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-filter-input.md) input supply
+#### `filter` · [`SupEvalKitFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-filter-input.md) input
 
 Optional structured filter input for searching.
 
-#### `supEvalKits.limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Page size of results.
 
-#### `supEvalKits.order` · [`[SupEvalKitOrderInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-order-input.md) list input supply
+#### `order` · [`[SupEvalKitOrderInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-order-input.md) list input
 
 Order the results by one or more fields. The first input is main order field.
 
-#### `supEvalKits.q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The search query string. Leave empty to query all.
 
-#### `supEvalKits.start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Offset in the result set.
-
-### Type
-
-#### [`SupEvalKit`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) object supply

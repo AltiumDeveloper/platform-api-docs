@@ -21,4 +21,4 @@ type SupEvalKitSortPreviewImagesPayload {
 
 ### Fields
 
-#### `SupEvalKitSortPreviewImagesPayload.errors` · [`[SupEvalKitSortPreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-sort-preview-images-error.md) list union supply
+#### `errors` · [`[SupEvalKitSortPreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-sort-preview-images-error.md) list union

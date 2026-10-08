@@ -17,6 +17,10 @@ deprecated: false
 
 Retrieves a system model version
 
+### Type
+
+#### [`SysSdmSystemModelVersion`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) object **EXPERIMENTAL**
+
 ```graphql
 sysSdmSystemModelVersionById(
   id: ID!
@@ -25,8 +29,4 @@ sysSdmSystemModelVersionById(
 
 ### Arguments
 
-#### `sysSdmSystemModelVersionById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SysSdmSystemModelVersion`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) object system-design **EXPERIMENTAL**
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

@@ -11,6 +11,12 @@ deprecated: false
 
 \*PROTOTYPE, SUBJECT TO CHANGE\*
 
+### Type
+
+#### [`DesCollaborationSimulationRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision.md) object
+
+\*PROTOTYPE, SUBJECT TO CHANGE\*
+
 ```graphql
 desProjectCollaborationSimulationLatestRevision(
   domainName: String!
@@ -21,20 +27,14 @@ desProjectCollaborationSimulationLatestRevision(
 
 ### Arguments
 
-#### `desProjectCollaborationSimulationLatestRevision.domainName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `domainName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The collaboration domain name.
 
-#### `desProjectCollaborationSimulationLatestRevision.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The project identifier.
 
-#### `desProjectCollaborationSimulationLatestRevision.projectTypeName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `projectTypeName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The project type name.
-
-### Type
-
-#### [`DesCollaborationSimulationRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision.md) object design
-
-\*PROTOTYPE, SUBJECT TO CHANGE\*

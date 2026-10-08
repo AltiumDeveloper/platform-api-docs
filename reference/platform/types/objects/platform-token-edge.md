@@ -24,10 +24,10 @@ type PlatformTokenEdge {
 
 ### Fields
 
-#### `PlatformTokenEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `PlatformTokenEdge.node` · [`PlatformToken!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) non-null interface platform
+#### `node` · [`PlatformToken!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) non-null interface
 
 The item at the end of the edge.

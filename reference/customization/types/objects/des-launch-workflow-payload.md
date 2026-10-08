@@ -24,10 +24,10 @@ type DesLaunchWorkflowPayload {
 
 ### Fields
 
-#### `DesLaunchWorkflowPayload.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Workflow identifier.
 
-#### `DesLaunchWorkflowPayload.status` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `status` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Status of the launched workflow.

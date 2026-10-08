@@ -27,22 +27,22 @@ input DesLaunchWorkflowInput {
 
 ### Fields
 
-#### `DesLaunchWorkflowInput.attachments` · [`[DesWorkflowAttachmentVariableInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-attachment-variable-input.md) list input customization
+#### `attachments` · [`[DesWorkflowAttachmentVariableInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-attachment-variable-input.md) list input
 
 The attachment variables.
 
-#### `DesLaunchWorkflowInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Name of workflow definition.
 
-#### `DesLaunchWorkflowInput.variables` · [`[DesWorkflowVariableInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-variable-input.md) non-null input customization
+#### `variables` · [`[DesWorkflowVariableInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-variable-input.md) non-null input
 
 The string variables.
 
-#### `DesLaunchWorkflowInput.workflowDefinitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `workflowDefinitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier for workflow definition.
 
-#### `DesLaunchWorkflowInput.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 URL of workspace.

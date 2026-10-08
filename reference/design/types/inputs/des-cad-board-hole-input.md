@@ -36,58 +36,58 @@ input DesCadBoardHoleInput {
 
 ### Fields
 
-#### `DesCadBoardHoleInput.associatedComponentDesignator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `associatedComponentDesignator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board hole associated component designator.
 
-#### `DesCadBoardHoleInput.counterAngle` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar common
+#### `counterAngle` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar
 
 CAD board counter angle.
 
-#### `DesCadBoardHoleInput.counterDepth` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `counterDepth` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 CAD board hole counter depth.
 
-#### `DesCadBoardHoleInput.counterSize` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `counterSize` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 CAD board hole counter size.
 
-#### `DesCadBoardHoleInput.counterType` · [`DesCadCounterType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-counter-type.md) enum design
+#### `counterType` · [`DesCadCounterType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-counter-type.md) enum
 
 CAD board hole counter type.
 
-#### `DesCadBoardHoleInput.designator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `designator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board hole designator.
 
-#### `DesCadBoardHoleInput.diameter` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `diameter` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 CAD board hole diameter.
 
-#### `DesCadBoardHoleInput.holeType` · [`DesCadHoleType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-hole-type.md) enum design
+#### `holeType` · [`DesCadHoleType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-hole-type.md) enum
 
 CAD board hole type.
 
-#### `DesCadBoardHoleInput.isPlated` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isPlated` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether the CAD board hole is plated or not.
 
-#### `DesCadBoardHoleInput.location` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input design
+#### `location` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input
 
 CAD board hole location.
 
-#### `DesCadBoardHoleInput.originalDesignator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `originalDesignator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board hole original designator.
 
-#### `DesCadBoardHoleInput.rotation` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar common
+#### `rotation` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar
 
 CAD board hole rotation.
 
-#### `DesCadBoardHoleInput.size` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input design
+#### `size` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input
 
 CAD board hole size.
 
-#### `DesCadBoardHoleInput.uniqueId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `uniqueId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Unique identifier for CAD board hole.

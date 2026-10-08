@@ -24,10 +24,10 @@ input DesUpdateLifeCycleDefinitionInput {
 
 ### Fields
 
-#### `DesUpdateLifeCycleDefinitionInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Life cycle definition identifier. Defines which life cycle definition should be updated.
 
-#### `DesUpdateLifeCycleDefinitionInput.lifeCycleDefinition` · [`DesLifeCycleDefinitionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-definition-input.md) non-null input platform
+#### `lifeCycleDefinition` · [`DesLifeCycleDefinitionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-definition-input.md) non-null input
 
 Life cycle definition.

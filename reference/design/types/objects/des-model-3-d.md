@@ -23,6 +23,6 @@ type DesModel3D {
 
 ### Fields
 
-#### `DesModel3D.parasolidFile` · [`DesDownloadableFile`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) object design
+#### `parasolidFile` · [`DesDownloadableFile`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) object
 
 The downloadable 3D model Parasolid file.

@@ -19,7 +19,8 @@ Configuration enumeration value for a port setting.
 
 ### Common Data Model
 
-- [PortConfigurationEnumValue](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfigurationEnumValue/) — An enumerated value for a port configuration.
+- [PortConfigurationEnumValue](https://w3id.org/altium/cdm/deviceModel/PortConfigurationEnumValue) — An enumerated value for a port configuration.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/PortConfigurationEnumValue`](https://w3id.org/altium/cdm/deviceModel/PortConfigurationEnumValue)
 
 ### Member Of
 
@@ -36,18 +37,18 @@ type DmConfigEnumValue {
 
 ### Fields
 
-#### `DmConfigEnumValue.configDependencies` · [`[DmConfigDependency!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-dependency.md) non-null object renesas-preview
+#### `configDependencies` · [`[DmConfigDependency!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-dependency.md) non-null object
 
 Configuration dependencies associated with this enumeration value.
 
-#### `DmConfigEnumValue.display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Display representation of the enumeration value.
 
-#### `DmConfigEnumValue.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier for the enumeration value.
 
-#### `DmConfigEnumValue.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Display name of the enumeration value.

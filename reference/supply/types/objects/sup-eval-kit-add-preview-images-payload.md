@@ -21,4 +21,4 @@ type SupEvalKitAddPreviewImagesPayload {
 
 ### Fields
 
-#### `SupEvalKitAddPreviewImagesPayload.errors` · [`[SupEvalKitAddPreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-preview-images-error.md) list union supply
+#### `errors` · [`[SupEvalKitAddPreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-preview-images-error.md) list union

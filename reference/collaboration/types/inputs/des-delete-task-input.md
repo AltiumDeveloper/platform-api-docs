@@ -23,6 +23,6 @@ input DesDeleteTaskInput {
 
 ### Fields
 
-#### `DesDeleteTaskInput.taskId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `taskId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The task node identifier.

@@ -26,18 +26,18 @@ type DesProjectGuestConnection {
 
 ### Fields
 
-#### `DesProjectGuestConnection.edges` · [`[DesProjectGuestEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-guest-edge.md) list object design
+#### `edges` · [`[DesProjectGuestEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-guest-edge.md) list object
 
 A list of edges.
 
-#### `DesProjectGuestConnection.nodes` · [`[DesProjectGuest!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-guest.md) list object design
+#### `nodes` · [`[DesProjectGuest!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-guest.md) list object
 
 A flattened list of the nodes.
 
-#### `DesProjectGuestConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesProjectGuestConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

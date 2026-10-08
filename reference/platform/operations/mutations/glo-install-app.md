@@ -11,6 +11,10 @@ deprecated: false
 
 Installs an App into a Workspace.
 
+### Type
+
+#### [`GloInstallAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-install-app-payload.md) object
+
 ```graphql
 gloInstallApp(
   input: GloInstallAppInput!
@@ -19,8 +23,4 @@ gloInstallApp(
 
 ### Arguments
 
-#### `gloInstallApp.input` · [`GloInstallAppInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-install-app-input.md) non-null input platform
-
-### Type
-
-#### [`GloInstallAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-install-app-payload.md) object platform
+#### `input` · [`GloInstallAppInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-install-app-input.md) non-null input

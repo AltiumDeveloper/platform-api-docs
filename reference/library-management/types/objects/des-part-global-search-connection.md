@@ -27,22 +27,22 @@ type DesPartGlobalSearchConnection {
 
 ### Fields
 
-#### `DesPartGlobalSearchConnection.edges` · [`[DesPartGlobalSearchEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-edge.md) list object library-management
+#### `edges` · [`[DesPartGlobalSearchEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-edge.md) list object
 
 A list of edges.
 
-#### `DesPartGlobalSearchConnection.nodes` · [`[DesPartGlobalSearchItem!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-item.md) list object library-management
+#### `nodes` · [`[DesPartGlobalSearchItem!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-item.md) list object
 
 A flattened list of the nodes.
 
-#### `DesPartGlobalSearchConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesPartGlobalSearchConnection.searchFacets` · [`DesPartGlobalSearchFacets!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-facets.md) non-null object library-management
+#### `searchFacets` · [`DesPartGlobalSearchFacets!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-facets.md) non-null object
 
 Gets the search facets for the current result set.
 
-#### `DesPartGlobalSearchConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

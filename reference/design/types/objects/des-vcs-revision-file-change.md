@@ -24,10 +24,10 @@ type DesVcsRevisionFileChange {
 
 ### Fields
 
-#### `DesVcsRevisionFileChange.kind` · [`DesVcsChangeKind!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-vcs-change-kind.md) non-null enum design
+#### `kind` · [`DesVcsChangeKind!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-vcs-change-kind.md) non-null enum
 
 VCS revision file change kind.
 
-#### `DesVcsRevisionFileChange.path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 VCS revision file path.

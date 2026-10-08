@@ -24,10 +24,10 @@ type DesProjectGuestEdge {
 
 ### Fields
 
-#### `DesProjectGuestEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesProjectGuestEdge.node` · [`DesProjectGuest!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-guest.md) non-null object design
+#### `node` · [`DesProjectGuest!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-guest.md) non-null object
 
 The item at the end of the edge.

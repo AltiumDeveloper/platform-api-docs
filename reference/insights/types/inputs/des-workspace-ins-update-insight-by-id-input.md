@@ -24,10 +24,10 @@ input DesWorkspaceInsUpdateInsightByIdInput {
 
 ### Fields
 
-#### `DesWorkspaceInsUpdateInsightByIdInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Identifier of the insight to be updated.
 
-#### `DesWorkspaceInsUpdateInsightByIdInput.userAction` · [`DesWorkspaceInsInsightUserActionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-insight-user-action-input.md) non-null input insights
+#### `userAction` · [`DesWorkspaceInsInsightUserActionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-insight-user-action-input.md) non-null input
 
 User action describing how the insight should change.

@@ -11,6 +11,12 @@ deprecated: false
 
 Gets a user by the specified global identifier.
 
+### Type
+
+#### [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object
+
+User details with the identifier and nullable extra fields.
+
 ```graphql
 desUserByGlobalId(
   id: String!
@@ -19,12 +25,6 @@ desUserByGlobalId(
 
 ### Arguments
 
-#### `desUserByGlobalId.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The global user identifier.
-
-### Type
-
-#### [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object platform
-
-User details with the identifier and nullable extra fields.

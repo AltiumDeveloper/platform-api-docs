@@ -25,14 +25,14 @@ input DesCadBoardCopperRegionInput {
 
 ### Fields
 
-#### `DesCadBoardCopperRegionInput.holeShapesJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `holeShapesJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 JSON serialized array of \*GeometricShape\*.
 
-#### `DesCadBoardCopperRegionInput.layerName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `layerName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board copper region layer name.
 
-#### `DesCadBoardCopperRegionInput.outlineShapesJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `outlineShapesJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 JSON serialized array of \*GeometricShape\*.

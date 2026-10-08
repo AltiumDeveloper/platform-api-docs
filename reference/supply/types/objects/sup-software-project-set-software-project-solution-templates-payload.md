@@ -24,8 +24,8 @@ type SupSoftwareProjectSetSoftwareProjectSolutionTemplatesPayload {
 
 ### Fields
 
-#### `SupSoftwareProjectSetSoftwareProjectSolutionTemplatesPayload.errors` · [`[SupSoftwareProjectSetSoftwareProjectSolutionTemplatesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-set-software-project-solution-templates-error.md) list union supply
+#### `errors` · [`[SupSoftwareProjectSetSoftwareProjectSolutionTemplatesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-set-software-project-solution-templates-error.md) list union
 
-#### `SupSoftwareProjectSetSoftwareProjectSolutionTemplatesPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

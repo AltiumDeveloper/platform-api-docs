@@ -17,6 +17,6 @@ desPartCategoriesByProvider: DesPartCategoriesByProviders!
 
 ### Type
 
-#### [`DesPartCategoriesByProviders`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-categories-by-providers.md) object library-management
+#### [`DesPartCategoriesByProviders`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-categories-by-providers.md) object
 
 Represents a collection of part categories grouped by providers.

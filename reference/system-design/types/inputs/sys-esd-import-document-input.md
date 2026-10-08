@@ -24,10 +24,10 @@ input SysEsdImportDocumentInput {
 
 ### Fields
 
-#### `SysEsdImportDocumentInput.esdDocumentJson` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `esdDocumentJson` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Serialized JSON representation of the ESD document content to import.
 
-#### `SysEsdImportDocumentInput.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier of the ESD document to import content into.

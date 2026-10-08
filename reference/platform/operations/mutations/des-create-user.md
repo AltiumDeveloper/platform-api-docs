@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a user.
 
+### Type
+
+#### [`DesCreateUserPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-user-payload.md) object
+
+Payload associated with creating a user.
+
 ```graphql
 desCreateUser(
   input: DesCreateUserInput!
@@ -19,10 +25,4 @@ desCreateUser(
 
 ### Arguments
 
-#### `desCreateUser.input` · [`DesCreateUserInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-user-input.md) non-null input platform
-
-### Type
-
-#### [`DesCreateUserPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-user-payload.md) object platform
-
-Payload associated with creating a user.
+#### `input` · [`DesCreateUserInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-user-input.md) non-null input

@@ -26,10 +26,10 @@ enum DesCadWorkflowState {
 
 ### Values
 
-#### `DesCadWorkflowState.NONE`
+#### `NONE`
 
-#### `DesCadWorkflowState.READY_TO_SEND_OR_RECEIVE_CHANGES`
+#### `READY_TO_SEND_OR_RECEIVE_CHANGES`
 
-#### `DesCadWorkflowState.RECEIVED_PROPOSED_CHANGES`
+#### `RECEIVED_PROPOSED_CHANGES`
 
-#### `DesCadWorkflowState.SENT_PROPOSED_CHANGES`
+#### `SENT_PROPOSED_CHANGES`

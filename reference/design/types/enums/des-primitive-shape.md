@@ -33,24 +33,24 @@ enum DesPrimitiveShape {
 
 ### Values
 
-#### `DesPrimitiveShape.ARC`
+#### `ARC`
 
-#### `DesPrimitiveShape.CIRCLE`
+#### `CIRCLE`
 
-#### `DesPrimitiveShape.CUSTOM`
+#### `CUSTOM`
 
-#### `DesPrimitiveShape.NONE`
+#### `NONE`
 
-#### `DesPrimitiveShape.OCTAGON`
+#### `OCTAGON`
 
-#### `DesPrimitiveShape.RECTANGLE`
+#### `RECTANGLE`
 
-#### `DesPrimitiveShape.ROTATED_RECTANGLE`
+#### `ROTATED_RECTANGLE`
 
-#### `DesPrimitiveShape.ROUND`
+#### `ROUND`
 
-#### `DesPrimitiveShape.ROUND_RECTANGLE`
+#### `ROUND_RECTANGLE`
 
-#### `DesPrimitiveShape.ROUNDED_RECTANGLE`
+#### `ROUNDED_RECTANGLE`
 
-#### `DesPrimitiveShape.TERMINATOR`
+#### `TERMINATOR`

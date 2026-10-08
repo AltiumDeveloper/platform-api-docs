@@ -11,6 +11,12 @@ deprecated: false
 
 Creates new ESD Document.
 
+### Type
+
+#### [`SysEsdCreateDocumentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-create-document-payload.md) object
+
+Result of creating a new ESD document.
+
 ```graphql
 sysEsdCreateDocument(
   input: SysEsdCreateDocumentInput!
@@ -19,10 +25,4 @@ sysEsdCreateDocument(
 
 ### Arguments
 
-#### `sysEsdCreateDocument.input` · [`SysEsdCreateDocumentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-create-document-input.md) non-null input system-design
-
-### Type
-
-#### [`SysEsdCreateDocumentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-create-document-payload.md) object system-design
-
-Result of creating a new ESD document.
+#### `input` · [`SysEsdCreateDocumentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-create-document-input.md) non-null input

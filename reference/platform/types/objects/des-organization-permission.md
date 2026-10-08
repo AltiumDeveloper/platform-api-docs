@@ -11,7 +11,7 @@ deprecated: false
 
 ### Interfaces
 
-#### [`DesPermission`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/des-permission.md) interface platform
+#### [`DesPermission`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/des-permission.md) interface
 
 ```graphql
 type DesOrganizationPermission implements DesPermission {
@@ -24,18 +24,18 @@ type DesOrganizationPermission implements DesPermission {
 
 ### Fields
 
-#### `DesOrganizationPermission.availableActions` · [`DesPermissionAvailableActions!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-permission-available-actions.md) non-null object platform
+#### `availableActions` · [`DesPermissionAvailableActions!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-permission-available-actions.md) non-null object
 
 Indicates what actions can be performed on the permission.
 
-#### `DesOrganizationPermission.organization` · [`GloOrganization!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) non-null object platform
+#### `organization` · [`GloOrganization!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) non-null object
 
 The organization to which the permission is granted.
 
-#### `DesOrganizationPermission.trusteeId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `trusteeId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Trustee's indentificator.
 
-#### `DesOrganizationPermission.trusteePermissions` · [`DesTrusteePermissions!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-trustee-permissions.md) non-null object platform
+#### `trusteePermissions` · [`DesTrusteePermissions!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-trustee-permissions.md) non-null object
 
 Indicates read/write permissions.

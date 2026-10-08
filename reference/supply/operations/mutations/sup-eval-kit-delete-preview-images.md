@@ -11,6 +11,10 @@ deprecated: false
 
 Delete preview images from an evaluation kit.
 
+### Type
+
+#### [`SupEvalKitDeletePreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-preview-images-payload.md) object
+
 ```graphql
 supEvalKitDeletePreviewImages(
   input: SupEvalKitDeletePreviewImagesInput!
@@ -19,8 +23,4 @@ supEvalKitDeletePreviewImages(
 
 ### Arguments
 
-#### `supEvalKitDeletePreviewImages.input` · [`SupEvalKitDeletePreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-preview-images-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitDeletePreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-preview-images-payload.md) object supply
+#### `input` · [`SupEvalKitDeletePreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-preview-images-input.md) non-null input

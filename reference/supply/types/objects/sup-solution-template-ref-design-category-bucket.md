@@ -24,10 +24,10 @@ type SupSolutionTemplateRefDesignCategoryBucket {
 
 ### Fields
 
-#### `SupSolutionTemplateRefDesignCategoryBucket.categoryId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `categoryId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of category.
 
-#### `SupSolutionTemplateRefDesignCategoryBucket.count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Number of items in the bucket.

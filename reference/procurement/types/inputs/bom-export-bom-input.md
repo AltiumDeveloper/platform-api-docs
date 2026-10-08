@@ -21,6 +21,6 @@ input BomExportBomInput {
 
 ### Fields
 
-#### `BomExportBomInput.bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the BOM to export.

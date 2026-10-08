@@ -20,10 +20,10 @@ enum DesWorkspaceUserProfilePictureSize {
 
 ### Values
 
-#### `DesWorkspaceUserProfilePictureSize.ORIGINAL`
+#### `ORIGINAL`
 
-#### `DesWorkspaceUserProfilePictureSize.SIZE128X128`
+#### `SIZE128X128`
 
-#### `DesWorkspaceUserProfilePictureSize.SIZE48X48`
+#### `SIZE48X48`
 
-#### `DesWorkspaceUserProfilePictureSize.SIZE70X70`
+#### `SIZE70X70`

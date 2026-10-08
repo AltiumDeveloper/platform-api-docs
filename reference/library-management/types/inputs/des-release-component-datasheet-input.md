@@ -27,22 +27,22 @@ input DesReleaseComponentDatasheetInput {
 
 ### Fields
 
-#### `DesReleaseComponentDatasheetInput.file` · [`DesReleaseComponentFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-file-input.md) input library-management
+#### `file` · [`DesReleaseComponentFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-file-input.md) input
 
 The datasheet file for adding a new datasheet to the release. Either `id` or `file` must be provided.
 
-#### `DesReleaseComponentDatasheetInput.id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 Datasheet identifier for adding an existing datasheet to the release. Either `id` or `file` must be provided.
 
-#### `DesReleaseComponentDatasheetInput.itemName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `itemName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The datasheet name for the `file`. Use null to be generated.
 
-#### `DesReleaseComponentDatasheetInput.lifeCycleDefinitionNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `lifeCycleDefinitionNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The datasheet life cycle definition identifier. Required when `file` is provided.
 
-#### `DesReleaseComponentDatasheetInput.revisionNamingSchemeNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `revisionNamingSchemeNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The datasheet revision naming scheme identifier. Required when `file` is provided.

@@ -17,6 +17,10 @@ deprecated: false
 
 Delete a tuning and all its revisions.
 
+### Type
+
+#### [`RsaMotorStudioDeleteTuningPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-tuning-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioDeleteTuning(
   input: RsaMotorStudioDeleteTuningInput!
@@ -25,8 +29,4 @@ rsaMotorStudioDeleteTuning(
 
 ### Arguments
 
-#### `rsaMotorStudioDeleteTuning.input` · [`RsaMotorStudioDeleteTuningInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-tuning-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioDeleteTuningPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-tuning-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioDeleteTuningInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-tuning-input.md) non-null input

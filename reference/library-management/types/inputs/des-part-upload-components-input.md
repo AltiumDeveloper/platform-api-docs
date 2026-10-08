@@ -26,18 +26,18 @@ input DesPartUploadComponentsInput {
 
 ### Fields
 
-#### `DesPartUploadComponentsInput.columnMapping` · [`DesPartUploadComponentsColumnMappingInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upload-components-column-mapping-input.md) non-null input library-management
+#### `columnMapping` · [`DesPartUploadComponentsColumnMappingInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upload-components-column-mapping-input.md) non-null input
 
 Column mapping.
 
-#### `DesPartUploadComponentsInput.fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 File identifier with parts for upload.
 
-#### `DesPartUploadComponentsInput.fileName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 File name with parts for upload.
 
-#### `DesPartUploadComponentsInput.partChoiceUpdateMode` · [`DesPartPartChoiceUpdateMode!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/enums/des-part-part-choice-update-mode.md) non-null enum library-management
+#### `partChoiceUpdateMode` · [`DesPartPartChoiceUpdateMode!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/enums/des-part-part-choice-update-mode.md) non-null enum
 
 Specifies how existing part choices are handled during upload.

@@ -26,18 +26,18 @@ type DesReleaseConnection {
 
 ### Fields
 
-#### `DesReleaseConnection.edges` · [`[DesReleaseEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release-edge.md) list object design
+#### `edges` · [`[DesReleaseEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release-edge.md) list object
 
 A list of edges.
 
-#### `DesReleaseConnection.nodes` · [`[DesRelease!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release.md) list object design
+#### `nodes` · [`[DesRelease!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release.md) list object
 
 A flattened list of the nodes.
 
-#### `DesReleaseConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesReleaseConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

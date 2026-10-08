@@ -22,10 +22,10 @@ input SolDeleteAttachmentInput {
 
 ### Fields
 
-#### `SolDeleteAttachmentInput.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique identifier of the attachment to be deleted.
 
-#### `SolDeleteAttachmentInput.solutionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 ID of the solution from which the attachment will be deleted.

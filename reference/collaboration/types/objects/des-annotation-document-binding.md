@@ -22,10 +22,10 @@ type DesAnnotationDocumentBinding {
 
 ### Fields
 
-#### `DesAnnotationDocumentBinding.documentName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `documentName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the document where the annotation is placed.
 
-#### `DesAnnotationDocumentBinding.documentType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `documentType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Type of the document where the annotation is placed.

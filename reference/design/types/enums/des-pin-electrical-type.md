@@ -30,18 +30,18 @@ enum DesPinElectricalType {
 
 ### Values
 
-#### `DesPinElectricalType.HI_Z`
+#### `HI_Z`
 
-#### `DesPinElectricalType.INPUT`
+#### `INPUT`
 
-#### `DesPinElectricalType.IO`
+#### `IO`
 
-#### `DesPinElectricalType.OPEN_COLLECTOR`
+#### `OPEN_COLLECTOR`
 
-#### `DesPinElectricalType.OPEN_EMITTER`
+#### `OPEN_EMITTER`
 
-#### `DesPinElectricalType.OUTPUT`
+#### `OUTPUT`
 
-#### `DesPinElectricalType.PASSIVE`
+#### `PASSIVE`
 
-#### `DesPinElectricalType.POWER`
+#### `POWER`

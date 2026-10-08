@@ -11,6 +11,12 @@ deprecated: false
 
 Create a new software project.
 
+### Type
+
+#### [`SupSoftwareProjectCreateSoftwareProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-create-software-project-payload.md) object
+
+Payload associated with creating a software project.
+
 ```graphql
 supSoftwareProjectCreateSoftwareProject(
   input: SupSoftwareProjectCreateSoftwareProjectInput!
@@ -19,10 +25,4 @@ supSoftwareProjectCreateSoftwareProject(
 
 ### Arguments
 
-#### `supSoftwareProjectCreateSoftwareProject.input` · [`SupSoftwareProjectCreateSoftwareProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-create-software-project-input.md) non-null input supply
-
-### Type
-
-#### [`SupSoftwareProjectCreateSoftwareProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-create-software-project-payload.md) object supply
-
-Payload associated with creating a software project.
+#### `input` · [`SupSoftwareProjectCreateSoftwareProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-create-software-project-input.md) non-null input

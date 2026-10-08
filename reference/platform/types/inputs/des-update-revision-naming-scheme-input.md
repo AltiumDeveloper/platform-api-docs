@@ -28,26 +28,26 @@ input DesUpdateRevisionNamingSchemeInput {
 
 ### Fields
 
-#### `DesUpdateRevisionNamingSchemeInput.contentTypes` · [`[DesContentTypeKind!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) list enum platform
+#### `contentTypes` · [`[DesContentTypeKind!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) list enum
 
 If `isControlledPerContentType` is true, the list of content types for which this revision naming scheme is applicable.
 
-#### `DesUpdateRevisionNamingSchemeInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The revision naming scheme to be updated.
 
-#### `DesUpdateRevisionNamingSchemeInput.isControlledPerContentType` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isControlledPerContentType` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 If true, the revision naming scheme is only applied to objects that are controlled by that content type. Otherwise, content types are ignored.
 
-#### `DesUpdateRevisionNamingSchemeInput.itemRevisionSeparator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `itemRevisionSeparator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The separator used between item identifier and revision identifier. Allowed characters are: ',', '.', '-', '\_'.
 
-#### `DesUpdateRevisionNamingSchemeInput.levels` · [`[DesUpdateRevisionNamingSchemeLevelInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-revision-naming-scheme-level-input.md) list input platform
+#### `levels` · [`[DesUpdateRevisionNamingSchemeLevelInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-revision-naming-scheme-level-input.md) list input
 
 The list of numbering levels for this revision naming scheme. Maximum of 3 levels.
 
-#### `DesUpdateRevisionNamingSchemeInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The name of this revision naming scheme.

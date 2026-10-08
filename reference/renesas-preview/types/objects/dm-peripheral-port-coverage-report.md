@@ -31,12 +31,12 @@ type DmPeripheralPortCoverageReport {
 
 ### Fields
 
-#### `DmPeripheralPortCoverageReport.coveragePercent` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `coveragePercent` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
-#### `DmPeripheralPortCoverageReport.covered` · [`[DmPeripheralPortCoverageItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-port-coverage-item.md) non-null object renesas-preview
+#### `covered` · [`[DmPeripheralPortCoverageItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-port-coverage-item.md) non-null object
 
-#### `DmPeripheralPortCoverageReport.notCovered` · [`[DmPeripheralPortCoverageItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-port-coverage-item.md) non-null object renesas-preview
+#### `notCovered` · [`[DmPeripheralPortCoverageItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-port-coverage-item.md) non-null object
 
-#### `DmPeripheralPortCoverageReport.peripheralName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `peripheralName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `DmPeripheralPortCoverageReport.total` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `total` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar

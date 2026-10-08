@@ -23,6 +23,6 @@ type GloEvtDeleteSubscriptionPayload {
 
 ### Fields
 
-#### `GloEvtDeleteSubscriptionPayload.errors` · [`[GloEvtError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-error.md) non-null object platform
+#### `errors` · [`[GloEvtError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-error.md) non-null object
 
 Errors that occurred during subscription deletion (if any).

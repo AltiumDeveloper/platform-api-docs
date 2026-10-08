@@ -11,6 +11,12 @@ deprecated: false
 
 Creates and releases the specified component template.
 
+### Type
+
+#### [`DesReleaseComponentTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-release-component-template-payload.md) object
+
+Payload associated with releasing a component template.
+
 ```graphql
 desReleaseComponentTemplate(
   input: DesReleaseComponentTemplateInput!
@@ -19,10 +25,4 @@ desReleaseComponentTemplate(
 
 ### Arguments
 
-#### `desReleaseComponentTemplate.input` · [`DesReleaseComponentTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-template-input.md) non-null input library-management
-
-### Type
-
-#### [`DesReleaseComponentTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-release-component-template-payload.md) object library-management
-
-Payload associated with releasing a component template.
+#### `input` · [`DesReleaseComponentTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-template-input.md) non-null input

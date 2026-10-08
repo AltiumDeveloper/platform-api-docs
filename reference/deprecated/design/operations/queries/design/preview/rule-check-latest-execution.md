@@ -19,6 +19,10 @@ deprecated: true
 
 Retrieves the latest rule check execution for a WIP design.
 
+### Type
+
+#### [`RuleCheckExecution_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-preview.md) object **EXPERIMENTAL**
+
 ```graphql
 design {
   preview {
@@ -32,14 +36,10 @@ design {
 
 ### Arguments
 
-#### `ruleCheckLatestExecution.designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the design.
 
-#### `ruleCheckLatestExecution.revisionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `revisionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the project commit.
-
-### Type
-
-#### [`RuleCheckExecution_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-preview.md) object design **EXPERIMENTAL**

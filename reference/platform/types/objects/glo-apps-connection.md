@@ -25,14 +25,14 @@ type GloAppsConnection {
 
 ### Fields
 
-#### `GloAppsConnection.edges` · [`[GloAppsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-apps-edge.md) list object platform
+#### `edges` · [`[GloAppsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-apps-edge.md) list object
 
 A list of edges.
 
-#### `GloAppsConnection.nodes` · [`[GloApp!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) list object platform
+#### `nodes` · [`[GloApp!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) list object
 
 A flattened list of the nodes.
 
-#### `GloAppsConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.

@@ -33,46 +33,46 @@ type DesPartCompanyOffer {
 
 ### Fields
 
-#### `DesPartCompanyOffer.clickUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `clickUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL to the offer.
 
-#### `DesPartCompanyOffer.eligibleRegion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `eligibleRegion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The eligible region for the offer.
 
-#### `DesPartCompanyOffer.factoryLeadDays` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `factoryLeadDays` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 The number of days to acquire parts from the factory.
 
-#### `DesPartCompanyOffer.inventoryLevel` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `inventoryLevel` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 The number of units available to be shipped (e.g., stock, quantity).
 
-#### `DesPartCompanyOffer.moq` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `moq` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 The Minimum Order Quantity (MOQ): the smallest number of parts that can be purchased.
 
-#### `DesPartCompanyOffer.offerId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `offerId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the offer.
 
-#### `DesPartCompanyOffer.orderMultiple` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `orderMultiple` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 The number of items that must be ordered together.
 
-#### `DesPartCompanyOffer.packaging` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `packaging` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The packaging of parts (e.g., Tape, Reel).
 
-#### `DesPartCompanyOffer.prices` · [`[DesPartPricePoint!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-price-point.md) non-null object library-management
+#### `prices` · [`[DesPartPricePoint!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-price-point.md) non-null object
 
 A collection of price points for the offer, sorted by minimum order quantity.
 
-#### `DesPartCompanyOffer.sku` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sku` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The stock keeping unit used by the internal distributor.
 
-#### `DesPartCompanyOffer.updated` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `updated` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The last update date.

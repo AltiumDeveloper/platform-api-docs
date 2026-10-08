@@ -13,7 +13,7 @@ Money value of a BOM element attribute.
 
 ### Interfaces
 
-#### [`BomItemElementAttributeValue`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element-attribute-value.md) interface procurement
+#### [`BomItemElementAttributeValue`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element-attribute-value.md) interface
 
 Base type of a BOM element attribute value.
 
@@ -28,18 +28,18 @@ type BomItemElementAttributeMoneyValue implements BomItemElementAttributeValue {
 
 ### Fields
 
-#### `BomItemElementAttributeMoneyValue.amount` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `amount` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 The specified amount.
 
-#### `BomItemElementAttributeMoneyValue.attribute` · [`BomItemElementAttribute!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-element-attribute.md) non-null object procurement
+#### `attribute` · [`BomItemElementAttribute!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-element-attribute.md) non-null object
 
 The attribute the value belongs to.
 
-#### `BomItemElementAttributeMoneyValue.currency` · [`BomCurrency!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-currency.md) non-null object procurement
+#### `currency` · [`BomCurrency!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-currency.md) non-null object
 
 Currency of the specified amount.
 
-#### `BomItemElementAttributeMoneyValue.displayValue` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `displayValue` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Display value of the attribute.

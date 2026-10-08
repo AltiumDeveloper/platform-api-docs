@@ -9,7 +9,13 @@ deprecated: false
 
 # platform.token.byWorkspace
 
-Gets a list of `PlatformToken` the user has access to in the Workspace, determined by the access token.
+Gets a list of [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) the user has access to in the Workspace, determined by the access token.
+
+### Type
+
+#### [`PlatformTokenConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-connection.md) object
+
+A connection to a list of items.
 
 ```graphql
 platform {
@@ -28,28 +34,22 @@ platform {
 
 ### Arguments
 
-#### `byWorkspace.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-#### `byWorkspace.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-#### `byWorkspace.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-#### `byWorkspace.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-#### `byWorkspace.order` · [`[PlatformTokenSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-sort-input.md) list input platform
+#### `order` · [`[PlatformTokenSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-sort-input.md) list input
 
-#### `byWorkspace.where` · [`PlatformTokenFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-filter-input.md) input platform
-
-### Type
-
-#### [`PlatformTokenConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-connection.md) object platform
-
-A connection to a list of items.
+#### `where` · [`PlatformTokenFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-filter-input.md) input

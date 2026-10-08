@@ -31,38 +31,38 @@ input DesPartUploadLibraryPartsColumnMappingInput {
 
 ### Fields
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.categoryNameColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `categoryNameColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for category name.
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.datasheetUrlColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `datasheetUrlColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for datasheet URL.
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.descriptionColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `descriptionColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for description.
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.documents` · [`[DesPartDocumentMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-document-mapping-input.md) list input library-management
+#### `documents` · [`[DesPartDocumentMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-document-mapping-input.md) list input
 
 Document mappings.
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.imageUrlColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `imageUrlColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for image URL.
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.manufacturerNameColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `manufacturerNameColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for manufacturer name.
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.mpnColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `mpnColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for MPN.
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.sellers` · [`[DesPartSellerMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-seller-mapping-input.md) list input library-management
+#### `sellers` · [`[DesPartSellerMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-seller-mapping-input.md) list input
 
 Seller mappings.
 
-#### `DesPartUploadLibraryPartsColumnMappingInput.specs` · [`[DesPartSpecMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-spec-mapping-input.md) list input library-management
+#### `specs` · [`[DesPartSpecMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-spec-mapping-input.md) list input
 
 Spec mappings.

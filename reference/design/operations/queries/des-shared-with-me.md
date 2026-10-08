@@ -17,6 +17,6 @@ desSharedWithMe: DesSharedWithMe!
 
 ### Type
 
-#### [`DesSharedWithMe`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me.md) object design
+#### [`DesSharedWithMe`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me.md) object
 
 Projects and manufacture packages shared with user.

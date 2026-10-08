@@ -19,4 +19,4 @@ union SupSolutionTemplateIndexSolutionTemplateError = SupSolutionTemplateOperati
 
 ### Possible types
 
-#### [`SupSolutionTemplateIndexSolutionTemplateError.SupSolutionTemplateOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md) object supply
+#### [`SupSolutionTemplateOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md) object

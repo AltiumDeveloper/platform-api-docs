@@ -24,10 +24,10 @@ input GloCusExecuteExtensionPointInput {
 
 ### Fields
 
-#### `GloCusExecuteExtensionPointInput.extensionPointId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `extensionPointId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier of the extension point.
 
-#### `GloCusExecuteExtensionPointInput.parameters` · [`[GloCusAssignmentExecutionParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-execution-parameter-input.md) list input customization
+#### `parameters` · [`[GloCusAssignmentExecutionParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-execution-parameter-input.md) list input
 
 Parameters passed to every dispatched assignment.

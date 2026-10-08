@@ -24,10 +24,10 @@ enum GloCusExecutionContext {
 
 ### Values
 
-#### `GloCusExecutionContext.SYSTEM`
+#### `SYSTEM`
 
 Extension points assignments are executed under the system context.
 
-#### `GloCusExecutionContext.USER`
+#### `USER`
 
 Extension point assignments are executed under the user context.

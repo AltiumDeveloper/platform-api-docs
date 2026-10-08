@@ -24,6 +24,6 @@ enum DesCadBoardCopperRegionType {
 
 ### Values
 
-#### `DesCadBoardCopperRegionType.PAD`
+#### `PAD`
 
-#### `DesCadBoardCopperRegionType.REGION`
+#### `REGION`

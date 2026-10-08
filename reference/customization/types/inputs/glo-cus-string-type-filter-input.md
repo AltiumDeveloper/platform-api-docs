@@ -23,8 +23,8 @@ input GloCusStringTypeFilterInput {
 
 ### Fields
 
-#### `GloCusStringTypeFilterInput.and` · [`[GloCusStringTypeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) list input customization
+#### `and` · [`[GloCusStringTypeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) list input
 
-#### `GloCusStringTypeFilterInput.eq` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `eq` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `GloCusStringTypeFilterInput.or` · [`[GloCusStringTypeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) list input customization
+#### `or` · [`[GloCusStringTypeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) list input

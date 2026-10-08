@@ -11,6 +11,12 @@ deprecated: false
 
 Adds part choices of the specified component.
 
+### Type
+
+#### [`DesAddComponentPartChoicesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-add-component-part-choices-payload.md) object
+
+Payload associated with adding part choices for a component.
+
 ```graphql
 desAddComponentPartChoices(
   input: DesAddComponentPartChoicesInput!
@@ -19,10 +25,4 @@ desAddComponentPartChoices(
 
 ### Arguments
 
-#### `desAddComponentPartChoices.input` · [`DesAddComponentPartChoicesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-add-component-part-choices-input.md) non-null input library-management
-
-### Type
-
-#### [`DesAddComponentPartChoicesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-add-component-part-choices-payload.md) object library-management
-
-Payload associated with adding part choices for a component.
+#### `input` · [`DesAddComponentPartChoicesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-add-component-part-choices-input.md) non-null input

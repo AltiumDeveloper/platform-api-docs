@@ -26,18 +26,18 @@ type DesFootprintConnection {
 
 ### Fields
 
-#### `DesFootprintConnection.edges` · [`[DesFootprintEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint-edge.md) list object library-management
+#### `edges` · [`[DesFootprintEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint-edge.md) list object
 
 A list of edges.
 
-#### `DesFootprintConnection.nodes` · [`[DesFootprint!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) list object library-management
+#### `nodes` · [`[DesFootprint!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) list object
 
 A flattened list of the nodes.
 
-#### `DesFootprintConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesFootprintConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

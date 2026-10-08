@@ -11,6 +11,10 @@ deprecated: false
 
 Scaffolds a new solution with projects and optional empty linked ESD document.
 
+### Type
+
+#### [`SolBldCreateSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-create-solution-payload.md) object
+
 ```graphql
 solBldCreateSolution(
   input: SolBldCreateSolutionInput!
@@ -19,8 +23,4 @@ solBldCreateSolution(
 
 ### Arguments
 
-#### `solBldCreateSolution.input` · [`SolBldCreateSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-create-solution-input.md) non-null input platform
-
-### Type
-
-#### [`SolBldCreateSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-create-solution-payload.md) object platform
+#### `input` · [`SolBldCreateSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-create-solution-input.md) non-null input

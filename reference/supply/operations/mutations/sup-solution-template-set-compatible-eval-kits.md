@@ -11,6 +11,12 @@ deprecated: false
 
 Replace all compatible eval kits on a solution template.
 
+### Type
+
+#### [`SupSolutionTemplateSetCompatibleEvalKitsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-compatible-eval-kits-payload.md) object
+
+Payload for replacing all compatible eval kits on a solution template.
+
 ```graphql
 supSolutionTemplateSetCompatibleEvalKits(
   input: SupSolutionTemplateSetCompatibleEvalKitsInput!
@@ -19,10 +25,4 @@ supSolutionTemplateSetCompatibleEvalKits(
 
 ### Arguments
 
-#### `supSolutionTemplateSetCompatibleEvalKits.input` · [`SupSolutionTemplateSetCompatibleEvalKitsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-compatible-eval-kits-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateSetCompatibleEvalKitsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-compatible-eval-kits-payload.md) object supply
-
-Payload for replacing all compatible eval kits on a solution template.
+#### `input` · [`SupSolutionTemplateSetCompatibleEvalKitsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-compatible-eval-kits-input.md) non-null input

@@ -11,6 +11,12 @@ deprecated: false
 
 Searches a project WIP variant by its name.
 
+### Type
+
+#### [`DesWipVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md) object
+
+A variant contains a specific configuration of a base design.
+
 ```graphql
 desWipVariantByVariantName(
   projectId: ID!
@@ -20,16 +26,10 @@ desWipVariantByVariantName(
 
 ### Arguments
 
-#### `desWipVariantByVariantName.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The project identifier.
 
-#### `desWipVariantByVariantName.variantName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `variantName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The variant name.
-
-### Type
-
-#### [`DesWipVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md) object design
-
-A variant contains a specific configuration of a base design.

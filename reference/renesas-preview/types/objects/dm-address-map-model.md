@@ -19,7 +19,8 @@ Address map for the device including memory and peripheral regions.
 
 ### Common Data Model
 
-- [AddressMap](https://altiumdeveloper.github.io/cdm/classes/dm_AddressMap/) — Address map for the device including memory and peripheral regions.
+- [AddressMap](https://w3id.org/altium/cdm/deviceModel/AddressMap) — Address map for the device including memory and peripheral regions.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/AddressMap`](https://w3id.org/altium/cdm/deviceModel/AddressMap)
 
 ### Member Of
 
@@ -33,6 +34,6 @@ type DmAddressMapModel {
 
 ### Fields
 
-#### `DmAddressMapModel.addressSegments` · [`[DmAddressSegment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-segment.md) non-null object renesas-preview
+#### `addressSegments` · [`[DmAddressSegment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-segment.md) non-null object
 
 Address segments (block containers with total size and nested blocks).

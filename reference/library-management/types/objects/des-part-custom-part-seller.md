@@ -30,34 +30,34 @@ type DesPartCustomPartSeller {
 
 ### Fields
 
-#### `DesPartCustomPartSeller.currency` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `currency` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The currency code.
 
-#### `DesPartCustomPartSeller.prices` · [`[DesPartCustomPartPricePoint!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-custom-part-price-point.md) non-null object library-management
+#### `prices` · [`[DesPartCustomPartPricePoint!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-custom-part-price-point.md) non-null object
 
 A collection of price points.
 
-#### `DesPartCustomPartSeller.sellerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sellerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The display name of the seller.
 
-#### `DesPartCustomPartSeller.sellerUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sellerUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL for the seller.
 
-#### `DesPartCustomPartSeller.sku` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sku` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The stock keeping unit.
 
-#### `DesPartCustomPartSeller.specs` · [`[DesPartCustomPartSellerSpec!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-custom-part-seller-spec.md) non-null object library-management
+#### `specs` · [`[DesPartCustomPartSellerSpec!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-custom-part-seller-spec.md) non-null object
 
 A collection of seller specifications.
 
-#### `DesPartCustomPartSeller.stock` · [`[DesPartCustomPartStockItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-custom-part-stock-item.md) non-null object library-management
+#### `stock` · [`[DesPartCustomPartStockItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-custom-part-stock-item.md) non-null object
 
 A collection of stock items.
 
-#### `DesPartCustomPartSeller.updatedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `updatedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The last update time.

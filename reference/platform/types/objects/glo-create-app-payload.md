@@ -23,8 +23,8 @@ type GloCreateAppPayload {
 
 ### Fields
 
-#### `GloCreateAppPayload.errors` · [`[GloCreateAppError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-error.md) list union platform
+#### `errors` · [`[GloCreateAppError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-error.md) list union
 
-#### `GloCreateAppPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object
 
-#### `GloCreateAppPayload.warnings` · [`[GloCreateAppWarning!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-warning.md) list object platform
+#### `warnings` · [`[GloCreateAppWarning!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-warning.md) list object

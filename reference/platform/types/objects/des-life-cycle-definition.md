@@ -9,11 +9,13 @@ deprecated: false
 
 # DesLifeCycleDefinition
 
-Revision naming scheme details obtained by `desLifeCycleDefinitions`.
+Revision naming scheme details obtained by [`desLifeCycleDefinitions`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-life-cycle-definitions.md).
 
 ### Common Data Model
 
-- [Lifecycle Definition](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleDefinition/) — Defines the set of states that an entity can transition through in its lifecycle. This definition clarifies what stage a revision of an entity has reached in its 'life' and what it can be safely used for. Different entities can have different lifecycle definitions assigned to them.
+- [Lifecycle Definition](https://w3id.org/altium/cdm/platform/LifecycleDefinition) — Defines the set of states that an entity can transition through in its lifecycle. This definition clarifies what stage a revision of an entity has reached in its 'life' and what it can be safely used for. Different entities can have different lifecycle definitions assigned to them.
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/LifecycleDefinition`](https://w3id.org/altium/cdm/platform/LifecycleDefinition)
   - GRID: `grid:workspace:{workspace-id}:platform:lifecycle-definition/{id}`
 
 ### Returned By
@@ -44,56 +46,56 @@ type DesLifeCycleDefinition {
 
 ### Fields
 
-#### `DesLifeCycleDefinition.contentTypes` · [`[DesContentTypeKind!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) non-null enum platform
+#### `contentTypes` · [`[DesContentTypeKind!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) non-null enum
 
-The `DesContentTypeKind` list for this life cycle definition.
+The [`DesContentTypeKind`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) list for this life cycle definition.
 
-#### `DesLifeCycleDefinition.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` this life cycle definition was created.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) this life cycle definition was created.
 
-#### `DesLifeCycleDefinition.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 The user this life cycle definition was created by.
 
-#### `DesLifeCycleDefinition.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The node identifier.
 
-#### `DesLifeCycleDefinition.isControlledPerContentType` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isControlledPerContentType` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Returns `true` if the life cycle definition is controlled per content type.
 
-#### `DesLifeCycleDefinition.isRevisionSchemeAssigned` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isRevisionSchemeAssigned` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
-Tells if this life cycle definition is automatically assigned the first `DesLifeCycleState` when a revision is released.
+Tells if this life cycle definition is automatically assigned the first [`DesLifeCycleState`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state.md) when a revision is released.
 
-#### `DesLifeCycleDefinition.lifeCycleManagementType` · [`DesLifeCycleManagementType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-life-cycle-management-type.md) non-null enum platform
+#### `lifeCycleManagementType` · [`DesLifeCycleManagementType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-life-cycle-management-type.md) non-null enum
 
 Type of life cycle management.
 
-#### `DesLifeCycleDefinition.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this life cycle definition.
 
-#### `DesLifeCycleDefinition.stages` · [`[DesLifeCycleStage!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-stage.md) non-null object platform
+#### `stages` · [`[DesLifeCycleStage!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-stage.md) non-null object
 
-The `DesLifeCycleStage` list for this life cycle definition.
+The [`DesLifeCycleStage`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-stage.md) list for this life cycle definition.
 
-#### `DesLifeCycleDefinition.stateTransitions` · [`[DesLifeCycleStateTransition!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition.md) non-null object platform
+#### `stateTransitions` · [`[DesLifeCycleStateTransition!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition.md) non-null object
 
-The `DesLifeCycleStateTransition` list for this life cycle definition.
+The [`DesLifeCycleStateTransition`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-state-transition.md) list for this life cycle definition.
 
-#### `DesLifeCycleDefinition.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` this life cycle definition was last updated.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) this life cycle definition was last updated.
 
-#### `DesLifeCycleDefinition.updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 The user this life cycle definition was last updated by.
 
 #### Deprecated
 
-#### `DesLifeCycleDefinition.lifeCycleDefinitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `lifeCycleDefinitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Use `id` instead.

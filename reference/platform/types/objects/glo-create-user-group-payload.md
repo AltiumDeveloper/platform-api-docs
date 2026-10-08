@@ -23,6 +23,6 @@ type GloCreateUserGroupPayload {
 
 ### Fields
 
-#### `GloCreateUserGroupPayload.userGroup` · [`GloUserGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-group.md) object platform
+#### `userGroup` · [`GloUserGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-group.md) object
 
 User group.

@@ -27,6 +27,6 @@ type DesWorkspaceInsUserSettings {
 
 ### Fields
 
-#### `DesWorkspaceInsUserSettings.projectsSettings` · [`DesWorkspaceInsProjectsSettings!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-projects-settings.md) non-null object insights
+#### `projectsSettings` · [`DesWorkspaceInsProjectsSettings!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-projects-settings.md) non-null object
 
 Project settings that influence which insights are shown.

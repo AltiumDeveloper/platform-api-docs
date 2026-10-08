@@ -11,6 +11,12 @@ deprecated: false
 
 Adds users to the specified group.
 
+### Type
+
+#### [`DesAddUsersToGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-add-users-to-group-payload.md) object
+
+Payload associated with adding users to group.
+
 ```graphql
 desAddUsersToGroup(
   input: DesAddUsersToGroupInput!
@@ -19,10 +25,4 @@ desAddUsersToGroup(
 
 ### Arguments
 
-#### `desAddUsersToGroup.input` · [`DesAddUsersToGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-add-users-to-group-input.md) non-null input platform
-
-### Type
-
-#### [`DesAddUsersToGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-add-users-to-group-payload.md) object platform
-
-Payload associated with adding users to group.
+#### `input` · [`DesAddUsersToGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-add-users-to-group-input.md) non-null input

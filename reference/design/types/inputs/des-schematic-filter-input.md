@@ -26,14 +26,14 @@ input DesSchematicFilterInput {
 
 ### Fields
 
-#### `DesSchematicFilterInput.and` · [`[DesSchematicFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-schematic-filter-input.md) list input design
+#### `and` · [`[DesSchematicFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-schematic-filter-input.md) list input
 
-#### `DesSchematicFilterInput.documentId` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `documentId` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 The reference identifier for this schematic.
 
-#### `DesSchematicFilterInput.documentName` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `documentName` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 The document file name.
 
-#### `DesSchematicFilterInput.or` · [`[DesSchematicFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-schematic-filter-input.md) list input design
+#### `or` · [`[DesSchematicFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-schematic-filter-input.md) list input

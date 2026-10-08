@@ -30,36 +30,36 @@ input DesUpdateFolderInput {
 
 ### Fields
 
-#### `DesUpdateFolderInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 New description of the folder. Not updated if omitted or set to `null`.
 
-#### `DesUpdateFolderInput.folderId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `folderId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Reference identifier for the folder to update.
 
-#### `DesUpdateFolderInput.folderType` · [`DesFolderType`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-folder-type.md) enum platform
+#### `folderType` · [`DesFolderType`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-folder-type.md) enum
 
 New folder type. Not updated if omitted or set to `null`.
 
-#### `DesUpdateFolderInput.itemNamingSchemeTemplate` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `itemNamingSchemeTemplate` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 New naming scheme for the folder items. Not updated if omitted or set to `null`.
 
-#### `DesUpdateFolderInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 New name of the folder. Not updated if omitted or set to `null`.
 
-#### `DesUpdateFolderInput.permissions` · [`[DesUpdateFolderPermissionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-permission-input.md) list input platform
+#### `permissions` · [`[DesUpdateFolderPermissionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-permission-input.md) list input
 
 New folder permissions (non recursive). Not updated if omitted or set to `null`.
 
-#### `DesUpdateFolderInput.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 URL of the workspace in which the folder exists.
 
 #### Deprecated
 
-#### `DesUpdateFolderInput.id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar common
+#### `id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar
 
 > **Deprecated:** Use `workspaceUrl` and `folderId` instead.

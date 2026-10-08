@@ -23,6 +23,6 @@ input GloScrScriptPackageInput {
 
 ### Fields
 
-#### `GloScrScriptPackageInput.fileToken` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileToken` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The token used to access the script package file.

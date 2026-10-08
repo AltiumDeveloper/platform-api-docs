@@ -30,10 +30,10 @@ type DmRequiresProvidesMapping {
 
 ### Fields
 
-#### `DmRequiresProvidesMapping.provides` · [`DmFspProvides`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-provides.md) object renesas-preview
+#### `provides` · [`DmFspProvides`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-provides.md) object
 
 The provided interface that satisfies the requirement, if resolved.
 
-#### `DmRequiresProvidesMapping.requires` · [`DmFspRequires!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-requires.md) non-null object renesas-preview
+#### `requires` · [`DmFspRequires!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-requires.md) non-null object
 
 The specific requirement entry.

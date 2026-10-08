@@ -22,6 +22,6 @@ type PlatformTokenDeletePayload {
 
 ### Fields
 
-#### `PlatformTokenDeletePayload.errors` · [`[PlatformTokenDeleteError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-token-delete-error.md) list union platform
+#### `errors` · [`[PlatformTokenDeleteError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-token-delete-error.md) list union
 
-#### `PlatformTokenDeletePayload.tokenId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `tokenId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

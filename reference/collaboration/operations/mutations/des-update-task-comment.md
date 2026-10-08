@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the specified task comment.
 
+### Type
+
+#### [`DesUpdateTaskCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-update-task-comment-payload.md) object
+
+Payload associated with updating a task comment.
+
 ```graphql
 desUpdateTaskComment(
   input: DesUpdateTaskCommentInput!
@@ -19,10 +25,4 @@ desUpdateTaskComment(
 
 ### Arguments
 
-#### `desUpdateTaskComment.input` · [`DesUpdateTaskCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-update-task-comment-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesUpdateTaskCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-update-task-comment-payload.md) object collaboration
-
-Payload associated with updating a task comment.
+#### `input` · [`DesUpdateTaskCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-update-task-comment-input.md) non-null input

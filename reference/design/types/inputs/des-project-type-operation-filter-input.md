@@ -24,10 +24,10 @@ input DesProjectTypeOperationFilterInput {
 
 ### Fields
 
-#### `DesProjectTypeOperationFilterInput.eq` · [`DesProjectType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) enum design
+#### `eq` · [`DesProjectType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) enum
 
-#### `DesProjectTypeOperationFilterInput.in` · [`[DesProjectType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) list enum design
+#### `in` · [`[DesProjectType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) list enum
 
-#### `DesProjectTypeOperationFilterInput.neq` · [`DesProjectType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) enum design
+#### `neq` · [`DesProjectType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) enum
 
-#### `DesProjectTypeOperationFilterInput.nin` · [`[DesProjectType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) list enum design
+#### `nin` · [`[DesProjectType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) list enum

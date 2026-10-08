@@ -27,22 +27,22 @@ enum DesRevisionNamingPolicy {
 
 ### Values
 
-#### `DesRevisionNamingPolicy.ALPHA_LOWER`
+#### `ALPHA_LOWER`
 
 Lower case letters.
 
-#### `DesRevisionNamingPolicy.ALPHA_UPPER`
+#### `ALPHA_UPPER`
 
 Upper case letters.
 
-#### `DesRevisionNamingPolicy.ASME_Y14_35M`
+#### `ASME_Y14_35M`
 
 Revision letters per ASME Y14.35M standard: ABCDEFGHJKLMNPRTUVWY.
 
-#### `DesRevisionNamingPolicy.NUMERIC_ONE`
+#### `NUMERIC_ONE`
 
 Number whose sequence starts at 1.
 
-#### `DesRevisionNamingPolicy.NUMERIC_ZERO`
+#### `NUMERIC_ZERO`
 
 Number whose sequence starts at 0.

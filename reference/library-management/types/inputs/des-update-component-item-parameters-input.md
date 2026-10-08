@@ -25,14 +25,14 @@ input DesUpdateComponentItemParametersInput {
 
 ### Fields
 
-#### `DesUpdateComponentItemParametersInput.componentId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `componentId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Component identifier.
 
-#### `DesUpdateComponentItemParametersInput.parameters` · [`[DesComponentItemParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-item-parameter-input.md) non-null input library-management
+#### `parameters` · [`[DesComponentItemParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-item-parameter-input.md) non-null input
 
 Parameters to describe the component item.
 
-#### `DesUpdateComponentItemParametersInput.replaceExisting` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `replaceExisting` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Tells to replace all existing parameters. By default parameters are added to existing.

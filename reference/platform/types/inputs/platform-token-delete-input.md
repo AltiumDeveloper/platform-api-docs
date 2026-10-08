@@ -21,6 +21,6 @@ input PlatformTokenDeleteInput {
 
 ### Fields
 
-#### `PlatformTokenDeleteInput.tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The identifier of the `PlatformToken` to delete.
+The identifier of the [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) to delete.

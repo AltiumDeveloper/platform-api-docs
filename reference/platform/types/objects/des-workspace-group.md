@@ -13,7 +13,9 @@ The information about the workspace group.
 
 ### Common Data Model
 
-- [Workspace Group](https://altiumdeveloper.github.io/cdm/classes/plt_WorkspaceGroup/) — Workspace Group represents a logical collection of users within a workspace, used to manage access control, permissions, and collaboration roles across projects and data assets.
+- [Workspace Group](https://w3id.org/altium/cdm/platform/WorkspaceGroup) — Workspace Group represents a logical collection of users within a workspace, used to manage access control, permissions, and collaboration roles across projects and data assets.
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/WorkspaceGroup`](https://w3id.org/altium/cdm/platform/WorkspaceGroup)
   - GRID: `grid:workspace:{workspace-id}:team:group/{id}`
 
 ### Returned By
@@ -40,28 +42,28 @@ type DesWorkspaceGroup {
 
 ### Fields
 
-#### `DesWorkspaceGroup.groupId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `groupId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A workspace-specific identifier.
 
-#### `DesWorkspaceGroup.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Identifies a workspace group.
 
-#### `DesWorkspaceGroup.members` · [`DesWorkspaceUserConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user-connection.md) object platform
+#### `members` · [`DesWorkspaceUserConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user-connection.md) object
 
-##### `DesWorkspaceGroup.members.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-##### `DesWorkspaceGroup.members.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-##### `DesWorkspaceGroup.members.orderBy` · [`DesWorkspaceUserOrderBy`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-order-by.md) enum platform
+##### `orderBy` · [`DesWorkspaceUserOrderBy`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-order-by.md) enum
 
-##### `DesWorkspaceGroup.members.sortDirection` · [`DesWorkspaceTeamSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-team-sort-direction.md) enum platform
+##### `sortDirection` · [`DesWorkspaceTeamSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-team-sort-direction.md) enum
 
-#### `DesWorkspaceGroup.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A unique name of this group within the workspace.

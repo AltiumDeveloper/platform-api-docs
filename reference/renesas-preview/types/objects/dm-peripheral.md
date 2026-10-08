@@ -19,7 +19,8 @@ A single peripheral definition, including its instances and properties.
 
 ### Common Data Model
 
-- [Peripheral](https://altiumdeveloper.github.io/cdm/classes/dm_Peripheral/) — A single peripheral definition, including its instances and properties.
+- [Peripheral](https://w3id.org/altium/cdm/deviceModel/Peripheral) — A single peripheral definition, including its instances and properties.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/Peripheral`](https://w3id.org/altium/cdm/deviceModel/Peripheral)
 
 ### Member Of
 
@@ -36,18 +37,18 @@ type DmPeripheral {
 
 ### Fields
 
-#### `DmPeripheral.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique identifier for the peripheral (e.g., sci, gpt).
 
-#### `DmPeripheral.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Display name of the peripheral.
 
-#### `DmPeripheral.peripheralInstances` · [`[DmPeripheralInstance!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-instance.md) non-null object renesas-preview
+#### `peripheralInstances` · [`[DmPeripheralInstance!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-instance.md) non-null object
 
 Instances of this peripheral present on the device (e.g., SCI0, GPT2).
 
-#### `DmPeripheral.peripheralProperties` · [`[DmPeripheralProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-property.md) non-null object renesas-preview
+#### `peripheralProperties` · [`[DmPeripheralProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-property.md) non-null object
 
 Additional properties or metadata associated with the peripheral.

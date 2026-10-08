@@ -11,6 +11,10 @@ deprecated: false
 
 Adds a new scope to an existing App.
 
+### Type
+
+#### [`GloAddAppScopePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-scope-payload.md) object
+
 ```graphql
 gloAddAppScope(
   input: GloAddAppScopeInput!
@@ -19,8 +23,4 @@ gloAddAppScope(
 
 ### Arguments
 
-#### `gloAddAppScope.input` · [`GloAddAppScopeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-scope-input.md) non-null input platform
-
-### Type
-
-#### [`GloAddAppScopePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-scope-payload.md) object platform
+#### `input` · [`GloAddAppScopeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-scope-input.md) non-null input

@@ -23,6 +23,6 @@ input BomCreateBomOfferReferenceInput {
 
 ### Fields
 
-#### `BomCreateBomOfferReferenceInput.octopart` · [`BomOctopartOfferReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-offer-reference-input.md) input procurement
+#### `octopart` · [`BomOctopartOfferReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-offer-reference-input.md) input
 
 A reference to an offer in Octopart.

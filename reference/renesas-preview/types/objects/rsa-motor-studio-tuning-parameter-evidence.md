@@ -30,12 +30,12 @@ type RsaMotorStudioTuningParameterEvidence {
 
 ### Fields
 
-#### `RsaMotorStudioTuningParameterEvidence.note` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `note` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `RsaMotorStudioTuningParameterEvidence.scopeCapture` · [`RsaMotorStudioScopeCapture`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) object renesas-preview
+#### `scopeCapture` · [`RsaMotorStudioScopeCapture`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) object
 
 Resolves the scope capture referenced by this evidence.
 
-#### `RsaMotorStudioTuningParameterEvidence.scopeCaptureId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `scopeCaptureId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `RsaMotorStudioTuningParameterEvidence.scopeProjectId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `scopeProjectId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar

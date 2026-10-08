@@ -13,11 +13,12 @@ Substitute is a replacement of a part by another within an individual BOM.
 
 ### Common Data Model
 
-- [BOM Item Substitute](https://altiumdeveloper.github.io/cdm/classes/pro_BomItemSubstitute/) — Substitute is a replacement of a part by another within an individual BOM.
+- [BOM Item Substitute](https://w3id.org/altium/cdm/procurement/BomItemSubstitute) — Substitute is a replacement of a part by another within an individual BOM.
+  - IRI: [`https://w3id.org/altium/cdm/procurement/BomItemSubstitute`](https://w3id.org/altium/cdm/procurement/BomItemSubstitute)
 
 ### Interfaces
 
-#### [`BomItemElement`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) interface procurement
+#### [`BomItemElement`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) interface
 
 An element (part) that might be used for a particular BOM item.
 
@@ -39,46 +40,46 @@ type BomItemSubstitute implements BomItemElement {
 
 ### Fields
 
-#### `BomItemSubstitute.attributeValues` · [`[BomItemElementAttributeValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element-attribute-value.md) non-null interface procurement
+#### `attributeValues` · [`[BomItemElementAttributeValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element-attribute-value.md) non-null interface
 
 Values of custom element attributes.
 
-#### `BomItemSubstitute.componentReference` · [`BomComponentReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-component-reference.md) object procurement
+#### `componentReference` · [`BomComponentReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-component-reference.md) object
 
 A reference to a linked component.
 
-#### `BomItemSubstitute.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of the element.
 
-#### `BomItemSubstitute.elementId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `elementId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique ID of the element.
 
-#### `BomItemSubstitute.issues` · [`[BomIssue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-issue.md) non-null object procurement
+#### `issues` · [`[BomIssue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-issue.md) non-null object
 
 Issues associated with the element.
 
-#### `BomItemSubstitute.manufacturer` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `manufacturer` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Manufacturer name.
 
-#### `BomItemSubstitute.mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 MPN stands for Manufacturer Part Number. It is a unique identifier issued by manufacturers that identifies individual products.
 
-#### `BomItemSubstitute.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the element.
 
-#### `BomItemSubstitute.partId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `partId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Identifier of the linked part.
 
-#### `BomItemSubstitute.partReference` · [`BomPartReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/unions/bom-part-reference.md) union procurement
+#### `partReference` · [`BomPartReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/unions/bom-part-reference.md) union
 
 A reference to a linked part.
 
-#### `BomItemSubstitute.selectedOffer` · [`BomSelectedElementOffer`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-selected-element-offer.md) object procurement
+#### `selectedOffer` · [`BomSelectedElementOffer`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-selected-element-offer.md) object
 
 Selected offer of the element.

@@ -19,6 +19,6 @@ directive @specifiedBy(
 
 ### Arguments
 
-#### `specifiedBy.url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The specifiedBy URL points to a human-readable specification. This field will only read a result for scalar types.

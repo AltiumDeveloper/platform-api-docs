@@ -23,8 +23,8 @@ type GloCusExtensionPointParameter {
 
 ### Fields
 
-#### `GloCusExtensionPointParameter.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `GloCusExtensionPointParameter.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `GloCusExtensionPointParameter.predefinedValues` · [`[GloCusPredefinedValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-predefined-value.md) non-null object customization
+#### `predefinedValues` · [`[GloCusPredefinedValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-predefined-value.md) non-null object

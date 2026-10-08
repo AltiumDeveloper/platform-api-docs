@@ -17,6 +17,10 @@ deprecated: false
 
 Create a scope configuration for the specified project.
 
+### Type
+
+#### [`RsaMotorStudioCreateScopeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-scope-config-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioCreateScopeConfig(
   input: RsaMotorStudioCreateScopeConfigInput!
@@ -25,8 +29,4 @@ rsaMotorStudioCreateScopeConfig(
 
 ### Arguments
 
-#### `rsaMotorStudioCreateScopeConfig.input` · [`RsaMotorStudioCreateScopeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-config-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioCreateScopeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-scope-config-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioCreateScopeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-config-input.md) non-null input

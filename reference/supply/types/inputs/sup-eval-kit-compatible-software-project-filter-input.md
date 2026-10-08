@@ -26,18 +26,18 @@ input SupEvalKitCompatibleSoftwareProjectFilterInput {
 
 ### Fields
 
-#### `SupEvalKitCompatibleSoftwareProjectFilterInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Searches by description.
 
-#### `SupEvalKitCompatibleSoftwareProjectFilterInput.q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Searches by important fields (title, description).
 
-#### `SupEvalKitCompatibleSoftwareProjectFilterInput.title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Searches by title.
 
-#### `SupEvalKitCompatibleSoftwareProjectFilterInput.types` · [`[SupSoftwareProjectType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-type.md) list enum supply
+#### `types` · [`[SupSoftwareProjectType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-type.md) list enum
 
 Searches by type.

@@ -55,134 +55,134 @@ input DesReleaseComponentInput {
 
 ### Fields
 
-#### `DesReleaseComponentInput.componentComment` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `componentComment` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Comment for component.
 
-#### `DesReleaseComponentInput.componentDescription` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `componentDescription` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Description for component.
 
-#### `DesReleaseComponentInput.componentItemName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `componentItemName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of component item.
 
-#### `DesReleaseComponentInput.componentLifeCycleDefinitionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `componentLifeCycleDefinitionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 \*\*DEPRECATED\*\* Use `componentLifeCycleDefinitionNodeId` instead with a value from `DesLifeCycleDefinition.id`.
 
-#### `DesReleaseComponentInput.componentLifeCycleDefinitionNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `componentLifeCycleDefinitionNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 Life cycle definition identifier for component.
 
-#### `DesReleaseComponentInput.componentParentFolderId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `componentParentFolderId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 Destination parent folder identifier for releasing a component. If omitted or empty, `componentReleaseFolder` is required.
 
-#### `DesReleaseComponentInput.componentReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `componentReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 New child folder name for releasing a component. If omitted or empty, `componentParentFolderId` is required.
 
-#### `DesReleaseComponentInput.componentRevisionNamingSchemeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `componentRevisionNamingSchemeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 \*\*DEPRECATED\*\* Use `componentRevisionNamingSchemeNodeId` instead with a value from `DesRevisionNamingScheme.id`.
 
-#### `DesReleaseComponentInput.componentRevisionNamingSchemeNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `componentRevisionNamingSchemeNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 Revision naming scheme identifier for component.
 
-#### `DesReleaseComponentInput.componentTemplateId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `componentTemplateId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The component template identifier. The released component is linked to this template; its component type is inherited unless `componentTypeId` is set.
 
-#### `DesReleaseComponentInput.componentTypeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `componentTypeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The component type identifier. If omitted or set as `null`, no component type will be assigned.
 
-#### `DesReleaseComponentInput.datasheetReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `datasheetReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The datasheet folder path, existing or to be created.
 
-#### `DesReleaseComponentInput.datasheetReleaseFolderItemNamingSchemeTemplate` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `datasheetReleaseFolderItemNamingSchemeTemplate` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Naming scheme template for the datasheet folder.
 
-#### `DesReleaseComponentInput.datasheets` · [`[DesReleaseComponentDatasheetInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-datasheet-input.md) list input library-management
+#### `datasheets` · [`[DesReleaseComponentDatasheetInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-datasheet-input.md) list input
 
 Datasheets for component.
 
-#### `DesReleaseComponentInput.footprintFiles` · [`[DesReleaseComponentFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-file-input.md) list input library-management
+#### `footprintFiles` · [`[DesReleaseComponentFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-file-input.md) list input
 
 The footprint files. Either `footprintFiles` or `footprints` must be provided.
 
-#### `DesReleaseComponentInput.footprintItemName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `footprintItemName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The footprint name. Use null to be generated.
 
-#### `DesReleaseComponentInput.footprintLifeCycleDefinitionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `footprintLifeCycleDefinitionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 \*\*DEPRECATED\*\* Use `footprintLifeCycleDefinitionNodeId` instead with a value from `DesLifeCycleDefinition.id`.
 
-#### `DesReleaseComponentInput.footprintLifeCycleDefinitionNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `footprintLifeCycleDefinitionNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The footprint life cycle definition identifier.
 
-#### `DesReleaseComponentInput.footprintReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `footprintReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The footprint folder path, existing or to be created. Required when `footprintFiles` are provided.
 
-#### `DesReleaseComponentInput.footprintRevisionNamingSchemeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `footprintRevisionNamingSchemeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 \*\*DEPRECATED\*\* Use `footprintRevisionNamingSchemeNodeId` instead with a value from `DesRevisionNamingScheme.id`.
 
-#### `DesReleaseComponentInput.footprintRevisionNamingSchemeNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `footprintRevisionNamingSchemeNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The footprint revision naming scheme identifier.
 
-#### `DesReleaseComponentInput.footprints` · [`[DesReleaseComponentFootprintInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-footprint-input.md) list input library-management
+#### `footprints` · [`[DesReleaseComponentFootprintInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-footprint-input.md) list input
 
 Existing footprints to include. Either `footprintFiles` or `footprints` must be provided.
 
-#### `DesReleaseComponentInput.parameters` · [`[DesRevisionParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-revision-parameter-input.md) non-null input library-management
+#### `parameters` · [`[DesRevisionParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-revision-parameter-input.md) non-null input
 
 Parameters for component.
 
-#### `DesReleaseComponentInput.symbol` · [`DesReleaseComponentSymbolInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-symbol-input.md) input library-management
+#### `symbol` · [`DesReleaseComponentSymbolInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-symbol-input.md) input
 
 Existing symbol to include. Either `symbolFiles` or `symbol` must be provided.
 
-#### `DesReleaseComponentInput.symbolFiles` · [`[DesReleaseComponentFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-file-input.md) list input library-management
+#### `symbolFiles` · [`[DesReleaseComponentFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-file-input.md) list input
 
 The symbol files. Either `symbolFiles` or `symbol` must be provided.
 
-#### `DesReleaseComponentInput.symbolItemName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `symbolItemName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The symbol name. Use null to be generated.
 
-#### `DesReleaseComponentInput.symbolLifeCycleDefinitionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `symbolLifeCycleDefinitionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 \*\*DEPRECATED\*\* Use `symbolLifeCycleDefinitionNodeId` instead with a value from `DesLifeCycleDefinition.id`.
 
-#### `DesReleaseComponentInput.symbolLifeCycleDefinitionNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `symbolLifeCycleDefinitionNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The symbol life cycle definition identifier.
 
-#### `DesReleaseComponentInput.symbolReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `symbolReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The symbol folder path, existing or to be created. Required when `symbolFiles` are provided.
 
-#### `DesReleaseComponentInput.symbolRevisionNamingSchemeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `symbolRevisionNamingSchemeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 \*\*DEPRECATED\*\* Use `symbolRevisionNamingSchemeNodeId` instead with a value from `DesRevisionNamingScheme.id`.
 
-#### `DesReleaseComponentInput.symbolRevisionNamingSchemeNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `symbolRevisionNamingSchemeNodeId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The symbol revision naming scheme identifier.
 
-#### `DesReleaseComponentInput.useExistingComponentReleaseFolder` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `useExistingComponentReleaseFolder` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 When `componentReleaseFolder` is set, tells to use existing folder if any, otherwise create a new folder.
 
-#### `DesReleaseComponentInput.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Workspace URL for releasing a component.

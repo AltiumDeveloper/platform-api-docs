@@ -11,6 +11,10 @@ deprecated: false
 
 Scaffolds a new solution by software project and eval kit.
 
+### Type
+
+#### [`SolBldScaffoldingBySoftwareProjectAndEvalKitPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-software-project-and-eval-kit-payload.md) object
+
 ```graphql
 solBldScaffoldingBySoftwareProjectAndEvalKit(
   input: SolBldScaffoldingBySoftwareProjectAndEvalKitInput!
@@ -19,8 +23,4 @@ solBldScaffoldingBySoftwareProjectAndEvalKit(
 
 ### Arguments
 
-#### `solBldScaffoldingBySoftwareProjectAndEvalKit.input` · [`SolBldScaffoldingBySoftwareProjectAndEvalKitInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-software-project-and-eval-kit-input.md) non-null input platform
-
-### Type
-
-#### [`SolBldScaffoldingBySoftwareProjectAndEvalKitPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-software-project-and-eval-kit-payload.md) object platform
+#### `input` · [`SolBldScaffoldingBySoftwareProjectAndEvalKitInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-software-project-and-eval-kit-input.md) non-null input

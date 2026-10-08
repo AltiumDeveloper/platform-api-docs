@@ -17,6 +17,6 @@ desPartManufacturersByProvider: DesPartManufacturers!
 
 ### Type
 
-#### [`DesPartManufacturers`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-manufacturers.md) object library-management
+#### [`DesPartManufacturers`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-manufacturers.md) object
 
 Represents a collection of manufacturer companies by provider.

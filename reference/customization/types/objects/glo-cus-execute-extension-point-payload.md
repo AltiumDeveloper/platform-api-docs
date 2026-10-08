@@ -23,6 +23,6 @@ type GloCusExecuteExtensionPointPayload {
 
 ### Fields
 
-#### `GloCusExecuteExtensionPointPayload.executions` · [`[GloCusAssignmentExecution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-assignment-execution.md) non-null object customization
+#### `executions` · [`[GloCusAssignmentExecution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-assignment-execution.md) non-null object
 
 Per-assignment dispatch results, one entry per active assignment.

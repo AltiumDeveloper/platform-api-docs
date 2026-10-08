@@ -11,6 +11,12 @@ deprecated: false
 
 Deletes the specified user.
 
+### Type
+
+#### [`DesDeleteUserPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-user-payload.md) object
+
+Payload associated with deleting a user.
+
 ```graphql
 desDeleteUser(
   input: DesDeleteUserInput!
@@ -19,10 +25,4 @@ desDeleteUser(
 
 ### Arguments
 
-#### `desDeleteUser.input` · [`DesDeleteUserInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-user-input.md) non-null input platform
-
-### Type
-
-#### [`DesDeleteUserPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-user-payload.md) object platform
-
-Payload associated with deleting a user.
+#### `input` · [`DesDeleteUserInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-user-input.md) non-null input

@@ -33,22 +33,22 @@ type DmFspModule {
 
 ### Fields
 
-#### `DmFspModule.category` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `category` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Category or grouping for this module (for example, communication, timers).
 
-#### `DmFspModule.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique identifier for the FSP module.
 
-#### `DmFspModule.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Human-readable name of the FSP module.
 
-#### `DmFspModule.provides` · [`[DmFspProvides!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-provides.md) non-null object renesas-preview
+#### `provides` · [`[DmFspProvides!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-provides.md) non-null object
 
 Interfaces that this module provides to other modules.
 
-#### `DmFspModule.requires` · [`[DmFspRequires!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-requires.md) non-null object renesas-preview
+#### `requires` · [`[DmFspRequires!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-requires.md) non-null object
 
 Interfaces that this module requires to function.

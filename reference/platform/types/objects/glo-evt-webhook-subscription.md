@@ -13,7 +13,7 @@ Represents the webhook-based subscription.
 
 ### Interfaces
 
-#### [`GloEvtSubscription`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md) interface platform
+#### [`GloEvtSubscription`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md) interface
 
 Represents the application subscription to some events.
 
@@ -28,18 +28,18 @@ type GloEvtWebhookSubscription implements GloEvtSubscription {
 
 ### Fields
 
-#### `GloEvtWebhookSubscription.eventTypes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `eventTypes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Events of interest.
 
-#### `GloEvtWebhookSubscription.state` · [`GloEvtSubscriptionState!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-evt-subscription-state.md) non-null enum platform
+#### `state` · [`GloEvtSubscriptionState!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-evt-subscription-state.md) non-null enum
 
 State of the subscription.
 
-#### `GloEvtWebhookSubscription.subscriptionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `subscriptionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Subscription identifier.
 
-#### `GloEvtWebhookSubscription.webHookUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `webHookUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 URL of the webhook where events are delivered.

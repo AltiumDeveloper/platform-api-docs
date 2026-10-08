@@ -15,6 +15,12 @@ deprecated: false
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
+### Type
+
+#### [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) object **EXPERIMENTAL**
+
+Root GraphQL type that exposes the full device model, including interfaces, peripherals, and ports.
+
 ```graphql
 dmFullStackDeviceModel(
   deviceMpn: String!
@@ -23,10 +29,4 @@ dmFullStackDeviceModel(
 
 ### Arguments
 
-#### `dmFullStackDeviceModel.deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) object renesas-preview **EXPERIMENTAL**
-
-Root GraphQL type that exposes the full device model, including interfaces, peripherals, and ports.
+#### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

@@ -11,6 +11,12 @@ deprecated: false
 
 Updates life cycle state for the provided symbol.
 
+### Type
+
+#### [`DesUpdateSymbolLifeCycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-symbol-life-cycle-state-payload.md) object
+
+Payload associated with updating a symbol life cycle state.
+
 ```graphql
 desUpdateSymbolLifeCycleState(
   input: DesUpdateSymbolLifeCycleStateInput!
@@ -19,10 +25,4 @@ desUpdateSymbolLifeCycleState(
 
 ### Arguments
 
-#### `desUpdateSymbolLifeCycleState.input` · [`DesUpdateSymbolLifeCycleStateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-symbol-life-cycle-state-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateSymbolLifeCycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-symbol-life-cycle-state-payload.md) object library-management
-
-Payload associated with updating a symbol life cycle state.
+#### `input` · [`DesUpdateSymbolLifeCycleStateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-symbol-life-cycle-state-input.md) non-null input

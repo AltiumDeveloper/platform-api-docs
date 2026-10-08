@@ -29,20 +29,20 @@ type GloCusScriptExecutionInfo {
 
 ### Fields
 
-#### `GloCusScriptExecutionInfo.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-#### `GloCusScriptExecutionInfo.gloCusLogs` · [`GloCusScriptExecutionLogPage!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-log-page.md) non-null object customization
+#### `gloCusLogs` · [`GloCusScriptExecutionLogPage!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-log-page.md) non-null object
 
 Retrieves a page of execution logs with a specified limit.
 
-##### `GloCusScriptExecutionInfo.gloCusLogs.limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+##### `limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-##### `GloCusScriptExecutionInfo.gloCusLogs.nextToken` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `nextToken` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `GloCusScriptExecutionInfo.scriptExecutionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `scriptExecutionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `GloCusScriptExecutionInfo.scriptExecutionResult` · [`GloCusScriptExecutionResult!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-result.md) non-null object customization
+#### `scriptExecutionResult` · [`GloCusScriptExecutionResult!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-script-execution-result.md) non-null object
 
-#### `GloCusScriptExecutionInfo.status` · [`GloCusScriptExecutionStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-script-execution-status.md) non-null enum customization
+#### `status` · [`GloCusScriptExecutionStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/enums/glo-cus-script-execution-status.md) non-null enum
 
-#### `GloCusScriptExecutionInfo.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar

@@ -20,10 +20,10 @@ input DesProjectGuestFilterInput {
 
 ### Fields
 
-#### `DesProjectGuestFilterInput.globalUserIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `globalUserIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Global identifiers of the users.
 
-#### `DesProjectGuestFilterInput.text` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `text` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The text that either the guest first or last names or emails must contain. Case-insensitive.

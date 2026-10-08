@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the notification settings.
 
+### Type
+
+#### [`DesWorkspaceInsUpdateNotificationSettingsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-update-notification-settings-payload.md) object
+
+Payload returned after updating notification settings.
+
 ```graphql
 desWorkspaceInsUpdateNotificationSettings(
   input: DesWorkspaceInsNotificationSettingsInput!
@@ -19,10 +25,4 @@ desWorkspaceInsUpdateNotificationSettings(
 
 ### Arguments
 
-#### `desWorkspaceInsUpdateNotificationSettings.input` · [`DesWorkspaceInsNotificationSettingsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-notification-settings-input.md) non-null input insights
-
-### Type
-
-#### [`DesWorkspaceInsUpdateNotificationSettingsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-update-notification-settings-payload.md) object insights
-
-Payload returned after updating notification settings.
+#### `input` · [`DesWorkspaceInsNotificationSettingsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-notification-settings-input.md) non-null input

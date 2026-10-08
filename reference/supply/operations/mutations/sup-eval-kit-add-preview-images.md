@@ -11,6 +11,10 @@ deprecated: false
 
 Add preview images to an evaluation kit.
 
+### Type
+
+#### [`SupEvalKitAddPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-preview-images-payload.md) object
+
 ```graphql
 supEvalKitAddPreviewImages(
   input: SupEvalKitAddPreviewImagesInput!
@@ -19,8 +23,4 @@ supEvalKitAddPreviewImages(
 
 ### Arguments
 
-#### `supEvalKitAddPreviewImages.input` · [`SupEvalKitAddPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-add-preview-images-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitAddPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-preview-images-payload.md) object supply
+#### `input` · [`SupEvalKitAddPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-add-preview-images-input.md) non-null input

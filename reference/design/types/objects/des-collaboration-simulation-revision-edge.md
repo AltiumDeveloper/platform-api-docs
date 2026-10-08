@@ -24,10 +24,10 @@ type DesCollaborationSimulationRevisionEdge {
 
 ### Fields
 
-#### `DesCollaborationSimulationRevisionEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesCollaborationSimulationRevisionEdge.node` · [`DesCollaborationSimulationRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision.md) non-null object design
+#### `node` · [`DesCollaborationSimulationRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision.md) non-null object
 
 The item at the end of the edge.

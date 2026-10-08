@@ -22,6 +22,6 @@ input SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectInput {
 
 ### Fields
 
-#### `SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectInput.deviceConfigurationId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `deviceConfigurationId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SftDevCfgUnlinkDeviceConfigurationRevisionFromHardwareProjectInput.hardwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `hardwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

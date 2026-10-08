@@ -25,14 +25,14 @@ input SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectInput {
 
 ### Fields
 
-#### `SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectInput.addCompatibleSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `addCompatibleSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Add a new list of compatible software projects to evaluation kit.
 
-#### `SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The evaluation kit identifier.
 
-#### `SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectInput.removeCompatibleSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `removeCompatibleSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Remove a list of compatible software projects from evaluation kit.

@@ -22,6 +22,6 @@ type GloRemoveAppRedirectUriPayload {
 
 ### Fields
 
-#### `GloRemoveAppRedirectUriPayload.errors` · [`[GloRemoveAppRedirectUriError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-redirect-uri-error.md) list union platform
+#### `errors` · [`[GloRemoveAppRedirectUriError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-redirect-uri-error.md) list union
 
-#### `GloRemoveAppRedirectUriPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

@@ -13,7 +13,7 @@ Describes the source BOM snapshot used to create the current BOM.
 
 ### Interfaces
 
-#### [`BomSource`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-source.md) interface procurement
+#### [`BomSource`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-source.md) interface
 
 Describes the source used to create the current BOM (e.g., a file, a design, or other BOM).
 
@@ -27,14 +27,14 @@ type BomSnapshotSource implements BomSource {
 
 ### Fields
 
-#### `BomSnapshotSource.bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the BOM.
 
-#### `BomSnapshotSource.quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Quantity of the source (i.e., how many times the source is included into this BOM).
 
-#### `BomSnapshotSource.snapshotId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `snapshotId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the BOM snapshot.

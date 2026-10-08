@@ -23,6 +23,6 @@ type DesTerminateWorkflowsPayload {
 
 ### Fields
 
-#### `DesTerminateWorkflowsPayload.errors` · [`[DesTerminateWorkflowsError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-terminate-workflows-error.md) non-null object customization
+#### `errors` · [`[DesTerminateWorkflowsError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-terminate-workflows-error.md) non-null object
 
 Errors associated with terminating workflows.

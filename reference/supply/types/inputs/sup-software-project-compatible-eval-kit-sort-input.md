@@ -23,6 +23,6 @@ input SupSoftwareProjectCompatibleEvalKitSortInput {
 
 ### Fields
 
-#### `SupSoftwareProjectCompatibleEvalKitSortInput.evalKit` · [`SupEvalKitSortInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-input.md) input supply
+#### `evalKit` · [`SupEvalKitSortInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-input.md) input
 
 Sorting by evaluation kit.

@@ -21,4 +21,4 @@ type BomExportBomPayload {
 
 ### Fields
 
-#### `BomExportBomPayload.downloadUrl` · [`URL`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) scalar common
+#### `downloadUrl` · [`URL`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) scalar

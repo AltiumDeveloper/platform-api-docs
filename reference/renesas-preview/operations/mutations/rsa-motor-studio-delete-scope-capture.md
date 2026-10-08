@@ -17,6 +17,10 @@ deprecated: false
 
 Delete a scope capture for the specified project.
 
+### Type
+
+#### [`RsaMotorStudioDeleteScopeCapturePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-scope-capture-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioDeleteScopeCapture(
   input: RsaMotorStudioDeleteScopeCaptureInput!
@@ -25,8 +29,4 @@ rsaMotorStudioDeleteScopeCapture(
 
 ### Arguments
 
-#### `rsaMotorStudioDeleteScopeCapture.input` · [`RsaMotorStudioDeleteScopeCaptureInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-scope-capture-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioDeleteScopeCapturePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-scope-capture-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioDeleteScopeCaptureInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-scope-capture-input.md) non-null input

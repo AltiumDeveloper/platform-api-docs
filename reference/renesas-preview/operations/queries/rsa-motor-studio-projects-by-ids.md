@@ -17,6 +17,10 @@ deprecated: false
 
 Gets motor studio projects by IDs.
 
+### Type
+
+#### [`RsaMotorStudioProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioProjectsByIds(
   ids: [ID!]!
@@ -25,8 +29,4 @@ rsaMotorStudioProjectsByIds(
 
 ### Arguments
 
-#### `rsaMotorStudioProjectsByIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`RsaMotorStudioProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) object renesas-preview **EXPERIMENTAL**
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

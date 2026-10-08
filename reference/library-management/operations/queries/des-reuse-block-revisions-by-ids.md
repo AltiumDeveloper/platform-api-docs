@@ -11,6 +11,12 @@ deprecated: false
 
 Find specific reuse block revisions by their unique identifiers.
 
+### Type
+
+#### [`DesReuseBlockRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block-revision.md) object
+
+Reuse block revision information.
+
 ```graphql
 desReuseBlockRevisionsByIds(
   ids: [ID!]!
@@ -19,12 +25,6 @@ desReuseBlockRevisionsByIds(
 
 ### Arguments
 
-#### `desReuseBlockRevisionsByIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Node identifiers for the reuse block revisions.
-
-### Type
-
-#### [`DesReuseBlockRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block-revision.md) object library-management
-
-Reuse block revision information.

@@ -23,6 +23,6 @@ input SupSoftwareProjectParameterInfoInput {
 
 ### Fields
 
-#### `SupSoftwareProjectParameterInfoInput.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The title of the parameter (case-sensitive).

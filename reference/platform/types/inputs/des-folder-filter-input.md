@@ -22,18 +22,18 @@ input DesFolderFilterInput {
 
 ### Fields
 
-#### `DesFolderFilterInput.folderType` · [`DesFolderType`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-folder-type.md) enum platform
+#### `folderType` · [`DesFolderType`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-folder-type.md) enum
 
 Filters folders by their type. If null, this condition is ignored.
 
-#### `DesFolderFilterInput.matchMode` · [`DesFolderFilterMatchMode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-folder-filter-match-mode.md) enum platform
+#### `matchMode` · [`DesFolderFilterMatchMode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-folder-filter-match-mode.md) enum
 
 Specifies how multiple conditions should be combined. Use AND to match all conditions, OR to match any condition. If null, AND operator is used.
 
-#### `DesFolderFilterInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Filters folders by their name. If null, this condition is ignored.
 
-#### `DesFolderFilterInput.parentFolderGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `parentFolderGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Filters folders by the GUID of their parent folder. If null, this condition is ignored.

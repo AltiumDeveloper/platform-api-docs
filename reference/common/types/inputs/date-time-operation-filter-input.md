@@ -32,26 +32,26 @@ input DateTimeOperationFilterInput {
 
 ### Fields
 
-#### `DateTimeOperationFilterInput.eq` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `eq` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.gt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `gt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.gte` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `gte` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.in` · [`[DateTime]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) list scalar common
+#### `in` · [`[DateTime]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) list scalar
 
-#### `DateTimeOperationFilterInput.lt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `lt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.lte` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `lte` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.neq` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `neq` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.ngt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `ngt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.ngte` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `ngte` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.nin` · [`[DateTime]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) list scalar common
+#### `nin` · [`[DateTime]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) list scalar
 
-#### `DateTimeOperationFilterInput.nlt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `nlt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `DateTimeOperationFilterInput.nlte` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `nlte` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar

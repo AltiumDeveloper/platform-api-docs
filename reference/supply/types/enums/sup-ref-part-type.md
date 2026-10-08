@@ -23,14 +23,14 @@ enum SupRefPartType {
 
 ### Values
 
-#### `SupRefPartType.KEY`
+#### `KEY`
 
 Important supporting parts essential to the function of the reference design.
 
-#### `SupRefPartType.OTHER`
+#### `OTHER`
 
 Other supporting parts.
 
-#### `SupRefPartType.PRIMARY`
+#### `PRIMARY`
 
 Main parts that the reference design demonstrate.

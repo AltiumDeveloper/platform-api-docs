@@ -22,10 +22,10 @@ enum SupSoftwareProjectOrderDirection {
 
 ### Values
 
-#### `SupSoftwareProjectOrderDirection.ASC`
+#### `ASC`
 
 Ascending order.
 
-#### `SupSoftwareProjectOrderDirection.DESC`
+#### `DESC`
 
 Descending order.

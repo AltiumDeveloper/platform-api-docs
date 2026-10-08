@@ -24,10 +24,10 @@ type DesPartSearchByManufacturerPartIdsResultItem {
 
 ### Fields
 
-#### `DesPartSearchByManufacturerPartIdsResultItem.part` · [`DesPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) object library-management
+#### `part` · [`DesPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) object
 
 The found part.
 
-#### `DesPartSearchByManufacturerPartIdsResultItem.requested` · [`DesPartManufacturerPartId!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-manufacturer-part-id.md) non-null object library-management
+#### `requested` · [`DesPartManufacturerPartId!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-manufacturer-part-id.md) non-null object
 
 The requested part identifier.

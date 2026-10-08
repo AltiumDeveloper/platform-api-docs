@@ -17,9 +17,9 @@ Represents a `PlatformWorkspaceRefreshToken`, which is used for authentication a
 
 ### Interfaces
 
-#### [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) interface platform
+#### [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) interface
 
-Represents a `PlatformToken`, which is used for authentication and authorization when accessing the Altium platform.
+Represents a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md), which is used for authentication and authorization when accessing the Altium platform.
 
 ```graphql
 type PlatformWorkspaceRefreshToken implements PlatformToken {
@@ -41,54 +41,54 @@ type PlatformWorkspaceRefreshToken implements PlatformToken {
 
 ### Fields
 
-#### `PlatformWorkspaceRefreshToken.clientId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `clientId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The client identifier for the \*OAuth 2.0 client\* associated with this `PlatformWorkspaceRefreshToken`.
 
-#### `PlatformWorkspaceRefreshToken.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The date-time that the `PlatformWorkspaceRefreshToken` was created.
 
-#### `PlatformWorkspaceRefreshToken.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
-The `DesUser` that created the `PlatformWorkspaceRefreshToken`.
+The [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) that created the `PlatformWorkspaceRefreshToken`.
 
-#### `PlatformWorkspaceRefreshToken.deletedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `deletedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The date-time that the `PlatformWorkspaceRefreshToken` was deleted. Null if the `PlatformWorkspaceRefreshToken` has not been deleted.
 
-#### `PlatformWorkspaceRefreshToken.deletedBy` · [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object platform
+#### `deletedBy` · [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object
 
-The `DesUser` that deleted the `PlatformWorkspaceRefreshToken`.
+The [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) that deleted the `PlatformWorkspaceRefreshToken`.
 
-#### `PlatformWorkspaceRefreshToken.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The description of the `PlatformWorkspaceRefreshToken`.
 
-#### `PlatformWorkspaceRefreshToken.expiresAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `expiresAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The date-time that the `PlatformWorkspaceRefreshToken` expires.
 
-#### `PlatformWorkspaceRefreshToken.maskedRefreshToken` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `maskedRefreshToken` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The masked value of the `PlatformWorkspaceRefreshToken`.
 
-#### `PlatformWorkspaceRefreshToken.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the `PlatformWorkspaceRefreshToken`.
 
-#### `PlatformWorkspaceRefreshToken.tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the `PlatformWorkspaceRefreshToken`.
 
-#### `PlatformWorkspaceRefreshToken.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The date-time that the `PlatformWorkspaceRefreshToken` was last updated.
 
-#### `PlatformWorkspaceRefreshToken.updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
-The `DesUser` that last updated the `PlatformWorkspaceRefreshToken`.
+The [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) that last updated the `PlatformWorkspaceRefreshToken`.
 
-#### `PlatformWorkspaceRefreshToken.workspaceId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `workspaceId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the Workspace that the `PlatformWorkspaceRefreshToken` belongs to.

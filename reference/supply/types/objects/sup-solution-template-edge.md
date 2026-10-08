@@ -24,10 +24,10 @@ type SupSolutionTemplateEdge {
 
 ### Fields
 
-#### `SupSolutionTemplateEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `SupSolutionTemplateEdge.node` · [`SupSolutionTemplate!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template.md) non-null object supply
+#### `node` · [`SupSolutionTemplate!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template.md) non-null object
 
 The item at the end of the edge.

@@ -29,30 +29,30 @@ type DesCadComponentVariation {
 
 ### Fields
 
-#### `DesCadComponentVariation.componentTypeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `componentTypeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD component type identifier.
 
-#### `DesCadComponentVariation.designator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `designator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD component variation designator.
 
-#### `DesCadComponentVariation.location` · [`DesCadPoint!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-point.md) non-null object design
+#### `location` · [`DesCadPoint!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-point.md) non-null object
 
 CAD component variation location.
 
-#### `DesCadComponentVariation.modelInComponentTransform` · [`DesCadBodyTransformation`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-body-transformation.md) object design
+#### `modelInComponentTransform` · [`DesCadBodyTransformation`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-body-transformation.md) object
 
 In case the component contains a single 3D body, the body's position relative to the component's origin point is stored here.
 
-#### `DesCadComponentVariation.placement` · [`DesCadBoardComponentPlacement!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-component-placement.md) non-null enum design
+#### `placement` · [`DesCadBoardComponentPlacement!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-component-placement.md) non-null enum
 
 CAD component variation placement.
 
-#### `DesCadComponentVariation.rotation` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `rotation` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 CAD component variation rotation.
 
-#### `DesCadComponentVariation.variantKind` · [`DesCadComponentVariationKind!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-component-variation-kind.md) non-null enum design
+#### `variantKind` · [`DesCadComponentVariationKind!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-component-variation-kind.md) non-null enum
 
 CAD component variant kind.

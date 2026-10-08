@@ -23,14 +23,14 @@ input SupSolutionTemplateUpdateParameterInfoInput {
 
 ### Fields
 
-#### `SupSolutionTemplateUpdateParameterInfoInput.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A detailed explanation of the parameter.
 
-#### `SupSolutionTemplateUpdateParameterInfoInput.imageUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `imageUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of the image associated with this parameter.
 
-#### `SupSolutionTemplateUpdateParameterInfoInput.summary` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `summary` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 A brief summary of the parameter.

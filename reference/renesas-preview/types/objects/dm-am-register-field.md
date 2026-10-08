@@ -19,7 +19,8 @@ Bit field within a register.
 
 ### Common Data Model
 
-- [RegisterField](https://altiumdeveloper.github.io/cdm/classes/dm_RegisterField/) — A bit field within a register.
+- [RegisterField](https://w3id.org/altium/cdm/deviceModel/RegisterField) — A bit field within a register.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/RegisterField`](https://w3id.org/altium/cdm/deviceModel/RegisterField)
 
 ### Member Of
 
@@ -38,26 +39,26 @@ type DmAmRegisterField {
 
 ### Fields
 
-#### `DmAmRegisterField.access` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `access` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Access type of the field (e.g., RO, RW).
 
-#### `DmAmRegisterField.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Field description.
 
-#### `DmAmRegisterField.enums` · [`[DmAmFieldEnum!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-field-enum.md) non-null object renesas-preview
+#### `enums` · [`[DmAmFieldEnum!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-field-enum.md) non-null object
 
 Enumerated values for the field.
 
-#### `DmAmRegisterField.lsb` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `lsb` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Least significant bit index of the field.
 
-#### `DmAmRegisterField.msb` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `msb` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Most significant bit index of the field.
 
-#### `DmAmRegisterField.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Field name.

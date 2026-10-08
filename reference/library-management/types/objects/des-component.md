@@ -13,7 +13,9 @@ A component contains the parametric details of a PCB part.
 
 ### Common Data Model
 
-- [Component Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentRevision/) — Revision of a Component.
+- [Component Revision](https://w3id.org/altium/cdm/library/ComponentRevision) — Revision of a Component.
+
+  - IRI: [`https://w3id.org/altium/cdm/library/ComponentRevision`](https://w3id.org/altium/cdm/library/ComponentRevision)
   - GRID: `grid:workspace:{workspace-id}:library:component-revision/{id}`
 
 ### Returned By
@@ -26,7 +28,7 @@ A component contains the parametric details of a PCB part.
 
 ### Interfaces
 
-#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface common
+#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface
 
 The node interface is implemented by entities that have a global unique identifier.
 
@@ -57,66 +59,66 @@ type DesComponent implements Node {
 
 ### Fields
 
-#### `DesComponent.comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The additional information for this component.
 
-#### `DesComponent.componentTemplate` · [`DesComponentTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-revision.md) object library-management
+#### `componentTemplate` · [`DesComponentTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-revision.md) object
 
 The component template revision linked to this component revision, if any.
 
-#### `DesComponent.componentType` · [`DesComponentType`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-type.md) object library-management
+#### `componentType` · [`DesComponentType`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-type.md) object
 
 The component type classification for this component.
 
-#### `DesComponent.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` when this component was created.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) when this component was created.
 
-#### `DesComponent.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The user who created this component.
 
-#### `DesComponent.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The summary of function or other performance details for this component.
 
-#### `DesComponent.details` · [`DesComponentDetails!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-details.md) non-null object library-management
+#### `details` · [`DesComponentDetails!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-details.md) non-null object
 
-More component data, consider using only with `desComponentById`.
+More component data, consider using only with [`desComponentById`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/queries/des-component-by-id.md).
 
-#### `DesComponent.folder` · [`DesFolder`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md) object platform
+#### `folder` · [`DesFolder`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md) object Platform
 
 The component folder.
 
-#### `DesComponent.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-The node identifier used by `desComponentById`. Unmanaged components may be not found.
+The node identifier used by [`desComponentById`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/queries/des-component-by-id.md). Unmanaged components may be not found.
 
-#### `DesComponent.isManaged` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isManaged` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Gets true if the component is managed.
 
-#### `DesComponent.manufacturerParts` · [`[DesManufacturerPart!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-manufacturer-part.md) non-null object library-management
+#### `manufacturerParts` · [`[DesManufacturerPart!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-manufacturer-part.md) non-null object
 
 The list of the part choices associated with this component.
 
-#### `DesComponent.model3D` · [`DesModel3D`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-model-3-d.md) object design
+#### `model3D` · [`DesModel3D`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-model-3-d.md) object Design
 
 Component 3D model.
 
-#### `DesComponent.modifiedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `modifiedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` when this component was last modified.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) when this component was last modified.
 
-#### `DesComponent.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The library label for this component.
 
-#### `DesComponent.revision` · [`DesRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision.md) non-null object platform
+#### `revision` · [`DesRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision.md) non-null object Platform
 
 The component revision.
 
-#### `DesComponent.revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the component revision.

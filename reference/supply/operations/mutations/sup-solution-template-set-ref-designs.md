@@ -11,6 +11,12 @@ deprecated: false
 
 Replace all reference designs on a solution template.
 
+### Type
+
+#### [`SupSolutionTemplateSetRefDesignsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-ref-designs-payload.md) object
+
+Payload for replacing reference designs on a solution template.
+
 ```graphql
 supSolutionTemplateSetRefDesigns(
   input: SupSolutionTemplateSetRefDesignsInput!
@@ -19,10 +25,4 @@ supSolutionTemplateSetRefDesigns(
 
 ### Arguments
 
-#### `supSolutionTemplateSetRefDesigns.input` · [`SupSolutionTemplateSetRefDesignsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-ref-designs-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateSetRefDesignsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-ref-designs-payload.md) object supply
-
-Payload for replacing reference designs on a solution template.
+#### `input` · [`SupSolutionTemplateSetRefDesignsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-ref-designs-input.md) non-null input

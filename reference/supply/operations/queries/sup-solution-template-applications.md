@@ -11,6 +11,10 @@ deprecated: false
 
 List a solution template applications.
 
+### Type
+
+#### [`SupSolutionTemplateApplication`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application.md) object
+
 ```graphql
 supSolutionTemplateApplications(
   limit: Int! = 10
@@ -21,18 +25,14 @@ supSolutionTemplateApplications(
 
 ### Arguments
 
-#### `supSolutionTemplateApplications.limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Page size of results.
 
-#### `supSolutionTemplateApplications.q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The search query string. Leave empty to query all.
 
-#### `supSolutionTemplateApplications.start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Offset in the result set.
-
-### Type
-
-#### [`SupSolutionTemplateApplication`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application.md) object supply

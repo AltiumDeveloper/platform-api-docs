@@ -25,20 +25,20 @@ input SupSolutionTemplateApplicationUpdateParameterBundleInput {
 
 ### Fields
 
-#### `SupSolutionTemplateApplicationUpdateParameterBundleInput.newValues` · [`[SupSolutionTemplateCreateParameterValueInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-value-input.md) list input supply
+#### `newValues` · [`[SupSolutionTemplateCreateParameterValueInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-value-input.md) list input
 
 Replace the parameter values with these ones.
 
-#### `SupSolutionTemplateApplicationUpdateParameterBundleInput.order` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `order` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 The order of the parameter in the bundle.
 
-#### `SupSolutionTemplateApplicationUpdateParameterBundleInput.parameter` · [`SupSolutionTemplateUpdateParameterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-parameter-input.md) non-null input supply
+#### `parameter` · [`SupSolutionTemplateUpdateParameterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-parameter-input.md) non-null input
 
 The parameter info identifier by parameter's title.
 
-#### `SupSolutionTemplateApplicationUpdateParameterBundleInput.question` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `question` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SupSolutionTemplateApplicationUpdateParameterBundleInput.required` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `required` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Indicates whether the parameter bundle is required.

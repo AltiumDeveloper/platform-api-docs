@@ -9,7 +9,7 @@ deprecated: false
 
 # PlatformWorkspaceRefreshTokenCreateInput
 
-Input for creating a new `PlatformWorkspaceRefreshToken`.
+Input for creating a new [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md).
 
 ### Member Of
 
@@ -28,26 +28,26 @@ input PlatformWorkspaceRefreshTokenCreateInput {
 
 ### Fields
 
-#### `PlatformWorkspaceRefreshTokenCreateInput.accessTokenLifetime` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `accessTokenLifetime` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Lifetime of the access token in seconds. Must be greater than zero. Defaults to 3600 (1 hour) when omitted.
 
-#### `PlatformWorkspaceRefreshTokenCreateInput.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Description of the new `PlatformWorkspaceRefreshToken`.
+Description of the new [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md).
 
-#### `PlatformWorkspaceRefreshTokenCreateInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Name of the new `PlatformWorkspaceRefreshToken`.
+Name of the new [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md).
 
-#### `PlatformWorkspaceRefreshTokenCreateInput.refreshTokenAbsoluteLifetime` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `refreshTokenAbsoluteLifetime` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Absolute lifetime of the refresh token in seconds. Must be greater than zero. Defaults to 2147483647 (effectively unlimited) when omitted.
 
-#### `PlatformWorkspaceRefreshTokenCreateInput.refreshTokenSlidingLifetime` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `refreshTokenSlidingLifetime` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Sliding lifetime of the refresh token in seconds. Must be greater than zero. Defaults to 2592000 (30 days) when omitted.
 
-#### `PlatformWorkspaceRefreshTokenCreateInput.returnUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `returnUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 URL to redirect to after the authorization flow completes. Must be a trusted domain.

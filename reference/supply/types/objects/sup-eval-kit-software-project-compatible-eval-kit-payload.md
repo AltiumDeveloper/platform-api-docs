@@ -23,4 +23,4 @@ type SupEvalKitSoftwareProjectCompatibleEvalKitPayload {
 
 ### Fields
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitPayload.errors` · [`[SupEvalKitSoftwareProjectCompatibleEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-software-project-compatible-eval-kit-error.md) list union supply
+#### `errors` · [`[SupEvalKitSoftwareProjectCompatibleEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-software-project-compatible-eval-kit-error.md) list union

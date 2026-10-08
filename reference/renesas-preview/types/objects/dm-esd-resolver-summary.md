@@ -29,6 +29,6 @@ type DmEsdResolverSummary {
 
 ### Fields
 
-#### `DmEsdResolverSummary.functionalBlocks` · [`[DmEsdResolverResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-esd-resolver-result.md) non-null object renesas-preview
+#### `functionalBlocks` · [`[DmEsdResolverResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-esd-resolver-result.md) non-null object
 
 The results for functional blocks found in the ESD document.

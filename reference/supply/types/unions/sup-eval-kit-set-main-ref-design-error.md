@@ -19,6 +19,6 @@ union SupEvalKitSetMainRefDesignError = SupEvalKitOperationFailedError | SupEval
 
 ### Possible types
 
-#### [`SupEvalKitSetMainRefDesignError.SupEvalKitOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-operation-failed-error.md) object supply
+#### [`SupEvalKitOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-operation-failed-error.md) object
 
-#### [`SupEvalKitSetMainRefDesignError.SupEvalKitNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-not-found-error.md) object supply
+#### [`SupEvalKitNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-not-found-error.md) object

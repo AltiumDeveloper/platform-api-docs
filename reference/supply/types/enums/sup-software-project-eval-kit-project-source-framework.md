@@ -22,10 +22,10 @@ enum SupSoftwareProjectEvalKitProjectSourceFramework {
 
 ### Values
 
-#### `SupSoftwareProjectEvalKitProjectSourceFramework.FIT`
+#### `FIT`
 
 Firmware Integration Technology driver framework.
 
-#### `SupSoftwareProjectEvalKitProjectSourceFramework.FSP`
+#### `FSP`
 
 Flexible Software Package driver framework.

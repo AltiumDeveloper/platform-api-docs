@@ -21,22 +21,22 @@ union DesWorkspaceInsInsightHistoryAction = DesWorkspaceInsInsightSeverityChange
 
 ### Possible types
 
-#### [`DesWorkspaceInsInsightHistoryAction.DesWorkspaceInsInsightSeverityChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-severity-changed-action.md) object insights
+#### [`DesWorkspaceInsInsightSeverityChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-severity-changed-action.md) object
 
 History entry representing a severity change on an insight.
 
-#### [`DesWorkspaceInsInsightHistoryAction.DesWorkspaceInsInsightEntityLinksChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-entity-links-changed-action.md) object insights
+#### [`DesWorkspaceInsInsightEntityLinksChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-entity-links-changed-action.md) object
 
 History entry capturing changes to linked entities.
 
-#### [`DesWorkspaceInsInsightHistoryAction.DesWorkspaceInsInsightStatusChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-status-changed-action.md) object insights
+#### [`DesWorkspaceInsInsightStatusChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-status-changed-action.md) object
 
 History entry representing a status change on an insight.
 
-#### [`DesWorkspaceInsInsightHistoryAction.DesWorkspaceInsInsightTaskLinksChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-task-links-changed-action.md) object insights
+#### [`DesWorkspaceInsInsightTaskLinksChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-task-links-changed-action.md) object
 
 History entry capturing changes to linked tasks.
 
-#### [`DesWorkspaceInsInsightHistoryAction.DesWorkspaceInsInsightDataChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-data-changed-action.md) object insights
+#### [`DesWorkspaceInsInsightDataChangedAction`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-data-changed-action.md) object
 
 History entry capturing changes to an insight's data payloads.

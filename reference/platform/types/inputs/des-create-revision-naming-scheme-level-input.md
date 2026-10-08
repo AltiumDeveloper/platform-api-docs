@@ -26,18 +26,18 @@ input DesCreateRevisionNamingSchemeLevelInput {
 
 ### Fields
 
-#### `DesCreateRevisionNamingSchemeLevelInput.levelSeparator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `levelSeparator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The separator prefix character for this revision naming scheme level. Allowed characters are: ',', '.', '-', '\_'.
 
-#### `DesCreateRevisionNamingSchemeLevelInput.minimumWidth` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `minimumWidth` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The minimum character length allowed for this revision naming scheme level.
 
-#### `DesCreateRevisionNamingSchemeLevelInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this revision naming level. In Altium Designer it is known as 'Caption'.
 
-#### `DesCreateRevisionNamingSchemeLevelInput.revisionNamingPolicy` · [`DesRevisionNamingPolicy!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-revision-naming-policy.md) non-null enum platform
+#### `revisionNamingPolicy` · [`DesRevisionNamingPolicy!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-revision-naming-policy.md) non-null enum
 
 The naming policy for this revision naming scheme level.

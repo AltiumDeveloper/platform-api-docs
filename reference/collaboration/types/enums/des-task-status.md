@@ -26,10 +26,10 @@ enum DesTaskStatus {
 
 ### Values
 
-#### `DesTaskStatus.IN_PROGRESS`
+#### `IN_PROGRESS`
 
-#### `DesTaskStatus.RESOLVED`
+#### `RESOLVED`
 
-#### `DesTaskStatus.TO_DO`
+#### `TO_DO`
 
-#### `DesTaskStatus.UNDEFINED`
+#### `UNDEFINED`

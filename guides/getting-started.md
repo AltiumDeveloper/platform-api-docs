@@ -9,7 +9,7 @@ deprecated: false
 
 # Getting started
 
-The Altium Platform API is a GraphQL API for reading and writing Altium 365 workspace data. This page gets you from an access token to a first successful query. Registering an application and obtaining a token are covered by the [Altium Developer Center](https://www.altium.com/documentation/altium-developer-center/quick-starts/365-api).
+The Altium 365 API is a GraphQL API for reading and writing Altium 365 workspace data. This page gets you from an access token to a first successful query. Registering an application and obtaining a token are covered by the [Altium Developer Center](https://www.altium.com/documentation/altium-developer-center/quick-starts/365-api).
 
 ## Endpoints
 

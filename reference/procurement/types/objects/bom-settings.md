@@ -25,14 +25,14 @@ type BomSettings {
 
 ### Fields
 
-#### `BomSettings.country` · [`BomCountry!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-country.md) non-null object procurement
+#### `country` · [`BomCountry!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-country.md) non-null object
 
 A country associated with the BOM. It is primarily used to provide region-specific information about parts.
 
-#### `BomSettings.currency` · [`BomCurrency!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-currency.md) non-null object procurement
+#### `currency` · [`BomCurrency!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-currency.md) non-null object
 
 A currency associated with the BOM. Prices in the BOM are provided in this currency.
 
-#### `BomSettings.production` · [`BomProduction!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-production.md) non-null object procurement
+#### `production` · [`BomProduction!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-production.md) non-null object
 
 Production settings of the BOM.

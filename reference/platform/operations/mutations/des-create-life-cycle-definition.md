@@ -11,6 +11,12 @@ deprecated: false
 
 Creates the provided life cycle definition, with associated states, stages and state transitions.
 
+### Type
+
+#### [`DesCreateLifeCycleDefinitionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-life-cycle-definition-payload.md) object
+
+Payload associated with creating a life cycle definition.
+
 ```graphql
 desCreateLifeCycleDefinition(
   input: DesCreateLifeCycleDefinitionInput!
@@ -19,10 +25,4 @@ desCreateLifeCycleDefinition(
 
 ### Arguments
 
-#### `desCreateLifeCycleDefinition.input` · [`DesCreateLifeCycleDefinitionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-life-cycle-definition-input.md) non-null input platform
-
-### Type
-
-#### [`DesCreateLifeCycleDefinitionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-life-cycle-definition-payload.md) object platform
-
-Payload associated with creating a life cycle definition.
+#### `input` · [`DesCreateLifeCycleDefinitionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-life-cycle-definition-input.md) non-null input

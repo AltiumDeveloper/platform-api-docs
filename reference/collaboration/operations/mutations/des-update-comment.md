@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the specified comment.
 
+### Type
+
+#### [`DesUpdateCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-update-comment-payload.md) object
+
+Payload associated with updating a comment.
+
 ```graphql
 desUpdateComment(
   input: DesUpdateCommentInput!
@@ -19,10 +25,4 @@ desUpdateComment(
 
 ### Arguments
 
-#### `desUpdateComment.input` · [`DesUpdateCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-update-comment-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesUpdateCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-update-comment-payload.md) object collaboration
-
-Payload associated with updating a comment.
+#### `input` · [`DesUpdateCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-update-comment-input.md) non-null input

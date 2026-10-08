@@ -25,12 +25,12 @@ enum BomItemElementCustomAttributeType {
 
 ### Values
 
-#### `BomItemElementCustomAttributeType.FLOAT`
+#### `FLOAT`
 
-#### `BomItemElementCustomAttributeType.INTEGER`
+#### `INTEGER`
 
-#### `BomItemElementCustomAttributeType.MONEY`
+#### `MONEY`
 
-#### `BomItemElementCustomAttributeType.PERCENT`
+#### `PERCENT`
 
-#### `BomItemElementCustomAttributeType.STRING`
+#### `STRING`

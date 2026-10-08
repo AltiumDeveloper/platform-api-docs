@@ -17,6 +17,6 @@ supEvalKitParameterInfos: [SupEvalKitParameterInfo!]!
 
 ### Type
 
-#### [`SupEvalKitParameterInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-parameter-info.md) object supply
+#### [`SupEvalKitParameterInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-parameter-info.md) object
 
 Represents the information of a parameter in the evaluation kit.

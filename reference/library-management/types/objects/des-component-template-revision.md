@@ -13,7 +13,9 @@ Component template revision information.
 
 ### Common Data Model
 
-- [Component Template Revision](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplateRevision/) — A revision of a Component Template: the template definition, stored as a \*.CMPT document, saved into the Workspace at one point in time. A component revision can be linked to a specific template revision, from which it takes its predefined parameters, models and settings.
+- [Component Template Revision](https://w3id.org/altium/cdm/library/ComponentTemplateRevision) — A revision of a Component Template: the template definition, stored as a \*.CMPT document, saved into the Workspace at one point in time. A component revision can be linked to a specific template revision, from which it takes its predefined parameters, models and settings.
+
+  - IRI: [`https://w3id.org/altium/cdm/library/ComponentTemplateRevision`](https://w3id.org/altium/cdm/library/ComponentTemplateRevision)
   - GRID: `grid:workspace:{workspace-id}:library:component-template-revision/{id}`
 
 ### Returned By
@@ -26,7 +28,7 @@ Component template revision information.
 
 ### Interfaces
 
-#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface common
+#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface
 
 The node interface is implemented by entities that have a global unique identifier.
 
@@ -43,26 +45,26 @@ type DesComponentTemplateRevision implements Node {
 
 ### Fields
 
-#### `DesComponentTemplateRevision.comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Component template revision comment.
 
-#### `DesComponentTemplateRevision.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 Creation date for component template revision.
 
-#### `DesComponentTemplateRevision.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Component template revision description.
 
-#### `DesComponentTemplateRevision.downloadableFile` · [`DesDownloadableFile!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) non-null object design
+#### `downloadableFile` · [`DesDownloadableFile!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) non-null object Design
 
 Component template revision downloadable file.
 
-#### `DesComponentTemplateRevision.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Component template revision identifier.
 
-#### `DesComponentTemplateRevision.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Component template revision name.

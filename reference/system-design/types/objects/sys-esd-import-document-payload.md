@@ -23,6 +23,6 @@ type SysEsdImportDocumentPayload {
 
 ### Fields
 
-#### `SysEsdImportDocumentPayload.isImported` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isImported` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the ESD document content was imported successfully.

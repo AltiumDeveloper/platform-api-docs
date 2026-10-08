@@ -11,6 +11,12 @@ deprecated: false
 
 Infers part search criteria from a keyword.
 
+### Type
+
+#### [`DesPartSearchInferenceResult`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-inference-result.md) object
+
+Represents inferred part search criteria.
+
 ```graphql
 desPartSearchInference(
   where: DesPartSearchInferenceFilterInput!
@@ -19,12 +25,6 @@ desPartSearchInference(
 
 ### Arguments
 
-#### `desPartSearchInference.where` · [`DesPartSearchInferenceFilterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-inference-filter-input.md) non-null input library-management
+#### `where` · [`DesPartSearchInferenceFilterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-inference-filter-input.md) non-null input
 
 The filter to use for search inference.
-
-### Type
-
-#### [`DesPartSearchInferenceResult`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-inference-result.md) object library-management
-
-Represents inferred part search criteria.

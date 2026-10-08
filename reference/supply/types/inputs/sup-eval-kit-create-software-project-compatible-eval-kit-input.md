@@ -22,10 +22,10 @@ input SupEvalKitCreateSoftwareProjectCompatibleEvalKitInput {
 
 ### Fields
 
-#### `SupEvalKitCreateSoftwareProjectCompatibleEvalKitInput.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The evaluation kit identifier.
 
-#### `SupEvalKitCreateSoftwareProjectCompatibleEvalKitInput.projectSources` · [`[SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-software-project-compatible-eval-kit-project-source-input.md) non-null input supply
+#### `projectSources` · [`[SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-software-project-compatible-eval-kit-project-source-input.md) non-null input
 
 The project sources associated with the evaluation kit source.

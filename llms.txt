@@ -1,4 +1,4 @@
-# Altium Platform API
+# Altium 365 API
 > GraphQL API for Altium 365 workspace data, organised into bounded contexts aligned with the Common Data Model (CDM).
 
 How to navigate (for assistants):
@@ -41,4 +41,4 @@ Conventions: prefer bounded-context queries (`platform.token.byWorkspace`, `requ
 - [Common types](https://altiumdeveloper.github.io/platform-api-docs/reference/common/llms.txt): Shared scalars, paging, errors, filtering and sorting types, and directives used across all bounded contexts.
 - [Deprecated](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/llms.txt): deprecated operations by bounded context
 - [Full schema SDL](https://altiumdeveloper.github.io/platform-api-docs/schema.graphql): ~166288 tokens — prefer per-context slices
-- [llms-full.txt](https://altiumdeveloper.github.io/platform-api-docs/llms-full.txt): all guides and reference pages as markdown (~953112 tokens)
+- [llms-full.txt](https://altiumdeveloper.github.io/platform-api-docs/llms-full.txt): all guides and reference pages as markdown (~899056 tokens)

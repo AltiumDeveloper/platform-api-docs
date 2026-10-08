@@ -24,10 +24,10 @@ input DesPartUpsertCustomPartsInput {
 
 ### Fields
 
-#### `DesPartUpsertCustomPartsInput.parts` · [`[DesPartCustomPartDataInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-data-input.md) non-null input library-management
+#### `parts` · [`[DesPartCustomPartDataInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-data-input.md) non-null input
 
 A collection of parts to upsert.
 
-#### `DesPartUpsertCustomPartsInput.partSourceGuid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partSourceGuid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the part source.

@@ -25,20 +25,20 @@ input SupSolutionTemplateApplicationCreateParameterBundleInput {
 
 ### Fields
 
-#### `SupSolutionTemplateApplicationCreateParameterBundleInput.order` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `order` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The display order of the parameter bundle.
 
-#### `SupSolutionTemplateApplicationCreateParameterBundleInput.parameter` · [`SupSolutionTemplateCreateParameterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-input.md) non-null input supply
+#### `parameter` · [`SupSolutionTemplateCreateParameterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-input.md) non-null input
 
 The parameter associated with the bundle.
 
-#### `SupSolutionTemplateApplicationCreateParameterBundleInput.question` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `question` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SupSolutionTemplateApplicationCreateParameterBundleInput.required` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `required` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the parameter bundle is required.
 
-#### `SupSolutionTemplateApplicationCreateParameterBundleInput.values` · [`[SupSolutionTemplateCreateParameterValueInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-value-input.md) non-null input supply
+#### `values` · [`[SupSolutionTemplateCreateParameterValueInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-value-input.md) non-null input
 
 The list of values for the parameter.

@@ -28,26 +28,26 @@ input SupSolutionTemplateRefDesignOrderInput {
 
 ### Fields
 
-#### `SupSolutionTemplateRefDesignOrderInput.createdAt` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum supply
+#### `createdAt` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum
 
 Sort by creation date in the specified direction.
 
-#### `SupSolutionTemplateRefDesignOrderInput.releaseDate` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum supply
+#### `releaseDate` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum
 
 Sort by release date in the specified direction.
 
-#### `SupSolutionTemplateRefDesignOrderInput.stableName` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum supply
+#### `stableName` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum
 
 Sort by stable name in the specified direction.
 
-#### `SupSolutionTemplateRefDesignOrderInput.title` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum supply
+#### `title` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum
 
 Sort by title in the specified direction.
 
-#### `SupSolutionTemplateRefDesignOrderInput.type` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum supply
+#### `type` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum
 
 Sort by type in the specified direction.
 
-#### `SupSolutionTemplateRefDesignOrderInput.updatedAt` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum supply
+#### `updatedAt` · [`SupSolutionTemplateRefDesignSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-sort-direction.md) enum
 
 Sort by last update date in the specified direction.

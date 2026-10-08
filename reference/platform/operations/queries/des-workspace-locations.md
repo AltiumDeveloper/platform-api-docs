@@ -17,6 +17,6 @@ desWorkspaceLocations: [DesWorkspaceLocation!]!
 
 ### Type
 
-#### [`DesWorkspaceLocation`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-location.md) object platform
+#### [`DesWorkspaceLocation`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-location.md) object
 
 A region in which workspaces can be located.

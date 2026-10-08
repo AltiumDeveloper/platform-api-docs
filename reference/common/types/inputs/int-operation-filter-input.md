@@ -32,26 +32,26 @@ input IntOperationFilterInput {
 
 ### Fields
 
-#### `IntOperationFilterInput.eq` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `eq` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.gt` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `gt` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.gte` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `gte` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.in` · [`[Int]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) list scalar common
+#### `in` · [`[Int]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) list scalar
 
-#### `IntOperationFilterInput.lt` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `lt` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.lte` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `lte` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.neq` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `neq` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.ngt` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `ngt` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.ngte` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `ngte` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.nin` · [`[Int]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) list scalar common
+#### `nin` · [`[Int]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) list scalar
 
-#### `IntOperationFilterInput.nlt` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `nlt` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `IntOperationFilterInput.nlte` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `nlte` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar

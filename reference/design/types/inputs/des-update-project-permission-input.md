@@ -26,18 +26,18 @@ input DesUpdateProjectPermissionInput {
 
 ### Fields
 
-#### `DesUpdateProjectPermissionInput.canModify` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `canModify` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Allows updating, deleting and creating when set, otherwise only read permissions will be allowed.
 
-#### `DesUpdateProjectPermissionInput.groupId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `groupId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Group reference identifier.
 
-#### `DesUpdateProjectPermissionInput.scope` · [`DesPermissionScope!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-permission-scope.md) non-null enum platform
+#### `scope` · [`DesPermissionScope!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-permission-scope.md) non-null enum Platform
 
 Scope of the permission.
 
-#### `DesUpdateProjectPermissionInput.userId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `userId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 User identifier. Workspace user identifier should be used for the scope 'USER', global user identifier should be used for the scope 'GUEST'.

@@ -25,14 +25,14 @@ input DesUpdateProjectParametersInput {
 
 ### Fields
 
-#### `DesUpdateProjectParametersInput.parameters` · [`[DesProjectParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-parameter-input.md) non-null input design
+#### `parameters` · [`[DesProjectParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-project-parameter-input.md) non-null input
 
 Parameters to describe the project.
 
-#### `DesUpdateProjectParametersInput.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Project identifier.
 
-#### `DesUpdateProjectParametersInput.replaceExisting` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `replaceExisting` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Replace all existing user-specific project parameters. By default parameters are appended to the existing list.

@@ -25,14 +25,14 @@ input DesUpdateProjectPermissionsInput {
 
 ### Fields
 
-#### `DesUpdateProjectPermissionsInput.permissions` · [`[DesUpdateProjectPermissionInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-update-project-permission-input.md) non-null input design
+#### `permissions` · [`[DesUpdateProjectPermissionInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-update-project-permission-input.md) non-null input
 
 Permissions to update.
 
-#### `DesUpdateProjectPermissionsInput.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Project identifier.
 
-#### `DesUpdateProjectPermissionsInput.replaceExisting` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `replaceExisting` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Tells to replace all existing permissions. By default permissions are added to existing.

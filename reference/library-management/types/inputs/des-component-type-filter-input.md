@@ -25,10 +25,10 @@ input DesComponentTypeFilterInput {
 
 ### Fields
 
-#### `DesComponentTypeFilterInput.and` · [`[DesComponentTypeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-type-filter-input.md) list input library-management
+#### `and` · [`[DesComponentTypeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-type-filter-input.md) list input
 
-#### `DesComponentTypeFilterInput.name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 The display name of the component type.
 
-#### `DesComponentTypeFilterInput.or` · [`[DesComponentTypeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-type-filter-input.md) list input library-management
+#### `or` · [`[DesComponentTypeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-type-filter-input.md) list input

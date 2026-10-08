@@ -27,22 +27,22 @@ input DesWorkspaceInsInsightFilterInput {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightFilterInput.linkedEntities` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `linkedEntities` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Limit results to insights linked to the provided entities.
 
-#### `DesWorkspaceInsInsightFilterInput.name` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `name` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Match insights whose names contain any of the provided values.
 
-#### `DesWorkspaceInsInsightFilterInput.severity` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `severity` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Filter insights by severity levels.
 
-#### `DesWorkspaceInsInsightFilterInput.status` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `status` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Filter insights by their status values.
 
-#### `DesWorkspaceInsInsightFilterInput.type` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `type` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Filter insights by their type identifiers.

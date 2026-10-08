@@ -19,4 +19,4 @@ union SupSoftwareProjectCreateSoftwareProjectError = SupSoftwareProjectOperation
 
 ### Possible types
 
-#### [`SupSoftwareProjectCreateSoftwareProjectError.SupSoftwareProjectOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-operation-failed-error.md) object supply
+#### [`SupSoftwareProjectOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-operation-failed-error.md) object

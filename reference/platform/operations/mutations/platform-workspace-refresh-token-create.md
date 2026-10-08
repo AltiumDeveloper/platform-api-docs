@@ -9,7 +9,11 @@ deprecated: false
 
 # platformWorkspaceRefreshTokenCreate
 
-Creates a new `PlatformWorkspaceRefreshToken`.
+Creates a new [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md).
+
+### Type
+
+#### [`PlatformWorkspaceRefreshTokenCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token-create-payload.md) object
 
 ```graphql
 platformWorkspaceRefreshTokenCreate(
@@ -19,8 +23,4 @@ platformWorkspaceRefreshTokenCreate(
 
 ### Arguments
 
-#### `platformWorkspaceRefreshTokenCreate.input` · [`PlatformWorkspaceRefreshTokenCreateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-create-input.md) non-null input platform
-
-### Type
-
-#### [`PlatformWorkspaceRefreshTokenCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token-create-payload.md) object platform
+#### `input` · [`PlatformWorkspaceRefreshTokenCreateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-create-input.md) non-null input

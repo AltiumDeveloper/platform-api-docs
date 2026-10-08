@@ -25,14 +25,14 @@ input DesPartUploadComponentsColumnMappingInput {
 
 ### Fields
 
-#### `DesPartUploadComponentsColumnMappingInput.ipnColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `ipnColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Column header for IPN.
 
-#### `DesPartUploadComponentsColumnMappingInput.manufacturerNameColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `manufacturerNameColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Column header for manufacturer name.
 
-#### `DesPartUploadComponentsColumnMappingInput.mpnColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `mpnColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Column header for MPN.

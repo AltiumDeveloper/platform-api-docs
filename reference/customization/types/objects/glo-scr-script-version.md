@@ -13,7 +13,9 @@ Represents a version of a script.
 
 ### Common Data Model
 
-- [Script Version](https://altiumdeveloper.github.io/cdm/classes/cus_ScriptVersion/)
+- [Script Version](https://w3id.org/altium/cdm/customization/ScriptVersion)
+
+  - IRI: [`https://w3id.org/altium/cdm/customization/ScriptVersion`](https://w3id.org/altium/cdm/customization/ScriptVersion)
   - GRID: `grid:workspace:{workspace-id}:scripts:script-version/{id}`
 
 ### Member Of
@@ -31,10 +33,10 @@ type GloScrScriptVersion {
 
 ### Fields
 
-#### `GloScrScriptVersion.comment` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `comment` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `GloScrScriptVersion.package` · [`GloScrScriptPackage!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-package.md) non-null object customization
+#### `package` · [`GloScrScriptPackage!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-package.md) non-null object
 
-#### `GloScrScriptVersion.scriptVersionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `scriptVersionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `GloScrScriptVersion.timestamp` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `timestamp` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar

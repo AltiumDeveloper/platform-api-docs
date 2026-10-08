@@ -32,26 +32,26 @@ type DesPartGlobalPart {
 
 ### Fields
 
-#### `DesPartGlobalPart.alternatives` · [`DesPartGlobalAlternativesResult`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-alternatives-result.md) object library-management
+#### `alternatives` · [`DesPartGlobalAlternativesResult`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-alternatives-result.md) object
 
 The alternatives for this global part.
 
-#### `DesPartGlobalPart.globalPartId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `globalPartId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the global part.
 
-#### `DesPartGlobalPart.healthCheckResults` · [`[DesPartHealthCheckResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-health-check-result.md) non-null object library-management
+#### `healthCheckResults` · [`[DesPartHealthCheckResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-health-check-result.md) non-null object
 
 The health check results for the part.
 
-#### `DesPartGlobalPart.siliconExpertPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object library-management
+#### `siliconExpertPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object
 
 The Silicon Expert part details.
 
-#### `DesPartGlobalPart.supplyPart` · [`DesPartProviderPart!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) non-null object library-management
+#### `supplyPart` · [`DesPartProviderPart!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) non-null object
 
 The search result part details.
 
-#### `DesPartGlobalPart.z2DataPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object library-management
+#### `z2DataPart` · [`DesPartProviderPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-provider-part.md) object
 
 The Z2Data part details.

@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Pin](https://altiumdeveloper.github.io/cdm/classes/dm_Pin/) — A physical pin on the device.
+- [Pin](https://w3id.org/altium/cdm/deviceModel/Pin) — A physical pin on the device.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/Pin`](https://w3id.org/altium/cdm/deviceModel/Pin)
 
 ### Member Of
 
@@ -31,6 +32,6 @@ type DmPin {
 
 ### Fields
 
-#### `DmPin.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Pin name.

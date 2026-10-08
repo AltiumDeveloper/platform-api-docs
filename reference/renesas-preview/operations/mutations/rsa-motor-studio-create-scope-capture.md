@@ -17,6 +17,10 @@ deprecated: false
 
 Create a scope capture for the specified project and scope configuration.
 
+### Type
+
+#### [`RsaMotorStudioCreateScopeCapturePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-scope-capture-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioCreateScopeCapture(
   input: RsaMotorStudioCreateScopeCaptureInput!
@@ -25,8 +29,4 @@ rsaMotorStudioCreateScopeCapture(
 
 ### Arguments
 
-#### `rsaMotorStudioCreateScopeCapture.input` · [`RsaMotorStudioCreateScopeCaptureInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-capture-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioCreateScopeCapturePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-scope-capture-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioCreateScopeCaptureInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-capture-input.md) non-null input

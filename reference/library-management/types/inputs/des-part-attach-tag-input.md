@@ -24,10 +24,10 @@ input DesPartAttachTagInput {
 
 ### Fields
 
-#### `DesPartAttachTagInput.partIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `partIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifiers of the parts to assign the tag to. Parts that already have the tag are left as they are.
 
-#### `DesPartAttachTagInput.tagId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tagId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the tag to assign.

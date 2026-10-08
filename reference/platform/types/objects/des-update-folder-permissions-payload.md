@@ -25,6 +25,6 @@ type DesUpdateFolderPermissionsPayload {
 
 #### Deprecated
 
-#### `DesUpdateFolderPermissionsPayload.folderId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar common
+#### `folderId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** This value will soon change from folder node identifier to folder reference identifier (GUID).

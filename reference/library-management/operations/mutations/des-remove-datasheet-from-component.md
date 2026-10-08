@@ -11,6 +11,12 @@ deprecated: false
 
 Removes the specified datasheet from a component (does not affect the revision).
 
+### Type
+
+#### [`DesRemoveDatasheetFromComponentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-remove-datasheet-from-component-payload.md) object
+
+Payload associated with removing a datasheet from a component.
+
 ```graphql
 desRemoveDatasheetFromComponent(
   input: DesRemoveDatasheetFromComponentInput!
@@ -19,10 +25,4 @@ desRemoveDatasheetFromComponent(
 
 ### Arguments
 
-#### `desRemoveDatasheetFromComponent.input` · [`DesRemoveDatasheetFromComponentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-remove-datasheet-from-component-input.md) non-null input library-management
-
-### Type
-
-#### [`DesRemoveDatasheetFromComponentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-remove-datasheet-from-component-payload.md) object library-management
-
-Payload associated with removing a datasheet from a component.
+#### `input` · [`DesRemoveDatasheetFromComponentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-remove-datasheet-from-component-input.md) non-null input

@@ -9,11 +9,11 @@ deprecated: false
 
 # PlatformTokenUpdateInvalidError
 
-Error that occurs when a `PlatformToken` update request specifies no fields to update.
+Error that occurs when a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) update request specifies no fields to update.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type PlatformTokenUpdateInvalidError implements Error {
 
 ### Fields
 
-#### `PlatformTokenUpdateInvalidError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

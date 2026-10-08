@@ -24,10 +24,10 @@ input BomCreateBomProductionSettingsInput {
 
 ### Fields
 
-#### `BomCreateBomProductionSettingsInput.dueDate` · [`LocalDate`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/local-date.md) scalar common
+#### `dueDate` · [`LocalDate`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/local-date.md) scalar
 
 Production due date.
 
-#### `BomCreateBomProductionSettingsInput.quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Production quantity (i.e., how many units are produced).

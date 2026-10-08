@@ -11,6 +11,10 @@ deprecated: false
 
 Retrieves a list of registered extension points.
 
+### Type
+
+#### [`GloCusExtensionPoint`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-extension-point.md) object
+
 ```graphql
 gloCusExtensionPoints(
   order: [GloCusExtensionPointSortInput!]
@@ -20,10 +24,6 @@ gloCusExtensionPoints(
 
 ### Arguments
 
-#### `gloCusExtensionPoints.order` · [`[GloCusExtensionPointSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-sort-input.md) list input customization
+#### `order` · [`[GloCusExtensionPointSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-sort-input.md) list input
 
-#### `gloCusExtensionPoints.where` · [`GloCusExtensionPointFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-filter-input.md) input customization
-
-### Type
-
-#### [`GloCusExtensionPoint`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-extension-point.md) object customization
+#### `where` · [`GloCusExtensionPointFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-filter-input.md) input

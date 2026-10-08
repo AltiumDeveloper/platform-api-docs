@@ -29,6 +29,6 @@ type DmPeripheralModel {
 
 ### Fields
 
-#### `DmPeripheralModel.peripherals` · [`[DmPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral.md) non-null object renesas-preview
+#### `peripherals` · [`[DmPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral.md) non-null object
 
 List of peripheral definitions available on the device.

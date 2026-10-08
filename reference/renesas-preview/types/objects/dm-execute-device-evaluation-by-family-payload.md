@@ -27,4 +27,4 @@ type DmExecuteDeviceEvaluationByFamilyPayload {
 
 ### Fields
 
-#### `DmExecuteDeviceEvaluationByFamilyPayload.dmResolverFeasibilitySummary` · [`DmResolverFeasibilitySummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-feasibility-summary.md) object renesas-preview
+#### `dmResolverFeasibilitySummary` · [`DmResolverFeasibilitySummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-feasibility-summary.md) object

@@ -21,4 +21,4 @@ type SftDevCfgCreateDeviceConfigurationPayload {
 
 ### Fields
 
-#### `SftDevCfgCreateDeviceConfigurationPayload.data` · [`SftDevCfgDeviceConfiguration!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration.md) non-null object renesas-preview
+#### `data` · [`SftDevCfgDeviceConfiguration!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration.md) non-null object

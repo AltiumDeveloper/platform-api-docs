@@ -26,18 +26,18 @@ input SupSolutionTemplatePatchPreviewImagesInput {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchPreviewImagesInput.addPreviewImages` · [`[SupSolutionTemplateFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) list input supply
+#### `addPreviewImages` · [`[SupSolutionTemplateFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) list input
 
 Preview images to add.
 
-#### `SupSolutionTemplatePatchPreviewImagesInput.deletePreviewImageUrls` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `deletePreviewImageUrls` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Preview image URLs to delete.
 
-#### `SupSolutionTemplatePatchPreviewImagesInput.reorderPreviewImageUrls` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `reorderPreviewImageUrls` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Preview image URLs in the desired sort order. Must cover all remaining images after deletes.
 
-#### `SupSolutionTemplatePatchPreviewImagesInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the solution template.

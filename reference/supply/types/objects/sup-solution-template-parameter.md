@@ -22,10 +22,10 @@ type SupSolutionTemplateParameter {
 
 ### Fields
 
-#### `SupSolutionTemplateParameter.info` · [`SupSolutionTemplateParameterInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-info.md) object supply
+#### `info` · [`SupSolutionTemplateParameterInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-info.md) object
 
 Details about the parameter.
 
-#### `SupSolutionTemplateParameter.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The parameter title.

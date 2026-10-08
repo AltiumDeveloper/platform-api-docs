@@ -26,18 +26,18 @@ type GloScrScriptVersionConnection {
 
 ### Fields
 
-#### `GloScrScriptVersionConnection.edges` · [`[GloScrScriptVersionEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version-edge.md) list object customization
+#### `edges` · [`[GloScrScriptVersionEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version-edge.md) list object
 
 A list of edges.
 
-#### `GloScrScriptVersionConnection.nodes` · [`[GloScrScriptVersion!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version.md) list object customization
+#### `nodes` · [`[GloScrScriptVersion!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version.md) list object
 
 A flattened list of the nodes.
 
-#### `GloScrScriptVersionConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `GloScrScriptVersionConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

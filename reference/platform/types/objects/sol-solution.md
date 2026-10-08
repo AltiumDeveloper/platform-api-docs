@@ -11,7 +11,9 @@ deprecated: false
 
 ### Common Data Model
 
-- [Solution](https://altiumdeveloper.github.io/cdm/classes/plt_Solution/) — A Renesas 365 solution: the main, top-level object of a Renesas 365 Workspace, which brings together the system design (an ESD document), PCB projects and software projects of one system. System designs and software projects both push their changes to the solution's System Data Model (SDM) and pull from it; Altium Designer can open a solution's PCB projects and pull SDM changes into them.
+- [Solution](https://w3id.org/altium/cdm/platform/Solution) — A Renesas 365 solution: the main, top-level object of a Renesas 365 Workspace, which brings together the system design (an ESD document), PCB projects and software projects of one system. System designs and software projects both push their changes to the solution's System Data Model (SDM) and pull from it; Altium Designer can open a solution's PCB projects and pull SDM changes into them.
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/Solution`](https://w3id.org/altium/cdm/platform/Solution)
   - GRID: `grid:workspace:{workspace-id}:platform:solution/{id}`
 
 ### Returned By
@@ -57,90 +59,90 @@ type SolSolution {
 
 ### Fields
 
-#### `SolSolution.aiModels` · [`[SftAIModel!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md) non-null object renesas-preview
+#### `aiModels` · [`[SftAIModel!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md) non-null object Renesas (preview)
 
 AI models associated with the solution.
 
-#### `SolSolution.attachments` · [`[SolAttachment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-attachment.md) non-null object platform
+#### `attachments` · [`[SolAttachment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-attachment.md) non-null object
 
 Collection of attachments associated with the solution.
 
-#### `SolSolution.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-#### `SolSolution.createdBy` · [`DesWorkspaceUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object platform
+#### `createdBy` · [`DesWorkspaceUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object
 
-#### `SolSolution.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SolSolution.esdDocuments` · [`[SysEsdDocument!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) non-null object system-design
+#### `esdDocuments` · [`[SysEsdDocument!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) non-null object System Design
 
 ESD documents associated with the solution.
 
-#### `SolSolution.evalKitId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `evalKitId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
-#### `SolSolution.flowType` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `flowType` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SolSolution.folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SolSolution.hardwareProjects` · [`[DesProject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) non-null object design
+#### `hardwareProjects` · [`[DesProject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) non-null object Design
 
 Hardware projects associated with the solution.
 
-#### `SolSolution.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SolSolution.isScaffolding` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isScaffolding` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Gets current scaffolding status.
 
-#### `SolSolution.modifiedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `modifiedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `SolSolution.modifiedBy` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object platform
+#### `modifiedBy` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object
 
-#### `SolSolution.motorStudioProjects` · [`[RsaMotorStudioProject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) non-null object renesas-preview
+#### `motorStudioProjects` · [`[RsaMotorStudioProject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) non-null object Renesas (preview)
 
 Motor Studio projects associated with the solution.
 
-#### `SolSolution.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SolSolution.owner` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object platform
+#### `owner` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object
 
 Owner of the solution.
 
-#### `SolSolution.parameterBundle` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `parameterBundle` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SolSolution.parameterBundleValues` · [`[SolParameterBundleValue!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-parameter-bundle-value.md) list object platform
+#### `parameterBundleValues` · [`[SolParameterBundleValue!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-parameter-bundle-value.md) list object
 
-#### `SolSolution.permissions` · [`[DesPermission!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/des-permission.md) list interface platform
+#### `permissions` · [`[DesPermission!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/des-permission.md) list interface
 
 Collection of the solution's permissions.
 
-#### `SolSolution.previewUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `previewUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Relative URL for the preview image. Ensure you use the appropriate workspace domain when constructing the full URL.
 
-#### `SolSolution.sharedWith` · [`[DesWorkspaceUser!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object platform
+#### `sharedWith` · [`[DesWorkspaceUser!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object
 
 Workspace users with whom the solution has been shared.
 
-#### `SolSolution.simulations` · [`[SftSimSimulation!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md) non-null object renesas-preview
+#### `simulations` · [`[SftSimSimulation!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md) non-null object Renesas (preview)
 
 Simulations associated with the solution.
 
-#### `SolSolution.softwareProjects` · [`[SftSoftwareProject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) non-null object renesas-preview
+#### `softwareProjects` · [`[SftSoftwareProject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) non-null object Renesas (preview)
 
 Software projects associated with the solution.
 
-#### `SolSolution.solutionTemplateId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `solutionTemplateId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
-#### `SolSolution.systemDataModel` · [`SysSdmSystemModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model.md) object system-design
+#### `systemDataModel` · [`SysSdmSystemModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model.md) object System Design
 
 System data model associated with the solution.
 
 #### Deprecated
 
-#### `SolSolution.createdById` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar common
+#### `createdById` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Fields play a technical role for schema stitching purposes.
 
-#### `SolSolution.modifiedById` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar common
+#### `modifiedById` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar
 
 > **Deprecated:** Fields play a technical role for schema stitching purposes.

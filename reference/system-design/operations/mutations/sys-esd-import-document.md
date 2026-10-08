@@ -11,6 +11,12 @@ deprecated: false
 
 Imports new ESD Document.
 
+### Type
+
+#### [`SysEsdImportDocumentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-import-document-payload.md) object
+
+Result of importing content into an ESD document.
+
 ```graphql
 sysEsdImportDocument(
   input: SysEsdImportDocumentInput!
@@ -19,10 +25,4 @@ sysEsdImportDocument(
 
 ### Arguments
 
-#### `sysEsdImportDocument.input` · [`SysEsdImportDocumentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-import-document-input.md) non-null input system-design
-
-### Type
-
-#### [`SysEsdImportDocumentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-import-document-payload.md) object system-design
-
-Result of importing content into an ESD document.
+#### `input` · [`SysEsdImportDocumentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-import-document-input.md) non-null input

@@ -24,10 +24,10 @@ type DesDesignItemEdge {
 
 ### Fields
 
-#### `DesDesignItemEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesDesignItemEdge.node` · [`DesDesignItem!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) non-null object design
+#### `node` · [`DesDesignItem!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) non-null object
 
 The item at the end of the edge.

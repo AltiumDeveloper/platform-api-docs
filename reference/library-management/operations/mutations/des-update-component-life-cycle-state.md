@@ -11,6 +11,12 @@ deprecated: false
 
 Updates life cycle state for the provided component.
 
+### Type
+
+#### [`DesUpdateComponentLifeCycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-life-cycle-state-payload.md) object
+
+Payload associated with updating a component life cycle state.
+
 ```graphql
 desUpdateComponentLifeCycleState(
   input: DesUpdateComponentLifeCycleStateInput!
@@ -19,10 +25,4 @@ desUpdateComponentLifeCycleState(
 
 ### Arguments
 
-#### `desUpdateComponentLifeCycleState.input` · [`DesUpdateComponentLifeCycleStateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-life-cycle-state-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateComponentLifeCycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-life-cycle-state-payload.md) object library-management
-
-Payload associated with updating a component life cycle state.
+#### `input` · [`DesUpdateComponentLifeCycleStateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-life-cycle-state-input.md) non-null input

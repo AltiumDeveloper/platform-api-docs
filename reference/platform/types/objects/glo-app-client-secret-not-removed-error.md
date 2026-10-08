@@ -9,11 +9,11 @@ deprecated: false
 
 # GloAppClientSecretNotRemovedError
 
-Error that occurs when the \*OAuth client\* secret was not removed as expected from a `GloApp`.
+Error that occurs when the \*OAuth client\* secret was not removed as expected from a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md).
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type GloAppClientSecretNotRemovedError implements Error {
 
 ### Fields
 
-#### `GloAppClientSecretNotRemovedError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

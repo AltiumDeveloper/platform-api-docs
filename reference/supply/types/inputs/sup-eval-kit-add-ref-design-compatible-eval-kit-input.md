@@ -24,10 +24,10 @@ input SupEvalKitAddRefDesignCompatibleEvalKitInput {
 
 ### Fields
 
-#### `SupEvalKitAddRefDesignCompatibleEvalKitInput.evalKitIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The list of evaluation kit IDs to be added as compatible with the reference design.
 
-#### `SupEvalKitAddRefDesignCompatibleEvalKitInput.refDesignId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `refDesignId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The ID of the reference design to which the evaluation kits will be added.

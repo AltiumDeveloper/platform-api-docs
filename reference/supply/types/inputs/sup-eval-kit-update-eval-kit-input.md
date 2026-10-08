@@ -35,59 +35,59 @@ input SupEvalKitUpdateEvalKitInput {
 
 ### Fields
 
-#### `SupEvalKitUpdateEvalKitInput.addPartIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `addPartIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Add list of Part identifiers associated with the evaluation kit.
 
-#### `SupEvalKitUpdateEvalKitInput.addRefDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `addRefDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Add list of Reference Design identifiers associated with the evaluation kit.
 
-#### `SupEvalKitUpdateEvalKitInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The evaluation kit description.
 
-#### `SupEvalKitUpdateEvalKitInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The evaluation kit identifier.
 
-#### `SupEvalKitUpdateEvalKitInput.newPreviewImages` · [`[SupEvalKitFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-file-input.md) list input supply
+#### `newPreviewImages` · [`[SupEvalKitFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-file-input.md) list input
 
 Replace the current evaluation kit preview images with these ones. The first image will be used as a best preview image.
 
-#### `SupEvalKitUpdateEvalKitInput.publisherId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `publisherId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The publisher identifier.
 
-#### `SupEvalKitUpdateEvalKitInput.removePartIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `removePartIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Remove list of Part identifiers associated with the evaluation kit.
 
-#### `SupEvalKitUpdateEvalKitInput.removeRefDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `removeRefDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Remove list of Reference Design identifiers associated with the evaluation kit.
 
-#### `SupEvalKitUpdateEvalKitInput.sourceFile` · [`SupEvalKitFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-file-input.md) input supply
+#### `sourceFile` · [`SupEvalKitFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-file-input.md) input
 
 The evaluation kit source file for building source url.
 
-#### `SupEvalKitUpdateEvalKitInput.sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The evaluation kit source url.
 
-#### `SupEvalKitUpdateEvalKitInput.title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The evaluation kit title.
 
 #### Deprecated
 
-#### `SupEvalKitUpdateEvalKitInput.addCompatibleSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar common
+#### `addCompatibleSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar
 
 > **Deprecated:** AddCompatibleSoftwareProjectIds is deprecated and no longer accepted.
 
 Add list of Compatible Software Project identifiers associated with the evaluation kit.
 
-#### `SupEvalKitUpdateEvalKitInput.removeCompatibleSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar common
+#### `removeCompatibleSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** list scalar
 
 > **Deprecated:** RemoveCompatibleSoftwareProjectIds is deprecated and no longer accepted.
 

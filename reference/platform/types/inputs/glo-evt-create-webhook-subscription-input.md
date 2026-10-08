@@ -27,22 +27,22 @@ input GloEvtCreateWebhookSubscriptionInput {
 
 ### Fields
 
-#### `GloEvtCreateWebhookSubscriptionInput.eventTypes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `eventTypes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Events of interest.
 
-#### `GloEvtCreateWebhookSubscriptionInput.filter` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `filter` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Optional JSON path expression for filtering events based on the content.
 
-#### `GloEvtCreateWebhookSubscriptionInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Optional subscription name.
 
-#### `GloEvtCreateWebhookSubscriptionInput.secretKey` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `secretKey` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Secret key used for event signing to ensure the delivery integrity.
 
-#### `GloEvtCreateWebhookSubscriptionInput.webhookUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `webhookUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 URL of the webhook where events are delivered.

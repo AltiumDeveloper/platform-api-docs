@@ -27,12 +27,12 @@ enum DesTaskPriority {
 
 ### Values
 
-#### `DesTaskPriority.HIGH`
+#### `HIGH`
 
-#### `DesTaskPriority.HIGHEST`
+#### `HIGHEST`
 
-#### `DesTaskPriority.LOW`
+#### `LOW`
 
-#### `DesTaskPriority.MEDIUM`
+#### `MEDIUM`
 
-#### `DesTaskPriority.UNDEFINED`
+#### `UNDEFINED`

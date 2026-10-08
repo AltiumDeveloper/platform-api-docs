@@ -13,6 +13,12 @@ deprecated: true
 
 Search a specific reference designs by its unique identifiers.
 
+### Type
+
+#### [`SupRefDesign`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) object
+
+A reference design model aggregates the relevant documents, files and parts.
+
 ```graphql
 supRefDesignByIds(
   ids: [ID!]!
@@ -21,10 +27,4 @@ supRefDesignByIds(
 
 ### Arguments
 
-#### `supRefDesignByIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SupRefDesign`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) object supply
-
-A reference design model aggregates the relevant documents, files and parts.
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

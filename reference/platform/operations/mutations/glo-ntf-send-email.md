@@ -11,6 +11,10 @@ deprecated: false
 
 Sends e-mail to specified recipients.
 
+### Type
+
+#### [`GloNtfSendEmailPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-ntf-send-email-payload.md) object
+
 ```graphql
 gloNtfSendEmail(
   input: GloNtfSendEmailInput!
@@ -19,8 +23,4 @@ gloNtfSendEmail(
 
 ### Arguments
 
-#### `gloNtfSendEmail.input` · [`GloNtfSendEmailInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-ntf-send-email-input.md) non-null input platform
-
-### Type
-
-#### [`GloNtfSendEmailPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-ntf-send-email-payload.md) object platform
+#### `input` · [`GloNtfSendEmailInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-ntf-send-email-input.md) non-null input

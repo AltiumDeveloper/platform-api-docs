@@ -22,10 +22,10 @@ enum SupEvalKitOrderDirection {
 
 ### Values
 
-#### `SupEvalKitOrderDirection.ASC`
+#### `ASC`
 
 Ascending order.
 
-#### `SupEvalKitOrderDirection.DESC`
+#### `DESC`
 
 Descending order.

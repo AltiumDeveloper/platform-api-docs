@@ -27,4 +27,4 @@ type RsaMotorStudioCreateScopeCapturePayload {
 
 ### Fields
 
-#### `RsaMotorStudioCreateScopeCapturePayload.capture` · [`RsaMotorStudioScopeCapture!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) non-null object renesas-preview
+#### `capture` · [`RsaMotorStudioScopeCapture!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) non-null object

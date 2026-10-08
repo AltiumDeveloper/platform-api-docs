@@ -22,10 +22,10 @@ enum SupSoftwareProjectErrorCode {
 
 ### Values
 
-#### `SupSoftwareProjectErrorCode.OPERATION_FAILED`
+#### `OPERATION_FAILED`
 
 The operation failed.
 
-#### `SupSoftwareProjectErrorCode.SUP_SOFTWARE_PROJECT_NOT_FOUND`
+#### `SUP_SOFTWARE_PROJECT_NOT_FOUND`
 
 The software project was not found.

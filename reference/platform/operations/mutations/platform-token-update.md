@@ -9,7 +9,11 @@ deprecated: false
 
 # platformTokenUpdate
 
-Updates the name and/or description of an existing `PlatformToken`.
+Updates the name and/or description of an existing [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md).
+
+### Type
+
+#### [`PlatformTokenUpdatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-payload.md) object
 
 ```graphql
 platformTokenUpdate(
@@ -19,8 +23,4 @@ platformTokenUpdate(
 
 ### Arguments
 
-#### `platformTokenUpdate.input` · [`PlatformTokenUpdateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-update-input.md) non-null input platform
-
-### Type
-
-#### [`PlatformTokenUpdatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-payload.md) object platform
+#### `input` · [`PlatformTokenUpdateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-update-input.md) non-null input

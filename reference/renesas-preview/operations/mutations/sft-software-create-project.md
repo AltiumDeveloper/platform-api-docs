@@ -11,6 +11,10 @@ deprecated: false
 
 Creates new Sofware Project.
 
+### Type
+
+#### [`SftSoftwareCreateProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-create-project-payload.md) object
+
 ```graphql
 sftSoftwareCreateProject(
   input: SftSoftwareCreateProjectInput!
@@ -19,8 +23,4 @@ sftSoftwareCreateProject(
 
 ### Arguments
 
-#### `sftSoftwareCreateProject.input` · [`SftSoftwareCreateProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-create-project-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSoftwareCreateProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-create-project-payload.md) object renesas-preview
+#### `input` · [`SftSoftwareCreateProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-create-project-input.md) non-null input

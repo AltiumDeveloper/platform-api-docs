@@ -24,8 +24,8 @@ type SupSolutionTemplatePatchCompatibleEvalKitsPayload {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchCompatibleEvalKitsPayload.errors` · [`[SupSolutionTemplatePatchCompatibleEvalKitsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-compatible-eval-kits-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplatePatchCompatibleEvalKitsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-compatible-eval-kits-error.md) list union
 
-#### `SupSolutionTemplatePatchCompatibleEvalKitsPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

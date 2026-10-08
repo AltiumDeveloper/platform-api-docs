@@ -13,7 +13,8 @@ BOM items are the components of a product.
 
 ### Common Data Model
 
-- [BOM Item](https://altiumdeveloper.github.io/cdm/classes/pro_BomItem/) — One line of a BOM: its designators and quantity, the primary manufacturer part used for it (identified by manufacturer and manufacturer part number), and any alternate parts recorded for that line. A line can be linked to a Workspace component that lists its part among its Part Choices, and BOM checks report issues against individual lines.
+- [BOM Item](https://w3id.org/altium/cdm/procurement/BomItem) — One line of a BOM: its designators and quantity, the primary manufacturer part used for it (identified by manufacturer and manufacturer part number), and any alternate parts recorded for that line. A line can be linked to a Workspace component that lists its part among its Part Choices, and BOM checks report issues against individual lines.
+  - IRI: [`https://w3id.org/altium/cdm/procurement/BomItem`](https://w3id.org/altium/cdm/procurement/BomItem)
 
 ### Member Of
 
@@ -36,45 +37,45 @@ type BomItem {
 
 ### Fields
 
-#### `BomItem.designators` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `designators` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A list of designators that specify the placements of the item within the schematic.
 
-#### `BomItem.elements` · [`[BomItemElement!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) non-null interface procurement
+#### `elements` · [`[BomItemElement!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) non-null interface
 
 All elements that could be used for this item (alternates and substitutes).
 
-#### `BomItem.extraQuantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `extraQuantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Extra quantity of the item to order. This is added to the product of 'Quantity' and 'BOM Production Quantity' to calculate the 'Total Quantity'.
 
-#### `BomItem.hiddenElements` · [`[BomItemElement!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) non-null interface procurement
+#### `hiddenElements` · [`[BomItemElement!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) non-null interface
 
 Elements that were hidden from the 'elements' list.
 
-#### `BomItem.issues` · [`[BomIssue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-issue.md) non-null object procurement
+#### `issues` · [`[BomIssue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-issue.md) non-null object
 
 Issues associated with the item.
 
-#### `BomItem.itemId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `itemId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the item. Items preserve their ID across releases of the BOM.
 
-#### `BomItem.primaryElement` · [`BomItemElement`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) interface procurement
+#### `primaryElement` · [`BomItemElement`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) interface
 
 The primary element chosen for this item.
 
-#### `BomItem.quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The quantity of the item required to produce one unit.
 
-#### `BomItem.totalQuantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalQuantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The total quantity of the item to order, calculated as "(Quantity \* BOM Production Quantity) + Extra Quantity".
 
 #### Deprecated
 
-#### `BomItem.componentReference` · [`BomComponentReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-component-reference.md) **DEPRECATED** object procurement
+#### `componentReference` · [`BomComponentReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-component-reference.md) **DEPRECATED** object
 
 > **Deprecated:** Use 'primaryElement.componentReference' instead.
 

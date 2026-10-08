@@ -13,7 +13,9 @@ A comment thread contains an initial remark associated with the design and a col
 
 ### Common Data Model
 
-- [Comment Thread](https://altiumdeveloper.github.io/cdm/classes/col_CommentThread/) — Comment Thread represents a structured discussion linked to a specific design object, document, or workspace item, capturing feedback, decisions, and context directly within the collaborative design environment.
+- [Comment Thread](https://w3id.org/altium/cdm/collaboration/CommentThread) — Comment Thread represents a structured discussion linked to a specific design object, document, or workspace item, capturing feedback, decisions, and context directly within the collaborative design environment.
+
+  - IRI: [`https://w3id.org/altium/cdm/collaboration/CommentThread`](https://w3id.org/altium/cdm/collaboration/CommentThread)
   - GRID: `grid:workspace:{workspace-id}:collaboration:comment-thread/{id}`
 
 ### Returned By
@@ -42,46 +44,46 @@ type DesCommentThread {
 
 ### Fields
 
-#### `DesCommentThread.assignedTo` · [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object platform
+#### `assignedTo` · [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object Platform
 
 The account information for the owner of any action or response to this comment thread.
 
-#### `DesCommentThread.comments` · [`[DesComment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) non-null object collaboration
+#### `comments` · [`[DesComment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) non-null object
 
 The list of replies associated with this comment thread.
 
-#### `DesCommentThread.commentThreadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `commentThreadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The reference identifier for this comment thread (used by `desCreateComment`, `desDeleteComment`, `desUpdateComment`).
+The reference identifier for this comment thread (used by [`desCreateComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-create-comment.md), [`desDeleteComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-delete-comment.md), [`desUpdateComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/mutations/des-update-comment.md)).
 
-#### `DesCommentThread.context` · [`DesCommentContext!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-context.md) non-null object collaboration
+#### `context` · [`DesCommentContext!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-context.md) non-null object
 
 The information about properties related to this comment thread.
 
-#### `DesCommentThread.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` for the creation of this comment thread.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) for the creation of this comment thread.
 
-#### `DesCommentThread.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The account information for who created this comment thread.
 
-#### `DesCommentThread.modifiedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `modifiedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` for the most recent modification of this comment thread.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) for the most recent modification of this comment thread.
 
-#### `DesCommentThread.modifiedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `modifiedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The account information for who most recently modified this comment thread.
 
-#### `DesCommentThread.originalStateScreenshotUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `originalStateScreenshotUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The web address to download the screenshot associated with the creation of this comment thread.
 
-#### `DesCommentThread.status` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `status` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Comment thread status. 0 = \*Resolved\*, 1 = \*Active\*.
 
-#### `DesCommentThread.threadNumber` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `threadNumber` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The sequence number of this comment thread.

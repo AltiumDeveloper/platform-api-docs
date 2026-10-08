@@ -11,6 +11,10 @@ deprecated: false
 
 Gets all available solutions with pagination.
 
+### Type
+
+#### [`SolSolutionsByPagePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solutions-by-page-payload.md) object
+
 ```graphql
 solSolutionsByPagev2(
   order: SolSolutionSortInput
@@ -22,14 +26,10 @@ solSolutionsByPagev2(
 
 ### Arguments
 
-#### `solSolutionsByPagev2.order` · [`SolSolutionSortInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-solution-sort-input.md) input platform
+#### `order` · [`SolSolutionSortInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-solution-sort-input.md) input
 
-#### `solSolutionsByPagev2.pageNumber` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `pageNumber` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `solSolutionsByPagev2.pageSize` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `pageSize` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `solSolutionsByPagev2.where` · [`SolSolutionFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-solution-filter-input.md) input platform
-
-### Type
-
-#### [`SolSolutionsByPagePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solutions-by-page-payload.md) object platform
+#### `where` · [`SolSolutionFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-solution-filter-input.md) input

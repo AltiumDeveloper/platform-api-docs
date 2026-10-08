@@ -24,10 +24,10 @@ input DesPartChangeLifecycleStateInput {
 
 ### Fields
 
-#### `DesPartChangeLifecycleStateInput.partId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `partId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the part.
 
-#### `DesPartChangeLifecycleStateInput.transitionLifecycleStateId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `transitionLifecycleStateId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the lifecycle state the part is moved to.

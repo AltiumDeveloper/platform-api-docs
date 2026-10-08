@@ -19,7 +19,8 @@ Enumerated value for a register field.
 
 ### Common Data Model
 
-- [FieldEnum](https://altiumdeveloper.github.io/cdm/classes/dm_FieldEnum/) — An enumerated value for a register field.
+- [FieldEnum](https://w3id.org/altium/cdm/deviceModel/FieldEnum) — An enumerated value for a register field.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/FieldEnum`](https://w3id.org/altium/cdm/deviceModel/FieldEnum)
 
 ### Member Of
 
@@ -35,14 +36,14 @@ type DmAmFieldEnum {
 
 ### Fields
 
-#### `DmAmFieldEnum.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Enumeration description.
 
-#### `DmAmFieldEnum.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Enumeration name.
 
-#### `DmAmFieldEnum.value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Enumeration value.

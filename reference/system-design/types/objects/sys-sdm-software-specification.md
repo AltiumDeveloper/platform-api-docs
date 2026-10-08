@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Software Specification](https://altiumdeveloper.github.io/cdm/classes/sys_SdmSoftwareSpecification/) — The "blueprint" for a software component. Captures the identity and classification of the software independently of any specific instance.
+- [Software Specification](https://w3id.org/altium/cdm/system/SdmSoftwareSpecification) — The "blueprint" for a software component. Captures the identity and classification of the software independently of any specific instance.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmSoftwareSpecification`](https://w3id.org/altium/cdm/system/SdmSoftwareSpecification)
 
 ### Member Of
 
@@ -35,12 +36,12 @@ type SysSdmSoftwareSpecification {
 
 ### Fields
 
-#### `SysSdmSoftwareSpecification.category` · [`SysSdmSoftwareComponentCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-software-component-category.md) enum system-design
+#### `category` · [`SysSdmSoftwareComponentCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-software-component-category.md) enum
 
-#### `SysSdmSoftwareSpecification.ecosystem` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `ecosystem` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSoftwareSpecification.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSoftwareSpecification.vendor` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `vendor` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSoftwareSpecification.version` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `version` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

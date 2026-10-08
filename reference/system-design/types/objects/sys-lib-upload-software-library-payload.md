@@ -27,4 +27,4 @@ type SysLibUploadSoftwareLibraryPayload {
 
 ### Fields
 
-#### `SysLibUploadSoftwareLibraryPayload.sysLibSoftwareComponent` · [`SysLibSoftwareComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-component.md) object system-design
+#### `sysLibSoftwareComponent` · [`SysLibSoftwareComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-component.md) object

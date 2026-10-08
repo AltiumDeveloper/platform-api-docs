@@ -27,41 +27,41 @@ input SupSoftwareProjectEvalKitSourceInput {
 
 ### Fields
 
-#### `SupSoftwareProjectEvalKitSourceInput.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The evaluation kit identifier.
 
-#### `SupSoftwareProjectEvalKitSourceInput.projectSources` · [`[SupSoftwareProjectEvalKitProjectSourceInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-eval-kit-project-source-input.md) non-null input supply
+#### `projectSources` · [`[SupSoftwareProjectEvalKitProjectSourceInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-eval-kit-project-source-input.md) non-null input
 
 The project sources associated with the evaluation kit source.
 
 #### Deprecated
 
-#### `SupSoftwareProjectEvalKitSourceInput.configUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar common
+#### `configUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar
 
 > **Deprecated:** Use 'projectSources' instead.
 
 The URL of the config associated with the evaluation kit source.
 
-#### `SupSoftwareProjectEvalKitSourceInput.configXmlUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar common
+#### `configXmlUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar
 
 > **Deprecated:** Use 'projectSources.configXmlUrl' instead.
 
 The URL of the config XML associated with the evaluation kit source.
 
-#### `SupSoftwareProjectEvalKitSourceInput.readmeUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar common
+#### `readmeUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar
 
 > **Deprecated:** Use 'projectSources' instead.
 
 The URL of the readme associated with the evaluation kit source.
 
-#### `SupSoftwareProjectEvalKitSourceInput.sourceFile` · [`SupSoftwareProjectFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-file-input.md) **DEPRECATED** input supply
+#### `sourceFile` · [`SupSoftwareProjectFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-file-input.md) **DEPRECATED** input
 
 > **Deprecated:** Use 'projectSources.sourceFile' instead.
 
 The upload file of the source associated with the evaluation kit source.
 
-#### `SupSoftwareProjectEvalKitSourceInput.sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar common
+#### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** scalar
 
 > **Deprecated:** Use 'projectSources.sourceUrl' instead.
 

@@ -17,6 +17,10 @@ deprecated: false
 
 Create a new tuning revision for the specified tuning.
 
+### Type
+
+#### [`RsaMotorStudioCreateTuningRevisionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-tuning-revision-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioCreateTuningRevision(
   input: RsaMotorStudioCreateTuningRevisionInput!
@@ -25,8 +29,4 @@ rsaMotorStudioCreateTuningRevision(
 
 ### Arguments
 
-#### `rsaMotorStudioCreateTuningRevision.input` · [`RsaMotorStudioCreateTuningRevisionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-tuning-revision-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioCreateTuningRevisionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-tuning-revision-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioCreateTuningRevisionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-tuning-revision-input.md) non-null input

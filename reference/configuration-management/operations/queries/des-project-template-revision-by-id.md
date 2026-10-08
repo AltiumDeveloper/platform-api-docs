@@ -11,6 +11,12 @@ deprecated: false
 
 Searches for a project template revision by its identifier.
 
+### Type
+
+#### [`DesProjectTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template-revision.md) object
+
+Project template revision information.
+
 ```graphql
 desProjectTemplateRevisionById(
   id: ID!
@@ -19,12 +25,6 @@ desProjectTemplateRevisionById(
 
 ### Arguments
 
-#### `desProjectTemplateRevisionById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The project template revision identifier.
-
-### Type
-
-#### [`DesProjectTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template-revision.md) object configuration-management
-
-Project template revision information.

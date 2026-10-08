@@ -25,8 +25,8 @@ enum DesCadBoardLayerType {
 
 ### Values
 
-#### `DesCadBoardLayerType.DIELECTRIC`
+#### `DIELECTRIC`
 
-#### `DesCadBoardLayerType.INTERNAL_PLANE`
+#### `INTERNAL_PLANE`
 
-#### `DesCadBoardLayerType.SIGNAL`
+#### `SIGNAL`

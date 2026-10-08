@@ -11,6 +11,12 @@ deprecated: false
 
 Search a specific datasheet by its unique identifier.
 
+### Type
+
+#### [`DesDatasheet`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet.md) object
+
+A component datasheet.
+
 ```graphql
 desDatasheetById(
   id: ID!
@@ -19,12 +25,6 @@ desDatasheetById(
 
 ### Arguments
 
-#### `desDatasheetById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier for a datasheet.
-
-### Type
-
-#### [`DesDatasheet`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet.md) object library-management
-
-A component datasheet.

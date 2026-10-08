@@ -11,6 +11,12 @@ deprecated: false
 
 Updates a revision naming scheme.
 
+### Type
+
+#### [`DesUpdateRevisionNamingSchemePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-revision-naming-scheme-payload.md) object
+
+Payload associated with updating revision naming scheme.
+
 ```graphql
 desUpdateRevisionNamingScheme(
   input: DesUpdateRevisionNamingSchemeInput!
@@ -19,10 +25,4 @@ desUpdateRevisionNamingScheme(
 
 ### Arguments
 
-#### `desUpdateRevisionNamingScheme.input` · [`DesUpdateRevisionNamingSchemeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-revision-naming-scheme-input.md) non-null input platform
-
-### Type
-
-#### [`DesUpdateRevisionNamingSchemePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-revision-naming-scheme-payload.md) object platform
-
-Payload associated with updating revision naming scheme.
+#### `input` · [`DesUpdateRevisionNamingSchemeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-revision-naming-scheme-input.md) non-null input

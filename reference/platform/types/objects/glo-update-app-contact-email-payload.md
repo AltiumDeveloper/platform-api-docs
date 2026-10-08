@@ -22,6 +22,6 @@ type GloUpdateAppContactEmailPayload {
 
 ### Fields
 
-#### `GloUpdateAppContactEmailPayload.errors` · [`[GloUpdateAppContactEmailError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-contact-email-error.md) list union platform
+#### `errors` · [`[GloUpdateAppContactEmailError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-contact-email-error.md) list union
 
-#### `GloUpdateAppContactEmailPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

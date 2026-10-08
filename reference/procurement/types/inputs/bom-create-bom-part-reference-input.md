@@ -24,10 +24,10 @@ input BomCreateBomPartReferenceInput {
 
 ### Fields
 
-#### `BomCreateBomPartReferenceInput.octopart` · [`BomOctopartPartReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-part-reference-input.md) input procurement
+#### `octopart` · [`BomOctopartPartReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-part-reference-input.md) input
 
 A reference to a part in Octopart.
 
-#### `BomCreateBomPartReferenceInput.raw` · [`BomRawPartReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-raw-part-reference-input.md) input procurement
+#### `raw` · [`BomRawPartReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-raw-part-reference-input.md) input
 
 A raw part descriptor (MPN + Manufacturer).

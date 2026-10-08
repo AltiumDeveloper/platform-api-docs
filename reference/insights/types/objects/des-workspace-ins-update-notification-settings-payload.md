@@ -24,10 +24,10 @@ type DesWorkspaceInsUpdateNotificationSettingsPayload {
 
 ### Fields
 
-#### `DesWorkspaceInsUpdateNotificationSettingsPayload.errors` · [`[DesWorkspaceInsInsightErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-error-payload.md) non-null object insights
+#### `errors` · [`[DesWorkspaceInsInsightErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.
 
-#### `DesWorkspaceInsUpdateNotificationSettingsPayload.settings` · [`DesWorkspaceInsNotificationSettings`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-notification-settings.md) object insights
+#### `settings` · [`DesWorkspaceInsNotificationSettings`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-notification-settings.md) object
 
 Notification settings after the update operation.

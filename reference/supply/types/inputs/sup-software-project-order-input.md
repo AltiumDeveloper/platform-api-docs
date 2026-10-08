@@ -24,10 +24,10 @@ input SupSoftwareProjectOrderInput {
 
 ### Fields
 
-#### `SupSoftwareProjectOrderInput.direction` · [`SupSoftwareProjectOrderDirection!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-order-direction.md) non-null enum supply
+#### `direction` · [`SupSoftwareProjectOrderDirection!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-order-direction.md) non-null enum
 
 The direction of the order.
 
-#### `SupSoftwareProjectOrderInput.field` · [`SupSoftwareProjectOrderField!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-order-field.md) non-null enum supply
+#### `field` · [`SupSoftwareProjectOrderField!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-order-field.md) non-null enum
 
 The field to order by.

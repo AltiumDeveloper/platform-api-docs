@@ -26,18 +26,18 @@ type DesPartAttributes {
 
 ### Fields
 
-#### `DesPartAttributes.customPart` · [`[DesPartAttribute!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) list object library-management
+#### `customPart` · [`[DesPartAttribute!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) list object
 
 The custom part attributes.
 
-#### `DesPartAttributes.siliconExpertPart` · [`[DesPartAttribute!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) list object library-management
+#### `siliconExpertPart` · [`[DesPartAttribute!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) list object
 
 The \*SiliconExpert\* part attributes.
 
-#### `DesPartAttributes.supplyPart` · [`[DesPartAttribute!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) list object library-management
+#### `supplyPart` · [`[DesPartAttribute!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) list object
 
 The supply part attributes.
 
-#### `DesPartAttributes.z2DataPart` · [`[DesPartAttribute!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) list object library-management
+#### `z2DataPart` · [`[DesPartAttribute!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) list object
 
 The \*Z2Data\* part attributes.

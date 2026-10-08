@@ -24,6 +24,6 @@ type GloScrScriptExecutionResult {
 
 ### Fields
 
-#### `GloScrScriptExecutionResult.exitCode` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `exitCode` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `GloScrScriptExecutionResult.returnValues` · [`[GloScrScriptOutput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-output.md) list object customization
+#### `returnValues` · [`[GloScrScriptOutput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-output.md) list object

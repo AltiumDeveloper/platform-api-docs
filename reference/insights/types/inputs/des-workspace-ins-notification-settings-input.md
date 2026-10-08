@@ -25,14 +25,14 @@ input DesWorkspaceInsNotificationSettingsInput {
 
 ### Fields
 
-#### `DesWorkspaceInsNotificationSettingsInput.enabled` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `enabled` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Enables or disables notifications for insights.
 
-#### `DesWorkspaceInsNotificationSettingsInput.recipientSettings` · [`DesWorkspaceInsNotificationRecipientSettingsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-notification-recipient-settings-input.md) input insights
+#### `recipientSettings` · [`DesWorkspaceInsNotificationRecipientSettingsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-notification-recipient-settings-input.md) input
 
 Recipient rules describing who should receive notifications.
 
-#### `DesWorkspaceInsNotificationSettingsInput.unsubscribedUserIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `unsubscribedUserIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Users who should not receive notifications for insights.

@@ -11,6 +11,10 @@ deprecated: false
 
 Updates entity's permissions.
 
+### Type
+
+#### [`DesUpdatePermissionsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-permissions-payload.md) object
+
 ```graphql
 desUpdatePermissions(
   input: DesUpdatePermissionsInput!
@@ -19,8 +23,4 @@ desUpdatePermissions(
 
 ### Arguments
 
-#### `desUpdatePermissions.input` · [`DesUpdatePermissionsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-permissions-input.md) non-null input platform
-
-### Type
-
-#### [`DesUpdatePermissionsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-permissions-payload.md) object platform
+#### `input` · [`DesUpdatePermissionsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-permissions-input.md) non-null input

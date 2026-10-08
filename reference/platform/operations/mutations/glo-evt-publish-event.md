@@ -11,6 +11,12 @@ deprecated: false
 
 Publishes an event.
 
+### Type
+
+#### [`GloEvtPublishEventPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-publish-event-payload.md) object
+
+Represents the result of event publishing operation.
+
 ```graphql
 gloEvtPublishEvent(
   input: GloEvtPublishEventInput!
@@ -19,10 +25,4 @@ gloEvtPublishEvent(
 
 ### Arguments
 
-#### `gloEvtPublishEvent.input` · [`GloEvtPublishEventInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-evt-publish-event-input.md) non-null input platform
-
-### Type
-
-#### [`GloEvtPublishEventPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-publish-event-payload.md) object platform
-
-Represents the result of event publishing operation.
+#### `input` · [`GloEvtPublishEventInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-evt-publish-event-input.md) non-null input

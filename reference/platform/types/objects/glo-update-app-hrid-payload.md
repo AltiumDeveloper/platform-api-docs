@@ -22,6 +22,6 @@ type GloUpdateAppHridPayload {
 
 ### Fields
 
-#### `GloUpdateAppHridPayload.errors` · [`[GloUpdateAppHridError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-hrid-error.md) list union platform
+#### `errors` · [`[GloUpdateAppHridError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-hrid-error.md) list union
 
-#### `GloUpdateAppHridPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

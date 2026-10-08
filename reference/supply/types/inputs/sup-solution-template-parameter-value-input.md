@@ -22,10 +22,10 @@ input SupSolutionTemplateParameterValueInput {
 
 ### Fields
 
-#### `SupSolutionTemplateParameterValueInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier used to look up the parameter value by its pair of name and value.
 
-#### `SupSolutionTemplateParameterValueInput.value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier used to look up the parameter value by its pair of name and value.

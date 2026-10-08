@@ -23,6 +23,6 @@ type SysEsdExportDocumentPayload {
 
 ### Fields
 
-#### `SysEsdExportDocumentPayload.esdDocumentJson` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `esdDocumentJson` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Serialized JSON representation of the exported ESD document.

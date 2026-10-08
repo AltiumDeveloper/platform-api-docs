@@ -26,10 +26,10 @@ type SupPartFamilyDocument {
 
 ### Fields
 
-#### `SupPartFamilyDocument.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SupPartFamilyDocument.type` · [`SupPartFamilyDocumentType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-part-family-document-type.md) non-null enum supply
+#### `type` · [`SupPartFamilyDocumentType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-part-family-document-type.md) non-null enum
 
-#### `SupPartFamilyDocument.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-#### `SupPartFamilyDocument.url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

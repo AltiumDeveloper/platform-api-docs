@@ -25,10 +25,10 @@ input DesTrackFilterInput {
 
 ### Fields
 
-#### `DesTrackFilterInput.and` · [`[DesTrackFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-track-filter-input.md) list input design
+#### `and` · [`[DesTrackFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-track-filter-input.md) list input
 
-#### `DesTrackFilterInput.layer` · [`DesLayerFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-layer-filter-input.md) input design
+#### `layer` · [`DesLayerFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-layer-filter-input.md) input
 
 Layer associated with the track.
 
-#### `DesTrackFilterInput.or` · [`[DesTrackFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-track-filter-input.md) list input design
+#### `or` · [`[DesTrackFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-track-filter-input.md) list input

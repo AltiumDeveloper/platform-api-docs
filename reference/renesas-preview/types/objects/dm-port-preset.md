@@ -30,10 +30,10 @@ type DmPortPreset {
 
 ### Fields
 
-#### `DmPortPreset.portName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `portName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Physical port name (e.g., P202).
 
-#### `DmPortPreset.presetFunctionName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `presetFunctionName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Function name the board preset steers the solver toward (e.g., RXD9).

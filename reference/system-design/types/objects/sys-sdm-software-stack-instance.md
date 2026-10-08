@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Software Stack Instance](https://altiumdeveloper.github.io/cdm/classes/sys_SdmSoftwareStackInstance/) — Represents a software stack instance and its dependencies.
+- [Software Stack Instance](https://w3id.org/altium/cdm/system/SdmSoftwareStackInstance) — Represents a software stack instance and its dependencies.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmSoftwareStackInstance`](https://w3id.org/altium/cdm/system/SdmSoftwareStackInstance)
 
 ### Member Of
 
@@ -36,14 +37,14 @@ type SysSdmSoftwareStackInstance {
 
 ### Fields
 
-#### `SysSdmSoftwareStackInstance.dependencyIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `dependencyIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmSoftwareStackInstance.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmSoftwareStackInstance.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSoftwareStackInstance.parameters` · [`[SysSdmParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) list object system-design
+#### `parameters` · [`[SysSdmParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) list object
 
-#### `SysSdmSoftwareStackInstance.peripheralInstanceId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `peripheralInstanceId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSoftwareStackInstance.specification` · [`SysSdmSoftwareSpecification!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-specification.md) non-null object system-design
+#### `specification` · [`SysSdmSoftwareSpecification!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-specification.md) non-null object

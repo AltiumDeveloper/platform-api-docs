@@ -27,4 +27,4 @@ type DmExecuteDeviceEvaluationFromXmlPayload {
 
 ### Fields
 
-#### `DmExecuteDeviceEvaluationFromXmlPayload.dmResolverSummary` · [`DmResolverSummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-summary.md) object renesas-preview
+#### `dmResolverSummary` · [`DmResolverSummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-summary.md) object

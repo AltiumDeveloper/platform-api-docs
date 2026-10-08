@@ -11,6 +11,12 @@ deprecated: false
 
 Create new user.
 
+### Type
+
+#### [`GloCreateUserPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-user-payload.md) object
+
+Represents output value for creating new user.
+
 ```graphql
 gloCreateUser(
   input: GloCreateUserInput!
@@ -19,10 +25,4 @@ gloCreateUser(
 
 ### Arguments
 
-#### `gloCreateUser.input` · [`GloCreateUserInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-user-input.md) non-null input platform
-
-### Type
-
-#### [`GloCreateUserPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-user-payload.md) object platform
-
-Represents output value for creating new user.
+#### `input` · [`GloCreateUserInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-user-input.md) non-null input

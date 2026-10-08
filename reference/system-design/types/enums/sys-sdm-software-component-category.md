@@ -31,12 +31,12 @@ enum SysSdmSoftwareComponentCategory {
 
 ### Values
 
-#### `SysSdmSoftwareComponentCategory.APPLICATION`
+#### `APPLICATION`
 
-#### `SysSdmSoftwareComponentCategory.DRIVER`
+#### `DRIVER`
 
-#### `SysSdmSoftwareComponentCategory.LIBRARY`
+#### `LIBRARY`
 
-#### `SysSdmSoftwareComponentCategory.MIDDLEWARE`
+#### `MIDDLEWARE`
 
-#### `SysSdmSoftwareComponentCategory.OPERATING_SYSTEM`
+#### `OPERATING_SYSTEM`

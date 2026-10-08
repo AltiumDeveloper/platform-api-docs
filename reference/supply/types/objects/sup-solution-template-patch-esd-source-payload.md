@@ -24,8 +24,8 @@ type SupSolutionTemplatePatchEsdSourcePayload {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchEsdSourcePayload.errors` · [`[SupSolutionTemplatePatchEsdSourceError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-esd-source-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplatePatchEsdSourceError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-esd-source-error.md) list union
 
-#### `SupSolutionTemplatePatchEsdSourcePayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

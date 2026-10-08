@@ -24,10 +24,10 @@ type DesSupplierStock {
 
 ### Fields
 
-#### `DesSupplierStock.locationName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `locationName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Region that this inventory level applies to.
 
-#### `DesSupplierStock.quantity` · [`Decimal!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) non-null scalar common
+#### `quantity` · [`Decimal!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) non-null scalar
 
 Stock level value.

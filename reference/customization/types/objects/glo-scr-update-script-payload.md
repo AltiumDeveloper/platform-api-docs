@@ -21,4 +21,4 @@ type GloScrUpdateScriptPayload {
 
 ### Fields
 
-#### `GloScrUpdateScriptPayload.gloScrScriptVersion` · [`GloScrScriptVersion`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version.md) object customization
+#### `gloScrScriptVersion` · [`GloScrScriptVersion`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version.md) object

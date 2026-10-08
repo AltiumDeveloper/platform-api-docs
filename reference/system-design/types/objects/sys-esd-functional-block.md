@@ -27,16 +27,16 @@ type SysEsdFunctionalBlock {
 
 ### Fields
 
-#### `SysEsdFunctionalBlock.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysEsdFunctionalBlock.keyComponents` · [`[SysEsdKeyComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-key-component.md) list object system-design
+#### `keyComponents` · [`[SysEsdKeyComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-key-component.md) list object
 
-#### `SysEsdFunctionalBlock.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysEsdFunctionalBlock.parameters` · [`[SysEsdParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-parameter.md) list object system-design
+#### `parameters` · [`[SysEsdParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-parameter.md) list object
 
-#### `SysEsdFunctionalBlock.ports` · [`[SysEsdPort!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-port.md) list object system-design
+#### `ports` · [`[SysEsdPort!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-port.md) list object
 
-#### `SysEsdFunctionalBlock.portsAssociations` · [`[SysEsdPortAssociation!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-port-association.md) list object system-design
+#### `portsAssociations` · [`[SysEsdPortAssociation!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-port-association.md) list object
 
-#### `SysEsdFunctionalBlock.softwareComponents` · [`[SysEsdSoftwareComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-software-component.md) list object system-design
+#### `softwareComponents` · [`[SysEsdSoftwareComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-software-component.md) list object

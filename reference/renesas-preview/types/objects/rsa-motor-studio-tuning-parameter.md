@@ -32,14 +32,14 @@ type RsaMotorStudioTuningParameter {
 
 ### Fields
 
-#### `RsaMotorStudioTuningParameter.evidence` · [`RsaMotorStudioTuningParameterEvidence`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-parameter-evidence.md) object renesas-preview
+#### `evidence` · [`RsaMotorStudioTuningParameterEvidence`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-parameter-evidence.md) object
 
-#### `RsaMotorStudioTuningParameter.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `RsaMotorStudioTuningParameter.path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `RsaMotorStudioTuningParameter.source` · [`ParamSource!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/param-source.md) non-null enum renesas-preview
+#### `source` · [`ParamSource!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/param-source.md) non-null enum
 
-#### `RsaMotorStudioTuningParameter.units` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `units` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `RsaMotorStudioTuningParameter.value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

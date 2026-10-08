@@ -29,30 +29,30 @@ type DesPartUsages {
 
 ### Fields
 
-#### `DesPartUsages.assemblyVariants` · [`[DesPartProjectUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-project-usage.md) list object library-management
+#### `assemblyVariants` · [`[DesPartProjectUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-project-usage.md) list object
 
 The assembly variants.
 
-#### `DesPartUsages.bomReleaseUsages` · [`[DesPartBomUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-usage.md) list object library-management
+#### `bomReleaseUsages` · [`[DesPartBomUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-usage.md) list object
 
 The BOM release usages.
 
-#### `DesPartUsages.componentUsages` · [`[DesPartComponentUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-component-usage.md) list object library-management
+#### `componentUsages` · [`[DesPartComponentUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-component-usage.md) list object
 
 The component usages.
 
-#### `DesPartUsages.consolidatedBomReleasesUsages` · [`[DesPartBomUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-usage.md) list object library-management
+#### `consolidatedBomReleasesUsages` · [`[DesPartBomUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-usage.md) list object
 
 The consolidated BOM releases usages.
 
-#### `DesPartUsages.projectUsages` · [`[DesPartProjectUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-project-usage.md) list object library-management
+#### `projectUsages` · [`[DesPartProjectUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-project-usage.md) list object
 
 The project usages.
 
-#### `DesPartUsages.wipBomUsages` · [`[DesPartBomUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-usage.md) list object library-management
+#### `wipBomUsages` · [`[DesPartBomUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-usage.md) list object
 
 The WIP BOM usages.
 
-#### `DesPartUsages.wipConsolidatedBomUsages` · [`[DesPartBomUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-usage.md) list object library-management
+#### `wipConsolidatedBomUsages` · [`[DesPartBomUsage!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-usage.md) list object
 
 The WIP consolidated BOM usages.

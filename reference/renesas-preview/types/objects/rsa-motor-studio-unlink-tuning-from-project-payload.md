@@ -27,4 +27,4 @@ type RsaMotorStudioUnlinkTuningFromProjectPayload {
 
 ### Fields
 
-#### `RsaMotorStudioUnlinkTuningFromProjectPayload.isSuccess` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isSuccess` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar

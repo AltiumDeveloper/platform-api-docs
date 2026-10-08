@@ -21,6 +21,6 @@ type SolDeleteAttachmentPayload {
 
 ### Fields
 
-#### `SolDeleteAttachmentPayload.isDeleted` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isDeleted` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether deletion completed successfuly.

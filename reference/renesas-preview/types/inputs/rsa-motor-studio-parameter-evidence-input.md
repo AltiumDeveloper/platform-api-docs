@@ -28,6 +28,6 @@ input RsaMotorStudioParameterEvidenceInput {
 
 ### Fields
 
-#### `RsaMotorStudioParameterEvidenceInput.note` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `note` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `RsaMotorStudioParameterEvidenceInput.scopeCaptureId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `scopeCaptureId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

@@ -17,6 +17,6 @@ supSoftwareProjectParameterInfos: [SupSoftwareProjectParameterInfo!]!
 
 ### Type
 
-#### [`SupSoftwareProjectParameterInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-parameter-info.md) object supply
+#### [`SupSoftwareProjectParameterInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-parameter-info.md) object
 
 Represents the information of a parameter in the software project.

@@ -24,10 +24,10 @@ input DesAddComponentPartChoicesInput {
 
 ### Fields
 
-#### `DesAddComponentPartChoicesInput.componentId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `componentId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Component identifier.
 
-#### `DesAddComponentPartChoicesInput.manufacturerParts` · [`[DesPartChoiceInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-choice-input.md) non-null input library-management
+#### `manufacturerParts` · [`[DesPartChoiceInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-choice-input.md) non-null input
 
 Manufacturer part choices to add.

@@ -9,11 +9,11 @@ deprecated: false
 
 # GloAppInstallDeniedError
 
-Error that occurs when a `GloApp` cannot be installed into a workspace due to insufficient permissions.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) cannot be installed into a workspace due to insufficient permissions.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type GloAppInstallDeniedError implements Error {
 
 ### Fields
 
-#### `GloAppInstallDeniedError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

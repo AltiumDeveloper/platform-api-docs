@@ -23,8 +23,8 @@ input DesComparisonRunInput {
 
 ### Fields
 
-#### `DesComparisonRunInput.mode` · [`DesComparisonMode!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-comparison-mode.md) non-null enum design
+#### `mode` · [`DesComparisonMode!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-comparison-mode.md) non-null enum
 
-#### `DesComparisonRunInput.sourceReleaseId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `sourceReleaseId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `DesComparisonRunInput.targetReleaseId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `targetReleaseId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

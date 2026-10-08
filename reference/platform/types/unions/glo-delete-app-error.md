@@ -19,10 +19,10 @@ union GloDeleteAppError = GloAppOAuthClientNotDeletedError | GloAppNotDeletedErr
 
 ### Possible types
 
-#### [`GloDeleteAppError.GloAppOAuthClientNotDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-deleted-error.md) object platform
+#### [`GloAppOAuthClientNotDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-deleted-error.md) object
 
 Error that occurs when an \*OAuth client\* cannot be deleted.
 
-#### [`GloDeleteAppError.GloAppNotDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-deleted-error.md) object platform
+#### [`GloAppNotDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-deleted-error.md) object
 
-Error that occurs when a `GloApp` cannot be deleted.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) cannot be deleted.

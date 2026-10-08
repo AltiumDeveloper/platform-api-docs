@@ -17,7 +17,9 @@ deprecated: false
 
 ### Common Data Model
 
-- [System Model](https://altiumdeveloper.github.io/cdm/classes/sys_SystemModel/) — A high-level system model that captures the overall system architecture, crossing boundary between functional and logical domains (e.g., hardware and software).
+- [System Model](https://w3id.org/altium/cdm/system/SystemModel) — A high-level system model that captures the overall system architecture, crossing boundary between functional and logical domains (e.g., hardware and software).
+
+  - IRI: [`https://w3id.org/altium/cdm/system/SystemModel`](https://w3id.org/altium/cdm/system/SystemModel)
   - GRID: `grid:workspace:{workspace-id}:system-design:sdm/{id}`
 
 ### Returned By
@@ -39,10 +41,10 @@ type SysSdmSystemModel {
 
 ### Fields
 
-#### `SysSdmSystemModel.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SysSdmSystemModel.latestVersion` · [`SysSdmSystemModelVersion!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) non-null object system-design **EXPERIMENTAL**
+#### `latestVersion` · [`SysSdmSystemModelVersion!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) non-null object **EXPERIMENTAL**
 
-#### `SysSdmSystemModel.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common **EXPERIMENTAL**
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar **EXPERIMENTAL**
 
-#### `SysSdmSystemModel.versions` · [`[SysSdmSystemModelVersion!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) list object system-design **EXPERIMENTAL**
+#### `versions` · [`[SysSdmSystemModelVersion!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) list object **EXPERIMENTAL**

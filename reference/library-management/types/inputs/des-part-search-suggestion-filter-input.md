@@ -24,10 +24,10 @@ input DesPartSearchSuggestionFilterInput {
 
 ### Fields
 
-#### `DesPartSearchSuggestionFilterInput.categories` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `categories` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 The list of categories to filter by.
 
-#### `DesPartSearchSuggestionFilterInput.manufacturers` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `manufacturers` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 The list of manufacturers to filter by.

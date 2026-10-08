@@ -11,7 +11,9 @@ deprecated: false
 
 ### Common Data Model
 
-- [User](https://altiumdeveloper.github.io/cdm/classes/plt_User/) — A person identified by a global Altium Account, the identity used for signing in to Altium services. A user can be registered in an organization's Company Account, either added by an administrator or admitted through an approved join request, and can then be given access to licenses through the Company Account's user groups. Access to a Workspace is granted separately, by making the user a member of that Workspace.
+- [User](https://w3id.org/altium/cdm/platform/User) — A person identified by a global Altium Account, the identity used for signing in to Altium services. A user can be registered in an organization's Company Account, either added by an administrator or admitted through an approved join request, and can then be given access to licenses through the Company Account's user groups. Access to a Workspace is granted separately, by making the user a member of that Workspace.
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/User`](https://w3id.org/altium/cdm/platform/User)
   - GRID: `grid:global::platform:user/{id}`
 
 ### Returned By
@@ -59,122 +61,122 @@ type GloUser {
 
 ### Fields
 
-#### `GloUser.activationStatus` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `activationStatus` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Current activation status of the user.
 
-#### `GloUser.active` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `active` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether this user account is active.
 
-#### `GloUser.authType` · [`GloAuthType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-auth-type.md) non-null enum platform
+#### `authType` · [`GloAuthType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-auth-type.md) non-null enum
 
 Authentication type (e.g., Windows, LDAP) used for this user account.
 
-#### `GloUser.autoSync` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `autoSync` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether automatic synchronization is enabled for this user.
 
-#### `GloUser.badges` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `badges` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Badges or achievements associated with the user (e.g., professional certifications).
 
-#### `GloUser.country` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `country` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Country or region associated with this user.
 
-#### `GloUser.currentPosition` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `currentPosition` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Current job position or role held by the user.
 
-#### `GloUser.displayName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `displayName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Display name shown publicly in interfaces.
 
-#### `GloUser.domain` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `domain` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Domain associated with this user.
 
-#### `GloUser.email` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `email` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Email address associated with this user account.
 
-#### `GloUser.exampleWork` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `exampleWork` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Example work or projects associated with this user.
 
-#### `GloUser.experience` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `experience` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Professional experience summary for the user.
 
-#### `GloUser.firstName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `firstName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 First name of the user.
 
-#### `GloUser.groups` · [`[GloUserGroup]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-group.md) list object platform
+#### `groups` · [`[GloUserGroup]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-group.md) list object
 
 List of groups assigned to this user.
 
-#### `GloUser.hideEmail` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `hideEmail` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the user's email address should be hidden from public view.
 
-#### `GloUser.hostName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `hostName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Hostname associated with this user's account (e.g., server name or domain).
 
-#### `GloUser.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 User's global resource identifier.
 
-#### `GloUser.lastName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `lastName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Last name of the user.
 
-#### `GloUser.locale` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `locale` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Preferred language or regional locale setting for the user.
 
-#### `GloUser.organization` · [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) object platform
+#### `organization` · [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) object
 
 Organization to which this user belongs.
 
-#### `GloUser.parameters` · [`[GloParameter]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-parameter.md) list object platform
+#### `parameters` · [`[GloParameter]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-parameter.md) list object
 
 Collection of parameters or settings specific to this user.
 
-#### `GloUser.phone` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `phone` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Phone number associated with this user.
 
-#### `GloUser.profilePicture` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `profilePicture` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 URL to a profile picture or avatar associated with this user.
 
-#### `GloUser.salutation` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `salutation` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Salutation or title used when addressing the user (e.g., Dr., Mr.).
 
-#### `GloUser.spaces` · [`[GloUserSpace]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-space.md) list object platform
+#### `spaces` · [`[GloUserSpace]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-space.md) list object
 
 List of spaces associated with this user.
 
-#### `GloUser.specialties` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `specialties` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Specialized skills or areas of expertise for the user.
 
-#### `GloUser.timezone` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `timezone` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Preferred timezone for this user.
 
-#### `GloUser.userId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `userId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 User's identifier.
 
-#### `GloUser.userName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `userName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Username associated with the user account.
 
-#### `GloUser.website` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `website` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Website or personal URL associated with this user.

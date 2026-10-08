@@ -24,6 +24,6 @@ enum DesDocumentType {
 
 ### Values
 
-#### `DesDocumentType.PCB`
+#### `PCB`
 
-#### `DesDocumentType.SCHEMATIC`
+#### `SCHEMATIC`

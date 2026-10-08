@@ -22,10 +22,10 @@ input SupSolutionTemplateKeyFeatureGroupAttributeInput {
 
 ### Fields
 
-#### `SupSolutionTemplateKeyFeatureGroupAttributeInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The attribute name.
 
-#### `SupSolutionTemplateKeyFeatureGroupAttributeInput.value` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `value` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The tag attribute value.

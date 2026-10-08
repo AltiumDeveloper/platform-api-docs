@@ -25,10 +25,10 @@ input GloOAuthClientFilterInput {
 
 ### Fields
 
-#### `GloOAuthClientFilterInput.and` · [`[GloOAuthClientFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-oauth-client-filter-input.md) list input platform
+#### `and` · [`[GloOAuthClientFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-oauth-client-filter-input.md) list input
 
-#### `GloOAuthClientFilterInput.clientId` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `clientId` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 The client identifier for this \*OAuth 2.0 client\*.
 
-#### `GloOAuthClientFilterInput.or` · [`[GloOAuthClientFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-oauth-client-filter-input.md) list input platform
+#### `or` · [`[GloOAuthClientFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-oauth-client-filter-input.md) list input

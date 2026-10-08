@@ -27,22 +27,22 @@ type DesCadBoardCopperLayer {
 
 ### Fields
 
-#### `DesCadBoardCopperLayer.isPadAndViaBarrelsSpecialLayer` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isPadAndViaBarrelsSpecialLayer` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 True if CAD board copper layer is pad and via barrels special layer.
 
-#### `DesCadBoardCopperLayer.models` · [`[DesCadBoard3DBodyModelData!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-3-dbody-model-data.md) list object design
+#### `models` · [`[DesCadBoard3DBodyModelData!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-3-dbody-model-data.md) list object
 
 CAD board copper layer models.
 
-#### `DesCadBoardCopperLayer.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board copper layer name.
 
-#### `DesCadBoardCopperLayer.platformLayerId` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `platformLayerId` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 CAD board copper layer platform layer identifier.
 
-#### `DesCadBoardCopperLayer.thickness` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `thickness` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 CAD board copper layer thickness.

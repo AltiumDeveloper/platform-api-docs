@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a footprint.
 
+### Type
+
+#### [`DesCreateFootprintPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-create-footprint-payload.md) object
+
+Payload associated with creating footprint.
+
 ```graphql
 desCreateFootprint(
   input: DesCreateFootprintInput!
@@ -19,10 +25,4 @@ desCreateFootprint(
 
 ### Arguments
 
-#### `desCreateFootprint.input` · [`DesCreateFootprintInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-create-footprint-input.md) non-null input library-management
-
-### Type
-
-#### [`DesCreateFootprintPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-create-footprint-payload.md) object library-management
-
-Payload associated with creating footprint.
+#### `input` · [`DesCreateFootprintInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-create-footprint-input.md) non-null input

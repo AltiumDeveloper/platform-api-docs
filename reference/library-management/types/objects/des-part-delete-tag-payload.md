@@ -24,10 +24,10 @@ type DesPartDeleteTagPayload {
 
 ### Fields
 
-#### `DesPartDeleteTagPayload.deletedTagId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `deletedTagId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the deleted tag. Always `null` when `errors` is not empty.
 
-#### `DesPartDeleteTagPayload.errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object library-management
+#### `errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.

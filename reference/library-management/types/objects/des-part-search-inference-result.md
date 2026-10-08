@@ -29,30 +29,30 @@ type DesPartSearchInferenceResult {
 
 ### Fields
 
-#### `DesPartSearchInferenceResult.attributes` · [`[DesPartSearchInferenceSuggestedAttribute!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-inference-suggested-attribute.md) non-null object library-management
+#### `attributes` · [`[DesPartSearchInferenceSuggestedAttribute!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-inference-suggested-attribute.md) non-null object
 
 Attributes inferred for this query.
 
-#### `DesPartSearchInferenceResult.category` · [`DesPartCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) object library-management
+#### `category` · [`DesPartCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) object
 
 Category inferred for this query.
 
-#### `DesPartSearchInferenceResult.manufacturer` · [`DesPartCompany`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) object library-management
+#### `manufacturer` · [`DesPartCompany`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) object
 
 Manufacturer inferred for this query.
 
-#### `DesPartSearchInferenceResult.normalizedQuery` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `normalizedQuery` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Normalized original query string used for inference.
 
-#### `DesPartSearchInferenceResult.strippedQuery` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `strippedQuery` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Query string with inferred terms removed.
 
-#### `DesPartSearchInferenceResult.strippedSpans` · [`[DesPartSearchInferenceStrippedSpan!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-inference-stripped-span.md) non-null object library-management
+#### `strippedSpans` · [`[DesPartSearchInferenceStrippedSpan!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-inference-stripped-span.md) non-null object
 
 Positions of removed inferred terms mapped to attribute short names.
 
-#### `DesPartSearchInferenceResult.suggestedCategories` · [`[DesPartSearchInferenceCategorySuggestion!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-inference-category-suggestion.md) non-null object library-management
+#### `suggestedCategories` · [`[DesPartSearchInferenceCategorySuggestion!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-inference-category-suggestion.md) non-null object
 
 Category suggestions related to this query.

@@ -30,10 +30,10 @@ input PathFilterInput {
 
 ### Fields
 
-#### `PathFilterInput.and` · [`[PathFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/path-filter-input.md) list input common
+#### `and` · [`[PathFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/path-filter-input.md) list input
 
-#### `PathFilterInput.count` · [`IntOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/int-operation-filter-input.md) input common
+#### `count` · [`IntOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/int-operation-filter-input.md) input
 
-#### `PathFilterInput.isEmpty` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input common
+#### `isEmpty` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input
 
-#### `PathFilterInput.or` · [`[PathFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/path-filter-input.md) list input common
+#### `or` · [`[PathFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/path-filter-input.md) list input

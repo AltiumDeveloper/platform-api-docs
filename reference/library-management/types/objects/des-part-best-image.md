@@ -23,6 +23,6 @@ type DesPartBestImage {
 
 ### Fields
 
-#### `DesPartBestImage.url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The URL of the image.

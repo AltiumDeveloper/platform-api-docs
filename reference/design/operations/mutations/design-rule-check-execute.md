@@ -17,6 +17,10 @@ deprecated: false
 
 Executes rule checks for the specified design and returns the resulting rule check execution.
 
+### Type
+
+#### [`DesignRuleCheckExecutePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-rule-check-execute-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 designRuleCheckExecute(
   input: DesignRuleCheckExecuteInput!
@@ -25,8 +29,4 @@ designRuleCheckExecute(
 
 ### Arguments
 
-#### `designRuleCheckExecute.input` · [`DesignRuleCheckExecuteInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execute-input.md) non-null input design
-
-### Type
-
-#### [`DesignRuleCheckExecutePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-rule-check-execute-payload.md) object design **EXPERIMENTAL**
+#### `input` · [`DesignRuleCheckExecuteInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execute-input.md) non-null input

@@ -22,10 +22,10 @@ input GloRemoveAppScopeInput {
 
 ### Fields
 
-#### `GloRemoveAppScopeInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The GRID identifier for the App to be updated.
 
-#### `GloRemoveAppScopeInput.scope` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `scope` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The scope to be removed from the App.

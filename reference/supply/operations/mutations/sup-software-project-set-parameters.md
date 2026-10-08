@@ -11,6 +11,12 @@ deprecated: false
 
 Replace all parameters on a software project. Deletes all existing parameters and values, then inserts the new ones.
 
+### Type
+
+#### [`SupSoftwareProjectSetParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-set-parameters-payload.md) object
+
+Payload returned after setting parameters on a software project.
+
 ```graphql
 supSoftwareProjectSetParameters(
   input: SupSoftwareProjectSetParametersInput!
@@ -19,10 +25,4 @@ supSoftwareProjectSetParameters(
 
 ### Arguments
 
-#### `supSoftwareProjectSetParameters.input` · [`SupSoftwareProjectSetParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-set-parameters-input.md) non-null input supply
-
-### Type
-
-#### [`SupSoftwareProjectSetParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-set-parameters-payload.md) object supply
-
-Payload returned after setting parameters on a software project.
+#### `input` · [`SupSoftwareProjectSetParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-set-parameters-input.md) non-null input

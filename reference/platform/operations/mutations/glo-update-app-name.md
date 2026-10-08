@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the name of an existing App.
 
+### Type
+
+#### [`GloUpdateAppNamePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-name-payload.md) object
+
 ```graphql
 gloUpdateAppName(
   input: GloUpdateAppNameInput!
@@ -19,8 +23,4 @@ gloUpdateAppName(
 
 ### Arguments
 
-#### `gloUpdateAppName.input` · [`GloUpdateAppNameInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-name-input.md) non-null input platform
-
-### Type
-
-#### [`GloUpdateAppNamePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-name-payload.md) object platform
+#### `input` · [`GloUpdateAppNameInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-name-input.md) non-null input

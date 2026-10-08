@@ -19,6 +19,6 @@ union SupSolutionTemplatePatchParametersError = SupSolutionTemplateOperationFail
 
 ### Possible types
 
-#### [`SupSolutionTemplatePatchParametersError.SupSolutionTemplateOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md) object supply
+#### [`SupSolutionTemplateOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md) object
 
-#### [`SupSolutionTemplatePatchParametersError.SupSolutionTemplateNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-not-found-error.md) object supply
+#### [`SupSolutionTemplateNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-not-found-error.md) object

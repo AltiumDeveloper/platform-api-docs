@@ -27,4 +27,4 @@ type RsaMotorStudioUpdateScopeConfigPayload {
 
 ### Fields
 
-#### `RsaMotorStudioUpdateScopeConfigPayload.config` · [`RsaMotorStudioScopeConfig!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) non-null object renesas-preview
+#### `config` · [`RsaMotorStudioScopeConfig!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) non-null object

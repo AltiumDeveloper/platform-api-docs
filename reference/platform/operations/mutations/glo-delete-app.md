@@ -11,6 +11,10 @@ deprecated: false
 
 Deletes an App.
 
+### Type
+
+#### [`GloDeleteAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-delete-app-payload.md) object
+
 ```graphql
 gloDeleteApp(
   input: GloDeleteAppInput!
@@ -19,8 +23,4 @@ gloDeleteApp(
 
 ### Arguments
 
-#### `gloDeleteApp.input` · [`GloDeleteAppInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-delete-app-input.md) non-null input platform
-
-### Type
-
-#### [`GloDeleteAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-delete-app-payload.md) object platform
+#### `input` · [`GloDeleteAppInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-delete-app-input.md) non-null input

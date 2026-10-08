@@ -11,6 +11,12 @@ deprecated: false
 
 Upgrades components to use the latest symbol revision. This operation updates the link to the symbol and does not create new component revisions.
 
+### Type
+
+#### [`DesUpgradeComponentsToLatestSymbolPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-upgrade-components-to-latest-symbol-payload.md) object
+
+Payload for upgrading components to use the latest symbol revision.
+
 ```graphql
 desUpgradeComponentsToLatestSymbol(
   input: DesUpgradeComponentsToLatestSymbolInput!
@@ -19,10 +25,4 @@ desUpgradeComponentsToLatestSymbol(
 
 ### Arguments
 
-#### `desUpgradeComponentsToLatestSymbol.input` · [`DesUpgradeComponentsToLatestSymbolInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-upgrade-components-to-latest-symbol-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpgradeComponentsToLatestSymbolPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-upgrade-components-to-latest-symbol-payload.md) object library-management
-
-Payload for upgrading components to use the latest symbol revision.
+#### `input` · [`DesUpgradeComponentsToLatestSymbolInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-upgrade-components-to-latest-symbol-input.md) non-null input

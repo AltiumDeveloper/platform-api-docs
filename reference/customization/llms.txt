@@ -1,7 +1,7 @@
-# Customization — Altium Platform API
+# Customization — Altium 365 API
 > Extension points, scripts, script executions and workflows.
 
-Concepts: [customization](https://altiumdeveloper.github.io/cdm/subsets/customization/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql) (~7313 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/overview.md).
+Concepts: [customization](https://altiumdeveloper.github.io/cdm/subsets/customization/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql) (~7311 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/overview.md).
 
 ## Entities
 - [DesWorkflowDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-definition.md): Workflow — A process workflow of an Altium 365 Workspace: the workflow that belongs to a process definition and steps designers through an everyday design process (e.g. requesting a new part, a design review or… GRID `grid:workspace:{workspace-id}:customization:workflow/{id}`. Via: DesWorkspace.workflowDefinitions

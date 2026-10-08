@@ -22,6 +22,6 @@ type GloRestoreAppPayload {
 
 ### Fields
 
-#### `GloRestoreAppPayload.errors` · [`[GloRestoreAppError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-restore-app-error.md) list union platform
+#### `errors` · [`[GloRestoreAppError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-restore-app-error.md) list union
 
-#### `GloRestoreAppPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

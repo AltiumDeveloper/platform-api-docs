@@ -29,38 +29,38 @@ enum SupSolutionTemplateRefDesignType {
 
 ### Values
 
-#### `SupSolutionTemplateRefDesignType.DEMONSTRATION`
+#### `DEMONSTRATION`
 
 Highlights a component feature, often for marketing or sales purposes.
 
-#### `SupSolutionTemplateRefDesignType.DEVELOPMENT`
+#### `DEVELOPMENT`
 
 Enables code/hardware development and prototyping.
 
-#### `SupSolutionTemplateRefDesignType.EVALUATION`
+#### `EVALUATION`
 
 Intended to test specific electrical/mechanical characteristics.
 
-#### `SupSolutionTemplateRefDesignType.EXAMPLE`
+#### `EXAMPLE`
 
 Example project demonstrating specific use cases or implementations.
 
-#### `SupSolutionTemplateRefDesignType.EXPANSION`
+#### `EXPANSION`
 
 Extends capabilities of a dev board. Often optional.
 
-#### `SupSolutionTemplateRefDesignType.REFERENCE_DESIGN`
+#### `REFERENCE_DESIGN`
 
 Complete application or subsystem design with documentation.
 
-#### `SupSolutionTemplateRefDesignType.SOLUTION_TEMPLATE`
+#### `SOLUTION_TEMPLATE`
 
 Complete solution template with documentation.
 
-#### `SupSolutionTemplateRefDesignType.STARTER`
+#### `STARTER`
 
 Bundled offering to help users ramp up quickly.
 
-#### `SupSolutionTemplateRefDesignType.SYSTEM`
+#### `SYSTEM`
 
 Combines multiple board types, sensors, or modules into a full system.

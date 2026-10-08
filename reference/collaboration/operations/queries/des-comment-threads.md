@@ -11,6 +11,12 @@ deprecated: false
 
 Search for comment threads associated with a project.
 
+### Type
+
+#### [`DesCommentThread`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread.md) object
+
+A comment thread contains an initial remark associated with the design and a collection of replies.
+
 ```graphql
 desCommentThreads(
   projectId: ID!
@@ -19,12 +25,6 @@ desCommentThreads(
 
 ### Arguments
 
-#### `desCommentThreads.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The project identifier (`DesProject.id`).
-
-### Type
-
-#### [`DesCommentThread`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread.md) object collaboration
-
-A comment thread contains an initial remark associated with the design and a collection of replies.

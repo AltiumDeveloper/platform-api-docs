@@ -11,6 +11,10 @@ deprecated: false
 
 Deletes the AI Model.
 
+### Type
+
+#### [`SftAIModelDeletePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-delete-payload.md) object
+
 ```graphql
 sftAIModelDelete(
   input: SftAIModelDeleteInput!
@@ -19,8 +23,4 @@ sftAIModelDelete(
 
 ### Arguments
 
-#### `sftAIModelDelete.input` · [`SftAIModelDeleteInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-delete-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftAIModelDeletePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-delete-payload.md) object renesas-preview
+#### `input` · [`SftAIModelDeleteInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-delete-input.md) non-null input

@@ -22,10 +22,10 @@ enum SupEvalKitErrorCode {
 
 ### Values
 
-#### `SupEvalKitErrorCode.OPERATION_FAILED`
+#### `OPERATION_FAILED`
 
 The operation failed.
 
-#### `SupEvalKitErrorCode.SUP_EVAL_KIT_NOT_FOUND`
+#### `SUP_EVAL_KIT_NOT_FOUND`
 
 The evaluation kit was not found.

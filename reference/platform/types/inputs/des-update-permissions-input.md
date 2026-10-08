@@ -24,18 +24,18 @@ input DesUpdatePermissionsInput {
 
 ### Fields
 
-#### `DesUpdatePermissionsInput.entityId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `entityId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The entity's identificator.
 
-#### `DesUpdatePermissionsInput.permissionsToRemove` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `permissionsToRemove` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 List of permissions to remove.
 
-#### `DesUpdatePermissionsInput.permissionsToUpsert` · [`[DesPermissionUpsertInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-permission-upsert-input.md) non-null input platform
+#### `permissionsToUpsert` · [`[DesPermissionUpsertInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-permission-upsert-input.md) non-null input
 
 List of permissions to upsert.
 
-#### `DesUpdatePermissionsInput.replaceExisiting` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `replaceExisiting` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether to replace existing permissions.

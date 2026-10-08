@@ -9,7 +9,7 @@ deprecated: false
 
 # Naming conventions
 
-Names in the Platform API tell you which bounded context an operation or type belongs to and how to call it.
+Names in the Altium 365 API tell you which bounded context an operation or type belongs to and how to call it.
 
 ## Legacy prefixes
 

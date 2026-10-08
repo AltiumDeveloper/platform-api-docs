@@ -25,12 +25,12 @@ enum BomHealthCheckSeverity {
 
 ### Values
 
-#### `BomHealthCheckSeverity.ERROR`
+#### `ERROR`
 
-#### `BomHealthCheckSeverity.FATAL`
+#### `FATAL`
 
-#### `BomHealthCheckSeverity.INFORMATION`
+#### `INFORMATION`
 
-#### `BomHealthCheckSeverity.SILENT`
+#### `SILENT`
 
-#### `BomHealthCheckSeverity.WARNING`
+#### `WARNING`

@@ -17,6 +17,10 @@ deprecated: false
 
 List tuning revisions for a tuning.
 
+### Type
+
+#### [`RsaMotorStudioTuningRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-revision.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioTuningRevisionsByTuningId(
   tuningId: ID!
@@ -25,8 +29,4 @@ rsaMotorStudioTuningRevisionsByTuningId(
 
 ### Arguments
 
-#### `rsaMotorStudioTuningRevisionsByTuningId.tuningId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`RsaMotorStudioTuningRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-revision.md) object renesas-preview **EXPERIMENTAL**
+#### `tuningId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

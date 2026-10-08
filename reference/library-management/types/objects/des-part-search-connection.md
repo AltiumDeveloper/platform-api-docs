@@ -27,22 +27,22 @@ type DesPartSearchConnection {
 
 ### Fields
 
-#### `DesPartSearchConnection.edges` · [`[DesPartSearchEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-edge.md) list object library-management
+#### `edges` · [`[DesPartSearchEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-edge.md) list object
 
 A list of edges.
 
-#### `DesPartSearchConnection.nodes` · [`[DesPart!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) list object library-management
+#### `nodes` · [`[DesPart!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) list object
 
 A flattened list of the nodes.
 
-#### `DesPartSearchConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesPartSearchConnection.searchFacets` · [`DesPartSearchFacets!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facets.md) non-null object library-management
+#### `searchFacets` · [`DesPartSearchFacets!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facets.md) non-null object
 
 Gets the search facets for the current result set.
 
-#### `DesPartSearchConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

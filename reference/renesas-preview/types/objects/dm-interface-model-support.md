@@ -39,30 +39,30 @@ type DmInterfaceModelSupport {
 
 ### Fields
 
-#### `DmInterfaceModelSupport.statistics` · [`DmInstanceStatistics!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-instance-statistics.md) non-null object renesas-preview
+#### `statistics` · [`DmInstanceStatistics!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-instance-statistics.md) non-null object
 
 Statistics on instance counts across supported models.
 
-#### `DmInterfaceModelSupport.supported` · [`[DmModelSupportEntry!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-model-support-entry.md) non-null object renesas-preview
+#### `supported` · [`[DmModelSupportEntry!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-model-support-entry.md) non-null object
 
 Models that support this interface. Supports filtering by deviceMpn and/or family.
 
-##### `DmInterfaceModelSupport.supported.deviceMpn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `deviceMpn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-##### `DmInterfaceModelSupport.supported.family` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `family` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `DmInterfaceModelSupport.supportedCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `supportedCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Number of models that support this interface.
 
-#### `DmInterfaceModelSupport.supportedPercentage` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `supportedPercentage` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 Percentage of models that support this interface.
 
-#### `DmInterfaceModelSupport.unsupported` · [`[DmModelSupportEntry!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-model-support-entry.md) non-null object renesas-preview
+#### `unsupported` · [`[DmModelSupportEntry!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-model-support-entry.md) non-null object
 
 Models that do not support this interface. Supports filtering by deviceMpn and/or family.
 
-##### `DmInterfaceModelSupport.unsupported.deviceMpn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `deviceMpn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-##### `DmInterfaceModelSupport.unsupported.family` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `family` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

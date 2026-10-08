@@ -11,6 +11,10 @@ deprecated: false
 
 Updates configuration parameters of an Extension point.
 
+### Type
+
+#### [`GloCusUpdateAssignmentConfigurationsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-update-assignment-configurations-payload.md) object
+
 ```graphql
 gloCusUpdateAssignmentConfigurations(
   input: GloCusUpdateAssignmentConfigurationsInput!
@@ -19,8 +23,4 @@ gloCusUpdateAssignmentConfigurations(
 
 ### Arguments
 
-#### `gloCusUpdateAssignmentConfigurations.input` · [`GloCusUpdateAssignmentConfigurationsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-configurations-input.md) non-null input customization
-
-### Type
-
-#### [`GloCusUpdateAssignmentConfigurationsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-update-assignment-configurations-payload.md) object customization
+#### `input` · [`GloCusUpdateAssignmentConfigurationsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-configurations-input.md) non-null input

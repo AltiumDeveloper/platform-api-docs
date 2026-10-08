@@ -33,46 +33,46 @@ input DesCreateCommentThreadInput {
 
 ### Fields
 
-#### `DesCreateCommentThreadInput.area` · [`DesRectangleInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-rectangle-input.md) input design
+#### `area` · [`DesRectangleInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-rectangle-input.md) input Design
 
 Comment thread area.
 
-#### `DesCreateCommentThreadInput.commentContextType` · [`DesCommentContextType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-comment-context-type.md) non-null enum collaboration
+#### `commentContextType` · [`DesCommentContextType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-comment-context-type.md) non-null enum
 
 Comment thread comment context type.
 
-#### `DesCreateCommentThreadInput.documentId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `documentId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Comment thread document identifier.
 
-#### `DesCreateCommentThreadInput.documentName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `documentName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Comment thread document name.
 
-#### `DesCreateCommentThreadInput.documentType` · [`DesDocumentType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-document-type.md) non-null enum collaboration
+#### `documentType` · [`DesDocumentType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-document-type.md) non-null enum
 
 Comment thread document type.
 
-#### `DesCreateCommentThreadInput.entityId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `entityId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Comment thread entity identifier.
 
-#### `DesCreateCommentThreadInput.itemAsDesignItemPcbUniqueId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `itemAsDesignItemPcbUniqueId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Comment thread item as design item PCB reference identifier.
 
-#### `DesCreateCommentThreadInput.itemAsDesignItemSchUniqueId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `itemAsDesignItemSchUniqueId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Comment thread item as design item schematic reference identifier.
 
-#### `DesCreateCommentThreadInput.itemAsInternalObjectId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `itemAsInternalObjectId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Comment thread item as internal object identifier.
 
-#### `DesCreateCommentThreadInput.releaseId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `releaseId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Comment thread release identifier.
 
-#### `DesCreateCommentThreadInput.text` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `text` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Comment thread text.

@@ -11,6 +11,12 @@ deprecated: false
 
 Replace all parameters on an evaluation kit. Deletes all existing parameters and values, then inserts the new ones.
 
+### Type
+
+#### [`SupEvalKitSetParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-set-parameters-payload.md) object
+
+Payload returned after setting parameters on an evaluation kit.
+
 ```graphql
 supEvalKitSetParameters(
   input: SupEvalKitSetParametersInput!
@@ -19,10 +25,4 @@ supEvalKitSetParameters(
 
 ### Arguments
 
-#### `supEvalKitSetParameters.input` · [`SupEvalKitSetParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-set-parameters-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitSetParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-set-parameters-payload.md) object supply
-
-Payload returned after setting parameters on an evaluation kit.
+#### `input` · [`SupEvalKitSetParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-set-parameters-input.md) non-null input

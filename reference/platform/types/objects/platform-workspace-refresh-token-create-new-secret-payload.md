@@ -9,7 +9,7 @@ deprecated: false
 
 # PlatformWorkspaceRefreshTokenCreateNewSecretPayload
 
-Payload for creating a new client secret for a `PlatformWorkspaceRefreshToken`.
+Payload for creating a new client secret for a [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md).
 
 ### Returned By
 
@@ -25,12 +25,12 @@ type PlatformWorkspaceRefreshTokenCreateNewSecretPayload {
 
 ### Fields
 
-#### `PlatformWorkspaceRefreshTokenCreateNewSecretPayload.clientSecret` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `clientSecret` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The newly generated client secret.
 
-#### `PlatformWorkspaceRefreshTokenCreateNewSecretPayload.errors` · [`[PlatformWorkspaceRefreshTokenCreateNewSecretError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-create-new-secret-error.md) list union platform
+#### `errors` · [`[PlatformWorkspaceRefreshTokenCreateNewSecretError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-create-new-secret-error.md) list union
 
-#### `PlatformWorkspaceRefreshTokenCreateNewSecretPayload.refreshToken` · [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) object platform
+#### `refreshToken` · [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) object
 
-The `PlatformWorkspaceRefreshToken` for which the new secret was created.
+The [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) for which the new secret was created.

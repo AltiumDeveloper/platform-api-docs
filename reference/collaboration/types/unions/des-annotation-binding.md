@@ -21,14 +21,14 @@ union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationRelease
 
 ### Possible types
 
-#### [`DesAnnotationBinding.DesAnnotationDocumentBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-document-binding.md) object collaboration
+#### [`DesAnnotationDocumentBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-document-binding.md) object
 
-#### [`DesAnnotationBinding.DesAnnotationReleaseBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-release-binding.md) object collaboration
+#### [`DesAnnotationReleaseBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-release-binding.md) object
 
-#### [`DesAnnotationBinding.DesAnnotationRevisionBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-revision-binding.md) object collaboration
+#### [`DesAnnotationRevisionBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-revision-binding.md) object
 
-#### [`DesAnnotationBinding.DesAnnotationManagedBomRowBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-managed-bom-row-binding.md) object collaboration
+#### [`DesAnnotationManagedBomRowBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-managed-bom-row-binding.md) object
 
-#### [`DesAnnotationBinding.DesAnnotationDesignReviewBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-design-review-binding.md) object collaboration
+#### [`DesAnnotationDesignReviewBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-design-review-binding.md) object
 
-#### [`DesAnnotationBinding.DesAnnotationRequirementBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirement-binding.md) object collaboration
+#### [`DesAnnotationRequirementBinding`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirement-binding.md) object

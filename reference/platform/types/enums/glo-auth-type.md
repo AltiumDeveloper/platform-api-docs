@@ -23,8 +23,8 @@ enum GloAuthType {
 
 ### Values
 
-#### `GloAuthType.AT_LDAP`
+#### `AT_LDAP`
 
-#### `GloAuthType.AT_NATIVE`
+#### `AT_NATIVE`
 
-#### `GloAuthType.AT_WINDOWS`
+#### `AT_WINDOWS`

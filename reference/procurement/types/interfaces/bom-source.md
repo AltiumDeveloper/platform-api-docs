@@ -27,6 +27,6 @@ interface BomSource {
 
 ### Fields
 
-#### `BomSource.quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Quantity of the source (i.e., how many times the source is included into this BOM).

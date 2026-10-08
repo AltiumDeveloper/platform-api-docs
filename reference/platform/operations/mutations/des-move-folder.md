@@ -11,6 +11,12 @@ deprecated: false
 
 Moves the specified folder in the library.
 
+### Type
+
+#### [`DesMoveFolderPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-move-folder-payload.md) object
+
+Payload associated with moving a folder.
+
 ```graphql
 desMoveFolder(
   input: DesMoveFolderInput!
@@ -19,10 +25,4 @@ desMoveFolder(
 
 ### Arguments
 
-#### `desMoveFolder.input` · [`DesMoveFolderInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-move-folder-input.md) non-null input platform
-
-### Type
-
-#### [`DesMoveFolderPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-move-folder-payload.md) object platform
-
-Payload associated with moving a folder.
+#### `input` · [`DesMoveFolderInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-move-folder-input.md) non-null input

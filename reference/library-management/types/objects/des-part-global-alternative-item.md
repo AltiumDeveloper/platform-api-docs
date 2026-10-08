@@ -24,10 +24,10 @@ type DesPartGlobalAlternativeItem {
 
 ### Fields
 
-#### `DesPartGlobalAlternativeItem.part` · [`DesPartGlobalPart!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-part.md) non-null object library-management
+#### `part` · [`DesPartGlobalPart!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-part.md) non-null object
 
 The alternative global part.
 
-#### `DesPartGlobalAlternativeItem.providerInfo` · [`DesPartAlternativeProviderInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-alternative-provider-info.md) non-null object library-management
+#### `providerInfo` · [`DesPartAlternativeProviderInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-alternative-provider-info.md) non-null object
 
 Provider-specific metadata for this alternative within the enclosing bucket.

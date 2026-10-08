@@ -26,18 +26,18 @@ type GloUserConnection {
 
 ### Fields
 
-#### `GloUserConnection.edges` · [`[GloUserEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-edge.md) list object platform
+#### `edges` · [`[GloUserEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user-edge.md) list object
 
 A list of edges.
 
-#### `GloUserConnection.nodes` · [`[GloUser]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md) list object platform
+#### `nodes` · [`[GloUser]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md) list object
 
 A flattened list of the nodes.
 
-#### `GloUserConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `GloUserConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

@@ -11,6 +11,12 @@ deprecated: false
 
 Deletes the task specified by its node identifier.
 
+### Type
+
+#### [`DesDeleteTaskPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-delete-task-payload.md) object
+
+Payload associated with deleting a task.
+
 ```graphql
 desDeleteTask(
   input: DesDeleteTaskInput!
@@ -19,10 +25,4 @@ desDeleteTask(
 
 ### Arguments
 
-#### `desDeleteTask.input` · [`DesDeleteTaskInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-task-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesDeleteTaskPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-delete-task-payload.md) object collaboration
-
-Payload associated with deleting a task.
+#### `input` · [`DesDeleteTaskInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-task-input.md) non-null input

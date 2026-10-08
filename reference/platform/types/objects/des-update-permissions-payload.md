@@ -21,6 +21,6 @@ type DesUpdatePermissionsPayload {
 
 ### Fields
 
-#### `DesUpdatePermissionsPayload.isUpdated` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isUpdated` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the permissions were updated successfully.

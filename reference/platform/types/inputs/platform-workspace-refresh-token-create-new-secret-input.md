@@ -21,6 +21,6 @@ input PlatformWorkspaceRefreshTokenCreateNewSecretInput {
 
 ### Fields
 
-#### `PlatformWorkspaceRefreshTokenCreateNewSecretInput.tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The identifier of the `PlatformWorkspaceRefreshToken` to create a new secret for.
+The identifier of the [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) to create a new secret for.

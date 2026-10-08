@@ -26,18 +26,18 @@ type DesWorkspaceInsInsightsConnection {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightsConnection.edges` · [`[DesWorkspaceInsInsightsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insights-edge.md) list object insights
+#### `edges` · [`[DesWorkspaceInsInsightsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insights-edge.md) list object
 
 A list of edges.
 
-#### `DesWorkspaceInsInsightsConnection.nodes` · [`[DesWorkspaceInsInsight!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) list object insights
+#### `nodes` · [`[DesWorkspaceInsInsight!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) list object
 
 A flattened list of the nodes.
 
-#### `DesWorkspaceInsInsightsConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesWorkspaceInsInsightsConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

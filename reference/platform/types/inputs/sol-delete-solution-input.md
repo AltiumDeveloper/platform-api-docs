@@ -21,4 +21,4 @@ input SolDeleteSolutionInput {
 
 ### Fields
 
-#### `SolDeleteSolutionInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

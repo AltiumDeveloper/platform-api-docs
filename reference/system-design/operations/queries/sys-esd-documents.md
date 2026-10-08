@@ -17,6 +17,6 @@ sysEsdDocuments: [SysEsdDocument!]!
 
 ### Type
 
-#### [`SysEsdDocument`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) object system-design
+#### [`SysEsdDocument`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) object
 
 Represents an ESD (Electronic System Design) document stored in a regional workspace.

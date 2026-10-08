@@ -32,18 +32,18 @@ type DesignDataCombinedErcExecution {
 
 ### Fields
 
-#### `DesignDataCombinedErcExecution.designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the design associated with the ERC results.
 
-#### `DesignDataCombinedErcExecution.results` · [`[DesignDataCombinedErcCheckResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-combined-erc-check-result.md) non-null object design
+#### `results` · [`[DesignDataCombinedErcCheckResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-combined-erc-check-result.md) non-null object
 
 The combined ERC check results.
 
-#### `DesignDataCombinedErcExecution.revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The revision identifier associated with the ERC results.
 
-#### `DesignDataCombinedErcExecution.status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The current execution status of the combined ERC results. Known values: PENDING, RUNNING, COMPLETED, FAILED, SKIPPED. New values may be added; clients must tolerate unknown values.

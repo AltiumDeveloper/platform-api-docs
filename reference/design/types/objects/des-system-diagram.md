@@ -23,6 +23,6 @@ type DesSystemDiagram {
 
 ### Fields
 
-#### `DesSystemDiagram.systemDiagramFile` · [`DesDownloadableFile`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) object design
+#### `systemDiagramFile` · [`DesDownloadableFile`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) object
 
 The downloadable file for the system diagram.

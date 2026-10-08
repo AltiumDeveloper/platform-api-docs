@@ -9,7 +9,7 @@ deprecated: false
 
 # GloCreateAppInput
 
-Input for creating a new `GloApp`.
+Input for creating a new [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md).
 
 ### Member Of
 
@@ -28,26 +28,26 @@ input GloCreateAppInput {
 
 ### Fields
 
-#### `GloCreateAppInput.contactEmail` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `contactEmail` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Contact email address of the developer of a new App.
 
-#### `GloCreateAppInput.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of a new App.
 
-#### `GloCreateAppInput.hrid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `hrid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique human-readable identifier for a new App.
 
-#### `GloCreateAppInput.isWorkspaceApp` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isWorkspaceApp` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether the new App is a Workspace App. Defaults to `false`.
 
-#### `GloCreateAppInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of a new App.
 
-#### `GloCreateAppInput.oAuthClient` · [`GloCreateAppOAuthClientInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-oauth-client-input.md) non-null input platform
+#### `oAuthClient` · [`GloCreateAppOAuthClientInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-oauth-client-input.md) non-null input
 
 Input for creating a new OAuth 2 client.

@@ -29,16 +29,16 @@ enum DesPermissionScope {
 
 ### Values
 
-#### `DesPermissionScope.ANYONE`
+#### `ANYONE`
 
-#### `DesPermissionScope.COLLABORATOR`
+#### `COLLABORATOR`
 
-#### `DesPermissionScope.GROUP`
+#### `GROUP`
 
-#### `DesPermissionScope.GUEST`
+#### `GUEST`
 
-#### `DesPermissionScope.ORGANISATION`
+#### `ORGANISATION`
 
-#### `DesPermissionScope.OWNER`
+#### `OWNER`
 
-#### `DesPermissionScope.USER`
+#### `USER`

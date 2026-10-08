@@ -25,14 +25,14 @@ input BomCreateBomItemElementAttributeDeclarationInput {
 
 ### Fields
 
-#### `BomCreateBomItemElementAttributeDeclarationInput.attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A transient identifier that uniquely identifies this attribute within the current mutation call. This ID is used to correlate this attribute with attribute values in BOM item elements.
 
-#### `BomCreateBomItemElementAttributeDeclarationInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the attribute.
 
-#### `BomCreateBomItemElementAttributeDeclarationInput.type` · [`BomItemElementCustomAttributeType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-item-element-custom-attribute-type.md) non-null enum procurement
+#### `type` · [`BomItemElementCustomAttributeType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-item-element-custom-attribute-type.md) non-null enum
 
 Type of the attribute. The actual attribute values may have different types.

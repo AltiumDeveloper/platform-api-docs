@@ -25,8 +25,8 @@ enum DesCollaborationDomain {
 
 ### Values
 
-#### `DesCollaborationDomain.ECAD`
+#### `ECAD`
 
-#### `DesCollaborationDomain.ESD`
+#### `ESD`
 
-#### `DesCollaborationDomain.MCAD`
+#### `MCAD`

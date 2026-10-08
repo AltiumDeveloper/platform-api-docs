@@ -22,6 +22,6 @@ type GloUpdateAppDescriptionPayload {
 
 ### Fields
 
-#### `GloUpdateAppDescriptionPayload.errors` · [`[GloUpdateAppDescriptionError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-description-error.md) list union platform
+#### `errors` · [`[GloUpdateAppDescriptionError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-description-error.md) list union
 
-#### `GloUpdateAppDescriptionPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

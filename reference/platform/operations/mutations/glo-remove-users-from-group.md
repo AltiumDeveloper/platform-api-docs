@@ -11,6 +11,12 @@ deprecated: false
 
 Remove users from group.
 
+### Type
+
+#### [`GloRemoveUsersFromGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-users-from-group-payload.md) object
+
+Represents output value for remove users from group.
+
 ```graphql
 gloRemoveUsersFromGroup(
   input: GloRemoveUsersFromGroupInput!
@@ -19,10 +25,4 @@ gloRemoveUsersFromGroup(
 
 ### Arguments
 
-#### `gloRemoveUsersFromGroup.input` · [`GloRemoveUsersFromGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-users-from-group-input.md) non-null input platform
-
-### Type
-
-#### [`GloRemoveUsersFromGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-users-from-group-payload.md) object platform
-
-Represents output value for remove users from group.
+#### `input` · [`GloRemoveUsersFromGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-users-from-group-input.md) non-null input

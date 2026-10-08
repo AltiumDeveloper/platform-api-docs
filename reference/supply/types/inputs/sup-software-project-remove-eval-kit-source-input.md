@@ -21,6 +21,6 @@ input SupSoftwareProjectRemoveEvalKitSourceInput {
 
 ### Fields
 
-#### `SupSoftwareProjectRemoveEvalKitSourceInput.compatibleEvalKitId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `compatibleEvalKitId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The compatible evaluation kit identifier.

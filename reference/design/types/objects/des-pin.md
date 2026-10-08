@@ -27,22 +27,22 @@ type DesPin {
 
 ### Fields
 
-#### `DesPin.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of pin.
 
-#### `DesPin.designator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `designator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The numerical identifier of the pin.
 
-#### `DesPin.electricalType` · [`DesPinElectricalType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-pin-electrical-type.md) non-null enum design
+#### `electricalType` · [`DesPinElectricalType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-pin-electrical-type.md) non-null enum
 
 Electrical type of the pin.
 
-#### `DesPin.isHidden` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isHidden` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Returns `true` if the pin is hidden.
 
-#### `DesPin.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Pin display name. By default, a newly placed pin will be named using the designator value.

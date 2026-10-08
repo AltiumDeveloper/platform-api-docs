@@ -24,10 +24,10 @@ input DesColorInput {
 
 ### Fields
 
-#### `DesColorInput.hexString` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `hexString` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The color input in hex format, e.g. '#AABBCC'.
 
-#### `DesColorInput.rgbString` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `rgbString` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The color input in numerical format, e.g. 'RGB(255, 255, 0)'.

@@ -30,12 +30,12 @@ input RsaMotorStudioUpdateEasyModeConfigInput {
 
 ### Fields
 
-#### `RsaMotorStudioUpdateEasyModeConfigInput.configId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `configId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `RsaMotorStudioUpdateEasyModeConfigInput.path` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `path` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `RsaMotorStudioUpdateEasyModeConfigInput.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 ID of the project to which the easymode config will be added.
 
-#### `RsaMotorStudioUpdateEasyModeConfigInput.sliders` · [`[RsaMotorStudioUpdateSliderInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-slider-input.md) non-null input renesas-preview
+#### `sliders` · [`[RsaMotorStudioUpdateSliderInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-slider-input.md) non-null input

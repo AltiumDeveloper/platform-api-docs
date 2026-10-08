@@ -33,22 +33,22 @@ type DesignDataVariation_Preview {
 
 ### Fields
 
-#### `DesignDataVariation_Preview.alternatePart` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignDataVariation_Preview.alternatePart` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The alternate part identifier, if the variation kind is Alternate.
 
-#### `DesignDataVariation_Preview.componentDesignator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignDataVariation_Preview.componentDesignator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The designator of the component this variation applies to.
 
-#### `DesignDataVariation_Preview.componentHierarchyPath` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignDataVariation_Preview.componentHierarchyPath` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The hierarchy path of the component this variation applies to.
 
-#### `DesignDataVariation_Preview.componentUniqueId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignDataVariation_Preview.componentUniqueId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The unique identifier of the component.
 
-#### `DesignDataVariation_Preview.kind` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `DesignDataVariation_Preview.kind` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The kind of variation. Known values: NONE, NOT\_FITTED, ALTERNATE. New values may be added; clients must tolerate unknown values.

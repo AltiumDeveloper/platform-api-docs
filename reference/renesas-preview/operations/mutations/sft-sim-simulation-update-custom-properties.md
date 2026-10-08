@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the simulation custom properties.
 
+### Type
+
+#### [`SftSimSimulationUpdatePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-update-properties-payload.md) object
+
 ```graphql
 sftSimSimulationUpdateCustomProperties(
   input: SftSimSimulationUpdatePropertiesInput!
@@ -19,8 +23,4 @@ sftSimSimulationUpdateCustomProperties(
 
 ### Arguments
 
-#### `sftSimSimulationUpdateCustomProperties.input` · [`SftSimSimulationUpdatePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-update-properties-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSimSimulationUpdatePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-update-properties-payload.md) object renesas-preview
+#### `input` · [`SftSimSimulationUpdatePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-update-properties-input.md) non-null input

@@ -25,8 +25,8 @@ enum DesCadComponentVariationKind {
 
 ### Values
 
-#### `DesCadComponentVariationKind.ALTERNATE`
+#### `ALTERNATE`
 
-#### `DesCadComponentVariationKind.FITTED`
+#### `FITTED`
 
-#### `DesCadComponentVariationKind.NOT_FITTED`
+#### `NOT_FITTED`

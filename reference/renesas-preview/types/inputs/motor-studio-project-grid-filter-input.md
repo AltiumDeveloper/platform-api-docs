@@ -30,10 +30,10 @@ input MotorStudioProjectGridFilterInput {
 
 ### Fields
 
-#### `MotorStudioProjectGridFilterInput.and` · [`[MotorStudioProjectGridFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/motor-studio-project-grid-filter-input.md) list input renesas-preview
+#### `and` · [`[MotorStudioProjectGridFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/motor-studio-project-grid-filter-input.md) list input
 
-#### `MotorStudioProjectGridFilterInput.or` · [`[MotorStudioProjectGridFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/motor-studio-project-grid-filter-input.md) list input renesas-preview
+#### `or` · [`[MotorStudioProjectGridFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/motor-studio-project-grid-filter-input.md) list input
 
-#### `MotorStudioProjectGridFilterInput.projectId` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `projectId` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
-#### `MotorStudioProjectGridFilterInput.tenantId` · [`UuidOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/uuid-operation-filter-input.md) input common
+#### `tenantId` · [`UuidOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/uuid-operation-filter-input.md) input

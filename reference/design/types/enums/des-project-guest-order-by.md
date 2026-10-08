@@ -21,14 +21,14 @@ enum DesProjectGuestOrderBy {
 
 ### Values
 
-#### `DesProjectGuestOrderBy.DISPLAY_NAME`
+#### `DISPLAY_NAME`
 
 Order by the user display name.
 
-#### `DesProjectGuestOrderBy.EMAIL`
+#### `EMAIL`
 
 Order by user email.
 
-#### `DesProjectGuestOrderBy.GLOBAL_USER_ID`
+#### `GLOBAL_USER_ID`
 
 Order by global user identifier.

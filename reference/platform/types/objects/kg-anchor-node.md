@@ -17,7 +17,7 @@ deprecated: false
 
 ### Interfaces
 
-#### [`KgNode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) interface platform **EXPERIMENTAL**
+#### [`KgNode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) interface **EXPERIMENTAL**
 
 ```graphql
 type KgAnchorNode implements KgNode {
@@ -31,14 +31,14 @@ type KgAnchorNode implements KgNode {
 
 ### Fields
 
-#### `KgAnchorNode.accessLevel` · [`KgAccessLevel`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-access-level.md) object platform
+#### `accessLevel` · [`KgAccessLevel`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-access-level.md) object
 
-#### `KgAnchorNode.entityGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `entityGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The unique identifier of the entity represented by this node.
 
-#### `KgAnchorNode.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `KgAnchorNode.relatedNodes` · [`KgNodeQueries!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-node-queries.md) non-null object platform
+#### `relatedNodes` · [`KgNodeQueries!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-node-queries.md) non-null object
 
-#### `KgAnchorNode.relations` · [`KgRelationQueries!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-relation-queries.md) non-null object platform
+#### `relations` · [`KgRelationQueries!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-relation-queries.md) non-null object

@@ -11,6 +11,10 @@ deprecated: false
 
 Retrieves list of users by their identifiers.
 
+### Type
+
+#### [`GloUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md) object
+
 ```graphql
 gloUsersByIds(
   userIds: [ID!]!
@@ -19,8 +23,4 @@ gloUsersByIds(
 
 ### Arguments
 
-#### `gloUsersByIds.userIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`GloUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md) object platform
+#### `userIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

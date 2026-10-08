@@ -23,6 +23,6 @@ input DesDeleteRevisionNamingSchemeInput {
 
 ### Fields
 
-#### `DesDeleteRevisionNamingSchemeInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The revision naming scheme to be deleted.

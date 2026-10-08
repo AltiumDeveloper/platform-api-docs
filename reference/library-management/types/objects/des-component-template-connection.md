@@ -26,18 +26,18 @@ type DesComponentTemplateConnection {
 
 ### Fields
 
-#### `DesComponentTemplateConnection.edges` · [`[DesComponentTemplateEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-edge.md) list object library-management
+#### `edges` · [`[DesComponentTemplateEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-edge.md) list object
 
 A list of edges.
 
-#### `DesComponentTemplateConnection.nodes` · [`[DesComponentTemplate!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template.md) list object library-management
+#### `nodes` · [`[DesComponentTemplate!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template.md) list object
 
 A flattened list of the nodes.
 
-#### `DesComponentTemplateConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesComponentTemplateConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

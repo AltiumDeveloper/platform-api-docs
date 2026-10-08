@@ -11,16 +11,19 @@ deprecated: false
 
 Workspace insights about parts and designs.
 
-Concepts: see the **Insights** bounded context in the [Common Data Model](https://altiumdeveloper.github.io/cdm/subsets/insights/)
-
 For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/llms.txt) · [schema slice](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/schema.graphql) · [all types](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types.txt)
+
+## Common Data Model
+
+- [Insights](https://altiumdeveloper.github.io/cdm/subsets/insights/) — Models insights that can be followed up by tasks. The only concrete kind is the part insight: it concerns one Workspace part, may be informed by BOMs or design projects, and occurs in BOM releases, project releases or component revisions.
 
 ## Entities
 
-API types in this bounded context that represent CDM entities:
+API types in this bounded context that represent Common Data Model (CDM) entities. The IRI is the entity's stable identifier in the CDM.
 
-- [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) — [Part Insight](https://altiumdeveloper.github.io/cdm/classes/ins_PartInsight/)
-  - GRID: `grid:workspace:{workspace-id}:insights:insight/{id}`
+| API type | CDM entity |
+| - | - |
+| [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) | [Part Insight](https://w3id.org/altium/cdm/insights/PartInsight) [`https://w3id.org/altium/cdm/insights/PartInsight`](https://w3id.org/altium/cdm/insights/PartInsight) |
 
 ## Entry points
 

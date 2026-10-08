@@ -11,6 +11,12 @@ deprecated: false
 
 Searches for a specific folder by its reference identifier.
 
+### Type
+
+#### [`DesFolder`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md) object
+
+Information about a specific folder.
+
 ```graphql
 desFolderByFolderId(
   folderId: String!
@@ -20,16 +26,10 @@ desFolderByFolderId(
 
 ### Arguments
 
-#### `desFolderByFolderId.folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The folder reference identifier.
 
-#### `desFolderByFolderId.workspaceUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `workspaceUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The workspace URL.
-
-### Type
-
-#### [`DesFolder`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md) object platform
-
-Information about a specific folder.

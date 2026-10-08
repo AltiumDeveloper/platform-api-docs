@@ -9,7 +9,7 @@ deprecated: false
 
 # platform.token.workspaceTokenQuota
 
-Gets the `PlatformToken` quota for the Workspace.
+Gets the [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) quota for the Workspace.
 
 ```graphql
 platform {
@@ -21,6 +21,6 @@ platform {
 
 ### Type
 
-#### [`PlatformWorkspaceTokenQuota`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token-quota.md) object platform
+#### [`PlatformWorkspaceTokenQuota`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token-quota.md) object
 
 Represents the quota for the number of active `PlatformToken`s allowed in a Workspace.

@@ -25,14 +25,14 @@ input DesWorkspaceInsInsightUserActionInput {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightUserActionInput.isAck` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isAck` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether the insight is acknowledged by the user.
 
-#### `DesWorkspaceInsInsightUserActionInput.newTaskIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `newTaskIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Tasks created while handling the insight.
 
-#### `DesWorkspaceInsInsightUserActionInput.status` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `status` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 New status to apply to the insight.

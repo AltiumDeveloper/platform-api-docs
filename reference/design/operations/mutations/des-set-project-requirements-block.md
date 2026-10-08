@@ -11,6 +11,12 @@ deprecated: false
 
 Link/unlink A365 project with requirements block component.
 
+### Type
+
+#### [`DesSetProjectRequirementsBlockPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-set-project-requirements-block-payload.md) object
+
+Payload for setting the requirements block of a project.
+
 ```graphql
 desSetProjectRequirementsBlock(
   input: DesSetProjectRequirementsBlockInput!
@@ -19,10 +25,4 @@ desSetProjectRequirementsBlock(
 
 ### Arguments
 
-#### `desSetProjectRequirementsBlock.input` · [`DesSetProjectRequirementsBlockInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-set-project-requirements-block-input.md) non-null input design
-
-### Type
-
-#### [`DesSetProjectRequirementsBlockPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-set-project-requirements-block-payload.md) object design
-
-Payload for setting the requirements block of a project.
+#### `input` · [`DesSetProjectRequirementsBlockInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-set-project-requirements-block-input.md) non-null input

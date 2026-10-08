@@ -24,10 +24,10 @@ type DesUpdateFootprintLifeCycleStatePayload {
 
 ### Fields
 
-#### `DesUpdateFootprintLifeCycleStatePayload.errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object common
+#### `errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object
 
 Payload errors.
 
-#### `DesUpdateFootprintLifeCycleStatePayload.footprintId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `footprintId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Footprint identifier.

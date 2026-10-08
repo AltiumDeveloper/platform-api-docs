@@ -22,10 +22,10 @@ input GloUpdateAppContactEmailInput {
 
 ### Fields
 
-#### `GloUpdateAppContactEmailInput.contactEmail` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `contactEmail` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The new contact email for the App.
 
-#### `GloUpdateAppContactEmailInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The GRID identifier for the App to be updated.

@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the contact email of an existing App.
 
+### Type
+
+#### [`GloUpdateAppContactEmailPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-contact-email-payload.md) object
+
 ```graphql
 gloUpdateAppContactEmail(
   input: GloUpdateAppContactEmailInput!
@@ -19,8 +23,4 @@ gloUpdateAppContactEmail(
 
 ### Arguments
 
-#### `gloUpdateAppContactEmail.input` · [`GloUpdateAppContactEmailInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-contact-email-input.md) non-null input platform
-
-### Type
-
-#### [`GloUpdateAppContactEmailPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-contact-email-payload.md) object platform
+#### `input` · [`GloUpdateAppContactEmailInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-contact-email-input.md) non-null input

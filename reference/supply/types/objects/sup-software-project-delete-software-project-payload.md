@@ -23,4 +23,4 @@ type SupSoftwareProjectDeleteSoftwareProjectPayload {
 
 ### Fields
 
-#### `SupSoftwareProjectDeleteSoftwareProjectPayload.errors` · [`[SupSoftwareProjectDeleteSoftwareProjectError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-delete-software-project-error.md) list union supply
+#### `errors` · [`[SupSoftwareProjectDeleteSoftwareProjectError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-delete-software-project-error.md) list union

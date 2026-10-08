@@ -17,6 +17,10 @@ deprecated: false
 
 Add new system model
 
+### Type
+
+#### [`SysSdmCreateSystemModelVersionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-create-system-model-version-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 sysSdmCreateSystemModelVersion(
   input: SysSdmCreateSystemModelVersionInput!
@@ -25,8 +29,4 @@ sysSdmCreateSystemModelVersion(
 
 ### Arguments
 
-#### `sysSdmCreateSystemModelVersion.input` · [`SysSdmCreateSystemModelVersionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-sdm-create-system-model-version-input.md) non-null input system-design
-
-### Type
-
-#### [`SysSdmCreateSystemModelVersionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-create-system-model-version-payload.md) object system-design **EXPERIMENTAL**
+#### `input` · [`SysSdmCreateSystemModelVersionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-sdm-create-system-model-version-input.md) non-null input

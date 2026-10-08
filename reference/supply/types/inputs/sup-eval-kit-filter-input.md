@@ -23,6 +23,6 @@ input SupEvalKitFilterInput {
 
 ### Fields
 
-#### `SupEvalKitFilterInput.publisherIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `publisherIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Filter by a list of publisher (company) identifiers if specified.

@@ -15,6 +15,10 @@ deprecated: false
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
+### Type
+
+#### [`DmUpdateDeviceFromSdmPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-update-device-from-sdm-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 dmUpdateDeviceFromSdm(
   input: DmUpdateDeviceFromSdmInput!
@@ -23,8 +27,4 @@ dmUpdateDeviceFromSdm(
 
 ### Arguments
 
-#### `dmUpdateDeviceFromSdm.input` · [`DmUpdateDeviceFromSdmInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-update-device-from-sdm-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`DmUpdateDeviceFromSdmPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-update-device-from-sdm-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`DmUpdateDeviceFromSdmInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-update-device-from-sdm-input.md) non-null input

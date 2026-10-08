@@ -28,6 +28,6 @@ enum SysSdmDmPeripheralVirtualization {
 
 ### Values
 
-#### `SysSdmDmPeripheralVirtualization.CHANNEL`
+#### `CHANNEL`
 
-#### `SysSdmDmPeripheralVirtualization.NONE`
+#### `NONE`

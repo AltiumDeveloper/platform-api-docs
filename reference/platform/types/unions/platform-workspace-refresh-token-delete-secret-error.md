@@ -19,10 +19,10 @@ union PlatformWorkspaceRefreshTokenDeleteSecretError = PlatformTokenNotFoundErro
 
 ### Possible types
 
-#### [`PlatformWorkspaceRefreshTokenDeleteSecretError.PlatformTokenNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-not-found-error.md) object platform
+#### [`PlatformTokenNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-not-found-error.md) object
 
-Error that occurs when a `PlatformToken` with the specified identifier could not be found.
+Error that occurs when a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) with the specified identifier could not be found.
 
-#### [`PlatformWorkspaceRefreshTokenDeleteSecretError.PlatformTokenDeleteRefreshTokenSecretError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-refresh-token-secret-error.md) object platform
+#### [`PlatformTokenDeleteRefreshTokenSecretError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-refresh-token-secret-error.md) object
 
-Error returned by the Token API when a client secret for a `PlatformWorkspaceRefreshToken` could not be deleted.
+Error returned by the Token API when a client secret for a [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) could not be deleted.

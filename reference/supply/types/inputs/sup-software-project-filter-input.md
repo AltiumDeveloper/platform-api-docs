@@ -25,14 +25,14 @@ input SupSoftwareProjectFilterInput {
 
 ### Fields
 
-#### `SupSoftwareProjectFilterInput.isRecommended` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isRecommended` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Filter by recommendation status if specified.
 
-#### `SupSoftwareProjectFilterInput.publisherIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `publisherIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Filter by a list of publisher identifiers if specified.
 
-#### `SupSoftwareProjectFilterInput.types` · [`[SupSoftwareProjectType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-type.md) list enum supply
+#### `types` · [`[SupSoftwareProjectType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-type.md) list enum
 
 Filter by a list of software project types if specified.

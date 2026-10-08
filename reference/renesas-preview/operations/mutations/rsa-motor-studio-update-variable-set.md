@@ -17,6 +17,10 @@ deprecated: false
 
 Update a variable set metadata for the specified project.
 
+### Type
+
+#### [`RsaMotorStudioUpdateVariableSetPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-variable-set-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioUpdateVariableSet(
   input: RsaMotorStudioUpdateVariableSetInput!
@@ -25,8 +29,4 @@ rsaMotorStudioUpdateVariableSet(
 
 ### Arguments
 
-#### `rsaMotorStudioUpdateVariableSet.input` · [`RsaMotorStudioUpdateVariableSetInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-variable-set-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioUpdateVariableSetPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-variable-set-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioUpdateVariableSetInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-variable-set-input.md) non-null input

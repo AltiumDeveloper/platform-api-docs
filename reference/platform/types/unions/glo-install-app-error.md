@@ -19,18 +19,18 @@ union GloInstallAppError = GloAppNotInstalledError | GloAppAlreadyInstalledError
 
 ### Possible types
 
-#### [`GloInstallAppError.GloAppNotInstalledError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-installed-error.md) object platform
+#### [`GloAppNotInstalledError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-installed-error.md) object
 
-Error that occurs when a `GloApp` cannot be installed into a workspace.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) cannot be installed into a workspace.
 
-#### [`GloInstallAppError.GloAppAlreadyInstalledError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-already-installed-error.md) object platform
+#### [`GloAppAlreadyInstalledError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-already-installed-error.md) object
 
-Error that occurs when a `GloApp` cannot be installed into a workspace as it has already been installed.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) cannot be installed into a workspace as it has already been installed.
 
-#### [`GloInstallAppError.GloAppInstallDeniedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-install-denied-error.md) object platform
+#### [`GloAppInstallDeniedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-install-denied-error.md) object
 
-Error that occurs when a `GloApp` cannot be installed into a workspace due to insufficient permissions.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) cannot be installed into a workspace due to insufficient permissions.
 
-#### [`GloInstallAppError.GloAppDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md) object platform
+#### [`GloAppDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md) object
 
-Error that occurs when attempting to update a deleted `GloApp`.
+Error that occurs when attempting to update a deleted [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md).

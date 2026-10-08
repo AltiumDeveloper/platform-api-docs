@@ -29,6 +29,6 @@ type DmSoftwareToDeviceOptionsModel {
 
 ### Fields
 
-#### `DmSoftwareToDeviceOptionsModel.softwareToDeviceElements` · [`[DmRequiresProvidesResolution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requires-provides-resolution.md) non-null object renesas-preview
+#### `softwareToDeviceElements` · [`[DmRequiresProvidesResolution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requires-provides-resolution.md) non-null object
 
 Collection of resolutions linking software requirements to device-provided interfaces.

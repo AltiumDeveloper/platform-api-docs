@@ -17,6 +17,10 @@ deprecated: false
 
 Deletes a Vault entity registered in the knowledge graph.
 
+### Type
+
+#### [`KgDeleteNodePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-delete-node-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 kgDeleteNode(
   input: KgDeleteNodeInput!
@@ -25,8 +29,4 @@ kgDeleteNode(
 
 ### Arguments
 
-#### `kgDeleteNode.input` · [`KgDeleteNodeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-delete-node-input.md) non-null input platform
-
-### Type
-
-#### [`KgDeleteNodePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-delete-node-payload.md) object platform **EXPERIMENTAL**
+#### `input` · [`KgDeleteNodeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-delete-node-input.md) non-null input

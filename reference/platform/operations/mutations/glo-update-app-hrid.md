@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the human-readable identifier of an existing App.
 
+### Type
+
+#### [`GloUpdateAppHridPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-hrid-payload.md) object
+
 ```graphql
 gloUpdateAppHrid(
   input: GloUpdateAppHridInput!
@@ -19,8 +23,4 @@ gloUpdateAppHrid(
 
 ### Arguments
 
-#### `gloUpdateAppHrid.input` · [`GloUpdateAppHridInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-hrid-input.md) non-null input platform
-
-### Type
-
-#### [`GloUpdateAppHridPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-hrid-payload.md) object platform
+#### `input` · [`GloUpdateAppHridInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-hrid-input.md) non-null input

@@ -17,7 +17,9 @@ deprecated: false
 
 ### Common Data Model
 
-- [System Model Version](https://altiumdeveloper.github.io/cdm/classes/sys_SystemModelVersion/) — A specific version of a system model, capturing the state of the system design at a particular point in time.
+- [System Model Version](https://w3id.org/altium/cdm/system/SystemModelVersion) — A specific version of a system model, capturing the state of the system design at a particular point in time.
+
+  - IRI: [`https://w3id.org/altium/cdm/system/SystemModelVersion`](https://w3id.org/altium/cdm/system/SystemModelVersion)
   - GRID: `grid:workspace:{workspace-id}:system-design:sdm-version/{id}`
 
 ### Returned By
@@ -47,24 +49,24 @@ type SysSdmSystemModelVersion {
 
 ### Fields
 
-#### `SysSdmSystemModelVersion.deviceModels` · [`[SysSdmDeviceModel!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-device-model.md) list object system-design
+#### `deviceModels` · [`[SysSdmDeviceModel!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-device-model.md) list object
 
-#### `SysSdmSystemModelVersion.downloadUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `downloadUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-##### `SysSdmSystemModelVersion.downloadUrl.schemaVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `schemaVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSystemModelVersion.functionalModel` · [`SysSdmFunctionalModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-functional-model.md) object system-design
+#### `functionalModel` · [`SysSdmFunctionalModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-functional-model.md) object
 
-#### `SysSdmSystemModelVersion.hardwareModels` · [`[SysSdmHardwareModel!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-hardware-model.md) list object system-design
+#### `hardwareModels` · [`[SysSdmHardwareModel!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-hardware-model.md) list object
 
-#### `SysSdmSystemModelVersion.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SysSdmSystemModelVersion.metadata` · [`SysSdmSystemModelVersionMetadata`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version-metadata.md) object system-design
+#### `metadata` · [`SysSdmSystemModelVersionMetadata`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version-metadata.md) object
 
-#### `SysSdmSystemModelVersion.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSystemModelVersion.schemaVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `schemaVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSystemModelVersion.softwareModels` · [`[SysSdmSoftwareModel!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-model.md) list object system-design
+#### `softwareModels` · [`[SysSdmSoftwareModel!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-model.md) list object
 
-#### `SysSdmSystemModelVersion.version` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `version` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar

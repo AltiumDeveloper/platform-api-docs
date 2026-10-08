@@ -24,10 +24,10 @@ enum DesWorkspaceUserType {
 
 ### Values
 
-#### `DesWorkspaceUserType.WORKSPACE_GUEST`
+#### `WORKSPACE_GUEST`
 
 The user is a workspace guest, i.e. a user some limitations apply, compared to the regular workspace members.
 
-#### `DesWorkspaceUserType.WORKSPACE_MEMBER`
+#### `WORKSPACE_MEMBER`
 
 The user is a regular workspace member.

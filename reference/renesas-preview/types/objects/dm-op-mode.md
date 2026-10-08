@@ -35,30 +35,30 @@ type DmOpMode {
 
 ### Fields
 
-#### `DmOpMode.connectionSetRefId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `connectionSetRefId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Reference identifier linking to a connection set definition (if applicable).
 
-#### `DmOpMode.dependencyPinConfigs` · [`[DmDependencyPinConfig!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-dependency-pin-config.md) non-null object renesas-preview
+#### `dependencyPinConfigs` · [`[DmDependencyPinConfig!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-dependency-pin-config.md) non-null object
 
 List of pin dependencies to port mappings for this operation mode.
 
-#### `DmOpMode.display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Display string representing the operation mode.
 
-#### `DmOpMode.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier for the operation mode (group or configuration id).
 
-#### `DmOpMode.idConfig` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `idConfig` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier for the operation mode (group or configuration id).
 
-#### `DmOpMode.modePinConfigs` · [`[DmModePinConfig!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-mode-pin-config.md) non-null object renesas-preview
+#### `modePinConfigs` · [`[DmModePinConfig!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-mode-pin-config.md) non-null object
 
 List of pin function to port mappings for this operation mode.
 
-#### `DmOpMode.pinSummary` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `pinSummary` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Readable summary of pin mappings for this operation mode.

@@ -27,4 +27,4 @@ type RsaMotorStudioCreateEasyModeConfigPayload {
 
 ### Fields
 
-#### `RsaMotorStudioCreateEasyModeConfigPayload.config` · [`RsaMotorStudioEasyModeConfig!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-easy-mode-config.md) non-null object renesas-preview
+#### `config` · [`RsaMotorStudioEasyModeConfig!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-easy-mode-config.md) non-null object

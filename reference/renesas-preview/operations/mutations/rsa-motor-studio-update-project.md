@@ -17,6 +17,10 @@ deprecated: false
 
 Update a MotorStudioProject
 
+### Type
+
+#### [`RsaMotorStudioUpdateProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-project-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioUpdateProject(
   input: RsaMotorStudioUpdateProjectInput!
@@ -25,8 +29,4 @@ rsaMotorStudioUpdateProject(
 
 ### Arguments
 
-#### `rsaMotorStudioUpdateProject.input` · [`RsaMotorStudioUpdateProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-project-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioUpdateProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-project-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioUpdateProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-project-input.md) non-null input

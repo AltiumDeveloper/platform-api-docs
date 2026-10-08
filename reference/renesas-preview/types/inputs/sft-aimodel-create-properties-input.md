@@ -22,6 +22,6 @@ input SftAIModelCreatePropertiesInput {
 
 ### Fields
 
-#### `SftAIModelCreatePropertiesInput.customProperties` · [`[SftAIModelCustomPropertyInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-custom-property-input.md) non-null input renesas-preview
+#### `customProperties` · [`[SftAIModelCustomPropertyInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-custom-property-input.md) non-null input
 
-#### `SftAIModelCreatePropertiesInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

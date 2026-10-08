@@ -17,6 +17,12 @@ deprecated: false
 
 Retrieves the design data generation.
 
+### Type
+
+#### [`DesignDataGeneration`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation.md) object **EXPERIMENTAL**
+
+Represents a design data generation process and its result.
+
 ```graphql
 design {
   latestGeneration {
@@ -30,16 +36,10 @@ design {
 
 ### Arguments
 
-#### `byDesignId.designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the design.
 
-#### `byDesignId.revisionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `revisionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the project commit.
-
-### Type
-
-#### [`DesignDataGeneration`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation.md) object design **EXPERIMENTAL**
-
-Represents a design data generation process and its result.

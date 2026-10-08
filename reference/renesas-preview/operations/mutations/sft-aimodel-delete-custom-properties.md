@@ -11,6 +11,10 @@ deprecated: false
 
 Delete the AI model custom properties.
 
+### Type
+
+#### [`SftAIModelDeletePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-delete-properties-payload.md) object
+
 ```graphql
 sftAIModelDeleteCustomProperties(
   input: SftAIModelDeletePropertiesInput!
@@ -19,8 +23,4 @@ sftAIModelDeleteCustomProperties(
 
 ### Arguments
 
-#### `sftAIModelDeleteCustomProperties.input` · [`SftAIModelDeletePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-delete-properties-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftAIModelDeletePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-delete-properties-payload.md) object renesas-preview
+#### `input` · [`SftAIModelDeletePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-delete-properties-input.md) non-null input

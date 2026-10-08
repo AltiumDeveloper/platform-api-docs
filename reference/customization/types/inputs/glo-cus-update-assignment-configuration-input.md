@@ -24,10 +24,10 @@ input GloCusUpdateAssignmentConfigurationInput {
 
 ### Fields
 
-#### `GloCusUpdateAssignmentConfigurationInput.assignmentId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `assignmentId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier of the extension point.
 
-#### `GloCusUpdateAssignmentConfigurationInput.configurationParameters` · [`[GloCusAssignmentParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-parameter-input.md) non-null input customization
+#### `configurationParameters` · [`[GloCusAssignmentParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-assignment-parameter-input.md) non-null input
 
 Extension point configuration parameters.

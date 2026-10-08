@@ -29,8 +29,8 @@ enum TriggerEdge {
 
 ### Values
 
-#### `TriggerEdge.BOTH`
+#### `BOTH`
 
-#### `TriggerEdge.FALL`
+#### `FALL`
 
-#### `TriggerEdge.RISE`
+#### `RISE`

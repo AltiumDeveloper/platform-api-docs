@@ -26,18 +26,18 @@ input SupSolutionTemplateFilterInput {
 
 ### Fields
 
-#### `SupSolutionTemplateFilterInput.aiModelIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `aiModelIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Filter by a list of AI model identifiers if specified.
 
-#### `SupSolutionTemplateFilterInput.hasAIModels` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasAIModels` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Indicates whether the solution template has AI models; null applies no filtering.
 
-#### `SupSolutionTemplateFilterInput.publisherIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `publisherIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Filter by a list of publisher (company) identifiers if specified.
 
-#### `SupSolutionTemplateFilterInput.statuses` · [`[SupSolutionTemplateStatus!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md) list enum supply
+#### `statuses` · [`[SupSolutionTemplateStatus!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md) list enum
 
 Filter by a list of solution template statuses if specified.

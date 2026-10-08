@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Software Model](https://altiumdeveloper.github.io/cdm/classes/sys_SdmSoftwareModel/) — Captures the software components and their interactions within the system design.
+- [Software Model](https://w3id.org/altium/cdm/system/SdmSoftwareModel) — Captures the software components and their interactions within the system design.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmSoftwareModel`](https://w3id.org/altium/cdm/system/SdmSoftwareModel)
 
 ### Member Of
 
@@ -37,16 +38,16 @@ type SysSdmSoftwareModel {
 
 ### Fields
 
-#### `SysSdmSoftwareModel.deviceModelId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `deviceModelId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSoftwareModel.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmSoftwareModel.implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSoftwareModel.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmSoftwareModel.sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmSoftwareModel.softwareComponents` · [`[SysSdmSoftwareComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-component.md) list object system-design
+#### `softwareComponents` · [`[SysSdmSoftwareComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-component.md) list object
 
-#### `SysSdmSoftwareModel.softwareStackInstances` · [`[SysSdmSoftwareStackInstance!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-stack-instance.md) list object system-design
+#### `softwareStackInstances` · [`[SysSdmSoftwareStackInstance!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-software-stack-instance.md) list object

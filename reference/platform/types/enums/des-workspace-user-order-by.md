@@ -21,14 +21,14 @@ enum DesWorkspaceUserOrderBy {
 
 ### Values
 
-#### `DesWorkspaceUserOrderBy.DISPLAY_NAME`
+#### `DISPLAY_NAME`
 
 Order by the user display name.
 
-#### `DesWorkspaceUserOrderBy.EMAIL`
+#### `EMAIL`
 
 Order by the user email.
 
-#### `DesWorkspaceUserOrderBy.USER_ID`
+#### `USER_ID`
 
 Order by the workspace specific user id.

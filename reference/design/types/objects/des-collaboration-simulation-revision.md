@@ -30,18 +30,18 @@ type DesCollaborationSimulationRevision {
 
 ### Fields
 
-#### `DesCollaborationSimulationRevision.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The date and time when the simulation revision was created.
 
-#### `DesCollaborationSimulationRevision.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The user who created the simulation revision.
 
-#### `DesCollaborationSimulationRevision.files` · [`[DesCollaborationSimulationFile!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-file.md) non-null object design
+#### `files` · [`[DesCollaborationSimulationFile!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-file.md) non-null object
 
 The files associated with the simulation revision.
 
-#### `DesCollaborationSimulationRevision.metadata` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `metadata` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The metadata associated with the simulation revision.

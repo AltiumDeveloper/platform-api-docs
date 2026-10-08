@@ -30,10 +30,10 @@ type DmStackContext {
 
 ### Fields
 
-#### `DmStackContext.contextId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `contextId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier of the context.
 
-#### `DmStackContext.stackElements` · [`[DmStackElement!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-element.md) non-null object renesas-preview
+#### `stackElements` · [`[DmStackElement!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-element.md) non-null object
 
 Stack elements within this context.

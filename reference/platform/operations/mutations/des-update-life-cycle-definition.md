@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the defined life cycle definition with those provided.
 
+### Type
+
+#### [`DesUpdateLifeCycleDefinitionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-life-cycle-definition-payload.md) object
+
+Payload associated with updating a life cycle definition.
+
 ```graphql
 desUpdateLifeCycleDefinition(
   input: DesUpdateLifeCycleDefinitionInput!
@@ -19,10 +25,4 @@ desUpdateLifeCycleDefinition(
 
 ### Arguments
 
-#### `desUpdateLifeCycleDefinition.input` · [`DesUpdateLifeCycleDefinitionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-life-cycle-definition-input.md) non-null input platform
-
-### Type
-
-#### [`DesUpdateLifeCycleDefinitionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-update-life-cycle-definition-payload.md) object platform
-
-Payload associated with updating a life cycle definition.
+#### `input` · [`DesUpdateLifeCycleDefinitionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-life-cycle-definition-input.md) non-null input

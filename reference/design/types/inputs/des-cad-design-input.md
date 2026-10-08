@@ -55,134 +55,134 @@ input DesCadDesignInput {
 
 ### Fields
 
-#### `DesCadDesignInput.boardAreas` · [`[DesCadBoardAreaInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-area-input.md) list input design
+#### `boardAreas` · [`[DesCadBoardAreaInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-area-input.md) list input
 
 CAD design board areas.
 
-#### `DesCadDesignInput.boardBendingLines` · [`[DesCadBendingLineInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-bending-line-input.md) list input design
+#### `boardBendingLines` · [`[DesCadBendingLineInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-bending-line-input.md) list input
 
 CAD design board bending lines.
 
-#### `DesCadDesignInput.boardColor` · [`Long`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) scalar common
+#### `boardColor` · [`Long`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) scalar
 
 CAD design board color.
 
-#### `DesCadDesignInput.boardCoreColor` · [`Long`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) scalar common
+#### `boardCoreColor` · [`Long`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) scalar
 
 CAD design board core color.
 
-#### `DesCadDesignInput.boardCoreOpacity` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar common
+#### `boardCoreOpacity` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar
 
 CAD design board core opacity.
 
-#### `DesCadDesignInput.boardLayers` · [`[DesCadBoardLayerInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-layer-input.md) list input design
+#### `boardLayers` · [`[DesCadBoardLayerInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-layer-input.md) list input
 
 CAD design board layers.
 
-#### `DesCadDesignInput.boardOffsetMcadToEcadOrigin` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input design
+#### `boardOffsetMcadToEcadOrigin` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input
 
 CAD design board offset MCAD to ECAD origin.
 
-#### `DesCadDesignInput.boardOrigin` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input design
+#### `boardOrigin` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input
 
 CAD design board origin.
 
-#### `DesCadDesignInput.boardOutlineJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `boardOutlineJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 JSON serialized \*ComplexShape\*.
 
-#### `DesCadDesignInput.boardRegions` · [`[DesCadBoardRegionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-region-input.md) list input design
+#### `boardRegions` · [`[DesCadBoardRegionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-region-input.md) list input
 
 CAD design board regions.
 
-#### `DesCadDesignInput.boardSplitLines` · [`[DesCadSplitLineInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-split-line-input.md) list input design
+#### `boardSplitLines` · [`[DesCadSplitLineInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-split-line-input.md) list input
 
 CAD design board split lines.
 
-#### `DesCadDesignInput.boardThickness` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `boardThickness` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 CAD design board thickness.
 
-#### `DesCadDesignInput.collaborationFlags` · [`[DesCadBoardCollaborationFlag!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-collaboration-flag.md) list enum design
+#### `collaborationFlags` · [`[DesCadBoardCollaborationFlag!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-collaboration-flag.md) list enum
 
 CAD design collaboration flags.
 
-#### `DesCadDesignInput.componentTypes` · [`[DesCadBoardComponentTypeInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-component-type-input.md) list input design
+#### `componentTypes` · [`[DesCadBoardComponentTypeInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-component-type-input.md) list input
 
 CAD design component types.
 
-#### `DesCadDesignInput.coordinateSystemTranslation` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input design
+#### `coordinateSystemTranslation` · [`DesCadBoardPointInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-point-input.md) input
 
 CAD design coordinate system translation.
 
-#### `DesCadDesignInput.copperExportFeatures` · [`[DesCadBoardCopperExportFeature!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-copper-export-feature.md) list enum design
+#### `copperExportFeatures` · [`[DesCadBoardCopperExportFeature!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-copper-export-feature.md) list enum
 
 CAD design copper export features.
 
-#### `DesCadDesignInput.copperLayers` · [`[DesCadBoardCopperLayerInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-copper-layer-input.md) list input design
+#### `copperLayers` · [`[DesCadBoardCopperLayerInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-copper-layer-input.md) list input
 
 CAD design copper layers.
 
-#### `DesCadDesignInput.copperRegions` · [`[DesCadBoardCopperRegionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-copper-region-input.md) list input design
+#### `copperRegions` · [`[DesCadBoardCopperRegionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-copper-region-input.md) list input
 
 CAD design copper regions.
 
-#### `DesCadDesignInput.cutouts` · [`[DesCadBoardCutoutInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-cutout-input.md) list input design
+#### `cutouts` · [`[DesCadBoardCutoutInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-cutout-input.md) list input
 
 CAD design cutouts.
 
-#### `DesCadDesignInput.designFileName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `designFileName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD design file name.
 
-#### `DesCadDesignInput.designVariantId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `designVariantId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD design variant identifier.
 
-#### `DesCadDesignInput.designVariantName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `designVariantName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD design variant name.
 
-#### `DesCadDesignInput.hasHatchedCopperPolygons` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasHatchedCopperPolygons` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether CAD design has hatched copper polygons or not.
 
-#### `DesCadDesignInput.holes` · [`[DesCadBoardHoleInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-hole-input.md) list input design
+#### `holes` · [`[DesCadBoardHoleInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-hole-input.md) list input
 
 CAD design holes.
 
-#### `DesCadDesignInput.isRF20Design` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isRF20Design` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether CAD design is a RF20 design or not.
 
-#### `DesCadDesignInput.layersExportMode` · [`DesCadLayersExportMode`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-layers-export-mode.md) enum design
+#### `layersExportMode` · [`DesCadLayersExportMode`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-layers-export-mode.md) enum
 
 CAD design export mode.
 
-#### `DesCadDesignInput.messages` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `messages` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 CAD design messages.
 
-#### `DesCadDesignInput.minimalHeightComponentsShown` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `minimalHeightComponentsShown` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 CAD design minimal height of components shown.
 
-#### `DesCadDesignInput.properties` · [`[DesCadPropertyInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-property-input.md) list input design
+#### `properties` · [`[DesCadPropertyInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-property-input.md) list input
 
 CAD design properties.
 
-#### `DesCadDesignInput.tracks` · [`[DesCadBoardTrackInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-track-input.md) list input design
+#### `tracks` · [`[DesCadBoardTrackInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-track-input.md) list input
 
 CAD design tracks.
 
-#### `DesCadDesignInput.variants` · [`DesCadBoardVariantsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-variants-input.md) input design
+#### `variants` · [`DesCadBoardVariantsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-variants-input.md) input
 
 CAD design variants.
 
-#### `DesCadDesignInput.vias` · [`[DesCadBoardViaInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-via-input.md) list input design
+#### `vias` · [`[DesCadBoardViaInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-via-input.md) list input
 
 CAD design vias.
 
-#### `DesCadDesignInput.workflowState` · [`DesCadWorkflowState`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-workflow-state.md) enum design
+#### `workflowState` · [`DesCadWorkflowState`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-workflow-state.md) enum
 
 CAD design workflow state.

@@ -28,26 +28,26 @@ input DesPartSellerMappingInput {
 
 ### Fields
 
-#### `DesPartSellerMappingInput.currencyColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `currencyColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for the seller currency.
 
-#### `DesPartSellerMappingInput.nameColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `nameColumn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Column header for the seller name.
 
-#### `DesPartSellerMappingInput.prices` · [`[DesPartPriceMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-price-mapping-input.md) list input library-management
+#### `prices` · [`[DesPartPriceMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-price-mapping-input.md) list input
 
 Price tier mappings.
 
-#### `DesPartSellerMappingInput.skuColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `skuColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for the seller SKU.
 
-#### `DesPartSellerMappingInput.stocks` · [`[DesPartStockMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-stock-mapping-input.md) list input library-management
+#### `stocks` · [`[DesPartStockMappingInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-stock-mapping-input.md) list input
 
 Stock mappings.
 
-#### `DesPartSellerMappingInput.urlColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `urlColumn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Column header for the seller URL.

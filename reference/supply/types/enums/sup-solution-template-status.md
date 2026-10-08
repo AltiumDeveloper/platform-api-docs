@@ -27,30 +27,30 @@ enum SupSolutionTemplateStatus {
 
 ### Values
 
-#### `SupSolutionTemplateStatus.ACTIVE`
+#### `ACTIVE`
 
 The solution template is approved and published and it has active status.
 
-#### `SupSolutionTemplateStatus.DRAFT`
+#### `DRAFT`
 
 Work in progress, not yet submitted for review.
 
-#### `SupSolutionTemplateStatus.INACTIVE`
+#### `INACTIVE`
 
 The solution template is not active.
 
-#### `SupSolutionTemplateStatus.ON_HOLD`
+#### `ON_HOLD`
 
 Review or progress is paused pending further action.
 
-#### `SupSolutionTemplateStatus.REJECTED`
+#### `REJECTED`
 
 The solution template was reviewed and rejected.
 
-#### `SupSolutionTemplateStatus.REVIEWING`
+#### `REVIEWING`
 
 The solution template is currently under review.
 
-#### `SupSolutionTemplateStatus.SUBMITTED`
+#### `SUBMITTED`
 
 Solution Template data has been submitted and awaits review.

@@ -11,6 +11,12 @@ deprecated: false
 
 Delete a software project.
 
+### Type
+
+#### [`SupSoftwareProjectDeleteSoftwareProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-delete-software-project-payload.md) object
+
+Payload associated with deleting a software project.
+
 ```graphql
 supSoftwareProjectDeleteSoftwareProject(
   input: SupSoftwareProjectDeleteSoftwareProjectInput!
@@ -19,10 +25,4 @@ supSoftwareProjectDeleteSoftwareProject(
 
 ### Arguments
 
-#### `supSoftwareProjectDeleteSoftwareProject.input` · [`SupSoftwareProjectDeleteSoftwareProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-delete-software-project-input.md) non-null input supply
-
-### Type
-
-#### [`SupSoftwareProjectDeleteSoftwareProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-delete-software-project-payload.md) object supply
-
-Payload associated with deleting a software project.
+#### `input` · [`SupSoftwareProjectDeleteSoftwareProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-delete-software-project-input.md) non-null input

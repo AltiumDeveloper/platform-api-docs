@@ -24,10 +24,10 @@ input SupEvalKitDeleteRefDesignCompatibleEvalKitInput {
 
 ### Fields
 
-#### `SupEvalKitDeleteRefDesignCompatibleEvalKitInput.evalKitIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The list of evaluation kit IDs to be deleted from the compatible evaluation kits of the reference design.
 
-#### `SupEvalKitDeleteRefDesignCompatibleEvalKitInput.refDesignId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `refDesignId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The ID of the reference design from which compatible evaluation kits will be deleted.

@@ -27,12 +27,12 @@ enum DesCadBoardLayerDielectricType {
 
 ### Values
 
-#### `DesCadBoardLayerDielectricType.CORE`
+#### `CORE`
 
-#### `DesCadBoardLayerDielectricType.FILM`
+#### `FILM`
 
-#### `DesCadBoardLayerDielectricType.NONE`
+#### `NONE`
 
-#### `DesCadBoardLayerDielectricType.PRE_PREQ`
+#### `PRE_PREQ`
 
-#### `DesCadBoardLayerDielectricType.SURFACE`
+#### `SURFACE`

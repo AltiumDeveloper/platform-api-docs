@@ -17,6 +17,10 @@ deprecated: true
 
 > **Deprecated:** Use dmExecuteDeviceEvaluationFromESDv2 mutation instead
 
+### Type
+
+#### [`DmExecuteDeviceEvaluationFromESDPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-from-esdpayload.md) object **EXPERIMENTAL**
+
 ```graphql
 dmExecuteDeviceEvaluationFromESD(
   input: DmExecuteDeviceEvaluationFromESDInput!
@@ -25,8 +29,4 @@ dmExecuteDeviceEvaluationFromESD(
 
 ### Arguments
 
-#### `dmExecuteDeviceEvaluationFromESD.input` · [`DmExecuteDeviceEvaluationFromESDInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-from-esdinput.md) non-null input renesas-preview
-
-### Type
-
-#### [`DmExecuteDeviceEvaluationFromESDPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-from-esdpayload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`DmExecuteDeviceEvaluationFromESDInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-from-esdinput.md) non-null input

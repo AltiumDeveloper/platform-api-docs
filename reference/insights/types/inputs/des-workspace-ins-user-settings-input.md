@@ -23,6 +23,6 @@ input DesWorkspaceInsUserSettingsInput {
 
 ### Fields
 
-#### `DesWorkspaceInsUserSettingsInput.projectsSettings` · [`DesWorkspaceInsProjectSettingsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-project-settings-input.md) input insights
+#### `projectsSettings` · [`DesWorkspaceInsProjectSettingsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-project-settings-input.md) input
 
 Project-level preferences used when delivering insights.

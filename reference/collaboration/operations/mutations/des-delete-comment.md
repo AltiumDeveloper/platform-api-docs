@@ -11,6 +11,12 @@ deprecated: false
 
 Permanently deletes the specified comment.
 
+### Type
+
+#### [`DesDeleteCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-delete-comment-payload.md) object
+
+Payload associated with deleting a comment.
+
 ```graphql
 desDeleteComment(
   input: DesDeleteCommentInput!
@@ -19,10 +25,4 @@ desDeleteComment(
 
 ### Arguments
 
-#### `desDeleteComment.input` · [`DesDeleteCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-comment-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesDeleteCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-delete-comment-payload.md) object collaboration
-
-Payload associated with deleting a comment.
+#### `input` · [`DesDeleteCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-comment-input.md) non-null input

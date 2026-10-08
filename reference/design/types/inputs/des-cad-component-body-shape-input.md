@@ -27,22 +27,22 @@ input DesCadComponentBodyShapeInput {
 
 ### Fields
 
-#### `DesCadComponentBodyShapeInput.height` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `height` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Height of CAD component body shape.
 
-#### `DesCadComponentBodyShapeInput.isBodylessOnEcad` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isBodylessOnEcad` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether CAD component body shape is bodyless on ECAD.
 
-#### `DesCadComponentBodyShapeInput.isHidden` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isHidden` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether CAD component body shape is hidden or not.
 
-#### `DesCadComponentBodyShapeInput.modelData` · [`DesCadBoard3DBodyModelDataInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-3-dbody-model-data-input.md) input design
+#### `modelData` · [`DesCadBoard3DBodyModelDataInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-3-dbody-model-data-input.md) input
 
 Model data for CAD component body shape.
 
-#### `DesCadComponentBodyShapeInput.shapeJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `shapeJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 JSON serialized \*GeometricShape\*.

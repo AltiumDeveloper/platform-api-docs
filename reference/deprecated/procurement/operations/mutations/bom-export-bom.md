@@ -13,6 +13,10 @@ deprecated: true
 
 Exports the specified BOM into a file and provides a download URL.
 
+### Type
+
+#### [`BomExportBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-export-bom-payload.md) object
+
 ```graphql
 bomExportBom(
   input: BomExportBomInput!
@@ -21,8 +25,4 @@ bomExportBom(
 
 ### Arguments
 
-#### `bomExportBom.input` · [`BomExportBomInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-export-bom-input.md) non-null input procurement
-
-### Type
-
-#### [`BomExportBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-export-bom-payload.md) object procurement
+#### `input` · [`BomExportBomInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-export-bom-input.md) non-null input

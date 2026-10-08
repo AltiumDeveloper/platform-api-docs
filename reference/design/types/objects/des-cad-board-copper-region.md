@@ -26,18 +26,18 @@ type DesCadBoardCopperRegion {
 
 ### Fields
 
-#### `DesCadBoardCopperRegion.holeShapesJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `holeShapesJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 JSON serialized array of \*GeometricShape\*.
 
-#### `DesCadBoardCopperRegion.layerName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `layerName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board copper region layer name.
 
-#### `DesCadBoardCopperRegion.outlineShapesJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `outlineShapesJson` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 JSON serialized array of \*GeometricShape\*.
 
-#### `DesCadBoardCopperRegion.regionType` · [`DesCadBoardCopperRegionType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-copper-region-type.md) non-null enum design
+#### `regionType` · [`DesCadBoardCopperRegionType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-copper-region-type.md) non-null enum
 
 CAD board copper region type.

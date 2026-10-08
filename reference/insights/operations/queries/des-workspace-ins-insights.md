@@ -11,6 +11,12 @@ deprecated: false
 
 Gets a list of insights.
 
+### Type
+
+#### [`DesWorkspaceInsInsightsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insights-connection.md) object
+
+A connection to a list of items.
+
 ```graphql
 desWorkspaceInsInsights(
   after: String
@@ -24,28 +30,22 @@ desWorkspaceInsInsights(
 
 ### Arguments
 
-#### `desWorkspaceInsInsights.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-#### `desWorkspaceInsInsights.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-#### `desWorkspaceInsInsights.filter` · [`DesWorkspaceInsInsightFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-insight-filter-input.md) input insights
+#### `filter` · [`DesWorkspaceInsInsightFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-insight-filter-input.md) input
 
-#### `desWorkspaceInsInsights.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-#### `desWorkspaceInsInsights.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-#### `desWorkspaceInsInsights.sorting` · [`DesWorkspaceInsOrderingInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-ordering-input.md) input insights
-
-### Type
-
-#### [`DesWorkspaceInsInsightsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insights-connection.md) object insights
-
-A connection to a list of items.
+#### `sorting` · [`DesWorkspaceInsOrderingInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-ordering-input.md) input

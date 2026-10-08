@@ -11,6 +11,10 @@ deprecated: false
 
 Gets software projects by IDs.
 
+### Type
+
+#### [`SftSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) object
+
 ```graphql
 sftSoftwareProjectsByIds(
   ids: [ID!]!
@@ -19,8 +23,4 @@ sftSoftwareProjectsByIds(
 
 ### Arguments
 
-#### `sftSoftwareProjectsByIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SftSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) object renesas-preview
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

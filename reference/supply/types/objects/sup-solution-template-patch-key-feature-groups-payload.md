@@ -22,6 +22,6 @@ type SupSolutionTemplatePatchKeyFeatureGroupsPayload {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchKeyFeatureGroupsPayload.errors` · [`[SupSolutionTemplatePatchKeyFeatureGroupsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-key-feature-groups-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplatePatchKeyFeatureGroupsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-key-feature-groups-error.md) list union
 
-#### `SupSolutionTemplatePatchKeyFeatureGroupsPayload.result` · [`SupSolutionTemplateResultPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-result-payload.md) object supply
+#### `result` · [`SupSolutionTemplateResultPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-result-payload.md) object

@@ -27,30 +27,30 @@ enum SupSoftwareProjectOrderField {
 
 ### Values
 
-#### `SupSoftwareProjectOrderField.CREATED_AT`
+#### `CREATED_AT`
 
 Order by creation date.
 
-#### `SupSoftwareProjectOrderField.DESCRIPTION`
+#### `DESCRIPTION`
 
 Order by description.
 
-#### `SupSoftwareProjectOrderField.IS_RECOMMENDED`
+#### `IS_RECOMMENDED`
 
 Order by recommendation score.
 
-#### `SupSoftwareProjectOrderField.RECOMMEND_SCORE`
+#### `RECOMMEND_SCORE`
 
 Order by recommend score.
 
-#### `SupSoftwareProjectOrderField.TITLE`
+#### `TITLE`
 
 Order by title.
 
-#### `SupSoftwareProjectOrderField.TYPE`
+#### `TYPE`
 
 Order by type.
 
-#### `SupSoftwareProjectOrderField.UPDATED_AT`
+#### `UPDATED_AT`
 
 Order by last update date.

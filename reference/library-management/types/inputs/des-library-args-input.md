@@ -9,7 +9,7 @@ deprecated: false
 
 # DesLibraryArgsInput
 
-`desLibrary` extra arguments.
+[`desLibrary`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/queries/des-library.md) extra arguments.
 
 ### Member Of
 
@@ -23,6 +23,6 @@ input DesLibraryArgsInput {
 
 ### Fields
 
-#### `DesLibraryArgsInput.allComponentRevisions` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `allComponentRevisions` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Fetch all component revisions when listing components. When set to false, only the latest component revisions are returned. Defaults to false.

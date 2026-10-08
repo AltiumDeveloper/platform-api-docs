@@ -27,16 +27,16 @@ input GloCusExtensionPointFilterInput {
 
 ### Fields
 
-#### `GloCusExtensionPointFilterInput.and` · [`[GloCusExtensionPointFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-filter-input.md) list input customization
+#### `and` · [`[GloCusExtensionPointFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-filter-input.md) list input
 
-#### `GloCusExtensionPointFilterInput.entityType` · [`GloCusStringTypeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) input customization
+#### `entityType` · [`GloCusStringTypeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) input
 
-#### `GloCusExtensionPointFilterInput.executionContext` · [`GloCusExecutionContextOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-execution-context-operation-filter-input.md) input customization
+#### `executionContext` · [`GloCusExecutionContextOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-execution-context-operation-filter-input.md) input
 
-#### `GloCusExtensionPointFilterInput.extensionPointId` · [`GloCusStringTypeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) input customization
+#### `extensionPointId` · [`GloCusStringTypeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) input
 
-#### `GloCusExtensionPointFilterInput.name` · [`GloCusStringTypeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) input customization
+#### `name` · [`GloCusStringTypeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) input
 
-#### `GloCusExtensionPointFilterInput.or` · [`[GloCusExtensionPointFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-filter-input.md) list input customization
+#### `or` · [`[GloCusExtensionPointFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-extension-point-filter-input.md) list input
 
-#### `GloCusExtensionPointFilterInput.type` · [`GloCusStringTypeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) input customization
+#### `type` · [`GloCusStringTypeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-string-type-filter-input.md) input

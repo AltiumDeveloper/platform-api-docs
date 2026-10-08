@@ -26,18 +26,18 @@ type DesPartAlternativeProviderInfo {
 
 ### Fields
 
-#### `DesPartAlternativeProviderInfo.comments` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `comments` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Provider comments about the alternative.
 
-#### `DesPartAlternativeProviderInfo.compatibilityRating` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar common
+#### `compatibilityRating` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar
 
 The compatibility rating (0-1).
 
-#### `DesPartAlternativeProviderInfo.crossType` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `crossType` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The cross type.
 
-#### `DesPartAlternativeProviderInfo.crossTypeShort` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `crossTypeShort` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The abbreviated cross type.

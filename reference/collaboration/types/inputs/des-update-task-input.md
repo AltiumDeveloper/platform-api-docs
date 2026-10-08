@@ -28,26 +28,26 @@ input DesUpdateTaskInput {
 
 ### Fields
 
-#### `DesUpdateTaskInput.assigneeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `assigneeId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the user to assign this task to. If omitted or set to `null`, the assignee will not be updated.
 
-#### `DesUpdateTaskInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 New task description or null to keep old.
 
-#### `DesUpdateTaskInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 New task name or null to keep old.
 
-#### `DesUpdateTaskInput.priority` · [`DesTaskPriority`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-priority.md) enum collaboration
+#### `priority` · [`DesTaskPriority`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-priority.md) enum
 
 New task priority or null to keep old.
 
-#### `DesUpdateTaskInput.status` · [`DesTaskStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-status.md) enum collaboration
+#### `status` · [`DesTaskStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-status.md) enum
 
 New task status or null to keep old.
 
-#### `DesUpdateTaskInput.taskId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `taskId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The task node identifier.

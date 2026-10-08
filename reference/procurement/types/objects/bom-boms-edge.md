@@ -24,10 +24,10 @@ type BomBomsEdge {
 
 ### Fields
 
-#### `BomBomsEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `BomBomsEdge.node` · [`BomWip!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md) non-null object procurement
+#### `node` · [`BomWip!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md) non-null object
 
 The item at the end of the edge.

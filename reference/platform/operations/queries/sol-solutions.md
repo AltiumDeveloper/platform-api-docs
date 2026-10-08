@@ -17,4 +17,4 @@ solSolutions: [SolSolution!]!
 
 ### Type
 
-#### [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) object platform
+#### [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) object

@@ -28,26 +28,26 @@ input DesLifeCycleDefinitionInput {
 
 ### Fields
 
-#### `DesLifeCycleDefinitionInput.contentTypes` · [`[DesContentTypeKind!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) list enum platform
+#### `contentTypes` · [`[DesContentTypeKind!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) list enum
 
 Content types of life cycle definition.
 
-#### `DesLifeCycleDefinitionInput.isControlledPerContentType` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isControlledPerContentType` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Returns `true` if the life cycle definition is controlled per content type.
 
-#### `DesLifeCycleDefinitionInput.isRevisionSchemeAssigned` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isRevisionSchemeAssigned` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Returns `true` if a revision scheme is assigned to the life cycle definition.
 
-#### `DesLifeCycleDefinitionInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of life cycle definition.
 
-#### `DesLifeCycleDefinitionInput.stages` · [`[DesLifeCycleStageInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-stage-input.md) list input platform
+#### `stages` · [`[DesLifeCycleStageInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-stage-input.md) list input
 
 Stages of life cycle definition.
 
-#### `DesLifeCycleDefinitionInput.stateTransitions` · [`[DesLifeCycleStateTransitionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-input.md) list input platform
+#### `stateTransitions` · [`[DesLifeCycleStateTransitionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-input.md) list input
 
 State transitions of life cycle definition.

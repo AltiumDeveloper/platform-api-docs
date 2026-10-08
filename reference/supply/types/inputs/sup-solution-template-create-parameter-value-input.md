@@ -23,14 +23,14 @@ input SupSolutionTemplateCreateParameterValueInput {
 
 ### Fields
 
-#### `SupSolutionTemplateCreateParameterValueInput.info` · [`SupSolutionTemplateCreateParameterInfoInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-info-input.md) input supply
+#### `info` · [`SupSolutionTemplateCreateParameterInfoInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-parameter-info-input.md) input
 
 The parameter info identifier by parameter's title.
 
-#### `SupSolutionTemplateCreateParameterValueInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this parameter value.
 
-#### `SupSolutionTemplateCreateParameterValueInput.value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The value of this parameter value.

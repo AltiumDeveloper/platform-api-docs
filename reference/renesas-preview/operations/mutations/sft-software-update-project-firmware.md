@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the Software Project firmware.
 
+### Type
+
+#### [`SftSoftwareProjectUpdateFirmwarePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project-update-firmware-payload.md) object
+
 ```graphql
 sftSoftwareUpdateProjectFirmware(
   input: SftSoftwareUpdateProjectFirmwareInput!
@@ -19,8 +23,4 @@ sftSoftwareUpdateProjectFirmware(
 
 ### Arguments
 
-#### `sftSoftwareUpdateProjectFirmware.input` · [`SftSoftwareUpdateProjectFirmwareInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-firmware-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSoftwareProjectUpdateFirmwarePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project-update-firmware-payload.md) object renesas-preview
+#### `input` · [`SftSoftwareUpdateProjectFirmwareInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-firmware-input.md) non-null input

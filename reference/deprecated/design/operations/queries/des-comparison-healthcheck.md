@@ -17,6 +17,6 @@ desComparisonHealthcheck: Boolean! @deprecated
 
 ### Type
 
-#### [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
-The `Boolean` scalar type represents `true` or `false`.
+The [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar type represents `true` or `false`.

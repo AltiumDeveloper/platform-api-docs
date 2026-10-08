@@ -24,10 +24,10 @@ input BomCreateBomPackagingPrioritiesSettingsInput {
 
 ### Fields
 
-#### `BomCreateBomPackagingPrioritiesSettingsInput.enabled` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `enabled` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Specifies whether to use packaging type priorities or not.
 
-#### `BomCreateBomPackagingPrioritiesSettingsInput.order` · [`[BomPackagingType!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-packaging-type.md) non-null enum procurement
+#### `order` · [`[BomPackagingType!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-packaging-type.md) non-null enum
 
 Specifies the preferred order of packaging types. Not specified packaging types will be assigned with the lowest priority.

@@ -11,6 +11,12 @@ deprecated: false
 
 Delete a evaluation kit.
 
+### Type
+
+#### [`SupEvalKitDeleteEvalKitPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-eval-kit-payload.md) object
+
+Payload associated with deleting a evaluation kit.
+
 ```graphql
 supEvalKitDeleteEvalKit(
   input: SupEvalKitDeleteEvalKitInput!
@@ -19,10 +25,4 @@ supEvalKitDeleteEvalKit(
 
 ### Arguments
 
-#### `supEvalKitDeleteEvalKit.input` · [`SupEvalKitDeleteEvalKitInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-eval-kit-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitDeleteEvalKitPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-eval-kit-payload.md) object supply
-
-Payload associated with deleting a evaluation kit.
+#### `input` · [`SupEvalKitDeleteEvalKitInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-eval-kit-input.md) non-null input

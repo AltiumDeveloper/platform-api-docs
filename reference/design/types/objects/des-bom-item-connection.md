@@ -26,18 +26,18 @@ type DesBomItemConnection {
 
 ### Fields
 
-#### `DesBomItemConnection.edges` · [`[DesBomItemEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item-edge.md) list object design
+#### `edges` · [`[DesBomItemEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item-edge.md) list object
 
 A list of edges.
 
-#### `DesBomItemConnection.nodes` · [`[DesBomItem!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item.md) list object design
+#### `nodes` · [`[DesBomItem!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-bom-item.md) list object
 
 A flattened list of the nodes.
 
-#### `DesBomItemConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesBomItemConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

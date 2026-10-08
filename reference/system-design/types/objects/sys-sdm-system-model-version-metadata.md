@@ -30,10 +30,10 @@ type SysSdmSystemModelVersionMetadata {
 
 ### Fields
 
-#### `SysSdmSystemModelVersionMetadata.authoringApplication` · [`SysSdmAuthoringApplication!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-authoring-application.md) non-null object system-design
+#### `authoringApplication` · [`SysSdmAuthoringApplication!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-authoring-application.md) non-null object
 
-#### `SysSdmSystemModelVersionMetadata.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-#### `SysSdmSystemModelVersionMetadata.createdBy` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `createdBy` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmSystemModelVersionMetadata.tags` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tags` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

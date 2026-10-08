@@ -25,8 +25,8 @@ enum DesCadBoardLayerPosition {
 
 ### Values
 
-#### `DesCadBoardLayerPosition.BOTTOM`
+#### `BOTTOM`
 
-#### `DesCadBoardLayerPosition.INTERNAL`
+#### `INTERNAL`
 
-#### `DesCadBoardLayerPosition.TOP`
+#### `TOP`

@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Connection](https://altiumdeveloper.github.io/cdm/classes/sys_SdmConnection/) — Represents a connection between functional blocks.
+- [Connection](https://w3id.org/altium/cdm/system/SdmConnection) — Represents a connection between functional blocks.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmConnection`](https://w3id.org/altium/cdm/system/SdmConnection)
 
 ### Member Of
 
@@ -34,10 +35,10 @@ type SysSdmConnection {
 
 ### Fields
 
-#### `SysSdmConnection.endpoints` · [`[SysSdmEndpoint!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-endpoint.md) list object system-design
+#### `endpoints` · [`[SysSdmEndpoint!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-endpoint.md) list object
 
-#### `SysSdmConnection.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmConnection.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmConnection.parameters` · [`[SysSdmParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) list object system-design
+#### `parameters` · [`[SysSdmParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) list object

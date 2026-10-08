@@ -1,4 +1,4 @@
-# Deprecated — Altium Platform API
+# Deprecated — Altium 365 API
 > Operations marked @deprecated. They still work; migrate to the replacement named in each reason.
 
 ## Platform

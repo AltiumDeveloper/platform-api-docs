@@ -13,7 +13,9 @@ deprecated: false
 
 ### Common Data Model
 
-- [Part Family](https://altiumdeveloper.github.io/cdm/classes/sup_PartFamily/) — A manufacturer's grouping of parts in the supply data, where the kind of family is vendor-specific (e.g. Series or Family). Part families form a hierarchy: a family has either child families or, at the lowest level, Part Groups. Families sharing the same parent are usually close alternatives to one another.
+- [Part Family](https://w3id.org/altium/cdm/supply/PartFamily) — A manufacturer's grouping of parts in the supply data, where the kind of family is vendor-specific (e.g. Series or Family). Part families form a hierarchy: a family has either child families or, at the lowest level, Part Groups. Families sharing the same parent are usually close alternatives to one another.
+
+  - IRI: [`https://w3id.org/altium/cdm/supply/PartFamily`](https://w3id.org/altium/cdm/supply/PartFamily)
   - GRID: `grid:supply::platform:part-family/{id}`
 
 ### Member Of
@@ -22,9 +24,9 @@ deprecated: false
 
 ### Interfaces
 
-#### [`SupPartFamilyEntity`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/interfaces/sup-part-family-entity.md) interface supply
+#### [`SupPartFamilyEntity`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/interfaces/sup-part-family-entity.md) interface
 
-Shared Fields between `SupPartFamily` and `SupPartGroup`.
+Shared Fields between `SupPartFamily` and [`SupPartGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-group.md).
 
 ```graphql
 type SupPartFamily implements SupPartFamilyEntity {
@@ -47,58 +49,58 @@ type SupPartFamily implements SupPartFamilyEntity {
 
 ### Fields
 
-#### `SupPartFamily.applicationIDs` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `applicationIDs` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 `applicationIDs` is a list of the identifiers of relevant applications this part family can be useful for.
 
-#### `SupPartFamily.categoryID` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `categoryID` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 `categoryID` is the identifier of the part category of this part family.
 
-#### `SupPartFamily.children` · [`[SupPartFamily!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family.md) non-null object supply
+#### `children` · [`[SupPartFamily!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family.md) non-null object
 
 `children` is a list of the part families that are the direct children of this family. There will be one of either `children` or `partGroups`.
 
-#### `SupPartFamily.familyType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `familyType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 `familyType` describes the part family in a part family hierarchy. It is vendor and part family specific. Examples include: 'Series', 'Family', etc.
 
-#### `SupPartFamily.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 `id` is the global resource id (GRID) for this Part Family.
 
-#### `SupPartFamily.keyFeatures` · [`[SupPartFamilyKeyFeature!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-key-feature.md) non-null object supply
+#### `keyFeatures` · [`[SupPartFamilyKeyFeature!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-key-feature.md) non-null object
 
 `keyFeatures` is the list of key part features relevant to this part family.
 
-#### `SupPartFamily.manufacturerID` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `manufacturerID` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 `manufacturerID` is the identifier of the manufacturer of this part family.
 
-#### `SupPartFamily.overview` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `overview` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 `overview` of the part family.
 
-#### `SupPartFamily.parent` · [`SupPartFamily`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family.md) object supply
+#### `parent` · [`SupPartFamily`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family.md) object
 
 `parent` is the the direct parent of this family. This will be `null` if this is the highest level.
 
-#### `SupPartFamily.partGroups` · [`[SupPartGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-group.md) non-null object supply
+#### `partGroups` · [`[SupPartGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-group.md) non-null object
 
 `partGroups` is a list of the part groups that are the direct children of this family. There will be one of either `children` or `partGroups`.
 
-#### `SupPartFamily.siblings` · [`[SupPartFamily!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family.md) non-null object supply
+#### `siblings` · [`[SupPartFamily!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family.md) non-null object
 
 `siblings` is a list of direct sibling part families of the current group, which have the same parent. They are usually a close alternative choice of the current group.
 
-#### `SupPartFamily.subtitle` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `subtitle` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 `subtitle` of the part family.
 
-#### `SupPartFamily.tags` · [`[SupPartFamilyTag!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-tag.md) non-null object supply
+#### `tags` · [`[SupPartFamilyTag!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-tag.md) non-null object
 
 `tags` is a list of additional metadata for categorizing this part family.
 
-#### `SupPartFamily.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 `title` of the part family.

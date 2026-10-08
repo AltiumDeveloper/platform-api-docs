@@ -24,10 +24,10 @@ input SupSolutionTemplateSetPreviewImagesInput {
 
 ### Fields
 
-#### `SupSolutionTemplateSetPreviewImagesInput.previewImages` · [`[SupSolutionTemplateFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) list input supply
+#### `previewImages` · [`[SupSolutionTemplateFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) list input
 
 The new set of preview images. Replaces all existing preview images.
 
-#### `SupSolutionTemplateSetPreviewImagesInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the solution template.

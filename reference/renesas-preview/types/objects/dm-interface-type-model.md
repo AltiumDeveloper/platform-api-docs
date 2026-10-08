@@ -38,26 +38,26 @@ type DmInterfaceTypeModel {
 
 ### Fields
 
-#### `DmInterfaceTypeModel.aliases` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `aliases` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Legacy or display-name variants that resolve to this interface type, for client migration.
 
-#### `DmInterfaceTypeModel.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 One-sentence description of the interface type.
 
-#### `DmInterfaceTypeModel.key` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `key` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Canonical lowercase interface-type key (e.g. uart, spi, storage, power). Matches interfaceType used in dmInterfaceSupportSummary and SDM.
 
-#### `DmInterfaceTypeModel.label` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `label` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Full human-readable name.
 
-#### `DmInterfaceTypeModel.shortLabel` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `shortLabel` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Compact display code shown on chips and menus (e.g. UART, SD/MMC).
 
-#### `DmInterfaceTypeModel.userSelectable` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `userSelectable` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Whether users may add this interface type (controls Add Port menu visibility).

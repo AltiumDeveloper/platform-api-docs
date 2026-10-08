@@ -11,6 +11,12 @@ deprecated: false
 
 \*PROTOTYPE, SUBJECT TO CHANGE\*
 
+### Type
+
+#### [`DesUploadCollaborationSimulationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-collaboration-simulation-payload.md) object
+
+Payload associated with uploading collaboration simulation.
+
 ```graphql
 desUploadCollaborationSimulation(
   input: DesUploadCollaborationSimulationInput!
@@ -19,10 +25,4 @@ desUploadCollaborationSimulation(
 
 ### Arguments
 
-#### `desUploadCollaborationSimulation.input` · [`DesUploadCollaborationSimulationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-collaboration-simulation-input.md) non-null input design
-
-### Type
-
-#### [`DesUploadCollaborationSimulationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-collaboration-simulation-payload.md) object design
-
-Payload associated with uploading collaboration simulation.
+#### `input` · [`DesUploadCollaborationSimulationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-collaboration-simulation-input.md) non-null input

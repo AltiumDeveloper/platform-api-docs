@@ -24,10 +24,10 @@ type DesStack {
 
 ### Fields
 
-#### `DesStack.layers` · [`[DesLayer!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) non-null object design
+#### `layers` · [`[DesLayer!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) non-null object
 
 Layers in the stack.
 
-#### `DesStack.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the stack.

@@ -17,6 +17,6 @@ desPartTags: [DesPartTag!]!
 
 ### Type
 
-#### [`DesPartTag`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-tag.md) object library-management
+#### [`DesPartTag`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-tag.md) object
 
 Represents a tag that can be assigned to parts.

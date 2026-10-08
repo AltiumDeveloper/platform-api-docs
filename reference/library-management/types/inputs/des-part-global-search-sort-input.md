@@ -26,18 +26,18 @@ input DesPartGlobalSearchSortInput {
 
 ### Fields
 
-#### `DesPartGlobalSearchSortInput.attribute` · [`DesPartAttributeSortInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-attribute-sort-input.md) input library-management
+#### `attribute` · [`DesPartAttributeSortInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-attribute-sort-input.md) input
 
 The sort order for the attribute.
 
-#### `DesPartGlobalSearchSortInput.manufacturerName` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum common
+#### `manufacturerName` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
 The sort order for the manufacturer name.
 
-#### `DesPartGlobalSearchSortInput.medianPrice1000` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum common
+#### `medianPrice1000` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
 The sort order for the median price (only for Altium part provider).
 
-#### `DesPartGlobalSearchSortInput.mpn` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum common
+#### `mpn` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
 The sort order for the manufacturer part number.

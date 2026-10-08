@@ -28,6 +28,6 @@ enum TuningType {
 
 ### Values
 
-#### `TuningType.FOC3_PHASE_SENSORED`
+#### `FOC3_PHASE_SENSORED`
 
-#### `TuningType.FOC3_PHASE_SENSORLESS`
+#### `FOC3_PHASE_SENSORLESS`

@@ -27,4 +27,4 @@ input RsaMotorStudioCreateScopeViewInput {
 
 ### Fields
 
-#### `RsaMotorStudioCreateScopeViewInput.channelIndexes` · [`[Int!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `channelIndexes` · [`[Int!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar

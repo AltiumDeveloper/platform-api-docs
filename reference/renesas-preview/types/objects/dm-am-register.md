@@ -19,7 +19,8 @@ Register entry within an address block.
 
 ### Common Data Model
 
-- [Register](https://altiumdeveloper.github.io/cdm/classes/dm_Register/) — A hardware register within an address block.
+- [Register](https://w3id.org/altium/cdm/deviceModel/Register) — A hardware register within an address block.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/Register`](https://w3id.org/altium/cdm/deviceModel/Register)
 
 ### Member Of
 
@@ -42,42 +43,42 @@ type DmAmRegister {
 
 ### Fields
 
-#### `DmAmRegister.access` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `access` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Access type (e.g., read-only, read-write).
 
-#### `DmAmRegister.addressOffset` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar common
+#### `addressOffset` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar
 
 Address offset in bytes from the block start.
 
-#### `DmAmRegister.addressOffsetHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `addressOffsetHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Address offset formatted as hex (0x...).
 
-#### `DmAmRegister.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Register description.
 
-#### `DmAmRegister.fields` · [`[DmAmRegisterField!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register-field.md) non-null object renesas-preview
+#### `fields` · [`[DmAmRegisterField!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register-field.md) non-null object
 
 Bit fields within this register.
 
-#### `DmAmRegister.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Register name.
 
-#### `DmAmRegister.resetMask` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `resetMask` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Register reset mask.
 
-#### `DmAmRegister.resetValue` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `resetValue` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Register reset value.
 
-#### `DmAmRegister.size` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar common
+#### `size` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar
 
 Register size in bytes.
 
-#### `DmAmRegister.sizeHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sizeHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Register size formatted as hex (0x...).

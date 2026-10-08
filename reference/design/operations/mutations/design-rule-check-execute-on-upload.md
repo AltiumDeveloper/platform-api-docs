@@ -17,6 +17,10 @@ deprecated: false
 
 Executes rule checks for the specified upload and returns the resulting rule check execution.
 
+### Type
+
+#### [`DesignRuleCheckExecuteOnUploadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-rule-check-execute-on-upload-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 designRuleCheckExecuteOnUpload(
   input: DesignRuleCheckExecuteOnUploadInput!
@@ -25,8 +29,4 @@ designRuleCheckExecuteOnUpload(
 
 ### Arguments
 
-#### `designRuleCheckExecuteOnUpload.input` · [`DesignRuleCheckExecuteOnUploadInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execute-on-upload-input.md) non-null input design
-
-### Type
-
-#### [`DesignRuleCheckExecuteOnUploadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-rule-check-execute-on-upload-payload.md) object design **EXPERIMENTAL**
+#### `input` · [`DesignRuleCheckExecuteOnUploadInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-rule-check-execute-on-upload-input.md) non-null input

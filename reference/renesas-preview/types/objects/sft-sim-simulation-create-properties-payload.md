@@ -22,6 +22,6 @@ type SftSimSimulationCreatePropertiesPayload {
 
 ### Fields
 
-#### `SftSimSimulationCreatePropertiesPayload.customProperties` · [`[SftSimSimulationCustomProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-custom-property.md) non-null object renesas-preview
+#### `customProperties` · [`[SftSimSimulationCustomProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-custom-property.md) non-null object
 
-#### `SftSimSimulationCreatePropertiesPayload.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

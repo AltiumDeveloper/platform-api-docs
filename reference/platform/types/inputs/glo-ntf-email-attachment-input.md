@@ -22,10 +22,10 @@ input GloNtfEmailAttachmentInput {
 
 ### Fields
 
-#### `GloNtfEmailAttachmentInput.fileName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the file as it should appear in the email attachment.
 
-#### `GloNtfEmailAttachmentInput.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier of the previously uploaded file to attach.

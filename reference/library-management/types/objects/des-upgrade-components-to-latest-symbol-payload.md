@@ -28,26 +28,26 @@ type DesUpgradeComponentsToLatestSymbolPayload {
 
 ### Fields
 
-#### `DesUpgradeComponentsToLatestSymbolPayload.errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object common
+#### `errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object
 
 Payload errors.
 
-#### `DesUpgradeComponentsToLatestSymbolPayload.failedComponentIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `failedComponentIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 List of component identifiers that failed to upgrade.
 
-#### `DesUpgradeComponentsToLatestSymbolPayload.failedCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `failedCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The number of components that failed to upgrade.
 
-#### `DesUpgradeComponentsToLatestSymbolPayload.totalProcessed` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalProcessed` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The total number of components that were processed.
 
-#### `DesUpgradeComponentsToLatestSymbolPayload.upgradedComponentIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `upgradedComponentIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 List of component identifiers that were upgraded.
 
-#### `DesUpgradeComponentsToLatestSymbolPayload.upgradedCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `upgradedCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The number of components that were successfully upgraded.

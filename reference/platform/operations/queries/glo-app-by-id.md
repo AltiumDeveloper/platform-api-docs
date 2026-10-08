@@ -9,7 +9,13 @@ deprecated: false
 
 # gloAppById
 
-Gets the `GloApp` with the specified identifier.
+Gets the [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) with the specified identifier.
+
+### Type
+
+#### [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object
+
+Represents an Altium application.
 
 ```graphql
 gloAppById(
@@ -19,12 +25,6 @@ gloAppById(
 
 ### Arguments
 
-#### `gloAppById.appId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `appId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The GRID identifier for the App.
-
-### Type
-
-#### [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
-
-Represents an Altium application.

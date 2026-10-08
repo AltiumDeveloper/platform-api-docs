@@ -24,6 +24,6 @@ enum DesCommentThreadStatus {
 
 ### Values
 
-#### `DesCommentThreadStatus.ACTIVE`
+#### `ACTIVE`
 
-#### `DesCommentThreadStatus.RESOLVED`
+#### `RESOLVED`

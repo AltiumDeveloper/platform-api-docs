@@ -17,6 +17,10 @@ deprecated: false
 
 Get an easymode config by id.
 
+### Type
+
+#### [`RsaMotorStudioEasyModeConfig`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-easy-mode-config.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioEasyModeConfigById(
   configId: String!
@@ -26,10 +30,6 @@ rsaMotorStudioEasyModeConfigById(
 
 ### Arguments
 
-#### `rsaMotorStudioEasyModeConfigById.configId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `configId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `rsaMotorStudioEasyModeConfigById.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`RsaMotorStudioEasyModeConfig`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-easy-mode-config.md) object renesas-preview **EXPERIMENTAL**
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

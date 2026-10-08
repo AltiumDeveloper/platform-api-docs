@@ -32,14 +32,14 @@ input RuleCheckExecutionFilterInput {
 
 ### Fields
 
-#### `RuleCheckExecutionFilterInput.and` · [`[RuleCheckExecutionFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-filter-input.md) list input design
+#### `and` · [`[RuleCheckExecutionFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-filter-input.md) list input
 
-#### `RuleCheckExecutionFilterInput.or` · [`[RuleCheckExecutionFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-filter-input.md) list input design
+#### `or` · [`[RuleCheckExecutionFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-filter-input.md) list input
 
-#### `RuleCheckExecutionFilterInput.reason` · [`RuleCheckExecutionReasonOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-reason-operation-filter-input.md) input design
+#### `reason` · [`RuleCheckExecutionReasonOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-reason-operation-filter-input.md) input
 
 Reason why the rule check execution was triggered, which can be used for filtering and distinguishing different types of rule check executions.
 
-#### `RuleCheckExecutionFilterInput.source` · [`RuleCheckExecutionSourceOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-source-operation-filter-input.md) input design
+#### `source` · [`RuleCheckExecutionSourceOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/rule-check-execution-source-operation-filter-input.md) input
 
 Source of the rule check execution, identifying whether it was triggered by a user or by the system.

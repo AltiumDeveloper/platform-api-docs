@@ -24,10 +24,10 @@ enum SupSolutionTemplateRefDesignSortDirection {
 
 ### Values
 
-#### `SupSolutionTemplateRefDesignSortDirection.ASC`
+#### `ASC`
 
 Ascending order.
 
-#### `SupSolutionTemplateRefDesignSortDirection.DESC`
+#### `DESC`
 
 Descending order.

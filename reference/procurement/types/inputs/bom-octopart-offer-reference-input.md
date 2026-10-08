@@ -23,6 +23,6 @@ input BomOctopartOfferReferenceInput {
 
 ### Fields
 
-#### `BomOctopartOfferReferenceInput.offerId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `offerId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the offer in Octopart.

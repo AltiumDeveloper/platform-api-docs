@@ -11,6 +11,10 @@ deprecated: false
 
 Creates a new script.
 
+### Type
+
+#### [`GloScrCreateScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-create-script-payload.md) object
+
 ```graphql
 gloScrCreateScript(
   input: GloScrCreateScriptInput!
@@ -19,8 +23,4 @@ gloScrCreateScript(
 
 ### Arguments
 
-#### `gloScrCreateScript.input` · [`GloScrCreateScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-create-script-input.md) non-null input customization
-
-### Type
-
-#### [`GloScrCreateScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-create-script-payload.md) object customization
+#### `input` · [`GloScrCreateScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-create-script-input.md) non-null input

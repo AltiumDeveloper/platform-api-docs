@@ -11,6 +11,12 @@ deprecated: false
 
 Retrieves the information about subscription with given identifier.
 
+### Type
+
+#### [`GloEvtSubscription`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md) interface
+
+Represents the application subscription to some events.
+
 ```graphql
 gloEvtSubscriptionById(
   subscriptionId: String!
@@ -19,10 +25,4 @@ gloEvtSubscriptionById(
 
 ### Arguments
 
-#### `gloEvtSubscriptionById.subscriptionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`GloEvtSubscription`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md) interface platform
-
-Represents the application subscription to some events.
+#### `subscriptionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

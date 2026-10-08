@@ -17,6 +17,10 @@ deprecated: false
 
 Evaluates required peripherals against a single, already-chosen device (by MPN) and returns the full configured model (concrete ports and peripherals).
 
+### Type
+
+#### [`DmExecuteDeviceEvaluationByMpnPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-by-mpn-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 dmExecuteDeviceEvaluationByMpn(
   input: DmExecuteDeviceEvaluationByMpnInput!
@@ -25,8 +29,4 @@ dmExecuteDeviceEvaluationByMpn(
 
 ### Arguments
 
-#### `dmExecuteDeviceEvaluationByMpn.input` · [`DmExecuteDeviceEvaluationByMpnInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-by-mpn-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`DmExecuteDeviceEvaluationByMpnPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-by-mpn-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`DmExecuteDeviceEvaluationByMpnInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-by-mpn-input.md) non-null input

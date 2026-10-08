@@ -25,14 +25,14 @@ type BomBomsConnection {
 
 ### Fields
 
-#### `BomBomsConnection.edges` · [`[BomBomsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-edge.md) list object procurement
+#### `edges` · [`[BomBomsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-edge.md) list object
 
 A list of edges.
 
-#### `BomBomsConnection.nodes` · [`[BomWip!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md) list object procurement
+#### `nodes` · [`[BomWip!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md) list object
 
 A flattened list of the nodes.
 
-#### `BomBomsConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.

@@ -26,18 +26,18 @@ input DesPartPartProvidersFilterInput {
 
 ### Fields
 
-#### `DesPartPartProvidersFilterInput.hasAltiumPartProvider` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasAltiumPartProvider` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies if the part has an Altium part provider.
 
-#### `DesPartPartProvidersFilterInput.hasCustomPartProvider` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasCustomPartProvider` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies if the part has a custom part provider.
 
-#### `DesPartPartProvidersFilterInput.hasSiliconExpertPartProvider` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasSiliconExpertPartProvider` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies if the part has a \*SiliconExpert\* part provider.
 
-#### `DesPartPartProvidersFilterInput.hasZ2DataPartProvider` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasZ2DataPartProvider` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies if the part has a \*Z2Data\* part provider.

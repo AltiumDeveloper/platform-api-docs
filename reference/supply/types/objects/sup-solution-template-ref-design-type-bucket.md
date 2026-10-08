@@ -24,10 +24,10 @@ type SupSolutionTemplateRefDesignTypeBucket {
 
 ### Fields
 
-#### `SupSolutionTemplateRefDesignTypeBucket.count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Number of items in the bucket.
 
-#### `SupSolutionTemplateRefDesignTypeBucket.type` · [`SupSolutionTemplateRefDesignType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-type.md) non-null enum supply
+#### `type` · [`SupSolutionTemplateRefDesignType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-ref-design-type.md) non-null enum
 
 Reference design type or solution template.

@@ -24,10 +24,10 @@ type GloEvtCreateSubscriptionPayload {
 
 ### Fields
 
-#### `GloEvtCreateSubscriptionPayload.errors` · [`[GloEvtError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-error.md) non-null object platform
+#### `errors` · [`[GloEvtError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-error.md) non-null object
 
 Errors that occurred during subscription creation (if any).
 
-#### `GloEvtCreateSubscriptionPayload.subscription` · [`GloEvtSubscription`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md) interface platform
+#### `subscription` · [`GloEvtSubscription`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-evt-subscription.md) interface
 
 Information about created subscription.

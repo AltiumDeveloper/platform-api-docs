@@ -25,14 +25,14 @@ input DesLifeCycleStageInput {
 
 ### Fields
 
-#### `DesLifeCycleStageInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of life cycle stage.
 
-#### `DesLifeCycleStageInput.stageIndex` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `stageIndex` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Index of life cycle stage.
 
-#### `DesLifeCycleStageInput.states` · [`[DesLifeCycleStateInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-input.md) non-null input platform
+#### `states` · [`[DesLifeCycleStateInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-input.md) non-null input
 
 States of life cycle stage.

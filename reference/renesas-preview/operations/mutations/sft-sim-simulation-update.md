@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the simulation.
 
+### Type
+
+#### [`SftSimSimulationUpdatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-update-payload.md) object
+
 ```graphql
 sftSimSimulationUpdate(
   input: SftSimSimulationUpdateInput!
@@ -19,8 +23,4 @@ sftSimSimulationUpdate(
 
 ### Arguments
 
-#### `sftSimSimulationUpdate.input` · [`SftSimSimulationUpdateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-update-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSimSimulationUpdatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-update-payload.md) object renesas-preview
+#### `input` · [`SftSimSimulationUpdateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-update-input.md) non-null input

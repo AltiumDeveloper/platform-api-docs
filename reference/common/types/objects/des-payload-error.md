@@ -23,6 +23,6 @@ type DesPayloadError {
 
 ### Fields
 
-#### `DesPayloadError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Payload error message.

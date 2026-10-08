@@ -26,18 +26,18 @@ type DesWorkspaceUserConnection {
 
 ### Fields
 
-#### `DesWorkspaceUserConnection.edges` · [`[DesWorkspaceUserEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user-edge.md) list object platform
+#### `edges` · [`[DesWorkspaceUserEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user-edge.md) list object
 
 A list of edges.
 
-#### `DesWorkspaceUserConnection.nodes` · [`[DesWorkspaceUser!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) list object platform
+#### `nodes` · [`[DesWorkspaceUser!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) list object
 
 A flattened list of the nodes.
 
-#### `DesWorkspaceUserConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesWorkspaceUserConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

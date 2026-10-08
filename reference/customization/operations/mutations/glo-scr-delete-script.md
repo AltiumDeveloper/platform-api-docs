@@ -11,6 +11,10 @@ deprecated: false
 
 Deletes a script by its identifier.
 
+### Type
+
+#### [`GloScrDeleteScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-delete-script-payload.md) object
+
 ```graphql
 gloScrDeleteScript(
   input: GloScrDeleteScriptInput!
@@ -19,8 +23,4 @@ gloScrDeleteScript(
 
 ### Arguments
 
-#### `gloScrDeleteScript.input` · [`GloScrDeleteScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-delete-script-input.md) non-null input customization
-
-### Type
-
-#### [`GloScrDeleteScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-delete-script-payload.md) object customization
+#### `input` · [`GloScrDeleteScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-delete-script-input.md) non-null input

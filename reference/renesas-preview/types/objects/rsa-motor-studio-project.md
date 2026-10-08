@@ -46,52 +46,52 @@ type RsaMotorStudioProject {
 
 ### Fields
 
-#### `RsaMotorStudioProject.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common **EXPERIMENTAL**
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar **EXPERIMENTAL**
 
-#### `RsaMotorStudioProject.createdBy` · [`DesWorkspaceUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object platform **EXPERIMENTAL**
+#### `createdBy` · [`DesWorkspaceUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object Platform **EXPERIMENTAL**
 
-#### `RsaMotorStudioProject.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common **EXPERIMENTAL**
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar **EXPERIMENTAL**
 
-#### `RsaMotorStudioProject.easyModeConfigs` · [`[RsaMotorStudioEasyModeConfig!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-easy-mode-config.md) non-null object renesas-preview **EXPERIMENTAL**
+#### `easyModeConfigs` · [`[RsaMotorStudioEasyModeConfig!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-easy-mode-config.md) non-null object **EXPERIMENTAL**
 
 Collection of easymode configurations associated with the motor studio project.
 
-#### `RsaMotorStudioProject.folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common **EXPERIMENTAL**
+#### `folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar **EXPERIMENTAL**
 
-#### `RsaMotorStudioProject.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `RsaMotorStudioProject.modifiedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common **EXPERIMENTAL**
+#### `modifiedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar **EXPERIMENTAL**
 
-#### `RsaMotorStudioProject.modifiedBy` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object platform **EXPERIMENTAL**
+#### `modifiedBy` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object Platform **EXPERIMENTAL**
 
-#### `RsaMotorStudioProject.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common **EXPERIMENTAL**
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar **EXPERIMENTAL**
 
-#### `RsaMotorStudioProject.parentSolutions` · [`[SolSolution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) non-null object platform **EXPERIMENTAL**
+#### `parentSolutions` · [`[SolSolution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) non-null object Platform **EXPERIMENTAL**
 
 Parent solutions linked to this MotorStudio project.
 
-#### `RsaMotorStudioProject.scopeCaptures` · [`[RsaMotorStudioScopeCapture!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) non-null object renesas-preview **EXPERIMENTAL**
+#### `scopeCaptures` · [`[RsaMotorStudioScopeCapture!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) non-null object **EXPERIMENTAL**
 
 Collection of scope captures associated with the motor studio project.
 
-#### `RsaMotorStudioProject.scopeConfigs` · [`[RsaMotorStudioScopeConfig!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) non-null object renesas-preview **EXPERIMENTAL**
+#### `scopeConfigs` · [`[RsaMotorStudioScopeConfig!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) non-null object **EXPERIMENTAL**
 
 Collection of scope configurations associated with the motor studio project.
 
-#### `RsaMotorStudioProject.tunings` · [`[RsaMotorStudioTuning!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning.md) non-null object renesas-preview **EXPERIMENTAL**
+#### `tunings` · [`[RsaMotorStudioTuning!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning.md) non-null object **EXPERIMENTAL**
 
 Collection of tunings linked with the motor studio project.
 
-#### `RsaMotorStudioProject.variableSets` · [`[RsaMotorStudioVariableSet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) non-null object renesas-preview **EXPERIMENTAL**
+#### `variableSets` · [`[RsaMotorStudioVariableSet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) non-null object **EXPERIMENTAL**
 
 Collection of variable sets associated with the motor studio project.
 
 #### Deprecated
 
-#### `RsaMotorStudioProject.createdById` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar common **EXPERIMENTAL**
+#### `createdById` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar **EXPERIMENTAL**
 
 > **Deprecated:** Fields play a technical role for schema stitching purposes.
 
-#### `RsaMotorStudioProject.modifiedById` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar common **EXPERIMENTAL**
+#### `modifiedById` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar **EXPERIMENTAL**
 
 > **Deprecated:** Fields play a technical role for schema stitching purposes.

@@ -26,18 +26,18 @@ input DesUpdateFolderPermissionsInput {
 
 ### Fields
 
-#### `DesUpdateFolderPermissionsInput.folderId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `folderId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Folder identifier for updating folder permissions. Soon, `folderId` will be the reference identifier (GUID) instead of node identifier, and should be used along with `workspaceUrl`.
 
-#### `DesUpdateFolderPermissionsInput.permissions` · [`[DesUpdateFolderPermissionInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-permission-input.md) non-null input platform
+#### `permissions` · [`[DesUpdateFolderPermissionInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-permission-input.md) non-null input
 
 Permissions to update.
 
-#### `DesUpdateFolderPermissionsInput.replaceExisting` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `replaceExisting` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Tells to replace all existing permissions. By default permissions are added to existing.
 
-#### `DesUpdateFolderPermissionsInput.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 URL of the workspace in which the folder exists.

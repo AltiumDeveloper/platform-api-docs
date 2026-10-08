@@ -37,67 +37,67 @@ input DesPartSearchFilterInput {
 
 ### Fields
 
-#### `DesPartSearchFilterInput.attributes` · [`[DesPartSearchAttributeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-attribute-filter-input.md) list input library-management
+#### `attributes` · [`[DesPartSearchAttributeFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-attribute-filter-input.md) list input
 
 A collection of attribute filters to search by.
 
-#### `DesPartSearchFilterInput.categoryName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `categoryName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of category names to search by.
 
-#### `DesPartSearchFilterInput.customPartSourceName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `customPartSourceName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of custom part source names to search by.
 
-#### `DesPartSearchFilterInput.hasBomOrProjectsUsages` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasBomOrProjectsUsages` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies if the part has usages in BOM, projects, or assemblies.
 
-#### `DesPartSearchFilterInput.hasComponentsUsages` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasComponentsUsages` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies if the part has usages in components.
 
-#### `DesPartSearchFilterInput.hasUsages` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `hasUsages` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies if the part has any usages.
 
-#### `DesPartSearchFilterInput.keyword` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `keyword` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The keyword to search for.
 
-#### `DesPartSearchFilterInput.lifecycleState` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `lifecycleState` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of lifecycle state identifiers to search by. Not supported yet and must not be provided.
 
-#### `DesPartSearchFilterInput.manufacturerName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `manufacturerName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of manufacturer names to search by.
 
-#### `DesPartSearchFilterInput.mpn` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `mpn` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of manufacturer part numbers to search by.
 
-#### `DesPartSearchFilterInput.partProviders` · [`DesPartPartProvidersFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-part-providers-filter-input.md) input library-management
+#### `partProviders` · [`DesPartPartProvidersFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-part-providers-filter-input.md) input
 
 The filter for part providers.
 
-#### `DesPartSearchFilterInput.tags` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `tags` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of tag identifiers to search by. Not supported yet and must not be provided.
 
-#### `DesPartSearchFilterInput.usages` · [`[DesPartSearchUsagesFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-usages-filter-input.md) list input library-management
+#### `usages` · [`[DesPartSearchUsagesFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-usages-filter-input.md) list input
 
 A collection of usage filters to search by.
 
 #### Deprecated
 
-#### `DesPartSearchFilterInput.supplierName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** list scalar common
+#### `supplierName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** list scalar
 
 > **Deprecated:** Supplier data is no longer indexed, so this field is not supported and must not be provided.
 
 A collection of supplier names to search by.
 
-#### `DesPartSearchFilterInput.supplierPartNumber` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** list scalar common
+#### `supplierPartNumber` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** list scalar
 
 > **Deprecated:** Supplier data is no longer indexed, so this field is not supported and must not be provided.
 

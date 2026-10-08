@@ -24,10 +24,10 @@ type DesWorkspaceInsUserActionTimestamp {
 
 ### Fields
 
-#### `DesWorkspaceInsUserActionTimestamp.timestamp` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `timestamp` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 When the action occurred.
 
-#### `DesWorkspaceInsUserActionTimestamp.userId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `userId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Identifier of the user who performed the action.

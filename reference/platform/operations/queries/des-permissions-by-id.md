@@ -17,6 +17,10 @@ deprecated: false
 
 Gets all permissions by ID.
 
+### Type
+
+#### [`DesPermission`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/des-permission.md) interface
+
 ```graphql
 desPermissionsById(
   id: ID!
@@ -25,8 +29,4 @@ desPermissionsById(
 
 ### Arguments
 
-#### `desPermissionsById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`DesPermission`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/des-permission.md) interface platform
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

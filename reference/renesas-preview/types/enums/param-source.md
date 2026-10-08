@@ -28,6 +28,6 @@ enum ParamSource {
 
 ### Values
 
-#### `ParamSource.IDENT_RESULT`
+#### `IDENT_RESULT`
 
-#### `ParamSource.USER_ENTERED`
+#### `USER_ENTERED`

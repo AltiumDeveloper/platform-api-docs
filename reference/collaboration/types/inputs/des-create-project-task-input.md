@@ -24,10 +24,10 @@ input DesCreateProjectTaskInput {
 
 ### Fields
 
-#### `DesCreateProjectTaskInput.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Project identifier.
 
-#### `DesCreateProjectTaskInput.task` · [`DesCreateTaskInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-task-input.md) non-null input collaboration
+#### `task` · [`DesCreateTaskInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-task-input.md) non-null input
 
 The new task data.

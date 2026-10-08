@@ -24,10 +24,10 @@ input DesPartSearchUsagesFilterInput {
 
 ### Fields
 
-#### `DesPartSearchUsagesFilterInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the usage.
 
-#### `DesPartSearchUsagesFilterInput.variantId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `variantId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The variant identifier of the project. This is ignored for non-project resources.

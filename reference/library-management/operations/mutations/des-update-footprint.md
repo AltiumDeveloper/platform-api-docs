@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the specified footprint. This will create a new revision of the footprint, and reset the lifecycle state.
 
+### Type
+
+#### [`DesUpdateFootprintPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-footprint-payload.md) object
+
+Payload of updating a footprint.
+
 ```graphql
 desUpdateFootprint(
   input: DesUpdateFootprintInput!
@@ -19,10 +25,4 @@ desUpdateFootprint(
 
 ### Arguments
 
-#### `desUpdateFootprint.input` · [`DesUpdateFootprintInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-footprint-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateFootprintPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-footprint-payload.md) object library-management
-
-Payload of updating a footprint.
+#### `input` · [`DesUpdateFootprintInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-footprint-input.md) non-null input

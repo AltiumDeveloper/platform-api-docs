@@ -11,6 +11,12 @@ deprecated: false
 
 Add devices to an evaluation kit.
 
+### Type
+
+#### [`SupEvalKitAddDevicesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-devices-payload.md) object
+
+Payload returned after adding devices to the evaluation kit.
+
 ```graphql
 supEvalKitAddDevices(
   input: SupEvalKitAddDevicesInput!
@@ -19,10 +25,4 @@ supEvalKitAddDevices(
 
 ### Arguments
 
-#### `supEvalKitAddDevices.input` · [`SupEvalKitAddDevicesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-add-devices-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitAddDevicesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-add-devices-payload.md) object supply
-
-Payload returned after adding devices to the evaluation kit.
+#### `input` · [`SupEvalKitAddDevicesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-add-devices-input.md) non-null input

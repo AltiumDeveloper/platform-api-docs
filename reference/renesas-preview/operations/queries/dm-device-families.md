@@ -23,6 +23,6 @@ dmDeviceFamilies: [DmDeviceFamily!]!
 
 ### Type
 
-#### [`DmDeviceFamily`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-family.md) object renesas-preview **EXPERIMENTAL**
+#### [`DmDeviceFamily`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-family.md) object **EXPERIMENTAL**
 
 A supported device family (e.g. RA, RX) with display metadata and total device count.

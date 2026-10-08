@@ -11,6 +11,10 @@ deprecated: false
 
 Search a specific evaluation kit by its unique identifier.
 
+### Type
+
+#### [`SupEvalKit`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) object
+
 ```graphql
 supEvalKitById(
   id: ID!
@@ -19,8 +23,4 @@ supEvalKitById(
 
 ### Arguments
 
-#### `supEvalKitById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SupEvalKit`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md) object supply
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

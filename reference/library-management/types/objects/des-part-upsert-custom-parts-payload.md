@@ -24,10 +24,10 @@ type DesPartUpsertCustomPartsPayload {
 
 ### Fields
 
-#### `DesPartUpsertCustomPartsPayload.errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object library-management
+#### `errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.
 
-#### `DesPartUpsertCustomPartsPayload.results` · [`[DesPartCustomPartOperationResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-custom-part-operation-result.md) non-null object library-management
+#### `results` · [`[DesPartCustomPartOperationResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-custom-part-operation-result.md) non-null object
 
 A collection of results for each part.

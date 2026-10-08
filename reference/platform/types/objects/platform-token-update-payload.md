@@ -22,6 +22,6 @@ type PlatformTokenUpdatePayload {
 
 ### Fields
 
-#### `PlatformTokenUpdatePayload.errors` · [`[PlatformTokenUpdateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-token-update-error.md) list union platform
+#### `errors` · [`[PlatformTokenUpdateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-token-update-error.md) list union
 
-#### `PlatformTokenUpdatePayload.platformToken` · [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) interface platform
+#### `platformToken` · [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) interface

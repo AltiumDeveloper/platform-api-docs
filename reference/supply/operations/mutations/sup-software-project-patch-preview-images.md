@@ -11,6 +11,12 @@ deprecated: false
 
 Patch preview images on a software project: add, delete, or reorder.
 
+### Type
+
+#### [`SupSoftwareProjectPatchPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-patch-preview-images-payload.md) object
+
+Payload for patching preview images on a software project.
+
 ```graphql
 supSoftwareProjectPatchPreviewImages(
   input: SupSoftwareProjectPatchPreviewImagesInput!
@@ -19,10 +25,4 @@ supSoftwareProjectPatchPreviewImages(
 
 ### Arguments
 
-#### `supSoftwareProjectPatchPreviewImages.input` · [`SupSoftwareProjectPatchPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-patch-preview-images-input.md) non-null input supply
-
-### Type
-
-#### [`SupSoftwareProjectPatchPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-patch-preview-images-payload.md) object supply
-
-Payload for patching preview images on a software project.
+#### `input` · [`SupSoftwareProjectPatchPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-patch-preview-images-input.md) non-null input

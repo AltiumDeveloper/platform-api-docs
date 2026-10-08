@@ -11,6 +11,10 @@ deprecated: false
 
 Creates a link between device configuration revision and hardware project.
 
+### Type
+
+#### [`SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-link-device-configuration-revision-to-hardware-project-payload.md) object
+
 ```graphql
 sftDevCfgLinkDeviceConfigurationRevisionToHardwareProject(
   input: SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput!
@@ -19,8 +23,4 @@ sftDevCfgLinkDeviceConfigurationRevisionToHardwareProject(
 
 ### Arguments
 
-#### `sftDevCfgLinkDeviceConfigurationRevisionToHardwareProject.input` · [`SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-link-device-configuration-revision-to-hardware-project-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-link-device-configuration-revision-to-hardware-project-payload.md) object renesas-preview
+#### `input` · [`SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-link-device-configuration-revision-to-hardware-project-input.md) non-null input

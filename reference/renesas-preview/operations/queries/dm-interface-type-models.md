@@ -23,6 +23,6 @@ dmInterfaceTypeModels: [DmInterfaceTypeModel!]!
 
 ### Type
 
-#### [`DmInterfaceTypeModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-type-model.md) object renesas-preview **EXPERIMENTAL**
+#### [`DmInterfaceTypeModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-type-model.md) object **EXPERIMENTAL**
 
 A supported interface (port) type with display metadata. Source of truth for the interface types the product supports.

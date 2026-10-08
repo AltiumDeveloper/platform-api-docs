@@ -27,12 +27,12 @@ enum DesCadCounterType {
 
 ### Values
 
-#### `DesCadCounterType.COUNTERBORE_BOTTOM`
+#### `COUNTERBORE_BOTTOM`
 
-#### `DesCadCounterType.COUNTERBORE_TOP`
+#### `COUNTERBORE_TOP`
 
-#### `DesCadCounterType.COUNTERSINK_BOTTOM`
+#### `COUNTERSINK_BOTTOM`
 
-#### `DesCadCounterType.COUNTERSINK_TOP`
+#### `COUNTERSINK_TOP`
 
-#### `DesCadCounterType.NONE`
+#### `NONE`

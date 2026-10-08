@@ -17,4 +17,4 @@ gloScrSecrets: [GloScrSecret!]!
 
 ### Type
 
-#### [`GloScrSecret`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-secret.md) object customization
+#### [`GloScrSecret`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-secret.md) object

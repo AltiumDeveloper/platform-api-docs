@@ -24,10 +24,10 @@ input SupEvalKitSetParametersInput {
 
 ### Fields
 
-#### `SupEvalKitSetParametersInput.evaluationKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evaluationKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the evaluation kit.
 
-#### `SupEvalKitSetParametersInput.parameters` · [`[SupEvalKitParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-parameter-input.md) list input supply
+#### `parameters` · [`[SupEvalKitParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-parameter-input.md) list input
 
 The complete new set of parameters. Deletes all existing parameters and values, then inserts these.

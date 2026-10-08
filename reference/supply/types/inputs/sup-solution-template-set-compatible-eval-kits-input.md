@@ -24,10 +24,10 @@ input SupSolutionTemplateSetCompatibleEvalKitsInput {
 
 ### Fields
 
-#### `SupSolutionTemplateSetCompatibleEvalKitsInput.compatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md) list input supply
+#### `compatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md) list input
 
 The new set of compatible eval kits. Replaces all existing compatible eval kits.
 
-#### `SupSolutionTemplateSetCompatibleEvalKitsInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the solution template.

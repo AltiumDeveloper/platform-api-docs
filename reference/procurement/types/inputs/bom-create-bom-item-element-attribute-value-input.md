@@ -25,14 +25,14 @@ input BomCreateBomItemElementAttributeValueInput {
 
 ### Fields
 
-#### `BomCreateBomItemElementAttributeValueInput.floatValue` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar common
+#### `floatValue` · [`Float`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) scalar
 
 Floating-point value of a BOM element attribute.
 
-#### `BomCreateBomItemElementAttributeValueInput.integerValue` · [`Long`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) scalar common
+#### `integerValue` · [`Long`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) scalar
 
 Integer value of a BOM element attribute.
 
-#### `BomCreateBomItemElementAttributeValueInput.stringValue` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `stringValue` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 String value of a BOM element attribute.

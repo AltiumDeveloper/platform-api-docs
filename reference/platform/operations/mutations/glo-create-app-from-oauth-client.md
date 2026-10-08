@@ -11,6 +11,10 @@ deprecated: false
 
 Creates a new App with an existing \*OAuth 2.0 client\*.
 
+### Type
+
+#### [`GloCreateAppFromOAuthClientPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-from-oauth-client-payload.md) object
+
 ```graphql
 gloCreateAppFromOAuthClient(
   input: GloCreateAppFromOAuthClientInput!
@@ -19,8 +23,4 @@ gloCreateAppFromOAuthClient(
 
 ### Arguments
 
-#### `gloCreateAppFromOAuthClient.input` · [`GloCreateAppFromOAuthClientInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-from-oauth-client-input.md) non-null input platform
-
-### Type
-
-#### [`GloCreateAppFromOAuthClientPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-from-oauth-client-payload.md) object platform
+#### `input` · [`GloCreateAppFromOAuthClientInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-from-oauth-client-input.md) non-null input

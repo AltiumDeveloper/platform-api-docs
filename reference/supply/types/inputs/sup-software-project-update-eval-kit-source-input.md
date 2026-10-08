@@ -23,14 +23,14 @@ input SupSoftwareProjectUpdateEvalKitSourceInput {
 
 ### Fields
 
-#### `SupSoftwareProjectUpdateEvalKitSourceInput.compatibleEvalKitId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `compatibleEvalKitId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The compatible evaluation kit identifier.
 
-#### `SupSoftwareProjectUpdateEvalKitSourceInput.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The evaluation kit identifier.
 
-#### `SupSoftwareProjectUpdateEvalKitSourceInput.newProjectSources` · [`[SupSoftwareProjectEvalKitProjectSourceInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-eval-kit-project-source-input.md) list input supply
+#### `newProjectSources` · [`[SupSoftwareProjectEvalKitProjectSourceInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-eval-kit-project-source-input.md) list input
 
 Replace the current software project evaluation kit project sources with these ones.

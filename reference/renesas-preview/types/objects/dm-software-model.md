@@ -31,14 +31,14 @@ type DmSoftwareModel {
 
 ### Fields
 
-#### `DmSoftwareModel.deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Device part number.
 
-#### `DmSoftwareModel.ports` · [`[DmRequestedPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requested-peripheral.md) non-null object renesas-preview
+#### `ports` · [`[DmRequestedPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requested-peripheral.md) non-null object
 
 The ports (e.g. UART, I2C) defined in the configuration.xml for this device.
 
-#### `DmSoftwareModel.softwareComponents` · [`[DmSoftwareComponent!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-component.md) non-null object renesas-preview
+#### `softwareComponents` · [`[DmSoftwareComponent!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-component.md) non-null object
 
 The software components (e.g. middleware, drivers) defined in

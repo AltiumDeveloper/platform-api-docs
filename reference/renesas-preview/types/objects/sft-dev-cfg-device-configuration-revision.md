@@ -11,7 +11,9 @@ deprecated: false
 
 ### Common Data Model
 
-- [Device Configuration Revision](https://altiumdeveloper.github.io/cdm/classes/sft_DeviceConfigurationRevision/)
+- [Device Configuration Revision](https://w3id.org/altium/cdm/software/DeviceConfigurationRevision)
+
+  - IRI: [`https://w3id.org/altium/cdm/software/DeviceConfigurationRevision`](https://w3id.org/altium/cdm/software/DeviceConfigurationRevision)
   - GRID: `grid:workspace:{workspace-id}:software:device-configuration-revision/{id}`
 
 ### Returned By
@@ -44,46 +46,46 @@ type SftDevCfgDeviceConfigurationRevision {
 
 ### Fields
 
-#### `SftDevCfgDeviceConfigurationRevision.commitId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `commitId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SftDevCfgDeviceConfigurationRevision.createdAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `createdAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `SftDevCfgDeviceConfigurationRevision.createdBy` · [`DesWorkspaceUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object platform
+#### `createdBy` · [`DesWorkspaceUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object Platform
 
-#### `SftDevCfgDeviceConfigurationRevision.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SftDevCfgDeviceConfigurationRevision.deviceConfiguration` · [`SftDevCfgDeviceConfiguration!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration.md) non-null object renesas-preview
+#### `deviceConfiguration` · [`SftDevCfgDeviceConfiguration!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration.md) non-null object
 
-#### `SftDevCfgDeviceConfigurationRevision.deviceModel` · [`DmDeviceModelAsConfigured!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-model-as-configured.md) non-null object renesas-preview **EXPERIMENTAL**
+#### `deviceModel` · [`DmDeviceModelAsConfigured!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-model-as-configured.md) non-null object **EXPERIMENTAL**
 
 Gets device model information associated with this device configuration revision.
 
-#### `SftDevCfgDeviceConfigurationRevision.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SftDevCfgDeviceConfigurationRevision.modifiedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `modifiedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-#### `SftDevCfgDeviceConfigurationRevision.modifiedBy` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object platform
+#### `modifiedBy` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object Platform
 
-#### `SftDevCfgDeviceConfigurationRevision.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SftDevCfgDeviceConfigurationRevision.url` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `url` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 #### Deprecated
 
-#### `SftDevCfgDeviceConfigurationRevision.createdById` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar common
+#### `createdById` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Field plays a technical role for schema stitching purposes.
 
-#### `SftDevCfgDeviceConfigurationRevision.deviceConfigurationId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar common
+#### `deviceConfigurationId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Field plays a technical role for schema stitching purposes.
 
 Global resource identifiers (GRID) of device configuration which revision is assigned to.
 
-#### `SftDevCfgDeviceConfigurationRevision.hardwareProjectId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar common
+#### `hardwareProjectId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar
 
 > **Deprecated:** Field plays a technical role for schema stitching purposes.
 
-#### `SftDevCfgDeviceConfigurationRevision.modifiedById` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar common
+#### `modifiedById` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** scalar
 
 > **Deprecated:** Field plays a technical role for schema stitching purposes.

@@ -11,6 +11,10 @@ deprecated: false
 
 Deletes existing solution.
 
+### Type
+
+#### [`SolDeleteSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-delete-solution-payload.md) object
+
 ```graphql
 solDeleteSolution(
   input: SolDeleteSolutionInput!
@@ -19,8 +23,4 @@ solDeleteSolution(
 
 ### Arguments
 
-#### `solDeleteSolution.input` · [`SolDeleteSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-delete-solution-input.md) non-null input platform
-
-### Type
-
-#### [`SolDeleteSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-delete-solution-payload.md) object platform
+#### `input` · [`SolDeleteSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-delete-solution-input.md) non-null input

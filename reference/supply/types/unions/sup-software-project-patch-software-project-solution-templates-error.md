@@ -19,6 +19,6 @@ union SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesError = SupSoftware
 
 ### Possible types
 
-#### [`SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesError.SupSoftwareProjectOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-operation-failed-error.md) object supply
+#### [`SupSoftwareProjectOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-operation-failed-error.md) object
 
-#### [`SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesError.SupSoftwareProjectNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-not-found-error.md) object supply
+#### [`SupSoftwareProjectNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-not-found-error.md) object

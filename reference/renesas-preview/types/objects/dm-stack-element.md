@@ -32,18 +32,18 @@ type DmStackElement {
 
 ### Fields
 
-#### `DmStackElement.dependencies` · [`[DmStackElement!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-element.md) non-null object renesas-preview
+#### `dependencies` · [`[DmStackElement!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-element.md) non-null object
 
 Dependent stack elements required by this element.
 
-#### `DmStackElement.module` · [`DmFspModule`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md) object renesas-preview
+#### `module` · [`DmFspModule`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md) object
 
 Concrete module metadata for this stack element.
 
-#### `DmStackElement.moduleId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `moduleId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique module identifier.
 
-#### `DmStackElement.requires` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `requires` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Requirement string for dependency resolution.

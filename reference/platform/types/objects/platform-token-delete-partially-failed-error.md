@@ -9,11 +9,11 @@ deprecated: false
 
 # PlatformTokenDeletePartiallyFailedError
 
-Error returned by the Token API when a `PlatformToken` could not be fully deleted, leaving it in an inconsistent state.
+Error returned by the Token API when a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) could not be fully deleted, leaving it in an inconsistent state.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type PlatformTokenDeletePartiallyFailedError implements Error {
 
 ### Fields
 
-#### `PlatformTokenDeletePartiallyFailedError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

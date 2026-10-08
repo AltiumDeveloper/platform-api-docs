@@ -24,10 +24,10 @@ input SupSoftwareProjectSetParametersInput {
 
 ### Fields
 
-#### `SupSoftwareProjectSetParametersInput.parameters` · [`[SupSoftwareProjectParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-parameter-input.md) list input supply
+#### `parameters` · [`[SupSoftwareProjectParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-parameter-input.md) list input
 
 The complete new set of parameters. Deletes all existing parameters and values, then inserts these.
 
-#### `SupSoftwareProjectSetParametersInput.softwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `softwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the software project.

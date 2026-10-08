@@ -24,10 +24,10 @@ input DesSetProjectRequirementsBlockInput {
 
 ### Fields
 
-#### `DesSetProjectRequirementsBlockInput.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Project identifier.
 
-#### `DesSetProjectRequirementsBlockInput.requirementsBlockId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `requirementsBlockId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Requirements block identifier.

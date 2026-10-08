@@ -30,18 +30,18 @@ type SupSoftwareProjectEvalKitSourceConnection {
 
 ### Fields
 
-#### `SupSoftwareProjectEvalKitSourceConnection.edges` · [`[SupSoftwareProjectEvalKitSourceEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source-edge.md) list object supply
+#### `edges` · [`[SupSoftwareProjectEvalKitSourceEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source-edge.md) list object
 
 A list of edges.
 
-#### `SupSoftwareProjectEvalKitSourceConnection.nodes` · [`[SupSoftwareProjectEvalKitSource!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source.md) list object supply
+#### `nodes` · [`[SupSoftwareProjectEvalKitSource!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source.md) list object
 
 A flattened list of the nodes.
 
-#### `SupSoftwareProjectEvalKitSourceConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `SupSoftwareProjectEvalKitSourceConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

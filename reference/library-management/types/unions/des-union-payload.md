@@ -21,10 +21,10 @@ union DesUnionPayload = DesComponent | DesErrorPayload
 
 ### Possible types
 
-#### [`DesUnionPayload.DesComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) object library-management
+#### [`DesComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md) object
 
 A component contains the parametric details of a PCB part.
 
-#### [`DesUnionPayload.DesErrorPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-error-payload.md) object library-management
+#### [`DesErrorPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-error-payload.md) object
 
 Payload associated with error.

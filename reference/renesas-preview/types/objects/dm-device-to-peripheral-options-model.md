@@ -29,6 +29,6 @@ type DmDeviceToPeripheralOptionsModel {
 
 ### Fields
 
-#### `DmDeviceToPeripheralOptionsModel.deviceToPeripheralElements` · [`[DmRequiresProvidesResolution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requires-provides-resolution.md) non-null object renesas-preview
+#### `deviceToPeripheralElements` · [`[DmRequiresProvidesResolution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requires-provides-resolution.md) non-null object
 
 Collection of resolutions linking device requirements to specific peripherals.

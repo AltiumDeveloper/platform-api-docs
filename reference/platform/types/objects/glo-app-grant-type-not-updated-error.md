@@ -9,11 +9,11 @@ deprecated: false
 
 # GloAppGrantTypeNotUpdatedError
 
-Error that occurs when updating the grant type for a `GloApp` is unsuccessful.
+Error that occurs when updating the grant type for a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) is unsuccessful.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type GloAppGrantTypeNotUpdatedError implements Error {
 
 ### Fields
 
-#### `GloAppGrantTypeNotUpdatedError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

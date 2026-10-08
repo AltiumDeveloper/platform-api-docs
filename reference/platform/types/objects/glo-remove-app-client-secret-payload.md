@@ -22,6 +22,6 @@ type GloRemoveAppClientSecretPayload {
 
 ### Fields
 
-#### `GloRemoveAppClientSecretPayload.errors` · [`[GloRemoveAppClientSecretError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-client-secret-error.md) list union platform
+#### `errors` · [`[GloRemoveAppClientSecretError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-client-secret-error.md) list union
 
-#### `GloRemoveAppClientSecretPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

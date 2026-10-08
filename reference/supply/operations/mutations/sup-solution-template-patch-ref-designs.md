@@ -11,6 +11,12 @@ deprecated: false
 
 Add or remove individual reference designs on a solution template.
 
+### Type
+
+#### [`SupSolutionTemplatePatchRefDesignsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-ref-designs-payload.md) object
+
+Payload for patching reference designs on a solution template.
+
 ```graphql
 supSolutionTemplatePatchRefDesigns(
   input: SupSolutionTemplatePatchRefDesignsInput!
@@ -19,10 +25,4 @@ supSolutionTemplatePatchRefDesigns(
 
 ### Arguments
 
-#### `supSolutionTemplatePatchRefDesigns.input` · [`SupSolutionTemplatePatchRefDesignsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-ref-designs-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplatePatchRefDesignsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-ref-designs-payload.md) object supply
-
-Payload for patching reference designs on a solution template.
+#### `input` · [`SupSolutionTemplatePatchRefDesignsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-ref-designs-input.md) non-null input

@@ -24,10 +24,10 @@ type DesWorkspaceInsUpsertInsightByKeyPayload {
 
 ### Fields
 
-#### `DesWorkspaceInsUpsertInsightByKeyPayload.errors` · [`[DesWorkspaceInsInsightErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-error-payload.md) non-null object insights
+#### `errors` · [`[DesWorkspaceInsInsightErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.
 
-#### `DesWorkspaceInsUpsertInsightByKeyPayload.insight` · [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) object insights
+#### `insight` · [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) object
 
 Insight resulting from the upsert operation.

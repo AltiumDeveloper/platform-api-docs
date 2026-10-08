@@ -31,14 +31,14 @@ input DesignRuleCheckExecutionConfigurationItemInput {
 
 ### Fields
 
-#### `DesignRuleCheckExecutionConfigurationItemInput.errorReportLevel` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `errorReportLevel` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The error level at which violations of this rule check should be reported for this execution. Known values: NO\_REPORT, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values.
 
-#### `DesignRuleCheckExecutionConfigurationItemInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The display name of the rule check. Used to report a skipped violation when the rule check no longer exists on the server.
 
-#### `DesignRuleCheckExecutionConfigurationItemInput.ruleCheckId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `ruleCheckId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the rule check.

@@ -17,6 +17,12 @@ deprecated: false
 
 Retrieves rule checks by their identifiers.
 
+### Type
+
+#### [`RuleCheck`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check.md) object **EXPERIMENTAL**
+
+Represents a rule check definition.
+
 ```graphql
 design {
   ruleCheck {
@@ -29,12 +35,6 @@ design {
 
 ### Arguments
 
-#### `byIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifiers of the rule checks.
-
-### Type
-
-#### [`RuleCheck`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check.md) object design **EXPERIMENTAL**
-
-Represents a rule check definition.

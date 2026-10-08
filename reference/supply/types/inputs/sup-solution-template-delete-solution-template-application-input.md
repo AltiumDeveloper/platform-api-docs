@@ -23,6 +23,6 @@ input SupSolutionTemplateDeleteSolutionTemplateApplicationInput {
 
 ### Fields
 
-#### `SupSolutionTemplateDeleteSolutionTemplateApplicationInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The solution template application identifier.

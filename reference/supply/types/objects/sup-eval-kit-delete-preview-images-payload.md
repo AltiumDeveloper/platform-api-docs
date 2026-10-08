@@ -21,4 +21,4 @@ type SupEvalKitDeletePreviewImagesPayload {
 
 ### Fields
 
-#### `SupEvalKitDeletePreviewImagesPayload.errors` · [`[SupEvalKitDeletePreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-preview-images-error.md) list union supply
+#### `errors` · [`[SupEvalKitDeletePreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-preview-images-error.md) list union

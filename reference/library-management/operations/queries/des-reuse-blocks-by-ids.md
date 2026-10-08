@@ -11,6 +11,12 @@ deprecated: false
 
 Find specific reuse blocks by their unique identifiers.
 
+### Type
+
+#### [`DesReuseBlock`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) object
+
+Reuse blocks are items that can be reused in future board-level design projects.
+
 ```graphql
 desReuseBlocksByIds(
   ids: [ID!]!
@@ -19,12 +25,6 @@ desReuseBlocksByIds(
 
 ### Arguments
 
-#### `desReuseBlocksByIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Node identifiers for the reuse blocks.
-
-### Type
-
-#### [`DesReuseBlock`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) object library-management
-
-Reuse blocks are items that can be reused in future board-level design projects.

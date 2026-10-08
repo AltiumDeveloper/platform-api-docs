@@ -30,18 +30,18 @@ enum SupPartFamilyDocumentType {
 
 ### Values
 
-#### `SupPartFamilyDocumentType.APPLICATION_NOTE`
+#### `APPLICATION_NOTE`
 
-#### `SupPartFamilyDocumentType.BROCHURE`
+#### `BROCHURE`
 
-#### `SupPartFamilyDocumentType.DATASHEET`
+#### `DATASHEET`
 
-#### `SupPartFamilyDocumentType.FLYER`
+#### `FLYER`
 
-#### `SupPartFamilyDocumentType.GUIDE`
+#### `GUIDE`
 
-#### `SupPartFamilyDocumentType.MANUAL`
+#### `MANUAL`
 
-#### `SupPartFamilyDocumentType.OTHER`
+#### `OTHER`
 
-#### `SupPartFamilyDocumentType.REPORT`
+#### `REPORT`

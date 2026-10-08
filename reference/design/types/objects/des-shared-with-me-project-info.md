@@ -26,18 +26,18 @@ type DesSharedWithMeProjectInfo {
 
 ### Fields
 
-#### `DesSharedWithMeProjectInfo.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The project description.
 
-#### `DesSharedWithMeProjectInfo.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The project name.
 
-#### `DesSharedWithMeProjectInfo.project` · [`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) object design
+#### `project` · [`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) object
 
-The project or null if its workspace is deleted. Avoid this field on getting many projects at once. Consider using `projectId` and `desProjectById`.
+The project or null if its workspace is deleted. Avoid this field on getting many projects at once. Consider using `projectId` and [`desProjectById`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-by-id.md).
 
-#### `DesSharedWithMeProjectInfo.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-The project node identifier. Use it for getting the project by `desProjectById`.
+The project node identifier. Use it for getting the project by [`desProjectById`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-by-id.md).

@@ -24,10 +24,10 @@ input DesPartAttributeSortInput {
 
 ### Fields
 
-#### `DesPartAttributeSortInput.attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the attribute.
 
-#### `DesPartAttributeSortInput.direction` · [`SortEnumType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) non-null enum common
+#### `direction` · [`SortEnumType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) non-null enum
 
 The sorting direction.

@@ -11,6 +11,10 @@ deprecated: false
 
 Removes an existing client secret from an existing App.
 
+### Type
+
+#### [`GloRemoveAppClientSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-client-secret-payload.md) object
+
 ```graphql
 gloRemoveAppClientSecret(
   input: GloRemoveAppClientSecretInput!
@@ -19,8 +23,4 @@ gloRemoveAppClientSecret(
 
 ### Arguments
 
-#### `gloRemoveAppClientSecret.input` · [`GloRemoveAppClientSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-client-secret-input.md) non-null input platform
-
-### Type
-
-#### [`GloRemoveAppClientSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-client-secret-payload.md) object platform
+#### `input` · [`GloRemoveAppClientSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-client-secret-input.md) non-null input

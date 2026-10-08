@@ -24,10 +24,10 @@ type DesPartDocumentCollection {
 
 ### Fields
 
-#### `DesPartDocumentCollection.documents` · [`[DesPartDocument!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-document.md) non-null object library-management
+#### `documents` · [`[DesPartDocument!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-document.md) non-null object
 
 A collection of documents in the group.
 
-#### `DesPartDocumentCollection.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the group (e.g., Datasheets).

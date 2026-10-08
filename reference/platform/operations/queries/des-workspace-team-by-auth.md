@@ -17,6 +17,6 @@ desWorkspaceTeamByAuth: DesWorkspaceTeam!
 
 ### Type
 
-#### [`DesWorkspaceTeam`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-team.md) object platform
+#### [`DesWorkspaceTeam`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-team.md) object
 
 Represents a team of collaborators in a given workspace.

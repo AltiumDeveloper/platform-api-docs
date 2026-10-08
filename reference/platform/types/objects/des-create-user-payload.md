@@ -23,6 +23,6 @@ type DesCreateUserPayload {
 
 ### Fields
 
-#### `DesCreateUserPayload.userId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `userId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Workspace user identifier.

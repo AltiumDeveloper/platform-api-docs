@@ -24,10 +24,10 @@ input DesUpdateFootprintFileInput {
 
 ### Fields
 
-#### `DesUpdateFootprintFileInput.fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Uploaded file identifier (typically a \*PcbLib\* file).
 
-#### `DesUpdateFootprintFileInput.relativePath` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `relativePath` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Relative path of the source file (typically \*Released/filename.PcbLib\*).

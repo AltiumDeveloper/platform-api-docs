@@ -24,10 +24,10 @@ type PlatformWorkspaceTokenQuota {
 
 ### Fields
 
-#### `PlatformWorkspaceTokenQuota.activeTokenCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `activeTokenCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The current number of `PlatformToken`s active in the Workspace.
 
-#### `PlatformWorkspaceTokenQuota.maxActiveTokenCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `maxActiveTokenCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The maximum number of active `PlatformToken`s allowed in the Workspace.

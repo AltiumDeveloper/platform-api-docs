@@ -24,6 +24,6 @@ enum DesFolderFilterMatchMode {
 
 ### Values
 
-#### `DesFolderFilterMatchMode.AND`
+#### `AND`
 
-#### `DesFolderFilterMatchMode.OR`
+#### `OR`

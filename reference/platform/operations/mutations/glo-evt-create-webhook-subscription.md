@@ -11,6 +11,12 @@ deprecated: false
 
 Creates webhook-based subscription with given parameters.
 
+### Type
+
+#### [`GloEvtCreateSubscriptionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-create-subscription-payload.md) object
+
+Represents the result of subscription creation operation.
+
 ```graphql
 gloEvtCreateWebhookSubscription(
   input: GloEvtCreateWebhookSubscriptionInput!
@@ -19,10 +25,4 @@ gloEvtCreateWebhookSubscription(
 
 ### Arguments
 
-#### `gloEvtCreateWebhookSubscription.input` · [`GloEvtCreateWebhookSubscriptionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-evt-create-webhook-subscription-input.md) non-null input platform
-
-### Type
-
-#### [`GloEvtCreateSubscriptionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-evt-create-subscription-payload.md) object platform
-
-Represents the result of subscription creation operation.
+#### `input` · [`GloEvtCreateWebhookSubscriptionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-evt-create-webhook-subscription-input.md) non-null input

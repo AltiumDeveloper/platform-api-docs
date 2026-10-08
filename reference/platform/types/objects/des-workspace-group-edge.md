@@ -24,10 +24,10 @@ type DesWorkspaceGroupEdge {
 
 ### Fields
 
-#### `DesWorkspaceGroupEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesWorkspaceGroupEdge.node` · [`DesWorkspaceGroup!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md) non-null object platform
+#### `node` · [`DesWorkspaceGroup!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md) non-null object
 
 The item at the end of the edge.

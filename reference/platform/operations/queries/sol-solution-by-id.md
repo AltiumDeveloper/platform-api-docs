@@ -11,6 +11,10 @@ deprecated: false
 
 Gets solution by ID.
 
+### Type
+
+#### [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) object
+
 ```graphql
 solSolutionById(
   id: ID!
@@ -19,8 +23,4 @@ solSolutionById(
 
 ### Arguments
 
-#### `solSolutionById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) object platform
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

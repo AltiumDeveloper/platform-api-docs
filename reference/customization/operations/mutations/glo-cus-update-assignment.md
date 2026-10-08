@@ -11,6 +11,12 @@ deprecated: false
 
 Updates an existing assignment.
 
+### Type
+
+#### [`GloCusUpdateAssignmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-update-assignment-payload.md) object
+
+Represents output value for updating extension point assignment.
+
 ```graphql
 gloCusUpdateAssignment(
   input: GloCusUpdateAssignmentInput!
@@ -19,10 +25,4 @@ gloCusUpdateAssignment(
 
 ### Arguments
 
-#### `gloCusUpdateAssignment.input` · [`GloCusUpdateAssignmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-input.md) non-null input customization
-
-### Type
-
-#### [`GloCusUpdateAssignmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-update-assignment-payload.md) object customization
-
-Represents output value for updating extension point assignment.
+#### `input` · [`GloCusUpdateAssignmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-assignment-input.md) non-null input

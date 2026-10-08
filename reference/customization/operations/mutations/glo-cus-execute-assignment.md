@@ -11,6 +11,12 @@ deprecated: false
 
 Executes an existing assignment.
 
+### Type
+
+#### [`GloCusExecuteAssignmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-execute-assignment-payload.md) object
+
+Represents output value for assignment execution.
+
 ```graphql
 gloCusExecuteAssignment(
   input: GloCusExecuteAssignmentInput!
@@ -19,10 +25,4 @@ gloCusExecuteAssignment(
 
 ### Arguments
 
-#### `gloCusExecuteAssignment.input` · [`GloCusExecuteAssignmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-execute-assignment-input.md) non-null input customization
-
-### Type
-
-#### [`GloCusExecuteAssignmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-execute-assignment-payload.md) object customization
-
-Represents output value for assignment execution.
+#### `input` · [`GloCusExecuteAssignmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-execute-assignment-input.md) non-null input

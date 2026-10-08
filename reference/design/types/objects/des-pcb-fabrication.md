@@ -33,48 +33,48 @@ type DesPcbFabrication {
 
 ### Fields
 
-#### `DesPcbFabrication.downloadUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `downloadUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Download URL.
 
-#### `DesPcbFabrication.folders` · [`[DesDownloadableFolder!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-folder.md) non-null object design
+#### `folders` · [`[DesDownloadableFolder!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-folder.md) non-null object
 
 Downloadable folders.
 
-#### `DesPcbFabrication.lifeCycleStateName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `lifeCycleStateName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Life cycle state name.
 
-#### `DesPcbFabrication.packageName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `packageName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the PCB fabrication package.
 
-#### `DesPcbFabrication.version` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `version` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Version.
 
 #### Deprecated
 
-#### `DesPcbFabrication.gerber` · [`DesGerber!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-gerber.md) **DEPRECATED** non-null object design
+#### `gerber` · [`DesGerber!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-gerber.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `folders`.
 
-#### `DesPcbFabrication.gerberX2` · [`DesGerberX2!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-gerber-x2.md) **DEPRECATED** non-null object design
+#### `gerberX2` · [`DesGerberX2!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-gerber-x2.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `folders`.
 
-#### `DesPcbFabrication.ipc2581` · [`DesIpc2581!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-ipc-2581.md) **DEPRECATED** non-null object design
+#### `ipc2581` · [`DesIpc2581!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-ipc-2581.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `folders`.
 
-#### `DesPcbFabrication.ncDrill` · [`DesNcDrill!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-nc-drill.md) **DEPRECATED** non-null object design
+#### `ncDrill` · [`DesNcDrill!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-nc-drill.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `folders`.
 
-#### `DesPcbFabrication.odb` · [`DesOdb!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-odb.md) **DEPRECATED** non-null object design
+#### `odb` · [`DesOdb!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-odb.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `folders`.
 
-#### `DesPcbFabrication.testPoints` · [`DesTestPoints!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-test-points.md) **DEPRECATED** non-null object design
+#### `testPoints` · [`DesTestPoints!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-test-points.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use `folders`.

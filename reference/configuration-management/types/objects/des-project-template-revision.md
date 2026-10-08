@@ -13,7 +13,9 @@ Project template revision information.
 
 ### Common Data Model
 
-- [Project Template Revision](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplateRevision/) — An immutable revision of a project template.
+- [Project Template Revision](https://w3id.org/altium/cdm/design/ProjectTemplateRevision) — An immutable revision of a project template.
+
+  - IRI: [`https://w3id.org/altium/cdm/design/ProjectTemplateRevision`](https://w3id.org/altium/cdm/design/ProjectTemplateRevision)
   - GRID: `grid:workspace:{workspace-id}:design:project-template-revision/{id}`
 
 ### Returned By
@@ -26,7 +28,7 @@ Project template revision information.
 
 ### Interfaces
 
-#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface common
+#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface
 
 The node interface is implemented by entities that have a global unique identifier.
 
@@ -43,26 +45,26 @@ type DesProjectTemplateRevision implements Node {
 
 ### Fields
 
-#### `DesProjectTemplateRevision.comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Project template revision comment.
 
-#### `DesProjectTemplateRevision.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 Creation date for project template revision.
 
-#### `DesProjectTemplateRevision.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Project template revision description.
 
-#### `DesProjectTemplateRevision.downloadableFile` · [`DesDownloadableFile!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) non-null object design
+#### `downloadableFile` · [`DesDownloadableFile!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) non-null object Design
 
 Project template revision downloadable file.
 
-#### `DesProjectTemplateRevision.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Project template revision identifier.
 
-#### `DesProjectTemplateRevision.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Project template revision name.

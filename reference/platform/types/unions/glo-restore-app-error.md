@@ -19,18 +19,18 @@ union GloRestoreAppError = GloAppOAuthClientNotRestoredError | GloAppMissingOAut
 
 ### Possible types
 
-#### [`GloRestoreAppError.GloAppOAuthClientNotRestoredError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-restored-error.md) object platform
+#### [`GloAppOAuthClientNotRestoredError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-restored-error.md) object
 
 Error that occurs when an \*OAuth client\* cannot be restored.
 
-#### [`GloRestoreAppError.GloAppMissingOAuthClientError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-missing-oauth-client-error.md) object platform
+#### [`GloAppMissingOAuthClientError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-missing-oauth-client-error.md) object
 
 Error that occurs when an \*OAuth client\* is missing.
 
-#### [`GloRestoreAppError.GloAppNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-found-error.md) object platform
+#### [`GloAppNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-found-error.md) object
 
-Error that occurs when a `GloApp` is not found.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) is not found.
 
-#### [`GloRestoreAppError.GloAppNotDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-deleted-error.md) object platform
+#### [`GloAppNotDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-deleted-error.md) object
 
-Error that occurs when a `GloApp` cannot be deleted.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) cannot be deleted.

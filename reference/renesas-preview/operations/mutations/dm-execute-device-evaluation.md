@@ -15,6 +15,10 @@ deprecated: false
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
+### Type
+
+#### [`DmExecuteDeviceEvaluationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 dmExecuteDeviceEvaluation(
   input: DmExecuteDeviceEvaluationInput!
@@ -23,8 +27,4 @@ dmExecuteDeviceEvaluation(
 
 ### Arguments
 
-#### `dmExecuteDeviceEvaluation.input` · [`DmExecuteDeviceEvaluationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`DmExecuteDeviceEvaluationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-execute-device-evaluation-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`DmExecuteDeviceEvaluationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-evaluation-input.md) non-null input

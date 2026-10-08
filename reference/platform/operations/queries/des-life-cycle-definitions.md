@@ -11,6 +11,12 @@ deprecated: false
 
 Gets life cycle definitions.
 
+### Type
+
+#### [`DesLifeCycleDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md) object
+
+Revision naming scheme details obtained by `desLifeCycleDefinitions`.
+
 ```graphql
 desLifeCycleDefinitions(
   workspaceUrl: String
@@ -19,12 +25,6 @@ desLifeCycleDefinitions(
 
 ### Arguments
 
-#### `desLifeCycleDefinitions.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The workspace URL.
-
-### Type
-
-#### [`DesLifeCycleDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md) object platform
-
-Revision naming scheme details obtained by `desLifeCycleDefinitions`.

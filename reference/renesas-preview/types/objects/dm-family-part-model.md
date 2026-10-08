@@ -29,6 +29,6 @@ type DmFamilyPartModel {
 
 ### Fields
 
-#### `DmFamilyPartModel.familyParts` · [`[DmFamilyPart!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md) non-null object renesas-preview
+#### `familyParts` · [`[DmFamilyPart!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md) non-null object
 
 List of family part variants defined for the device family.

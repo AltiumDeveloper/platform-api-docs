@@ -13,7 +13,8 @@ Issue details.
 
 ### Common Data Model
 
-- [BOM Issue](https://altiumdeveloper.github.io/cdm/classes/pro_BomIssue/) — A problem found when a BOM is analysed, usually against a particular BOM line: for example an unknown part number, a duplicated designator, or a part that is deprecated, low in stock or not compliant with a standard such as REACH. The level at which each kind of check reports (Fatal Error, Error or Warning, or No Report to ignore it) is configurable, and an individual issue can be waived.
+- [BOM Issue](https://w3id.org/altium/cdm/procurement/BomIssue) — A problem found when a BOM is analysed, usually against a particular BOM line: for example an unknown part number, a duplicated designator, or a part that is deprecated, low in stock or not compliant with a standard such as REACH. The level at which each kind of check reports (Fatal Error, Error or Warning, or No Report to ignore it) is configurable, and an individual issue can be waived.
+  - IRI: [`https://w3id.org/altium/cdm/procurement/BomIssue`](https://w3id.org/altium/cdm/procurement/BomIssue)
 
 ### Member Of
 
@@ -33,33 +34,33 @@ type BomIssue {
 
 ### Fields
 
-#### `BomIssue.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of the issue (e.g., \*This part is RoHS Non-Compliant\*).
 
-#### `BomIssue.healthCheck` · [`BomHealthCheck!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check.md) non-null object procurement
+#### `healthCheck` · [`BomHealthCheck!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check.md) non-null object
 
 Health check definition.
 
-#### `BomIssue.howToFix` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `howToFix` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Recommended action to address the issue produced by the health check (e.g., \*Consider using a different Manufacturer Part Number\*).
 
-#### `BomIssue.severity` · [`BomIssueSeverity!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-issue-severity.md) non-null enum procurement
+#### `severity` · [`BomIssueSeverity!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-issue-severity.md) non-null enum
 
 Severity of the issue.
 
-#### `BomIssue.waived` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `waived` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Designates that the issue is waived.
 
-#### `BomIssue.waivingToken` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `waivingToken` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 A token whose value reflects the conditions that led to the issue. It changes if those conditions change significantly.
 
 #### Deprecated
 
-#### `BomIssue.healthcheckDefinitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar common
+#### `healthcheckDefinitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Use healthCheck.healthCheckId instead.
 

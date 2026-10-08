@@ -22,10 +22,10 @@ enum SupSoftwareProjectEvalKitProjectSourceType {
 
 ### Values
 
-#### `SupSoftwareProjectEvalKitProjectSourceType.CMAKE`
+#### `CMAKE`
 
 CMAKE project.
 
-#### `SupSoftwareProjectEvalKitProjectSourceType.E2STUDIO`
+#### `E2STUDIO`
 
 E2STUDIO project.

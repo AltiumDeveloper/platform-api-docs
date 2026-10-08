@@ -11,6 +11,10 @@ deprecated: false
 
 Generates software project based on SDM document.
 
+### Type
+
+#### [`SolBldScaffoldingBySdmPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-sdm-payload.md) object
+
 ```graphql
 solBldScaffoldingBySdm(
   input: SolBldScaffoldingBySdmInput!
@@ -19,8 +23,4 @@ solBldScaffoldingBySdm(
 
 ### Arguments
 
-#### `solBldScaffoldingBySdm.input` · [`SolBldScaffoldingBySdmInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-sdm-input.md) non-null input platform
-
-### Type
-
-#### [`SolBldScaffoldingBySdmPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-sdm-payload.md) object platform
+#### `input` · [`SolBldScaffoldingBySdmInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-sdm-input.md) non-null input

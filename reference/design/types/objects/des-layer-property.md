@@ -25,14 +25,14 @@ type DesLayerProperty {
 
 ### Fields
 
-#### `DesLayerProperty.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Layer property name.
 
-#### `DesLayerProperty.size` · [`DesSize`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) object design
+#### `size` · [`DesSize`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) object
 
 Layer property size.
 
-#### `DesLayerProperty.text` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `text` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Layer property text.

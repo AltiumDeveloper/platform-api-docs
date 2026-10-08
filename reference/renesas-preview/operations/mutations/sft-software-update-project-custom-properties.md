@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the Software Project custom properties.
 
+### Type
+
+#### [`SftSoftwareUpdateProjectPropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-update-project-properties-payload.md) object
+
 ```graphql
 sftSoftwareUpdateProjectCustomProperties(
   input: SftSoftwareUpdateProjectPropertiesInput!
@@ -19,8 +23,4 @@ sftSoftwareUpdateProjectCustomProperties(
 
 ### Arguments
 
-#### `sftSoftwareUpdateProjectCustomProperties.input` · [`SftSoftwareUpdateProjectPropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-properties-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSoftwareUpdateProjectPropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-update-project-properties-payload.md) object renesas-preview
+#### `input` · [`SftSoftwareUpdateProjectPropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-properties-input.md) non-null input

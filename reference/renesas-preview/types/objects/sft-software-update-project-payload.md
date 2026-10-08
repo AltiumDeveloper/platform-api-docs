@@ -21,4 +21,4 @@ type SftSoftwareUpdateProjectPayload {
 
 ### Fields
 
-#### `SftSoftwareUpdateProjectPayload.data` · [`SftSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) object renesas-preview
+#### `data` · [`SftSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) object

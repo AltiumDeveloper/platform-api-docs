@@ -24,10 +24,10 @@ type DesWorkspaceInsInsightsEdge {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightsEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesWorkspaceInsInsightsEdge.node` · [`DesWorkspaceInsInsight!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) non-null object insights
+#### `node` · [`DesWorkspaceInsInsight!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) non-null object
 
 The item at the end of the edge.

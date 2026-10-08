@@ -11,6 +11,10 @@ deprecated: false
 
 Search a specific software project by its unique identifier.
 
+### Type
+
+#### [`SupSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) object
+
 ```graphql
 supSoftwareProjectsByIds(
   ids: [ID!]!
@@ -19,8 +23,4 @@ supSoftwareProjectsByIds(
 
 ### Arguments
 
-#### `supSoftwareProjectsByIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SupSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) object supply
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

@@ -11,6 +11,10 @@ deprecated: false
 
 Creates a new BOM.
 
+### Type
+
+#### [`BomCreateBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-create-bom-payload.md) object
+
 ```graphql
 bomCreateBom(
   input: BomCreateBomInput!
@@ -19,8 +23,4 @@ bomCreateBom(
 
 ### Arguments
 
-#### `bomCreateBom.input` · [`BomCreateBomInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-input.md) non-null input procurement
-
-### Type
-
-#### [`BomCreateBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-create-bom-payload.md) object procurement
+#### `input` · [`BomCreateBomInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-input.md) non-null input

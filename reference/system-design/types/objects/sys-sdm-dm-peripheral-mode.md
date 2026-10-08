@@ -28,6 +28,6 @@ type SysSdmDmPeripheralMode {
 
 ### Fields
 
-#### `SysSdmDmPeripheralMode.configurations` · [`[SysSdmDmPeripheralConfiguration!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-configuration.md) list object system-design
+#### `configurations` · [`[SysSdmDmPeripheralConfiguration!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-configuration.md) list object
 
-#### `SysSdmDmPeripheralMode.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

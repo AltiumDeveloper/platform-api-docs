@@ -13,6 +13,12 @@ deprecated: true
 
 Get the specified BOM release.
 
+### Type
+
+#### [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) object
+
+Represents a release of the BOM (i.e., a snapshot of a work-in-progress BOM).
+
 ```graphql
 bomBomRelease(
   bomId: String!
@@ -22,16 +28,10 @@ bomBomRelease(
 
 ### Arguments
 
-#### `bomBomRelease.bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the BOM.
 
-#### `bomBomRelease.releaseId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `releaseId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the release.
-
-### Type
-
-#### [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) object procurement
-
-Represents a release of the BOM (i.e., a snapshot of a work-in-progress BOM).

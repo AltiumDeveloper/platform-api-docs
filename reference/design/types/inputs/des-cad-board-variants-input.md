@@ -24,10 +24,10 @@ input DesCadBoardVariantsInput {
 
 ### Fields
 
-#### `DesCadBoardVariantsInput.componentTypeVariantLibrary` · [`[DesCadBoardComponentTypeInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-component-type-input.md) list input design
+#### `componentTypeVariantLibrary` · [`[DesCadBoardComponentTypeInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-component-type-input.md) list input
 
 Component type variant library for CAD board variants.
 
-#### `DesCadBoardVariantsInput.variants` · [`[DesCadBoardVariantInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-variant-input.md) list input design
+#### `variants` · [`[DesCadBoardVariantInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-variant-input.md) list input
 
 Variants for CAD board variants.

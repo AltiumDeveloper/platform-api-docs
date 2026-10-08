@@ -11,6 +11,10 @@ deprecated: false
 
 Uninstalls an App from a Workspace.
 
+### Type
+
+#### [`GloUninstallAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-uninstall-app-payload.md) object
+
 ```graphql
 gloUninstallApp(
   input: GloUninstallAppInput!
@@ -19,8 +23,4 @@ gloUninstallApp(
 
 ### Arguments
 
-#### `gloUninstallApp.input` · [`GloUninstallAppInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-uninstall-app-input.md) non-null input platform
-
-### Type
-
-#### [`GloUninstallAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-uninstall-app-payload.md) object platform
+#### `input` · [`GloUninstallAppInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-uninstall-app-input.md) non-null input

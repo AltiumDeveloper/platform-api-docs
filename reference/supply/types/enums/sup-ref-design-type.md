@@ -28,34 +28,34 @@ enum SupRefDesignType {
 
 ### Values
 
-#### `SupRefDesignType.DEMONSTRATION`
+#### `DEMONSTRATION`
 
 Highlights a component feature, often for marketing or sales purposes.
 
-#### `SupRefDesignType.DEVELOPMENT`
+#### `DEVELOPMENT`
 
 Enables code/hardware development and prototyping.
 
-#### `SupRefDesignType.EVALUATION`
+#### `EVALUATION`
 
 Intended to test specific electrical/mechanical characteristics.
 
-#### `SupRefDesignType.EXAMPLE`
+#### `EXAMPLE`
 
 Example project demonstrating specific use cases or implementations.
 
-#### `SupRefDesignType.EXPANSION`
+#### `EXPANSION`
 
 Extends capabilities of a dev board. Often optional.
 
-#### `SupRefDesignType.REFERENCE_DESIGN`
+#### `REFERENCE_DESIGN`
 
 Complete application or subsystem design with documentation.
 
-#### `SupRefDesignType.STARTER`
+#### `STARTER`
 
 Bundled offering to help users ramp up quickly.
 
-#### `SupRefDesignType.SYSTEM`
+#### `SYSTEM`
 
 Combines multiple board types, sensors, or modules into a full system.

@@ -23,14 +23,14 @@ input SupSolutionTemplateKeyFeatureGroupInput {
 
 ### Fields
 
-#### `SupSolutionTemplateKeyFeatureGroupInput.attributes` · [`[SupSolutionTemplateKeyFeatureGroupAttributeInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-key-feature-group-attribute-input.md) non-null input supply
+#### `attributes` · [`[SupSolutionTemplateKeyFeatureGroupAttributeInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-key-feature-group-attribute-input.md) non-null input
 
 The list of attributes associated with the key feature group.
 
-#### `SupSolutionTemplateKeyFeatureGroupInput.order` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `order` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The display order of the key feature group.
 
-#### `SupSolutionTemplateKeyFeatureGroupInput.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The key feature group title.

@@ -30,10 +30,10 @@ enum DmModelEvaluationStrategy {
 
 ### Values
 
-#### `DmModelEvaluationStrategy.DEVICES_ONLY`
+#### `DEVICES_ONLY`
 
 Evaluate only devices. Boards are not considered.
 
-#### `DmModelEvaluationStrategy.DEVICES_PREFER_BOARD_COMPATIBLE`
+#### `DEVICES_PREFER_BOARD_COMPATIBLE`
 
 Evaluate devices, preferring configurations that are compatible with the specified board when possible (soft preference, not a hard constraint).

@@ -28,14 +28,14 @@ enum DesCadBoardLayerPhysicalCategory {
 
 ### Values
 
-#### `DesCadBoardLayerPhysicalCategory.DIELECTRICAL_ORDINAL`
+#### `DIELECTRICAL_ORDINAL`
 
-#### `DesCadBoardLayerPhysicalCategory.DIELECTRICAL_SOLDER_MASK`
+#### `DIELECTRICAL_SOLDER_MASK`
 
-#### `DesCadBoardLayerPhysicalCategory.ELECTRICAL_INTERNAL_PLANE`
+#### `ELECTRICAL_INTERNAL_PLANE`
 
-#### `DesCadBoardLayerPhysicalCategory.ELECTRICAL_SIGNAL_LAYER`
+#### `ELECTRICAL_SIGNAL_LAYER`
 
-#### `DesCadBoardLayerPhysicalCategory.PHYSICAL_OVERLAY`
+#### `PHYSICAL_OVERLAY`
 
-#### `DesCadBoardLayerPhysicalCategory.PHYSICAL_PASTE_MASK`
+#### `PHYSICAL_PASTE_MASK`

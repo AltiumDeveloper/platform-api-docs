@@ -22,6 +22,6 @@ type GloCreateAppFromOAuthClientPayload {
 
 ### Fields
 
-#### `GloCreateAppFromOAuthClientPayload.errors` · [`[GloCreateAppFromOAuthClientError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-from-oauth-client-error.md) list union platform
+#### `errors` · [`[GloCreateAppFromOAuthClientError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-from-oauth-client-error.md) list union
 
-#### `GloCreateAppFromOAuthClientPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

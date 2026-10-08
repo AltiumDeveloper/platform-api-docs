@@ -25,8 +25,8 @@ enum DesCadBoardComponentPlacement {
 
 ### Values
 
-#### `DesCadBoardComponentPlacement.BOTH`
+#### `BOTH`
 
-#### `DesCadBoardComponentPlacement.BOTTOM`
+#### `BOTTOM`
 
-#### `DesCadBoardComponentPlacement.TOP`
+#### `TOP`

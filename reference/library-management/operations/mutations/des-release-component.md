@@ -11,6 +11,12 @@ deprecated: false
 
 Releases the specified component.
 
+### Type
+
+#### [`DesReleaseComponentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-release-component-payload.md) object
+
+Payload associated with releasing component file.
+
 ```graphql
 desReleaseComponent(
   input: DesReleaseComponentInput!
@@ -19,10 +25,4 @@ desReleaseComponent(
 
 ### Arguments
 
-#### `desReleaseComponent.input` · [`DesReleaseComponentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-input.md) non-null input library-management
-
-### Type
-
-#### [`DesReleaseComponentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-release-component-payload.md) object library-management
-
-Payload associated with releasing component file.
+#### `input` · [`DesReleaseComponentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-release-component-input.md) non-null input

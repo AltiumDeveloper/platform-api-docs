@@ -23,4 +23,4 @@ input DesComponentStringOperationFilterInput {
 
 ### Fields
 
-#### `DesComponentStringOperationFilterInput.eq` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `eq` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

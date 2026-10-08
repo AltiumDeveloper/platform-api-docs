@@ -25,10 +25,10 @@ input DesWipVariantFilterInput {
 
 ### Fields
 
-#### `DesWipVariantFilterInput.and` · [`[DesWipVariantFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-wip-variant-filter-input.md) list input design
+#### `and` · [`[DesWipVariantFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-wip-variant-filter-input.md) list input
 
-#### `DesWipVariantFilterInput.name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 The descriptive label for this design variant.
 
-#### `DesWipVariantFilterInput.or` · [`[DesWipVariantFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-wip-variant-filter-input.md) list input design
+#### `or` · [`[DesWipVariantFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-wip-variant-filter-input.md) list input

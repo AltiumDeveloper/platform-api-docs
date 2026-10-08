@@ -11,6 +11,12 @@ deprecated: false
 
 Searches for a project template by its identifier.
 
+### Type
+
+#### [`DesProjectTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md) object
+
+Information about a project template.
+
 ```graphql
 desProjectTemplateById(
   id: ID!
@@ -19,12 +25,6 @@ desProjectTemplateById(
 
 ### Arguments
 
-#### `desProjectTemplateById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The project template node identifier.
-
-### Type
-
-#### [`DesProjectTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md) object configuration-management
-
-Information about a project template.

@@ -11,6 +11,12 @@ deprecated: false
 
 Search annotations within a project with results in paged groups.
 
+### Type
+
+#### [`DesAnnotationsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotations-connection.md) object
+
+A connection to a list of items.
+
 ```graphql
 desAnnotations(
   after: String
@@ -24,28 +30,22 @@ desAnnotations(
 
 ### Arguments
 
-#### `desAnnotations.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-#### `desAnnotations.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-#### `desAnnotations.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-#### `desAnnotations.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-#### `desAnnotations.projectId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `projectId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `desAnnotations.where` · [`RequirementFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/types/inputs/requirement-filter-input.md) input requirements
-
-### Type
-
-#### [`DesAnnotationsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotations-connection.md) object collaboration
-
-A connection to a list of items.
+#### `where` · [`RequirementFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/types/inputs/requirement-filter-input.md) input Requirements

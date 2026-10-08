@@ -11,6 +11,10 @@ deprecated: false
 
 Updates an existing script, creating a new version.
 
+### Type
+
+#### [`GloScrUpdateScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-update-script-payload.md) object
+
 ```graphql
 gloScrUpdateScript(
   input: GloScrUpdateScriptInput!
@@ -19,8 +23,4 @@ gloScrUpdateScript(
 
 ### Arguments
 
-#### `gloScrUpdateScript.input` · [`GloScrUpdateScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-update-script-input.md) non-null input customization
-
-### Type
-
-#### [`GloScrUpdateScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-update-script-payload.md) object customization
+#### `input` · [`GloScrUpdateScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-update-script-input.md) non-null input

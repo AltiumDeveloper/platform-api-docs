@@ -11,6 +11,12 @@ deprecated: false
 
 Retrieves a workspace user by ID.
 
+### Type
+
+#### [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object
+
+Represents a user registered in a workspace.
+
 ```graphql
 desWorkspaceUserById(
   id: ID!
@@ -19,12 +25,6 @@ desWorkspaceUserById(
 
 ### Arguments
 
-#### `desWorkspaceUserById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The ID of the workspace user.
-
-### Type
-
-#### [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object platform
-
-Represents a user registered in a workspace.

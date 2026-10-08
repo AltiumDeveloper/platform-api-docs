@@ -24,10 +24,10 @@ input SupSoftwareProjectSetPreviewImagesInput {
 
 ### Fields
 
-#### `SupSoftwareProjectSetPreviewImagesInput.previewImages` · [`[SupSoftwareProjectFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-file-input.md) list input supply
+#### `previewImages` · [`[SupSoftwareProjectFileInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-file-input.md) list input
 
 The new set of preview images. Replaces all existing preview images.
 
-#### `SupSoftwareProjectSetPreviewImagesInput.softwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `softwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the software project.

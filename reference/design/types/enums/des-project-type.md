@@ -26,10 +26,10 @@ enum DesProjectType {
 
 ### Values
 
-#### `DesProjectType.HARNESS_DESIGN`
+#### `HARNESS_DESIGN`
 
-#### `DesProjectType.NONE`
+#### `NONE`
 
-#### `DesProjectType.PCB_PROJECT`
+#### `PCB_PROJECT`
 
-#### `DesProjectType.SYSTEM_DESIGN`
+#### `SYSTEM_DESIGN`

@@ -19,10 +19,10 @@ union GloUninstallAppError = GloAppNotUninstalledError | GloAppDeletedError
 
 ### Possible types
 
-#### [`GloUninstallAppError.GloAppNotUninstalledError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-uninstalled-error.md) object platform
+#### [`GloAppNotUninstalledError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-uninstalled-error.md) object
 
-Error that occurs when a `GloApp` cannot be uninstalled from a workspace.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) cannot be uninstalled from a workspace.
 
-#### [`GloUninstallAppError.GloAppDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md) object platform
+#### [`GloAppDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md) object
 
-Error that occurs when attempting to update a deleted `GloApp`.
+Error that occurs when attempting to update a deleted [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md).

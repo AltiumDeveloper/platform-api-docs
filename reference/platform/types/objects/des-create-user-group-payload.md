@@ -23,6 +23,6 @@ type DesCreateUserGroupPayload {
 
 ### Fields
 
-#### `DesCreateUserGroupPayload.userGroupId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `userGroupId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 User group reference identifier.

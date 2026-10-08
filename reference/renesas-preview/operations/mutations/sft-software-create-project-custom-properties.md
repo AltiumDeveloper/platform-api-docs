@@ -11,6 +11,10 @@ deprecated: false
 
 Creates the Software Project custom properties.
 
+### Type
+
+#### [`SftSoftwareCreateProjectPropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-create-project-properties-payload.md) object
+
 ```graphql
 sftSoftwareCreateProjectCustomProperties(
   input: SftSoftwareCreateProjectPropertiesInput!
@@ -19,8 +23,4 @@ sftSoftwareCreateProjectCustomProperties(
 
 ### Arguments
 
-#### `sftSoftwareCreateProjectCustomProperties.input` · [`SftSoftwareCreateProjectPropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-create-project-properties-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSoftwareCreateProjectPropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-create-project-properties-payload.md) object renesas-preview
+#### `input` · [`SftSoftwareCreateProjectPropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-create-project-properties-input.md) non-null input

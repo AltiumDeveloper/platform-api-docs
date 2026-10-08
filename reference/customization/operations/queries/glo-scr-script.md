@@ -11,6 +11,12 @@ deprecated: false
 
 Retrieves a script by its ID.
 
+### Type
+
+#### [`GloScrScript`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md) object
+
+Represents a script with details including its versions.
+
 ```graphql
 gloScrScript(
   scriptId: String!
@@ -19,10 +25,4 @@ gloScrScript(
 
 ### Arguments
 
-#### `gloScrScript.scriptId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`GloScrScript`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md) object customization
-
-Represents a script with details including its versions.
+#### `scriptId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

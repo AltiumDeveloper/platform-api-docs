@@ -22,10 +22,10 @@ input GloRemoveAppGrantTypeInput {
 
 ### Fields
 
-#### `GloRemoveAppGrantTypeInput.grantType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `grantType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The grant type to be removed from the App.
 
-#### `GloRemoveAppGrantTypeInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The GRID identifier for the App to be updated.

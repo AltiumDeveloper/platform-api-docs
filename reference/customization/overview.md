@@ -11,22 +11,22 @@ deprecated: false
 
 Extension points, scripts, script executions and workflows.
 
-Concepts: see the **Customization** bounded context in the [Common Data Model](https://altiumdeveloper.github.io/cdm/subsets/customization/)
-
 For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/llms.txt) · [schema slice](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql) · [all types](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types.txt)
+
+## Common Data Model
+
+- [Customization](https://altiumdeveloper.github.io/cdm/subsets/customization/) — Models ways to customize and automate a Workspace: process workflows, and scripts with their versions, their executions and the event raised when an execution completes. In the product, each workflow belongs to a process definition that a Workspace administrator creates and manages in the Workspace browser interface.
 
 ## Entities
 
-API types in this bounded context that represent CDM entities:
+API types in this bounded context that represent Common Data Model (CDM) entities. The IRI is the entity's stable identifier in the CDM.
 
-- [`DesWorkflowDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-definition.md) — [Workflow](https://altiumdeveloper.github.io/cdm/classes/cus_Workflow/): A process workflow of an Altium 365 Workspace: the workflow that belongs to a process definition and steps designers through an everyday design process (e.g. requesting a new part, a design review or creating a new project). Workspace administrators build process definitions in the Process Workflow Editor, grouped by process theme (Part Requests, Project Activities, Project Creations), and activate them; each started instance of a process follows the workflow and creates tasks for the users whose action is needed to move it on.
-  - GRID: `grid:workspace:{workspace-id}:customization:workflow/{id}`
-- [`GloScrScript`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md) — [Script](https://altiumdeveloper.github.io/cdm/classes/cus_Script/)
-  - GRID: `grid:workspace:{workspace-id}:scripts:script/{id}`
-- [`GloScrScriptExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md) — [Script Execution](https://altiumdeveloper.github.io/cdm/classes/cus_ScriptExecution/)
-  - GRID: `grid:workspace:{workspace-id}:scripts:script-execution/{id}`
-- [`GloScrScriptVersion`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version.md) — [Script Version](https://altiumdeveloper.github.io/cdm/classes/cus_ScriptVersion/)
-  - GRID: `grid:workspace:{workspace-id}:scripts:script-version/{id}`
+| API type | CDM entity |
+| - | - |
+| [`DesWorkflowDefinition`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow-definition.md) | [Workflow](https://w3id.org/altium/cdm/customization/Workflow) [`https://w3id.org/altium/cdm/customization/Workflow`](https://w3id.org/altium/cdm/customization/Workflow) |
+| [`GloScrScript`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md) | [Script](https://w3id.org/altium/cdm/customization/Script) [`https://w3id.org/altium/cdm/customization/Script`](https://w3id.org/altium/cdm/customization/Script) |
+| [`GloScrScriptExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md) | [Script Execution](https://w3id.org/altium/cdm/customization/ScriptExecution) [`https://w3id.org/altium/cdm/customization/ScriptExecution`](https://w3id.org/altium/cdm/customization/ScriptExecution) |
+| [`GloScrScriptVersion`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-version.md) | [Script Version](https://w3id.org/altium/cdm/customization/ScriptVersion) [`https://w3id.org/altium/cdm/customization/ScriptVersion`](https://w3id.org/altium/cdm/customization/ScriptVersion) |
 
 ## Contents
 

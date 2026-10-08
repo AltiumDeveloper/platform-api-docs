@@ -27,14 +27,14 @@ type SupRefPart {
 
 ### Fields
 
-#### `SupRefPart.designators` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `designators` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The global identifier linked to the reference design components.
 
-#### `SupRefPart.partId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The part identifier.
 
-#### `SupRefPart.type` · [`SupRefPartType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-part-type.md) non-null enum supply
+#### `type` · [`SupRefPartType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-part-type.md) non-null enum
 
 The type identifier of this component, indicating its role in the reference design.

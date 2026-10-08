@@ -29,8 +29,8 @@ type SysSdmDmPortConfiguration {
 
 ### Fields
 
-#### `SysSdmDmPortConfiguration.enumValues` · [`[SysSdmDmPortConfigurationEnumValue!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-configuration-enum-value.md) list object system-design
+#### `enumValues` · [`[SysSdmDmPortConfigurationEnumValue!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-configuration-enum-value.md) list object
 
-#### `SysSdmDmPortConfiguration.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmDmPortConfiguration.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

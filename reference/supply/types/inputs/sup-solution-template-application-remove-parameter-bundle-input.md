@@ -21,6 +21,6 @@ input SupSolutionTemplateApplicationRemoveParameterBundleInput {
 
 ### Fields
 
-#### `SupSolutionTemplateApplicationRemoveParameterBundleInput.parameterTitle` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `parameterTitle` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The unique title of the parameter bundle to remove.

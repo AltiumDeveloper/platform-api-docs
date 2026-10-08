@@ -24,10 +24,10 @@ input DesWorkflowAttachmentVariableInput {
 
 ### Fields
 
-#### `DesWorkflowAttachmentVariableInput.files` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `files` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Uploaded file references.
 
-#### `DesWorkflowAttachmentVariableInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The variable name.

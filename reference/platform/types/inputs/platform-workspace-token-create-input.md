@@ -9,7 +9,7 @@ deprecated: false
 
 # PlatformWorkspaceTokenCreateInput
 
-Input for creating a new `PlatformWorkspaceToken`.
+Input for creating a new [`PlatformWorkspaceToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token.md).
 
 ### Member Of
 
@@ -26,18 +26,18 @@ input PlatformWorkspaceTokenCreateInput {
 
 ### Fields
 
-#### `PlatformWorkspaceTokenCreateInput.accessTokenLifetime` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `accessTokenLifetime` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Lifetime of the access token in seconds. Must be greater than zero. Defaults to 3600 (1 hour) when omitted.
 
-#### `PlatformWorkspaceTokenCreateInput.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Description of the new `PlatformWorkspaceToken`.
+Description of the new [`PlatformWorkspaceToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token.md).
 
-#### `PlatformWorkspaceTokenCreateInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Name of the new `PlatformWorkspaceToken`.
+Name of the new [`PlatformWorkspaceToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-token.md).
 
-#### `PlatformWorkspaceTokenCreateInput.returnUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `returnUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 URL to redirect to after the authorization flow completes. Must be a trusted domain.

@@ -11,6 +11,12 @@ deprecated: false
 
 Update a evaluation kit.
 
+### Type
+
+#### [`SupEvalKitUpdateEvalKitPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-update-eval-kit-payload.md) object
+
+Payload associated with updating a evaluation kit.
+
 ```graphql
 supEvalKitUpdateEvalKit(
   input: SupEvalKitUpdateEvalKitInput!
@@ -19,10 +25,4 @@ supEvalKitUpdateEvalKit(
 
 ### Arguments
 
-#### `supEvalKitUpdateEvalKit.input` · [`SupEvalKitUpdateEvalKitInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-eval-kit-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitUpdateEvalKitPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-update-eval-kit-payload.md) object supply
-
-Payload associated with updating a evaluation kit.
+#### `input` · [`SupEvalKitUpdateEvalKitInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-eval-kit-input.md) non-null input

@@ -9,7 +9,7 @@ deprecated: false
 
 # GloCreateAppFromOAuthClientInput
 
-Input for creating a new `GloApp`.
+Input for creating a new [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md).
 
 ### Member Of
 
@@ -27,22 +27,22 @@ input GloCreateAppFromOAuthClientInput {
 
 ### Fields
 
-#### `GloCreateAppFromOAuthClientInput.clientId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `clientId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Client identifier of an existing OAuth 2 client to associate with the App.
 
-#### `GloCreateAppFromOAuthClientInput.contactEmail` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `contactEmail` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Contact email address of the developer of the new App.
 
-#### `GloCreateAppFromOAuthClientInput.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of the new App.
 
-#### `GloCreateAppFromOAuthClientInput.hrid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `hrid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique human-readable identifier for the new App.
 
-#### `GloCreateAppFromOAuthClientInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Name of the new App. If empty, the name of the OAuth 2.0 client will be used.

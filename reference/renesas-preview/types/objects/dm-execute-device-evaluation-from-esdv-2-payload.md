@@ -27,4 +27,4 @@ type DmExecuteDeviceEvaluationFromESDv2Payload {
 
 ### Fields
 
-#### `DmExecuteDeviceEvaluationFromESDv2Payload.dmEsdResolverSummary` · [`DmEsdResolverSummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-esd-resolver-summary.md) object renesas-preview
+#### `dmEsdResolverSummary` · [`DmEsdResolverSummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-esd-resolver-summary.md) object

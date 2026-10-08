@@ -25,8 +25,8 @@ type DesWorkInProgress {
 
 ### Fields
 
-#### `DesWorkInProgress.variants` · [`[DesWipVariant!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md) non-null object design
+#### `variants` · [`[DesWipVariant!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md) non-null object
 
 The list of variants contained in your work in progress (WIP) in this design.
 
-##### `DesWorkInProgress.variants.where` · [`DesWipVariantFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-wip-variant-filter-input.md) input design
+##### `where` · [`DesWipVariantFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-wip-variant-filter-input.md) input

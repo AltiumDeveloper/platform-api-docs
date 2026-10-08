@@ -11,6 +11,12 @@ deprecated: false
 
 Updates item parameters for the specified component (does not affect the revision).
 
+### Type
+
+#### [`DesUpdateComponentItemParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-item-parameters-payload.md) object
+
+Payload associated with updating component item parameters.
+
 ```graphql
 desUpdateComponentItemParameters(
   input: DesUpdateComponentItemParametersInput!
@@ -19,10 +25,4 @@ desUpdateComponentItemParameters(
 
 ### Arguments
 
-#### `desUpdateComponentItemParameters.input` · [`DesUpdateComponentItemParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-item-parameters-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateComponentItemParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-item-parameters-payload.md) object library-management
-
-Payload associated with updating component item parameters.
+#### `input` · [`DesUpdateComponentItemParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-item-parameters-input.md) non-null input

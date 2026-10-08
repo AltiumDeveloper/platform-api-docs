@@ -34,50 +34,50 @@ input DesCadBoardComponentTypeInput {
 
 ### Fields
 
-#### `DesCadBoardComponentTypeInput.bodyShape` · [`DesCadComponentBodyShapeInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-component-body-shape-input.md) input design
+#### `bodyShape` · [`DesCadComponentBodyShapeInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-component-body-shape-input.md) input
 
 Body shape for CAD board component type.
 
-#### `DesCadBoardComponentTypeInput.companyComponentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `companyComponentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Identifier for company component.
 
-#### `DesCadBoardComponentTypeInput.components` · [`[DesCadBoardComponentInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-component-input.md) list input design
+#### `components` · [`[DesCadBoardComponentInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-board-component-input.md) list input
 
 Components for CAD board component type.
 
-#### `DesCadBoardComponentTypeInput.dmsComponentName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `dmsComponentName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 DMS component name for CAD board component type.
 
-#### `DesCadBoardComponentTypeInput.footprintReference` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `footprintReference` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Footprint reference for CAD board component type.
 
-#### `DesCadBoardComponentTypeInput.id` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `id` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Identifier for CAD board component type.
 
-#### `DesCadBoardComponentTypeInput.internalId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `internalId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Internal unique identifier for CAD board component type.
 
-#### `DesCadBoardComponentTypeInput.isFromLocalPcbLibrary` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isFromLocalPcbLibrary` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether the CAD board component type is from local PCB library or not.
 
-#### `DesCadBoardComponentTypeInput.itemGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `itemGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 GUID for CAD board component type item.
 
-#### `DesCadBoardComponentTypeInput.libraryReference` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `libraryReference` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Library reference for CAD board component type.
 
-#### `DesCadBoardComponentTypeInput.properties` · [`[DesCadPropertyInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-property-input.md) list input design
+#### `properties` · [`[DesCadPropertyInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-cad-property-input.md) list input
 
 Properties for CAD board component type.
 
-#### `DesCadBoardComponentTypeInput.revisionGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `revisionGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 GUID for CAD board component type revision.

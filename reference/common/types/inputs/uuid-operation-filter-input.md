@@ -38,26 +38,26 @@ input UuidOperationFilterInput {
 
 ### Fields
 
-#### `UuidOperationFilterInput.eq` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `eq` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.gt` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `gt` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.gte` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `gte` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.in` · [`[UUID]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) list scalar common
+#### `in` · [`[UUID]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) list scalar
 
-#### `UuidOperationFilterInput.lt` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `lt` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.lte` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `lte` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.neq` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `neq` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.ngt` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `ngt` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.ngte` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `ngte` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.nin` · [`[UUID]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) list scalar common
+#### `nin` · [`[UUID]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) list scalar
 
-#### `UuidOperationFilterInput.nlt` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `nlt` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar
 
-#### `UuidOperationFilterInput.nlte` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar common
+#### `nlte` · [`UUID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) scalar

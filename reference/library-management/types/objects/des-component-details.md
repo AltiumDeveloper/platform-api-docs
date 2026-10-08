@@ -29,30 +29,30 @@ type DesComponentDetails {
 
 ### Fields
 
-#### `DesComponentDetails.datasheets` · [`[DesDatasheet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet.md) non-null object library-management
+#### `datasheets` · [`[DesDatasheet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet.md) non-null object
 
 The list of component datasheets.
 
-#### `DesComponentDetails.footprints` · [`[DesFootprint!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) non-null object library-management
+#### `footprints` · [`[DesFootprint!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) non-null object
 
 The list of component footprints.
 
-#### `DesComponentDetails.itemInternalId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `itemInternalId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The component item internal identifier.
 
-#### `DesComponentDetails.itemParameters` · [`[DesComponentParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-parameter.md) non-null object library-management
+#### `itemParameters` · [`[DesComponentParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-parameter.md) non-null object
 
 The list of parameters describing the item.
 
-#### `DesComponentDetails.parameters` · [`[DesComponentParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-parameter.md) non-null object library-management
+#### `parameters` · [`[DesComponentParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-parameter.md) non-null object
 
 The list of revision level parameters from the latest revision. Parameter types are unknown (`NONE`) for unmanaged components.
 
-#### `DesComponentDetails.simulations` · [`[DesSimulation!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-simulation.md) non-null object library-management
+#### `simulations` · [`[DesSimulation!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-simulation.md) non-null object
 
 The list of component simuation models.
 
-#### `DesComponentDetails.symbols` · [`[DesSymbol!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-symbol.md) non-null object library-management
+#### `symbols` · [`[DesSymbol!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-symbol.md) non-null object
 
 The list of component symbols.

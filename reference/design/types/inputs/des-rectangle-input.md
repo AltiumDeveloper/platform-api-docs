@@ -24,10 +24,10 @@ input DesRectangleInput {
 
 ### Fields
 
-#### `DesRectangleInput.pos1` · [`DesPosition2DInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-position-2-dinput.md) non-null input design
+#### `pos1` · [`DesPosition2DInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-position-2-dinput.md) non-null input
 
 Rectangle corner point 1.
 
-#### `DesRectangleInput.pos2` · [`DesPosition2DInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-position-2-dinput.md) non-null input design
+#### `pos2` · [`DesPosition2DInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-position-2-dinput.md) non-null input
 
 Rectangle corner point 2.

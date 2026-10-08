@@ -24,10 +24,10 @@ input ListFilterInputTypeOfDesDesignItemParameterFilterInput {
 
 ### Fields
 
-#### `ListFilterInputTypeOfDesDesignItemParameterFilterInput.all` · [`DesDesignItemParameterFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) input design
+#### `all` · [`DesDesignItemParameterFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) input Design
 
-#### `ListFilterInputTypeOfDesDesignItemParameterFilterInput.any` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `any` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
-#### `ListFilterInputTypeOfDesDesignItemParameterFilterInput.none` · [`DesDesignItemParameterFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) input design
+#### `none` · [`DesDesignItemParameterFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) input Design
 
-#### `ListFilterInputTypeOfDesDesignItemParameterFilterInput.some` · [`DesDesignItemParameterFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) input design
+#### `some` · [`DesDesignItemParameterFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) input Design

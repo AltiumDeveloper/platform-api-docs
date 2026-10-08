@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a folder in the library.
 
+### Type
+
+#### [`DesCreateFolderPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-folder-payload.md) object
+
+Payload associated with creating a folder.
+
 ```graphql
 desCreateFolder(
   input: DesCreateFolderInput!
@@ -19,10 +25,4 @@ desCreateFolder(
 
 ### Arguments
 
-#### `desCreateFolder.input` · [`DesCreateFolderInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-folder-input.md) non-null input platform
-
-### Type
-
-#### [`DesCreateFolderPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-folder-payload.md) object platform
-
-Payload associated with creating a folder.
+#### `input` · [`DesCreateFolderInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-folder-input.md) non-null input

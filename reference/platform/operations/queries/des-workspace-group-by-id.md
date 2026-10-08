@@ -11,6 +11,12 @@ deprecated: false
 
 Retrieves a workspace group by ID.
 
+### Type
+
+#### [`DesWorkspaceGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md) object
+
+The information about the workspace group.
+
 ```graphql
 desWorkspaceGroupById(
   id: ID!
@@ -19,10 +25,4 @@ desWorkspaceGroupById(
 
 ### Arguments
 
-#### `desWorkspaceGroupById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`DesWorkspaceGroup`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md) object platform
-
-The information about the workspace group.
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

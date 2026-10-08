@@ -17,6 +17,6 @@ desPartAttributesByProvider: DesPartAttributes!
 
 ### Type
 
-#### [`DesPartAttributes`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attributes.md) object library-management
+#### [`DesPartAttributes`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attributes.md) object
 
 Represents part attributes by provider.

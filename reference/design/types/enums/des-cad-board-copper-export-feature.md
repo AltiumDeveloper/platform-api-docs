@@ -26,10 +26,10 @@ enum DesCadBoardCopperExportFeature {
 
 ### Values
 
-#### `DesCadBoardCopperExportFeature.COPPER_REGIONS`
+#### `COPPER_REGIONS`
 
-#### `DesCadBoardCopperExportFeature.PADS`
+#### `PADS`
 
-#### `DesCadBoardCopperExportFeature.TRACKS`
+#### `TRACKS`
 
-#### `DesCadBoardCopperExportFeature.VIAS`
+#### `VIAS`

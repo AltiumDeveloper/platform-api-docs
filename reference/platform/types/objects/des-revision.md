@@ -24,10 +24,10 @@ type DesRevision {
 
 ### Fields
 
-#### `DesRevision.details` · [`DesRevisionDetails`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-details.md) object platform
+#### `details` · [`DesRevisionDetails`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-details.md) object
 
 The revision details or null for unmanaged components.
 
-#### `DesRevision.revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The reference identifier for revision used in `desRevisionDetailsByRevisionId`. The instance may not exist for unmanaged components.
+The reference identifier for revision used in [`desRevisionDetailsByRevisionId`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-revision-details-by-revision-id.md). The instance may not exist for unmanaged components.

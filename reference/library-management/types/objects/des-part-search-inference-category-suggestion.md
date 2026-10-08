@@ -24,10 +24,10 @@ type DesPartSearchInferenceCategorySuggestion {
 
 ### Fields
 
-#### `DesPartSearchInferenceCategorySuggestion.category` · [`DesPartCategory!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) non-null object library-management
+#### `category` · [`DesPartCategory!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) non-null object
 
 The suggested category.
 
-#### `DesPartSearchInferenceCategorySuggestion.count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The estimated parts count for this category.

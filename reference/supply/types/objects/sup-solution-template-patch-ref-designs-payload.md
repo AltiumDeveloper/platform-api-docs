@@ -24,8 +24,8 @@ type SupSolutionTemplatePatchRefDesignsPayload {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchRefDesignsPayload.errors` · [`[SupSolutionTemplatePatchRefDesignsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-ref-designs-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplatePatchRefDesignsError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-patch-ref-designs-error.md) list union
 
-#### `SupSolutionTemplatePatchRefDesignsPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

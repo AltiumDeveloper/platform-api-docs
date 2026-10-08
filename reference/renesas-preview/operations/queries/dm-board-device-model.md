@@ -17,6 +17,12 @@ deprecated: false
 
 A board model (an MCU as soldered onto a specific eval kit) by board name.
 
+### Type
+
+#### [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) object **EXPERIMENTAL**
+
+Root GraphQL type that exposes the full device model, including interfaces, peripherals, and ports.
+
 ```graphql
 dmBoardDeviceModel(
   boardName: String!
@@ -25,10 +31,4 @@ dmBoardDeviceModel(
 
 ### Arguments
 
-#### `dmBoardDeviceModel.boardName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`DmFullStackDeviceModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-device-model.md) object renesas-preview **EXPERIMENTAL**
-
-Root GraphQL type that exposes the full device model, including interfaces, peripherals, and ports.
+#### `boardName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

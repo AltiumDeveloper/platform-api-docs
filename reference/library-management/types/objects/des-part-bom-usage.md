@@ -28,26 +28,26 @@ type DesPartBomUsage {
 
 ### Fields
 
-#### `DesPartBomUsage.alternativeForElementIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `alternativeForElementIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of element identifiers that this part is an alternative for.
 
-#### `DesPartBomUsage.alternativePartsForElementIds` · [`[DesPartBomAlternativePartsEntry!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-alternative-parts-entry.md) list object library-management
+#### `alternativePartsForElementIds` · [`[DesPartBomAlternativePartsEntry!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-bom-alternative-parts-entry.md) list object
 
 A dictionary mapping element identifiers to a collection of alternative part identifiers.
 
-#### `DesPartBomUsage.designators` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `designators` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of designators.
 
-#### `DesPartBomUsage.elementIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `elementIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 A collection of element identifiers in the BOM.
 
-#### `DesPartBomUsage.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the BOM.
 
-#### `DesPartBomUsage.linkedComponentsIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `linkedComponentsIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 A collection of linked component identifiers.

@@ -24,10 +24,10 @@ enum SortEnumType {
 
 ### Values
 
-#### `SortEnumType.ASC`
+#### `ASC`
 
 Ascending order.
 
-#### `SortEnumType.DESC`
+#### `DESC`
 
 Descending order.

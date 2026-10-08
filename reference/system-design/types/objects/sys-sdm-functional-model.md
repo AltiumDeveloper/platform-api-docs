@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Functional Model](https://altiumdeveloper.github.io/cdm/classes/sys_SdmFunctionalModel/) — Captures the functional aspects of the system design, focusing on the behavior and interactions of functional blocks.
+- [Functional Model](https://w3id.org/altium/cdm/system/SdmFunctionalModel) — Captures the functional aspects of the system design, focusing on the behavior and interactions of functional blocks.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmFunctionalModel`](https://w3id.org/altium/cdm/system/SdmFunctionalModel)
 
 ### Member Of
 
@@ -35,12 +36,12 @@ type SysSdmFunctionalModel {
 
 ### Fields
 
-#### `SysSdmFunctionalModel.connections` · [`[SysSdmConnection!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-connection.md) list object system-design
+#### `connections` · [`[SysSdmConnection!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-connection.md) list object
 
-#### `SysSdmFunctionalModel.functionalBlocks` · [`[SysSdmFunctionalBlock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-functional-block.md) list object system-design
+#### `functionalBlocks` · [`[SysSdmFunctionalBlock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-functional-block.md) list object
 
-#### `SysSdmFunctionalModel.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmFunctionalModel.implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmFunctionalModel.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

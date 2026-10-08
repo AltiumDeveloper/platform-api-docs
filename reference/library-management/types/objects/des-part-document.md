@@ -25,14 +25,14 @@ type DesPartDocument {
 
 ### Fields
 
-#### `DesPartDocument.mimeType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `mimeType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The MIME type of the document.
 
-#### `DesPartDocument.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the document.
 
-#### `DesPartDocument.url` · [`URL!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) non-null scalar common
+#### `url` · [`URL!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) non-null scalar
 
 The URL of the document.

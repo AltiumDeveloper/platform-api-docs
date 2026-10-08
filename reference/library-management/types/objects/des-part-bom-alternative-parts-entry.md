@@ -24,10 +24,10 @@ type DesPartBomAlternativePartsEntry {
 
 ### Fields
 
-#### `DesPartBomAlternativePartsEntry.alternativePartIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `alternativePartIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 A collection of alternative part identifiers for the element.
 
-#### `DesPartBomAlternativePartsEntry.elementId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `elementId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the element.

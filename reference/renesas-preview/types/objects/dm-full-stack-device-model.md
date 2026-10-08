@@ -19,7 +19,9 @@ Root GraphQL type that exposes the full device model, including interfaces, peri
 
 ### Common Data Model
 
-- [FullStackDeviceModel](https://altiumdeveloper.github.io/cdm/classes/dm_FullStackDeviceModel/) — A digital twin of an embedded hardware device. It exposes the full device model, including interfaces, peripherals, and ports.
+- [FullStackDeviceModel](https://w3id.org/altium/cdm/deviceModel/FullStackDeviceModel) — A digital twin of an embedded hardware device. It exposes the full device model, including interfaces, peripherals, and ports.
+
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/FullStackDeviceModel`](https://w3id.org/altium/cdm/deviceModel/FullStackDeviceModel)
   - GRID: `grid:global::device-model:fullstack-dm/{id}`
 
 ### Returned By
@@ -46,38 +48,38 @@ type DmFullStackDeviceModel {
 
 ### Fields
 
-#### `DmFullStackDeviceModel.board` · [`DmDeviceBoard`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-board.md) object renesas-preview
+#### `board` · [`DmDeviceBoard`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-board.md) object
 
 An evaluation kit or specific hardware design that the MCU is soldered onto
 
-#### `DmFullStackDeviceModel.deviceAddressMap` · [`DmAddressMapModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-map-model.md) object renesas-preview
+#### `deviceAddressMap` · [`DmAddressMapModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-map-model.md) object
 
 Address map of the device, including segments and blocks.
 
-#### `DmFullStackDeviceModel.deviceInterfaces` · [`[DmFspModule!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md) non-null object renesas-preview
+#### `deviceInterfaces` · [`[DmFspModule!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md) non-null object
 
 Collection of Flexible Software Package (FSP) modules that represent device interfaces.
 
-#### `DmFullStackDeviceModel.deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Manufacturer part number (MPN) that uniquely identifies the device.
 
-#### `DmFullStackDeviceModel.devicePeripherals` · [`DmPeripheralModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-model.md) object renesas-preview
+#### `devicePeripherals` · [`DmPeripheralModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-model.md) object
 
 All peripherals available on the device, including their instances and properties.
 
-#### `DmFullStackDeviceModel.devicePorts` · [`DmPortModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-model.md) object renesas-preview
+#### `devicePorts` · [`DmPortModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-model.md) object
 
 I/O port model for the device, including functions, configurations, and connections.
 
-#### `DmFullStackDeviceModel.deviceToPeripheralOptions` · [`DmDeviceToPeripheralOptionsModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-to-peripheral-options-model.md) object renesas-preview
+#### `deviceToPeripheralOptions` · [`DmDeviceToPeripheralOptionsModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-to-peripheral-options-model.md) object
 
 Mappings from device interfaces to peripherals that can fulfill those interfaces.
 
-#### `DmFullStackDeviceModel.familyPart` · [`DmFamilyPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md) object renesas-preview
+#### `familyPart` · [`DmFamilyPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part.md) object
 
 Family part details for the device.
 
-#### `DmFullStackDeviceModel.softwareToDeviceOptions` · [`DmSoftwareToDeviceOptionsModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-to-device-options-model.md) object renesas-preview
+#### `softwareToDeviceOptions` · [`DmSoftwareToDeviceOptionsModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-to-device-options-model.md) object
 
 Mappings that show how software requirements can be satisfied by device-provided interfaces.

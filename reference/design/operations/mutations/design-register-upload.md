@@ -17,6 +17,10 @@ deprecated: false
 
 Registers an uploaded file as a design upload.
 
+### Type
+
+#### [`DesignRegisterUploadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-register-upload-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 designRegisterUpload(
   input: DesignRegisterUploadInput!
@@ -25,8 +29,4 @@ designRegisterUpload(
 
 ### Arguments
 
-#### `designRegisterUpload.input` · [`DesignRegisterUploadInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-register-upload-input.md) non-null input design
-
-### Type
-
-#### [`DesignRegisterUploadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-register-upload-payload.md) object design **EXPERIMENTAL**
+#### `input` · [`DesignRegisterUploadInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/design-register-upload-input.md) non-null input

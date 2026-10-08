@@ -21,14 +21,14 @@ input DesComponentFilterInput {
 
 ### Fields
 
-#### `DesComponentFilterInput.comment` · [`DesComponentStringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-string-operation-filter-input.md) input library-management
+#### `comment` · [`DesComponentStringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-string-operation-filter-input.md) input
 
 The additional information for this component.
 
-#### `DesComponentFilterInput.description` · [`DesComponentStringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-string-operation-filter-input.md) input library-management
+#### `description` · [`DesComponentStringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-string-operation-filter-input.md) input
 
 The summary of function or other performance details for this component.
 
-#### `DesComponentFilterInput.name` · [`DesComponentStringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-string-operation-filter-input.md) input library-management
+#### `name` · [`DesComponentStringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-string-operation-filter-input.md) input
 
 The library label for this component.

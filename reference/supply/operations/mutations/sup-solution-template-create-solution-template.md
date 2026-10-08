@@ -11,6 +11,12 @@ deprecated: false
 
 Create a new solution template.
 
+### Type
+
+#### [`SupSolutionTemplateCreateSolutionTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-create-solution-template-payload.md) object
+
+Payload associated with creating a solution template.
+
 ```graphql
 supSolutionTemplateCreateSolutionTemplate(
   input: SupSolutionTemplateCreateSolutionTemplateInput!
@@ -19,10 +25,4 @@ supSolutionTemplateCreateSolutionTemplate(
 
 ### Arguments
 
-#### `supSolutionTemplateCreateSolutionTemplate.input` · [`SupSolutionTemplateCreateSolutionTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-solution-template-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateCreateSolutionTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-create-solution-template-payload.md) object supply
-
-Payload associated with creating a solution template.
+#### `input` · [`SupSolutionTemplateCreateSolutionTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-create-solution-template-input.md) non-null input

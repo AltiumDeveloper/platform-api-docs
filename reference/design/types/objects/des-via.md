@@ -31,38 +31,38 @@ type DesVia {
 
 ### Fields
 
-#### `DesVia.beginLayer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object design
+#### `beginLayer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object
 
 Layer information about the via start point.
 
-#### `DesVia.endLayer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object design
+#### `endLayer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object
 
 Positional information about the via end point.
 
-#### `DesVia.holeDiameter` · [`DesSize!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) non-null object design
+#### `holeDiameter` · [`DesSize!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) non-null object
 
 Via hole diameter.
 
-#### `DesVia.layer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object design
+#### `layer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object
 
 Layer associated with via.
 
-#### `DesVia.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Name of via.
 
-#### `DesVia.net` · [`DesNet`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) object design
+#### `net` · [`DesNet`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) object
 
 Net associated with via.
 
-#### `DesVia.padDiameter` · [`DesSize!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) non-null object design
+#### `padDiameter` · [`DesSize!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) non-null object
 
 Via pad diameter.
 
-#### `DesVia.position` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object design
+#### `position` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object
 
 Positional information about the via.
 
-#### `DesVia.shape` · [`DesPrimitiveShape`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-primitive-shape.md) enum design
+#### `shape` · [`DesPrimitiveShape`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-primitive-shape.md) enum
 
 Via shape.

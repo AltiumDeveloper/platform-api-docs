@@ -17,6 +17,10 @@ deprecated: false
 
 Update an easymode config for the specified project (provided sliders will become the entire list).
 
+### Type
+
+#### [`RsaMotorStudioUpdateEasyModeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-easy-mode-config-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioUpdateEasyModeConfig(
   input: RsaMotorStudioUpdateEasyModeConfigInput!
@@ -25,8 +29,4 @@ rsaMotorStudioUpdateEasyModeConfig(
 
 ### Arguments
 
-#### `rsaMotorStudioUpdateEasyModeConfig.input` · [`RsaMotorStudioUpdateEasyModeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-easy-mode-config-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioUpdateEasyModeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-update-easy-mode-config-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioUpdateEasyModeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-update-easy-mode-config-input.md) non-null input

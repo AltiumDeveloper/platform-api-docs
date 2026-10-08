@@ -19,6 +19,10 @@ deprecated: true
 
 Retrieves the design data generation for the upload.
 
+### Type
+
+#### [`DesignDataGeneration_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation-preview.md) object **EXPERIMENTAL**
+
 ```graphql
 design {
   preview {
@@ -31,10 +35,6 @@ design {
 
 ### Arguments
 
-#### `latestGenerationByUploadId.uploadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `uploadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the upload.
-
-### Type
-
-#### [`DesignDataGeneration_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation-preview.md) object design **EXPERIMENTAL**

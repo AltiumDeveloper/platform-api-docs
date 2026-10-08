@@ -30,10 +30,10 @@ type DesignDataLocation_Preview {
 
 ### Fields
 
-#### `DesignDataLocation_Preview.x` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `DesignDataLocation_Preview.x` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The X coordinate.
 
-#### `DesignDataLocation_Preview.y` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `DesignDataLocation_Preview.y` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The Y coordinate.

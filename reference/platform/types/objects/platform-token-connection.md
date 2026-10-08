@@ -26,18 +26,18 @@ type PlatformTokenConnection {
 
 ### Fields
 
-#### `PlatformTokenConnection.edges` · [`[PlatformTokenEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-edge.md) list object platform
+#### `edges` · [`[PlatformTokenEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-edge.md) list object
 
 A list of edges.
 
-#### `PlatformTokenConnection.nodes` · [`[PlatformToken!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) list interface platform
+#### `nodes` · [`[PlatformToken!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) list interface
 
 A flattened list of the nodes.
 
-#### `PlatformTokenConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `PlatformTokenConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

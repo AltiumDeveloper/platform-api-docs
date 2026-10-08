@@ -11,6 +11,10 @@ deprecated: false
 
 Retrieves a entity scaffolding status.
 
+### Type
+
+#### [`SolBldEntityScaffoldingStatusPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-entity-scaffolding-status-payload.md) object
+
 ```graphql
 solBldEntityScaffoldingStatus(
   id: ID!
@@ -19,8 +23,4 @@ solBldEntityScaffoldingStatus(
 
 ### Arguments
 
-#### `solBldEntityScaffoldingStatus.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SolBldEntityScaffoldingStatusPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-entity-scaffolding-status-payload.md) object platform
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

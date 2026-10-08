@@ -11,6 +11,12 @@ deprecated: false
 
 Gets the workspace configuration.
 
+### Type
+
+#### [`DesWorkspaceConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-workspace-configuration.md) object
+
+Information about workspace configuration.
+
 ```graphql
 desWorkspaceConfiguration(
   workspaceUrl: String
@@ -19,12 +25,6 @@ desWorkspaceConfiguration(
 
 ### Arguments
 
-#### `desWorkspaceConfiguration.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The workspace URL.
-
-### Type
-
-#### [`DesWorkspaceConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-workspace-configuration.md) object configuration-management
-
-Information about workspace configuration.

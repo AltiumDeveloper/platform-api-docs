@@ -11,6 +11,10 @@ deprecated: false
 
 Renames an existing script without creating a new version. Optionally, the rename applies only while the script is provisional, meaning it still carries a generated name, and is skipped once the name has been set deliberately. Returns the script's current name either way.
 
+### Type
+
+#### [`GloScrRenameScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-rename-script-payload.md) object
+
 ```graphql
 gloScrRenameScript(
   input: GloScrRenameScriptInput!
@@ -19,8 +23,4 @@ gloScrRenameScript(
 
 ### Arguments
 
-#### `gloScrRenameScript.input` · [`GloScrRenameScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-rename-script-input.md) non-null input customization
-
-### Type
-
-#### [`GloScrRenameScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-rename-script-payload.md) object customization
+#### `input` · [`GloScrRenameScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-rename-script-input.md) non-null input

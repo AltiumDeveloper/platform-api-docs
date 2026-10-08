@@ -20,10 +20,10 @@ input DesWorkflowFilterByVariableInput {
 
 ### Fields
 
-#### `DesWorkflowFilterByVariableInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Name of the variable.
 
-#### `DesWorkflowFilterByVariableInput.valueMatchesOneOf` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `valueMatchesOneOf` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 List of value prefixes.

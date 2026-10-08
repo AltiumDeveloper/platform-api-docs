@@ -11,6 +11,12 @@ deprecated: false
 
 Gets the first allowed naming scheme by the content kind.
 
+### Type
+
+#### [`DesRevisionNamingScheme`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme.md) object
+
+Revision naming scheme details obtained by [`desRevisionNamingSchemes`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-revision-naming-schemes.md). More information is available on revision naming schemes at: <https://www.altium.com/documentation/altium-designer/accessing-detailed-item-view#!revision_naming_scheme_dlg>
+
 ```graphql
 desRevisionNamingSchemeByContentTypeKind(
   kind: DesContentTypeKind!
@@ -20,16 +26,10 @@ desRevisionNamingSchemeByContentTypeKind(
 
 ### Arguments
 
-#### `desRevisionNamingSchemeByContentTypeKind.kind` · [`DesContentTypeKind!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) non-null enum platform
+#### `kind` · [`DesContentTypeKind!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-content-type-kind.md) non-null enum
 
 The content kind.
 
-#### `desRevisionNamingSchemeByContentTypeKind.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The workspace URL.
-
-### Type
-
-#### [`DesRevisionNamingScheme`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-revision-naming-scheme.md) object platform
-
-Revision naming scheme details obtained by `desRevisionNamingSchemes`. More information is available on revision naming schemes at: <https://www.altium.com/documentation/altium-designer/accessing-detailed-item-view#!revision_naming_scheme_dlg>

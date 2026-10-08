@@ -19,6 +19,6 @@ union SupSolutionTemplateCreateSolutionTemplateApplicationError = SupSolutionTem
 
 ### Possible types
 
-#### [`SupSolutionTemplateCreateSolutionTemplateApplicationError.SupSolutionTemplateOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md) object supply
+#### [`SupSolutionTemplateOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md) object
 
-#### [`SupSolutionTemplateCreateSolutionTemplateApplicationError.SupSolutionTemplateApplicationIsExistedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application-is-existed-error.md) object supply
+#### [`SupSolutionTemplateApplicationIsExistedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application-is-existed-error.md) object

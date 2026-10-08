@@ -22,6 +22,6 @@ type SftSoftwareDeleteProjectPropertiesPayload {
 
 ### Fields
 
-#### `SftSoftwareDeleteProjectPropertiesPayload.deletedParametersCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `deletedParametersCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `SftSoftwareDeleteProjectPropertiesPayload.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

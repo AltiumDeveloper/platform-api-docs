@@ -24,10 +24,10 @@ input SupSolutionTemplateApplicationSearchFilterInput {
 
 ### Fields
 
-#### `SupSolutionTemplateApplicationSearchFilterInput.ids` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `ids` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Searches by solution template application identifiers.
 
-#### `SupSolutionTemplateApplicationSearchFilterInput.q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `q` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Searches by text data.

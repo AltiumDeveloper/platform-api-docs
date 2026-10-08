@@ -22,10 +22,10 @@ type SupEvalKitESDSource {
 
 ### Fields
 
-#### `SupEvalKitESDSource.compileModelUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `compileModelUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of the compile model associated with the evaluation kit.
 
-#### `SupEvalKitESDSource.documentFileUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `documentFileUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of the document file associated with the evaluation kit.

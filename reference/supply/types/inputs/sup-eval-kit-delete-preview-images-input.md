@@ -24,10 +24,10 @@ input SupEvalKitDeletePreviewImagesInput {
 
 ### Fields
 
-#### `SupEvalKitDeletePreviewImagesInput.evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `evalKitId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the evaluation kit.
 
-#### `SupEvalKitDeletePreviewImagesInput.imageUrls` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `imageUrls` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The collection of image URLs to delete.

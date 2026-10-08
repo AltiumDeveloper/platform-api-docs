@@ -17,6 +17,6 @@ desPartSellersByProvider: DesPartSellers!
 
 ### Type
 
-#### [`DesPartSellers`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-sellers.md) object library-management
+#### [`DesPartSellers`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-sellers.md) object
 
 Represents a collection of seller companies by provider.

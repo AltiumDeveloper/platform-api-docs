@@ -23,10 +23,10 @@ input SolBldScaffoldingBySdmInput {
 
 ### Fields
 
-#### `SolBldScaffoldingBySdmInput.ignoreExistingSources` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `ignoreExistingSources` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether to ignore existing sources when scaffolding. If true, the BSP is created from scratch. If false, changes are applied into existing software project. By default it's false.
 
-#### `SolBldScaffoldingBySdmInput.sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SolBldScaffoldingBySdmInput.solutionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

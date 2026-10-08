@@ -17,6 +17,10 @@ deprecated: false
 
 List scope configurations for a project.
 
+### Type
+
+#### [`RsaMotorStudioScopeConfig`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioScopeConfigs(
   projectId: ID!
@@ -25,8 +29,4 @@ rsaMotorStudioScopeConfigs(
 
 ### Arguments
 
-#### `rsaMotorStudioScopeConfigs.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`RsaMotorStudioScopeConfig`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-config.md) object renesas-preview **EXPERIMENTAL**
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

@@ -17,6 +17,6 @@ desWorkspaceUserByAuth: DesWorkspaceUser!
 
 ### Type
 
-#### [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object platform
+#### [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object
 
 Represents a user registered in a workspace.

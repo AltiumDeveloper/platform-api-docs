@@ -11,6 +11,10 @@ deprecated: false
 
 Gets device configuration revision by ID.
 
+### Type
+
+#### [`SftDevCfgDeviceConfigurationRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration-revision.md) object
+
 ```graphql
 sftDevCfgDeviceConfigurationRevisionById(
   id: ID!
@@ -19,8 +23,4 @@ sftDevCfgDeviceConfigurationRevisionById(
 
 ### Arguments
 
-#### `sftDevCfgDeviceConfigurationRevisionById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SftDevCfgDeviceConfigurationRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-device-configuration-revision.md) object renesas-preview
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

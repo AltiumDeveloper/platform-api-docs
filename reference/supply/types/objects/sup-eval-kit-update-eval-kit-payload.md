@@ -23,4 +23,4 @@ type SupEvalKitUpdateEvalKitPayload {
 
 ### Fields
 
-#### `SupEvalKitUpdateEvalKitPayload.errors` · [`[SupEvalKitUpdateEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-update-eval-kit-error.md) list union supply
+#### `errors` · [`[SupEvalKitUpdateEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-update-eval-kit-error.md) list union

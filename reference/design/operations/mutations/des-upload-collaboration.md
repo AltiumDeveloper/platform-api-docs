@@ -11,6 +11,12 @@ deprecated: false
 
 Uploads the specified collaboration.
 
+### Type
+
+#### [`DesUploadCollaborationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-collaboration-payload.md) object
+
+Payload associated with uploading collaboration.
+
 ```graphql
 desUploadCollaboration(
   input: DesUploadCollaborationInput!
@@ -19,10 +25,4 @@ desUploadCollaboration(
 
 ### Arguments
 
-#### `desUploadCollaboration.input` · [`DesUploadCollaborationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-collaboration-input.md) non-null input design
-
-### Type
-
-#### [`DesUploadCollaborationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-collaboration-payload.md) object design
-
-Payload associated with uploading collaboration.
+#### `input` · [`DesUploadCollaborationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-collaboration-input.md) non-null input

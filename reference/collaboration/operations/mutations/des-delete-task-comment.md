@@ -11,6 +11,12 @@ deprecated: false
 
 Deletes the specified task comment.
 
+### Type
+
+#### [`DesDeleteTaskCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-delete-task-comment-payload.md) object
+
+Payload associated with deleting a task comment.
+
 ```graphql
 desDeleteTaskComment(
   input: DesDeleteTaskCommentInput!
@@ -19,10 +25,4 @@ desDeleteTaskComment(
 
 ### Arguments
 
-#### `desDeleteTaskComment.input` · [`DesDeleteTaskCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-task-comment-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesDeleteTaskCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-delete-task-comment-payload.md) object collaboration
-
-Payload associated with deleting a task comment.
+#### `input` · [`DesDeleteTaskCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-task-comment-input.md) non-null input

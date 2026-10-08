@@ -11,6 +11,10 @@ deprecated: false
 
 Replace existing list of tags by new one related to a solution template.
 
+### Type
+
+#### [`SupSolutionTemplateSetTagsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-tags-payload.md) object
+
 ```graphql
 supSolutionTemplateSetTags(
   input: SupSolutionTemplateSetTagsInput!
@@ -19,8 +23,4 @@ supSolutionTemplateSetTags(
 
 ### Arguments
 
-#### `supSolutionTemplateSetTags.input` · [`SupSolutionTemplateSetTagsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-tags-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateSetTagsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-tags-payload.md) object supply
+#### `input` · [`SupSolutionTemplateSetTagsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-tags-input.md) non-null input

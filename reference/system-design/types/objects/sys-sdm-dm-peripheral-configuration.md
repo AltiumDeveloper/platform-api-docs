@@ -30,10 +30,10 @@ type SysSdmDmPeripheralConfiguration {
 
 ### Fields
 
-#### `SysSdmDmPeripheralConfiguration.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmDmPeripheralConfiguration.parameters` · [`[SysSdmDmPeripheralParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-parameter.md) list object system-design
+#### `parameters` · [`[SysSdmDmPeripheralParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-parameter.md) list object
 
-#### `SysSdmDmPeripheralConfiguration.pinConfigs` · [`[SysSdmDmPeripheralPinConfig!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-pin-config.md) list object system-design
+#### `pinConfigs` · [`[SysSdmDmPeripheralPinConfig!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-pin-config.md) list object
 
-#### `SysSdmDmPeripheralConfiguration.pinDependencyConfigs` · [`[SysSdmDmPeripheralPinDependencyConfig!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-pin-dependency-config.md) list object system-design
+#### `pinDependencyConfigs` · [`[SysSdmDmPeripheralPinDependencyConfig!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-pin-dependency-config.md) list object

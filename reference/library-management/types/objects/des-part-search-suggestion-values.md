@@ -24,10 +24,10 @@ type DesPartSearchSuggestionValues {
 
 ### Fields
 
-#### `DesPartSearchSuggestionValues.allAttributes` · [`[DesPartAttribute!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) non-null object library-management
+#### `allAttributes` · [`[DesPartAttribute!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-attribute.md) non-null object
 
 The list of all suggested attributes.
 
-#### `DesPartSearchSuggestionValues.attributeFacets` · [`[DesPartSearchAttributeFacet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-attribute-facet.md) non-null object library-management
+#### `attributeFacets` · [`[DesPartSearchAttributeFacet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-attribute-facet.md) non-null object
 
 The list of suggested parameter facets.

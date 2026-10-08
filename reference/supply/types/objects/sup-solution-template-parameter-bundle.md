@@ -24,8 +24,8 @@ type SupSolutionTemplateParameterBundle {
 
 ### Fields
 
-#### `SupSolutionTemplateParameterBundle.parameter` · [`SupSolutionTemplateParameter!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter.md) non-null object supply
+#### `parameter` · [`SupSolutionTemplateParameter!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter.md) non-null object
 
 Details about the parameter of the parameter bundle.
 
-#### `SupSolutionTemplateParameterBundle.values` · [`[SupSolutionTemplateParameterValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-value.md) non-null object supply
+#### `values` · [`[SupSolutionTemplateParameterValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-parameter-value.md) non-null object

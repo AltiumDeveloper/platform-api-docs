@@ -11,6 +11,12 @@ deprecated: false
 
 Deletes the specified user group.
 
+### Type
+
+#### [`DesDeleteUserGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-user-group-payload.md) object
+
+Payload associated with deleting a user group.
+
 ```graphql
 desDeleteUserGroup(
   input: DesDeleteUserGroupInput!
@@ -19,10 +25,4 @@ desDeleteUserGroup(
 
 ### Arguments
 
-#### `desDeleteUserGroup.input` · [`DesDeleteUserGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-user-group-input.md) non-null input platform
-
-### Type
-
-#### [`DesDeleteUserGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-delete-user-group-payload.md) object platform
-
-Payload associated with deleting a user group.
+#### `input` · [`DesDeleteUserGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-delete-user-group-input.md) non-null input

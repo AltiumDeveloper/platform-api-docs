@@ -11,6 +11,10 @@ deprecated: false
 
 Imports a reference design into an existing solution.
 
+### Type
+
+#### [`SolBldImportRefDesignsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-import-ref-designs-payload.md) object
+
 ```graphql
 solBldImportRefDesigns(
   input: SolBldImportRefDesignsInput!
@@ -19,8 +23,4 @@ solBldImportRefDesigns(
 
 ### Arguments
 
-#### `solBldImportRefDesigns.input` · [`SolBldImportRefDesignsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-import-ref-designs-input.md) non-null input platform
-
-### Type
-
-#### [`SolBldImportRefDesignsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-import-ref-designs-payload.md) object platform
+#### `input` · [`SolBldImportRefDesignsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-import-ref-designs-input.md) non-null input

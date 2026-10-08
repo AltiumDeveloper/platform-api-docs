@@ -17,6 +17,10 @@ deprecated: false
 
 Create a new revision for an existing variable set.
 
+### Type
+
+#### [`RsaMotorStudioCreateVariableSetRevisionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-variable-set-revision-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioCreateVariableSetRevision(
   input: RsaMotorStudioCreateVariableSetRevisionInput!
@@ -25,8 +29,4 @@ rsaMotorStudioCreateVariableSetRevision(
 
 ### Arguments
 
-#### `rsaMotorStudioCreateVariableSetRevision.input` · [`RsaMotorStudioCreateVariableSetRevisionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-variable-set-revision-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioCreateVariableSetRevisionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-variable-set-revision-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioCreateVariableSetRevisionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-variable-set-revision-input.md) non-null input

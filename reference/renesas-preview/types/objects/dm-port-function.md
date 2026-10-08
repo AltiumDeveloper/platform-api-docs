@@ -19,7 +19,8 @@ A function that a port can perform (display-only in this schema).
 
 ### Common Data Model
 
-- [PortFunction](https://altiumdeveloper.github.io/cdm/classes/dm_PortFunction/) — A specific function that a port can perform.
+- [PortFunction](https://w3id.org/altium/cdm/deviceModel/PortFunction) — A specific function that a port can perform.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/PortFunction`](https://w3id.org/altium/cdm/deviceModel/PortFunction)
 
 ### Member Of
 
@@ -34,10 +35,10 @@ type DmPortFunction {
 
 ### Fields
 
-#### `DmPortFunction.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the port function.
 
-#### `DmPortFunction.peripheralInstanceName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `peripheralInstanceName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the peripheral instance associated with this function.

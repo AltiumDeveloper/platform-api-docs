@@ -26,8 +26,8 @@ type GloScrScriptSecret {
 
 ### Fields
 
-#### `GloScrScriptSecret.isMissing` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isMissing` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 True when the secret this revision declares no longer exists in the workspace, so a run of it will fail.
 
-#### `GloScrScriptSecret.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

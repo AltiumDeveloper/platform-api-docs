@@ -22,6 +22,6 @@ type GloUpdateAppNamePayload {
 
 ### Fields
 
-#### `GloUpdateAppNamePayload.errors` · [`[GloUpdateAppNameError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-name-error.md) list union platform
+#### `errors` · [`[GloUpdateAppNameError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-name-error.md) list union
 
-#### `GloUpdateAppNamePayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

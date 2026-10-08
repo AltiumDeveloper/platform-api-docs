@@ -21,4 +21,4 @@ type GloScrDeleteSecretPayload {
 
 ### Fields
 
-#### `GloScrDeleteSecretPayload.boolean` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `boolean` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar

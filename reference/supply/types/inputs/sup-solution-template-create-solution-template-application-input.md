@@ -23,14 +23,14 @@ input SupSolutionTemplateCreateSolutionTemplateApplicationInput {
 
 ### Fields
 
-#### `SupSolutionTemplateCreateSolutionTemplateApplicationInput.applicationId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `applicationId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The solution template application identifier.
 
-#### `SupSolutionTemplateCreateSolutionTemplateApplicationInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The solution template application description.
 
-#### `SupSolutionTemplateCreateSolutionTemplateApplicationInput.parameters` · [`[SupSolutionTemplateApplicationCreateParameterBundleInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-create-parameter-bundle-input.md) non-null input supply
+#### `parameters` · [`[SupSolutionTemplateApplicationCreateParameterBundleInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-create-parameter-bundle-input.md) non-null input
 
 The list of application parameters associated with the solution template application.

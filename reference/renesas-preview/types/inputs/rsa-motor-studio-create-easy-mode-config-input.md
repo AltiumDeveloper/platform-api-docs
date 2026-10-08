@@ -31,8 +31,8 @@ input RsaMotorStudioCreateEasyModeConfigInput {
 
 ### Fields
 
-#### `RsaMotorStudioCreateEasyModeConfigInput.path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `RsaMotorStudioCreateEasyModeConfigInput.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `RsaMotorStudioCreateEasyModeConfigInput.sliders` · [`[RsaMotorStudioCreateSliderInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-slider-input.md) non-null input renesas-preview
+#### `sliders` · [`[RsaMotorStudioCreateSliderInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-slider-input.md) non-null input

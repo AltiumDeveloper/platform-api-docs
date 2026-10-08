@@ -24,8 +24,8 @@ type SupSoftwareProjectCreateSoftwareProjectPayload {
 
 ### Fields
 
-#### `SupSoftwareProjectCreateSoftwareProjectPayload.errors` · [`[SupSoftwareProjectCreateSoftwareProjectError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-create-software-project-error.md) list union supply
+#### `errors` · [`[SupSoftwareProjectCreateSoftwareProjectError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-create-software-project-error.md) list union
 
-#### `SupSoftwareProjectCreateSoftwareProjectPayload.id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 Software project identifier.

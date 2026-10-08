@@ -29,8 +29,8 @@ input DmExecuteDeviceEvaluationFromXmlInput {
 
 ### Fields
 
-#### `DmExecuteDeviceEvaluationFromXmlInput.onlyFeasible` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `onlyFeasible` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
-#### `DmExecuteDeviceEvaluationFromXmlInput.sessionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sessionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `DmExecuteDeviceEvaluationFromXmlInput.xmlUpload` · [`Upload!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/upload.md) non-null scalar common
+#### `xmlUpload` · [`Upload!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/upload.md) non-null scalar

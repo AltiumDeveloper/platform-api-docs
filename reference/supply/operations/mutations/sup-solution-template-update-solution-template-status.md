@@ -11,6 +11,12 @@ deprecated: false
 
 Update the status of a solution template.
 
+### Type
+
+#### [`SupSolutionTemplateUpdateSolutionTemplateStatusPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-update-solution-template-status-payload.md) object
+
+Payload associated with updating the status of a solution template.
+
 ```graphql
 supSolutionTemplateUpdateSolutionTemplateStatus(
   input: SupSolutionTemplateUpdateSolutionTemplateStatusInput!
@@ -19,10 +25,4 @@ supSolutionTemplateUpdateSolutionTemplateStatus(
 
 ### Arguments
 
-#### `supSolutionTemplateUpdateSolutionTemplateStatus.input` · [`SupSolutionTemplateUpdateSolutionTemplateStatusInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-solution-template-status-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateUpdateSolutionTemplateStatusPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-update-solution-template-status-payload.md) object supply
-
-Payload associated with updating the status of a solution template.
+#### `input` · [`SupSolutionTemplateUpdateSolutionTemplateStatusInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-solution-template-status-input.md) non-null input

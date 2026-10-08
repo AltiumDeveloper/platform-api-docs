@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Hardware Component](https://altiumdeveloper.github.io/cdm/classes/sys_SdmHardwareComponent/) — Represents a hardware component / part.
+- [Hardware Component](https://w3id.org/altium/cdm/system/SdmHardwareComponent) — Represents a hardware component / part.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmHardwareComponent`](https://w3id.org/altium/cdm/system/SdmHardwareComponent)
 
 ### Member Of
 
@@ -35,12 +36,12 @@ type SysSdmHardwareComponent {
 
 ### Fields
 
-#### `SysSdmHardwareComponent.deviceModelId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `deviceModelId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmHardwareComponent.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmHardwareComponent.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmHardwareComponent.parameters` · [`[SysSdmParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) list object system-design
+#### `parameters` · [`[SysSdmParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md) list object
 
-#### `SysSdmHardwareComponent.sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

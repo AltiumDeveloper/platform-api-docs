@@ -11,6 +11,12 @@ deprecated: false
 
 Update evaluation kit's compatible software project.
 
+### Type
+
+#### [`SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-update-eval-kit-compatible-software-project-payload.md) object
+
+Payload associated with updating a evaluation kit compatible software projects.
+
 ```graphql
 supSoftwareProjectUpdateEvalKitCompatibleSoftwareProject(
   input: SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectInput!
@@ -19,10 +25,4 @@ supSoftwareProjectUpdateEvalKitCompatibleSoftwareProject(
 
 ### Arguments
 
-#### `supSoftwareProjectUpdateEvalKitCompatibleSoftwareProject.input` · [`SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-update-eval-kit-compatible-software-project-input.md) non-null input supply
-
-### Type
-
-#### [`SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-update-eval-kit-compatible-software-project-payload.md) object supply
-
-Payload associated with updating a evaluation kit compatible software projects.
+#### `input` · [`SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-update-eval-kit-compatible-software-project-input.md) non-null input

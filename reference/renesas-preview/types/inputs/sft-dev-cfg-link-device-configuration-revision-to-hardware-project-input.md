@@ -23,8 +23,8 @@ input SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput {
 
 ### Fields
 
-#### `SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput.deviceConfigurationId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `deviceConfigurationId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput.hardwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `hardwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SftDevCfgLinkDeviceConfigurationRevisionToHardwareProjectInput.revisionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `revisionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

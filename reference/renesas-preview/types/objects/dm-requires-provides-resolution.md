@@ -30,10 +30,10 @@ type DmRequiresProvidesResolution {
 
 ### Fields
 
-#### `DmRequiresProvidesResolution.requiresModule` · [`DmFspModule!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md) non-null object renesas-preview
+#### `requiresModule` · [`DmFspModule!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-fsp-module.md) non-null object
 
 The FSP module that declares the interface requirements.
 
-#### `DmRequiresProvidesResolution.requiresToProvidesMapping` · [`[DmRequiresProvidesMapping!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requires-provides-mapping.md) non-null object renesas-preview
+#### `requiresToProvidesMapping` · [`[DmRequiresProvidesMapping!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requires-provides-mapping.md) non-null object
 
 Per-requirement mapping that shows which provided interface satisfies it, if any.

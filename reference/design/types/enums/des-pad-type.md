@@ -24,6 +24,6 @@ enum DesPadType {
 
 ### Values
 
-#### `DesPadType.FREE`
+#### `FREE`
 
-#### `DesPadType.SMD`
+#### `SMD`

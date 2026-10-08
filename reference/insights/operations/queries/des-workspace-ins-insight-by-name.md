@@ -11,6 +11,12 @@ deprecated: false
 
 Gets an insight by its name.
 
+### Type
+
+#### [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) object
+
+Insight aggregated from workspace signals and related resources.
+
 ```graphql
 desWorkspaceInsInsightByName(
   name: String!
@@ -19,10 +25,4 @@ desWorkspaceInsInsightByName(
 
 ### Arguments
 
-#### `desWorkspaceInsInsightByName.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) object insights
-
-Insight aggregated from workspace signals and related resources.
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

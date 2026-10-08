@@ -23,6 +23,6 @@ input DesPartSearchByManufacturerPartIdsOptionsInput {
 
 ### Fields
 
-#### `DesPartSearchByManufacturerPartIdsOptionsInput.partProvidersFilter` · [`DesPartPartProvidersFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-part-providers-filter-input.md) input library-management
+#### `partProvidersFilter` · [`DesPartPartProvidersFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-part-providers-filter-input.md) input
 
 Filters by part providers.

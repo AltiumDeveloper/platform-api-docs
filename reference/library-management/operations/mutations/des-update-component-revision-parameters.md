@@ -11,6 +11,12 @@ deprecated: false
 
 Updates parameters for the specified component (creates a new revision).
 
+### Type
+
+#### [`DesUpdateComponentRevisionParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-revision-parameters-payload.md) object
+
+Payload associated with updating component revision parameters.
+
 ```graphql
 desUpdateComponentRevisionParameters(
   input: DesUpdateComponentRevisionParametersInput!
@@ -19,10 +25,4 @@ desUpdateComponentRevisionParameters(
 
 ### Arguments
 
-#### `desUpdateComponentRevisionParameters.input` · [`DesUpdateComponentRevisionParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-revision-parameters-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateComponentRevisionParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-revision-parameters-payload.md) object library-management
-
-Payload associated with updating component revision parameters.
+#### `input` · [`DesUpdateComponentRevisionParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-revision-parameters-input.md) non-null input

@@ -11,6 +11,12 @@ deprecated: false
 
 Starts a background upload of components with part choices and returns the identifier of the started operation. EXPERIMENTAL: this mutation may change or be removed without notice.
 
+### Type
+
+#### [`DesPartStartUploadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-start-upload-payload.md) object
+
+Payload produced when a parts upload is started.
+
 ```graphql
 desPartUploadComponents(
   input: DesPartUploadComponentsInput!
@@ -19,12 +25,6 @@ desPartUploadComponents(
 
 ### Arguments
 
-#### `desPartUploadComponents.input` · [`DesPartUploadComponentsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upload-components-input.md) non-null input library-management
+#### `input` · [`DesPartUploadComponentsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upload-components-input.md) non-null input
 
 The components to upload.
-
-### Type
-
-#### [`DesPartStartUploadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-start-upload-payload.md) object library-management
-
-Payload produced when a parts upload is started.

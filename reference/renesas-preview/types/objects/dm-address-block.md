@@ -19,7 +19,8 @@ Address block with start, size, and optional registers and peripherals.
 
 ### Common Data Model
 
-- [AddressBlock](https://altiumdeveloper.github.io/cdm/classes/dm_AddressBlock/) — Address block with start, size, and optional registers and peripherals.
+- [AddressBlock](https://w3id.org/altium/cdm/deviceModel/AddressBlock) — Address block with start, size, and optional registers and peripherals.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/AddressBlock`](https://w3id.org/altium/cdm/deviceModel/AddressBlock)
 
 ### Member Of
 
@@ -45,54 +46,54 @@ type DmAddressBlock {
 
 ### Fields
 
-#### `DmAddressBlock.dataSource` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `dataSource` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Source(s) of this block (e.g., RZone, SVD, PinCfg).
 
-#### `DmAddressBlock.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of the block.
 
-#### `DmAddressBlock.memories` · [`[DmAmMemory!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-memory.md) non-null object renesas-preview
+#### `memories` · [`[DmAmMemory!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-memory.md) non-null object
 
 Memory entries contained within this block.
 
-#### `DmAddressBlock.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the block.
 
-#### `DmAddressBlock.peripheralInstance` · [`DmPeripheralInstance`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-instance.md) object renesas-preview
+#### `peripheralInstance` · [`DmPeripheralInstance`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-instance.md) object
 
 Peripheral instance associated with this block.
 
-#### `DmAddressBlock.registers` · [`[DmAmRegister!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register.md) non-null object renesas-preview
+#### `registers` · [`[DmAmRegister!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-am-register.md) non-null object
 
 Registers contained within this block.
 
-#### `DmAddressBlock.size` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar common
+#### `size` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar
 
 Size in bytes.
 
-#### `DmAddressBlock.sizeHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sizeHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Size formatted as hex (0x...).
 
-#### `DmAddressBlock.startAddress` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar common
+#### `startAddress` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar
 
 Start address in bytes.
 
-#### `DmAddressBlock.startAddressHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `startAddressHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Start address formatted as hex (0x...).
 
-#### `DmAddressBlock.type` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `type` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Area type (Memory or Peripheral).
 
-#### `DmAddressBlock.upperAddress` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar common
+#### `upperAddress` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar
 
 Upper address in bytes.
 
-#### `DmAddressBlock.upperAddressHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `upperAddressHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Upper address formatted as hex (0x...).

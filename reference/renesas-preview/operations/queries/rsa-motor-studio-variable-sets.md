@@ -17,6 +17,10 @@ deprecated: false
 
 List variable sets for a project.
 
+### Type
+
+#### [`RsaMotorStudioVariableSet`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioVariableSets(
   projectId: ID!
@@ -25,8 +29,4 @@ rsaMotorStudioVariableSets(
 
 ### Arguments
 
-#### `rsaMotorStudioVariableSets.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`RsaMotorStudioVariableSet`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) object renesas-preview **EXPERIMENTAL**
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

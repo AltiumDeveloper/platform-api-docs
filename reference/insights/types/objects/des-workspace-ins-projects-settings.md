@@ -30,34 +30,34 @@ type DesWorkspaceInsProjectsSettings {
 
 ### Fields
 
-#### `DesWorkspaceInsProjectsSettings.excludedAssemblyVariants` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `excludedAssemblyVariants` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Assembly variants that should be excluded from insights.
 
-#### `DesWorkspaceInsProjectsSettings.excludedBomReleases` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `excludedBomReleases` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Released BOMs excluded from insight consideration.
 
-#### `DesWorkspaceInsProjectsSettings.excludedConsolidatedBomReleases` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `excludedConsolidatedBomReleases` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Consolidated BOM releases excluded from insight consideration.
 
-#### `DesWorkspaceInsProjectsSettings.excludedConsolidatedBoms` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `excludedConsolidatedBoms` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Consolidated BOMs excluded from insight consideration.
 
-#### `DesWorkspaceInsProjectsSettings.excludedProjects` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `excludedProjects` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Projects that should be excluded from insights.
 
-#### `DesWorkspaceInsProjectsSettings.excludedWipBoms` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `excludedWipBoms` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Work-in-progress BOMs excluded from insight consideration.
 
-#### `DesWorkspaceInsProjectsSettings.excludeNonActiveProjects` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `excludeNonActiveProjects` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Exclude non-active projects from insight processing.
 
-#### `DesWorkspaceInsProjectsSettings.projectInactivityThresholdDays` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `projectInactivityThresholdDays` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Number of inactivity days before a project is excluded.

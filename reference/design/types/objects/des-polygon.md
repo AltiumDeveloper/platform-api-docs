@@ -23,6 +23,6 @@ type DesPolygon {
 
 ### Fields
 
-#### `DesPolygon.vertices` · [`[DesPosition2D!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object design
+#### `vertices` · [`[DesPosition2D!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object
 
 Vertices of polygon.

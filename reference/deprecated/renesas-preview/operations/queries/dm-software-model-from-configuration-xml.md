@@ -17,6 +17,12 @@ deprecated: true
 
 > **Deprecated:** For internal use only. Will be removed in next few weeks.
 
+### Type
+
+#### [`DmSoftwareModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-model.md) object **EXPERIMENTAL**
+
+The software model for a device, including the device part number, its ports, and associated software components such as middleware and drivers.
+
 ```graphql
 dmSoftwareModelFromConfigurationXml(
   fileId: String!
@@ -25,10 +31,4 @@ dmSoftwareModelFromConfigurationXml(
 
 ### Arguments
 
-#### `dmSoftwareModelFromConfigurationXml.fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`DmSoftwareModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-software-model.md) object renesas-preview **EXPERIMENTAL**
-
-The software model for a device, including the device part number, its ports, and associated software components such as middleware and drivers.
+#### `fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

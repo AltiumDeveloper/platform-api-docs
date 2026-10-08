@@ -24,10 +24,10 @@ type DesWorkspaceInsInsightConsolidatedBomLink {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightConsolidatedBomLink.created` · [`DesWorkspaceInsUserActionTimestamp!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-action-timestamp.md) non-null object insights
+#### `created` · [`DesWorkspaceInsUserActionTimestamp!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-action-timestamp.md) non-null object
 
 Information about when and by whom the link was created.
 
-#### `DesWorkspaceInsInsightConsolidatedBomLink.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Identifier of the related resource.

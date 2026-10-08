@@ -25,14 +25,14 @@ input GloCusUpdateAssignmentInput {
 
 ### Fields
 
-#### `GloCusUpdateAssignmentInput.script` · [`GloCusUpdateWithScriptAssignmentInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-with-script-assignment-input.md) input customization
+#### `script` · [`GloCusUpdateWithScriptAssignmentInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-with-script-assignment-input.md) input
 
 Represents input value for assignment update with script id.
 
-#### `GloCusUpdateAssignmentInput.scriptFile` · [`GloCusUpdateWithScriptFileAssignmentInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-with-script-file-assignment-input.md) input customization
+#### `scriptFile` · [`GloCusUpdateWithScriptFileAssignmentInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-with-script-file-assignment-input.md) input
 
 Represents input value for assignment update with script file.
 
-#### `GloCusUpdateAssignmentInput.workflow` · [`GloCusUpdateWorkflowAssignmentInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-workflow-assignment-input.md) input customization
+#### `workflow` · [`GloCusUpdateWorkflowAssignmentInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-update-workflow-assignment-input.md) input
 
 Represents input value for assignment update with workflow.

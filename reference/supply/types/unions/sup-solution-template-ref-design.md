@@ -21,8 +21,8 @@ union SupSolutionTemplateRefDesign = SupRefDesign | SupSolutionTemplate
 
 ### Possible types
 
-#### [`SupSolutionTemplateRefDesign.SupRefDesign`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) object supply
+#### [`SupRefDesign`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) object
 
 A reference design model aggregates the relevant documents, files and parts.
 
-#### [`SupSolutionTemplateRefDesign.SupSolutionTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template.md) object supply
+#### [`SupSolutionTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template.md) object

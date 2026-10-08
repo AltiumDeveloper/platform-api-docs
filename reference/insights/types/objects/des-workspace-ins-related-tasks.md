@@ -24,10 +24,10 @@ type DesWorkspaceInsRelatedTasks {
 
 ### Fields
 
-#### `DesWorkspaceInsRelatedTasks.partRequests` · [`[DesWorkspaceInsInsightPartRequestLinkGql!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-part-request-link-gql.md) non-null object insights
+#### `partRequests` · [`[DesWorkspaceInsInsightPartRequestLinkGql!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-part-request-link-gql.md) non-null object
 
 Part requests associated with the insight.
 
-#### `DesWorkspaceInsRelatedTasks.tasks` · [`[DesWorkspaceInsInsightTaskLinkGql!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-task-link-gql.md) non-null object insights
+#### `tasks` · [`[DesWorkspaceInsInsightTaskLinkGql!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-task-link-gql.md) non-null object
 
 Tasks linked to the insight.

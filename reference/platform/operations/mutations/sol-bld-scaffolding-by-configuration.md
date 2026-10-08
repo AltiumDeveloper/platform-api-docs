@@ -11,6 +11,10 @@ deprecated: false
 
 Scaffolds a new solution by provided configuration file.
 
+### Type
+
+#### [`SolBldScaffoldingByConfigurationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-configuration-payload.md) object
+
 ```graphql
 solBldScaffoldingByConfiguration(
   input: SolBldScaffoldingByConfigurationInput!
@@ -19,8 +23,4 @@ solBldScaffoldingByConfiguration(
 
 ### Arguments
 
-#### `solBldScaffoldingByConfiguration.input` · [`SolBldScaffoldingByConfigurationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-configuration-input.md) non-null input platform
-
-### Type
-
-#### [`SolBldScaffoldingByConfigurationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-by-configuration-payload.md) object platform
+#### `input` · [`SolBldScaffoldingByConfigurationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-by-configuration-input.md) non-null input

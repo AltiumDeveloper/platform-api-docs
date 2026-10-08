@@ -24,10 +24,10 @@ type GloScrScriptExecutionEdge {
 
 ### Fields
 
-#### `GloScrScriptExecutionEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `GloScrScriptExecutionEdge.node` · [`GloScrScriptExecution!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md) non-null object customization
+#### `node` · [`GloScrScriptExecution!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md) non-null object
 
 The item at the end of the edge.

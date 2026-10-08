@@ -21,4 +21,4 @@ dmFullStackDeviceModelReportAllDevices: [DmFullStackModelReport]!
 
 ### Type
 
-#### [`DmFullStackModelReport`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-model-report.md) object renesas-preview **EXPERIMENTAL**
+#### [`DmFullStackModelReport`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-full-stack-model-report.md) object **EXPERIMENTAL**

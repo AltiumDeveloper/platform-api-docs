@@ -11,6 +11,12 @@ deprecated: false
 
 Gets ESD Document by identifier.
 
+### Type
+
+#### [`SysEsdDocument`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) object
+
+Represents an ESD (Electronic System Design) document stored in a regional workspace.
+
 ```graphql
 sysEsdDocumentById(
   id: ID!
@@ -19,10 +25,4 @@ sysEsdDocumentById(
 
 ### Arguments
 
-#### `sysEsdDocumentById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SysEsdDocument`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) object system-design
-
-Represents an ESD (Electronic System Design) document stored in a regional workspace.
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

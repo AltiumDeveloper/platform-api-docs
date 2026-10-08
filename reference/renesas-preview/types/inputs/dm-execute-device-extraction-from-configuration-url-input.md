@@ -28,6 +28,6 @@ input DmExecuteDeviceExtractionFromConfigurationUrlInput {
 
 ### Fields
 
-#### `DmExecuteDeviceExtractionFromConfigurationUrlInput.configurationFileUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `configurationFileUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `DmExecuteDeviceExtractionFromConfigurationUrlInput.sessionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sessionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

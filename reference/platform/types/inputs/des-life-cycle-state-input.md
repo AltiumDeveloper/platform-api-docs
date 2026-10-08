@@ -28,26 +28,26 @@ input DesLifeCycleStateInput {
 
 ### Fields
 
-#### `DesLifeCycleStateInput.backgroundColor` · [`DesColorInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-color-input.md) input design
+#### `backgroundColor` · [`DesColorInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-color-input.md) input Design
 
 Background color of life cycle state.
 
-#### `DesLifeCycleStateInput.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of life cycle state.
 
-#### `DesLifeCycleStateInput.foregroundColor` · [`DesColorInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-color-input.md) input design
+#### `foregroundColor` · [`DesColorInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-color-input.md) input Design
 
 Foreground color of life cycle state.
 
-#### `DesLifeCycleStateInput.isInitialState` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isInitialState` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Returns `true` if this is the initial state.
 
-#### `DesLifeCycleStateInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of life cycle state.
 
-#### `DesLifeCycleStateInput.stateIndex` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `stateIndex` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 State index of life cycle state.

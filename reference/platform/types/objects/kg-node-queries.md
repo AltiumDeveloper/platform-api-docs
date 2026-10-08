@@ -28,6 +28,6 @@ type KgNodeQueries {
 
 ### Fields
 
-#### `KgNodeQueries.usedBy` · [`[KgNode!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) non-null interface platform
+#### `usedBy` · [`[KgNode!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) non-null interface
 
-#### `KgNodeQueries.uses` · [`[KgNode!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) non-null interface platform
+#### `uses` · [`[KgNode!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) non-null interface

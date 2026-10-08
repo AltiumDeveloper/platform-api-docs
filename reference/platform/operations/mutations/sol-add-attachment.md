@@ -11,6 +11,10 @@ deprecated: false
 
 Adds an attachment to the solution.
 
+### Type
+
+#### [`SolAddAttachmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-add-attachment-payload.md) object
+
 ```graphql
 solAddAttachment(
   input: SolAddAttachmentInput!
@@ -19,8 +23,4 @@ solAddAttachment(
 
 ### Arguments
 
-#### `solAddAttachment.input` · [`SolAddAttachmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-add-attachment-input.md) non-null input platform
-
-### Type
-
-#### [`SolAddAttachmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-add-attachment-payload.md) object platform
+#### `input` · [`SolAddAttachmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-add-attachment-input.md) non-null input

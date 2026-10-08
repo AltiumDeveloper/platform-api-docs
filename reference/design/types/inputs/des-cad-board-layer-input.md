@@ -31,38 +31,38 @@ input DesCadBoardLayerInput {
 
 ### Fields
 
-#### `DesCadBoardLayerInput.layerCategory` · [`DesCadBoardLayerCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-category.md) enum design
+#### `layerCategory` · [`DesCadBoardLayerCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-category.md) enum
 
 CAD board layer category.
 
-#### `DesCadBoardLayerInput.layerComponentPlacement` · [`DesCadBoardLayerComponentPlacement`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-component-placement.md) enum design
+#### `layerComponentPlacement` · [`DesCadBoardLayerComponentPlacement`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-component-placement.md) enum
 
 CAD board layer component placement.
 
-#### `DesCadBoardLayerInput.layerDielectricType` · [`DesCadBoardLayerDielectricType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-dielectric-type.md) enum design
+#### `layerDielectricType` · [`DesCadBoardLayerDielectricType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-dielectric-type.md) enum
 
 CAD board layer dielectric type.
 
-#### `DesCadBoardLayerInput.layerPhysicalCategory` · [`DesCadBoardLayerPhysicalCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-physical-category.md) enum design
+#### `layerPhysicalCategory` · [`DesCadBoardLayerPhysicalCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-physical-category.md) enum
 
 CAD board layer physical category.
 
-#### `DesCadBoardLayerInput.layerPosition` · [`DesCadBoardLayerPosition`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-position.md) enum design
+#### `layerPosition` · [`DesCadBoardLayerPosition`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-position.md) enum
 
 CAD board layer position.
 
-#### `DesCadBoardLayerInput.layerType` · [`DesCadBoardLayerType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-type.md) enum design
+#### `layerType` · [`DesCadBoardLayerType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-cad-board-layer-type.md) enum
 
 CAD board layer type.
 
-#### `DesCadBoardLayerInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 CAD board layer name.
 
-#### `DesCadBoardLayerInput.platformLayerId` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `platformLayerId` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 CAD board layer platform layer identifier.
 
-#### `DesCadBoardLayerInput.thickness` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `thickness` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 CAD board layer thickness.

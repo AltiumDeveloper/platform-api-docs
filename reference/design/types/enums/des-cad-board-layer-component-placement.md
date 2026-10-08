@@ -25,8 +25,8 @@ enum DesCadBoardLayerComponentPlacement {
 
 ### Values
 
-#### `DesCadBoardLayerComponentPlacement.BODY_DOWN`
+#### `BODY_DOWN`
 
-#### `DesCadBoardLayerComponentPlacement.BODY_UP`
+#### `BODY_UP`
 
-#### `DesCadBoardLayerComponentPlacement.NONE`
+#### `NONE`

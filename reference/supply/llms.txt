@@ -1,7 +1,7 @@
-# Supply — Altium Platform API
+# Supply — Altium 365 API
 > Parts, offers, part families, reference designs, evaluation kits, software projects and solution templates.
 
-Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/schema.graphql) (~29089 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/overview.md).
+Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/schema.graphql) (~29088 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/overview.md).
 
 ## Entities
 - [SupEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md): Evaluation Kit — A vendor evaluation kit in the supply catalog, described by its associated devices, its reference designs (including a main one) and the software projects compatible with it. GRID `grid:supply::platform:eval-kit/{id}`. Via: supEvalKitById, supEvalKitsByIds, supEvalKitDetailsByRefDesignId, supEvalKits, supEvalKitSearch, …

@@ -11,6 +11,12 @@ deprecated: false
 
 Upserts custom parts.
 
+### Type
+
+#### [`DesPartUpsertCustomPartsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upsert-custom-parts-payload.md) object
+
+Represents the result of upserting custom parts.
+
 ```graphql
 desPartUpsertCustomParts(
   input: DesPartUpsertCustomPartsInput!
@@ -19,12 +25,6 @@ desPartUpsertCustomParts(
 
 ### Arguments
 
-#### `desPartUpsertCustomParts.input` · [`DesPartUpsertCustomPartsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upsert-custom-parts-input.md) non-null input library-management
+#### `input` · [`DesPartUpsertCustomPartsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-upsert-custom-parts-input.md) non-null input
 
 The custom parts to upsert.
-
-### Type
-
-#### [`DesPartUpsertCustomPartsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upsert-custom-parts-payload.md) object library-management
-
-Represents the result of upserting custom parts.

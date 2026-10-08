@@ -11,7 +11,9 @@ deprecated: false
 
 ### Common Data Model
 
-- [User Group](https://altiumdeveloper.github.io/cdm/classes/plt_UserGroup/) — A named group of users within an organization's Company Account, managed in the Company Dashboard. Licenses can be allocated to a group so that its members can use them, and the Group Administrators system group gives its members Dashboard administration rights. A user can belong to any number of groups, groups can be provisioned from an identity provider via SCIM, and they are distinct from the groups defined inside a Workspace.
+- [User Group](https://w3id.org/altium/cdm/platform/UserGroup) — A named group of users within an organization's Company Account, managed in the Company Dashboard. Licenses can be allocated to a group so that its members can use them, and the Group Administrators system group gives its members Dashboard administration rights. A user can belong to any number of groups, groups can be provisioned from an identity provider via SCIM, and they are distinct from the groups defined inside a Workspace.
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/UserGroup`](https://w3id.org/altium/cdm/platform/UserGroup)
   - GRID: `grid:global::platform:group/{id}`
 
 ### Member Of
@@ -31,26 +33,26 @@ type GloUserGroup {
 
 ### Fields
 
-#### `GloUserGroup.groupMemberCount` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `groupMemberCount` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Amount og group users.
 
-#### `GloUserGroup.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Group global resource identifier.
 
-#### `GloUserGroup.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Name of the group.
 
-#### `GloUserGroup.organization` · [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) object platform
+#### `organization` · [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) object
 
 Organization to which group belongs to.
 
-#### `GloUserGroup.userGroupId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `userGroupId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Group identifier.
 
-#### `GloUserGroup.users` · [`[GloUser]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md) list object platform
+#### `users` · [`[GloUser]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-user.md) list object
 
 List of users in the group.

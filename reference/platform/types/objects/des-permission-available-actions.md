@@ -22,10 +22,10 @@ type DesPermissionAvailableActions {
 
 ### Fields
 
-#### `DesPermissionAvailableActions.canBeRemoved` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `canBeRemoved` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the permission can be removed.
 
-#### `DesPermissionAvailableActions.canBeSetToReadOnly` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `canBeSetToReadOnly` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the permission can be set as read-only.

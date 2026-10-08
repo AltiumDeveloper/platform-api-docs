@@ -17,6 +17,10 @@ deprecated: false
 
 Registers a new knowledge graph node.
 
+### Type
+
+#### [`KgAddNodePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-add-node-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 kgAddNode(
   input: KgAddNodeInput!
@@ -25,8 +29,4 @@ kgAddNode(
 
 ### Arguments
 
-#### `kgAddNode.input` · [`KgAddNodeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-add-node-input.md) non-null input platform
-
-### Type
-
-#### [`KgAddNodePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-add-node-payload.md) object platform **EXPERIMENTAL**
+#### `input` · [`KgAddNodeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-add-node-input.md) non-null input

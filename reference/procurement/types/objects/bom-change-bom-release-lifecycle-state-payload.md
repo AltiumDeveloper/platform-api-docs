@@ -22,6 +22,6 @@ type BomChangeBomReleaseLifecycleStatePayload {
 
 ### Fields
 
-#### `BomChangeBomReleaseLifecycleStatePayload.bomRelease` · [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) object procurement
+#### `bomRelease` · [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) object
 
-#### `BomChangeBomReleaseLifecycleStatePayload.errors` · [`[BomError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-error.md) non-null interface procurement
+#### `errors` · [`[BomError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-error.md) non-null interface

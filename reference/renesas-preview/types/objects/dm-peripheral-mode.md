@@ -19,7 +19,8 @@ An operational mode for a peripheral instance that groups one or more operation 
 
 ### Common Data Model
 
-- [PeripheralMode](https://altiumdeveloper.github.io/cdm/classes/dm_PeripheralMode/) — A specific mode that a peripheral instance can fulfill,
+- [PeripheralMode](https://w3id.org/altium/cdm/deviceModel/PeripheralMode) — A specific mode that a peripheral instance can fulfill,
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/PeripheralMode`](https://w3id.org/altium/cdm/deviceModel/PeripheralMode)
 
 ### Member Of
 
@@ -35,14 +36,14 @@ type DmPeripheralMode {
 
 ### Fields
 
-#### `DmPeripheralMode.display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Display string representing the peripheral mode.
 
-#### `DmPeripheralMode.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the peripheral mode (e.g., custom, async, sync).
 
-#### `DmPeripheralMode.opModes` · [`[DmOpMode!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-op-mode.md) non-null object renesas-preview
+#### `opModes` · [`[DmOpMode!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-op-mode.md) non-null object
 
 Concrete operation mode configurations available within this peripheral mode.

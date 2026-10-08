@@ -23,6 +23,6 @@ type DesUpdateProjectOwnerPayload {
 
 ### Fields
 
-#### `DesUpdateProjectOwnerPayload.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Project identifier.

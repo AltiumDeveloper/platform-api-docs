@@ -19,22 +19,22 @@ union PlatformWorkspaceTokenCreateError = PlatformTokenNameExistsError | Platfor
 
 ### Possible types
 
-#### [`PlatformWorkspaceTokenCreateError.PlatformTokenNameExistsError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-name-exists-error.md) object platform
+#### [`PlatformTokenNameExistsError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-name-exists-error.md) object
 
-Error that occurs when the input `PlatformToken` name already exists.
+Error that occurs when the input [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) name already exists.
 
-#### [`PlatformWorkspaceTokenCreateError.PlatformTokenWorkspaceAccessDeniedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-workspace-access-denied-error.md) object platform
+#### [`PlatformTokenWorkspaceAccessDeniedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-workspace-access-denied-error.md) object
 
-Error that occurs when access to a workspace is denied for a `PlatformToken`.
+Error that occurs when access to a workspace is denied for a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md).
 
-#### [`PlatformWorkspaceTokenCreateError.PlatformTokenGenerationError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-generation-error.md) object platform
+#### [`PlatformTokenGenerationError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-generation-error.md) object
 
-Error that occurs when the `PlatformToken` has not been successfully generated.
+Error that occurs when the [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) has not been successfully generated.
 
-#### [`PlatformWorkspaceTokenCreateError.PlatformTokenQuotaExceededError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-quota-exceeded-error.md) object platform
+#### [`PlatformTokenQuotaExceededError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-quota-exceeded-error.md) object
 
-Error that occurs when the maximum number of `PlatformToken` for a workspace has been reached.
+Error that occurs when the maximum number of [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) for a workspace has been reached.
 
-#### [`PlatformWorkspaceTokenCreateError.PlatformTokenInvalidTokenLifetimeError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-invalid-token-lifetime-error.md) object platform
+#### [`PlatformTokenInvalidTokenLifetimeError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-invalid-token-lifetime-error.md) object
 
-Error returned by the Token API when an input token lifetime for a new `PlatformToken` is invalid.
+Error returned by the Token API when an input token lifetime for a new [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) is invalid.

@@ -13,6 +13,12 @@ deprecated: true
 
 Get the specified BOM.
 
+### Type
+
+#### [`BomWip`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md) object
+
+Represents a work-in-progress BOM (i.e., it is mutable and could change dynamically).
+
 ```graphql
 bomBom(
   bomId: String!
@@ -21,12 +27,6 @@ bomBom(
 
 ### Arguments
 
-#### `bomBom.bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the BOM.
-
-### Type
-
-#### [`BomWip`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md) object procurement
-
-Represents a work-in-progress BOM (i.e., it is mutable and could change dynamically).

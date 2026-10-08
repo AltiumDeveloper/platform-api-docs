@@ -24,10 +24,10 @@ type DesPartGlobalSearchFacets {
 
 ### Fields
 
-#### `DesPartGlobalSearchFacets.attributeFacets` · [`[DesPartSearchAttributeFacet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-attribute-facet.md) non-null object library-management
+#### `attributeFacets` · [`[DesPartSearchAttributeFacet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-attribute-facet.md) non-null object
 
 The attribute facets.
 
-#### `DesPartGlobalSearchFacets.fixedFacets` · [`DesPartGlobalSearchFixedFacets!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-fixed-facets.md) non-null object library-management
+#### `fixedFacets` · [`DesPartGlobalSearchFixedFacets!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-fixed-facets.md) non-null object
 
 The fixed facets.

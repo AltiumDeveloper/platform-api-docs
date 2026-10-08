@@ -11,6 +11,12 @@ deprecated: true
 
 > **Deprecated:** Use `DesFolderByFolderId` instead.
 
+### Type
+
+#### [`DesFolder`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md) object
+
+Information about a specific folder.
+
 ```graphql
 desFolderById(
   id: ID!
@@ -19,12 +25,6 @@ desFolderById(
 
 ### Arguments
 
-#### `desFolderById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The node identifier for a folder.
-
-### Type
-
-#### [`DesFolder`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md) object platform
-
-Information about a specific folder.

@@ -26,18 +26,18 @@ type DesReuseBlockConnection {
 
 ### Fields
 
-#### `DesReuseBlockConnection.edges` · [`[DesReuseBlockEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block-edge.md) list object library-management
+#### `edges` · [`[DesReuseBlockEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block-edge.md) list object
 
 A list of edges.
 
-#### `DesReuseBlockConnection.nodes` · [`[DesReuseBlock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) list object library-management
+#### `nodes` · [`[DesReuseBlock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) list object
 
 A flattened list of the nodes.
 
-#### `DesReuseBlockConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesReuseBlockConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

@@ -24,10 +24,10 @@ enum DesProjectRepositoryType {
 
 ### Values
 
-#### `DesProjectRepositoryType.EXTERNAL`
+#### `EXTERNAL`
 
 The repository is hosted outside Altium 365.
 
-#### `DesProjectRepositoryType.INTERNAL`
+#### `INTERNAL`
 
 The repository is hosted inside Altium 365.

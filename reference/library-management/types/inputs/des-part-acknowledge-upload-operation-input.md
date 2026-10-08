@@ -23,6 +23,6 @@ input DesPartAcknowledgeUploadOperationInput {
 
 ### Fields
 
-#### `DesPartAcknowledgeUploadOperationInput.operationId` · [`UUID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) non-null scalar common
+#### `operationId` · [`UUID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/uuid.md) non-null scalar
 
-The operation to acknowledge, as returned by `desPartUploadOperation`.
+The operation to acknowledge, as returned by [`desPartUploadOperation`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/queries/des-part-upload-operation.md).

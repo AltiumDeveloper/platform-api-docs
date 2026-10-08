@@ -36,38 +36,38 @@ type DesUser {
 
 ### Fields
 
-#### `DesUser.email` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `email` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Null if the user no longer exists.
 
-#### `DesUser.firstName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `firstName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Null if the user no longer exists.
 
-#### `DesUser.globalUserId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `globalUserId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The global user identifier. Common for this user across all workspaces.
 
-#### `DesUser.groups` · [`[DesUserGroup!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user-group.md) list object platform
+#### `groups` · [`[DesUserGroup!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user-group.md) list object
 
 Null if the user no longer exists.
 
-#### `DesUser.lastName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `lastName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Null if the user no longer exists.
 
-#### `DesUser.pictureUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `pictureUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Null if the user no longer exists.
 
-##### `DesUser.pictureUrl.size` · [`DesUserPictureSize`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-user-picture-size.md) enum platform
+##### `size` · [`DesUserPictureSize`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-user-picture-size.md) enum
 
 The size of the picture to retrieve.
 
-#### `DesUser.userId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `userId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The workspace specific user identifier.
 
-#### `DesUser.userName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `userName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Null if the user no longer exists.

@@ -34,26 +34,26 @@ type DesignDataCombinedErcCheckResult {
 
 ### Fields
 
-#### `DesignDataCombinedErcCheckResult.customRuleCheck` · [`RuleCheckExecutionPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md) object design
+#### `customRuleCheck` · [`RuleCheckExecutionPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md) object
 
 The custom rule check, when the result originates from a custom check.
 
-#### `DesignDataCombinedErcCheckResult.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the ERC check.
 
-#### `DesignDataCombinedErcCheckResult.origin` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `origin` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The source of the ERC check result. Known values: CUSTOM, DEFAULT. New values may be added; clients must tolerate unknown values.
 
-#### `DesignDataCombinedErcCheckResult.outcome` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `outcome` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The outcome of the ERC check. Known values: PASSED, SKIPPED, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values.
 
-#### `DesignDataCombinedErcCheckResult.ruleCheckType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `ruleCheckType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The type of the ERC check.
 
-#### `DesignDataCombinedErcCheckResult.violations` · [`[RuleViolation!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation.md) non-null object design
+#### `violations` · [`[RuleViolation!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation.md) non-null object
 
 The violations reported by the ERC check.

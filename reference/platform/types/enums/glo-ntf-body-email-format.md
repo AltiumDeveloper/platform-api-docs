@@ -22,6 +22,6 @@ enum GloNtfBodyEmailFormat {
 
 ### Values
 
-#### `GloNtfBodyEmailFormat.HTML`
+#### `HTML`
 
-#### `GloNtfBodyEmailFormat.PLAIN`
+#### `PLAIN`

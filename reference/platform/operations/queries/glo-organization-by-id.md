@@ -11,6 +11,10 @@ deprecated: false
 
 Retrieves an organization by its global resource identifier.
 
+### Type
+
+#### [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) object
+
 ```graphql
 gloOrganizationById(
   organizationId: ID!
@@ -19,8 +23,4 @@ gloOrganizationById(
 
 ### Arguments
 
-#### `gloOrganizationById.organizationId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) object platform
+#### `organizationId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

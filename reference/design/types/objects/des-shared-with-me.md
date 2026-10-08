@@ -30,28 +30,28 @@ type DesSharedWithMe {
 
 ### Fields
 
-#### `DesSharedWithMe.manufacturePackages` · [`[DesManufacturePackage!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-manufacture-package.md) non-null object design
+#### `manufacturePackages` · [`[DesManufacturePackage!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-manufacture-package.md) non-null object
 
 Manufacture packages shared with user.
 
-#### `DesSharedWithMe.projects` · [`DesSharedWithMeProjectInfoConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info-connection.md) object design
+#### `projects` · [`DesSharedWithMeProjectInfoConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info-connection.md) object
 
 Projects shared with user.
 
-##### `DesSharedWithMe.projects.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-##### `DesSharedWithMe.projects.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-##### `DesSharedWithMe.projects.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-##### `DesSharedWithMe.projects.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-##### `DesSharedWithMe.projects.where` · [`DesSharedWithMeProjectInfoFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-shared-with-me-project-info-filter-input.md) input design
+##### `where` · [`DesSharedWithMeProjectInfoFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-shared-with-me-project-info-filter-input.md) input

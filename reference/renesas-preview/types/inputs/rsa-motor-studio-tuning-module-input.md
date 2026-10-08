@@ -29,8 +29,8 @@ input RsaMotorStudioTuningModuleInput {
 
 ### Fields
 
-#### `RsaMotorStudioTuningModuleInput.moduleType` · [`TuningModuleType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-module-type.md) non-null enum renesas-preview
+#### `moduleType` · [`TuningModuleType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-module-type.md) non-null enum
 
-#### `RsaMotorStudioTuningModuleInput.parameters` · [`[RsaMotorStudioTuningParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-tuning-parameter-input.md) non-null input renesas-preview
+#### `parameters` · [`[RsaMotorStudioTuningParameterInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-tuning-parameter-input.md) non-null input
 
-#### `RsaMotorStudioTuningModuleInput.path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

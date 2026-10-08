@@ -17,4 +17,4 @@ solBldScaffoldingWithEmptyEsd: SolBldScaffoldingWithEmptyEsdPayload!
 
 ### Type
 
-#### [`SolBldScaffoldingWithEmptyEsdPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-with-empty-esd-payload.md) object platform
+#### [`SolBldScaffoldingWithEmptyEsdPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-with-empty-esd-payload.md) object

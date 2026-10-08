@@ -31,12 +31,12 @@ enum TuningModuleType {
 
 ### Values
 
-#### `TuningModuleType.BRUSHLESS_THREE_PHASE_MOTOR`
+#### `BRUSHLESS_THREE_PHASE_MOTOR`
 
-#### `TuningModuleType.MOTOR`
+#### `MOTOR`
 
-#### `TuningModuleType.PI_CURRENT_CONTROLLER`
+#### `PI_CURRENT_CONTROLLER`
 
-#### `TuningModuleType.PI_SPEED_CONTROLLER`
+#### `PI_SPEED_CONTROLLER`
 
-#### `TuningModuleType.THREE_PHASE_INVERTER`
+#### `THREE_PHASE_INVERTER`

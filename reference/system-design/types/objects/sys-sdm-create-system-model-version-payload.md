@@ -27,4 +27,4 @@ type SysSdmCreateSystemModelVersionPayload {
 
 ### Fields
 
-#### `SysSdmCreateSystemModelVersionPayload.sysSdmSystemModelVersion` · [`SysSdmSystemModelVersion`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) object system-design
+#### `sysSdmSystemModelVersion` · [`SysSdmSystemModelVersion`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) object

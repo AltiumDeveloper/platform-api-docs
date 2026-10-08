@@ -22,10 +22,10 @@ input SupSolutionTemplateRemoveKeyFeatureGroupAttributeInput {
 
 ### Fields
 
-#### `SupSolutionTemplateRemoveKeyFeatureGroupAttributeInput.attributeNames` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `attributeNames` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 The list of attributes need to remove out of key feature group. If list is empty, all attributes in key feature group wil be removed.
 
-#### `SupSolutionTemplateRemoveKeyFeatureGroupAttributeInput.keyFeatureGroupTitle` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `keyFeatureGroupTitle` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The title of key feature group need to remove of out a solution template.

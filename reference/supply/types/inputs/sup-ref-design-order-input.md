@@ -29,30 +29,30 @@ input SupRefDesignOrderInput {
 
 ### Fields
 
-#### `SupRefDesignOrderInput.createdAt` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum supply
+#### `createdAt` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum
 
 Sort by creation date in the specified direction.
 
-#### `SupRefDesignOrderInput.releaseDate` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum supply
+#### `releaseDate` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum
 
 Sort by release date in the specified direction.
 
-#### `SupRefDesignOrderInput.stableName` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum supply
+#### `stableName` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum
 
 Sort by stable name in the specified direction.
 
-#### `SupRefDesignOrderInput.subtitle` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum supply
+#### `subtitle` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum
 
 Sort by subtitle in the specified direction.
 
-#### `SupRefDesignOrderInput.title` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum supply
+#### `title` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum
 
 Sort by title in the specified direction.
 
-#### `SupRefDesignOrderInput.type` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum supply
+#### `type` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum
 
 Sort by type in the specified direction.
 
-#### `SupRefDesignOrderInput.updatedAt` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum supply
+#### `updatedAt` · [`SupRefSortDirection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-sort-direction.md) enum
 
 Sort by last update date in the specified direction.

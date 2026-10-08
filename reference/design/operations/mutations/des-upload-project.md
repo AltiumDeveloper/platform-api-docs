@@ -11,6 +11,12 @@ deprecated: false
 
 Uploads the project zip file.
 
+### Type
+
+#### [`DesUploadProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-project-payload.md) object
+
+Payload associated with uploading project.
+
 ```graphql
 desUploadProject(
   input: DesUploadProjectInput!
@@ -19,10 +25,4 @@ desUploadProject(
 
 ### Arguments
 
-#### `desUploadProject.input` · [`DesUploadProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-project-input.md) non-null input design
-
-### Type
-
-#### [`DesUploadProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-upload-project-payload.md) object design
-
-Payload associated with uploading project.
+#### `input` · [`DesUploadProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-upload-project-input.md) non-null input

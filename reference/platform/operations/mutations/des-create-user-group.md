@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a new user group.
 
+### Type
+
+#### [`DesCreateUserGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-user-group-payload.md) object
+
+Payload associated with creating a user group.
+
 ```graphql
 desCreateUserGroup(
   input: DesCreateUserGroupInput!
@@ -19,10 +25,4 @@ desCreateUserGroup(
 
 ### Arguments
 
-#### `desCreateUserGroup.input` · [`DesCreateUserGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-user-group-input.md) non-null input platform
-
-### Type
-
-#### [`DesCreateUserGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-create-user-group-payload.md) object platform
-
-Payload associated with creating a user group.
+#### `input` · [`DesCreateUserGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-create-user-group-input.md) non-null input

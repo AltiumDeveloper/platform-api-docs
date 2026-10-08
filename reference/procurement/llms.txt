@@ -1,7 +1,7 @@
-# Procurement — Altium Platform API
+# Procurement — Altium 365 API
 > Managed BOMs, BOM releases and BOM items.
 
-Concepts: [procurement](https://altiumdeveloper.github.io/cdm/subsets/procurement/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/schema.graphql) (~7437 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/overview.md).
+Concepts: [procurement](https://altiumdeveloper.github.io/cdm/subsets/procurement/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/schema.graphql) (~7436 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/overview.md).
 
 ## Entities
 - [BomIssue](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-issue.md): BOM Issue — A problem found when a BOM is analysed, usually against a particular BOM line: for example an unknown part number, a duplicated designator, or a part that is deprecated, low in stock or not compliant… Via: BomItem.issues, BomItemAlternate.issues, BomItemSubstitute.issues, …

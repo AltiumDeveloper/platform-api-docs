@@ -17,6 +17,6 @@ desWorkspaceInsNotificationSettings: DesWorkspaceInsNotificationSettings!
 
 ### Type
 
-#### [`DesWorkspaceInsNotificationSettings`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-notification-settings.md) object insights
+#### [`DesWorkspaceInsNotificationSettings`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-notification-settings.md) object
 
 Notification settings defined for the current user.

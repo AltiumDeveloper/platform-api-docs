@@ -9,11 +9,11 @@ deprecated: false
 
 # PlatformTokenDeleteRefreshTokenSecretError
 
-Error returned by the Token API when a client secret for a `PlatformWorkspaceRefreshToken` could not be deleted.
+Error returned by the Token API when a client secret for a [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) could not be deleted.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type PlatformTokenDeleteRefreshTokenSecretError implements Error {
 
 ### Fields
 
-#### `PlatformTokenDeleteRefreshTokenSecretError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

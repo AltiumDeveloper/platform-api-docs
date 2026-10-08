@@ -13,7 +13,9 @@ Information about a component template.
 
 ### Common Data Model
 
-- [Component Template](https://altiumdeveloper.github.io/cdm/classes/lib_ComponentTemplate/) — Component Template defines a reusable blueprint for creating and managing electronic components with consistent parameters, metadata, and lifecycle policies.
+- [Component Template](https://w3id.org/altium/cdm/library/ComponentTemplate) — Component Template defines a reusable blueprint for creating and managing electronic components with consistent parameters, metadata, and lifecycle policies.
+
+  - IRI: [`https://w3id.org/altium/cdm/library/ComponentTemplate`](https://w3id.org/altium/cdm/library/ComponentTemplate)
   - GRID: `grid:workspace:{workspace-id}:library:component-template/{id}`
 
 ### Returned By
@@ -26,7 +28,7 @@ Information about a component template.
 
 ### Interfaces
 
-#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface common
+#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface
 
 The node interface is implemented by entities that have a global unique identifier.
 
@@ -42,22 +44,22 @@ type DesComponentTemplate implements Node {
 
 ### Fields
 
-#### `DesComponentTemplate.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Component template description.
 
-#### `DesComponentTemplate.folder` · [`DesFolder`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md) object platform
+#### `folder` · [`DesFolder`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-folder.md) object Platform
 
 The folder containing this component template.
 
-#### `DesComponentTemplate.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-The node identifier (used by `desComponentTemplateById`).
+The node identifier (used by [`desComponentTemplateById`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/queries/des-component-template-by-id.md)).
 
-#### `DesComponentTemplate.latestRevision` · [`DesComponentTemplateRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-revision.md) non-null object library-management
+#### `latestRevision` · [`DesComponentTemplateRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-revision.md) non-null object
 
 Component template latest revision.
 
-#### `DesComponentTemplate.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Component template name.

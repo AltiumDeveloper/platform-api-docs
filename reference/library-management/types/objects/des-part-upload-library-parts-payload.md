@@ -24,10 +24,10 @@ type DesPartUploadLibraryPartsPayload {
 
 ### Fields
 
-#### `DesPartUploadLibraryPartsPayload.errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object library-management
+#### `errors` · [`[DesPartErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.
 
-#### `DesPartUploadLibraryPartsPayload.results` · [`[DesPartUploadLibraryPartOperationResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-library-part-operation-result.md) non-null object library-management
+#### `results` · [`[DesPartUploadLibraryPartOperationResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-library-part-operation-result.md) non-null object
 
 A collection of results for each library part.

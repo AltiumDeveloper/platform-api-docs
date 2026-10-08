@@ -28,26 +28,26 @@ type DesManufacturerPart {
 
 ### Fields
 
-#### `DesManufacturerPart.companyName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `companyName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The manufacturer company name.
 
-#### `DesManufacturerPart.octopartId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `octopartId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The Octopart identifier.
 
-#### `DesManufacturerPart.parameters` · [`[DesManufacturerPartParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-manufacturer-part-parameter.md) non-null object library-management
+#### `parameters` · [`[DesManufacturerPartParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-manufacturer-part-parameter.md) non-null object
 
 The manufacturer part parameters.
 
-#### `DesManufacturerPart.partNumber` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partNumber` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The part number (MPN).
 
-#### `DesManufacturerPart.priority` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `priority` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Manufacturer part priority.
 
-#### `DesManufacturerPart.supplierParts` · [`[DesSupplierPart!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-supplier-part.md) non-null object library-management
+#### `supplierParts` · [`[DesSupplierPart!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-supplier-part.md) non-null object
 
 The list of supplier parts associated with this manufacturer part.

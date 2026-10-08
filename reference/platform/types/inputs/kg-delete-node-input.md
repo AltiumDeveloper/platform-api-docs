@@ -28,10 +28,10 @@ input KgDeleteNodeInput {
 
 ### Fields
 
-#### `KgDeleteNodeInput.hardDelete` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `hardDelete` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 When false, the entity is moved to the Vault recycle bin and can be restored; when true, it is permanently deleted.
 
-#### `KgDeleteNodeInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The grid identifier of the entity to delete.

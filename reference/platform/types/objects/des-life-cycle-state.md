@@ -13,7 +13,8 @@ Information about the life cycle state.
 
 ### Common Data Model
 
-- [Lifecycle State](https://altiumdeveloper.github.io/cdm/classes/plt_LifecycleState/) — A named point in an Item Revision's lifecycle (e.g. Planned, New From Design, In Production, Obsolete) that shows its status from a business perspective. Each state's properties include whether revisions in that state are shown in the Explorer panel and whether they may be used in designs; a revision moves to another state only through a transition defined in its lifecycle definition.
+- [Lifecycle State](https://w3id.org/altium/cdm/platform/LifecycleState) — A named point in an Item Revision's lifecycle (e.g. Planned, New From Design, In Production, Obsolete) that shows its status from a business perspective. Each state's properties include whether revisions in that state are shown in the Explorer panel and whether they may be used in designs; a revision moves to another state only through a transition defined in its lifecycle definition.
+  - IRI: [`https://w3id.org/altium/cdm/platform/LifecycleState`](https://w3id.org/altium/cdm/platform/LifecycleState)
 
 ### Member Of
 
@@ -39,54 +40,54 @@ type DesLifeCycleState {
 
 ### Fields
 
-#### `DesLifeCycleState.backgroundColor` · [`DesColor!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-color.md) non-null object design
+#### `backgroundColor` · [`DesColor!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-color.md) non-null object Design
 
 The background color for this life cycle state.
 
-#### `DesLifeCycleState.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` this life cycle state was created.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) this life cycle state was created.
 
-#### `DesLifeCycleState.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 The user this life cycle state was created by.
 
-#### `DesLifeCycleState.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The description of this life cycle state.
 
-#### `DesLifeCycleState.foregroundColor` · [`DesColor!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-color.md) non-null object design
+#### `foregroundColor` · [`DesColor!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-color.md) non-null object Design
 
 The foreground color for this life cycle state.
 
-#### `DesLifeCycleState.isAllowedInDesign` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isAllowedInDesign` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Determines whether items in this life cycle state are allowed to be used in a design.
 
-#### `DesLifeCycleState.isInitialState` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isInitialState` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Determines whether this life cycle state is the first of all the states for the associated life cycle definition.
 
-#### `DesLifeCycleState.isVisible` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isVisible` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Determines whether this life cycle state is visible in the Altium Designer vault panel.
 
-#### `DesLifeCycleState.lifeCycleStateId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `lifeCycleStateId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The reference identifier for this life cycle state.
 
-#### `DesLifeCycleState.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of this life cycle state.
 
-#### `DesLifeCycleState.stateIndex` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `stateIndex` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The state index for this life cycle state.
 
-#### `DesLifeCycleState.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` this life cycle state was last updated at.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) this life cycle state was last updated at.
 
-#### `DesLifeCycleState.updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object
 
 The user this life cycle state was last updated by.

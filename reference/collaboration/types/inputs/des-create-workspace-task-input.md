@@ -24,10 +24,10 @@ input DesCreateWorkspaceTaskInput {
 
 ### Fields
 
-#### `DesCreateWorkspaceTaskInput.task` · [`DesCreateTaskInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-task-input.md) non-null input collaboration
+#### `task` · [`DesCreateTaskInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-task-input.md) non-null input
 
 The new task data.
 
-#### `DesCreateWorkspaceTaskInput.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The workspace URL.

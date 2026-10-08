@@ -23,6 +23,6 @@ type GloRemoveUsersFromGroupPayload {
 
 ### Fields
 
-#### `GloRemoveUsersFromGroupPayload.status` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `status` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Status.

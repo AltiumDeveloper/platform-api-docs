@@ -25,14 +25,14 @@ type BomItemElementAttribute {
 
 ### Fields
 
-#### `BomItemElementAttribute.attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ID of the attribute.
 
-#### `BomItemElementAttribute.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the attribute.
 
-#### `BomItemElementAttribute.type` · [`BomItemElementCustomAttributeType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-item-element-custom-attribute-type.md) non-null enum procurement
+#### `type` · [`BomItemElementCustomAttributeType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-item-element-custom-attribute-type.md) non-null enum
 
 Type of the attribute. Please note that the actual attribute values may have different types.

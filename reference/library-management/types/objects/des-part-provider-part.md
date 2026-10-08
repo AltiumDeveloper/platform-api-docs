@@ -33,46 +33,46 @@ type DesPartProviderPart {
 
 ### Fields
 
-#### `DesPartProviderPart.bestImage` · [`DesPartBestImage`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-best-image.md) object library-management
+#### `bestImage` · [`DesPartBestImage`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-best-image.md) object
 
 The image for the part.
 
-#### `DesPartProviderPart.category` · [`DesPartCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) object library-management
+#### `category` · [`DesPartCategory`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-category.md) object
 
 The category details.
 
-#### `DesPartProviderPart.documentCollections` · [`[DesPartDocumentCollection!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-document-collection.md) non-null object library-management
+#### `documentCollections` · [`[DesPartDocumentCollection!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-document-collection.md) non-null object
 
 The document collections.
 
-#### `DesPartProviderPart.manufacturer` · [`DesPartCompany!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) non-null object library-management
+#### `manufacturer` · [`DesPartCompany!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) non-null object
 
 The manufacturer details.
 
-#### `DesPartProviderPart.medianPrice1000` · [`DesPartPricePoint`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-price-point.md) object library-management
+#### `medianPrice1000` · [`DesPartPricePoint`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-price-point.md) object
 
 The median price at quantity 1,000, discarding outliers. A reasonable estimate of average price for a part.
 
-#### `DesPartProviderPart.mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The manufacturer part number.
 
-#### `DesPartProviderPart.providerId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `providerId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier in the provider.
 
-#### `DesPartProviderPart.sellers` · [`[DesPartSellerWithOffers!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-seller-with-offers.md) non-null object library-management
+#### `sellers` · [`[DesPartSellerWithOffers!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-seller-with-offers.md) non-null object
 
 The sellers with offers.
 
-#### `DesPartProviderPart.shortDescription` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `shortDescription` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 A short description of the part.
 
-#### `DesPartProviderPart.specs` · [`[DesPartSpec!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-spec.md) non-null object library-management
+#### `specs` · [`[DesPartSpec!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-spec.md) non-null object
 
 Attribute values for this part.
 
-#### `DesPartProviderPart.totalAvail` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar common
+#### `totalAvail` · [`Long!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/long.md) non-null scalar
 
 Sum of stock available across all distributors.

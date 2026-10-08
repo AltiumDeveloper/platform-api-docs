@@ -24,8 +24,8 @@ type SupEvalKitCreateEvalKitPayload {
 
 ### Fields
 
-#### `SupEvalKitCreateEvalKitPayload.errors` · [`[SupEvalKitCreateEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-create-eval-kit-error.md) list union supply
+#### `errors` · [`[SupEvalKitCreateEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-create-eval-kit-error.md) list union
 
-#### `SupEvalKitCreateEvalKitPayload.id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 Evaluation kit identifier.

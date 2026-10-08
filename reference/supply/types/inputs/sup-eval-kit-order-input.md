@@ -24,10 +24,10 @@ input SupEvalKitOrderInput {
 
 ### Fields
 
-#### `SupEvalKitOrderInput.direction` · [`SupEvalKitOrderDirection!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-order-direction.md) non-null enum supply
+#### `direction` · [`SupEvalKitOrderDirection!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-order-direction.md) non-null enum
 
 The direction of the order.
 
-#### `SupEvalKitOrderInput.field` · [`SupEvalKitOrderField!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-order-field.md) non-null enum supply
+#### `field` · [`SupEvalKitOrderField!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-order-field.md) non-null enum
 
 The field to order by.

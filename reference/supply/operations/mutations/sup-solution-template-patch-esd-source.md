@@ -11,6 +11,12 @@ deprecated: false
 
 Patch the ESD source of a solution template: upload, replace, or clear individual files.
 
+### Type
+
+#### [`SupSolutionTemplatePatchEsdSourcePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-esd-source-payload.md) object
+
+Payload for patching the ESD source of a solution template.
+
 ```graphql
 supSolutionTemplatePatchEsdSource(
   input: SupSolutionTemplateEsdSourcePatchInput!
@@ -19,10 +25,4 @@ supSolutionTemplatePatchEsdSource(
 
 ### Arguments
 
-#### `supSolutionTemplatePatchEsdSource.input` · [`SupSolutionTemplateEsdSourcePatchInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-esd-source-patch-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplatePatchEsdSourcePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-esd-source-payload.md) object supply
-
-Payload for patching the ESD source of a solution template.
+#### `input` · [`SupSolutionTemplateEsdSourcePatchInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-esd-source-patch-input.md) non-null input

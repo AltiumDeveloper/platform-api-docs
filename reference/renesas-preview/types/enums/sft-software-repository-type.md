@@ -22,6 +22,6 @@ enum SftSoftwareRepositoryType {
 
 ### Values
 
-#### `SftSoftwareRepositoryType.EXTERNAL`
+#### `EXTERNAL`
 
-#### `SftSoftwareRepositoryType.INTERNAL`
+#### `INTERNAL`

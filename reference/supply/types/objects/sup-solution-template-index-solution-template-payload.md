@@ -24,8 +24,8 @@ type SupSolutionTemplateIndexSolutionTemplatePayload {
 
 ### Fields
 
-#### `SupSolutionTemplateIndexSolutionTemplatePayload.errors` · [`[SupSolutionTemplateIndexSolutionTemplateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-index-solution-template-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplateIndexSolutionTemplateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-index-solution-template-error.md) list union
 
-#### `SupSolutionTemplateIndexSolutionTemplatePayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Indicates whether the indexing operation was successful.

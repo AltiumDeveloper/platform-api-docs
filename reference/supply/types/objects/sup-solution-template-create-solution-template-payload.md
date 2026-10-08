@@ -24,8 +24,8 @@ type SupSolutionTemplateCreateSolutionTemplatePayload {
 
 ### Fields
 
-#### `SupSolutionTemplateCreateSolutionTemplatePayload.errors` · [`[SupSolutionTemplateCreateSolutionTemplateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-create-solution-template-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplateCreateSolutionTemplateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-create-solution-template-error.md) list union
 
-#### `SupSolutionTemplateCreateSolutionTemplatePayload.id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 Solution template identifier.

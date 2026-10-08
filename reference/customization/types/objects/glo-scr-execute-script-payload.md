@@ -21,4 +21,4 @@ type GloScrExecuteScriptPayload {
 
 ### Fields
 
-#### `GloScrExecuteScriptPayload.gloScrScriptExecution` · [`GloScrScriptExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md) object customization
+#### `gloScrScriptExecution` · [`GloScrScriptExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-execution.md) object

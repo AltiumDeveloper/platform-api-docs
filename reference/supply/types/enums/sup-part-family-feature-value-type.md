@@ -26,10 +26,10 @@ enum SupPartFamilyFeatureValueType {
 
 ### Values
 
-#### `SupPartFamilyFeatureValueType.ENUMERATION`
+#### `ENUMERATION`
 
-#### `SupPartFamilyFeatureValueType.RANGE`
+#### `RANGE`
 
-#### `SupPartFamilyFeatureValueType.SCALAR`
+#### `SCALAR`
 
-#### `SupPartFamilyFeatureValueType.STRING`
+#### `STRING`

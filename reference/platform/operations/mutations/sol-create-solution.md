@@ -11,6 +11,10 @@ deprecated: false
 
 Adds new solution.
 
+### Type
+
+#### [`SolCreateSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-create-solution-payload.md) object
+
 ```graphql
 solCreateSolution(
   input: SolCreateSolutionInput!
@@ -19,8 +23,4 @@ solCreateSolution(
 
 ### Arguments
 
-#### `solCreateSolution.input` · [`SolCreateSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-create-solution-input.md) non-null input platform
-
-### Type
-
-#### [`SolCreateSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-create-solution-payload.md) object platform
+#### `input` · [`SolCreateSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-create-solution-input.md) non-null input

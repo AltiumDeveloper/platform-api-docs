@@ -9,11 +9,11 @@ deprecated: false
 
 # PlatformRefreshTokenCreateNewSecretError
 
-Error returned by the Token API when a new client secret for a `PlatformWorkspaceRefreshToken` could not be created.
+Error returned by the Token API when a new client secret for a [`PlatformWorkspaceRefreshToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token.md) could not be created.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type PlatformRefreshTokenCreateNewSecretError implements Error {
 
 ### Fields
 
-#### `PlatformRefreshTokenCreateNewSecretError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

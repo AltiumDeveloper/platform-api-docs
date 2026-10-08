@@ -27,22 +27,22 @@ input BomCreateBomItemElementInput {
 
 ### Fields
 
-#### `BomCreateBomItemElementInput.attributeValues` · [`[BomCreateBomItemElementAttributeInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-element-attribute-input.md) list input procurement
+#### `attributeValues` · [`[BomCreateBomItemElementAttributeInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-item-element-attribute-input.md) list input
 
 Values of custom element attributes.
 
-#### `BomCreateBomItemElementInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Description of the element.
 
-#### `BomCreateBomItemElementInput.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Name of the element.
 
-#### `BomCreateBomItemElementInput.offer` · [`BomCreateBomOfferReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-offer-reference-input.md) input procurement
+#### `offer` · [`BomCreateBomOfferReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-offer-reference-input.md) input
 
 An offer selected for this element.
 
-#### `BomCreateBomItemElementInput.part` · [`BomCreateBomPartReferenceInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-part-reference-input.md) non-null input procurement
+#### `part` · [`BomCreateBomPartReferenceInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-create-bom-part-reference-input.md) non-null input
 
 A part associated with this element.

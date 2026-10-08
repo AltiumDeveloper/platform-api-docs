@@ -11,6 +11,12 @@ deprecated: false
 
 Searches parts by their manufacturer name and part number.
 
+### Type
+
+#### [`DesPartSearchByManufacturerPartIdsResultItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-by-manufacturer-part-ids-result-item.md) object
+
+Represents a search result item.
+
 ```graphql
 desPartSearchByManufacturerPartIds(
   items: [DesPartManufacturerPartIdInput!]!
@@ -20,16 +26,10 @@ desPartSearchByManufacturerPartIds(
 
 ### Arguments
 
-#### `desPartSearchByManufacturerPartIds.items` · [`[DesPartManufacturerPartIdInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-manufacturer-part-id-input.md) non-null input library-management
+#### `items` · [`[DesPartManufacturerPartIdInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-manufacturer-part-id-input.md) non-null input
 
 The manufacturer part identifiers to search by.
 
-#### `desPartSearchByManufacturerPartIds.options` · [`DesPartSearchByManufacturerPartIdsOptionsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-by-manufacturer-part-ids-options-input.md) input library-management
+#### `options` · [`DesPartSearchByManufacturerPartIdsOptionsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-by-manufacturer-part-ids-options-input.md) input
 
 The options to apply to the search.
-
-### Type
-
-#### [`DesPartSearchByManufacturerPartIdsResultItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-by-manufacturer-part-ids-result-item.md) object library-management
-
-Represents a search result item.

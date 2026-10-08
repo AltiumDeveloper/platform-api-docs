@@ -11,6 +11,12 @@ deprecated: false
 
 Removes users from the specified group.
 
+### Type
+
+#### [`DesRemoveUsersFromGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-remove-users-from-group-payload.md) object
+
+Payload associated with removing users from a group.
+
 ```graphql
 desRemoveUsersFromGroup(
   input: DesRemoveUsersFromGroupInput!
@@ -19,10 +25,4 @@ desRemoveUsersFromGroup(
 
 ### Arguments
 
-#### `desRemoveUsersFromGroup.input` · [`DesRemoveUsersFromGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-remove-users-from-group-input.md) non-null input platform
-
-### Type
-
-#### [`DesRemoveUsersFromGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-remove-users-from-group-payload.md) object platform
-
-Payload associated with removing users from a group.
+#### `input` · [`DesRemoveUsersFromGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-remove-users-from-group-input.md) non-null input

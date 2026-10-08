@@ -23,4 +23,4 @@ type SupSolutionTemplateDeleteSolutionTemplatePayload {
 
 ### Fields
 
-#### `SupSolutionTemplateDeleteSolutionTemplatePayload.errors` · [`[SupSolutionTemplateDeleteSolutionTemplateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-delete-solution-template-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplateDeleteSolutionTemplateError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-delete-solution-template-error.md) list union

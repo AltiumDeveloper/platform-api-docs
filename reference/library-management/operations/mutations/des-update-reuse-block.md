@@ -11,6 +11,12 @@ deprecated: false
 
 Updates a specific result block.
 
+### Type
+
+#### [`DesUpdateReuseBlockPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-reuse-block-payload.md) object
+
+Payload associated with updating a reuse block.
+
 ```graphql
 desUpdateReuseBlock(
   input: DesUpdateReuseBlockInput!
@@ -19,10 +25,4 @@ desUpdateReuseBlock(
 
 ### Arguments
 
-#### `desUpdateReuseBlock.input` · [`DesUpdateReuseBlockInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-reuse-block-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateReuseBlockPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-reuse-block-payload.md) object library-management
-
-Payload associated with updating a reuse block.
+#### `input` · [`DesUpdateReuseBlockInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-reuse-block-input.md) non-null input

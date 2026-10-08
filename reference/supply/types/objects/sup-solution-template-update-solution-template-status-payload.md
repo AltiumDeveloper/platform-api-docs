@@ -23,4 +23,4 @@ type SupSolutionTemplateUpdateSolutionTemplateStatusPayload {
 
 ### Fields
 
-#### `SupSolutionTemplateUpdateSolutionTemplateStatusPayload.errors` · [`[SupSolutionTemplateUpdateSolutionTemplateStatusError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-update-solution-template-status-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplateUpdateSolutionTemplateStatusError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-update-solution-template-status-error.md) list union

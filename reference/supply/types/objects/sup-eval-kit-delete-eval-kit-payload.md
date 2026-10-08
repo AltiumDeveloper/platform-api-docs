@@ -23,4 +23,4 @@ type SupEvalKitDeleteEvalKitPayload {
 
 ### Fields
 
-#### `SupEvalKitDeleteEvalKitPayload.errors` · [`[SupEvalKitDeleteEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-eval-kit-error.md) list union supply
+#### `errors` · [`[SupEvalKitDeleteEvalKitError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-delete-eval-kit-error.md) list union

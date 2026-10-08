@@ -24,10 +24,10 @@ type DesWorkspaceInsUpdateInsightByIdPayload {
 
 ### Fields
 
-#### `DesWorkspaceInsUpdateInsightByIdPayload.errors` · [`[DesWorkspaceInsInsightErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-error-payload.md) non-null object insights
+#### `errors` · [`[DesWorkspaceInsInsightErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.
 
-#### `DesWorkspaceInsUpdateInsightByIdPayload.insight` · [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) object insights
+#### `insight` · [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) object
 
 Insight updated with the provided changes.

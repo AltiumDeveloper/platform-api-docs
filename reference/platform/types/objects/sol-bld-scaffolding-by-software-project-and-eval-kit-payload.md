@@ -21,4 +21,4 @@ type SolBldScaffoldingBySoftwareProjectAndEvalKitPayload {
 
 ### Fields
 
-#### `SolBldScaffoldingBySoftwareProjectAndEvalKitPayload.jobId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `jobId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

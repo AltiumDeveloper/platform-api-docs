@@ -28,26 +28,26 @@ type DesStackup {
 
 ### Fields
 
-#### `DesStackup.layerTypes` · [`[DesLayerType!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-layer-type.md) non-null enum design
+#### `layerTypes` · [`[DesLayerType!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-layer-type.md) non-null enum
 
 Layer types in stackup.
 
-#### `DesStackup.roughnessFactorRF` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `roughnessFactorRF` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Roughness factor, characterizing the expected maximal increase in conductor losses due to the roughness effect. Default is 2.
 
-#### `DesStackup.roughnessFactorSR` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `roughnessFactorSR` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Value of the surface roughness.
 
-#### `DesStackup.roughnessType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `roughnessType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Shows roughness of conductive layers.
 
-#### `DesStackup.stacks` · [`[DesStack!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-stack.md) non-null object design
+#### `stacks` · [`[DesStack!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-stack.md) non-null object
 
 Substacks that make a stackup.
 
-#### `DesStackup.stackupType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `stackupType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Type of stackup.

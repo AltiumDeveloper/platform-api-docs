@@ -24,8 +24,8 @@ type SupEvalKitAddDevicesPayload {
 
 ### Fields
 
-#### `SupEvalKitAddDevicesPayload.errors` · [`[SupEvalKitAddDevicesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-devices-error.md) list union supply
+#### `errors` · [`[SupEvalKitAddDevicesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-add-devices-error.md) list union
 
-#### `SupEvalKitAddDevicesPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

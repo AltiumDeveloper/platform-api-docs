@@ -24,10 +24,10 @@ input DesCreateLifeCycleDefinitionInput {
 
 ### Fields
 
-#### `DesCreateLifeCycleDefinitionInput.lifeCycleDefinition` · [`DesLifeCycleDefinitionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-definition-input.md) non-null input platform
+#### `lifeCycleDefinition` · [`DesLifeCycleDefinitionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-definition-input.md) non-null input
 
 The life cycle definition to create.
 
-#### `DesCreateLifeCycleDefinitionInput.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Defines which workspace the life cycle definition should be created on.

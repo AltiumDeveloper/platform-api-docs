@@ -23,14 +23,14 @@ type SupSolutionTemplateESDSource {
 
 ### Fields
 
-#### `SupSolutionTemplateESDSource.compileModelUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `compileModelUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of the compile model associated with the solution template.
 
-#### `SupSolutionTemplateESDSource.documentFileUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `documentFileUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of the document file associated with the solution template.
 
-#### `SupSolutionTemplateESDSource.previewUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `previewUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of the preview resource associated with the solution template.

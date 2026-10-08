@@ -11,6 +11,12 @@ deprecated: false
 
 Searches solution template applications.
 
+### Type
+
+#### [`SupSolutionTemplateApplicationConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application-connection.md) object
+
+A connection to a list of items.
+
 ```graphql
 supSolutionTemplateApplicationsSearch(
   after: String
@@ -24,28 +30,22 @@ supSolutionTemplateApplicationsSearch(
 
 ### Arguments
 
-#### `supSolutionTemplateApplicationsSearch.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-#### `supSolutionTemplateApplicationsSearch.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-#### `supSolutionTemplateApplicationsSearch.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-#### `supSolutionTemplateApplicationsSearch.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-#### `supSolutionTemplateApplicationsSearch.order` · [`[SupSolutionTemplateApplicationSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-sort-input.md) list input supply
+#### `order` · [`[SupSolutionTemplateApplicationSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-sort-input.md) list input
 
-#### `supSolutionTemplateApplicationsSearch.where` · [`SupSolutionTemplateApplicationSearchFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-search-filter-input.md) input supply
-
-### Type
-
-#### [`SupSolutionTemplateApplicationConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application-connection.md) object supply
-
-A connection to a list of items.
+#### `where` · [`SupSolutionTemplateApplicationSearchFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-application-search-filter-input.md) input

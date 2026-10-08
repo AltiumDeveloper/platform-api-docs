@@ -11,6 +11,12 @@ deprecated: false
 
 Marks the result of a finished parts upload operation as read. EXPERIMENTAL: this mutation may change or be removed without notice.
 
+### Type
+
+#### [`DesPartAcknowledgeUploadOperationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-acknowledge-upload-operation-payload.md) object
+
+Payload produced when the result of a parts upload operation is marked as read.
+
 ```graphql
 desPartAcknowledgeUploadOperation(
   input: DesPartAcknowledgeUploadOperationInput!
@@ -19,12 +25,6 @@ desPartAcknowledgeUploadOperation(
 
 ### Arguments
 
-#### `desPartAcknowledgeUploadOperation.input` · [`DesPartAcknowledgeUploadOperationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-acknowledge-upload-operation-input.md) non-null input library-management
+#### `input` · [`DesPartAcknowledgeUploadOperationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-acknowledge-upload-operation-input.md) non-null input
 
 The operation to acknowledge.
-
-### Type
-
-#### [`DesPartAcknowledgeUploadOperationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-acknowledge-upload-operation-payload.md) object library-management
-
-Payload produced when the result of a parts upload operation is marked as read.

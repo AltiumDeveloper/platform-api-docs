@@ -11,6 +11,10 @@ deprecated: false
 
 Retrieves cached job statuses for a solution.
 
+### Type
+
+#### [`SolBldScaffoldingJobStatusPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-job-status-payload.md) object
+
 ```graphql
 solBldScaffoldingStatusesBySolution(
   solutionId: ID!
@@ -19,8 +23,4 @@ solBldScaffoldingStatusesBySolution(
 
 ### Arguments
 
-#### `solBldScaffoldingStatusesBySolution.solutionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SolBldScaffoldingJobStatusPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-job-status-payload.md) object platform
+#### `solutionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

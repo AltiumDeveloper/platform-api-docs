@@ -11,6 +11,12 @@ deprecated: false
 
 Search a reference designs.
 
+### Type
+
+#### [`SupRefDesignResultSet`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-result-set.md) object
+
+Reference designs with pagination, aggregation information.
+
 ```graphql
 supRefDesigns(
   filter: SupRefDesignFilterInput
@@ -23,28 +29,22 @@ supRefDesigns(
 
 ### Arguments
 
-#### `supRefDesigns.filter` · [`SupRefDesignFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-ref-design-filter-input.md) input supply
+#### `filter` · [`SupRefDesignFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-ref-design-filter-input.md) input
 
 Optional structured filter input for searching.
 
-#### `supRefDesigns.limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Page size of results.
 
-#### `supRefDesigns.order` · [`[SupRefDesignOrderInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-ref-design-order-input.md) list input supply
+#### `order` · [`[SupRefDesignOrderInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-ref-design-order-input.md) list input
 
 Sort order for results. Supports multiple fields.
 
-#### `supRefDesigns.q` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `q` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The search query string. Leave empty to query all.
 
-#### `supRefDesigns.start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Offset in the result set.
-
-### Type
-
-#### [`SupRefDesignResultSet`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-result-set.md) object supply
-
-Reference designs with pagination, aggregation information.

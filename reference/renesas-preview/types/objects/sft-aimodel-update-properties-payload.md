@@ -22,6 +22,6 @@ type SftAIModelUpdatePropertiesPayload {
 
 ### Fields
 
-#### `SftAIModelUpdatePropertiesPayload.customProperties` · [`[SftAIModelCustomProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-custom-property.md) non-null object renesas-preview
+#### `customProperties` · [`[SftAIModelCustomProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-custom-property.md) non-null object
 
-#### `SftAIModelUpdatePropertiesPayload.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

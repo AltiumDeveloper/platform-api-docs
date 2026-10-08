@@ -24,10 +24,10 @@ input DesUpdateComponentSymbolInput {
 
 ### Fields
 
-#### `DesUpdateComponentSymbolInput.componentId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `componentId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The component identifier.
 
-#### `DesUpdateComponentSymbolInput.symbolId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `symbolId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
 The identifier of the symbol to link to the component. If omitted or set to `null`, the symbol will be unlinked from the component.

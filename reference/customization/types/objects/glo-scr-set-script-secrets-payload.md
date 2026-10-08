@@ -21,4 +21,4 @@ type GloScrSetScriptSecretsPayload {
 
 ### Fields
 
-#### `GloScrSetScriptSecretsPayload.gloScrScriptSecret` · [`[GloScrScriptSecret!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-secret.md) list object customization
+#### `gloScrScriptSecret` · [`[GloScrScriptSecret!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script-secret.md) list object

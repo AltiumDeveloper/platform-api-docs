@@ -26,18 +26,18 @@ type DesCommentContext {
 
 ### Fields
 
-#### `DesCommentContext.area` · [`DesRectangle!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-rectangle.md) non-null object design
+#### `area` · [`DesRectangle!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-rectangle.md) non-null object Design
 
 The area associated with a comment thread.
 
-#### `DesCommentContext.documentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `documentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The reference identifier for the document associated with a comment thread.
 
-#### `DesCommentContext.objectId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `objectId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The reference identifier for an object associated with a comment thread.
 
-#### `DesCommentContext.releaseId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `releaseId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The release identifier associated with a comment thread.

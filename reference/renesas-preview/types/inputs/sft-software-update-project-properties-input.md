@@ -22,6 +22,6 @@ input SftSoftwareUpdateProjectPropertiesInput {
 
 ### Fields
 
-#### `SftSoftwareUpdateProjectPropertiesInput.customProperties` · [`[SftSoftwareProjectCustomPropertyInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-project-custom-property-input.md) non-null input renesas-preview
+#### `customProperties` · [`[SftSoftwareProjectCustomPropertyInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-project-custom-property-input.md) non-null input
 
-#### `SftSoftwareUpdateProjectPropertiesInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

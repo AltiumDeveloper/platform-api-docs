@@ -102,162 +102,162 @@ enum DesContentTypeKind {
 
 ### Values
 
-#### `DesContentTypeKind.AI_MODEL`
+#### `AI_MODEL`
 
-#### `DesContentTypeKind.BINARY_FILE`
+#### `BINARY_FILE`
 
-#### `DesContentTypeKind.BMS_AUTO_GENERATED_COMPONENTS`
+#### `BMS_AUTO_GENERATED_COMPONENTS`
 
-#### `DesContentTypeKind.BOM_TEMPLATE`
+#### `BOM_TEMPLATE`
 
-#### `DesContentTypeKind.COMPONENT`
+#### `COMPONENT`
 
-#### `DesContentTypeKind.COMPONENT_TEMPLATE`
+#### `COMPONENT_TEMPLATE`
 
-#### `DesContentTypeKind.COSTED_BOM`
+#### `COSTED_BOM`
 
-#### `DesContentTypeKind.DATA_CLASS`
+#### `DATA_CLASS`
 
-#### `DesContentTypeKind.DATA_SHEET`
+#### `DATA_SHEET`
 
-#### `DesContentTypeKind.DEVICE_CLASS`
+#### `DEVICE_CLASS`
 
-#### `DesContentTypeKind.DEVICE_CONFIGURATION`
+#### `DEVICE_CONFIGURATION`
 
-#### `DesContentTypeKind.DRAFTSMAN_DOCUMENT_TEMPLATE`
+#### `DRAFTSMAN_DOCUMENT_TEMPLATE`
 
-#### `DesContentTypeKind.DRAFTSMAN_SHEET_TEMPLATE`
+#### `DRAFTSMAN_SHEET_TEMPLATE`
 
-#### `DesContentTypeKind.DXP_ADDON`
+#### `DXP_ADDON`
 
-#### `DesContentTypeKind.DXP_PLATFORM`
+#### `DXP_PLATFORM`
 
-#### `DesContentTypeKind.DXP_PLUGIN`
+#### `DXP_PLUGIN`
 
-#### `DesContentTypeKind.DXP_SDK`
+#### `DXP_SDK`
 
-#### `DesContentTypeKind.EAGLE_DESIGN`
+#### `EAGLE_DESIGN`
 
-#### `DesContentTypeKind.EAGLE_PROJECT`
+#### `EAGLE_PROJECT`
 
-#### `DesContentTypeKind.EMBEDDED_DESIGN`
+#### `EMBEDDED_DESIGN`
 
-#### `DesContentTypeKind.ESD_PROJECT`
+#### `ESD_PROJECT`
 
-#### `DesContentTypeKind.FABRICATION_FILE`
+#### `FABRICATION_FILE`
 
-#### `DesContentTypeKind.FPGA_DESIGN`
+#### `FPGA_DESIGN`
 
-#### `DesContentTypeKind.HARNESS_CONNECTIVITY`
+#### `HARNESS_CONNECTIVITY`
 
-#### `DesContentTypeKind.HARNESS_DESIGN`
+#### `HARNESS_DESIGN`
 
-#### `DesContentTypeKind.HARNESS_ENTITY`
+#### `HARNESS_ENTITY`
 
-#### `DesContentTypeKind.HARNESS_ENTITY_TEMPLATE`
+#### `HARNESS_ENTITY_TEMPLATE`
 
-#### `DesContentTypeKind.HARNESS_LAYOUT`
+#### `HARNESS_LAYOUT`
 
-#### `DesContentTypeKind.HARNESS_LAYOUT_TEMPLATE`
+#### `HARNESS_LAYOUT_TEMPLATE`
 
-#### `DesContentTypeKind.HARNESS_WIRING_TEMPLATE`
+#### `HARNESS_WIRING_TEMPLATE`
 
-#### `DesContentTypeKind.KICAD_DESIGN`
+#### `KICAD_DESIGN`
 
-#### `DesContentTypeKind.KICAD_PROJECT`
+#### `KICAD_PROJECT`
 
-#### `DesContentTypeKind.LAYER_STACK`
+#### `LAYER_STACK`
 
-#### `DesContentTypeKind.MANAGED_BOM`
+#### `MANAGED_BOM`
 
-#### `DesContentTypeKind.MANAGED_PART`
+#### `MANAGED_PART`
 
-#### `DesContentTypeKind.MODEL3D`
+#### `MODEL3D`
 
-#### `DesContentTypeKind.MORFIK_PACKAGE`
+#### `MORFIK_PACKAGE`
 
-#### `DesContentTypeKind.MORFIK_WEB_RESOURCE`
+#### `MORFIK_WEB_RESOURCE`
 
-#### `DesContentTypeKind.MORFIK_X_APP_DESIGN`
+#### `MORFIK_X_APP_DESIGN`
 
-#### `DesContentTypeKind.MORFIK_X_APP_IMAGE`
+#### `MORFIK_X_APP_IMAGE`
 
-#### `DesContentTypeKind.MORFIK_X_APP_SET`
+#### `MORFIK_X_APP_SET`
 
-#### `DesContentTypeKind.MOTOR_STUDIO_PROJECT`
+#### `MOTOR_STUDIO_PROJECT`
 
-#### `DesContentTypeKind.MULTIBOARD_DESIGN`
+#### `MULTIBOARD_DESIGN`
 
-#### `DesContentTypeKind.OPEN_BUS`
+#### `OPEN_BUS`
 
-#### `DesContentTypeKind.ORCAD_DESIGN`
+#### `ORCAD_DESIGN`
 
-#### `DesContentTypeKind.ORCAD_PROJECT`
+#### `ORCAD_PROJECT`
 
-#### `DesContentTypeKind.ORDER_BOM`
+#### `ORDER_BOM`
 
-#### `DesContentTypeKind.OUTPUT_JOB`
+#### `OUTPUT_JOB`
 
-#### `DesContentTypeKind.PACKAGE`
+#### `PACKAGE`
 
-#### `DesContentTypeKind.PADS_PROJECT`
+#### `PADS_PROJECT`
 
-#### `DesContentTypeKind.PART_CHOICE_LIST`
+#### `PART_CHOICE_LIST`
 
-#### `DesContentTypeKind.PART_REPORT`
+#### `PART_REPORT`
 
-#### `DesContentTypeKind.PCB_ASSEMBLY`
+#### `PCB_ASSEMBLY`
 
-#### `DesContentTypeKind.PCB_BLANK`
+#### `PCB_BLANK`
 
-#### `DesContentTypeKind.PCB_BLOCK`
+#### `PCB_BLOCK`
 
-#### `DesContentTypeKind.PCB_COMPONENT`
+#### `PCB_COMPONENT`
 
-#### `DesContentTypeKind.PCB_DESIGN`
+#### `PCB_DESIGN`
 
-#### `DesContentTypeKind.PCB_DOCUMENT`
+#### `PCB_DOCUMENT`
 
-#### `DesContentTypeKind.PCB_MODEL3D`
+#### `PCB_MODEL3D`
 
-#### `DesContentTypeKind.PCB_SNIPPET`
+#### `PCB_SNIPPET`
 
-#### `DesContentTypeKind.PLM_INSTANCE`
+#### `PLM_INSTANCE`
 
-#### `DesContentTypeKind.PLM_PUBLISH_TEMPLATE`
+#### `PLM_PUBLISH_TEMPLATE`
 
-#### `DesContentTypeKind.PREFERENCES`
+#### `PREFERENCES`
 
-#### `DesContentTypeKind.PROJECT`
+#### `PROJECT`
 
-#### `DesContentTypeKind.PROJECT_REVIEW_PACKAGE`
+#### `PROJECT_REVIEW_PACKAGE`
 
-#### `DesContentTypeKind.PROJECT_TEMPLATE`
+#### `PROJECT_TEMPLATE`
 
-#### `DesContentTypeKind.REQUIREMENTS_PROJECT`
+#### `REQUIREMENTS_PROJECT`
 
-#### `DesContentTypeKind.RICH_TEXT`
+#### `RICH_TEXT`
 
-#### `DesContentTypeKind.SCHEMATIC_SHEET`
+#### `SCHEMATIC_SHEET`
 
-#### `DesContentTypeKind.SCHEMATIC_SNIPPET`
+#### `SCHEMATIC_SNIPPET`
 
-#### `DesContentTypeKind.SCHEMATIC_TEMPLATE`
+#### `SCHEMATIC_TEMPLATE`
 
-#### `DesContentTypeKind.SCRIPT`
+#### `SCRIPT`
 
-#### `DesContentTypeKind.SI_MODEL`
+#### `SI_MODEL`
 
-#### `DesContentTypeKind.SIMULATION`
+#### `SIMULATION`
 
-#### `DesContentTypeKind.SIMULATION_MODEL`
+#### `SIMULATION_MODEL`
 
-#### `DesContentTypeKind.SOFTWARE_PROJECT`
+#### `SOFTWARE_PROJECT`
 
-#### `DesContentTypeKind.SOLUTION`
+#### `SOLUTION`
 
-#### `DesContentTypeKind.SYMBOL`
+#### `SYMBOL`
 
-#### `DesContentTypeKind.TUNING`
+#### `TUNING`
 
-#### `DesContentTypeKind.WEB_ITEM`
+#### `WEB_ITEM`

@@ -11,6 +11,10 @@ deprecated: false
 
 Gets Requirements project by GRID.
 
+### Type
+
+#### [`RequirementsProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/types/objects/requirements-project.md) object
+
 ```graphql
 requirements {
   project {
@@ -23,8 +27,4 @@ requirements {
 
 ### Arguments
 
-#### `byId.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`RequirementsProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/requirements/types/objects/requirements-project.md) object requirements
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

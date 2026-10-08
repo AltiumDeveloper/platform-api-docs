@@ -11,6 +11,12 @@ deprecated: false
 
 Gets the library by workspace URL.
 
+### Type
+
+#### [`DesLibrary`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-library.md) object
+
+Information about your library. All component data in A365 is stored in your library.
+
 ```graphql
 desLibrary(
   args: DesLibraryArgsInput
@@ -20,14 +26,8 @@ desLibrary(
 
 ### Arguments
 
-#### `desLibrary.args` · [`DesLibraryArgsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-library-args-input.md) input library-management
+#### `args` · [`DesLibraryArgsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-library-args-input.md) input
 
-#### `desLibrary.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The workspace URL.
-
-### Type
-
-#### [`DesLibrary`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-library.md) object library-management
-
-Information about your library. All component data in A365 is stored in your library.

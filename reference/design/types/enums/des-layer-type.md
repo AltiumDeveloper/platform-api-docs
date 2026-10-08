@@ -44,46 +44,46 @@ enum DesLayerType {
 
 ### Values
 
-#### `DesLayerType.ABSTRACT`
+#### `ABSTRACT`
 
-#### `DesLayerType.ADHESIVE`
+#### `ADHESIVE`
 
-#### `DesLayerType.BIKINI_COVERLAY`
+#### `BIKINI_COVERLAY`
 
-#### `DesLayerType.CONDUCTIVE`
+#### `CONDUCTIVE`
 
-#### `DesLayerType.CORE`
+#### `CORE`
 
-#### `DesLayerType.DIELECTRIC`
+#### `DIELECTRIC`
 
-#### `DesLayerType.FOIL`
+#### `FOIL`
 
-#### `DesLayerType.MECHANICAL`
+#### `MECHANICAL`
 
-#### `DesLayerType.MISC`
+#### `MISC`
 
-#### `DesLayerType.NON_CONDUCTIVE`
+#### `NON_CONDUCTIVE`
 
-#### `DesLayerType.OVERLAY`
+#### `OVERLAY`
 
-#### `DesLayerType.PASTE_MASK`
+#### `PASTE_MASK`
 
-#### `DesLayerType.PE_LAYER`
+#### `PE_LAYER`
 
-#### `DesLayerType.PHYSICAL`
+#### `PHYSICAL`
 
-#### `DesLayerType.PLANE`
+#### `PLANE`
 
-#### `DesLayerType.PLATING`
+#### `PLATING`
 
-#### `DesLayerType.PREPREG`
+#### `PREPREG`
 
-#### `DesLayerType.SIGNAL`
+#### `SIGNAL`
 
-#### `DesLayerType.SOLDER_MASK`
+#### `SOLDER_MASK`
 
-#### `DesLayerType.STIFFENER`
+#### `STIFFENER`
 
-#### `DesLayerType.SURFACE_FINISH`
+#### `SURFACE_FINISH`
 
-#### `DesLayerType.UNKNOWN`
+#### `UNKNOWN`

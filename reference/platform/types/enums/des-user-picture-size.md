@@ -22,10 +22,10 @@ enum DesUserPictureSize {
 
 ### Values
 
-#### `DesUserPictureSize.ORIGINAL`
+#### `ORIGINAL`
 
-#### `DesUserPictureSize.SIZE128X128`
+#### `SIZE128X128`
 
-#### `DesUserPictureSize.SIZE48X48`
+#### `SIZE48X48`
 
-#### `DesUserPictureSize.SIZE70X70`
+#### `SIZE70X70`

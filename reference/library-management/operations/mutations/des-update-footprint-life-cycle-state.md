@@ -11,6 +11,12 @@ deprecated: false
 
 Updates life cycle state for the provided footprint.
 
+### Type
+
+#### [`DesUpdateFootprintLifeCycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-footprint-life-cycle-state-payload.md) object
+
+Payload associated with updating a footprint life cycle state.
+
 ```graphql
 desUpdateFootprintLifeCycleState(
   input: DesUpdateFootprintLifeCycleStateInput!
@@ -19,10 +25,4 @@ desUpdateFootprintLifeCycleState(
 
 ### Arguments
 
-#### `desUpdateFootprintLifeCycleState.input` · [`DesUpdateFootprintLifeCycleStateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-footprint-life-cycle-state-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateFootprintLifeCycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-footprint-life-cycle-state-payload.md) object library-management
-
-Payload associated with updating a footprint life cycle state.
+#### `input` · [`DesUpdateFootprintLifeCycleStateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-footprint-life-cycle-state-input.md) non-null input

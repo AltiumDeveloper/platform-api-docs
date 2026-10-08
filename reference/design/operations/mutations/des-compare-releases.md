@@ -11,6 +11,10 @@ deprecated: false
 
 Runs schematic, PCB, or BOM comparisons between two project releases. Provides URL of the comparison result for web-browser.
 
+### Type
+
+#### [`DesComparisonRunPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-comparison-run-payload.md) object
+
 ```graphql
 desCompareReleases(
   input: DesComparisonRunInput!
@@ -19,8 +23,4 @@ desCompareReleases(
 
 ### Arguments
 
-#### `desCompareReleases.input` · [`DesComparisonRunInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-comparison-run-input.md) non-null input design
-
-### Type
-
-#### [`DesComparisonRunPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-comparison-run-payload.md) object design
+#### `input` · [`DesComparisonRunInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-comparison-run-input.md) non-null input

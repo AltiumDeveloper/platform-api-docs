@@ -24,10 +24,10 @@ type DesCadBoardVariants {
 
 ### Fields
 
-#### `DesCadBoardVariants.componentTypeVariantLibrary` · [`[DesCadBoardComponentType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-component-type.md) list object design
+#### `componentTypeVariantLibrary` · [`[DesCadBoardComponentType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-component-type.md) list object
 
 Component type variant library for CAD board variants.
 
-#### `DesCadBoardVariants.variants` · [`[DesCadBoardVariant!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-variant.md) list object design
+#### `variants` · [`[DesCadBoardVariant!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-cad-board-variant.md) list object
 
 CAD board variants.

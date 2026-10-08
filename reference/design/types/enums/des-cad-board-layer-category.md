@@ -24,6 +24,6 @@ enum DesCadBoardLayerCategory {
 
 ### Values
 
-#### `DesCadBoardLayerCategory.MECHANICAL`
+#### `MECHANICAL`
 
-#### `DesCadBoardLayerCategory.PHYSICAL`
+#### `PHYSICAL`

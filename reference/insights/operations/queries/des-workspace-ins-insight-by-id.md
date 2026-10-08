@@ -11,6 +11,12 @@ deprecated: false
 
 Gets an insight by its identifier.
 
+### Type
+
+#### [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) object
+
+Insight aggregated from workspace signals and related resources.
+
 ```graphql
 desWorkspaceInsInsightById(
   id: ID!
@@ -19,10 +25,4 @@ desWorkspaceInsInsightById(
 
 ### Arguments
 
-#### `desWorkspaceInsInsightById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) object insights
-
-Insight aggregated from workspace signals and related resources.
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

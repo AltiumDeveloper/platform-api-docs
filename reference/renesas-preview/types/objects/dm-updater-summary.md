@@ -30,10 +30,10 @@ type DmUpdaterSummary {
 
 ### Fields
 
-#### `DmUpdaterSummary.peripheralChanges` · [`DmPeripheralChanges!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-changes.md) non-null object renesas-preview
+#### `peripheralChanges` · [`DmPeripheralChanges!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-changes.md) non-null object
 
 Added, removed, and modified peripheral instances between incoming SDM and resolved model.
 
-#### `DmUpdaterSummary.result` · [`DmResolverResult!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-result.md) non-null object renesas-preview
+#### `result` · [`DmResolverResult!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-result.md) non-null object
 
 Resolver output containing feasibility and selected peripheral instance assignments.

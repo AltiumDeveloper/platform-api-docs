@@ -29,8 +29,8 @@ type KgRelation {
 
 ### Fields
 
-#### `KgRelation.object` · [`KgNode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) interface platform
+#### `object` · [`KgNode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) interface
 
-#### `KgRelation.semantic` · [`KgRelationSemantic!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/kg-relation-semantic.md) non-null enum platform
+#### `semantic` · [`KgRelationSemantic!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/kg-relation-semantic.md) non-null enum
 
-#### `KgRelation.subject` · [`KgNode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) interface platform
+#### `subject` · [`KgNode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) interface

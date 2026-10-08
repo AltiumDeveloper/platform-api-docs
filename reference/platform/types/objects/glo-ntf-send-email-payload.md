@@ -21,6 +21,6 @@ type GloNtfSendEmailPayload {
 
 ### Fields
 
-#### `GloNtfSendEmailPayload.errors` · [`[GloNtfPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-ntf-payload-error.md) non-null object platform
+#### `errors` · [`[GloNtfPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-ntf-payload-error.md) non-null object
 
 Errors that occurred during sending an email.

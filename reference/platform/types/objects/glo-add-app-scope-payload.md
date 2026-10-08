@@ -22,6 +22,6 @@ type GloAddAppScopePayload {
 
 ### Fields
 
-#### `GloAddAppScopePayload.errors` · [`[GloAddAppScopeError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-scope-error.md) list union platform
+#### `errors` · [`[GloAddAppScopeError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-scope-error.md) list union
 
-#### `GloAddAppScopePayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

@@ -38,42 +38,42 @@ type RuleViolation {
 
 ### Fields
 
-#### `RuleViolation.boundingRectangle` · [`RuleViolationRectangle`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-rectangle.md) object design
+#### `boundingRectangle` · [`RuleViolationRectangle`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-rectangle.md) object
 
 The bounding rectangle of the violation in the design.
 
-#### `RuleViolation.documentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `documentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the document where the violation occurred.
 
-#### `RuleViolation.errorReportLevel` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `errorReportLevel` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The error level of this violation. Known values: SKIPPED, WARNING, ERROR, FATAL. New values may be added; clients must tolerate unknown values.
 
-#### `RuleViolation.errorText` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `errorText` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The error text describing the violation.
 
-#### `RuleViolation.location` · [`RuleViolationLocation`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-location.md) object design
+#### `location` · [`RuleViolationLocation`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-location.md) object
 
 The location of the violation in the design.
 
-#### `RuleViolation.relatedObjects` · [`[RuleViolationRelatedObject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-related-object.md) non-null object design
+#### `relatedObjects` · [`[RuleViolationRelatedObject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-related-object.md) non-null object
 
 The design objects related to this violation.
 
-#### `RuleViolation.ruleCheck` · [`RuleCheckExecutionPart!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md) non-null object design
+#### `ruleCheck` · [`RuleCheckExecutionPart!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md) non-null object
 
 The information about the rule check at the time the violation was reported.
 
-#### `RuleViolation.ruleFailureCode` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `ruleFailureCode` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The failure code if the rule check itself failed, rather than detecting a violation. Known values: INTERNAL\_SERVER\_ERROR, UNHANDLED\_EXCEPTION\_FROM\_USER\_SCRIPT, INVALID\_RETURN\_VALUE\_FROM\_USER\_SCRIPT. New values may be added; clients must tolerate unknown values.
 
-#### `RuleViolation.variantId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `variantId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The variant identifier for the violation.
 
-#### `RuleViolation.variantName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `variantName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The variant name for the violation.

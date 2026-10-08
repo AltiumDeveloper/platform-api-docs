@@ -24,10 +24,10 @@ type DesWorkspaceInsInitializeInsightsIfRequiredPayload {
 
 ### Fields
 
-#### `DesWorkspaceInsInitializeInsightsIfRequiredPayload.errors` · [`[DesWorkspaceInsInsightErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-error-payload.md) non-null object insights
+#### `errors` · [`[DesWorkspaceInsInsightErrorPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-error-payload.md) non-null object
 
 Errors that occurred while performing the operation.
 
-#### `DesWorkspaceInsInitializeInsightsIfRequiredPayload.isSuccess` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isSuccess` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the initialization finished successfully.

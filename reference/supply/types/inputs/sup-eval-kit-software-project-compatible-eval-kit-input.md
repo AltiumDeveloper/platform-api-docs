@@ -26,18 +26,18 @@ input SupEvalKitSoftwareProjectCompatibleEvalKitInput {
 
 ### Fields
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitInput.addCompatibleEvalKits` · [`[SupEvalKitCreateSoftwareProjectCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-create-software-project-compatible-eval-kit-input.md) list input supply
+#### `addCompatibleEvalKits` · [`[SupEvalKitCreateSoftwareProjectCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-create-software-project-compatible-eval-kit-input.md) list input
 
 Add a new software project evaluation kit project sources.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The software project identifier.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitInput.removeCompatibleEvalKits` · [`[SupEvalKitRemoveSoftwareProjectCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-remove-software-project-compatible-eval-kit-input.md) list input supply
+#### `removeCompatibleEvalKits` · [`[SupEvalKitRemoveSoftwareProjectCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-remove-software-project-compatible-eval-kit-input.md) list input
 
 Remove current existing evaluation kit project sources.
 
-#### `SupEvalKitSoftwareProjectCompatibleEvalKitInput.updateCompatibleEvalKits` · [`[SupEvalKitUpdateSoftwareProjectCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-software-project-compatible-eval-kit-input.md) list input supply
+#### `updateCompatibleEvalKits` · [`[SupEvalKitUpdateSoftwareProjectCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-software-project-compatible-eval-kit-input.md) list input
 
 Update current existing evaluation kit project sources.

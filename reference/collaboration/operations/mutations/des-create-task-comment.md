@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a new comment for the specified task.
 
+### Type
+
+#### [`DesCreateTaskCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-task-comment-payload.md) object
+
+Payload associated with creating a task comment.
+
 ```graphql
 desCreateTaskComment(
   input: DesCreateTaskCommentInput!
@@ -19,10 +25,4 @@ desCreateTaskComment(
 
 ### Arguments
 
-#### `desCreateTaskComment.input` · [`DesCreateTaskCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-task-comment-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesCreateTaskCommentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-task-comment-payload.md) object collaboration
-
-Payload associated with creating a task comment.
+#### `input` · [`DesCreateTaskCommentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-task-comment-input.md) non-null input

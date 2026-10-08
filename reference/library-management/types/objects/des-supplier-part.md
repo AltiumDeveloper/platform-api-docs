@@ -26,18 +26,18 @@ type DesSupplierPart {
 
 ### Fields
 
-#### `DesSupplierPart.companyName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `companyName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The supplier company name.
 
-#### `DesSupplierPart.partNumber` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partNumber` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The part number (SKU).
 
-#### `DesSupplierPart.prices` · [`[DesSupplierPrice!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-supplier-price.md) list object library-management
+#### `prices` · [`[DesSupplierPrice!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-supplier-price.md) list object
 
-Use `prices` and `stocks` with library components only, e.g. `DesLibrary.components`, `desComponentById`.
+Use `prices` and `stocks` with library components only, e.g. `DesLibrary.components`, [`desComponentById`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/queries/des-component-by-id.md).
 
-#### `DesSupplierPart.stocks` · [`[DesSupplierStock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-supplier-stock.md) list object library-management
+#### `stocks` · [`[DesSupplierStock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-supplier-stock.md) list object
 
-Use `prices` and `stocks` with library components only, e.g. `DesLibrary.components`, `desComponentById`.
+Use `prices` and `stocks` with library components only, e.g. `DesLibrary.components`, [`desComponentById`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/queries/des-component-by-id.md).

@@ -22,6 +22,6 @@ enum SftSimSimulationRepositoryType {
 
 ### Values
 
-#### `SftSimSimulationRepositoryType.EXTERNAL`
+#### `EXTERNAL`
 
-#### `SftSimSimulationRepositoryType.INTERNAL`
+#### `INTERNAL`

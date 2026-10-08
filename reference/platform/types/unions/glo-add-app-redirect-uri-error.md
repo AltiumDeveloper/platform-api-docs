@@ -19,14 +19,14 @@ union GloAddAppRedirectUriError = GloAppNotFoundError | GloAppDeletedError | Glo
 
 ### Possible types
 
-#### [`GloAddAppRedirectUriError.GloAppNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-found-error.md) object platform
+#### [`GloAppNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-found-error.md) object
 
-Error that occurs when a `GloApp` is not found.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) is not found.
 
-#### [`GloAddAppRedirectUriError.GloAppDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md) object platform
+#### [`GloAppDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md) object
 
-Error that occurs when attempting to update a deleted `GloApp`.
+Error that occurs when attempting to update a deleted [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md).
 
-#### [`GloAddAppRedirectUriError.GloAppRedirectUriNotUpdatedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-redirect-uri-not-updated-error.md) object platform
+#### [`GloAppRedirectUriNotUpdatedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-redirect-uri-not-updated-error.md) object
 
-Error that occurs when updating the redirect URI for a `GloApp` is unsuccessful.
+Error that occurs when updating the redirect URI for a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) is unsuccessful.

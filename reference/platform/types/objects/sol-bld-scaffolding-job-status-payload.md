@@ -24,10 +24,10 @@ type SolBldScaffoldingJobStatusPayload {
 
 ### Fields
 
-#### `SolBldScaffoldingJobStatusPayload.jobId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `jobId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SolBldScaffoldingJobStatusPayload.messages` · [`[SolBldScaffoldingStatusMessagePayload!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-message-payload.md) list object platform
+#### `messages` · [`[SolBldScaffoldingStatusMessagePayload!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-message-payload.md) list object
 
-#### `SolBldScaffoldingJobStatusPayload.solutionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `SolBldScaffoldingJobStatusPayload.status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

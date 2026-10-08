@@ -11,6 +11,10 @@ deprecated: false
 
 The list of evaluation kit sources associated with the software project.
 
+### Type
+
+#### [`SupSoftwareProjectEvalKitSource`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source.md) object
+
 ```graphql
 supEvalKitSoftwareProjectCompatibleEvalKitsBySoftwareProjectId(
   softwareProjectId: ID!
@@ -19,8 +23,4 @@ supEvalKitSoftwareProjectCompatibleEvalKitsBySoftwareProjectId(
 
 ### Arguments
 
-#### `supEvalKitSoftwareProjectCompatibleEvalKitsBySoftwareProjectId.softwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SupSoftwareProjectEvalKitSource`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source.md) object supply
+#### `softwareProjectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

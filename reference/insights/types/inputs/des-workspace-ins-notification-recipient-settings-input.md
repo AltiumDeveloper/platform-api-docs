@@ -25,14 +25,14 @@ input DesWorkspaceInsNotificationRecipientSettingsInput {
 
 ### Fields
 
-#### `DesWorkspaceInsNotificationRecipientSettingsInput.groups` · [`[DesWorkspaceInsRecipientGroupInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-recipient-group-input.md) non-null input insights
+#### `groups` · [`[DesWorkspaceInsRecipientGroupInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-recipient-group-input.md) non-null input
 
 User groups that should receive notifications.
 
-#### `DesWorkspaceInsNotificationRecipientSettingsInput.sendToOwners` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `sendToOwners` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Send notifications to insight owners automatically.
 
-#### `DesWorkspaceInsNotificationRecipientSettingsInput.users` · [`[DesWorkspaceInsRecipientUserInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-recipient-user-input.md) non-null input insights
+#### `users` · [`[DesWorkspaceInsRecipientUserInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-recipient-user-input.md) non-null input
 
 Explicit list of workspace users to notify.

@@ -11,6 +11,10 @@ deprecated: false
 
 Delete evaluation kits from a reference design.
 
+### Type
+
+#### [`SupEvalKitDeleteRefDesignCompatibleEvalKitPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-ref-design-compatible-eval-kit-payload.md) object
+
 ```graphql
 supEvalKitDeleteRefDesignCompatibleEvalKit(
   input: SupEvalKitDeleteRefDesignCompatibleEvalKitInput!
@@ -19,8 +23,4 @@ supEvalKitDeleteRefDesignCompatibleEvalKit(
 
 ### Arguments
 
-#### `supEvalKitDeleteRefDesignCompatibleEvalKit.input` · [`SupEvalKitDeleteRefDesignCompatibleEvalKitInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-ref-design-compatible-eval-kit-input.md) non-null input supply
-
-### Type
-
-#### [`SupEvalKitDeleteRefDesignCompatibleEvalKitPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-delete-ref-design-compatible-eval-kit-payload.md) object supply
+#### `input` · [`SupEvalKitDeleteRefDesignCompatibleEvalKitInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-delete-ref-design-compatible-eval-kit-input.md) non-null input

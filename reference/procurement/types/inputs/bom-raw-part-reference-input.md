@@ -24,10 +24,10 @@ input BomRawPartReferenceInput {
 
 ### Fields
 
-#### `BomRawPartReferenceInput.manufacturer` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `manufacturer` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Manufacturer name.
 
-#### `BomRawPartReferenceInput.mpn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `mpn` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 MPN stands for Manufacturer Part Number. It is a unique identifier issued by manufacturers that identifies individual products.

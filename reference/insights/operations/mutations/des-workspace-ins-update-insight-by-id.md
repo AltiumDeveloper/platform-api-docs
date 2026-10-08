@@ -11,6 +11,12 @@ deprecated: false
 
 Updates an insight by identifier.
 
+### Type
+
+#### [`DesWorkspaceInsUpdateInsightByIdPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-update-insight-by-id-payload.md) object
+
+Payload produced after updating an insight by identifier.
+
 ```graphql
 desWorkspaceInsUpdateInsightById(
   input: DesWorkspaceInsUpdateInsightByIdInput!
@@ -19,10 +25,4 @@ desWorkspaceInsUpdateInsightById(
 
 ### Arguments
 
-#### `desWorkspaceInsUpdateInsightById.input` · [`DesWorkspaceInsUpdateInsightByIdInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-update-insight-by-id-input.md) non-null input insights
-
-### Type
-
-#### [`DesWorkspaceInsUpdateInsightByIdPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-update-insight-by-id-payload.md) object insights
-
-Payload produced after updating an insight by identifier.
+#### `input` · [`DesWorkspaceInsUpdateInsightByIdInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-update-insight-by-id-input.md) non-null input

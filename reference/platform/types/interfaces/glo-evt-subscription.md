@@ -13,7 +13,9 @@ Represents the application subscription to some events.
 
 ### Common Data Model
 
-- [Event Subscription](https://altiumdeveloper.github.io/cdm/classes/plt_EventSubscription/)
+- [Event Subscription](https://w3id.org/altium/cdm/platform/EventSubscription)
+
+  - IRI: [`https://w3id.org/altium/cdm/platform/EventSubscription`](https://w3id.org/altium/cdm/platform/EventSubscription)
   - GRID: `grid:global::events:subscription/{id}`
 
 ### Returned By
@@ -38,14 +40,14 @@ interface GloEvtSubscription {
 
 ### Fields
 
-#### `GloEvtSubscription.eventTypes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `eventTypes` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Events of interest.
 
-#### `GloEvtSubscription.state` · [`GloEvtSubscriptionState!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-evt-subscription-state.md) non-null enum platform
+#### `state` · [`GloEvtSubscriptionState!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-evt-subscription-state.md) non-null enum
 
 State of the subscription.
 
-#### `GloEvtSubscription.subscriptionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `subscriptionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Subscription identifier.

@@ -11,6 +11,10 @@ deprecated: false
 
 Gets AI models by identifiers.
 
+### Type
+
+#### [`SftAIModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md) object
+
 ```graphql
 sftAIModelsByIds(
   ids: [ID!]!
@@ -19,8 +23,4 @@ sftAIModelsByIds(
 
 ### Arguments
 
-#### `sftAIModelsByIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SftAIModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md) object renesas-preview
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

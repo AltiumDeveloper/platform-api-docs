@@ -25,8 +25,8 @@ enum DesCadLayersExportMode {
 
 ### Values
 
-#### `DesCadLayersExportMode.ALL_LAYERS`
+#### `ALL_LAYERS`
 
-#### `DesCadLayersExportMode.NO_LAYERS`
+#### `NO_LAYERS`
 
-#### `DesCadLayersExportMode.OUTER_SIGNAL_LAYERS_ONLY`
+#### `OUTER_SIGNAL_LAYERS_ONLY`

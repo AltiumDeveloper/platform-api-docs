@@ -26,18 +26,18 @@ type DesPartSearchInferenceStrippedSpan {
 
 ### Fields
 
-#### `DesPartSearchInferenceStrippedSpan.attributeShortnames` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `attributeShortnames` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Attribute short names corresponding to the stripped term.
 
-#### `DesPartSearchInferenceStrippedSpan.end` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `end` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The exclusive end character index of the stripped term.
 
-#### `DesPartSearchInferenceStrippedSpan.start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The start character index of the stripped term.
 
-#### `DesPartSearchInferenceStrippedSpan.text` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `text` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The stripped term text.

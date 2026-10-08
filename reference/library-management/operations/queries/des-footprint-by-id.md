@@ -11,6 +11,12 @@ deprecated: false
 
 Searches for a specific footprint by its unique identifier.
 
+### Type
+
+#### [`DesFootprint`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) object
+
+A component footprint. Footprints define the space a component occupies.
+
 ```graphql
 desFootprintById(
   id: ID!
@@ -19,12 +25,6 @@ desFootprintById(
 
 ### Arguments
 
-#### `desFootprintById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The node identifier for a footprint.
-
-### Type
-
-#### [`DesFootprint`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) object library-management
-
-A component footprint. Footprints define the space a component occupies.

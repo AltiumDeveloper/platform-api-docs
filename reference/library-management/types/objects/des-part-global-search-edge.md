@@ -24,10 +24,10 @@ type DesPartGlobalSearchEdge {
 
 ### Fields
 
-#### `DesPartGlobalSearchEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesPartGlobalSearchEdge.node` · [`DesPartGlobalSearchItem!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-item.md) non-null object library-management
+#### `node` · [`DesPartGlobalSearchItem!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-search-item.md) non-null object
 
 The item at the end of the edge.

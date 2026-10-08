@@ -17,6 +17,10 @@ deprecated: false
 
 Delete a scope configuration for the specified project.
 
+### Type
+
+#### [`RsaMotorStudioDeleteScopeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-scope-config-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioDeleteScopeConfig(
   input: RsaMotorStudioDeleteScopeConfigInput!
@@ -25,8 +29,4 @@ rsaMotorStudioDeleteScopeConfig(
 
 ### Arguments
 
-#### `rsaMotorStudioDeleteScopeConfig.input` · [`RsaMotorStudioDeleteScopeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-scope-config-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioDeleteScopeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-scope-config-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioDeleteScopeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-scope-config-input.md) non-null input

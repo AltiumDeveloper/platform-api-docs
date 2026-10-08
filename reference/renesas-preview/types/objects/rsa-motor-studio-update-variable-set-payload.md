@@ -27,4 +27,4 @@ type RsaMotorStudioUpdateVariableSetPayload {
 
 ### Fields
 
-#### `RsaMotorStudioUpdateVariableSetPayload.variableSet` · [`RsaMotorStudioVariableSet!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) non-null object renesas-preview
+#### `variableSet` · [`RsaMotorStudioVariableSet!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) non-null object

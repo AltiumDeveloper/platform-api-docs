@@ -28,26 +28,26 @@ input DesLifeCycleStateTransitionInput {
 
 ### Fields
 
-#### `DesLifeCycleStateTransitionInput.approvals` · [`[DesLifeCycleStateTransitionApprovalGroupInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-approval-group-input.md) list input platform
+#### `approvals` · [`[DesLifeCycleStateTransitionApprovalGroupInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-approval-group-input.md) list input
 
 Approval groups for this life cycle definition transition. Mutually exclusive with controllers, if approvals are set, controllers must be omitted.
 
-#### `DesLifeCycleStateTransitionInput.controllers` · [`[DesLifeCycleStateTransitionControllerInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-controller-input.md) list input platform
+#### `controllers` · [`[DesLifeCycleStateTransitionControllerInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-life-cycle-state-transition-controller-input.md) list input
 
 Controllers of this life cycle definition transition. If controllers and approvals are omitted, the controllers will default to ANYONE.
 
-#### `DesLifeCycleStateTransitionInput.menuTextFormat` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `menuTextFormat` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Menu text format for life cycle state transition.
 
-#### `DesLifeCycleStateTransitionInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of life cycle state transition.
 
-#### `DesLifeCycleStateTransitionInput.stateAfter` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `stateAfter` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the life cycle state after the transition.
 
-#### `DesLifeCycleStateTransitionInput.stateBefore` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `stateBefore` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the life cycle state before the transition.

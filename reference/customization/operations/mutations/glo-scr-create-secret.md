@@ -11,6 +11,10 @@ deprecated: false
 
 Creates a workspace secret. There is no update: to change a value, delete the secret and add it again.
 
+### Type
+
+#### [`GloScrCreateSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-create-secret-payload.md) object
+
 ```graphql
 gloScrCreateSecret(
   input: GloScrCreateSecretInput!
@@ -19,8 +23,4 @@ gloScrCreateSecret(
 
 ### Arguments
 
-#### `gloScrCreateSecret.input` · [`GloScrCreateSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-create-secret-input.md) non-null input customization
-
-### Type
-
-#### [`GloScrCreateSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-create-secret-payload.md) object customization
+#### `input` · [`GloScrCreateSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-create-secret-input.md) non-null input

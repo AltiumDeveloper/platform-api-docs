@@ -9,11 +9,11 @@ deprecated: false
 
 # PlatformTokenQuotaExceededError
 
-Error that occurs when the maximum number of `PlatformToken` for a workspace has been reached.
+Error that occurs when the maximum number of [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) for a workspace has been reached.
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -27,4 +27,4 @@ type PlatformTokenQuotaExceededError implements Error {
 
 ### Fields
 
-#### `PlatformTokenQuotaExceededError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

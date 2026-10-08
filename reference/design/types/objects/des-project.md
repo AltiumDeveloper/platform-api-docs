@@ -13,9 +13,15 @@ A project manages all development stages of the PCB/PCA product lifecycle.
 
 ### Common Data Model
 
-- [Harness Project](https://altiumdeveloper.github.io/cdm/classes/des_HarnessProject/) — Harness Project defines the design of a cable and wiring harness as a standalone yet integrable artifact, capturing connectors, wires, splices, and pin-to-pin mappings required to implement electrical interconnects between boards and system elements.
-- [Multiboard Project](https://altiumdeveloper.github.io/cdm/classes/des_MultiboardProject/) — Multiboard Project represents the coordinated design of multiple interconnected PCB projects assembled into a single system, capturing both their logical interconnects and physical arrangements.
-- [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/) — A design project stored in a Workspace, normally under its built-in version control, such as a PCB project. It groups the design documents that together define one implementation of a product, along with its project parameters and variants; it is the source from which releases are made and from which Managed BOMs can be created.
+- [Harness Project](https://w3id.org/altium/cdm/design/HarnessProject) — Harness Project defines the design of a cable and wiring harness as a standalone yet integrable artifact, capturing connectors, wires, splices, and pin-to-pin mappings required to implement electrical interconnects between boards and system elements.
+  - IRI: [`https://w3id.org/altium/cdm/design/HarnessProject`](https://w3id.org/altium/cdm/design/HarnessProject)
+
+- [Multiboard Project](https://w3id.org/altium/cdm/design/MultiboardProject) — Multiboard Project represents the coordinated design of multiple interconnected PCB projects assembled into a single system, capturing both their logical interconnects and physical arrangements.
+  - IRI: [`https://w3id.org/altium/cdm/design/MultiboardProject`](https://w3id.org/altium/cdm/design/MultiboardProject)
+
+- [Hardware Project](https://w3id.org/altium/cdm/design/Project) — A design project stored in a Workspace, normally under its built-in version control, such as a PCB project. It groups the design documents that together define one implementation of a product, along with its project parameters and variants; it is the source from which releases are made and from which Managed BOMs can be created.
+
+  - IRI: [`https://w3id.org/altium/cdm/design/Project`](https://w3id.org/altium/cdm/design/Project)
   - GRID: `grid:workspace:{workspace-id}:design:project/{id}`
 
 ### Returned By
@@ -28,7 +34,7 @@ A project manages all development stages of the PCB/PCA product lifecycle.
 
 ### Interfaces
 
-#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface common
+#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface
 
 The node interface is implemented by entities that have a global unique identifier.
 
@@ -88,172 +94,172 @@ type DesProject implements Node {
 
 ### Fields
 
-#### `DesProject.collaborationLatestRevision` · [`DesCollaborationRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-revision.md) object design
+#### `collaborationLatestRevision` · [`DesCollaborationRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-revision.md) object
 
-The latest ECAD, MCAD or ESD revision. See also `desProjectCollaborationLatestRevision`.
+The latest ECAD, MCAD or ESD revision. See also [`desProjectCollaborationLatestRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-collaboration-latest-revision.md).
 
-##### `DesProject.collaborationLatestRevision.domain` · [`DesCollaborationDomain!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-collaboration-domain.md) non-null enum design
+##### `domain` · [`DesCollaborationDomain!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-collaboration-domain.md) non-null enum
 
 The collaboration domain to get the latest revision for.
 
-#### `DesProject.collaborationRevisions` · [`DesCollaborationRevisionConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-revision-connection.md) object design
+#### `collaborationRevisions` · [`DesCollaborationRevisionConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-revision-connection.md) object
 
-ECAD, MCAD or ESD revisions returned by pages. See also `desProjectCollaborationRevisions`.
+ECAD, MCAD or ESD revisions returned by pages. See also [`desProjectCollaborationRevisions`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-collaboration-revisions.md).
 
-##### `DesProject.collaborationRevisions.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-##### `DesProject.collaborationRevisions.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-##### `DesProject.collaborationRevisions.domain` · [`DesCollaborationDomain!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-collaboration-domain.md) non-null enum design
+##### `domain` · [`DesCollaborationDomain!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-collaboration-domain.md) non-null enum
 
 The collaboration domain to get the revisions for.
 
-##### `DesProject.collaborationRevisions.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-##### `DesProject.collaborationRevisions.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-#### `DesProject.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` when this project was created.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) when this project was created.
 
-#### `DesProject.createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `createdBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The account information for who created this project.
 
-#### `DesProject.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The summary of this project content or purpose.
 
-#### `DesProject.design` · [`DesDesign!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design.md) non-null object design
+#### `design` · [`DesDesign!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design.md) non-null object
 
 The detailed design information for this project.
 
-#### `DesProject.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-The node identifier for this project (used by `desProjectById`).
+The node identifier for this project (used by [`desProjectById`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-project-by-id.md)).
 
-#### `DesProject.isScaffolding` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isScaffolding` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Gets current scaffolding status.
 
-#### `DesProject.latestRevision` · [`DesVcsRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision.md) object design
+#### `latestRevision` · [`DesVcsRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision.md) object
 
 The latest VCS revision. May be null, see GraphQL errors.
 
-#### `DesProject.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The assigned name for this project.
 
-#### `DesProject.owner` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object platform
+#### `owner` · [`DesWorkspaceUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) object Platform
 
 Hardware project's owner.
 
-#### `DesProject.parameters` · [`[DesProjectParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-parameter.md) non-null object design
+#### `parameters` · [`[DesProjectParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-parameter.md) non-null object
 
 The list of the parameters describing this project.
 
-##### `DesProject.parameters.names` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+##### `names` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 An optional list of parameter names to search.
 
-#### `DesProject.previewUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `previewUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The web address to download a preview image for this project.
 
-##### `DesProject.previewUrl.isDirectLink` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+##### `isDirectLink` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Tells to get a direct link to the preview image.
 
-#### `DesProject.projectId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `projectId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The reference identifier for this project.
 
-#### `DesProject.projectPermissions` · [`[DesProjectPermission!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-permission.md) non-null object design
+#### `projectPermissions` · [`[DesProjectPermission!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-permission.md) non-null object
 
 The list of project permissions.
 
-#### `DesProject.projectType` · [`DesProjectType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) non-null enum design
+#### `projectType` · [`DesProjectType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-type.md) non-null enum
 
 The project type.
 
-#### `DesProject.repositoryType` · [`DesProjectRepositoryType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-repository-type.md) enum design
+#### `repositoryType` · [`DesProjectRepositoryType`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-project-repository-type.md) enum
 
 Whether the Git repository is hosted inside or outside Altium 365. Null when the project has no VCS repository, or when the repository lookup fails (in which case see GraphQL errors).
 
-#### `DesProject.repositoryUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `repositoryUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The Git remote URL for the repository. Treat it as an opaque value — request it from the API and use it as-is.
 
-#### `DesProject.requirementsBlockId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `requirementsBlockId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The requirements block identifier.
 
-#### `DesProject.revisions` · [`DesVcsRevisionConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision-connection.md) object design
+#### `revisions` · [`DesVcsRevisionConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision-connection.md) object
 
 The list of VCS revisions.
 
-##### `DesProject.revisions.after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.
 
-##### `DesProject.revisions.before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+##### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come before the specified cursor.
 
-##### `DesProject.revisions.first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the first \_n\_ elements from the list.
 
-##### `DesProject.revisions.last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 Returns the last \_n\_ elements from the list.
 
-#### `DesProject.tasks` · [`[DesTask!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-task.md) non-null object collaboration
+#### `tasks` · [`[DesTask!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-task.md) non-null object Collaboration
 
-The list of project tasks. For a particular project consider using the more effective query `desProjectTasks`.
+The list of project tasks. For a particular project consider using the more effective query [`desProjectTasks`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/operations/queries/des-project-tasks.md).
 
-#### `DesProject.updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` when this project was last modified.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) when this project was last modified.
 
-#### `DesProject.updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object platform
+#### `updatedBy` · [`DesUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) non-null object Platform
 
 The account information for who last modified this project.
 
-#### `DesProject.url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `url` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The Altium 365 web address.
 
-#### `DesProject.variantCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `variantCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The number of design variants.
 
-#### `DesProject.workflows` · [`[DesWorkflow!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow.md) list object customization
+#### `workflows` · [`[DesWorkflow!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-workflow.md) list object Customization
 
 The list of workflows associated with this project.
 
-##### `DesProject.workflows.isClosed` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+##### `isClosed` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 An option to search workflows that have been completed.
 
-##### `DesProject.workflows.modifiedAfter` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+##### `modifiedAfter` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
-An option to search workflows that have been modified after a specific `DateTime`.
+An option to search workflows that have been modified after a specific [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md).
 
-##### `DesProject.workflows.where` · [`DesWorkflowFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-filter-input.md) input customization
+##### `where` · [`DesWorkflowFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-filter-input.md) input Customization
 
-##### `DesProject.workflows.withVariable` · [`DesWorkflowFilterByVariableInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-filter-by-variable-input.md) input customization
+##### `withVariable` · [`DesWorkflowFilterByVariableInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-workflow-filter-by-variable-input.md) input Customization
 
 Filter workflows by a variable.
 
-#### `DesProject.workspaceUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `workspaceUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The Altium 365 workspace URL.

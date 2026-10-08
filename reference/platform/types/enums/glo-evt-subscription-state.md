@@ -24,10 +24,10 @@ enum GloEvtSubscriptionState {
 
 ### Values
 
-#### `GloEvtSubscriptionState.ACTIVE`
+#### `ACTIVE`
 
 Subscription is active and events of interest are dispatched to consumers.
 
-#### `GloEvtSubscriptionState.INACTIVE`
+#### `INACTIVE`
 
 Subscription is not active and events are not dispatched to consumers.

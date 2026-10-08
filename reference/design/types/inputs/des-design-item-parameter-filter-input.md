@@ -26,14 +26,14 @@ input DesDesignItemParameterFilterInput {
 
 ### Fields
 
-#### `DesDesignItemParameterFilterInput.and` · [`[DesDesignItemParameterFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) list input design
+#### `and` · [`[DesDesignItemParameterFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) list input
 
-#### `DesDesignItemParameterFilterInput.name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 Parameter name.
 
-#### `DesDesignItemParameterFilterInput.or` · [`[DesDesignItemParameterFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) list input design
+#### `or` · [`[DesDesignItemParameterFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-design-item-parameter-filter-input.md) list input
 
-#### `DesDesignItemParameterFilterInput.value` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `value` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 Parameter value.

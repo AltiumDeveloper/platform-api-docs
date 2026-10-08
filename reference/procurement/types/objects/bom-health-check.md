@@ -30,34 +30,34 @@ type BomHealthCheck {
 
 ### Fields
 
-#### `BomHealthCheck.category` · [`BomHealthCheckCategory!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check-category.md) non-null object procurement
+#### `category` · [`BomHealthCheckCategory!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check-category.md) non-null object
 
 Category the health check belongs to (e.g., \*Supply Chain\*, \*Manufacturer Lifecycles\*).
 
-#### `BomHealthCheck.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of the health check (e.g., \*This part is RoHS Non-Compliant\*).
 
-#### `BomHealthCheck.group` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `group` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 If set, designates the name of a group the health check belongs to. E.g., the group might be named \*RoHS status\*, and the descriptions of the health checks in the group might be \*No\*, \*Yes with Exemption\*, and \*Unknown\*.
 
-#### `BomHealthCheck.healthCheckId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `healthCheckId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Health check ID.
 
-#### `BomHealthCheck.howToFix` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `howToFix` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Recommended action to address the issue produced by the health check (e.g., \*Consider using a different Manufacturer Part Number\*).
 
-#### `BomHealthCheck.label` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `label` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A concise label or tag for the health check. (e.g., \*RoHS Non-Compliant\*).
 
-#### `BomHealthCheck.provider` · [`BomHealthCheckProvider!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check-provider.md) non-null object procurement
+#### `provider` · [`BomHealthCheckProvider!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check-provider.md) non-null object
 
 Provider of the health check.
 
-#### `BomHealthCheck.severity` · [`BomHealthCheckSeverity!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-health-check-severity.md) non-null enum procurement
+#### `severity` · [`BomHealthCheckSeverity!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/enums/bom-health-check-severity.md) non-null enum
 
 Severity of the health check.

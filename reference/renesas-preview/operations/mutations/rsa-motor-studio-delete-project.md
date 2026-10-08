@@ -17,6 +17,10 @@ deprecated: false
 
 Delete specified motor studio project.
 
+### Type
+
+#### [`RsaMotorStudioDeleteProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-project-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioDeleteProject(
   input: RsaMotorStudioDeleteProjectInput!
@@ -25,8 +29,4 @@ rsaMotorStudioDeleteProject(
 
 ### Arguments
 
-#### `rsaMotorStudioDeleteProject.input` · [`RsaMotorStudioDeleteProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-project-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioDeleteProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-project-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioDeleteProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-project-input.md) non-null input

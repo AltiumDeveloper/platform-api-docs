@@ -26,18 +26,18 @@ type DesCollaborationSimulationRevisionConnection {
 
 ### Fields
 
-#### `DesCollaborationSimulationRevisionConnection.edges` · [`[DesCollaborationSimulationRevisionEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision-edge.md) list object design
+#### `edges` · [`[DesCollaborationSimulationRevisionEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision-edge.md) list object
 
 A list of edges.
 
-#### `DesCollaborationSimulationRevisionConnection.nodes` · [`[DesCollaborationSimulationRevision!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision.md) list object design
+#### `nodes` · [`[DesCollaborationSimulationRevision!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-simulation-revision.md) list object
 
 A flattened list of the nodes.
 
-#### `DesCollaborationSimulationRevisionConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `DesCollaborationSimulationRevisionConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

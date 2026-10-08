@@ -25,22 +25,22 @@ enum SupSoftwareProjectEvalKitProjectSourceDeviceFamily {
 
 ### Values
 
-#### `SupSoftwareProjectEvalKitProjectSourceDeviceFamily.R_CAR`
+#### `R_CAR`
 
 R-Car device family.
 
-#### `SupSoftwareProjectEvalKitProjectSourceDeviceFamily.RA`
+#### `RA`
 
 RA device family.
 
-#### `SupSoftwareProjectEvalKitProjectSourceDeviceFamily.RAFW`
+#### `RAFW`
 
 RAFW device family.
 
-#### `SupSoftwareProjectEvalKitProjectSourceDeviceFamily.RX`
+#### `RX`
 
 RX device family.
 
-#### `SupSoftwareProjectEvalKitProjectSourceDeviceFamily.RZ`
+#### `RZ`
 
 RZ device family.

@@ -19,7 +19,8 @@ A configuration option for a port (display-only in this schema).
 
 ### Common Data Model
 
-- [PortConfiguration](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfiguration/) — A specific configuration for a port.
+- [PortConfiguration](https://w3id.org/altium/cdm/deviceModel/PortConfiguration) — A specific configuration for a port.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/PortConfiguration`](https://w3id.org/altium/cdm/deviceModel/PortConfiguration)
 
 ### Member Of
 
@@ -35,14 +36,14 @@ type DmPortConfiguration {
 
 ### Fields
 
-#### `DmPortConfiguration.enumValues` · [`[DmConfigEnumValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-enum-value.md) non-null object renesas-preview
+#### `enumValues` · [`[DmConfigEnumValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-config-enum-value.md) non-null object
 
 Enumerated values associated with the port configuration.
 
-#### `DmPortConfiguration.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Identifier for the port configuration.
 
-#### `DmPortConfiguration.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the port configuration.

@@ -24,18 +24,18 @@ enum SupEvalKitOrderField {
 
 ### Values
 
-#### `SupEvalKitOrderField.CREATED_AT`
+#### `CREATED_AT`
 
 Order by creation date.
 
-#### `SupEvalKitOrderField.DESCRIPTION`
+#### `DESCRIPTION`
 
 Order by description.
 
-#### `SupEvalKitOrderField.TITLE`
+#### `TITLE`
 
 Order by title.
 
-#### `SupEvalKitOrderField.UPDATED_AT`
+#### `UPDATED_AT`
 
 Order by last update date.

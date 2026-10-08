@@ -17,6 +17,10 @@ deprecated: false
 
 Retrieves a software component
 
+### Type
+
+#### [`SysLibSoftwareComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-component.md) object **EXPERIMENTAL**
+
 ```graphql
 sysLibSoftwareComponentById(
   id: ID!
@@ -25,8 +29,4 @@ sysLibSoftwareComponentById(
 
 ### Arguments
 
-#### `sysLibSoftwareComponentById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SysLibSoftwareComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-component.md) object system-design **EXPERIMENTAL**
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

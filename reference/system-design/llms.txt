@@ -1,7 +1,7 @@
-# System Design — Altium Platform API
+# System Design — Altium 365 API
 > Electronic system design documents, system models and software libraries.
 
-Concepts: [system](https://altiumdeveloper.github.io/cdm/subsets/system/), [system-sdm](https://altiumdeveloper.github.io/cdm/subsets/system-sdm/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/schema.graphql) (~4681 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/overview.md).
+Concepts: [system](https://altiumdeveloper.github.io/cdm/subsets/system/), [system-sdm](https://altiumdeveloper.github.io/cdm/subsets/system-sdm/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/schema.graphql) (~4679 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/overview.md).
 
 ## Entities
 - [SysEsdDocument](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md): ESD Document — A system-level block diagram document used in a Renesas 365 solution (listed there as a System Design project) to describe the architecture of the system at a functional level. GRID `grid:workspace:{workspace-id}:system-design:esd/{id}`. Via: sysEsdDocumentById, sysEsdDocumentsByIds, sysEsdDocuments, SolSolution.esdDocuments

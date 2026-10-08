@@ -30,34 +30,34 @@ input DesPartCustomPartSellerInput {
 
 ### Fields
 
-#### `DesPartCustomPartSellerInput.currency` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `currency` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The currency code.
 
-#### `DesPartCustomPartSellerInput.prices` · [`[DesPartCustomPartPricePointInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-price-point-input.md) non-null input library-management
+#### `prices` · [`[DesPartCustomPartPricePointInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-price-point-input.md) non-null input
 
 A collection of price points.
 
-#### `DesPartCustomPartSellerInput.sellerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sellerName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The display name of the seller.
 
-#### `DesPartCustomPartSellerInput.sellerUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sellerUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL for the seller.
 
-#### `DesPartCustomPartSellerInput.sku` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `sku` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The stock keeping unit.
 
-#### `DesPartCustomPartSellerInput.specs` · [`[DesPartCustomPartSellerSpecInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-seller-spec-input.md) non-null input library-management
+#### `specs` · [`[DesPartCustomPartSellerSpecInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-seller-spec-input.md) non-null input
 
 A collection of seller specifications.
 
-#### `DesPartCustomPartSellerInput.stock` · [`[DesPartCustomPartStockItemInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-stock-item-input.md) non-null input library-management
+#### `stock` · [`[DesPartCustomPartStockItemInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-custom-part-stock-item-input.md) non-null input
 
 A collection of stock items.
 
-#### `DesPartCustomPartSellerInput.updatedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar common
+#### `updatedAt` · [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) scalar
 
 The last update time.

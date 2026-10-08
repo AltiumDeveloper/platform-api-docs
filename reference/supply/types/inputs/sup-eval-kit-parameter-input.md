@@ -24,10 +24,10 @@ input SupEvalKitParameterInput {
 
 ### Fields
 
-#### `SupEvalKitParameterInput.parameter` · [`SupEvalKitParameterInfoInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-parameter-info-input.md) non-null input supply
+#### `parameter` · [`SupEvalKitParameterInfoInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-parameter-info-input.md) non-null input
 
 Identifies the parameter by its title (case-sensitive).
 
-#### `SupEvalKitParameterInput.values` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `values` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The values for this parameter.

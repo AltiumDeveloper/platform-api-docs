@@ -11,6 +11,12 @@ deprecated: false
 
 Deletes a part tag. The tag has to be unassigned from every part first.
 
+### Type
+
+#### [`DesPartDeleteTagPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-delete-tag-payload.md) object
+
+Represents the payload returned after deleting a part tag.
+
 ```graphql
 desPartDeleteTag(
   input: DesPartDeleteTagInput!
@@ -19,12 +25,6 @@ desPartDeleteTag(
 
 ### Arguments
 
-#### `desPartDeleteTag.input` · [`DesPartDeleteTagInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-delete-tag-input.md) non-null input library-management
+#### `input` · [`DesPartDeleteTagInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-delete-tag-input.md) non-null input
 
 The tag to delete.
-
-### Type
-
-#### [`DesPartDeleteTagPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-delete-tag-payload.md) object library-management
-
-Represents the payload returned after deleting a part tag.

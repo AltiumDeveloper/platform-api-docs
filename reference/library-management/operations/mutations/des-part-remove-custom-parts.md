@@ -11,6 +11,12 @@ deprecated: false
 
 Removes custom part by the given identifiers.
 
+### Type
+
+#### [`DesPartRemoveCustomPartsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-remove-custom-parts-payload.md) object
+
+Represents the payload returned after removing custom parts.
+
 ```graphql
 desPartRemoveCustomParts(
   input: DesPartRemoveCustomPartsInput!
@@ -19,12 +25,6 @@ desPartRemoveCustomParts(
 
 ### Arguments
 
-#### `desPartRemoveCustomParts.input` · [`DesPartRemoveCustomPartsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-remove-custom-parts-input.md) non-null input library-management
+#### `input` · [`DesPartRemoveCustomPartsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-remove-custom-parts-input.md) non-null input
 
 The custom parts to remove.
-
-### Type
-
-#### [`DesPartRemoveCustomPartsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-remove-custom-parts-payload.md) object library-management
-
-Represents the payload returned after removing custom parts.

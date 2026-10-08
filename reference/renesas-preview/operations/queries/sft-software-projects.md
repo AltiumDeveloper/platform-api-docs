@@ -17,4 +17,4 @@ sftSoftwareProjects: [SftSoftwareProject!]!
 
 ### Type
 
-#### [`SftSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) object renesas-preview
+#### [`SftSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-project.md) object

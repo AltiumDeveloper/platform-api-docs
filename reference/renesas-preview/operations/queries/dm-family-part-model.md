@@ -21,6 +21,6 @@ dmFamilyPartModel: DmFamilyPartModel!
 
 ### Type
 
-#### [`DmFamilyPartModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part-model.md) object renesas-preview **EXPERIMENTAL**
+#### [`DmFamilyPartModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-family-part-model.md) object **EXPERIMENTAL**
 
 Root GraphQL type exposing the collection of device family part definitions.

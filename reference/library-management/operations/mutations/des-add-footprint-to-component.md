@@ -11,6 +11,12 @@ deprecated: false
 
 Adds the specified footprint to a component (does not affect the revision).
 
+### Type
+
+#### [`DesAddFootprintToComponentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-add-footprint-to-component-payload.md) object
+
+Payload associated with adding a footprint to a component.
+
 ```graphql
 desAddFootprintToComponent(
   input: DesAddFootprintToComponentInput!
@@ -19,10 +25,4 @@ desAddFootprintToComponent(
 
 ### Arguments
 
-#### `desAddFootprintToComponent.input` · [`DesAddFootprintToComponentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-add-footprint-to-component-input.md) non-null input library-management
-
-### Type
-
-#### [`DesAddFootprintToComponentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-add-footprint-to-component-payload.md) object library-management
-
-Payload associated with adding a footprint to a component.
+#### `input` · [`DesAddFootprintToComponentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-add-footprint-to-component-input.md) non-null input

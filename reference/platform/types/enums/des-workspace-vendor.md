@@ -24,10 +24,10 @@ enum DesWorkspaceVendor {
 
 ### Values
 
-#### `DesWorkspaceVendor.ALTIUM`
+#### `ALTIUM`
 
 Altium is the workspace vendor.
 
-#### `DesWorkspaceVendor.RENESAS`
+#### `RENESAS`
 
 Renesas is the workspace vendor.

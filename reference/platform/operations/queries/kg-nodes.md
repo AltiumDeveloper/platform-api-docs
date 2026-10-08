@@ -15,6 +15,10 @@ deprecated: false
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
+### Type
+
+#### [`KgNode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) interface **EXPERIMENTAL**
+
 ```graphql
 kgNodes(
   type: KgNodeType!
@@ -23,8 +27,4 @@ kgNodes(
 
 ### Arguments
 
-#### `kgNodes.type` · [`KgNodeType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/kg-node-type.md) non-null enum platform
-
-### Type
-
-#### [`KgNode`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/kg-node.md) interface platform **EXPERIMENTAL**
+#### `type` · [`KgNodeType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/kg-node-type.md) non-null enum

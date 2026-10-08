@@ -21,14 +21,14 @@ enum DesWorkspaceGroupOrderBy {
 
 ### Values
 
-#### `DesWorkspaceGroupOrderBy.CREATED_AT`
+#### `CREATED_AT`
 
 Order by the date of creation of the group.
 
-#### `DesWorkspaceGroupOrderBy.GROUP_ID`
+#### `GROUP_ID`
 
 Order by the workspace specific group identifier.
 
-#### `DesWorkspaceGroupOrderBy.NAME`
+#### `NAME`
 
 Order by the group name.

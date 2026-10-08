@@ -11,6 +11,12 @@ deprecated: false
 
 Search a specific workspace by its URL.
 
+### Type
+
+#### [`DesWorkspace`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace.md) object
+
+A workspace provides a flexible and secure method for managing design, manufacturing and supply content.
+
 ```graphql
 desWorkspaceByUrl(
   workspaceUrl: String!
@@ -19,12 +25,6 @@ desWorkspaceByUrl(
 
 ### Arguments
 
-#### `desWorkspaceByUrl.workspaceUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `workspaceUrl` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The workspace URL.
-
-### Type
-
-#### [`DesWorkspace`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace.md) object platform
-
-A workspace provides a flexible and secure method for managing design, manufacturing and supply content.

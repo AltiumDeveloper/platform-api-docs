@@ -11,6 +11,12 @@ deprecated: false
 
 Unsubscribes from notifications.
 
+### Type
+
+#### [`DesWorkspaceInsUpdateNotificationSettingsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-update-notification-settings-payload.md) object
+
+Payload returned after updating notification settings.
+
 ```graphql
 desWorkspaceInsUnsubscribeFromNotifications(
   input: DesWorkspaceInsUnsubscribeFromNotificationsInput!
@@ -19,10 +25,4 @@ desWorkspaceInsUnsubscribeFromNotifications(
 
 ### Arguments
 
-#### `desWorkspaceInsUnsubscribeFromNotifications.input` · [`DesWorkspaceInsUnsubscribeFromNotificationsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-unsubscribe-from-notifications-input.md) non-null input insights
-
-### Type
-
-#### [`DesWorkspaceInsUpdateNotificationSettingsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-update-notification-settings-payload.md) object insights
-
-Payload returned after updating notification settings.
+#### `input` · [`DesWorkspaceInsUnsubscribeFromNotificationsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-unsubscribe-from-notifications-input.md) non-null input

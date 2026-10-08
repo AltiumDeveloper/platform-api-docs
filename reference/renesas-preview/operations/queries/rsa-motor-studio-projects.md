@@ -17,6 +17,10 @@ deprecated: false
 
 Retrieves collection of MotorStudioProject
 
+### Type
+
+#### [`RsaMotorStudioProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioProjects(
   order: [RsaMotorStudioProjectSortInput!]
@@ -26,10 +30,6 @@ rsaMotorStudioProjects(
 
 ### Arguments
 
-#### `rsaMotorStudioProjects.order` · [`[RsaMotorStudioProjectSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-project-sort-input.md) list input renesas-preview
+#### `order` · [`[RsaMotorStudioProjectSortInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-project-sort-input.md) list input
 
-#### `rsaMotorStudioProjects.where` · [`RsaMotorStudioProjectFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-project-filter-input.md) input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-project.md) object renesas-preview **EXPERIMENTAL**
+#### `where` · [`RsaMotorStudioProjectFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-project-filter-input.md) input

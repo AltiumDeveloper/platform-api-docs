@@ -11,6 +11,10 @@ deprecated: false
 
 Creates new AI model.
 
+### Type
+
+#### [`SftAIModelCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-create-payload.md) object
+
 ```graphql
 sftAIModelCreate(
   input: SftAIModelCreateInput!
@@ -19,8 +23,4 @@ sftAIModelCreate(
 
 ### Arguments
 
-#### `sftAIModelCreate.input` · [`SftAIModelCreateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-create-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftAIModelCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-create-payload.md) object renesas-preview
+#### `input` · [`SftAIModelCreateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-create-input.md) non-null input

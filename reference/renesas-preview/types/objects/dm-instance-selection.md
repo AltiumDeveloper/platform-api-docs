@@ -32,18 +32,18 @@ type DmInstanceSelection {
 
 ### Fields
 
-#### `DmInstanceSelection.groupName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `groupName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Completed op-mode group name that this selection belongs to, if any.
 
-#### `DmInstanceSelection.instanceName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `instanceName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Name of the selected peripheral instance (e.g., SCI0).
 
-#### `DmInstanceSelection.modeName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `modeName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Selected mode/group for this instance.
 
-#### `DmInstanceSelection.pins` · [`[DmPinAssignment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-pin-assignment.md) non-null object renesas-preview
+#### `pins` · [`[DmPinAssignment!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-pin-assignment.md) non-null object
 
 Pin function to port assignments realized by this selection.

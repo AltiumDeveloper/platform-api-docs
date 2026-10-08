@@ -22,6 +22,6 @@ type GloAddAppClientSecretPayload {
 
 ### Fields
 
-#### `GloAddAppClientSecretPayload.errors` · [`[GloAddAppClientSecretError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-client-secret-error.md) list union platform
+#### `errors` · [`[GloAddAppClientSecretError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-client-secret-error.md) list union
 
-#### `GloAddAppClientSecretPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

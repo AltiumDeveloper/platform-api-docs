@@ -21,4 +21,4 @@ type DesAnnotationDesignReviewBinding {
 
 ### Fields
 
-#### `DesAnnotationDesignReviewBinding.designReviewId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `designReviewId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

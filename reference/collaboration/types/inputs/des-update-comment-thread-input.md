@@ -25,14 +25,14 @@ input DesUpdateCommentThreadInput {
 
 ### Fields
 
-#### `DesUpdateCommentThreadInput.commentThreadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `commentThreadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Comment thread identifier.
 
-#### `DesUpdateCommentThreadInput.entityId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `entityId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Entity identifier.
 
-#### `DesUpdateCommentThreadInput.status` · [`DesCommentThreadStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-comment-thread-status.md) non-null enum collaboration
+#### `status` · [`DesCommentThreadStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-comment-thread-status.md) non-null enum
 
 Comment thread status.

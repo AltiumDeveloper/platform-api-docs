@@ -27,30 +27,30 @@ enum SupSolutionTemplateErrorCode {
 
 ### Values
 
-#### `SupSolutionTemplateErrorCode.INVALID_DATA_INPUT`
+#### `INVALID_DATA_INPUT`
 
 Data input invalid.
 
-#### `SupSolutionTemplateErrorCode.OPERATION_FAILED`
+#### `OPERATION_FAILED`
 
 The operation failed.
 
-#### `SupSolutionTemplateErrorCode.SUP_SOLUTION_TEMPLATE_APPLICATION_IS_EXISTED`
+#### `SUP_SOLUTION_TEMPLATE_APPLICATION_IS_EXISTED`
 
 The solution template already exists.
 
-#### `SupSolutionTemplateErrorCode.SUP_SOLUTION_TEMPLATE_APPLICATION_NOT_FOUND`
+#### `SUP_SOLUTION_TEMPLATE_APPLICATION_NOT_FOUND`
 
 The solution template application was not found.
 
-#### `SupSolutionTemplateErrorCode.SUP_SOLUTION_TEMPLATE_ITEM_CONFLICT`
+#### `SUP_SOLUTION_TEMPLATE_ITEM_CONFLICT`
 
 Item conflict.
 
-#### `SupSolutionTemplateErrorCode.SUP_SOLUTION_TEMPLATE_NOT_FOUND`
+#### `SUP_SOLUTION_TEMPLATE_NOT_FOUND`
 
 The solution template was not found.
 
-#### `SupSolutionTemplateErrorCode.SUP_SOLUTION_TEMPLATE_STABLE_NAME_IS_EXISTED`
+#### `SUP_SOLUTION_TEMPLATE_STABLE_NAME_IS_EXISTED`
 
 The stable name is already in use.

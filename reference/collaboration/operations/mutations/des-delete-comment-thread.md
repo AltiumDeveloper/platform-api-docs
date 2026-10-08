@@ -11,6 +11,12 @@ deprecated: false
 
 Permanently deletes a comment thread.
 
+### Type
+
+#### [`DesDeleteCommentThreadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-delete-comment-thread-payload.md) object
+
+Payload associated with deleting a comment thread.
+
 ```graphql
 desDeleteCommentThread(
   input: DesDeleteCommentThreadInput!
@@ -19,10 +25,4 @@ desDeleteCommentThread(
 
 ### Arguments
 
-#### `desDeleteCommentThread.input` · [`DesDeleteCommentThreadInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-comment-thread-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesDeleteCommentThreadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-delete-comment-thread-payload.md) object collaboration
-
-Payload associated with deleting a comment thread.
+#### `input` · [`DesDeleteCommentThreadInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-comment-thread-input.md) non-null input

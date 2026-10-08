@@ -19,7 +19,8 @@ Memory entry with name, size and type.
 
 ### Common Data Model
 
-- [Memory](https://altiumdeveloper.github.io/cdm/classes/dm_Memory/) — A memory entry within an address block.
+- [Memory](https://w3id.org/altium/cdm/deviceModel/Memory) — A memory entry within an address block.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/Memory`](https://w3id.org/altium/cdm/deviceModel/Memory)
 
 ### Member Of
 
@@ -35,14 +36,14 @@ type DmAmMemory {
 
 ### Fields
 
-#### `DmAmMemory.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Memory name.
 
-#### `DmAmMemory.sizeHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sizeHex` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Size formatted as hex (0x...).
 
-#### `DmAmMemory.type` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `type` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Memory type.

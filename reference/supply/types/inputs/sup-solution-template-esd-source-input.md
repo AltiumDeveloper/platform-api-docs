@@ -23,14 +23,14 @@ input SupSolutionTemplateEsdSourceInput {
 
 ### Fields
 
-#### `SupSolutionTemplateEsdSourceInput.compileModel` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input supply
+#### `compileModel` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input
 
 The ESD compile model file.
 
-#### `SupSolutionTemplateEsdSourceInput.documentFile` · [`SupSolutionTemplateFileInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) non-null input supply
+#### `documentFile` · [`SupSolutionTemplateFileInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) non-null input
 
 The ESD document file.
 
-#### `SupSolutionTemplateEsdSourceInput.previewImageFile` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input supply
+#### `previewImageFile` · [`SupSolutionTemplateFileInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-file-input.md) input
 
 The ESD preview resource file.

@@ -22,10 +22,10 @@ type SupSoftwareProjectSolutionTemplateSoftwareProjectsResult {
 
 ### Fields
 
-#### `SupSoftwareProjectSolutionTemplateSoftwareProjectsResult.softwareProjects` · [`[SupSoftwareProject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) non-null object supply
+#### `softwareProjects` · [`[SupSoftwareProject!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) non-null object
 
 The software projects associated with the solution template.
 
-#### `SupSoftwareProjectSolutionTemplateSoftwareProjectsResult.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The solution template identifier.

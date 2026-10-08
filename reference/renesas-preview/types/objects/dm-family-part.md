@@ -39,49 +39,49 @@ type DmFamilyPart {
 
 ### Fields
 
-#### `DmFamilyPart.concrete` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `concrete` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether this part variant is a concrete (fully specified) part.
 
-#### `DmFamilyPart.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Descriptive text explaining the part variant.
 
-#### `DmFamilyPart.deviceFamily` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `deviceFamily` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Stable family key (e.g. "RA", "RAFW", "RX"), derived from the backing device's platform. Matches DmDeviceFamily.key and deviceFamilyKey. Empty when the platform is unknown (e.g. a non-concrete grouping node with no device).
 
-#### `DmFamilyPart.display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Formatted display string for the part variant.
 
-#### `DmFamilyPart.friendlyPartialMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `friendlyPartialMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Human-friendly display of the partial MPN.
 
-#### `DmFamilyPart.level` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `level` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Hierarchy level of the part within the family.
 
-#### `DmFamilyPart.manufacturer` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `manufacturer` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Manufacturer or vendor associated with the part.
 
-#### `DmFamilyPart.mcuPartDetails` · [`DmMcuPartNumberModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-mcu-part-number-model.md) object renesas-preview
+#### `mcuPartDetails` · [`DmMcuPartNumberModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-mcu-part-number-model.md) object
 
 MCU part number details parsed into structured properties.
 
-#### `DmFamilyPart.partialMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partialMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Partial manufacturer part number pattern identifying a family subset.
 
-#### `DmFamilyPart.vendor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `vendor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Silicon vendor, e.g. "Renesas", derived from the backing device's platform. Empty when the platform is unknown.
 
 #### Deprecated
 
-#### `DmFamilyPart.raPartDetails` · [`DmRaPartNumberModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-ra-part-number-model.md) **DEPRECATED** object renesas-preview
+#### `raPartDetails` · [`DmRaPartNumberModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-ra-part-number-model.md) **DEPRECATED** object
 
 > **Deprecated:** Use mcuPartDetails instead.
 

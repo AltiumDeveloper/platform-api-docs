@@ -9,7 +9,13 @@ deprecated: false
 
 # platform.token.byTokenId
 
-Gets the `PlatformToken` with the specified identifier.
+Gets the [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) with the specified identifier.
+
+### Type
+
+#### [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) interface
+
+Represents a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md), which is used for authentication and authorization when accessing the Altium platform.
 
 ```graphql
 platform {
@@ -23,12 +29,6 @@ platform {
 
 ### Arguments
 
-#### `byTokenId.tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `tokenId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier for the Token.
-
-### Type
-
-#### [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) interface platform
-
-Represents a `PlatformToken`, which is used for authentication and authorization when accessing the Altium platform.

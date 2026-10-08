@@ -22,6 +22,6 @@ type GloAddAppRedirectUriPayload {
 
 ### Fields
 
-#### `GloAddAppRedirectUriPayload.errors` · [`[GloAddAppRedirectUriError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-redirect-uri-error.md) list union platform
+#### `errors` · [`[GloAddAppRedirectUriError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-redirect-uri-error.md) list union
 
-#### `GloAddAppRedirectUriPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

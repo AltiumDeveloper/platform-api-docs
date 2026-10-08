@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Hardware Model](https://altiumdeveloper.github.io/cdm/classes/sys_SdmHardwareModel/) — Captures the hardware components and their interactions within the system design.
+- [Hardware Model](https://w3id.org/altium/cdm/system/SdmHardwareModel) — Captures the hardware components and their interactions within the system design.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmHardwareModel`](https://w3id.org/altium/cdm/system/SdmHardwareModel)
 
 ### Member Of
 
@@ -36,14 +37,14 @@ type SysSdmHardwareModel {
 
 ### Fields
 
-#### `SysSdmHardwareModel.functionalBlockIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `functionalBlockIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-#### `SysSdmHardwareModel.hardwareComponents` · [`[SysSdmHardwareComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-hardware-component.md) list object system-design
+#### `hardwareComponents` · [`[SysSdmHardwareComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-hardware-component.md) list object
 
-#### `SysSdmHardwareModel.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmHardwareModel.implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmHardwareModel.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmHardwareModel.sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sdmReferenceDesignator` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

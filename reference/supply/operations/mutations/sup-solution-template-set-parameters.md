@@ -11,6 +11,12 @@ deprecated: false
 
 Replace all parameters on a solution template.
 
+### Type
+
+#### [`SupSolutionTemplateSetParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-parameters-payload.md) object
+
+Payload for replacing all parameters on a solution template.
+
 ```graphql
 supSolutionTemplateSetParameters(
   input: SupSolutionTemplateSetParametersInput!
@@ -19,10 +25,4 @@ supSolutionTemplateSetParameters(
 
 ### Arguments
 
-#### `supSolutionTemplateSetParameters.input` · [`SupSolutionTemplateSetParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-parameters-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateSetParametersPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-set-parameters-payload.md) object supply
-
-Payload for replacing all parameters on a solution template.
+#### `input` · [`SupSolutionTemplateSetParametersInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-set-parameters-input.md) non-null input

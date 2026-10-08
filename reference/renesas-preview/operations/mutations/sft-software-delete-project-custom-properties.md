@@ -11,6 +11,10 @@ deprecated: false
 
 Delete the Software Project custom properties.
 
+### Type
+
+#### [`SftSoftwareDeleteProjectPropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-delete-project-properties-payload.md) object
+
 ```graphql
 sftSoftwareDeleteProjectCustomProperties(
   input: SftSoftwareDeleteProjectPropertiesInput!
@@ -19,8 +23,4 @@ sftSoftwareDeleteProjectCustomProperties(
 
 ### Arguments
 
-#### `sftSoftwareDeleteProjectCustomProperties.input` · [`SftSoftwareDeleteProjectPropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-delete-project-properties-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSoftwareDeleteProjectPropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-delete-project-properties-payload.md) object renesas-preview
+#### `input` · [`SftSoftwareDeleteProjectPropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-delete-project-properties-input.md) non-null input

@@ -11,6 +11,12 @@ deprecated: false
 
 Search solution templates and reference designs.
 
+### Type
+
+#### [`SupSolutionTemplateRefDesignResultSet`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-result-set.md) object
+
+Reference designs with pagination, aggregation information.
+
 ```graphql
 supSolutionTemplateRefDesignSearch(
   filter: SupSolutionTemplateRefDesignFilterInput
@@ -23,18 +29,12 @@ supSolutionTemplateRefDesignSearch(
 
 ### Arguments
 
-#### `supSolutionTemplateRefDesignSearch.filter` · [`SupSolutionTemplateRefDesignFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-ref-design-filter-input.md) input supply
+#### `filter` · [`SupSolutionTemplateRefDesignFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-ref-design-filter-input.md) input
 
-#### `supSolutionTemplateRefDesignSearch.limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `limit` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `supSolutionTemplateRefDesignSearch.order` · [`[SupSolutionTemplateRefDesignOrderInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-ref-design-order-input.md) list input supply
+#### `order` · [`[SupSolutionTemplateRefDesignOrderInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-ref-design-order-input.md) list input
 
-#### `supSolutionTemplateRefDesignSearch.q` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `q` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `supSolutionTemplateRefDesignSearch.start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
-
-### Type
-
-#### [`SupSolutionTemplateRefDesignResultSet`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-result-set.md) object supply
-
-Reference designs with pagination, aggregation information.
+#### `start` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar

@@ -24,10 +24,10 @@ type DesProjectTemplateEdge {
 
 ### Fields
 
-#### `DesProjectTemplateEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesProjectTemplateEdge.node` · [`DesProjectTemplate!`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md) non-null object configuration-management
+#### `node` · [`DesProjectTemplate!`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md) non-null object
 
 The item at the end of the edge.

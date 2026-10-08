@@ -27,4 +27,4 @@ type DmUpdateDeviceFromSdmPayload {
 
 ### Fields
 
-#### `DmUpdateDeviceFromSdmPayload.dmUpdaterSummary` · [`DmUpdaterSummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-updater-summary.md) object renesas-preview
+#### `dmUpdaterSummary` · [`DmUpdaterSummary`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-updater-summary.md) object

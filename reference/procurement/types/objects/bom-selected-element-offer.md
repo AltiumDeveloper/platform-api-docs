@@ -26,18 +26,18 @@ type BomSelectedElementOffer {
 
 ### Fields
 
-#### `BomSelectedElementOffer.items` · [`[BomSelectedElementOfferItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-selected-element-offer-item.md) non-null object procurement
+#### `items` · [`[BomSelectedElementOfferItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-selected-element-offer-item.md) non-null object
 
 Parts of the selected offer.
 
-#### `BomSelectedElementOffer.surplus` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `surplus` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 A surplus, if Total Order Quantity is higher than the required Total Quantity.
 
-#### `BomSelectedElementOffer.totalOrderQuantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalOrderQuantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Total order quantity of the selected offer.
 
-#### `BomSelectedElementOffer.totalPrice` · [`Decimal!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) non-null scalar common
+#### `totalPrice` · [`Decimal!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) non-null scalar
 
 The total price of the selected offer.

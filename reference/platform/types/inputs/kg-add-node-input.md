@@ -31,22 +31,22 @@ input KgAddNodeInput {
 
 ### Fields
 
-#### `KgAddNodeInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 An optional description of the entity.
 
-#### `KgAddNodeInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The grid identifier of the entity to register.
 
-#### `KgAddNodeInput.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The display name of the entity.
 
-#### `KgAddNodeInput.parameters` · [`[KgNodeParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-node-parameter-input.md) list input platform
+#### `parameters` · [`[KgNodeParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-node-parameter-input.md) list input
 
 Optional parameters to attach to the entity.
 
-#### `KgAddNodeInput.parentFolderGuid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `parentFolderGuid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the parent folder that will contain the entity.

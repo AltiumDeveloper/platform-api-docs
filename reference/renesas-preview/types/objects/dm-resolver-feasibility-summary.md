@@ -31,14 +31,14 @@ type DmResolverFeasibilitySummary {
 
 ### Fields
 
-#### `DmResolverFeasibilitySummary.percentResolvedSuccess` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `percentResolvedSuccess` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Percentage of candidates that are feasible (two decimal places).
 
-#### `DmResolverFeasibilitySummary.requiredPeripherals` · [`[DmRequestedPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requested-peripheral.md) non-null object renesas-preview
+#### `requiredPeripherals` · [`[DmRequestedPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requested-peripheral.md) non-null object
 
 Aggregated required peripheral counts used as input.
 
-#### `DmResolverFeasibilitySummary.results` · [`[DmResolverFeasibilityResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-feasibility-result.md) non-null object renesas-preview
+#### `results` · [`[DmResolverFeasibilityResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-feasibility-result.md) non-null object
 
 Per-device feasibility results for the requested family.

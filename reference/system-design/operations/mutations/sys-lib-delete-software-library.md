@@ -17,6 +17,10 @@ deprecated: false
 
 Delete an uploaded user software library
 
+### Type
+
+#### [`SysLibDeleteSoftwareLibraryPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-delete-software-library-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 sysLibDeleteSoftwareLibrary(
   input: SysLibDeleteSoftwareLibraryInput!
@@ -25,8 +29,4 @@ sysLibDeleteSoftwareLibrary(
 
 ### Arguments
 
-#### `sysLibDeleteSoftwareLibrary.input` · [`SysLibDeleteSoftwareLibraryInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-lib-delete-software-library-input.md) non-null input system-design
-
-### Type
-
-#### [`SysLibDeleteSoftwareLibraryPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-delete-software-library-payload.md) object system-design **EXPERIMENTAL**
+#### `input` · [`SysLibDeleteSoftwareLibraryInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-lib-delete-software-library-input.md) non-null input

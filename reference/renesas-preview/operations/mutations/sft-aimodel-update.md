@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the AI model.
 
+### Type
+
+#### [`SftAIModelUpdatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-update-payload.md) object
+
 ```graphql
 sftAIModelUpdate(
   input: SftAIModelUpdateInput!
@@ -19,8 +23,4 @@ sftAIModelUpdate(
 
 ### Arguments
 
-#### `sftAIModelUpdate.input` · [`SftAIModelUpdateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-update-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftAIModelUpdatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-update-payload.md) object renesas-preview
+#### `input` · [`SftAIModelUpdateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-update-input.md) non-null input

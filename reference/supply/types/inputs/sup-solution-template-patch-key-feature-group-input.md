@@ -23,14 +23,14 @@ input SupSolutionTemplatePatchKeyFeatureGroupInput {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchKeyFeatureGroupInput.addKeyFeatureGroups` · [`[SupSolutionTemplateKeyFeatureGroupInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-key-feature-group-input.md) list input supply
+#### `addKeyFeatureGroups` · [`[SupSolutionTemplateKeyFeatureGroupInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-key-feature-group-input.md) list input
 
 List of new key feature groups associated with a solution template.
 
-#### `SupSolutionTemplatePatchKeyFeatureGroupInput.removeKeyFeatureGroupAttributes` · [`[SupSolutionTemplateRemoveKeyFeatureGroupAttributeInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-remove-key-feature-group-attribute-input.md) list input supply
+#### `removeKeyFeatureGroupAttributes` · [`[SupSolutionTemplateRemoveKeyFeatureGroupAttributeInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-remove-key-feature-group-attribute-input.md) list input
 
 List of existing key feature groups will be removed from a solution template.
 
-#### `SupSolutionTemplatePatchKeyFeatureGroupInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The solution template identifier.

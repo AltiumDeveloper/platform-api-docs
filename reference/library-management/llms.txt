@@ -1,7 +1,7 @@
-# Library Management — Altium Platform API
+# Library Management — Altium 365 API
 > Managed components, component templates, parts, symbols, footprints, datasheets, reuse blocks and library search.
 
-Concepts: [library](https://altiumdeveloper.github.io/cdm/subsets/library/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/schema.graphql) (~25626 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview.md).
+Concepts: [library](https://altiumdeveloper.github.io/cdm/subsets/library/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/schema.graphql) (~25625 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview.md).
 
 ## Entities
 - [DesComponent](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md): Component Revision — Revision of a Component. GRID `grid:workspace:{workspace-id}:library:component-revision/{id}`. Via: desComponentById, desSearchComponentsByIpns, DesLibrary.components, DesSymbolUsedBy.components, DesBomItem.component, …

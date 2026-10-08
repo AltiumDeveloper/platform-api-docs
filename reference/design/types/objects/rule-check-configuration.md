@@ -30,10 +30,10 @@ type RuleCheckConfiguration {
 
 ### Fields
 
-#### `RuleCheckConfiguration.features` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `features` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Supported optional rule check features.
 
-#### `RuleCheckConfiguration.staleStatusThreshold` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `staleStatusThreshold` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 ISO 8601 representation of the maximum time a rule check should remain in unchanged, incomplete status. If this threshold is exceeded the caller should assume that the execution is stale and abandon monitoring.

@@ -24,10 +24,10 @@ type DesWorkspaceInsInsightHistoryTransaction {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightHistoryTransaction.actions` · [`[DesWorkspaceInsInsightHistoryAction!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/unions/des-workspace-ins-insight-history-action.md) non-null union insights
+#### `actions` · [`[DesWorkspaceInsInsightHistoryAction!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/unions/des-workspace-ins-insight-history-action.md) non-null union
 
 Actions that happened together within this transaction.
 
-#### `DesWorkspaceInsInsightHistoryTransaction.created` · [`DesWorkspaceInsUserActionTimestamp!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-action-timestamp.md) non-null object insights
+#### `created` · [`DesWorkspaceInsUserActionTimestamp!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-action-timestamp.md) non-null object
 
 Timestamp and user who produced the actions.

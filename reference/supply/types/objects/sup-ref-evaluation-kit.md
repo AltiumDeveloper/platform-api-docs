@@ -23,14 +23,14 @@ type SupRefEvaluationKit {
 
 ### Fields
 
-#### `SupRefEvaluationKit.partId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The part identifier.
 
-#### `SupRefEvaluationKit.previewImages` · [`[SupImage!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-image.md) non-null object supply
+#### `previewImages` · [`[SupImage!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-image.md) non-null object
 
 Preview images that provide a visual overview of the evaluation kit.
 
-#### `SupRefEvaluationKit.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The evaluation kit title.

@@ -23,6 +23,6 @@ type DesMesh3D {
 
 ### Fields
 
-#### `DesMesh3D.glbFile` · [`DesDownloadableFile`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) object design
+#### `glbFile` · [`DesDownloadableFile`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) object
 
 The downloadable file for the 3D mesh.

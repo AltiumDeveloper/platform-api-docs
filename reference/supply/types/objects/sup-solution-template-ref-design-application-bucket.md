@@ -24,10 +24,10 @@ type SupSolutionTemplateRefDesignApplicationBucket {
 
 ### Fields
 
-#### `SupSolutionTemplateRefDesignApplicationBucket.applicationId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `applicationId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of application.
 
-#### `SupSolutionTemplateRefDesignApplicationBucket.count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `count` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Number of items in the bucket.

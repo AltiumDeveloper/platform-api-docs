@@ -11,6 +11,12 @@ deprecated: false
 
 Create new user group.
 
+### Type
+
+#### [`GloCreateUserGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-user-group-payload.md) object
+
+Represents output value for creation of a new group.
+
 ```graphql
 gloCreateUserGroup(
   input: GloCreateUserGroupInput!
@@ -19,10 +25,4 @@ gloCreateUserGroup(
 
 ### Arguments
 
-#### `gloCreateUserGroup.input` · [`GloCreateUserGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-user-group-input.md) non-null input platform
-
-### Type
-
-#### [`GloCreateUserGroupPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-user-group-payload.md) object platform
-
-Represents output value for creation of a new group.
+#### `input` · [`GloCreateUserGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-user-group-input.md) non-null input

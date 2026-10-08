@@ -27,6 +27,6 @@ design {
 
 ### Type
 
-#### [`RuleCheckConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-configuration.md) object design **EXPERIMENTAL**
+#### [`RuleCheckConfiguration`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-configuration.md) object **EXPERIMENTAL**
 
 Represents current rule check configuration.

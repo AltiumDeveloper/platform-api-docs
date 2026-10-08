@@ -11,6 +11,12 @@ deprecated: false
 
 Moves a part to another lifecycle state.
 
+### Type
+
+#### [`DesPartChangeLifecycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-change-lifecycle-state-payload.md) object
+
+Represents the payload returned after changing the lifecycle state of a part.
+
 ```graphql
 desPartChangeLifecycleState(
   input: DesPartChangeLifecycleStateInput!
@@ -19,12 +25,6 @@ desPartChangeLifecycleState(
 
 ### Arguments
 
-#### `desPartChangeLifecycleState.input` · [`DesPartChangeLifecycleStateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-change-lifecycle-state-input.md) non-null input library-management
+#### `input` · [`DesPartChangeLifecycleStateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-change-lifecycle-state-input.md) non-null input
 
 The part to move and the lifecycle state to move it to.
-
-### Type
-
-#### [`DesPartChangeLifecycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-change-lifecycle-state-payload.md) object library-management
-
-Represents the payload returned after changing the lifecycle state of a part.

@@ -24,10 +24,10 @@ type DesPartGlobalSearchItem {
 
 ### Fields
 
-#### `DesPartGlobalSearchItem.globalPart` · [`DesPartGlobalPart!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-part.md) non-null object library-management
+#### `globalPart` · [`DesPartGlobalPart!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-part.md) non-null object
 
 The global part details.
 
-#### `DesPartGlobalSearchItem.part` · [`DesPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) object library-management
+#### `part` · [`DesPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) object
 
 The workspace part.

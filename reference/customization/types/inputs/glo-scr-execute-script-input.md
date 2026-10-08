@@ -23,8 +23,8 @@ input GloScrExecuteScriptInput {
 
 ### Fields
 
-#### `GloScrExecuteScriptInput.parameters` · [`[GloScrScriptParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-parameter-input.md) list input customization
+#### `parameters` · [`[GloScrScriptParameterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-script-parameter-input.md) list input
 
-#### `GloScrExecuteScriptInput.scriptId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `scriptId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `GloScrExecuteScriptInput.scriptVersionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `scriptVersionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

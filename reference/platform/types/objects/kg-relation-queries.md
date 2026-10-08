@@ -27,4 +27,4 @@ type KgRelationQueries {
 
 ### Fields
 
-#### `KgRelationQueries.all` · [`[KgRelation!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-relation.md) non-null object platform
+#### `all` · [`[KgRelation!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-relation.md) non-null object

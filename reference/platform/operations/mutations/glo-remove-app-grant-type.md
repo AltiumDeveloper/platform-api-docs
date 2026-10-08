@@ -11,6 +11,10 @@ deprecated: false
 
 Removes an existing grant type from an existing App.
 
+### Type
+
+#### [`GloRemoveAppGrantTypePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-grant-type-payload.md) object
+
 ```graphql
 gloRemoveAppGrantType(
   input: GloRemoveAppGrantTypeInput!
@@ -19,8 +23,4 @@ gloRemoveAppGrantType(
 
 ### Arguments
 
-#### `gloRemoveAppGrantType.input` · [`GloRemoveAppGrantTypeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-grant-type-input.md) non-null input platform
-
-### Type
-
-#### [`GloRemoveAppGrantTypePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-grant-type-payload.md) object platform
+#### `input` · [`GloRemoveAppGrantTypeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-grant-type-input.md) non-null input

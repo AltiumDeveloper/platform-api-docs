@@ -27,30 +27,30 @@ enum SupRefDesignStatus {
 
 ### Values
 
-#### `SupRefDesignStatus.ACTIVE`
+#### `ACTIVE`
 
 The design is approved and published and it has active status.
 
-#### `SupRefDesignStatus.DRAFT`
+#### `DRAFT`
 
 Work in progress, not yet submitted for review.
 
-#### `SupRefDesignStatus.INACTIVE`
+#### `INACTIVE`
 
 The design is not active.
 
-#### `SupRefDesignStatus.ON_HOLD`
+#### `ON_HOLD`
 
 Review or progress is paused pending further action.
 
-#### `SupRefDesignStatus.REJECTED`
+#### `REJECTED`
 
 The design was reviewed and rejected.
 
-#### `SupRefDesignStatus.REVIEWING`
+#### `REVIEWING`
 
 The design is currently under review.
 
-#### `SupRefDesignStatus.SUBMITTED`
+#### `SUBMITTED`
 
 Design data has been submitted and awaits review.

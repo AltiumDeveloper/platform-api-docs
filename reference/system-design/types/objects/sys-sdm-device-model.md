@@ -17,7 +17,8 @@ deprecated: false
 
 ### Common Data Model
 
-- [Device Model](https://altiumdeveloper.github.io/cdm/classes/sys_SdmDeviceModel/) — Represents a device model within the system design.
+- [Device Model](https://w3id.org/altium/cdm/system/SdmDeviceModel) — Represents a device model within the system design.
+  - IRI: [`https://w3id.org/altium/cdm/system/SdmDeviceModel`](https://w3id.org/altium/cdm/system/SdmDeviceModel)
 
 ### Member Of
 
@@ -35,12 +36,12 @@ type SysSdmDeviceModel {
 
 ### Fields
 
-#### `SysSdmDeviceModel.boardName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `boardName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `SysSdmDeviceModel.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmDeviceModel.mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SysSdmDeviceModel.peripherals` · [`[SysSdmPeripheral!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-peripheral.md) list object system-design
+#### `peripherals` · [`[SysSdmPeripheral!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-peripheral.md) list object
 
-#### `SysSdmDeviceModel.ports` · [`[SysSdmDmPort!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port.md) list object system-design
+#### `ports` · [`[SysSdmDmPort!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port.md) list object

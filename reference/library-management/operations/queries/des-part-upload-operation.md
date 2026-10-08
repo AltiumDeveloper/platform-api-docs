@@ -17,6 +17,6 @@ desPartUploadOperation: DesPartUploadOperationPayload
 
 ### Type
 
-#### [`DesPartUploadOperationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-operation-payload.md) object library-management
+#### [`DesPartUploadOperationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-upload-operation-payload.md) object
 
 Represents a parts upload operation of the workspace.

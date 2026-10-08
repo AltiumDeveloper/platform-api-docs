@@ -17,7 +17,7 @@ Represents the information about a payload error.
 
 ### Interfaces
 
-#### [`GloNtfError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-ntf-error.md) interface platform
+#### [`GloNtfError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/glo-ntf-error.md) interface
 
 Represents the information about an error.
 
@@ -29,6 +29,6 @@ type GloNtfPayloadError implements GloNtfError {
 
 ### Fields
 
-#### `GloNtfPayloadError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Description of the error occurred.

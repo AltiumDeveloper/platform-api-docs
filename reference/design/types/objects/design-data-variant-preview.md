@@ -31,14 +31,14 @@ type DesignDataVariant_Preview {
 
 ### Fields
 
-#### `DesignDataVariant_Preview.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `DesignDataVariant_Preview.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the variant.
 
-#### `DesignDataVariant_Preview.variantGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignDataVariant_Preview.variantGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The unique identifier of the variant.
 
-#### `DesignDataVariant_Preview.variations` · [`[DesignDataVariation_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-variation-preview.md) non-null object design
+#### `DesignDataVariant_Preview.variations` · [`[DesignDataVariation_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-variation-preview.md) non-null object
 
 The variations defined within this variant.

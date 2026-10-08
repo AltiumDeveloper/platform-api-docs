@@ -23,6 +23,6 @@ type SysEsdUpdateDocumentPayload {
 
 ### Fields
 
-#### `SysEsdUpdateDocumentPayload.data` · [`SysEsdDocument!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) non-null object system-design
+#### `data` · [`SysEsdDocument!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-document.md) non-null object
 
 The updated ESD document.

@@ -22,6 +22,6 @@ type GloRemoveAppScopePayload {
 
 ### Fields
 
-#### `GloRemoveAppScopePayload.errors` · [`[GloRemoveAppScopeError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-scope-error.md) list union platform
+#### `errors` · [`[GloRemoveAppScopeError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-scope-error.md) list union
 
-#### `GloRemoveAppScopePayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

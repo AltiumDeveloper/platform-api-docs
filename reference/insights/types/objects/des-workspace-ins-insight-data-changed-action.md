@@ -26,18 +26,18 @@ type DesWorkspaceInsInsightDataChangedAction {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightDataChangedAction.newData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar common
+#### `newData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar
 
 Updated full data payload for the insight.
 
-#### `DesWorkspaceInsInsightDataChangedAction.newShortData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar common
+#### `newShortData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar
 
 Updated summary data payload for the insight.
 
-#### `DesWorkspaceInsInsightDataChangedAction.oldData` · [`JSON`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) scalar common
+#### `oldData` · [`JSON`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) scalar
 
 Previous full data payload, if available.
 
-#### `DesWorkspaceInsInsightDataChangedAction.oldShortData` · [`JSON`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) scalar common
+#### `oldShortData` · [`JSON`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) scalar
 
 Previous summary data payload, if available.

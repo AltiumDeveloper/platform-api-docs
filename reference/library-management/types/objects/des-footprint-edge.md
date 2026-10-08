@@ -24,10 +24,10 @@ type DesFootprintEdge {
 
 ### Fields
 
-#### `DesFootprintEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesFootprintEdge.node` · [`DesFootprint!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) non-null object library-management
+#### `node` · [`DesFootprint!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) non-null object
 
 The item at the end of the edge.

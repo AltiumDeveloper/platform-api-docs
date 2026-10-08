@@ -29,14 +29,14 @@ type DesWorkspaceInsNotificationSettings {
 
 ### Fields
 
-#### `DesWorkspaceInsNotificationSettings.enabled` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `enabled` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Whether notifications are enabled for insights.
 
-#### `DesWorkspaceInsNotificationSettings.recipientSettings` · [`DesWorkspaceInsNotificationRecipientSettings!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-notification-recipient-settings.md) non-null object insights
+#### `recipientSettings` · [`DesWorkspaceInsNotificationRecipientSettings!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-notification-recipient-settings.md) non-null object
 
 Recipient configuration for insight notifications.
 
-#### `DesWorkspaceInsNotificationSettings.unsubscribedUserIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `unsubscribedUserIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Users who should not receive insight notifications.

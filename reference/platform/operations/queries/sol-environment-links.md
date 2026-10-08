@@ -17,4 +17,4 @@ solEnvironmentLinks: [SolStringKeyValue!]!
 
 ### Type
 
-#### [`SolStringKeyValue`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-string-key-value.md) object platform
+#### [`SolStringKeyValue`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-string-key-value.md) object

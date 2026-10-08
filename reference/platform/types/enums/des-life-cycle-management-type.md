@@ -24,6 +24,6 @@ enum DesLifeCycleManagementType {
 
 ### Values
 
-#### `DesLifeCycleManagementType.SIMPLE`
+#### `SIMPLE`
 
-#### `DesLifeCycleManagementType.STRUCTURED`
+#### `STRUCTURED`

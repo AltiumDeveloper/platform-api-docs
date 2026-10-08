@@ -24,10 +24,10 @@ enum DesPartPartChoiceUpdateMode {
 
 ### Values
 
-#### `DesPartPartChoiceUpdateMode.RECREATE`
+#### `RECREATE`
 
 Replaces all existing part choices.
 
-#### `DesPartPartChoiceUpdateMode.UPDATE`
+#### `UPDATE`
 
 Adds only new part choices.

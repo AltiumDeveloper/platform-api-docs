@@ -27,12 +27,12 @@ enum DesCommentContextType {
 
 ### Values
 
-#### `DesCommentContextType.AREA`
+#### `AREA`
 
-#### `DesCommentContextType.COMPONENT`
+#### `COMPONENT`
 
-#### `DesCommentContextType.NONE`
+#### `NONE`
 
-#### `DesCommentContextType.TRACK`
+#### `TRACK`
 
-#### `DesCommentContextType.VIA`
+#### `VIA`

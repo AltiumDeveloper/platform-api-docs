@@ -22,10 +22,10 @@ enum SupSoftwareProjectType {
 
 ### Values
 
-#### `SupSoftwareProjectType.APPLICATION`
+#### `APPLICATION`
 
 Defines the Application type used to classify software projects.
 
-#### `SupSoftwareProjectType.EXAMPLE`
+#### `EXAMPLE`
 
 Defines the Example type used to classify software projects.

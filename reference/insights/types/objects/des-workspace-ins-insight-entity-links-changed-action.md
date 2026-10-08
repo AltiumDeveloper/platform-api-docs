@@ -24,10 +24,10 @@ type DesWorkspaceInsInsightEntityLinksChangedAction {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightEntityLinksChangedAction.newEntities` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `newEntities` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Entities that were added to the insight.
 
-#### `DesWorkspaceInsInsightEntityLinksChangedAction.removedEntities` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `removedEntities` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Entities that were removed from the insight.

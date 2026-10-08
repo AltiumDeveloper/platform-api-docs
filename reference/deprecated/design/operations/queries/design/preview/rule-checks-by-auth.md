@@ -29,6 +29,6 @@ design {
 
 ### Type
 
-#### [`RuleCheck`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check.md) object design **EXPERIMENTAL**
+#### [`RuleCheck`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check.md) object **EXPERIMENTAL**
 
 Represents a rule check definition.

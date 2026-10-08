@@ -11,6 +11,10 @@ deprecated: false
 
 Deletes device configuration by ID.
 
+### Type
+
+#### [`SftDevCfgDeleteDeviceConfigurationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-delete-device-configuration-payload.md) object
+
 ```graphql
 sftDevCfgDeleteDeviceConfiguration(
   input: SftDevCfgDeleteDeviceConfigurationInput!
@@ -19,8 +23,4 @@ sftDevCfgDeleteDeviceConfiguration(
 
 ### Arguments
 
-#### `sftDevCfgDeleteDeviceConfiguration.input` · [`SftDevCfgDeleteDeviceConfigurationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-delete-device-configuration-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftDevCfgDeleteDeviceConfigurationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-delete-device-configuration-payload.md) object renesas-preview
+#### `input` · [`SftDevCfgDeleteDeviceConfigurationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-delete-device-configuration-input.md) non-null input

@@ -35,30 +35,30 @@ type DesignData_Preview {
 
 ### Fields
 
-#### `DesignData_Preview.components` · [`[DesignDataComponent_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-component-preview.md) non-null object design
+#### `DesignData_Preview.components` · [`[DesignDataComponent_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-component-preview.md) non-null object
 
 The components contained in the design.
 
-#### `DesignData_Preview.configuration` · [`DesignDataConfiguration_Preview!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-configuration-preview.md) non-null object design
+#### `DesignData_Preview.configuration` · [`DesignDataConfiguration_Preview!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-configuration-preview.md) non-null object
 
 The configuration settings for the design.
 
-#### `DesignData_Preview.nets` · [`[DesignDataNet_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-preview.md) non-null object design
+#### `DesignData_Preview.nets` · [`[DesignDataNet_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-preview.md) non-null object
 
 The nets defined in the design.
 
-#### `DesignData_Preview.projectGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignData_Preview.projectGuid` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the source project.
 
-#### `DesignData_Preview.schematics` · [`[DesignDataSchematicDocument_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-schematic-document-preview.md) non-null object design
+#### `DesignData_Preview.schematics` · [`[DesignDataSchematicDocument_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-schematic-document-preview.md) non-null object
 
 The schematic documents contained in the design.
 
-#### `DesignData_Preview.variants` · [`[DesignDataVariant_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-variant-preview.md) non-null object design
+#### `DesignData_Preview.variants` · [`[DesignDataVariant_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-variant-preview.md) non-null object
 
 The project variants defined in the design.
 
-#### `DesignData_Preview.version` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignData_Preview.version` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The version of the design data.

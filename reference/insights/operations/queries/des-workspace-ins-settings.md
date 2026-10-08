@@ -17,6 +17,6 @@ desWorkspaceInsSettings: DesWorkspaceInsUserSettings!
 
 ### Type
 
-#### [`DesWorkspaceInsUserSettings`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-settings.md) object insights
+#### [`DesWorkspaceInsUserSettings`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-settings.md) object
 
 User settings related to insights.

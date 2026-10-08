@@ -11,6 +11,10 @@ deprecated: false
 
 Retrieves an organization by its identifier.
 
+### Type
+
+#### [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) object
+
 ```graphql
 gloOrganization(
   organizationId: String
@@ -19,8 +23,4 @@ gloOrganization(
 
 ### Arguments
 
-#### `gloOrganization.organizationId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
-
-### Type
-
-#### [`GloOrganization`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-organization.md) object platform
+#### `organizationId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

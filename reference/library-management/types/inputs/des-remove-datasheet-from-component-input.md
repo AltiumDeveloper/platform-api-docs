@@ -24,10 +24,10 @@ input DesRemoveDatasheetFromComponentInput {
 
 ### Fields
 
-#### `DesRemoveDatasheetFromComponentInput.componentId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `componentId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The component identifier.
 
-#### `DesRemoveDatasheetFromComponentInput.datasheetId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `datasheetId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the datasheet to remove from the component.

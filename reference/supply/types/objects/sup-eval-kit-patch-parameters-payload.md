@@ -24,8 +24,8 @@ type SupEvalKitPatchParametersPayload {
 
 ### Fields
 
-#### `SupEvalKitPatchParametersPayload.errors` · [`[SupEvalKitPatchParametersError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-patch-parameters-error.md) list union supply
+#### `errors` · [`[SupEvalKitPatchParametersError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-patch-parameters-error.md) list union
 
-#### `SupEvalKitPatchParametersPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

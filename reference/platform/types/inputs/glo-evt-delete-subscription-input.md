@@ -23,6 +23,6 @@ input GloEvtDeleteSubscriptionInput {
 
 ### Fields
 
-#### `GloEvtDeleteSubscriptionInput.subscriptionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `subscriptionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Subscription identifier.

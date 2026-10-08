@@ -29,6 +29,6 @@ type DmPeripheralProperty {
 
 ### Fields
 
-#### `DmPeripheralProperty.display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `display` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Display representation of the property.

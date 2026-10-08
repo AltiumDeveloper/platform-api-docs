@@ -11,6 +11,10 @@ deprecated: false
 
 Adds a new grant type to an existing App.
 
+### Type
+
+#### [`GloAddAppGrantTypePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-grant-type-payload.md) object
+
 ```graphql
 gloAddAppGrantType(
   input: GloAddAppGrantTypeInput!
@@ -19,8 +23,4 @@ gloAddAppGrantType(
 
 ### Arguments
 
-#### `gloAddAppGrantType.input` · [`GloAddAppGrantTypeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-grant-type-input.md) non-null input platform
-
-### Type
-
-#### [`GloAddAppGrantTypePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-grant-type-payload.md) object platform
+#### `input` · [`GloAddAppGrantTypeInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-grant-type-input.md) non-null input

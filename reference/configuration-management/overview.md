@@ -11,18 +11,20 @@ deprecated: false
 
 Environment configuration and templates: project templates, settings templates, managed sheet templates and their revisions.
 
-Concepts: see the **Configuration Management** bounded context in the [Common Data Model](https://altiumdeveloper.github.io/cdm/subsets/configuration/)
-
 For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/llms.txt) · [schema slice](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/schema.graphql) · [all types](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types.txt)
+
+## Common Data Model
+
+- [Configuration Management](https://altiumdeveloper.github.io/cdm/subsets/configuration/) — Models environment configurations, which restrict the Altium Designer working environment of the Workspace members they target to approved configuration data, together with schematic templates and their revisions stored as Workspace Items. In Altium 365 this corresponds to environment configuration management through the Team Configuration Center.
 
 ## Entities
 
-API types in this bounded context that represent CDM entities:
+API types in this bounded context that represent Common Data Model (CDM) entities. The IRI is the entity's stable identifier in the CDM.
 
-- [`DesProjectTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md) — [Project Template](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplate/): A reusable starting point for new design projects that bundles the documents, files and project settings a team wants to apply again and again. A project created from a template receives the template's documents and its project options.
-  - GRID: `grid:workspace:{workspace-id}:design:project-template/{id}`
-- [`DesProjectTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template-revision.md) — [Project Template Revision](https://altiumdeveloper.github.io/cdm/classes/des_ProjectTemplateRevision/): An immutable revision of a project template.
-  - GRID: `grid:workspace:{workspace-id}:design:project-template-revision/{id}`
+| API type | CDM entity |
+| - | - |
+| [`DesProjectTemplate`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template.md) | [Project Template](https://w3id.org/altium/cdm/design/ProjectTemplate) [`https://w3id.org/altium/cdm/design/ProjectTemplate`](https://w3id.org/altium/cdm/design/ProjectTemplate) |
+| [`DesProjectTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/types/objects/des-project-template-revision.md) | [Project Template Revision](https://w3id.org/altium/cdm/design/ProjectTemplateRevision) [`https://w3id.org/altium/cdm/design/ProjectTemplateRevision`](https://w3id.org/altium/cdm/design/ProjectTemplateRevision) |
 
 ## Entry points
 

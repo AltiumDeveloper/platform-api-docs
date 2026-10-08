@@ -29,24 +29,24 @@ input DesWorkspaceUserFilterInput {
 
 ### Fields
 
-#### `DesWorkspaceUserFilterInput.and` · [`[DesWorkspaceUserFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-workspace-user-filter-input.md) list input platform **EXPERIMENTAL**
+#### `and` · [`[DesWorkspaceUserFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-workspace-user-filter-input.md) list input **EXPERIMENTAL**
 
-#### `DesWorkspaceUserFilterInput.groupIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `groupIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Workspace specific identifiers of the user groups (id or grid).
 
-#### `DesWorkspaceUserFilterInput.id` · [`GridFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) input common **EXPERIMENTAL**
+#### `id` · [`GridFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) input **EXPERIMENTAL**
 
-#### `DesWorkspaceUserFilterInput.or` · [`[DesWorkspaceUserFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-workspace-user-filter-input.md) list input platform **EXPERIMENTAL**
+#### `or` · [`[DesWorkspaceUserFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-workspace-user-filter-input.md) list input **EXPERIMENTAL**
 
-#### `DesWorkspaceUserFilterInput.text` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `text` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The text that either the guest first or last names or emails must contain. Case-insensitive.
 
-#### `DesWorkspaceUserFilterInput.userIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `userIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 Workspace specific identifiers of the users (id or grid).
 
-#### `DesWorkspaceUserFilterInput.userTypes` · [`[DesWorkspaceUserType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-type.md) list enum platform
+#### `userTypes` · [`[DesWorkspaceUserType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-type.md) list enum
 
 The specific types of users to search.

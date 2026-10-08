@@ -17,6 +17,10 @@ deprecated: false
 
 Retrieves a system model
 
+### Type
+
+#### [`SysSdmSystemModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model.md) object **EXPERIMENTAL**
+
 ```graphql
 sysSdmSystemModelById(
   id: ID!
@@ -25,8 +29,4 @@ sysSdmSystemModelById(
 
 ### Arguments
 
-#### `sysSdmSystemModelById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SysSdmSystemModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model.md) object system-design **EXPERIMENTAL**
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

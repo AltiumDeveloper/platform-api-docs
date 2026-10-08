@@ -17,4 +17,4 @@ sftAIModels: [SftAIModel!]!
 
 ### Type
 
-#### [`SftAIModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md) object renesas-preview
+#### [`SftAIModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel.md) object

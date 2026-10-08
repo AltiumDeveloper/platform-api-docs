@@ -26,18 +26,18 @@ type BomItemsConnection {
 
 ### Fields
 
-#### `BomItemsConnection.edges` · [`[BomItemsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-items-edge.md) list object procurement
+#### `edges` · [`[BomItemsEdge!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-items-edge.md) list object
 
 A list of edges.
 
-#### `BomItemsConnection.nodes` · [`[BomItem!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item.md) list object procurement
+#### `nodes` · [`[BomItem!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item.md) list object
 
 A flattened list of the nodes.
 
-#### `BomItemsConnection.pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object common
+#### `pageInfo` · [`PageInfo!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/page-info.md) non-null object
 
 Information to aid in pagination.
 
-#### `BomItemsConnection.totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `totalCount` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Identifies the total count of items in the connection.

@@ -9,7 +9,13 @@ deprecated: false
 
 # gloAppByClientId
 
-Gets the `GloApp` with a `GloOAuthClient` that has the specified Client identifier.
+Gets the [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) with a [`GloOAuthClient`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-oauth-client.md) that has the specified Client identifier.
+
+### Type
+
+#### [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object
+
+Represents an Altium application.
 
 ```graphql
 gloAppByClientId(
@@ -19,12 +25,6 @@ gloAppByClientId(
 
 ### Arguments
 
-#### `gloAppByClientId.clientId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `clientId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The Client identifier of the `GloOAuthClient` associated with the App to be retrieved.
-
-### Type
-
-#### [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
-
-Represents an Altium application.
+The Client identifier of the [`GloOAuthClient`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-oauth-client.md) associated with the App to be retrieved.

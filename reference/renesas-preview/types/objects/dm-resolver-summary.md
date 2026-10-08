@@ -31,14 +31,14 @@ type DmResolverSummary {
 
 ### Fields
 
-#### `DmResolverSummary.percentResolvedSuccess` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `percentResolvedSuccess` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Percentage of resolver results that produced a feasible or optimal solution (two decimal places).
 
-#### `DmResolverSummary.requiredPeripherals` · [`[DmRequestedPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requested-peripheral.md) non-null object renesas-preview
+#### `requiredPeripherals` · [`[DmRequestedPeripheral!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-requested-peripheral.md) non-null object
 
 Aggregated required peripheral counts across all resolver runs.
 
-#### `DmResolverSummary.results` · [`[DmResolverResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-result.md) non-null object renesas-preview
+#### `results` · [`[DmResolverResult!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-result.md) non-null object
 
 List of resolver results produced for devices.

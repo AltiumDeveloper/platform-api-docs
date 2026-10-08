@@ -21,6 +21,6 @@ input SolAccessibleToInput {
 
 ### Fields
 
-#### `SolAccessibleToInput.ids` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `ids` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 The user, organization, or user group grids that must have access.

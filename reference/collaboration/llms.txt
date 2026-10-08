@@ -1,7 +1,7 @@
-# Collaboration — Altium Platform API
+# Collaboration — Altium 365 API
 > Comments, comment threads, mentions, annotations and tasks.
 
-Concepts: [collaboration](https://altiumdeveloper.github.io/cdm/subsets/collaboration/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/schema.graphql) (~4391 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/overview.md).
+Concepts: [collaboration](https://altiumdeveloper.github.io/cdm/subsets/collaboration/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/schema.graphql) (~4390 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/overview.md).
 
 ## Entities
 - [DesComment](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md): Comment — A single entry in a comment thread: either the initial comment, pinned to a point, an object or an area of a design document (or to a BOM line), or a reply to it. Via: DesCommentThread.comments, DesTask.comments

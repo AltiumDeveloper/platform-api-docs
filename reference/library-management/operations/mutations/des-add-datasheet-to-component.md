@@ -11,6 +11,12 @@ deprecated: false
 
 Adds the specified datasheet to a component (does not affect the revision).
 
+### Type
+
+#### [`DesAddDatasheetToComponentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-add-datasheet-to-component-payload.md) object
+
+Payload associated with adding a datasheet to a component.
+
 ```graphql
 desAddDatasheetToComponent(
   input: DesAddDatasheetToComponentInput!
@@ -19,10 +25,4 @@ desAddDatasheetToComponent(
 
 ### Arguments
 
-#### `desAddDatasheetToComponent.input` · [`DesAddDatasheetToComponentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-add-datasheet-to-component-input.md) non-null input library-management
-
-### Type
-
-#### [`DesAddDatasheetToComponentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-add-datasheet-to-component-payload.md) object library-management
-
-Payload associated with adding a datasheet to a component.
+#### `input` · [`DesAddDatasheetToComponentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-add-datasheet-to-component-input.md) non-null input

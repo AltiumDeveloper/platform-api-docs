@@ -19,14 +19,14 @@ union PlatformTokenDeleteError = PlatformTokenNotFoundError | PlatformTokenDelet
 
 ### Possible types
 
-#### [`PlatformTokenDeleteError.PlatformTokenNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-not-found-error.md) object platform
+#### [`PlatformTokenNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-not-found-error.md) object
 
-Error that occurs when a `PlatformToken` with the specified identifier could not be found.
+Error that occurs when a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) with the specified identifier could not be found.
 
-#### [`PlatformTokenDeleteError.PlatformTokenDeleteFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-failed-error.md) object platform
+#### [`PlatformTokenDeleteFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-failed-error.md) object
 
-Error returned by the Token API when a `PlatformToken` could not be deleted.
+Error returned by the Token API when a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) could not be deleted.
 
-#### [`PlatformTokenDeleteError.PlatformTokenDeletePartiallyFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-partially-failed-error.md) object platform
+#### [`PlatformTokenDeletePartiallyFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-partially-failed-error.md) object
 
-Error returned by the Token API when a `PlatformToken` could not be fully deleted, leaving it in an inconsistent state.
+Error returned by the Token API when a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) could not be fully deleted, leaving it in an inconsistent state.

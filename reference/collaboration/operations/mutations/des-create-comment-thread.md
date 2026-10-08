@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a new comment thread.
 
+### Type
+
+#### [`DesCreateCommentThreadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-comment-thread-payload.md) object
+
+Payload associated with creating a comment thread.
+
 ```graphql
 desCreateCommentThread(
   input: DesCreateCommentThreadInput!
@@ -19,10 +25,4 @@ desCreateCommentThread(
 
 ### Arguments
 
-#### `desCreateCommentThread.input` · [`DesCreateCommentThreadInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-comment-thread-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesCreateCommentThreadPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-comment-thread-payload.md) object collaboration
-
-Payload associated with creating a comment thread.
+#### `input` · [`DesCreateCommentThreadInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-comment-thread-input.md) non-null input

@@ -23,8 +23,8 @@ type SysEsdCompiledMetadata {
 
 ### Fields
 
-#### `SysEsdCompiledMetadata.connections` · [`[SysEsdConnection!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-connection.md) list object system-design
+#### `connections` · [`[SysEsdConnection!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-connection.md) list object
 
-#### `SysEsdCompiledMetadata.functionalBlocks` · [`[SysEsdFunctionalBlock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-functional-block.md) list object system-design
+#### `functionalBlocks` · [`[SysEsdFunctionalBlock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-functional-block.md) list object
 
-#### `SysEsdCompiledMetadata.parameters` · [`[SysEsdParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-parameter.md) list object system-design
+#### `parameters` · [`[SysEsdParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-parameter.md) list object

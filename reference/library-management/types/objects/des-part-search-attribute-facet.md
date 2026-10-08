@@ -25,14 +25,14 @@ type DesPartSearchAttributeFacet {
 
 ### Fields
 
-#### `DesPartSearchAttributeFacet.attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the attribute.
 
-#### `DesPartSearchAttributeFacet.range` · [`DesPartFacetRange`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-facet-range.md) object library-management
+#### `range` · [`DesPartFacetRange`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-facet-range.md) object
 
 The range of the facet.
 
-#### `DesPartSearchAttributeFacet.values` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object library-management
+#### `values` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object
 
 The values of the facet.

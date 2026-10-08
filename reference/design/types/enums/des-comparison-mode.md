@@ -23,8 +23,8 @@ enum DesComparisonMode {
 
 ### Values
 
-#### `DesComparisonMode.BOM`
+#### `BOM`
 
-#### `DesComparisonMode.PCB`
+#### `PCB`
 
-#### `DesComparisonMode.SCHEMATIC`
+#### `SCHEMATIC`

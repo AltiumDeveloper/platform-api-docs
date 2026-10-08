@@ -21,4 +21,4 @@ type GloScrCreateScriptPayload {
 
 ### Fields
 
-#### `GloScrCreateScriptPayload.gloScrScript` · [`GloScrScript`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md) object customization
+#### `gloScrScript` · [`GloScrScript`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-script.md) object

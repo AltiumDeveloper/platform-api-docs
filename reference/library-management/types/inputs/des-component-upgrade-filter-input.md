@@ -26,18 +26,18 @@ input DesComponentUpgradeFilterInput {
 
 ### Fields
 
-#### `DesComponentUpgradeFilterInput.comment` · [`DesStringUpgradeOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-string-upgrade-operation-filter-input.md) input library-management
+#### `comment` · [`DesStringUpgradeOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-string-upgrade-operation-filter-input.md) input
 
 Filter by the component's comment field.
 
-#### `DesComponentUpgradeFilterInput.description` · [`DesStringUpgradeOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-string-upgrade-operation-filter-input.md) input library-management
+#### `description` · [`DesStringUpgradeOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-string-upgrade-operation-filter-input.md) input
 
 Filter by the component's description.
 
-#### `DesComponentUpgradeFilterInput.lifeCycleStateName` · [`DesLifecycleStateUpgradeOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-lifecycle-state-upgrade-operation-filter-input.md) input library-management
+#### `lifeCycleStateName` · [`DesLifecycleStateUpgradeOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-lifecycle-state-upgrade-operation-filter-input.md) input
 
 Filter by the name of the component's lifecycle state (e.g., "Validated").
 
-#### `DesComponentUpgradeFilterInput.name` · [`DesStringUpgradeOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-string-upgrade-operation-filter-input.md) input library-management
+#### `name` · [`DesStringUpgradeOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-string-upgrade-operation-filter-input.md) input
 
 Filter by component name (HRID).

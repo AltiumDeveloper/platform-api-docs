@@ -24,8 +24,8 @@ type SupSolutionTemplateSetPreviewImagesPayload {
 
 ### Fields
 
-#### `SupSolutionTemplateSetPreviewImagesPayload.errors` · [`[SupSolutionTemplateSetPreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-preview-images-error.md) list union supply
+#### `errors` · [`[SupSolutionTemplateSetPreviewImagesError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-set-preview-images-error.md) list union
 
-#### `SupSolutionTemplateSetPreviewImagesPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

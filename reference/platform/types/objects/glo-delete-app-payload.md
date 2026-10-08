@@ -22,6 +22,6 @@ type GloDeleteAppPayload {
 
 ### Fields
 
-#### `GloDeleteAppPayload.errors` · [`[GloDeleteAppError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-delete-app-error.md) list union platform
+#### `errors` · [`[GloDeleteAppError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-delete-app-error.md) list union
 
-#### `GloDeleteAppPayload.id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar common
+#### `id` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar

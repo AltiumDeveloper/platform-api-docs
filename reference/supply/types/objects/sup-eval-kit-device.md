@@ -23,16 +23,16 @@ type SupEvalKitDevice {
 
 ### Fields
 
-#### `SupEvalKitDevice.designProject` · [`SupRefDesign!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) non-null object supply
+#### `designProject` · [`SupRefDesign!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) non-null object
 
 The reference design associated with device.
 
-#### `SupEvalKitDevice.deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Device part number.
 
 #### Deprecated
 
-#### `SupEvalKitDevice.refDesignId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar common
+#### `refDesignId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) **DEPRECATED** non-null scalar
 
 > **Deprecated:** Fields play a technical role for schema stitching purposes.

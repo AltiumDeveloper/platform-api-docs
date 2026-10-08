@@ -17,6 +17,10 @@ deprecated: false
 
 Get a variable set by id.
 
+### Type
+
+#### [`RsaMotorStudioVariableSet`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioVariableSetById(
   projectId: ID!
@@ -26,10 +30,6 @@ rsaMotorStudioVariableSetById(
 
 ### Arguments
 
-#### `rsaMotorStudioVariableSetById.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `rsaMotorStudioVariableSetById.variableSetId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
-
-### Type
-
-#### [`RsaMotorStudioVariableSet`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-variable-set.md) object renesas-preview **EXPERIMENTAL**
+#### `variableSetId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

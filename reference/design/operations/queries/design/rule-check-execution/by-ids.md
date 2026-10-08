@@ -17,6 +17,12 @@ deprecated: false
 
 Retrieves multiple rule check executions by their identifiers.
 
+### Type
+
+#### [`RuleCheckExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md) object **EXPERIMENTAL**
+
+Represents the execution of rule checks against a design.
+
 ```graphql
 design {
   ruleCheckExecution {
@@ -29,12 +35,6 @@ design {
 
 ### Arguments
 
-#### `byIds.ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `ids` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifiers of the rule check executions.
-
-### Type
-
-#### [`RuleCheckExecution`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md) object design **EXPERIMENTAL**
-
-Represents the execution of rule checks against a design.

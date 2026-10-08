@@ -17,6 +17,6 @@ desUserByAuth: DesUser!
 
 ### Type
 
-#### [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object platform
+#### [`DesUser`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-user.md) object
 
 User details with the identifier and nullable extra fields.

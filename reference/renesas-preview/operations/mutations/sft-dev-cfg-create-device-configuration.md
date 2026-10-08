@@ -11,6 +11,10 @@ deprecated: false
 
 Creates new device configuration.
 
+### Type
+
+#### [`SftDevCfgCreateDeviceConfigurationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-create-device-configuration-payload.md) object
+
 ```graphql
 sftDevCfgCreateDeviceConfiguration(
   input: SftDevCfgCreateDeviceConfigurationInput!
@@ -19,8 +23,4 @@ sftDevCfgCreateDeviceConfiguration(
 
 ### Arguments
 
-#### `sftDevCfgCreateDeviceConfiguration.input` · [`SftDevCfgCreateDeviceConfigurationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-create-device-configuration-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftDevCfgCreateDeviceConfigurationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-dev-cfg-create-device-configuration-payload.md) object renesas-preview
+#### `input` · [`SftDevCfgCreateDeviceConfigurationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-dev-cfg-create-device-configuration-input.md) non-null input

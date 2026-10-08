@@ -25,10 +25,10 @@ input DesLayerFilterInput {
 
 ### Fields
 
-#### `DesLayerFilterInput.and` · [`[DesLayerFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-layer-filter-input.md) list input design
+#### `and` · [`[DesLayerFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-layer-filter-input.md) list input
 
-#### `DesLayerFilterInput.name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input common
+#### `name` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 Layer name.
 
-#### `DesLayerFilterInput.or` · [`[DesLayerFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-layer-filter-input.md) list input design
+#### `or` · [`[DesLayerFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-layer-filter-input.md) list input

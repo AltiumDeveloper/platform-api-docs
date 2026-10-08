@@ -24,8 +24,8 @@ type SupEvalKitSetMainRefDesignPayload {
 
 ### Fields
 
-#### `SupEvalKitSetMainRefDesignPayload.errors` · [`[SupEvalKitSetMainRefDesignError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-set-main-ref-design-error.md) list union supply
+#### `errors` · [`[SupEvalKitSetMainRefDesignError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-set-main-ref-design-error.md) list union
 
-#### `SupEvalKitSetMainRefDesignPayload.success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `success` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Return true if operation succeeded.

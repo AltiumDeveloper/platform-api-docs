@@ -11,6 +11,12 @@ deprecated: false
 
 Launches a workflow. Workflows allow you to automate design processes, and are created in Altium 365.
 
+### Type
+
+#### [`DesLaunchWorkflowPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-launch-workflow-payload.md) object
+
+Payload associated with launching a workflow.
+
 ```graphql
 desLaunchWorkflow(
   input: DesLaunchWorkflowInput!
@@ -19,10 +25,4 @@ desLaunchWorkflow(
 
 ### Arguments
 
-#### `desLaunchWorkflow.input` · [`DesLaunchWorkflowInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-launch-workflow-input.md) non-null input customization
-
-### Type
-
-#### [`DesLaunchWorkflowPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/des-launch-workflow-payload.md) object customization
-
-Payload associated with launching a workflow.
+#### `input` · [`DesLaunchWorkflowInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/des-launch-workflow-input.md) non-null input

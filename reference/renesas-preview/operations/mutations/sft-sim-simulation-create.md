@@ -11,6 +11,10 @@ deprecated: false
 
 Creates new simulation.
 
+### Type
+
+#### [`SftSimSimulationCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-create-payload.md) object
+
 ```graphql
 sftSimSimulationCreate(
   input: SftSimSimulationCreateInput!
@@ -19,8 +23,4 @@ sftSimSimulationCreate(
 
 ### Arguments
 
-#### `sftSimSimulationCreate.input` · [`SftSimSimulationCreateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-create-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSimSimulationCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation-create-payload.md) object renesas-preview
+#### `input` · [`SftSimSimulationCreateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-sim-simulation-create-input.md) non-null input

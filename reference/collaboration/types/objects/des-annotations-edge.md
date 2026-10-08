@@ -24,10 +24,10 @@ type DesAnnotationsEdge {
 
 ### Fields
 
-#### `DesAnnotationsEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesAnnotationsEdge.node` · [`DesAnnotation!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation.md) non-null object collaboration
+#### `node` · [`DesAnnotation!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation.md) non-null object
 
 The item at the end of the edge.

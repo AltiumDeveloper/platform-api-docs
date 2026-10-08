@@ -11,6 +11,12 @@ deprecated: false
 
 Update a new solution template application.
 
+### Type
+
+#### [`SupSolutionTemplateUpdateSolutionTemplateApplicationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-update-solution-template-application-payload.md) object
+
+Payload associated with updating a solution template application.
+
 ```graphql
 supSolutionTemplateUpdateSolutionTemplateApplication(
   input: SupSolutionTemplateUpdateSolutionTemplateApplicationInput!
@@ -19,10 +25,4 @@ supSolutionTemplateUpdateSolutionTemplateApplication(
 
 ### Arguments
 
-#### `supSolutionTemplateUpdateSolutionTemplateApplication.input` · [`SupSolutionTemplateUpdateSolutionTemplateApplicationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-solution-template-application-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplateUpdateSolutionTemplateApplicationPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-update-solution-template-application-payload.md) object supply
-
-Payload associated with updating a solution template application.
+#### `input` · [`SupSolutionTemplateUpdateSolutionTemplateApplicationInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-solution-template-application-input.md) non-null input

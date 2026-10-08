@@ -19,18 +19,18 @@ union GloAddAppClientSecretError = GloAppNotFoundError | GloAppMissingOAuthClien
 
 ### Possible types
 
-#### [`GloAddAppClientSecretError.GloAppNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-found-error.md) object platform
+#### [`GloAppNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-found-error.md) object
 
-Error that occurs when a `GloApp` is not found.
+Error that occurs when a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) is not found.
 
-#### [`GloAddAppClientSecretError.GloAppMissingOAuthClientError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-missing-oauth-client-error.md) object platform
+#### [`GloAppMissingOAuthClientError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-missing-oauth-client-error.md) object
 
 Error that occurs when an \*OAuth client\* is missing.
 
-#### [`GloAddAppClientSecretError.GloAppDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md) object platform
+#### [`GloAppDeletedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-deleted-error.md) object
 
-Error that occurs when attempting to update a deleted `GloApp`.
+Error that occurs when attempting to update a deleted [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md).
 
-#### [`GloAddAppClientSecretError.GloAppClientSecretNotAddedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-client-secret-not-added-error.md) object platform
+#### [`GloAppClientSecretNotAddedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-client-secret-not-added-error.md) object
 
-Error that occurs when attempting to add a client secret to a `GloApp` \*OAuth client\* but the secret could not be added.
+Error that occurs when attempting to add a client secret to a [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) \*OAuth client\* but the secret could not be added.

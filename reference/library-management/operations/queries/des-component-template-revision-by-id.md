@@ -11,6 +11,12 @@ deprecated: false
 
 Searches for a specific component template revision by its unique identifier.
 
+### Type
+
+#### [`DesComponentTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-revision.md) object
+
+Component template revision information.
+
 ```graphql
 desComponentTemplateRevisionById(
   id: ID!
@@ -19,12 +25,6 @@ desComponentTemplateRevisionById(
 
 ### Arguments
 
-#### `desComponentTemplateRevisionById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The component template revision identifier.
-
-### Type
-
-#### [`DesComponentTemplateRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component-template-revision.md) object library-management
-
-Component template revision information.

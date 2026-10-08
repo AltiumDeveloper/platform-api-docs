@@ -21,6 +21,6 @@ input SupSolutionTemplateIndexSolutionTemplateInput {
 
 ### Fields
 
-#### `SupSolutionTemplateIndexSolutionTemplateInput.solutionTemplateIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 List of solution template IDs to index.

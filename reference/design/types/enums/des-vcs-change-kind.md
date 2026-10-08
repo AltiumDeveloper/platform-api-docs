@@ -26,10 +26,10 @@ enum DesVcsChangeKind {
 
 ### Values
 
-#### `DesVcsChangeKind.ADDED`
+#### `ADDED`
 
-#### `DesVcsChangeKind.DELETED`
+#### `DELETED`
 
-#### `DesVcsChangeKind.MODIFIED`
+#### `MODIFIED`
 
-#### `DesVcsChangeKind.NONE`
+#### `NONE`

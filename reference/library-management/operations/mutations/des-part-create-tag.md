@@ -11,6 +11,12 @@ deprecated: false
 
 Creates a tag that can be assigned to parts.
 
+### Type
+
+#### [`DesPartCreateTagPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-create-tag-payload.md) object
+
+Represents the payload returned after creating a part tag.
+
 ```graphql
 desPartCreateTag(
   input: DesPartCreateTagInput!
@@ -19,12 +25,6 @@ desPartCreateTag(
 
 ### Arguments
 
-#### `desPartCreateTag.input` · [`DesPartCreateTagInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-create-tag-input.md) non-null input library-management
+#### `input` · [`DesPartCreateTagInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-create-tag-input.md) non-null input
 
 The tag to create.
-
-### Type
-
-#### [`DesPartCreateTagPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-create-tag-payload.md) object library-management
-
-Represents the payload returned after creating a part tag.

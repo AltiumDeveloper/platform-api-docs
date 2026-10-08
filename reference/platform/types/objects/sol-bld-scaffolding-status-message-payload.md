@@ -22,6 +22,6 @@ type SolBldScaffoldingStatusMessagePayload {
 
 ### Fields
 
-#### `SolBldScaffoldingStatusMessagePayload.messageCode` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `messageCode` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `SolBldScaffoldingStatusMessagePayload.parameters` · [`[SolBldScaffoldingStatusMessageParameterPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-message-parameter-payload.md) non-null object platform
+#### `parameters` · [`[SolBldScaffoldingStatusMessageParameterPayload!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-message-parameter-payload.md) non-null object

@@ -11,6 +11,10 @@ deprecated: false
 
 Updates existing solution.
 
+### Type
+
+#### [`SolUpdateSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-update-solution-payload.md) object
+
 ```graphql
 solUpdateSolution(
   input: SolUpdateSolutionInput!
@@ -19,8 +23,4 @@ solUpdateSolution(
 
 ### Arguments
 
-#### `solUpdateSolution.input` · [`SolUpdateSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-update-solution-input.md) non-null input platform
-
-### Type
-
-#### [`SolUpdateSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-update-solution-payload.md) object platform
+#### `input` · [`SolUpdateSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-update-solution-input.md) non-null input

@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the ESD Document.
 
+### Type
+
+#### [`SysEsdUpdateDocumentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-update-document-payload.md) object
+
+Result of updating an ESD document.
+
 ```graphql
 sysEsdUpdateDocument(
   input: SysEsdUpdateDocumentInput!
@@ -19,10 +25,4 @@ sysEsdUpdateDocument(
 
 ### Arguments
 
-#### `sysEsdUpdateDocument.input` · [`SysEsdUpdateDocumentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-update-document-input.md) non-null input system-design
-
-### Type
-
-#### [`SysEsdUpdateDocumentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-update-document-payload.md) object system-design
-
-Result of updating an ESD document.
+#### `input` · [`SysEsdUpdateDocumentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-update-document-input.md) non-null input

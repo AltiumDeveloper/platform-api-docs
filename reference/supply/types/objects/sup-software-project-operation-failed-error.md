@@ -11,7 +11,7 @@ deprecated: false
 
 ### Interfaces
 
-#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface common
+#### [`Error`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/error.md) interface
 
 ### Implemented By
 
@@ -26,6 +26,6 @@ type SupSoftwareProjectOperationFailedError implements Error {
 
 ### Fields
 
-#### `SupSoftwareProjectOperationFailedError.errorCode` · [`SupSoftwareProjectErrorCode!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-error-code.md) non-null enum supply
+#### `errorCode` · [`SupSoftwareProjectErrorCode!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-error-code.md) non-null enum
 
-#### `SupSoftwareProjectOperationFailedError.message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar

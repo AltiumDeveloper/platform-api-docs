@@ -25,14 +25,14 @@ type DesPartGlobalAlternativesResult {
 
 ### Fields
 
-#### `DesPartGlobalAlternativesResult.siliconExpertParts` · [`[DesPartGlobalAlternativeItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-alternative-item.md) non-null object library-management
+#### `siliconExpertParts` · [`[DesPartGlobalAlternativeItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-alternative-item.md) non-null object
 
 Alternatives provided by \*SiliconExpert\*.
 
-#### `DesPartGlobalAlternativesResult.supplyParts` · [`[DesPartGlobalAlternativeItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-alternative-item.md) non-null object library-management
+#### `supplyParts` · [`[DesPartGlobalAlternativeItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-alternative-item.md) non-null object
 
 Alternatives provided by Altium.
 
-#### `DesPartGlobalAlternativesResult.z2DataParts` · [`[DesPartGlobalAlternativeItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-alternative-item.md) non-null object library-management
+#### `z2DataParts` · [`[DesPartGlobalAlternativeItem!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-global-alternative-item.md) non-null object
 
 Alternatives provided by \*Z2Data\*.

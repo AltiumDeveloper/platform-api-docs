@@ -25,14 +25,14 @@ input SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesInput {
 
 ### Fields
 
-#### `SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesInput.addSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `addSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Software project IDs to associate with the solution template. Ignored if already associated.
 
-#### `SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesInput.removeSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `removeSoftwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Software project IDs to remove from the solution template.
 
-#### `SupSoftwareProjectPatchSoftwareProjectSolutionTemplatesInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the solution template.

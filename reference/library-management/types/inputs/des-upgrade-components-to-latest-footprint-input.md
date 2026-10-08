@@ -24,10 +24,10 @@ input DesUpgradeComponentsToLatestFootprintInput {
 
 ### Fields
 
-#### `DesUpgradeComponentsToLatestFootprintInput.componentFilter` · [`DesComponentUpgradeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-upgrade-filter-input.md) input library-management
+#### `componentFilter` · [`DesComponentUpgradeFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-component-upgrade-filter-input.md) input
 
 Optional structured filter to limit which components are upgraded.
 
-#### `DesUpgradeComponentsToLatestFootprintInput.footprintId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `footprintId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The footprint identifier whose components should be upgraded.

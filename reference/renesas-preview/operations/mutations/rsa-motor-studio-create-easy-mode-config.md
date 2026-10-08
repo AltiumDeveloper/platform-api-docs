@@ -17,6 +17,10 @@ deprecated: false
 
 Add an easymode config for the specified project.
 
+### Type
+
+#### [`RsaMotorStudioCreateEasyModeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-easy-mode-config-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioCreateEasyModeConfig(
   input: RsaMotorStudioCreateEasyModeConfigInput!
@@ -25,8 +29,4 @@ rsaMotorStudioCreateEasyModeConfig(
 
 ### Arguments
 
-#### `rsaMotorStudioCreateEasyModeConfig.input` · [`RsaMotorStudioCreateEasyModeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-easy-mode-config-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioCreateEasyModeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-create-easy-mode-config-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioCreateEasyModeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-easy-mode-config-input.md) non-null input

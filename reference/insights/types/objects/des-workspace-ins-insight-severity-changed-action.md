@@ -24,10 +24,10 @@ type DesWorkspaceInsInsightSeverityChangedAction {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightSeverityChangedAction.newSeverity` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `newSeverity` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Severity value after the change.
 
-#### `DesWorkspaceInsInsightSeverityChangedAction.oldSeverity` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `oldSeverity` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Severity value before the change, if any.

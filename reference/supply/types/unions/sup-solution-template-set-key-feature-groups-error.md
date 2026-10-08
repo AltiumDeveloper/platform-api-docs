@@ -19,8 +19,8 @@ union SupSolutionTemplateSetKeyFeatureGroupsError = SupSolutionTemplateNotFoundE
 
 ### Possible types
 
-#### [`SupSolutionTemplateSetKeyFeatureGroupsError.SupSolutionTemplateNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-not-found-error.md) object supply
+#### [`SupSolutionTemplateNotFoundError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-not-found-error.md) object
 
-#### [`SupSolutionTemplateSetKeyFeatureGroupsError.SupSolutionTemplateInvalidDataError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-invalid-data-error.md) object supply
+#### [`SupSolutionTemplateInvalidDataError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-invalid-data-error.md) object
 
-#### [`SupSolutionTemplateSetKeyFeatureGroupsError.SupSolutionTemplateOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md) object supply
+#### [`SupSolutionTemplateOperationFailedError`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-operation-failed-error.md) object

@@ -27,4 +27,4 @@ type DesignRegisterUploadPayload {
 
 ### Fields
 
-#### `DesignRegisterUploadPayload.designUploadResult` · [`UploadRegistrationResult`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/upload-registration-result.md) object design
+#### `designUploadResult` · [`UploadRegistrationResult`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/upload-registration-result.md) object

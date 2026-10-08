@@ -13,7 +13,9 @@ Insight aggregated from workspace signals and related resources.
 
 ### Common Data Model
 
-- [Part Insight](https://altiumdeveloper.github.io/cdm/classes/ins_PartInsight/)
+- [Part Insight](https://w3id.org/altium/cdm/insights/PartInsight)
+
+  - IRI: [`https://w3id.org/altium/cdm/insights/PartInsight`](https://w3id.org/altium/cdm/insights/PartInsight)
   - GRID: `grid:workspace:{workspace-id}:insights:insight/{id}`
 
 ### Returned By
@@ -44,54 +46,54 @@ type DesWorkspaceInsInsight {
 
 ### Fields
 
-#### `DesWorkspaceInsInsight.created` · [`DesWorkspaceInsUserActionTimestamp!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-action-timestamp.md) non-null object insights
+#### `created` · [`DesWorkspaceInsUserActionTimestamp!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-action-timestamp.md) non-null object
 
 Creation timestamp and user information.
 
-#### `DesWorkspaceInsInsight.data` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar common
+#### `data` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar
 
 Full data payload for the insight.
 
-#### `DesWorkspaceInsInsight.history` · [`[DesWorkspaceInsInsightHistoryTransaction!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-history-transaction.md) non-null object insights
+#### `history` · [`[DesWorkspaceInsInsightHistoryTransaction!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-history-transaction.md) non-null object
 
 History of changes applied to the insight.
 
-#### `DesWorkspaceInsInsight.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Unique identifier of the insight resource.
 
-#### `DesWorkspaceInsInsight.isAck` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isAck` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the insight has been acknowledged.
 
-#### `DesWorkspaceInsInsight.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Human-readable name of the insight.
 
-#### `DesWorkspaceInsInsight.relatedEntities` · [`DesWorkspaceInsRelatedEntities!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-related-entities.md) non-null object insights
+#### `relatedEntities` · [`DesWorkspaceInsRelatedEntities!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-related-entities.md) non-null object
 
 Resources related to this insight (projects, BOMs, parts, etc.).
 
-#### `DesWorkspaceInsInsight.relatedTasks` · [`DesWorkspaceInsRelatedTasks!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-related-tasks.md) non-null object insights
+#### `relatedTasks` · [`DesWorkspaceInsRelatedTasks!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-related-tasks.md) non-null object
 
 Tasks and requests associated with this insight.
 
-#### `DesWorkspaceInsInsight.severity` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `severity` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Severity level assigned to the insight.
 
-#### `DesWorkspaceInsInsight.shortData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar common
+#### `shortData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar
 
 Compact, UI-friendly representation of the insight data.
 
-#### `DesWorkspaceInsInsight.status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Current status of the insight lifecycle.
 
-#### `DesWorkspaceInsInsight.type` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `type` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Type key that categorizes the insight.
 
-#### `DesWorkspaceInsInsight.updated` · [`DesWorkspaceInsUserActionTimestamp!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-action-timestamp.md) non-null object insights
+#### `updated` · [`DesWorkspaceInsUserActionTimestamp!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-action-timestamp.md) non-null object
 
 Most recent update timestamp and user information.

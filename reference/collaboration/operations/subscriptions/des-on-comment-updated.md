@@ -11,6 +11,12 @@ deprecated: false
 
 Called on subscription events.
 
+### Type
+
+#### [`DesCommentNotification`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-notification.md) object
+
+Notification for comment.
+
 ```graphql
 desOnCommentUpdated(
   input: DesOnCommentUpdatedInput!
@@ -19,10 +25,4 @@ desOnCommentUpdated(
 
 ### Arguments
 
-#### `desOnCommentUpdated.input` · [`DesOnCommentUpdatedInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-on-comment-updated-input.md) non-null input collaboration
-
-### Type
-
-#### [`DesCommentNotification`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-notification.md) object collaboration
-
-Notification for comment.
+#### `input` · [`DesOnCommentUpdatedInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-on-comment-updated-input.md) non-null input

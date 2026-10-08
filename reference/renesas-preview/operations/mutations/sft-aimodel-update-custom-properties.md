@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the AI model custom properties.
 
+### Type
+
+#### [`SftAIModelUpdatePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-update-properties-payload.md) object
+
 ```graphql
 sftAIModelUpdateCustomProperties(
   input: SftAIModelUpdatePropertiesInput!
@@ -19,8 +23,4 @@ sftAIModelUpdateCustomProperties(
 
 ### Arguments
 
-#### `sftAIModelUpdateCustomProperties.input` · [`SftAIModelUpdatePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-update-properties-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftAIModelUpdatePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-update-properties-payload.md) object renesas-preview
+#### `input` · [`SftAIModelUpdatePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-update-properties-input.md) non-null input

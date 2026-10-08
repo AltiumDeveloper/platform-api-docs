@@ -23,6 +23,6 @@ input BomCreateBomSupplierReferenceInput {
 
 ### Fields
 
-#### `BomCreateBomSupplierReferenceInput.octopart` · [`BomOctopartSupplierReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-supplier-reference-input.md) input procurement
+#### `octopart` · [`BomOctopartSupplierReferenceInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/inputs/bom-octopart-supplier-reference-input.md) input
 
 A reference to a supplier in Octopart.

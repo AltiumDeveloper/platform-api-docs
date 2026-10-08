@@ -39,40 +39,40 @@ type SupRefDesignResultSet {
 
 ### Fields
 
-#### `SupRefDesignResultSet.applicationAgg` · [`[SupRefApplicationBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-application-bucket.md) list object supply
+#### `applicationAgg` · [`[SupRefApplicationBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-application-bucket.md) list object
 
 Aggregate on applications for this result set.
 
-##### `SupRefDesignResultSet.applicationAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `SupRefDesignResultSet.categoryAgg` · [`[SupRefCategoryBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-category-bucket.md) list object supply
+#### `categoryAgg` · [`[SupRefCategoryBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-category-bucket.md) list object
 
 Aggregate on categories for this result set.
 
-##### `SupRefDesignResultSet.categoryAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `SupRefDesignResultSet.hits` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `hits` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Total number of reference designs found.
 
-#### `SupRefDesignResultSet.publisherAgg` · [`[SupRefPublisherBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-publisher-bucket.md) list object supply
+#### `publisherAgg` · [`[SupRefPublisherBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-publisher-bucket.md) list object
 
 Aggregate on publishers for this result set.
 
-##### `SupRefDesignResultSet.publisherAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `SupRefDesignResultSet.results` · [`[SupRefDesign!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) non-null object supply
+#### `results` · [`[SupRefDesign!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design.md) non-null object
 
 List of reference designs in the current result set.
 
-#### `SupRefDesignResultSet.tagAgg` · [`[SupRefTagBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-tag-bucket.md) list object supply
+#### `tagAgg` · [`[SupRefTagBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-tag-bucket.md) list object
 
 Aggregate on tags for this result set.
 
-##### `SupRefDesignResultSet.tagAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `SupRefDesignResultSet.typeAgg` · [`[SupRefDesignTypeBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-type-bucket.md) list object supply
+#### `typeAgg` · [`[SupRefDesignTypeBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-ref-design-type-bucket.md) list object
 
 Aggregate on reference design types for this result set.
 
-##### `SupRefDesignResultSet.typeAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar

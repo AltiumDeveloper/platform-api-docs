@@ -13,7 +13,9 @@ A release is a published version of a design with additional generated files for
 
 ### Common Data Model
 
-- [Hardware Project Release](https://altiumdeveloper.github.io/cdm/classes/des_ProjectRelease/) — Project Release captures an immutable snapshot of a PCB design project at a specific point in its lifecycle, packaging all design data, outputs, and metadata required for manufacturing, assembly, and downstream processes.
+- [Hardware Project Release](https://w3id.org/altium/cdm/design/ProjectRelease) — Project Release captures an immutable snapshot of a PCB design project at a specific point in its lifecycle, packaging all design data, outputs, and metadata required for manufacturing, assembly, and downstream processes.
+
+  - IRI: [`https://w3id.org/altium/cdm/design/ProjectRelease`](https://w3id.org/altium/cdm/design/ProjectRelease)
   - GRID: `grid:workspace:{workspace-id}:design:project-release/{id}`
 
 ### Returned By
@@ -26,7 +28,7 @@ A release is a published version of a design with additional generated files for
 
 ### Interfaces
 
-#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface common
+#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface
 
 The node interface is implemented by entities that have a global unique identifier.
 
@@ -45,31 +47,31 @@ type DesRelease implements Node {
 
 ### Fields
 
-#### `DesRelease.createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar common
+#### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
-The `DateTime` when this release was created.
+The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) when this release was created.
 
-#### `DesRelease.description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The summary of this release content or purpose.
 
-#### `DesRelease.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-The identifier for this release (used by `desReleaseById`).
+The identifier for this release (used by [`desReleaseById`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-release-by-id.md)).
 
-#### `DesRelease.releaseId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `releaseId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The reference identifier for this release.
 
-#### `DesRelease.variants` · [`[DesReleaseVariant!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release-variant.md) non-null object design
+#### `variants` · [`[DesReleaseVariant!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release-variant.md) non-null object
 
 The list of variants contained in this release.
 
-##### `DesRelease.variants.where` · [`DesReleaseVariantFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-release-variant-filter-input.md) input design
+##### `where` · [`DesReleaseVariantFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-release-variant-filter-input.md) input
 
 #### Deprecated
 
-#### `DesRelease.manufacturePackages` · [`[DesManufacturePackage!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-manufacture-package.md) **DEPRECATED** non-null object design
+#### `manufacturePackages` · [`[DesManufacturePackage!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-manufacture-package.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Not implemented. Will soon be removed.
 

@@ -25,14 +25,14 @@ type DesPartSellerWithOffers {
 
 ### Fields
 
-#### `DesPartSellerWithOffers.company` · [`DesPartCompany!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) non-null object library-management
+#### `company` · [`DesPartCompany!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) non-null object
 
 The distributor.
 
-#### `DesPartSellerWithOffers.customPartSource` · [`DesPartSource`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-source.md) object library-management
+#### `customPartSource` · [`DesPartSource`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-source.md) object
 
 The custom part source.
 
-#### `DesPartSellerWithOffers.offers` · [`[DesPartCompanyOffer!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company-offer.md) non-null object library-management
+#### `offers` · [`[DesPartCompanyOffer!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company-offer.md) non-null object
 
 List of offers. Multiple offers may exist in different packaging.

@@ -11,6 +11,10 @@ deprecated: false
 
 Scaffolds additional data into an existing solution using a solution template.
 
+### Type
+
+#### [`SolBldScaffoldingExistingSolutionBySolutionTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-existing-solution-by-solution-template-payload.md) object
+
 ```graphql
 solBldScaffoldingExistingSolutionBySolutionTemplate(
   input: SolBldScaffoldingExistingSolutionBySolutionTemplateInput!
@@ -19,8 +23,4 @@ solBldScaffoldingExistingSolutionBySolutionTemplate(
 
 ### Arguments
 
-#### `solBldScaffoldingExistingSolutionBySolutionTemplate.input` · [`SolBldScaffoldingExistingSolutionBySolutionTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-existing-solution-by-solution-template-input.md) non-null input platform
-
-### Type
-
-#### [`SolBldScaffoldingExistingSolutionBySolutionTemplatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-existing-solution-by-solution-template-payload.md) object platform
+#### `input` · [`SolBldScaffoldingExistingSolutionBySolutionTemplateInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-scaffolding-existing-solution-by-solution-template-input.md) non-null input

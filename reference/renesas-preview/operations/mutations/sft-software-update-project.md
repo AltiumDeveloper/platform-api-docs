@@ -11,6 +11,10 @@ deprecated: false
 
 Updates the Software Project.
 
+### Type
+
+#### [`SftSoftwareUpdateProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-update-project-payload.md) object
+
 ```graphql
 sftSoftwareUpdateProject(
   input: SftSoftwareUpdateProjectInput!
@@ -19,8 +23,4 @@ sftSoftwareUpdateProject(
 
 ### Arguments
 
-#### `sftSoftwareUpdateProject.input` · [`SftSoftwareUpdateProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftSoftwareUpdateProjectPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-software-update-project-payload.md) object renesas-preview
+#### `input` · [`SftSoftwareUpdateProjectInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-input.md) non-null input

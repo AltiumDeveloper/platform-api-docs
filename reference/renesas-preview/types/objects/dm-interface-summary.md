@@ -32,18 +32,18 @@ type DmInterfaceSummary {
 
 ### Fields
 
-#### `DmInterfaceSummary.boards` · [`DmInterfaceModelSupport!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-model-support.md) non-null object renesas-preview
+#### `boards` · [`DmInterfaceModelSupport!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-model-support.md) non-null object
 
 Board support details for this interface.
 
-#### `DmInterfaceSummary.devices` · [`DmInterfaceModelSupport!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-model-support.md) non-null object renesas-preview
+#### `devices` · [`DmInterfaceModelSupport!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-model-support.md) non-null object
 
 Device support details for this interface.
 
-#### `DmInterfaceSummary.interfaceType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `interfaceType` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Generic interface type identifier (e.g., uart, pwm, adc).
 
-#### `DmInterfaceSummary.interfaceTypeModel` · [`DmInterfaceTypeModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-type-model.md) object renesas-preview
+#### `interfaceTypeModel` · [`DmInterfaceTypeModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-interface-type-model.md) object
 
 Dictionary metadata for this interface type (label, description, user-selectable, aliases). Null if absent from the dictionary.

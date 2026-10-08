@@ -11,6 +11,10 @@ deprecated: false
 
 Retrieves a job status.
 
+### Type
+
+#### [`SolBldScaffoldingStatusPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-payload.md) object
+
 ```graphql
 solBldScaffoldingStatus(
   jobId: ID!
@@ -19,8 +23,4 @@ solBldScaffoldingStatus(
 
 ### Arguments
 
-#### `solBldScaffoldingStatus.jobId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SolBldScaffoldingStatusPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-bld-scaffolding-status-payload.md) object platform
+#### `jobId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

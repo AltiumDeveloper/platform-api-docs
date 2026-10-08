@@ -23,4 +23,4 @@ type SupSoftwareProjectUpdateSoftwareProjectPayload {
 
 ### Fields
 
-#### `SupSoftwareProjectUpdateSoftwareProjectPayload.errors` · [`[SupSoftwareProjectUpdateSoftwareProjectError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-update-software-project-error.md) list union supply
+#### `errors` · [`[SupSoftwareProjectUpdateSoftwareProjectError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-update-software-project-error.md) list union

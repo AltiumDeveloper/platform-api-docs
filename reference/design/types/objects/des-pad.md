@@ -34,50 +34,50 @@ type DesPad {
 
 ### Fields
 
-#### `DesPad.designator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `designator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The designator associated with this pad.
 
-#### `DesPad.globalDesignator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `globalDesignator` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The global designator associated with this pad.
 
-#### `DesPad.holeSize` · [`DesSize!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) non-null object design
+#### `holeSize` · [`DesSize!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) non-null object
 
 The hole size of this pad.
 
-#### `DesPad.isPlated` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isPlated` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 The plated status of this pad.
 
-#### `DesPad.layer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object design
+#### `layer` · [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object
 
 The layer associated with this pad.
 
-#### `DesPad.net` · [`DesNet`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) object design
+#### `net` · [`DesNet`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) object
 
 The net associated with this pad.
 
-#### `DesPad.padType` · [`DesPadType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-pad-type.md) non-null enum design
+#### `padType` · [`DesPadType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-pad-type.md) non-null enum
 
 The type of this pad.
 
-#### `DesPad.position` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object design
+#### `position` · [`DesPosition2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-position-2-d.md) non-null object
 
 The position of this pad.
 
-#### `DesPad.radius` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `radius` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 The radius of this pad.
 
-#### `DesPad.rotation` · [`Decimal`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) scalar common
+#### `rotation` · [`Decimal`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) scalar
 
 The rotation of this pad.
 
-#### `DesPad.shape` · [`DesPrimitiveShape`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-primitive-shape.md) enum design
+#### `shape` · [`DesPrimitiveShape`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-primitive-shape.md) enum
 
 The shape of this pad.
 
-#### `DesPad.size` · [`DesSize2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size-2-d.md) non-null object design
+#### `size` · [`DesSize2D!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size-2-d.md) non-null object
 
 The size of this pad.

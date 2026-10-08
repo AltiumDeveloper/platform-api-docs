@@ -27,4 +27,4 @@ type DmExecuteDeviceExtractionFromConfigurationUrlPayload {
 
 ### Fields
 
-#### `DmExecuteDeviceExtractionFromConfigurationUrlPayload.dmDeviceModelAsConfigured` · [`DmDeviceModelAsConfigured`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-model-as-configured.md) object renesas-preview
+#### `dmDeviceModelAsConfigured` · [`DmDeviceModelAsConfigured`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-device-model-as-configured.md) object

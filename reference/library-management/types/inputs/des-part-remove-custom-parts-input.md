@@ -24,10 +24,10 @@ input DesPartRemoveCustomPartsInput {
 
 ### Fields
 
-#### `DesPartRemoveCustomPartsInput.partIds` · [`[DesPartManufacturerPartIdWithLastSyncTimeInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-manufacturer-part-id-with-last-sync-time-input.md) non-null input library-management
+#### `partIds` · [`[DesPartManufacturerPartIdWithLastSyncTimeInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-manufacturer-part-id-with-last-sync-time-input.md) non-null input
 
 The manufacturer part identifiers with their last synchronization times.
 
-#### `DesPartRemoveCustomPartsInput.partSourceGuid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `partSourceGuid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The unique identifier of the part source.

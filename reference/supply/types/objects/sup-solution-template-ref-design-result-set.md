@@ -39,40 +39,40 @@ type SupSolutionTemplateRefDesignResultSet {
 
 ### Fields
 
-#### `SupSolutionTemplateRefDesignResultSet.applicationAgg` · [`[SupSolutionTemplateRefDesignApplicationBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-application-bucket.md) list object supply
+#### `applicationAgg` · [`[SupSolutionTemplateRefDesignApplicationBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-application-bucket.md) list object
 
 Aggregate on applications for this result set.
 
-##### `SupSolutionTemplateRefDesignResultSet.applicationAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `SupSolutionTemplateRefDesignResultSet.categoryAgg` · [`[SupSolutionTemplateRefDesignCategoryBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-category-bucket.md) list object supply
+#### `categoryAgg` · [`[SupSolutionTemplateRefDesignCategoryBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-category-bucket.md) list object
 
 Aggregate on categories for this result set.
 
-##### `SupSolutionTemplateRefDesignResultSet.categoryAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `SupSolutionTemplateRefDesignResultSet.hits` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `hits` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Total number of reference designs found.
 
-#### `SupSolutionTemplateRefDesignResultSet.publisherAgg` · [`[SupSolutionTemplateRefDesignPublisherBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-publisher-bucket.md) list object supply
+#### `publisherAgg` · [`[SupSolutionTemplateRefDesignPublisherBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-publisher-bucket.md) list object
 
 Aggregate on publishers for this result set.
 
-##### `SupSolutionTemplateRefDesignResultSet.publisherAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `SupSolutionTemplateRefDesignResultSet.results` · [`[SupSolutionTemplateRefDesign!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-ref-design.md) non-null union supply
+#### `results` · [`[SupSolutionTemplateRefDesign!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-solution-template-ref-design.md) non-null union
 
 List of reference designs in the current result set.
 
-#### `SupSolutionTemplateRefDesignResultSet.tagAgg` · [`[SupSolutionTemplateRefDesignTagBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-tag-bucket.md) list object supply
+#### `tagAgg` · [`[SupSolutionTemplateRefDesignTagBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-tag-bucket.md) list object
 
 Aggregate on tags for this result set.
 
-##### `SupSolutionTemplateRefDesignResultSet.tagAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
-#### `SupSolutionTemplateRefDesignResultSet.typeAgg` · [`[SupSolutionTemplateRefDesignTypeBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-type-bucket.md) list object supply
+#### `typeAgg` · [`[SupSolutionTemplateRefDesignTypeBucket!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-ref-design-type-bucket.md) list object
 
 Aggregate on reference design types for this result set.
 
-##### `SupSolutionTemplateRefDesignResultSet.typeAgg.size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+##### `size` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar

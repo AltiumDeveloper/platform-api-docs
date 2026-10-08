@@ -24,10 +24,10 @@ type DesDesignExchange {
 
 ### Fields
 
-#### `DesDesignExchange.downloadableFile` · [`DesDownloadableFile!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) non-null object design
+#### `downloadableFile` · [`DesDownloadableFile!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-downloadable-file.md) non-null object
 
 Design exchange downloadable files.
 
-#### `DesDesignExchange.models3D` · [`[DesModel3D!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-model-3-d.md) non-null object design
+#### `models3D` · [`[DesModel3D!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-model-3-d.md) non-null object
 
 Design exchange 3D models.

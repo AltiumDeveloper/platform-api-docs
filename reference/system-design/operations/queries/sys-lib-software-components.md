@@ -23,4 +23,4 @@ sysLibSoftwareComponents: [SysLibSoftwareComponent]!
 
 ### Type
 
-#### [`SysLibSoftwareComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-component.md) object system-design **EXPERIMENTAL**
+#### [`SysLibSoftwareComponent`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-software-component.md) object **EXPERIMENTAL**

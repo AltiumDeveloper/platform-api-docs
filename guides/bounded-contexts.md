@@ -9,7 +9,7 @@ deprecated: false
 
 # Bounded contexts and the CDM
 
-A **bounded context** is a business area with its own entities and vocabulary — design, library management, procurement and so on. The Platform API, this reference and the [Common Data Model (CDM)](https://altiumdeveloper.github.io/cdm/) are organised by the same bounded contexts, so a concept you find in the CDM leads you straight to the API types and operations for it.
+A **bounded context** is a business area with its own entities and vocabulary — design, library management, procurement and so on. The Altium 365 API, this reference and the [Common Data Model (CDM)](https://altiumdeveloper.github.io/cdm/) are organised by the same bounded contexts, so a concept you find in the CDM leads you straight to the API types and operations for it.
 
 ## The bounded contexts
 
@@ -33,7 +33,7 @@ Each context's overview page links its concepts in the CDM, lists the API types 
 
 ## API types and CDM entities
 
-A CDM entity (for example _Hardware Project_) is represented in the API by one or more GraphQL types (for example [`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md)). The type's reference page has a **Common Data Model** section that links the entity definition and shows its **GRID** pattern — the global resource identifier format, such as `grid:workspace:{workspace-id}:design:project/{id}`. See [Identifiers and lookups](https://altiumdeveloper.github.io/platform-api-docs/guides/identifiers.md) for how GRIDs are used in queries.
+A CDM entity (for example _Hardware Project_) is represented in the API by one or more GraphQL types (for example [`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md)). The type's reference page has a **Common Data Model** section that lists the entity's **IRI**, which links to its definition in the CDM, and its **GRID** pattern. The IRI (for example `https://w3id.org/altium/cdm/design/Project`) is the entity's stable identifier in the CDM; the GRID is the global resource identifier format of its instances, such as `grid:workspace:{workspace-id}:design:project/{id}`. See [Identifiers and lookups](https://altiumdeveloper.github.io/platform-api-docs/guides/identifiers.md) for how GRIDs are used in queries.
 
 ## From a concept to a query
 

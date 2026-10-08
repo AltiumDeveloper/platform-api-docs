@@ -27,6 +27,6 @@ type UploadRegistrationResult {
 
 ### Fields
 
-#### `UploadRegistrationResult.uploadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `uploadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifier of the design upload.

@@ -23,6 +23,6 @@ type DesWorkspaceInsInsightTaskLinksChangedAction {
 
 ### Fields
 
-#### `DesWorkspaceInsInsightTaskLinksChangedAction.newTasks` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `newTasks` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Tasks that were added to the insight.

@@ -24,10 +24,10 @@ enum DesLifeCycleStateTransitionKind {
 
 ### Values
 
-#### `DesLifeCycleStateTransitionKind.APPROVALS`
+#### `APPROVALS`
 
 The transition can be applied subject to receiving approvals granted by some approval groups.
 
-#### `DesLifeCycleStateTransitionKind.CONTROLLED`
+#### `CONTROLLED`
 
 The transition can be applied subject to default server permissions.

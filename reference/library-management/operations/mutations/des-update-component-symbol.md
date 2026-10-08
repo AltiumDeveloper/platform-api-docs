@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the specified component's symbol (does not affect the revision).
 
+### Type
+
+#### [`DesUpdateComponentSymbolPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-symbol-payload.md) object
+
+Payload associated with updating the symbol of a component.
+
 ```graphql
 desUpdateComponentSymbol(
   input: DesUpdateComponentSymbolInput!
@@ -19,10 +25,4 @@ desUpdateComponentSymbol(
 
 ### Arguments
 
-#### `desUpdateComponentSymbol.input` · [`DesUpdateComponentSymbolInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-symbol-input.md) non-null input library-management
-
-### Type
-
-#### [`DesUpdateComponentSymbolPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-update-component-symbol-payload.md) object library-management
-
-Payload associated with updating the symbol of a component.
+#### `input` · [`DesUpdateComponentSymbolInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-update-component-symbol-input.md) non-null input

@@ -22,10 +22,10 @@ input SupSolutionTemplateUpdateParameterInput {
 
 ### Fields
 
-#### `SupSolutionTemplateUpdateParameterInput.info` · [`SupSolutionTemplateUpdateParameterInfoInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-parameter-info-input.md) input supply
+#### `info` · [`SupSolutionTemplateUpdateParameterInfoInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-update-parameter-info-input.md) input
 
 The information to update the parameter.
 
-#### `SupSolutionTemplateUpdateParameterInput.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The parameter title.

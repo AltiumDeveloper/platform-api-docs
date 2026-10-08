@@ -21,4 +21,4 @@ input SupSolutionTemplatePatchKeyFeatureGroupsInput {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchKeyFeatureGroupsInput.input` · [`SupSolutionTemplatePatchKeyFeatureGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-key-feature-group-input.md) non-null input supply
+#### `input` · [`SupSolutionTemplatePatchKeyFeatureGroupInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-key-feature-group-input.md) non-null input

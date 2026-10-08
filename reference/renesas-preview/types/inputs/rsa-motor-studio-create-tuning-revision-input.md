@@ -28,6 +28,6 @@ input RsaMotorStudioCreateTuningRevisionInput {
 
 ### Fields
 
-#### `RsaMotorStudioCreateTuningRevisionInput.modules` · [`[RsaMotorStudioTuningModuleInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-tuning-module-input.md) non-null input renesas-preview
+#### `modules` · [`[RsaMotorStudioTuningModuleInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-tuning-module-input.md) non-null input
 
-#### `RsaMotorStudioCreateTuningRevisionInput.tuningId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `tuningId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

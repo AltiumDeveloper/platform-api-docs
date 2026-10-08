@@ -24,10 +24,10 @@ type DesVcsRevisionEdge {
 
 ### Fields
 
-#### `DesVcsRevisionEdge.cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `cursor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 A cursor for use in pagination.
 
-#### `DesVcsRevisionEdge.node` · [`DesVcsRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision.md) non-null object design
+#### `node` · [`DesVcsRevision!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-vcs-revision.md) non-null object
 
 The item at the end of the edge.

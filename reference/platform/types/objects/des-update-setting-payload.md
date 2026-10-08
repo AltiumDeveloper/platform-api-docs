@@ -24,10 +24,10 @@ type DesUpdateSettingPayload {
 
 ### Fields
 
-#### `DesUpdateSettingPayload.errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object common
+#### `errors` · [`[DesPayloadError!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/objects/des-payload-error.md) non-null object
 
 Payload errors.
 
-#### `DesUpdateSettingPayload.setting` · [`DesSetting!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-setting.md) non-null object platform
+#### `setting` · [`DesSetting!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-setting.md) non-null object
 
 The setting that was updated.

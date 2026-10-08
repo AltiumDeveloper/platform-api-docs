@@ -11,6 +11,12 @@ deprecated: false
 
 Add new assignment to extension point.
 
+### Type
+
+#### [`GloCusAddAssignmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-add-assignment-payload.md) object
+
+Represents output value for extension point assignment creation.
+
 ```graphql
 gloCusAddAssignment(
   input: GloCusAddAssignmentInput!
@@ -19,10 +25,4 @@ gloCusAddAssignment(
 
 ### Arguments
 
-#### `gloCusAddAssignment.input` · [`GloCusAddAssignmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-add-assignment-input.md) non-null input customization
-
-### Type
-
-#### [`GloCusAddAssignmentPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-cus-add-assignment-payload.md) object customization
-
-Represents output value for extension point assignment creation.
+#### `input` · [`GloCusAddAssignmentInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-cus-add-assignment-input.md) non-null input

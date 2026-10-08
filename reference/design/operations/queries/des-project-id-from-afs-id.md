@@ -11,6 +11,12 @@ deprecated: false
 
 Gets the project identifier from its internal identifier.
 
+### Type
+
+#### [`DesProjectIdPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-id-payload.md) object
+
+Payload associated with project node identifier.
+
 ```graphql
 desProjectIdFromAfsId(
   afsId: String!
@@ -21,20 +27,14 @@ desProjectIdFromAfsId(
 
 ### Arguments
 
-#### `desProjectIdFromAfsId.afsId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `afsId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 AFS internal identifier.
 
-#### `desProjectIdFromAfsId.isSharedProject` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isSharedProject` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 True for shared projects.
 
-#### `desProjectIdFromAfsId.workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The web address of a workspace.
-
-### Type
-
-#### [`DesProjectIdPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-id-payload.md) object design
-
-Payload associated with project node identifier.

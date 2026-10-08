@@ -32,44 +32,44 @@ type DesLayer {
 
 ### Fields
 
-#### `DesLayer.copperWeight` · [`DesWeight`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-weight.md) object design
+#### `copperWeight` · [`DesWeight`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-weight.md) object
 
 Layer copper weight.
 
-#### `DesLayer.dielectricConstant` · [`Decimal`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) scalar common
+#### `dielectricConstant` · [`Decimal`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) scalar
 
 Layer dielectric constant.
 
-#### `DesLayer.layerProperties` · [`[DesLayerProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer-property.md) non-null object design
+#### `layerProperties` · [`[DesLayerProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer-property.md) non-null object
 
 Layer properties.
 
-#### `DesLayer.layerType` · [`DesLayerType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-layer-type.md) non-null enum design
+#### `layerType` · [`DesLayerType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/enums/des-layer-type.md) non-null enum
 
 Layer type.
 
-#### `DesLayer.material` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `material` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Layer material.
 
-#### `DesLayer.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Layer name.
 
-#### `DesLayer.nets` · [`[DesNet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) non-null object design
+#### `nets` · [`[DesNet!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) non-null object
 
 Layer nets.
 
-#### `DesLayer.thickness` · [`DesSize`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) object design
+#### `thickness` · [`DesSize`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-size.md) object
 
 Layer thickness.
 
 #### Deprecated
 
-#### `DesLayer.copperArea` · [`DesArea`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-area.md) **DEPRECATED** object design
+#### `copperArea` · [`DesArea`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-area.md) **DEPRECATED** object
 
 > **Deprecated:** No longer used - always returns null.
 
-#### `DesLayer.copperRatio` · [`Decimal`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) **DEPRECATED** scalar common
+#### `copperRatio` · [`Decimal`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/decimal.md) **DEPRECATED** scalar
 
 > **Deprecated:** No longer used - always returns null.

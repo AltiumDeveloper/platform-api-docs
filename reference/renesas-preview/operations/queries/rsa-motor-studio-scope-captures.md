@@ -17,6 +17,10 @@ deprecated: false
 
 List scope captures for a project.
 
+### Type
+
+#### [`RsaMotorStudioScopeCapture`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioScopeCaptures(
   projectId: ID!
@@ -25,8 +29,4 @@ rsaMotorStudioScopeCaptures(
 
 ### Arguments
 
-#### `rsaMotorStudioScopeCaptures.projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`RsaMotorStudioScopeCapture`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) object renesas-preview **EXPERIMENTAL**
+#### `projectId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

@@ -26,18 +26,18 @@ type DesPartSellers {
 
 ### Fields
 
-#### `DesPartSellers.customPart` · [`[DesPartCompany!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) list object library-management
+#### `customPart` · [`[DesPartCompany!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) list object
 
 Seller companies from custom parts.
 
-#### `DesPartSellers.siliconExpertPart` · [`[DesPartCompany!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) list object library-management
+#### `siliconExpertPart` · [`[DesPartCompany!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) list object
 
 Seller companies from \*SiliconExpert\* parts.
 
-#### `DesPartSellers.supplyPart` · [`[DesPartCompany!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) non-null object library-management
+#### `supplyPart` · [`[DesPartCompany!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) non-null object
 
 Seller companies from supply parts.
 
-#### `DesPartSellers.z2DataPart` · [`[DesPartCompany!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) list object library-management
+#### `z2DataPart` · [`[DesPartCompany!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-company.md) list object
 
 Seller companies from \*Z2Data\* parts.

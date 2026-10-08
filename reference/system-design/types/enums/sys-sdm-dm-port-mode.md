@@ -28,6 +28,6 @@ enum SysSdmDmPortMode {
 
 ### Values
 
-#### `SysSdmDmPortMode.ALTERNATE_FUNCTION`
+#### `ALTERNATE_FUNCTION`
 
-#### `SysSdmDmPortMode.GPIO`
+#### `GPIO`

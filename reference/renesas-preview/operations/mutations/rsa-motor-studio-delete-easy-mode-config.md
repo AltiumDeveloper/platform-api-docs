@@ -17,6 +17,10 @@ deprecated: false
 
 Delete an easymode config for the specified project.
 
+### Type
+
+#### [`RsaMotorStudioDeleteEasyModeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-easy-mode-config-payload.md) object **EXPERIMENTAL**
+
 ```graphql
 rsaMotorStudioDeleteEasyModeConfig(
   input: RsaMotorStudioDeleteEasyModeConfigInput!
@@ -25,8 +29,4 @@ rsaMotorStudioDeleteEasyModeConfig(
 
 ### Arguments
 
-#### `rsaMotorStudioDeleteEasyModeConfig.input` · [`RsaMotorStudioDeleteEasyModeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-easy-mode-config-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`RsaMotorStudioDeleteEasyModeConfigPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-delete-easy-mode-config-payload.md) object renesas-preview **EXPERIMENTAL**
+#### `input` · [`RsaMotorStudioDeleteEasyModeConfigInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-easy-mode-config-input.md) non-null input

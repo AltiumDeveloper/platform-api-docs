@@ -19,7 +19,8 @@ A single device port with its functions, configurations, and connections.
 
 ### Common Data Model
 
-- [Port](https://altiumdeveloper.github.io/cdm/classes/dm_Port/) — A physical port on the device, with its functions, configurations, and connections.
+- [Port](https://w3id.org/altium/cdm/deviceModel/Port) — A physical port on the device, with its functions, configurations, and connections.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/Port`](https://w3id.org/altium/cdm/deviceModel/Port)
 
 ### Member Of
 
@@ -41,38 +42,38 @@ type DmPort {
 
 ### Fields
 
-#### `DmPort.comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `comment` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Optional comment or description for the port.
 
-#### `DmPort.configurations` · [`[DmPortConfiguration!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-configuration.md) non-null object renesas-preview
+#### `configurations` · [`[DmPortConfiguration!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-configuration.md) non-null object
 
 Port configuration options applicable to this port.
 
-#### `DmPort.connections` · [`[DmPortConnection!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-connection.md) non-null object renesas-preview
+#### `connections` · [`[DmPortConnection!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-connection.md) non-null object
 
 Connections from this port to other components or signals.
 
-#### `DmPort.functions` · [`[DmPortFunction!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-function.md) non-null object renesas-preview
+#### `functions` · [`[DmPortFunction!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port-function.md) non-null object
 
 Available functions that can be assigned to the port.
 
-#### `DmPort.id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique identifier for the port.
 
-#### `DmPort.isUserAssignable` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isUserAssignable` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether this port can be assigned by the user.
 
-#### `DmPort.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Display name of the port.
 
-#### `DmPort.pin` · [`DmPin!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-pin.md) non-null object renesas-preview
+#### `pin` · [`DmPin!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-pin.md) non-null object
 
 Associated pin.
 
-#### `DmPort.symbolicName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `symbolicName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Symbolic name for the port used in code or configuration.

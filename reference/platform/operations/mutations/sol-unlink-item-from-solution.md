@@ -11,6 +11,10 @@ deprecated: false
 
 Removes a link between solution and other item.
 
+### Type
+
+#### [`SolUnlinkItemFromSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-unlink-item-from-solution-payload.md) object
+
 ```graphql
 solUnlinkItemFromSolution(
   input: SolUnlinkItemFromSolutionInput!
@@ -19,8 +23,4 @@ solUnlinkItemFromSolution(
 
 ### Arguments
 
-#### `solUnlinkItemFromSolution.input` · [`SolUnlinkItemFromSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-unlink-item-from-solution-input.md) non-null input platform
-
-### Type
-
-#### [`SolUnlinkItemFromSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-unlink-item-from-solution-payload.md) object platform
+#### `input` · [`SolUnlinkItemFromSolutionInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-unlink-item-from-solution-input.md) non-null input

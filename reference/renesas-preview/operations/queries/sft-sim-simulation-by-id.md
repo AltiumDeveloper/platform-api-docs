@@ -11,6 +11,10 @@ deprecated: false
 
 Gets simulation by identifier.
 
+### Type
+
+#### [`SftSimSimulation`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md) object
+
 ```graphql
 sftSimSimulationById(
   id: ID!
@@ -19,8 +23,4 @@ sftSimSimulationById(
 
 ### Arguments
 
-#### `sftSimSimulationById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SftSimSimulation`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md) object renesas-preview
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

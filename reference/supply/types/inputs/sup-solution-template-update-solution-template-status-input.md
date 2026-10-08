@@ -24,10 +24,10 @@ input SupSolutionTemplateUpdateSolutionTemplateStatusInput {
 
 ### Fields
 
-#### `SupSolutionTemplateUpdateSolutionTemplateStatusInput.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 Solution template id.
 
-#### `SupSolutionTemplateUpdateSolutionTemplateStatusInput.status` · [`SupSolutionTemplateStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md) non-null enum supply
+#### `status` · [`SupSolutionTemplateStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md) non-null enum
 
 The status of a solution template to update.

@@ -11,6 +11,10 @@ deprecated: false
 
 Creates the AI model custom properties.
 
+### Type
+
+#### [`SftAIModelCreatePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-create-properties-payload.md) object
+
 ```graphql
 sftAIModelCreateCustomProperties(
   input: SftAIModelCreatePropertiesInput!
@@ -19,8 +23,4 @@ sftAIModelCreateCustomProperties(
 
 ### Arguments
 
-#### `sftAIModelCreateCustomProperties.input` · [`SftAIModelCreatePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-create-properties-input.md) non-null input renesas-preview
-
-### Type
-
-#### [`SftAIModelCreatePropertiesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-aimodel-create-properties-payload.md) object renesas-preview
+#### `input` · [`SftAIModelCreatePropertiesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-aimodel-create-properties-input.md) non-null input

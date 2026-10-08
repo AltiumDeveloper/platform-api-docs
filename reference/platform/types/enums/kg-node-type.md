@@ -27,4 +27,4 @@ enum KgNodeType {
 
 ### Values
 
-#### `KgNodeType.REQUIREMENTS_PROJECT`
+#### `REQUIREMENTS_PROJECT`

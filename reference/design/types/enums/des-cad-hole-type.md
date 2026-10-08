@@ -26,10 +26,10 @@ enum DesCadHoleType {
 
 ### Values
 
-#### `DesCadHoleType.CIRCULAR`
+#### `CIRCULAR`
 
-#### `DesCadHoleType.RECTANGULAR`
+#### `RECTANGULAR`
 
-#### `DesCadHoleType.SLOT`
+#### `SLOT`
 
-#### `DesCadHoleType.UNKNOWN`
+#### `UNKNOWN`

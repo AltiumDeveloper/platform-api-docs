@@ -28,29 +28,29 @@ input SupSoftwareProjectCreateSoftwareProjectInput {
 
 ### Fields
 
-#### `SupSoftwareProjectCreateSoftwareProjectInput.description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The software project description.
 
-#### `SupSoftwareProjectCreateSoftwareProjectInput.publisherId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `publisherId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The publisher identifier.
 
-#### `SupSoftwareProjectCreateSoftwareProjectInput.recommendScore` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar common
+#### `recommendScore` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 
 The recommendation score. Range is 0 to 65535.
 
-#### `SupSoftwareProjectCreateSoftwareProjectInput.title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The software project title.
 
-#### `SupSoftwareProjectCreateSoftwareProjectInput.type` · [`SupSoftwareProjectType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-type.md) non-null enum supply
+#### `type` · [`SupSoftwareProjectType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-type.md) non-null enum
 
 The software project type.
 
 #### Deprecated
 
-#### `SupSoftwareProjectCreateSoftwareProjectInput.compatibleEvalKits` · [`[SupSoftwareProjectEvalKitSourceInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-eval-kit-source-input.md) **DEPRECATED** list input supply
+#### `compatibleEvalKits` · [`[SupSoftwareProjectEvalKitSourceInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-software-project-eval-kit-source-input.md) **DEPRECATED** list input
 
 > **Deprecated:** CompatibleEvalKits is deprecated and no longer accepted.
 

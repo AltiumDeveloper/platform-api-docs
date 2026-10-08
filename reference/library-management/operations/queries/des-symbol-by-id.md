@@ -11,6 +11,12 @@ deprecated: false
 
 Searches for a specific symbol by its unique identifier.
 
+### Type
+
+#### [`DesSymbol`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-symbol.md) object
+
+A component symbol. These represent the body and the pins on the physical component.
+
 ```graphql
 desSymbolById(
   id: ID!
@@ -19,12 +25,6 @@ desSymbolById(
 
 ### Arguments
 
-#### `desSymbolById.id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The node identifier for a symbol.
-
-### Type
-
-#### [`DesSymbol`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-symbol.md) object library-management
-
-A component symbol. These represent the body and the pins on the physical component.

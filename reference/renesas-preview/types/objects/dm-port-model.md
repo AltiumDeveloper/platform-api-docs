@@ -29,6 +29,6 @@ type DmPortModel {
 
 ### Fields
 
-#### `DmPortModel.ports` · [`[DmPort!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port.md) non-null object renesas-preview
+#### `ports` · [`[DmPort!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-port.md) non-null object
 
 List of device ports, including functions, configurations, and connections.

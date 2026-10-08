@@ -11,6 +11,10 @@ deprecated: false
 
 Deletes a workspace secret by name.
 
+### Type
+
+#### [`GloScrDeleteSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-delete-secret-payload.md) object
+
 ```graphql
 gloScrDeleteSecret(
   input: GloScrDeleteSecretInput!
@@ -19,8 +23,4 @@ gloScrDeleteSecret(
 
 ### Arguments
 
-#### `gloScrDeleteSecret.input` · [`GloScrDeleteSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-delete-secret-input.md) non-null input customization
-
-### Type
-
-#### [`GloScrDeleteSecretPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-delete-secret-payload.md) object customization
+#### `input` · [`GloScrDeleteSecretInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-delete-secret-input.md) non-null input

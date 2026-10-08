@@ -24,10 +24,10 @@ input SupSoftwareProjectSetSoftwareProjectSolutionTemplatesInput {
 
 ### Fields
 
-#### `SupSoftwareProjectSetSoftwareProjectSolutionTemplatesInput.softwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar common
+#### `softwareProjectIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 The complete new set of software project IDs. Removes all existing associations and inserts these.
 
-#### `SupSoftwareProjectSetSoftwareProjectSolutionTemplatesInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the solution template.

@@ -33,22 +33,22 @@ type DmInstanceStatistics {
 
 ### Fields
 
-#### `DmInstanceStatistics.avg` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `avg` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 Average number of instances across supported models.
 
-#### `DmInstanceStatistics.histogram` · [`[DmHistogramBucket!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-histogram-bucket.md) non-null object renesas-preview
+#### `histogram` · [`[DmHistogramBucket!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-histogram-bucket.md) non-null object
 
 Histogram showing number of models per instance count bucket, sorted by instance count.
 
-#### `DmInstanceStatistics.max` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `max` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Maximum number of instances across supported models.
 
-#### `DmInstanceStatistics.median` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar common
+#### `median` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
 Median number of instances across supported models.
 
-#### `DmInstanceStatistics.min` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar common
+#### `min` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 Minimum number of instances across supported models.

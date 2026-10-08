@@ -23,6 +23,6 @@ type SysEsdDeleteDocumentPayload {
 
 ### Fields
 
-#### `SysEsdDeleteDocumentPayload.isDeleted` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar common
+#### `isDeleted` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 Indicates whether the ESD document was deleted successfully.

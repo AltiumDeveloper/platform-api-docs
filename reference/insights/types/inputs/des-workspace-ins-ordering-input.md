@@ -24,10 +24,10 @@ input DesWorkspaceInsOrderingInput {
 
 ### Fields
 
-#### `DesWorkspaceInsOrderingInput.field` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `field` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Field name used for ordering results.
 
-#### `DesWorkspaceInsOrderingInput.isDesc` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar common
+#### `isDesc` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Whether results should be sorted in descending order.

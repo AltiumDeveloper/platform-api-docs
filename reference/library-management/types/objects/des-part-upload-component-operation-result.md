@@ -25,14 +25,14 @@ type DesPartUploadComponentOperationResult {
 
 ### Fields
 
-#### `DesPartUploadComponentOperationResult.errorMessage` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `errorMessage` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The error message if the operation failed.
 
-#### `DesPartUploadComponentOperationResult.partId` · [`DesPartManufacturerPartIdWithIpn!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-manufacturer-part-id-with-ipn.md) non-null object library-management
+#### `partId` · [`DesPartManufacturerPartIdWithIpn!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-manufacturer-part-id-with-ipn.md) non-null object
 
 The identifiers of the part.
 
-#### `DesPartUploadComponentOperationResult.status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The status of the operation: \*Created\*, \*Updated\*, \*AlreadyExists\*, \*Duplicated\* or \*Failed\*.

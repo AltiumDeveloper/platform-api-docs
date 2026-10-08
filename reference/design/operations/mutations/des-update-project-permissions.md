@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the permissions for the associated project.
 
+### Type
+
+#### [`DesUpdateProjectPermissionsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-update-project-permissions-payload.md) object
+
+Payload associated with updating project permissions.
+
 ```graphql
 desUpdateProjectPermissions(
   input: DesUpdateProjectPermissionsInput!
@@ -19,10 +25,4 @@ desUpdateProjectPermissions(
 
 ### Arguments
 
-#### `desUpdateProjectPermissions.input` · [`DesUpdateProjectPermissionsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-update-project-permissions-input.md) non-null input design
-
-### Type
-
-#### [`DesUpdateProjectPermissionsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-update-project-permissions-payload.md) object design
-
-Payload associated with updating project permissions.
+#### `input` · [`DesUpdateProjectPermissionsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/inputs/des-update-project-permissions-input.md) non-null input

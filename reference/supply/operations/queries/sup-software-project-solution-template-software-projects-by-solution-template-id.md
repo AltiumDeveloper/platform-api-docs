@@ -11,6 +11,10 @@ deprecated: false
 
 Get software projects associated with a solution template.
 
+### Type
+
+#### [`SupSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) object
+
 ```graphql
 supSoftwareProjectSolutionTemplateSoftwareProjectsBySolutionTemplateId(
   solutionTemplateId: ID!
@@ -19,8 +23,4 @@ supSoftwareProjectSolutionTemplateSoftwareProjectsBySolutionTemplateId(
 
 ### Arguments
 
-#### `supSoftwareProjectSolutionTemplateSoftwareProjectsBySolutionTemplateId.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
-
-### Type
-
-#### [`SupSoftwareProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project.md) object supply
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar

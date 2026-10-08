@@ -11,6 +11,10 @@ deprecated: false
 
 Executes a script asynchronously.
 
+### Type
+
+#### [`GloScrExecuteScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-execute-script-payload.md) object
+
 ```graphql
 gloScrExecuteScript(
   input: GloScrExecuteScriptInput!
@@ -19,8 +23,4 @@ gloScrExecuteScript(
 
 ### Arguments
 
-#### `gloScrExecuteScript.input` · [`GloScrExecuteScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-execute-script-input.md) non-null input customization
-
-### Type
-
-#### [`GloScrExecuteScriptPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/objects/glo-scr-execute-script-payload.md) object customization
+#### `input` · [`GloScrExecuteScriptInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/customization/types/inputs/glo-scr-execute-script-input.md) non-null input

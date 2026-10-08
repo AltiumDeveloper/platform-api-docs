@@ -31,14 +31,14 @@ type DmEsdResolverResult {
 
 ### Fields
 
-#### `DmEsdResolverResult.functionalBlockId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `functionalBlockId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The functional block identifier within the ESD document.
 
-#### `DmEsdResolverResult.resolverSummary` · [`DmResolverSummary!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-summary.md) non-null object renesas-preview
+#### `resolverSummary` · [`DmResolverSummary!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-resolver-summary.md) non-null object
 
 The summary of resolver runs for this functional block.
 
-#### `DmEsdResolverResult.sessionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `sessionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The session identifier that can be used to retrieve resolver results for this functional block.

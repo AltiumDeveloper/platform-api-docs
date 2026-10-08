@@ -26,14 +26,14 @@ enum BomPackagingType {
 
 ### Values
 
-#### `BomPackagingType.BULK`
+#### `BULK`
 
-#### `BomPackagingType.CUSTOM_REEL`
+#### `CUSTOM_REEL`
 
-#### `BomPackagingType.CUT_TAPE`
+#### `CUT_TAPE`
 
-#### `BomPackagingType.TAPE_AND_BOX`
+#### `TAPE_AND_BOX`
 
-#### `BomPackagingType.TAPE_AND_REEL`
+#### `TAPE_AND_REEL`
 
-#### `BomPackagingType.TRAY`
+#### `TRAY`

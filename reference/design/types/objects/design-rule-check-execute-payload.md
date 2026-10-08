@@ -28,10 +28,10 @@ type DesignRuleCheckExecutePayload {
 
 ### Fields
 
-#### `DesignRuleCheckExecutePayload.ruleCheckExecution` · [`RuleCheckExecution!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md) non-null object design
+#### `ruleCheckExecution` · [`RuleCheckExecution!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md) non-null object
 
 #### Deprecated
 
-#### `DesignRuleCheckExecutePayload.ruleCheckExecution_Preview` · [`RuleCheckExecution!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md) **DEPRECATED** non-null object design
+#### `ruleCheckExecution_Preview` · [`RuleCheckExecution!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Use 'ruleCheckExecution' instead.

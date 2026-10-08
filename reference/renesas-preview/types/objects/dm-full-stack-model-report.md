@@ -28,6 +28,6 @@ type DmFullStackModelReport {
 
 ### Fields
 
-#### `DmFullStackModelReport.deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `DmFullStackModelReport.reports` · [`[DmPeripheralPortCoverageReport!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-port-coverage-report.md) non-null object renesas-preview
+#### `reports` · [`[DmPeripheralPortCoverageReport!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-peripheral-port-coverage-report.md) non-null object

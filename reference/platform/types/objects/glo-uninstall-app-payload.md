@@ -22,6 +22,6 @@ type GloUninstallAppPayload {
 
 ### Fields
 
-#### `GloUninstallAppPayload.errors` · [`[GloUninstallAppError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-uninstall-app-error.md) list union platform
+#### `errors` · [`[GloUninstallAppError!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-uninstall-app-error.md) list union
 
-#### `GloUninstallAppPayload.gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object platform
+#### `gloApp` · [`GloApp`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app.md) object

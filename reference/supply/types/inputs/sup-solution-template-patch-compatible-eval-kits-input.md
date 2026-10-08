@@ -26,18 +26,18 @@ input SupSolutionTemplatePatchCompatibleEvalKitsInput {
 
 ### Fields
 
-#### `SupSolutionTemplatePatchCompatibleEvalKitsInput.addCompatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md) list input supply
+#### `addCompatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-input.md) list input
 
 Compatible eval kits to add, each with its own optional parameters.
 
-#### `SupSolutionTemplatePatchCompatibleEvalKitsInput.removeCompatibleEvalKitIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar common
+#### `removeCompatibleEvalKitIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
 The identifier(s) of the compatible eval kits to remove.
 
-#### `SupSolutionTemplatePatchCompatibleEvalKitsInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the solution template.
 
-#### `SupSolutionTemplatePatchCompatibleEvalKitsInput.updateCompatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitUpdateInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-update-input.md) list input supply
+#### `updateCompatibleEvalKits` · [`[SupSolutionTemplateCompatibleEvalKitUpdateInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-compatible-eval-kit-update-input.md) list input
 
 Compatible eval kits to update, targeted by their identifier.

@@ -11,19 +11,21 @@ deprecated: false
 
 Comments, comment threads, mentions, annotations and tasks.
 
-Concepts: see the **Collaboration** bounded context in the [Common Data Model](https://altiumdeveloper.github.io/cdm/subsets/collaboration/)
-
 For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/llms.txt) · [schema slice](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/schema.graphql) · [all types](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types.txt)
+
+## Common Data Model
+
+- [Collaboration](https://altiumdeveloper.github.io/cdm/subsets/collaboration/) — Models collaboration on Workspace content: comment threads attached to a point, object or area of a document, the individual comments in each thread, and tasks that assign work to users or teams. In the product, comments are placed on documents of Workspace projects (e.g. through the Comments and Tasks panel in Altium Designer), and tasks are tracked on the Tasks page of a Workspace.
 
 ## Entities
 
-API types in this bounded context that represent CDM entities:
+API types in this bounded context that represent Common Data Model (CDM) entities. The IRI is the entity's stable identifier in the CDM.
 
-- [`DesComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) — [Comment](https://altiumdeveloper.github.io/cdm/classes/col_Comment/): A single entry in a comment thread: either the initial comment, pinned to a point, an object or an area of a design document (or to a BOM line), or a reply to it. A comment can mention people or groups using @, and it can be assigned to a Workspace member as a task, either when it is posted or later by converting it. Only the author can edit or delete a comment, and deleting the initial comment also deletes its replies.
-- [`DesCommentThread`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread.md) — [Comment Thread](https://altiumdeveloper.github.io/cdm/classes/col_CommentThread/): Comment Thread represents a structured discussion linked to a specific design object, document, or workspace item, capturing feedback, decisions, and context directly within the collaborative design environment.
-  - GRID: `grid:workspace:{workspace-id}:collaboration:comment-thread/{id}`
-- [`DesTask`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-task.md) — [Task](https://altiumdeveloper.github.io/cdm/classes/col_Task/): Task represents a discrete unit of work assigned to a user or team within the design workflow, used to track progress, responsibility, and completion status for design, review, or management activities.
-  - GRID: `grid:workspace:{workspace-id}:collaboration:task/{id}`
+| API type | CDM entity |
+| - | - |
+| [`DesComment`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment.md) | [Comment](https://w3id.org/altium/cdm/collaboration/Comment) [`https://w3id.org/altium/cdm/collaboration/Comment`](https://w3id.org/altium/cdm/collaboration/Comment) |
+| [`DesCommentThread`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread.md) | [Comment Thread](https://w3id.org/altium/cdm/collaboration/CommentThread) [`https://w3id.org/altium/cdm/collaboration/CommentThread`](https://w3id.org/altium/cdm/collaboration/CommentThread) |
+| [`DesTask`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-task.md) | [Task](https://w3id.org/altium/cdm/collaboration/Task) [`https://w3id.org/altium/cdm/collaboration/Task`](https://w3id.org/altium/cdm/collaboration/Task) |
 
 ## Contents
 

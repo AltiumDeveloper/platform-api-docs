@@ -22,6 +22,6 @@ enum GloAccountType {
 
 ### Values
 
-#### `GloAccountType.BUSINESS`
+#### `BUSINESS`
 
-#### `GloAccountType.PERSONAL`
+#### `PERSONAL`

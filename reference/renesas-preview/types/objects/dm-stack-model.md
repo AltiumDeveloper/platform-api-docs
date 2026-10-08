@@ -29,6 +29,6 @@ type DmStackModel {
 
 ### Fields
 
-#### `DmStackModel.contexts` · [`[DmStackContext!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-context.md) non-null object renesas-preview
+#### `contexts` · [`[DmStackContext!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-stack-context.md) non-null object
 
 List of FSP configuration contexts.

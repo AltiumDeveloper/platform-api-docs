@@ -30,10 +30,10 @@ type DesignDataRule_Preview {
 
 ### Fields
 
-#### `DesignDataRule_Preview.attributes` · [`[DesignDataRuleAttribute_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-rule-attribute-preview.md) non-null object design
+#### `DesignDataRule_Preview.attributes` · [`[DesignDataRuleAttribute_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-rule-attribute-preview.md) non-null object
 
 The collection of attributes associated with the rule.
 
-#### `DesignDataRule_Preview.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar common
+#### `DesignDataRule_Preview.name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The name of the net rule.

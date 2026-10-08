@@ -21,10 +21,10 @@ union BomPartReference = BomOctopartPartReference | BomPartCatalogPartReference
 
 ### Possible types
 
-#### [`BomPartReference.BomOctopartPartReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-octopart-part-reference.md) object procurement
+#### [`BomOctopartPartReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-octopart-part-reference.md) object
 
 A reference to a part in Octopart.
 
-#### [`BomPartReference.BomPartCatalogPartReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-part-catalog-part-reference.md) object procurement
+#### [`BomPartCatalogPartReference`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-part-catalog-part-reference.md) object
 
 A reference to a part in Part Catalog.

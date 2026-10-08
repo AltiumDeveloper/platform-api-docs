@@ -11,6 +11,12 @@ deprecated: false
 
 Updates the settings.
 
+### Type
+
+#### [`DesWorkspaceInsUserSettingsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-settings-payload.md) object
+
+Payload returning user settings for insight notifications and filters.
+
 ```graphql
 desWorkspaceInsUpdateSettings(
   input: DesWorkspaceInsUserSettingsInput!
@@ -19,10 +25,4 @@ desWorkspaceInsUpdateSettings(
 
 ### Arguments
 
-#### `desWorkspaceInsUpdateSettings.input` · [`DesWorkspaceInsUserSettingsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-user-settings-input.md) non-null input insights
-
-### Type
-
-#### [`DesWorkspaceInsUserSettingsPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-user-settings-payload.md) object insights
-
-Payload returning user settings for insight notifications and filters.
+#### `input` · [`DesWorkspaceInsUserSettingsInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-user-settings-input.md) non-null input

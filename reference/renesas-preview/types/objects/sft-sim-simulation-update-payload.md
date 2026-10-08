@@ -21,4 +21,4 @@ type SftSimSimulationUpdatePayload {
 
 ### Fields
 
-#### `SftSimSimulationUpdatePayload.data` · [`SftSimSimulation`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md) object renesas-preview
+#### `data` · [`SftSimSimulation`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/sft-sim-simulation.md) object

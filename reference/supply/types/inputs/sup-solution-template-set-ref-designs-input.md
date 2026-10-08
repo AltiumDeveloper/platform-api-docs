@@ -24,10 +24,10 @@ input SupSolutionTemplateSetRefDesignsInput {
 
 ### Fields
 
-#### `SupSolutionTemplateSetRefDesignsInput.refDesignIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `refDesignIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier(s) of the reference designs. An empty list removes all reference designs.
 
-#### `SupSolutionTemplateSetRefDesignsInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The unique identifier of the solution template.

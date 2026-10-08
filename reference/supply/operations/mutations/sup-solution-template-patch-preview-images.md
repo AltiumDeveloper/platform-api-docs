@@ -11,6 +11,12 @@ deprecated: false
 
 Patch preview images on a solution template: add, delete, or reorder.
 
+### Type
+
+#### [`SupSolutionTemplatePatchPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-preview-images-payload.md) object
+
+Payload for patching preview images on a solution template.
+
 ```graphql
 supSolutionTemplatePatchPreviewImages(
   input: SupSolutionTemplatePatchPreviewImagesInput!
@@ -19,10 +25,4 @@ supSolutionTemplatePatchPreviewImages(
 
 ### Arguments
 
-#### `supSolutionTemplatePatchPreviewImages.input` · [`SupSolutionTemplatePatchPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-preview-images-input.md) non-null input supply
-
-### Type
-
-#### [`SupSolutionTemplatePatchPreviewImagesPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-patch-preview-images-payload.md) object supply
-
-Payload for patching preview images on a solution template.
+#### `input` · [`SupSolutionTemplatePatchPreviewImagesInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-patch-preview-images-input.md) non-null input

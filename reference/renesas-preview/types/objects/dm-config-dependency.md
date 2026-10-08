@@ -19,7 +19,8 @@ Dependency describing how a configuration value maps to GPIO or alternate functi
 
 ### Common Data Model
 
-- [PortConfigurationDependency](https://altiumdeveloper.github.io/cdm/classes/dm_PortConfigurationDependency/) — A dependency describing how a configuration value maps to GPIO or alternate function usage.
+- [PortConfigurationDependency](https://w3id.org/altium/cdm/deviceModel/PortConfigurationDependency) — A dependency describing how a configuration value maps to GPIO or alternate function usage.
+  - IRI: [`https://w3id.org/altium/cdm/deviceModel/PortConfigurationDependency`](https://w3id.org/altium/cdm/deviceModel/PortConfigurationDependency)
 
 ### Member Of
 
@@ -39,30 +40,30 @@ type DmConfigDependency {
 
 ### Fields
 
-#### `DmConfigDependency.altRef` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `altRef` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Full alternative reference string used to derive mode/function tokens.
 
-#### `DmConfigDependency.configRef` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `configRef` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Root configuration reference token (e.g., P408).
 
-#### `DmConfigDependency.functionName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `functionName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Peripheral function name for alternate mode (e.g., TXD, RXD).
 
-#### `DmConfigDependency.gpioMode` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `gpioMode` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 GPIO mode (None, Input, OutputLow, OutputHigh). Meaningful only when portMode == GPIO.
 
-#### `DmConfigDependency.peripheralInstanceName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `peripheralInstanceName` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Peripheral instance name for alternate function mode (e.g., SCI0).
 
-#### `DmConfigDependency.port` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `port` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Port identifier extracted from the configuration reference.
 
-#### `DmConfigDependency.portMode` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar common
+#### `portMode` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Port mode (GPIO or AlternateFunction).

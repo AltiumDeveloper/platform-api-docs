@@ -1,7 +1,7 @@
-# Insights — Altium Platform API
+# Insights — Altium 365 API
 > Workspace insights about parts and designs.
 
-Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/schema.graphql) (~4669 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/overview.md).
+Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/schema.graphql) (~4668 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/overview.md).
 
 ## Entities
 - [DesWorkspaceInsInsight](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md): Part Insight. GRID `grid:workspace:{workspace-id}:insights:insight/{id}`. Via: desWorkspaceInsInsightById, desWorkspaceInsInsightByName, desWorkspaceInsInsights

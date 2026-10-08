@@ -22,10 +22,10 @@ input SupSolutionTemplateSetKeyFeatureGroupInput {
 
 ### Fields
 
-#### `SupSolutionTemplateSetKeyFeatureGroupInput.keyFeatureGroups` · [`[SupSolutionTemplateKeyFeatureGroupInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-key-feature-group-input.md) list input supply
+#### `keyFeatureGroups` · [`[SupSolutionTemplateKeyFeatureGroupInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-solution-template-key-feature-group-input.md) list input
 
 List of new key feature groups associated with a solution template.
 
-#### `SupSolutionTemplateSetKeyFeatureGroupInput.solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar common
+#### `solutionTemplateId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The solution template identifier.
