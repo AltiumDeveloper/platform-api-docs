@@ -28,6 +28,17 @@ export function cdmClassPageName(key, cls) {
   return key;
 }
 
+// The class IRI: its `class_uri` CURIE (`plt:LifecycleDefinition`) expanded with the module's `prefixes`, e.g.
+// https://w3id.org/altium/cdm/platform/LifecycleDefinition. Falls back to the module `id` (a namespace ending in
+// `/`) when the prefix is not declared; null when the class has no well-formed CURIE.
+export function cdmClassIri(doc, cls) {
+  const uri = cls?.class_uri;
+  if (typeof uri !== 'string' || !/^[A-Za-z][\w-]*:[A-Za-z_]\w*$/.test(uri)) return null;
+  const [prefix, local] = uri.split(':');
+  const namespace = doc?.prefixes?.[prefix] ?? (typeof doc?.id === 'string' && doc.id.endsWith('/') ? doc.id : null);
+  return namespace ? `${namespace}${local}` : null;
+}
+
 export function buildCdmIndex(yamlTexts) {
   const index = {};
   for (const text of yamlTexts) {
@@ -43,6 +54,7 @@ export function buildCdmIndex(yamlTexts) {
         cdmClass: page,
         title: cls.title ?? page,
         subset,
+        iri: cdmClassIri(doc, cls),
         url: `${CDM_SITE}/classes/${page}/`,
         grid: annotationValue(cls.annotations.grid),
         description,
@@ -51,4 +63,23 @@ export function buildCdmIndex(yamlTexts) {
   }
   for (const entries of Object.values(index)) entries.sort((a, b) => a.cdmClass.localeCompare(b.cdmClass));
   return index;
+}
+
+// CDM subsets (= bounded contexts) by key: what the bounded-context overview pages show in their CDM card. `iri` is
+// the module `id` as published; it is not shown yet because it is not a resolvable link (see the overview renderer).
+export function buildCdmSubsets(yamlTexts) {
+  const subsets = {};
+  for (const text of yamlTexts) {
+    const doc = parse(text) ?? {};
+    for (const [key, subset] of Object.entries(doc.subsets ?? {})) {
+      const description = typeof subset?.description === 'string' ? subset.description.replace(/\s+/g, ' ').trim() : '';
+      subsets[key] = {
+        title: typeof subset?.title === 'string' ? subset.title : null,
+        description,
+        iri: typeof doc.id === 'string' ? doc.id : null,
+        url: `${CDM_SITE}/subsets/${encodeURIComponent(key)}/`,
+      };
+    }
+  }
+  return subsets;
 }

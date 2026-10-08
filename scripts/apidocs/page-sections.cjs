@@ -7,6 +7,11 @@
 // everything before the SDL code block (badges, Experimental callout, description, Common Data Model),
 // Returned By, Member Of, Interfaces, Implemented By, the SDL code block, the remaining member sections,
 // then the rest (example, directives).
+//
+// When the page has a primary member section (Fields, Arguments or Values), the SDL code block and that section
+// are wrapped in a two-column container (`ref-split`): the DOM keeps the SDL first and the members second (so
+// Markdown twins read in a stable order) and the stylesheet puts the SDL on the right, sticky, on wide screens.
+// On operation pages the return Type comes before the Arguments, outside the container.
 
 const LEAD = ['relations:Returned By', 'relations:Member Of', 'metadata:Interfaces', 'relations:Implemented By'];
 
@@ -50,8 +55,24 @@ function reorderTypePageSections(sections, order) {
   const split = new Set([...members, ...relations]);
   const lead = LEAD.filter((key) => split.has(key));
   const remaining = [...members, ...relations].filter((key) => !lead.includes(key));
+  const primary = SPLIT_MEMBERS.find((key) => remaining.includes(key));
+  if (code.length && primary) {
+    for (const [key, content] of Object.entries(SPLIT)) sections[key] = { content };
+    const typeFirst = primary === 'metadata:Arguments' && remaining.includes('metadata:Type') ? ['metadata:Type'] : [];
+    const others = remaining.filter((key) => key !== primary && !typeFirst.includes(key));
+    return [...head, ...lead, ...typeFirst, 'split:open', 'code', 'split:mid', primary, 'split:close', ...others, ...rest];
+  }
   return [...head, ...lead, ...code, ...remaining, ...rest];
 }
+
+const SPLIT_MEMBERS = ['metadata:Fields', 'metadata:Arguments', 'metadata:Values'];
+
+// Raw MDX for the wrapper elements; blank lines keep the markdown inside parsed as markdown.
+const SPLIT = {
+  'split:open': '<div className="ref-split">\n\n<div className="ref-split__code">\n',
+  'split:mid': '</div>\n\n<div className="ref-split__fields">\n',
+  'split:close': '</div>\n\n</div>\n',
+};
 
 // Never breaks page generation: a malformed event (or any error while reordering) leaves the default order.
 function beforeComposePageTypeHook(event) {

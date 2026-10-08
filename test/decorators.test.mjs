@@ -8,6 +8,7 @@ const { buildDecorators, renderCdmEntries, EXPERIMENTAL_NOTE } = require('../scr
 const cdmIndex = {
   DesProject: [{
     cdmClass: 'des_Project', title: 'Hardware Project', subset: 'design',
+    iri: 'https://w3id.org/altium/cdm/design/Project',
     url: 'https://altiumdeveloper.github.io/cdm/classes/des_Project/',
     grid: 'grid:workspace:{workspace-id}:design:project/{id}', description: '',
   }],
@@ -33,7 +34,8 @@ test('CDM predicate and resolve use the type name', () => {
 test('renders CDM entries as a markdown list with GRID as a nested bullet', () => {
   assert.equal(
     renderCdmEntries(cdmIndex.DesProject),
-    '- [Hardware Project](https://altiumdeveloper.github.io/cdm/classes/des_Project/)\n'
+    '- [Hardware Project](https://w3id.org/altium/cdm/design/Project)\n'
+      + '  - IRI: [`https://w3id.org/altium/cdm/design/Project`](https://w3id.org/altium/cdm/design/Project)\n'
       + '  - GRID: `grid:workspace:{workspace-id}:design:project/{id}`',
   );
 });

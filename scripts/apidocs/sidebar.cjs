@@ -45,6 +45,7 @@ function regroupContexts(items, { contexts, experimentalDocIds, slugIndex = 1, d
     return {
       ...item,
       label: context.title,
+      className: [item.className, `bc-${slug}`].filter(Boolean).join(' '),
       collapsible: true,
       collapsed: deprecated ? true : context.collapsed,
       ...(hasOverview ? { link: { type: 'doc', id: overviewId } } : {}),

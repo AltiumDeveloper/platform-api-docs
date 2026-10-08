@@ -2,15 +2,19 @@
 const { escapeMDX } = require('@graphql-markdown/utils');
 
 const escapeBrackets = (text) => text.replace(/[[\]]/g, '\\$&');
-const entityLink = (entry) => `[${escapeBrackets(escapeMDX(entry.title))}](${entry.url})`;
+// The IRI is the canonical, resolvable identifier of a CDM class; the CDM site page is only a fallback.
+// The IRI as visible text that is itself the (resolvable) link.
+const iriLink = (iri) => `[${codeSpan(String(iri))}](${iri})`;
+const entityLink = (entry) => `[${escapeBrackets(escapeMDX(entry.title))}](${entry.iri ?? entry.url})`;
 // A backtick inside a single-backtick span would end it early: use a padded double-backtick span instead.
 const codeSpan = (text) => (text.includes('`') ? `\`\` ${text} \`\`` : `\`${text}\``);
 
-// `- <link><separator><description>` plus an optional nested `- GRID: ...` bullet.
+// `- <link><separator><description>` plus optional nested `- IRI: ...` and `- GRID: ...` bullets.
 function entityItem(entry, { prefix = '', separator = ' — ', indent = '' } = {}) {
   let line = `${indent}- ${prefix}${entityLink(entry)}`;
   if (entry.description) line += `${separator}${escapeMDX(entry.description)}`;
   const lines = [line];
+  if (entry.iri) lines.push(`${indent}  - IRI: ${iriLink(entry.iri)}`);
   if (entry.grid) lines.push(`${indent}  - GRID: ${codeSpan(String(entry.grid))}`);
   return lines;
 }
@@ -20,10 +24,13 @@ function renderCdmEntries(entries) {
   return entries.flatMap((entry) => entityItem(entry)).join('\n');
 }
 
-// BC overview: `- [`ApiType`](url) — [Title](url): Description`; several entities are nested under the type.
-function renderCdmTypeItem(typeLink, entries) {
-  if (entries.length === 1) return entityItem(entries[0], { prefix: `${typeLink} — `, separator: ': ' }).join('\n');
-  return [`- ${typeLink}`, ...entries.flatMap((entry) => entityItem(entry, { separator: ': ', indent: '  ' }))].join('\n');
+// BC overview table row: `| [`ApiType`](url) | [Title](iri)<br />`iri` |`. Several entities stack in the one cell.
+function renderCdmTypeRow(typeLink, entries) {
+  const cell = entries.map((entry) => {
+    const link = entityLink(entry);
+    return entry.iri ? `${link}<br />${iriLink(entry.iri)}` : link;
+  });
+  return `| ${typeLink} | ${cell.join('<br />')} |`;
 }
 
-module.exports = { renderCdmEntries, renderCdmTypeItem };
+module.exports = { renderCdmEntries, renderCdmTypeRow };

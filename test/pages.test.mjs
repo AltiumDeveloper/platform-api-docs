@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildPagesIndex, buildRedirects, renderContextOverview, readFrontMatter, isDocDirectivePage, stripDocDirectiveLinks,
-  retitleNamespacedOperation,
+  retitleNamespacedOperation, rewriteContextBadges, stripMemberPrefixes, buildLinkTargets, linkCodeReferences,
 } from '../scripts/apidocs/lib/pages.mjs';
 
 const manifest = {
@@ -88,7 +88,8 @@ test('renderContextOverview lists counts, entry points and CDM entities', () => 
   assert.match(md, /\| Objects \| 1 \| 0 \|/);
   assert.match(md, /- \[`desProjectById`\]\(\/reference\/design\/operations\/queries\/des-project-by-id\)/);
   assert.match(md, /- \[`design\.ruleCheck\.byId`\]/);
-  assert.match(md, /\n- \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) — \[Hardware Project\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/classes\/des_Project\/\)\n/);
+  assert.match(md, /\n\| API type \| CDM entity \|\n\| --- \| --- \|\n/);
+  assert.match(md, /\n\| \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) \| \[Hardware Project\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/classes\/des_Project\/\) \|\n/);
 });
 
 test('renderContextOverview orders description, CDM link, Entities, Entry points, Contents', () => {
@@ -127,18 +128,18 @@ test('renderContextOverview links the context llms.txt, schema slice and types r
   assert.ok(plain.indexOf('For AI assistants') < plain.indexOf('## Contents') || !plain.includes('## Contents'));
 });
 
-test('renderContextOverview renders CDM descriptions and GRIDs, nesting multiple entities', () => {
+test('renderContextOverview links CDM entities by IRI and stacks several entities in one cell', () => {
   const pages = buildPagesIndex(files, manifest);
   const url = 'https://example.com/x';
   const single = renderContextOverview(manifest.contexts[0], pages, {
-    DesProject: [{ title: 'Hardware Project', url, subset: 'design', grid: 'g:1', description: 'A project.' }],
+    DesProject: [{ title: 'Hardware Project', iri: 'https://w3id.org/altium/cdm/design/Project', url, subset: 'design', grid: 'g:1', description: 'A project.' }],
   });
-  assert.match(single, /\n- \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) — \[Hardware Project\]\(https:\/\/example\.com\/x\): A project\.\n  - GRID: `g:1`\n/);
+  assert.match(single, /\n\| \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\) \| \[Hardware Project\]\(https:\/\/w3id\.org\/altium\/cdm\/design\/Project\)<br \/>\[`https:\/\/w3id\.org\/altium\/cdm\/design\/Project`\]\(https:\/\/w3id\.org\/altium\/cdm\/design\/Project\) \|\n/);
   assert.doesNotMatch(single, /bounded context `design`/);
   const multi = renderContextOverview(manifest.contexts[0], pages, {
-    DesProject: [{ title: 'Harness Project', url, description: 'Harness.' }, { title: 'Hardware Project', url, grid: 'g:1' }],
+    DesProject: [{ title: 'Harness Project', url }, { title: 'Hardware Project', url, grid: 'g:1' }],
   });
-  assert.match(multi, /\n- \[`DesProject`\]\(\/reference\/design\/types\/objects\/des-project\)\n  - \[Harness Project\]\(https:\/\/example\.com\/x\): Harness\.\n  - \[Hardware Project\]\(https:\/\/example\.com\/x\)\n    - GRID: `g:1`\n/);
+  assert.match(multi, /\n\| \[`DesProject`\]\([^)]*\) \| \[Harness Project\]\(https:\/\/example\.com\/x\)<br \/>\[Hardware Project\]\(https:\/\/example\.com\/x\) \|\n/);
 });
 
 const REAL_LINE = '[`DmDeviceModel`](/reference/renesas-preview/types/objects/dm-device-model.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`doc`](/reference/common/types/directives/doc.mdx)  <Badge class="badge badge--secondary badge--relation" text="directive"/><Bullet />[`gloCusCreateExtensionPoint`](/reference/customization/operations/mutations/glo-cus-create-extension-point.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>';
@@ -212,4 +213,77 @@ test('renderContextOverview escapes MDX in descriptions and CDM entity titles', 
   assert.match(md, /\nUses &#x007B;braces&#x007D; and &#x003C;tags&#x003E;\.\n/);
   assert.doesNotMatch(md, /Odd \{title\}|<x>/);
   assert.match(md, /\[Odd &#x007B;title&#x007D; &#x003C;x&#x003E;\]\(https:\/\/example\.com\/x\)/);
+});
+
+test('rewriteContextBadges drops own-context and common tags and spells out other contexts', () => {
+  const contexts = [
+    { slug: 'design', title: 'Design' }, { slug: 'platform', title: 'Platform' }, { slug: 'common', title: 'Common' },
+    { slug: 'renesas-preview', title: 'Renesas (preview)' },
+  ];
+  const badge = (text, extra = '') => `<Badge class="badge badge--secondary ${extra}" text="${text}"/>`;
+  const line = `#### Field <Bullet />[\`Type\`](/x) ${badge('object')} ${badge('design')} ${badge('platform')} ${badge('common')} ${badge('renesas-preview')}`;
+  assert.equal(
+    rewriteContextBadges(line, 'design', contexts),
+    `#### Field <Bullet />[\`Type\`](/x) ${badge('object')}`
+      + ' <Badge class="badge badge--secondary badge--context bc-platform" text="Platform" title="Defined in the Platform bounded context" href="/reference/platform/overview"/>'
+      + ' <Badge class="badge badge--secondary badge--context bc-renesas-preview" text="Renesas (preview)" title="Defined in the Renesas (preview) bounded context" href="/reference/renesas-preview/overview"/>',
+  );
+  const relation = '<Badge class="badge badge--secondary badge--relation" text="query"/>';
+  assert.equal(rewriteContextBadges(relation, 'design', contexts), relation);
+});
+
+test('stripMemberPrefixes keeps only the member name in field and argument headings', () => {
+  const head = (code) => `#### [<code style={{ fontWeight: 'normal' }}>${code}</code>](#x)<Bullet />`;
+  assert.equal(stripMemberPrefixes(head('DesProject.<b>name</b>')), head('<b>name</b>'));
+  assert.equal(stripMemberPrefixes(head('DesProject.collaborationRevisions.<b>after</b>')), head('<b>after</b>'));
+  assert.equal(stripMemberPrefixes(head('<b>DesProject</b>')), head('<b>DesProject</b>'));
+});
+
+test('linkCodeReferences links backticked page names, not code blocks, headings, links or the page itself', () => {
+  const targets = buildLinkTargets([
+    { name: 'desProjectRevisions', url: '/reference/design/operations/queries/des-project-revisions', deprecated: false },
+    { name: 'DesProject', url: '/reference/design/types/objects/des-project', deprecated: false },
+    { name: 'old', url: '/reference/deprecated/x/old', deprecated: true },
+    { name: 'old', url: '/reference/x/old', deprecated: false },
+  ]);
+  const text = [
+    'See also `desProjectRevisions` and `unknown`.',
+    '### `desProjectRevisions`',
+    '[`desProjectRevisions`](/x) and `DesProject`.',
+    '```graphql',
+    'a `desProjectRevisions` b',
+    '```',
+    'Use `old`.',
+  ].join('\n');
+  assert.equal(linkCodeReferences(text, targets, '/reference/design/types/objects/des-project'), [
+    'See also [`desProjectRevisions`](/reference/design/operations/queries/des-project-revisions) and `unknown`.',
+    '### `desProjectRevisions`',
+    '[`desProjectRevisions`](/x) and `DesProject`.',
+    '```graphql',
+    'a `desProjectRevisions` b',
+    '```',
+    'Use [`old`](/reference/x/old).',
+  ].join('\n'));
+});
+
+test('renderContextOverview shows the CDM description card instead of the Concepts line when subset data exists', () => {
+  const pages = buildPagesIndex(files, manifest);
+  const subsets = { design: { title: null, description: 'Models <design> projects.', url: 'https://altiumdeveloper.github.io/cdm/subsets/design/' } };
+  const md = renderContextOverview(manifest.contexts[0], pages, {}, subsets);
+  assert.doesNotMatch(md, /Concepts:/);
+  assert.match(md, /\n## Common Data Model\n\n- \[Design\]\(https:\/\/altiumdeveloper\.github\.io\/cdm\/subsets\/design\/\) — Models &#x003C;design&#x003E; projects\.\n/);
+  assert.ok(md.indexOf('For AI assistants:') < md.indexOf('## Common Data Model'));
+  // Without subset data the old one-line pointer stays.
+  assert.match(renderContextOverview(manifest.contexts[0], pages, {}, {}), /Concepts: see the \*\*Design\*\*/);
+});
+
+test('renderContextOverview lists each CDM subset of a multi-subset context under its own title', () => {
+  const pages = buildPagesIndex(files, manifest);
+  const context = { ...manifest.contexts[0], title: 'System Design', cdm: ['system', 'system-sdm'] };
+  const subsets = {
+    system: { title: 'ESD', description: 'The ESD document.', url: 'https://x/system/' },
+    'system-sdm': { title: null, description: 'The SDM.', url: 'https://x/system-sdm/' },
+  };
+  const md = renderContextOverview(context, pages, {}, subsets);
+  assert.match(md, /- \[ESD\]\(https:\/\/x\/system\/\) — The ESD document\.\n- \[system-sdm\]\(https:\/\/x\/system-sdm\/\) — The SDM\.\n/);
 });

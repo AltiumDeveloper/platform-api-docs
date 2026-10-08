@@ -64,6 +64,11 @@ function runSmoke() {
   const project = page('reference/design/types/objects/des-project');
   assert.match(project, /Common Data Model/);
   assert.match(project, /Hardware Project/);
+  // CDM entities are linked by IRI, and the IRI is shown as text.
+  assert.match(project, /href="https:\/\/w3id\.org\/altium\/cdm\/design\/Project"/);
+  assert.match(project, /<code>https:\/\/w3id\.org\/altium\/cdm\/design\/Project<\/code>/);
+  // Bounded-context tags are never the bare slug: the own context and `common` are dropped.
+  assert.doesNotMatch(project, /badge[^>]*>common</);
   assert.doesNotMatch(project, /id="comments"/);
   // Member headings keep graphql-markdown's explicit IDs, so `#name`-style links resolve.
   assert.match(project, /id="name"/);
@@ -145,10 +150,10 @@ function runSmoke() {
     return readFileSync(file, 'utf8');
   };
   const llms = text('llms.txt');
-  assert.match(llms, /^# Altium Platform API\n/);
+  assert.match(llms, /^# Altium 365 API\n/);
   assert.match(llms, /\[Design\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/llms\.txt\)/);
   assert.match(llms, /\[Getting started\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/guides\/getting-started\.md\)/);
-  assert.match(text('reference/design/llms.txt'), /^# Design — Altium Platform API\n/);
+  assert.match(text('reference/design/llms.txt'), /^# Design — Altium 365 API\n/);
   assert.match(text('reference/common/types.txt'), /^# Common — types\n/);
   const slice = text('reference/design/schema.graphql');
   parse(slice);
@@ -165,7 +170,7 @@ function runSmoke() {
   assert.match(overviewMd, /\[schema slice\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/schema\.graphql\)/);
   assert.match(overviewMd, /\[all types\]\(https:\/\/altiumdeveloper\.github\.io\/platform-api-docs\/reference\/design\/types\.txt\)/);
   assert.match(text('reference/design/operations/queries/design/project/by-id.md'), /\*\*EXPERIMENTAL\*\*/);
-  assert.match(text('index.md'), /^---\ntitle: "Altium Platform API"/);
+  assert.match(text('index.md'), /^---\ntitle: "Altium 365 API"/);
   assert.match(text('llms-full.txt'), /title: "Getting started"/);
   // llms:check. The landing page and guides link to live pages the fixture schema does not produce (Docusaurus warns
   // about the same links): only those broken internal links are tolerated here.
