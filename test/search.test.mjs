@@ -5,7 +5,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { buildSchema } from 'graphql';
 import {
-  FLAG_DEPRECATED, FLAG_EXPERIMENTAL, collapseMembers, identifierWords, loadIndex, search, synonymsOf, tokenize,
+  FLAG_DEPRECATED, FLAG_EXPERIMENTAL, collapseMembers, compileSynonyms, identifierWords, indexOptions, loadIndex, search,
+  singular, synonymsOf, tokenize, withinEdits,
 } from '../src/search/engine.mjs';
 import { buildSearchRecords, guideSections, memberAnchors, plainDescription } from '../scripts/apidocs/lib/search-records.mjs';
 
@@ -75,12 +76,15 @@ function fixture() {
     ],
   };
   const schema = buildSchema(SDL);
-  const built = buildSearchRecords({ schema, manifest, pages, docsDir, guides: [{ route: 'guides/pagination', title: 'Pagination', path: guidePath }] });
+  const config = { prefixes: ['des', 'design'], synonyms: [{ match: '\\bparts? lists?\\b', add: 'component' }] };
+  const built = buildSearchRecords({
+    schema, manifest, pages, docsDir, config, guides: [{ route: 'guides/pagination', title: 'Pagination', path: guidePath }],
+  });
   return { ...built, loaded: loadIndex({ version: 1, ...built }) };
 }
 
 const find = (records, name, parent) => records.find((r) => r.n === name && (parent === undefined || r.p === parent));
-const top = (loaded, query, options = {}) => search(loaded.index, loaded.records, query, { prefixes: loaded.prefixes, ...options });
+const top = (loaded, query, options = {}) => search(loaded.index, loaded.records, query, { ...indexOptions(loaded), ...options });
 
 test('identifierWords splits camelCase, acronyms, digits and dotted names', () => {
   assert.deepEqual(identifierWords('desProjectById'), ['des', 'project', 'by', 'id']);
@@ -95,8 +99,23 @@ test('tokenize keeps whole identifiers next to their words; names also get word-
 });
 
 test('synonymsOf maps phrasings to identifier words', () => {
-  assert.deepEqual(synonymsOf('bill of materials'), ['bom']);
-  assert.deepEqual(synonymsOf('bom'), []);
+  const table = compileSynonyms([{ match: '\\bbills? of materials?\\b', add: 'bom' }]);
+  assert.deepEqual(synonymsOf('Bill of Materials', table), ['bom']);
+  assert.deepEqual(synonymsOf('bom', table), []);
+  assert.deepEqual(synonymsOf('bill of materials'), []);
+});
+
+test('singular undoes English plurals but leaves look-alikes', () => {
+  assert.deepEqual(['comments', 'entries', 'addresses', 'boxes', 'status', 'class', 'analysis', 'ids', 'bus'].map(singular),
+    ['comment', 'entry', 'address', 'box', 'status', 'class', 'analysis', 'ids', 'bus']);
+  assert.ok(tokenize('desComments').includes('comment'));
+});
+
+test('withinEdits counts substitutions, insertions, deletions and transpositions', () => {
+  assert.ok(withinEdits('workspce', 'workspace', 1));
+  assert.ok(withinEdits('desprojcetbyid', 'desprojectbyid', 1));
+  assert.ok(!withinEdits('releaseid', 'releasebyid', 1));
+  assert.ok(withinEdits('releaseid', 'releasebyid', 2));
 });
 
 test('plainDescription drops the Experimental lead and markdown, and truncates', () => {
@@ -127,6 +146,8 @@ test('buildSearchRecords emits operations, types, members, overviews and guide s
   assert.equal(find(records, 'design.project.byId').d, 'Nested lookup.');
   assert.equal(find(records, 'design.project.byId').f, FLAG_EXPERIMENTAL);
   assert.equal(find(records, 'desProjectByName').f, FLAG_DEPRECATED);
+  assert.equal(find(records, 'desProjectByName').r, 'Use desProjectById.');
+  assert.equal(find(records, 'desProjectById').r, undefined);
   const field = find(records, 'name', 'DesProject');
   assert.equal(field.k, 'field');
   assert.equal(field.u, '/reference/design/types/objects/des-project#name-anchor');
@@ -154,7 +175,27 @@ test('an exact name comes first, also for qualified members', () => {
 test('a concept finds its entity type before fields and sub-types that share the word', () => {
   const { loaded } = fixture();
   assert.equal(top(loaded, 'component')[0].record.n, 'DesComponent');
+  assert.equal(top(loaded, 'components')[0].record.n, 'DesComponent');
   assert.equal(top(loaded, 'project by id')[0].record.n, 'desProjectById');
+  assert.equal(top(loaded, 'parts list')[0].record.n, 'DesComponent'); // through the configured synonym
+});
+
+test('a member written as Type.member beats a type spelled with the same letters', () => {
+  const { loaded } = fixture();
+  const first = top(loaded, 'DesProject.component')[0].record;
+  assert.deepEqual([first.p, first.n], ['DesProject', 'component']);
+});
+
+test('typos find the name only when nothing matches exactly', () => {
+  const { loaded } = fixture();
+  assert.equal(top(loaded, 'desProjcetById')[0].record.n, 'desProjectById');
+  assert.equal(top(loaded, 'DesComponnt')[0].record.n, 'DesComponent');
+});
+
+test('results far below the best are dropped', () => {
+  const { loaded } = fixture();
+  const results = top(loaded, 'desProjectById', { limit: 500 });
+  assert.ok(results.every((result) => result.score >= results[0].score * 0.02));
 });
 
 test('deprecated items sink and can be filtered out; group and context filters apply', () => {
@@ -172,5 +213,7 @@ test('collapseMembers folds members sharing a name into the best one', () => {
   const name = results.filter((r) => r.record.n === 'name');
   assert.equal(name.length, 1);
   assert.equal(name[0].more, 2);
+  assert.equal(name[0].others.length, 2);
+  assert.ok(name[0].others.every((record) => record.n === 'name' && record.p !== name[0].record.p));
   assert.equal(collapseMembers(top(loaded, 'name', { group: 'fields' }), { keepAll: true }).filter((r) => r.record.n === 'name').length, 3);
 });

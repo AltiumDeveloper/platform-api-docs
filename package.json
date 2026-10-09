@@ -25,6 +25,7 @@
     "apidocs:postprocess": "node scripts/apidocs/postprocess.mjs",
     "search:index": "node scripts/apidocs/search-index.mjs",
     "search:eval": "node scripts/apidocs/search-eval.mjs",
+    "search:check": "node scripts/apidocs/search-check.mjs",
     "llms": "node scripts/apidocs/llms.mjs",
     "llms:check": "node scripts/apidocs/llms-check.mjs",
     "test": "node --test \"test/**/!(guides).test.mjs\"",

@@ -5,12 +5,23 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom';
 import { useHistory, useLocation } from '@docusaurus/router';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import useGlobalData from '@docusaurus/useGlobalData';
 import styles from './styles.module.css';
 
-type SearchRecord = { i: number; n: string; k: string; p?: string; c?: number; u: string; d?: string; s?: string; t?: string; f?: number };
+// The index under its content-hashed name (plugins/search-index.cjs), so a cached index never meets newer code; the
+// plain name when the plugin has no index (dev server before `npm run search:index`).
+function useIndexUrl(): string {
+  const { withBaseUrl } = useBaseUrlUtils();
+  const file = (useGlobalData() as any)?.['search-index']?.default?.file as string | null | undefined;
+  return withBaseUrl(`/${file ?? 'search-index.json'}`);
+}
+
+type SearchRecord = {
+  i: number; n: string; k: string; p?: string; c?: number; u: string; d?: string; s?: string; t?: string; f?: number; r?: string;
+};
 type Context = { id: string; title: string; slug: string };
-type Result = { record: SearchRecord; score: number; more: number };
-type Loaded = { engine: any; index: any; records: SearchRecord[]; contexts: Context[]; contextWeights: number[]; prefixes: Set<string> };
+type Result = { record: SearchRecord; score: number; more: number; others: SearchRecord[] };
+type Loaded = { engine: any; index: any; records: SearchRecord[]; contexts: Context[] };
 type Recent = { n: string; k: string; p?: string; u: string; c?: number };
 
 const RECENT_KEY = 'api-search-recent';
@@ -77,11 +88,14 @@ function ContextChip({ context }: { context?: Context }) {
   return <span className={`badge badge--secondary badge--context bc-${context.slug} ${styles.context}`}>{context.title}</span>;
 }
 
-function ResultRow({ result, active, words, loaded, onPick, onHover, id }: {
+const OTHERS_SHOWN = 40;
+
+function ResultRow({ result, active, words, loaded, onPick, onHover, id, expanded, onToggle }: {
   result: Result; active: boolean; words: string[]; loaded: Loaded; onPick: (r: SearchRecord, newTab: boolean) => void;
-  onHover: () => void; id: string;
+  onHover: () => void; id: string; expanded: boolean; onToggle: () => void;
 }) {
-  const { record, more } = result;
+  const { record, more, others } = result;
+  const { withBaseUrl } = useBaseUrlUtils();
   const ref = useRef<HTMLLIElement>(null);
   useEffect(() => {
     if (active) ref.current?.scrollIntoView({ block: 'nearest' });
@@ -112,11 +126,45 @@ function ResultRow({ result, active, words, loaded, onPick, onHover, id }: {
         {flags & loaded.engine.FLAG_DEPRECATED ? <span className={styles.deprecated}>Deprecated</span> : null}
         <ContextChip context={context} />
       </div>
-      {(record.d || isGuide || more > 0) && (
+      {(record.d || isGuide) && (
         <div className={styles.description}>
           {isGuide && record.t && record.t !== record.n && <span className={styles.page}>{record.t} › </span>}
           {record.d && <Highlight text={record.d.length > 180 ? `${record.d.slice(0, 179)}…` : record.d} words={words} />}
-          {more > 0 && <span className={styles.more}> · also on {more} other {more === 1 ? 'type' : 'types'}</span>}
+        </div>
+      )}
+      {record.r && <div className={styles.reason}>Deprecated: {record.r}</div>}
+      {more > 0 && (
+        <div className={styles.othersLine}>
+          <button
+            type="button"
+            className={styles.othersToggle}
+            aria-expanded={expanded}
+            onClick={(event) => {
+              event.stopPropagation();
+              onToggle();
+            }}
+          >
+            {expanded ? '▾' : '▸'} also on {more} other {more === 1 ? 'type' : 'types'}
+          </button>
+          {expanded && (
+            <span className={styles.others}>
+              {others.slice(0, OTHERS_SHOWN).map((other) => (
+                <a
+                  key={other.i}
+                  href={withBaseUrl(other.u)}
+                  className={styles.other}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    onPick(other, event.metaKey || event.ctrlKey);
+                  }}
+                >
+                  {other.p}
+                </a>
+              ))}
+              {others.length > OTHERS_SHOWN && <span className={styles.more}>+{others.length - OTHERS_SHOWN} more in the Fields tab</span>}
+            </span>
+          )}
         </div>
       )}
     </li>
@@ -125,6 +173,8 @@ function ResultRow({ result, active, words, loaded, onPick, onHover, id }: {
 
 function SearchModal({ onClose, initialQuery }: { onClose: () => void; initialQuery: string }) {
   const { withBaseUrl } = useBaseUrlUtils();
+  const indexUrl = useIndexUrl();
+  const [expanded, setExpanded] = useState<Set<number>>(() => new Set());
   const history = useHistory();
   const location = useLocation();
   const [loaded, setLoaded] = useState<Loaded | null>(null);
@@ -138,14 +188,14 @@ function SearchModal({ onClose, initialQuery }: { onClose: () => void; initialQu
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    loadSearch(withBaseUrl('/search-index.json')).then(setLoaded, (err) => setError(String(err?.message ?? err)));
+    loadSearch(indexUrl).then(setLoaded, (err) => setError(String(err?.message ?? err)));
     inputRef.current?.focus();
     const overflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = overflow;
     };
-  }, [withBaseUrl]);
+  }, [indexUrl]);
 
   // On a reference page, results from that page's bounded context get a small boost.
   const currentContext = useMemo(() => {
@@ -160,8 +210,7 @@ function SearchModal({ onClose, initialQuery }: { onClose: () => void; initialQu
     if (!loaded || !query.trim()) return empty;
     const started = performance.now();
     const all = loaded.engine.search(loaded.index, loaded.records, query, {
-      context, includeDeprecated: !hideDeprecated, currentContext, contextWeights: loaded.contextWeights,
-      prefixes: loaded.prefixes, limit: 400,
+      ...loaded.engine.indexOptions(loaded), context, includeDeprecated: !hideDeprecated, currentContext, limit: 400,
     });
     const tally: Record<string, number> = { all: 0 };
     for (const { record } of loaded.engine.collapseMembers(all)) {
@@ -182,7 +231,16 @@ function SearchModal({ onClose, initialQuery }: { onClose: () => void; initialQu
     [loaded, query],
   );
 
-  useEffect(() => setActive(0), [query, group, context, hideDeprecated]);
+  useEffect(() => {
+    setActive(0);
+    setExpanded(new Set());
+  }, [query, group, context, hideDeprecated]);
+
+  const toggle = useCallback((id: number) => setExpanded((current) => {
+    const next = new Set(current);
+    if (!next.delete(id)) next.add(id);
+    return next;
+  }), []);
 
   const pick = useCallback((record: SearchRecord | Recent, newTab = false) => {
     if ('i' in record) remember(record as SearchRecord);
@@ -331,6 +389,8 @@ function SearchModal({ onClose, initialQuery }: { onClose: () => void; initialQu
                   loaded={loaded}
                   onPick={pick}
                   onHover={() => setActive(i)}
+                  expanded={expanded.has(result.record.i)}
+                  onToggle={() => toggle(result.record.i)}
                 />
               ))}
             </ul>
@@ -353,13 +413,13 @@ function SearchModal({ onClose, initialQuery }: { onClose: () => void; initialQu
 }
 
 export default function SearchBar(): JSX.Element {
-  const { withBaseUrl } = useBaseUrlUtils();
+  const indexUrl = useIndexUrl();
   const [open, setOpen] = useState(false);
   const [initialQuery, setInitialQuery] = useState('');
   const [mac, setMac] = useState(false);
   const prefetch = useCallback(() => {
-    loadSearch(withBaseUrl('/search-index.json')).catch(() => {});
-  }, [withBaseUrl]);
+    loadSearch(indexUrl).catch(() => {});
+  }, [indexUrl]);
 
   useEffect(() => {
     setMac(isMac());

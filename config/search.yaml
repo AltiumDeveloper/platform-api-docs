@@ -1,0 +1,27 @@
+# Search ranking knobs, embedded into static/search-index.json by `npm run search:index` (the engine itself is in
+# src/search/engine.mjs). Check every change with `npm run search:eval`.
+
+# Leading name words that only say where a name comes from (docs/guides/naming-conventions.mdx, plus the roots of the
+# bounded-context namespaces and the sub-area prefixes after them). Ranking ignores them, so "component" finds
+# DesComponent and "script" GloScrScript first. camelCase entries are word sequences; the longest match is dropped.
+prefixes: [
+  des, sup, glo, bom, sol, sys, kg, dm, sft, rsa, platform, design, requirements,
+  gloScr, gloCus, gloEvt, desWorkspaceIns, sysEsd, sysSdm,
+]
+
+# Phrasings that never appear in names. When `match` (a case-insensitive regular expression) matches the query, the
+# query is extended with `add`.
+synonyms:
+  - { match: '\bbills? of materials?\b', add: bom }
+  - { match: '\bmanufacturer part numbers?\b', add: mpn }
+  - { match: '\bprinted circuit boards?\b', add: pcb }
+  - { match: '\b(?:design rule checks?|drc)\b', add: rule check }
+  - { match: '\bpaging\b|\bpaginat\w*', add: pagination connection }
+  - { match: '\bauth\b|\blog ?in\b|\bsign ?in\b', add: authentication }
+  - { match: '\bpcba?\b', add: project }
+  - { match: '\binternal part numbers?\b', add: ipn }
+  - { match: '\breference designs?\b', add: ref design }
+
+# Ranking prior per bounded context (default 1): the parked Renesas preview should not outrank the core contexts.
+contextWeights:
+  renesas-preview: 0.6

@@ -73,6 +73,12 @@ operation, type, field, input field, enum value, guide section and bounded-conte
 `static/search-index.json` (about 200 KB gzipped). The navbar `SearchBar` (`src/theme/SearchBar`, ⌘K / Ctrl+K or `/`)
 fetches it on first use and indexes it with MiniSearch.
 
+The build also publishes the index as `search-index.<hash>.json` (`plugins/search-index.cjs`; the SearchBar reads the
+name from `usePluginData('search-index').file`), so a deploy never pairs a cached index with new code; the dev server
+keeps using `static/search-index.json`. `npm run search:check`, run in CI after `npm run build`, fails when the hashed
+file is missing, duplicated or differs from `build/search-index.json`, when record ids, kinds or context indexes are
+invalid, or when a record URL or `#anchor` does not exist in the built HTML.
+
 Ranking is in `src/search/engine.mjs`, shared by the browser and the scripts: candidates from boosted fields (name
 above guide title above description, parent type barely), then explicit rules — exact name, then a name equal to the
 query once its context prefix (`des`, `bom`, …) is dropped, then typed-ahead prefixes; operations and types above
@@ -80,7 +86,9 @@ members; deprecated items demoted; members sharing a name collapsed into one row
 
 `npm run search:eval` checks the ranking against the cases in `config/search-eval.yaml` (expected result within the
 first N) and prints the MRR; `npm run search:eval -- --query "project by id"` shows the ranked list for one query. Add
-a case for every query that ranked badly before changing weights.
+a case for every query that ranked badly before changing weights. `--index <path>` and `--cases <path>` override the
+inputs. The `search-eval` CI job runs it against the built `build/search-index.json`; a failure shows
+as a failed check but does not block deploy and, unlike `validate-guides`, opens no issue.
 
 ## Changing the grouping
 

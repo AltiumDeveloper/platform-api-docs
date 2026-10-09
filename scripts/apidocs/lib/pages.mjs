@@ -74,7 +74,10 @@ export function rewriteContextBadges(text, ownSlug, contexts) {
   });
 }
 
-const MEMBER_PREFIX = /(<code style=\{\{ fontWeight: 'normal' \}\}>)[A-Za-z_][\w.]*\.(<b>)/g;
+// graphql-markdown escapes `_` in names as `&#x005F;` (`DesignDataPin&#x005F;Preview.<b>name</b>`), so the prefix may
+// contain hex character references.
+const NAME_CHAR = String.raw`(?:[\w.]|&#x[0-9A-Fa-f]+;)`;
+const MEMBER_PREFIX = new RegExp(String.raw`(<code style=\{\{ fontWeight: 'normal' \}\}>)(?:[A-Za-z_]|&#x[0-9A-Fa-f]+;)${NAME_CHAR}*\.(<b>)`, 'g');
 
 // Field and argument headings read `DesProject.collaborationRevisions.after`: the page is already about
 // DesProject, so the parent path is noise. Keeps only the member name; anchors are unaffected.

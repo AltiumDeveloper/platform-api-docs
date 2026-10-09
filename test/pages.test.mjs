@@ -239,6 +239,16 @@ test('stripMemberPrefixes keeps only the member name in field and argument headi
   assert.equal(stripMemberPrefixes(head('<b>DesProject</b>')), head('<b>DesProject</b>'));
 });
 
+test('stripMemberPrefixes handles names with MDX-escaped underscores and keeps the anchor', () => {
+  const head = (code, anchor) => `#### [<code style={{ fontWeight: 'normal' }}>${code}</code>](#${anchor})<Bullet />`;
+  assert.equal(
+    stripMemberPrefixes(head('DesignDataComponentParameter&#x005F;Preview.<b>name</b>', 'name')),
+    head('<b>name</b>', 'name'),
+  );
+  assert.equal(stripMemberPrefixes(head('&#x005F;Hidden.items.<b>first</b>', 'first')), head('<b>first</b>', 'first'));
+  assert.equal(stripMemberPrefixes(head('<b>DesignData&#x005F;Preview</b>', 'x')), head('<b>DesignData&#x005F;Preview</b>', 'x'));
+});
+
 test('linkCodeReferences links backticked page names, not code blocks, headings, links or the page itself', () => {
   const targets = buildLinkTargets([
     { name: 'desProjectRevisions', url: '/reference/design/operations/queries/des-project-revisions', deprecated: false },

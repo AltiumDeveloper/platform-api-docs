@@ -3,7 +3,7 @@
 //
 // Record shape (short keys keep the index small): i id (= array index), n name, k kind (engine KINDS), p parent type
 // (members), c context index (into `contexts`), u url (without baseUrl), d description, s signature, t page title
-// (guides), f flags (FLAG_EXPERIMENTAL | FLAG_DEPRECATED).
+// (guides), f flags (FLAG_EXPERIMENTAL | FLAG_DEPRECATED), r deprecation reason.
 //
 // URLs come from what graphql-markdown generated: pages from .schema/pages.json, member anchors from the
 // `{/* #anchor */}` headings of the generated type pages, so search links can't drift from the site.
@@ -23,12 +23,10 @@ const PAGE_KINDS = {
   enums: 'enum', interfaces: 'interface', unions: 'union', scalars: 'scalar', directives: 'directive',
 };
 const ROOTS = { query: 'getQueryType', mutation: 'getMutationType', subscription: 'getSubscriptionType' };
-// Leading name words that only say where a name comes from (docs/guides/naming-conventions.mdx, plus the roots of the
-// bounded-context namespaces): ranking ignores them, so "component" finds DesComponent first.
-export const NAME_PREFIXES = ['des', 'sup', 'glo', 'bom', 'sol', 'sys', 'kg', 'dm', 'sft', 'rsa', 'platform', 'design', 'requirements'];
-// Ranking prior per bounded context: the parked Renesas preview should not outrank the core contexts.
-const CONTEXT_WEIGHTS = { 'renesas-preview': 0.6 };
-const DESCRIPTION_LIMIT = 320;
+// Descriptions are indexed up to these lengths (the full text is on the page); they are most of the index size.
+const DESCRIPTION_LIMIT = 600;
+const MEMBER_DESCRIPTION_LIMIT = 300;
+const REASON_LIMIT = 160;
 const GUIDE_TEXT_LIMIT = 1500;
 
 const hasDirective = (node, name) => Boolean(node?.directives?.some((directive) => directive.name.value === name));
@@ -83,10 +81,16 @@ function resolveOperation(schema, kind, name) {
 
 /**
  * @param {{schema: import('graphql').GraphQLSchema, manifest: object, pages: object[], docsDir: string,
- *   guides: {route: string, title: string, path: string}[]}} input
+ *   guides: {route: string, title: string, path: string}[], config?: {prefixes?: string[],
+ *   synonyms?: {match: string, add: string}[], contextWeights?: Record<string, number>}}} input
+ * `config` is config/search.yaml; it is passed through to the engine in the payload.
  */
-export function buildSearchRecords({ schema, manifest, pages, docsDir, guides = [] }) {
-  const contexts = manifest.contexts.map(({ id, title, slug }) => ({ id, title, slug, ...(CONTEXT_WEIGHTS[id] ? { weight: CONTEXT_WEIGHTS[id] } : {}) }));
+export function buildSearchRecords({ schema, manifest, pages, docsDir, guides = [], config = {} }) {
+  const weights = config.contextWeights ?? {};
+  const contexts = manifest.contexts.map(({ id, title, slug }) => ({ id, title, slug, ...(weights[id] ? { weight: weights[id] } : {}) }));
+  for (const { match } of config.synonyms ?? []) new RegExp(match, 'i'); // fail the build on an invalid pattern
+  // Deprecation reason, shown in the result ("Use desProjectById.").
+  const reason = (item) => (item?.deprecationReason != null ? plainDescription(item.deprecationReason, REASON_LIMIT) || 'Deprecated.' : undefined);
   const contextIndex = new Map(contexts.map((context, index) => [context.id, index]));
   const records = [];
   const add = (record) => {
@@ -104,7 +108,10 @@ export function buildSearchRecords({ schema, manifest, pages, docsDir, guides = 
     if (page.section === 'operations' && ROOTS[kind]) {
       const field = resolveOperation(schema, kind, page.name);
       const deprecated = field?.deprecationReason != null ? FLAG_DEPRECATED : 0;
-      add({ n: page.name, k: kind, c, u: page.url, d: plainDescription(field?.description), s: field ? signature(field) : undefined, f: pageFlags | deprecated });
+      add({
+        n: page.name, k: kind, c, u: page.url, d: plainDescription(field?.description), s: field ? signature(field) : undefined,
+        f: pageFlags | deprecated, r: reason(field),
+      });
       continue;
     }
     if (kind === 'directive') {
@@ -134,13 +141,17 @@ export function buildSearchRecords({ schema, manifest, pages, docsDir, guides = 
           | (hasDirective(field.astNode, 'experimental') ? FLAG_EXPERIMENTAL : 0);
         add({
           n: field.name, k: memberKind, p: type.name, c, u: memberUrl(field.name),
-          d: plainDescription(field.description, 200), s: memberKind === 'field' ? signature(field) : `: ${field.type}`, f: flags,
+          d: plainDescription(field.description, MEMBER_DESCRIPTION_LIMIT), s: memberKind === 'field' ? signature(field) : `: ${field.type}`,
+          f: flags, r: reason(field),
         });
       }
     } else if (isEnumType(type)) {
       for (const value of type.getValues()) {
         const flags = pageFlags | (value.deprecationReason != null ? FLAG_DEPRECATED : 0);
-        add({ n: value.name, k: 'enumValue', p: type.name, c, u: memberUrl(value.name), d: plainDescription(value.description, 200), f: flags });
+        add({
+          n: value.name, k: 'enumValue', p: type.name, c, u: memberUrl(value.name),
+          d: plainDescription(value.description, MEMBER_DESCRIPTION_LIMIT), f: flags, r: reason(value),
+        });
       }
     }
   }
@@ -154,7 +165,7 @@ export function buildSearchRecords({ schema, manifest, pages, docsDir, guides = 
       add({ n: section.heading ?? guide.title, k: 'guide', t: guide.title, u: url, d: section.text });
     }
   }
-  return { contexts, prefixes: NAME_PREFIXES, records };
+  return { contexts, prefixes: config.prefixes ?? [], synonyms: config.synonyms ?? [], records };
 }
 
 const stripMarkdown = (text) => text

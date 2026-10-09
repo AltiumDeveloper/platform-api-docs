@@ -5,13 +5,13 @@
 import { readFileSync, realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
-import { collapseMembers, loadIndex, search } from '../../src/search/engine.mjs';
+import { collapseMembers, indexOptions, loadIndex, search } from '../../src/search/engine.mjs';
 
 const label = (record) => `${record.k.padEnd(10)} ${record.p ? `${record.p}.` : ''}${record.n}`;
 
 export function runEval({ index: indexPath = 'static/search-index.json', cases: casesPath = 'config/search-eval.yaml' } = {}) {
   const loaded = loadIndex(JSON.parse(readFileSync(indexPath, 'utf8')));
-  const run = (query) => collapseMembers(search(loaded.index, loaded.records, query, { contextWeights: loaded.contextWeights, prefixes: loaded.prefixes, limit: 60 }));
+  const run = (query) => collapseMembers(search(loaded.index, loaded.records, query, { ...indexOptions(loaded), limit: 60 }));
   const cases = parse(readFileSync(casesPath, 'utf8')).cases;
   const results = cases.map((testCase) => {
     const query = String(testCase.query);
@@ -27,7 +27,9 @@ export function runEval({ index: indexPath = 'static/search-index.json', cases: 
 
 if (process.argv[1] && realpathSync(fileURLToPath(import.meta.url)) === realpathSync(process.argv[1])) {
   const args = process.argv.slice(2);
-  const { results, mrr, run } = runEval();
+  // `--index <path>` / `--cases <path>` override the defaults (CI evaluates build/search-index.json).
+  const option = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : undefined);
+  const { results, mrr, run } = runEval({ index: option('--index'), cases: option('--cases') });
   const adHoc = args.indexOf('--query');
   if (adHoc !== -1) {
     for (const [i, { record, score, more }] of run(args[adHoc + 1] ?? '').slice(0, 15).entries()) {

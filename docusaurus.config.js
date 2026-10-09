@@ -60,7 +60,9 @@ const config = {
       },
     ],
     ['@docusaurus/plugin-client-redirects', { redirects }],
-    // Search: src/theme/SearchBar over static/search-index.json (npm run search:index).
+    // Search: src/theme/SearchBar over static/search-index.json (npm run search:index), also published under a
+    // content-hashed name (usePluginData('search-index').file).
+    './plugins/search-index.cjs',
   ],
   presets: [
     [

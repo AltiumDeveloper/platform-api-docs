@@ -1,46 +1,155 @@
 # Search ranking eval: `npm run search:eval`. Each case is a query and the result a reader expects, which must appear
 # within the first `within` results (default 1) of the list the search box shows (members sharing a name collapsed).
 # `expect` matches a record name (or any of a list of names); `parent` narrows it to a member of that type; `kind` to a record kind.
+# The cases are targets chosen from what a reader would want, not from what the engine returns today; some may fail.
+# `within`: 1 for an unambiguous exact name, 3 for word and concept queries, up to 5 for typos and fuzzy phrases.
 # Replace or extend with real queries from users as they come in.
 cases:
-  # Exact names
+  # 1. Exact names: queries, mutations and subscriptions, across the bounded contexts
   - { query: desProjectById, expect: desProjectById }
+  - { query: desWorkspaceInfos, expect: desWorkspaceInfos }
+  - { query: gloUserById, expect: gloUserById }
+  - { query: solSolutionById, expect: solSolutionById }
+  - { query: desCreateCommentThread, expect: desCreateCommentThread }
+  - { query: desWorkspaceTasks, expect: desWorkspaceTasks }
+  - { query: desOnCommentUpdated, expect: desOnCommentUpdated }
+  - { query: desFootprintById, expect: desFootprintById }
+  - { query: desProjectTemplateById, expect: desProjectTemplateById }
+  - { query: bomBoms, expect: bomBoms }
+  - { query: supEvalKitById, expect: supEvalKitById }
+  - { query: gloScrExecuteScript, expect: gloScrExecuteScript }
+  - { query: sysEsdDocumentById, expect: sysEsdDocumentById }
+  - { query: desWorkspaceInsInsights, expect: desWorkspaceInsInsights }
+  # Namespaced queries
+  - { query: requirements.project.byId, expect: requirements.project.byId }
+  - { query: design.ruleCheck.byId, expect: design.ruleCheck.byId }
+  - { query: platform.token.byWorkspace, expect: platform.token.byWorkspace }
+  # Types: object, input, enum, interface, union, scalar, directive
   - { query: DesProject, expect: DesProject }
   - { query: PageInfo, expect: PageInfo }
+  - { query: SupRefDesign, expect: SupRefDesign }
+  - { query: RequirementsProject, expect: RequirementsProject }
+  - { query: GloScrScript, expect: GloScrScript, kind: object }
+  - { query: BomRelease, expect: BomRelease }
+  - { query: DesUploadProjectInput, expect: DesUploadProjectInput }
+  - { query: DesTaskStatus, expect: DesTaskStatus }
+  - { query: Node, expect: Node, kind: interface }
+  - { query: DesAnnotationBinding, expect: DesAnnotationBinding }
   - { query: ID, expect: ID, kind: scalar }
-  - { query: desWorkspaceInfos, expect: desWorkspaceInfos }
-  - { query: requirements.project.byId, expect: requirements.project.byId }
-  - { query: DesProject.name, expect: name, parent: DesProject }
-  - { query: gloUserById, expect: gloUserById }
-  # Partial names, typed as you go
+  - { query: "@deprecated", expect: "@deprecated" }
+
+  # 2. Exact names typed in another case
+  - { query: desprojectbyid, expect: desProjectById }
+  - { query: DESPROJECT, expect: DesProject }
+  - { query: BOMBOMS, expect: bomBoms }
+  - { query: desworkspacetasks, expect: desWorkspaceTasks }
+  - { query: design.rulecheck.byid, expect: design.ruleCheck.byId }
+
+  # 3. Typed-ahead prefixes, with and without the context prefix
   - { query: desLib, expect: desLibrary, within: 2 }
   - { query: desProjectBy, expect: desProjectById, within: 2 }
   - { query: DesComp, expect: DesComponent, within: 3 }
-  # Words of a name
+  - { query: desWorkspaceTa, expect: desWorkspaceTasks, within: 2 }
+  - { query: BomRel, expect: BomRelease, within: 2 }
+  - { query: gloUserB, expect: gloUserById }
+  - { query: supEvalK, expect: [SupEvalKit, supEvalKits, supEvalKitById], within: 3 }
+  - { query: sysEsdDoc, expect: [SysEsdDocument, sysEsdDocuments, sysEsdDocumentById], within: 3 }
+  - { query: design.ruleCh, expect: [design.ruleCheck.byId, design.ruleCheck.byIds, design.ruleCheck.byAuth, design.ruleCheck.configuration], within: 3 }
+  - { query: platform.tok, expect: [platform.token.byWorkspace, platform.token.byTokenId, platform.token.workspaceTokenQuota], within: 3 }
+  - { query: ProjectTemplate, expect: [DesProjectTemplate, desProjectTemplateById], within: 2 }
+  - { query: CommentThread, expect: [DesCommentThread, desCommentThread], within: 2 }
+
+  # 4. The words of a name
   - { query: project by id, expect: desProjectById, within: 3 }
   - { query: create comment, expect: desCreateComment }
+  - { query: create comment thread, expect: desCreateCommentThread, within: 3 }
   - { query: comment thread, expect: DesCommentThread, within: 3 }
   - { query: upload project, expect: desUploadProject, within: 3 }
   - { query: user by id, expect: gloUserById, within: 3 }
   - { query: release by id, expect: desReleaseById, within: 3 }
   - { query: bom by id, expect: bomBomById, within: 3 }
   - { query: search components by mpn, expect: desSearchComponentsByMpns, within: 3 }
-  # A single concept
+  - { query: workspace tasks, expect: desWorkspaceTasks, within: 3 }
+  - { query: user groups, expect: [gloUserGroups, GloUserGroup, DesUserGroup], within: 3 }
+  - { query: execute script, expect: gloScrExecuteScript, within: 3 }
+  - { query: create workspace token, expect: platformWorkspaceTokenCreate, within: 3 }
+
+  # 5. A single concept: the core entity type
+  - { query: project, expect: DesProject, within: 3 }
+  - { query: release, expect: DesRelease, within: 3 }
   - { query: workspace, expect: DesWorkspace, within: 3 }
-  - { query: bom, expect: Bom, within: 3 }
-  - { query: datasheet, expect: DesDatasheet, within: 3 }
+  - { query: folder, expect: DesFolder, within: 3 }
+  - { query: task, expect: DesTask, within: 3 }
+  - { query: comment, expect: DesComment, within: 3 }
+  - { query: annotation, expect: DesAnnotation, within: 3 }
   - { query: component, expect: DesComponent, within: 3 }
   - { query: part, expect: DesPart, within: 3 }
-  - { query: token, expect: PlatformToken, within: 5 }
+  - { query: datasheet, expect: DesDatasheet, within: 3 }
+  - { query: footprint, expect: DesFootprint, within: 3 }
+  - { query: symbol, expect: DesSymbol, within: 3 }
+  - { query: supplier, expect: DesSupplierPart, within: 3 }
+  - { query: bom, expect: [Bom, DesBom], within: 3 }
+  - { query: script, expect: GloScrScript, kind: object, within: 3 }
+  - { query: insight, expect: DesWorkspaceInsInsight, within: 3 }
+  - { query: token, expect: PlatformToken, within: 3 }
   - { query: project template, expect: DesProjectTemplate, within: 3 }
-  # Members
-  - { query: releaseId, expect: releaseId, within: 1 }
-  # Synonyms and prose
-  - { query: bill of materials, expect: [Bom, DesBom, bomBoms], within: 3 }
-  - { query: procurement, expect: Procurement, kind: overview }
+
+  # 6. Plurals and singular/plural mismatches
+  - { query: comments, expect: DesComment, within: 3 }
+  - { query: projects, expect: desProjects, within: 3 }
+  - { query: releases, expect: DesRelease, within: 3 }
+  - { query: tasks, expect: [DesTask, desWorkspaceTasks, desProjectTasks], within: 3 }
+  - { query: users, expect: [gloUsers, desUsers], within: 3 }
+  - { query: boms, expect: bomBoms, within: 3 }
+  - { query: annotations, expect: desAnnotations, within: 3 }
+  - { query: comment threads, expect: desCommentThreads, within: 3 }
+
+  # 7. Members: qualified and bare
+  - { query: DesProject.name, expect: name, parent: DesProject }
+  - { query: PageInfo.endCursor, expect: endCursor, parent: PageInfo }
+  - { query: DesTask.status, expect: status, parent: DesTask }
+  - { query: endCursor, expect: endCursor }
+  - { query: hasNextPage, expect: hasNextPage }
+  - { query: totalCount, expect: totalCount }
+  - { query: releaseId, expect: releaseId }
+
+  # 8. Enum values
+  - { query: IN_PROGRESS, expect: IN_PROGRESS, parent: DesTaskStatus }
+  - { query: in_progress, expect: IN_PROGRESS, parent: DesTaskStatus }
+  - { query: TO_DO, expect: TO_DO, parent: DesTaskStatus }
+  - { query: PCB_PROJECT, expect: PCB_PROJECT, parent: DesProjectType }
+  - { query: TAPE_AND_REEL, expect: TAPE_AND_REEL, parent: BomPackagingType }
+
+  # 9. Typos
+  - { query: desProjcetById, expect: desProjectById, within: 3 }
+  - { query: desCreateComent, expect: desCreateComment, within: 3 }
+  - { query: workspce, expect: DesWorkspace, within: 5 }
+  - { query: comonent, expect: DesComponent, within: 5 }
+  - { query: datashet, expect: DesDatasheet, within: 5 }
+  - { query: pagnation, expect: Pagination, kind: guide, within: 5 }
+
+  # 10. Guides, context overviews and concepts
   - { query: pagination, expect: Pagination, kind: guide }
   - { query: paging, expect: Pagination, kind: guide, within: 3 }
+  - { query: errors, expect: Errors, kind: guide, within: 3 }
   - { query: error codes, expect: Shared error codes, within: 3 }
+  - { query: authentication, expect: Authentication, kind: guide, within: 3 }
+  - { query: endpoints, expect: Endpoints, kind: guide, within: 3 }
+  - { query: naming conventions, expect: Naming conventions, kind: guide, within: 3 }
   - { query: byId, expect: byId and byIds, within: 3 }
   - { query: lifecycle, expect: Lifecycle, kind: guide, within: 3 }
-  - { query: authentication, expect: Authentication, kind: guide, within: 3 }
+  - { query: deprecated, expect: [Deprecated, "@deprecated"], within: 3 }
+  - { query: bounded context, expect: [Bounded contexts and the CDM, The bounded contexts], kind: guide, within: 3 }
+  - { query: procurement, expect: Procurement, kind: overview }
+  - { query: supply, expect: Supply, kind: overview, within: 3 }
+  - { query: collaboration, expect: Collaboration, kind: overview, within: 3 }
+  - { query: configuration management, expect: Configuration Management, kind: overview, within: 3 }
+
+  # 11. Synonyms and phrases
+  - { query: bill of materials, expect: [Bom, DesBom, bomBoms], within: 3 }
+  - { query: manufacturer part number, expect: [DesManufacturerPart, desSearchComponentsByMpns, desPartSearchByManufacturerPartIds, mpn], within: 5 }
+  - { query: internal part number, expect: [desSearchComponentsByIpns, ipn], within: 5 }
+  - { query: design rule check, expect: [RuleCheck, design.ruleCheck.byId, designRuleCheckExecute], within: 3 }
+  - { query: reference design, expect: SupRefDesign, within: 3 }
+  - { query: webhook, expect: [gloEvtCreateWebhookSubscription, GloEvtWebhookSubscription], within: 3 }
+  - { query: access token, expect: [PlatformToken, platformWorkspaceTokenCreate], within: 5 }

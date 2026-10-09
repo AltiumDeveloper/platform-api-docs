@@ -7,6 +7,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parse } from 'graphql';
 import { runCheck } from './llms-check.mjs';
+import { runSearchCheck } from './lib/search-check.mjs';
 
 const env = {
   ...process.env,
@@ -24,37 +25,48 @@ const page = (path) => {
   return readFileSync(file, 'utf8');
 };
 
-// The pipeline overwrites .schema/ (raw SDL, manifest, CDM index, size baseline) and static/schema.graphql
-// (the public SDL that `npm run test:guides` validates against): keep the live copies safe.
+// The pipeline overwrites .schema/ (raw SDL, manifest, CDM index, size baseline), static/schema.graphql (the public
+// SDL that `npm run test:guides` validates against) and static/search-index.json (what `npm start` and
+// `npm run search:eval` read): keep the live copies safe.
 const SCHEMA_DIR = '.schema';
-const PUBLIC_SDL = 'static/schema.graphql';
+const PUBLIC_FILES = [['static/schema.graphql', 'graphql'], ['static/search-index.json', 'search-index.json']];
 const backup = join(process.env.TMPDIR || tmpdir(), `apidocs-smoke-backup-${process.pid}`);
 const hadSchemaDir = existsSync(SCHEMA_DIR);
-const hadPublicSdl = existsSync(PUBLIC_SDL);
+const hadPublic = PUBLIC_FILES.map(([file]) => existsSync(file));
 if (hadSchemaDir) cpSync(SCHEMA_DIR, backup, { recursive: true });
-if (hadPublicSdl) cpSync(PUBLIC_SDL, `${backup}.graphql`);
+PUBLIC_FILES.forEach(([file, suffix], i) => hadPublic[i] && cpSync(file, `${backup}.${suffix}`));
 
 try {
   runSmoke();
 } finally {
   rmSync(env.APIDOCS_MISMATCHES_FILE, { force: true });
   rmSync(SCHEMA_DIR, { recursive: true, force: true });
-  if (hadPublicSdl) {
-    cpSync(`${backup}.graphql`, PUBLIC_SDL);
-    rmSync(`${backup}.graphql`, { force: true });
-  } else {
-    rmSync(PUBLIC_SDL, { force: true });
-  }
+  PUBLIC_FILES.forEach(([file, suffix], i) => {
+    if (hadPublic[i]) {
+      cpSync(`${backup}.${suffix}`, file);
+      rmSync(`${backup}.${suffix}`, { force: true });
+    } else {
+      rmSync(file, { force: true });
+    }
+  });
   if (hadSchemaDir) {
     cpSync(backup, SCHEMA_DIR, { recursive: true });
     rmSync(backup, { recursive: true, force: true });
-    console.log('smoke: restored .schema and static/schema.graphql; run `npm run apidocs:generate && npm run apidocs:postprocess && npm run build && npm run llms && npm run llms:check` to rebuild live docs');
+    console.log('smoke: restored .schema, static/schema.graphql and static/search-index.json; run `npm run apidocs:generate && npm run apidocs:postprocess && npm run search:index && npm run build && npm run llms && npm run llms:check` to rebuild live docs');
   }
 }
 
 function runSmoke() {
+  // `npm run apidocs` ends with `search:index` (runSearchIndex), so the fixture site ships an index.
   run('npm run apidocs');
+  assert.ok(existsSync('static/search-index.json'), 'npm run apidocs must write static/search-index.json');
   run('npm run build');
+
+  // search:check: hashed index (plugins/search-index.cjs) present and equal to the plain copy, every record resolves.
+  const search = runSearchCheck({ buildDir: 'build' });
+  assert.deepEqual(search.problems, [], 'search:check problems');
+  assert.ok(search.records > 0 && search.anchors > 0);
+  console.log(`smoke: search:check ${search.file}: ${search.records} records, ${search.pages} pages, ${search.anchors} anchors`);
 
   const byId = page('reference/design/operations/queries/design/project/by-id');
   assert.match(byId, /EXPERIMENTAL/);
