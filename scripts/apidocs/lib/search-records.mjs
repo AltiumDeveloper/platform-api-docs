@@ -54,11 +54,18 @@ function signature(field) {
   return `${shown.length ? `(${shown.join(', ')})` : ''}: ${field.type}`;
 }
 
-// Field / enum value name → anchor, read from the level-4 member headings of a generated type page.
+// Field / enum value name → anchor, read from the level-4 member headings of a generated type page. graphql-markdown
+// MDX-escapes some characters in names as numeric entities (`IN&#x005F;PROGRESS`), so headings are decoded first.
 const MEMBER_HEADING = /^#### \[<code[^>]*><b>([^<]+)<\/b><\/code>\]\(#([^)\s]+)\)/gm;
+const decodeEntities = (text) => text
+  .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+  .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)));
 export function memberAnchors(mdx) {
   const anchors = new Map();
-  for (const [, name, anchor] of mdx.matchAll(MEMBER_HEADING)) if (!anchors.has(name)) anchors.set(name, anchor);
+  for (const [, raw, anchor] of mdx.matchAll(MEMBER_HEADING)) {
+    const name = decodeEntities(raw);
+    if (!anchors.has(name)) anchors.set(name, anchor);
+  }
   return anchors;
 }
 

@@ -107,6 +107,8 @@ test('plainDescription drops the Experimental lead and markdown, and truncates',
 test('memberAnchors reads level-4 member headings only', () => {
   const anchors = memberAnchors(typePage(['name', 'componentType']));
   assert.deepEqual([...anchors], [['name', 'name-anchor'], ['componentType', 'componenttype-anchor']]);
+  const escaped = memberAnchors("#### [<code style={{ fontWeight: 'normal' }}><b>IN&#x005F;PROGRESS</b></code>](#in-progress) {/* #in-progress */}");
+  assert.deepEqual([...escaped], [['IN_PROGRESS', 'in-progress']]);
 });
 
 test('guideSections splits at ## and ###, skips fenced code and honours explicit ids', () => {
