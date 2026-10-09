@@ -30,10 +30,10 @@ type DesignDataRuleAttribute_Preview {
 
 ### Fields
 
-#### `DesignDataRuleAttribute_Preview.name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The name of the attribute.
 
-#### `DesignDataRuleAttribute_Preview.value` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+#### `value` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The value of the attribute.

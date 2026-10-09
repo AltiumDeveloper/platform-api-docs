@@ -15,10 +15,12 @@ deprecated: false
 
 ```graphql
 type SupSoftwareProjectEvalKitProjectSource {
+  artifact: SupSoftwareProjectEvalKitProjectSourceArtifact
   artifactVersion: String
   configXmlUrl: String!
   family: SupSoftwareProjectEvalKitProjectSourceDeviceFamily
   framework: SupSoftwareProjectEvalKitProjectSourceFramework
+  projectSourceId: String! @deprecated
   sourceUrl: String!
   type: SupSoftwareProjectEvalKitProjectSourceType!
   updatedAt: DateTime!
@@ -26,6 +28,10 @@ type SupSoftwareProjectEvalKitProjectSource {
 ```
 
 ### Fields
+
+#### `artifact` · [`SupSoftwareProjectEvalKitProjectSourceArtifact`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-project-source-artifact.md) object
+
+The artifact associated with the project source.
 
 #### `artifactVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
@@ -54,3 +60,11 @@ The type of the compatible evaluation kit project source.
 #### `updatedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The last updated date.
+
+#### Deprecated
+
+#### `projectSourceId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) **DEPRECATED** non-null scalar
+
+> **Deprecated:** Fields play a technical role for internal uses.
+
+The project source identifier.

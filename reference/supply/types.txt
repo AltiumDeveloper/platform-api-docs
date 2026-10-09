@@ -48,6 +48,7 @@
 - [SupSoftwareProjectCreateSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-create-software-project-payload.md): Payload associated with creating a software project.
 - [SupSoftwareProjectDeleteSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-delete-software-project-payload.md): Payload associated with deleting a software project.
 - [SupSoftwareProjectEvalKitProjectSource](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-project-source.md)
+- [SupSoftwareProjectEvalKitProjectSourceArtifact](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-project-source-artifact.md)
 - [SupSoftwareProjectEvalKitSource](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-eval-kit-source.md)
 - [SupSoftwareProjectNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-not-found-error.md)
 - [SupSoftwareProjectOperationFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-operation-failed-error.md)

@@ -25,6 +25,7 @@ input SupSolutionTemplateSearchFilterInput {
   q: String
   stableNames: [String!]
   statuses: [SupSolutionTemplateStatus!]
+  tags: [String!]
   title: String
   updatedByIds: [String!]
 }
@@ -63,6 +64,10 @@ Searches by stable name identifier.
 #### `statuses` · [`[SupSolutionTemplateStatus!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md) list enum
 
 Searches by solution template status.
+
+#### `tags` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
+
+Searches by tag values (case-insensitive); matches solution templates having any of the specified tags.
 
 #### `title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

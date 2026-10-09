@@ -21,6 +21,7 @@ input SupSolutionTemplateFilterInput {
   hasAIModels: Boolean
   publisherIds: [String!]
   statuses: [SupSolutionTemplateStatus!]
+  tags: [String!]
 }
 ```
 
@@ -41,3 +42,7 @@ Filter by a list of publisher (company) identifiers if specified.
 #### `statuses` · [`[SupSolutionTemplateStatus!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-solution-template-status.md) list enum
 
 Filter by a list of solution template statuses if specified.
+
+#### `tags` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
+
+Filter by a list of tag values (case-insensitive) if specified; matches solution templates having any of the tags.

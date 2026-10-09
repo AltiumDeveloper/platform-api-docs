@@ -32,18 +32,18 @@ type DesignDataRectangle_Preview {
 
 ### Fields
 
-#### `DesignDataRectangle_Preview.bottom` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
+#### `bottom` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The bottom edge coordinate.
 
-#### `DesignDataRectangle_Preview.left` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
+#### `left` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The left edge coordinate.
 
-#### `DesignDataRectangle_Preview.right` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
+#### `right` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The right edge coordinate.
 
-#### `DesignDataRectangle_Preview.top` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
+#### `top` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
 The top edge coordinate.

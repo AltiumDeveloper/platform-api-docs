@@ -29,6 +29,6 @@ type DesignDataConfiguration_Preview {
 
 ### Fields
 
-#### `DesignDataConfiguration_Preview.customChecks` · [`[DesignDataCustomCheckConfigurationItem_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-custom-check-configuration-item-preview.md) non-null object
+#### `customChecks` · [`[DesignDataCustomCheckConfigurationItem_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-custom-check-configuration-item-preview.md) non-null object
 
 The custom check configurations defined for the design.

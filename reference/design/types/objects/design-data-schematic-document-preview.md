@@ -31,14 +31,14 @@ type DesignDataSchematicDocument_Preview {
 
 ### Fields
 
-#### `DesignDataSchematicDocument_Preview.documentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+#### `documentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The identifier of the schematic document.
 
-#### `DesignDataSchematicDocument_Preview.fileName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+#### `fileName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The file name of the schematic document.
 
-#### `DesignDataSchematicDocument_Preview.parentDocumentIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `parentDocumentIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The identifiers of the logical parent documents, or an empty collection for a root document.

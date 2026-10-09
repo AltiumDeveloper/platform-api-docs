@@ -14,14 +14,9 @@ Represents a work-in-progress BOM (i.e., it is mutable and could change dynamica
 ### Common Data Model
 
 - [Consolidated BOM](https://w3id.org/altium/cdm/procurement/ConsolidatedBOM) — Consolidated BOM represents the aggregated bill of materials across one or more Projects or variants, combining all required Parts into a single, unified view for procurement and manufacturing.
-
   - IRI: [`https://w3id.org/altium/cdm/procurement/ConsolidatedBOM`](https://w3id.org/altium/cdm/procurement/ConsolidatedBOM)
-  - GRID: `grid:workspace:{workspace-id}:procurement:bom/{id}`
-
 - [Managed BOM](https://w3id.org/altium/cdm/procurement/ManagedBOM) — A bill of materials kept in a Workspace and worked on in the BOM Portal, where its lines are enriched with manufacturer and supplier data for review and procurement. It can be created from a design project (one of its variants or releases) or uploaded as a CSV/XLS file from any source. A Managed BOM made from a project keeps a link to that project, so it can be updated when the project changes, either in place or as a new revision; snapshots of its data at a point in time are kept as BOM releases.
-
   - IRI: [`https://w3id.org/altium/cdm/procurement/ManagedBOM`](https://w3id.org/altium/cdm/procurement/ManagedBOM)
-  - GRID: `grid:workspace:{workspace-id}:procurement:bom/{id}`
 
 ### Returned By
 

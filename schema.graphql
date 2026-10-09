@@ -11778,6 +11778,8 @@ type SupSoftwareProjectEdge {
 }
 
 type SupSoftwareProjectEvalKitProjectSource {
+  "The artifact associated with the project source."
+  artifact: SupSoftwareProjectEvalKitProjectSourceArtifact
   "The artifact version."
   artifactVersion: String
   "The URL of the config XML."
@@ -11786,11 +11788,26 @@ type SupSoftwareProjectEvalKitProjectSource {
   family: SupSoftwareProjectEvalKitProjectSourceDeviceFamily
   "The driver framework of the project source."
   framework: SupSoftwareProjectEvalKitProjectSourceFramework
+  "The project source identifier."
+  projectSourceId: String! @deprecated(reason: "Fields play a technical role for internal uses.")
   "The URL of the source."
   sourceUrl: String!
   "The type of the compatible evaluation kit project source."
   type: SupSoftwareProjectEvalKitProjectSourceType!
   "The last updated date."
+  updatedAt: DateTime!
+}
+
+type SupSoftwareProjectEvalKitProjectSourceArtifact {
+  "The download URL of the artifact."
+  downloadUrl: String!
+  "The file name of the artifact."
+  fileName: String!
+  "The size of the artifact file in bytes."
+  fileSizeInBytes: Long!
+  "The URL of the output SDM."
+  outputSdmUrl: String!
+  "The last updated date of the artifact."
   updatedAt: DateTime!
 }
 
@@ -18397,6 +18414,8 @@ input SupSolutionTemplateFilterInput {
   publisherIds: [String!]
   "Filter by a list of solution template statuses if specified."
   statuses: [SupSolutionTemplateStatus!]
+  "Filter by a list of tag values (case-insensitive) if specified; matches solution templates having any of the tags."
+  tags: [String!]
 }
 
 input SupSolutionTemplateIndexSolutionTemplateInput {
@@ -18579,6 +18598,8 @@ input SupSolutionTemplateSearchFilterInput {
   stableNames: [String!]
   "Searches by solution template status."
   statuses: [SupSolutionTemplateStatus!]
+  "Searches by tag values (case-insensitive); matches solution templates having any of the specified tags."
+  tags: [String!]
   "Searches by solution template title."
   title: String
   "Searches by a list of user identifiers who last modified the solution template."

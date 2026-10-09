@@ -33,21 +33,21 @@ type RuleCheckAggregateExecution_Preview {
 
 ### Fields
 
-#### `RuleCheckAggregateExecution_Preview.designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `RuleCheckAggregateExecution_Preview.executions` · [`[RuleCheckExecution_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-preview.md) non-null object
+#### `executions` · [`[RuleCheckExecution_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-preview.md) non-null object
 
-#### `RuleCheckAggregateExecution_Preview.parts` · [`[RuleCheckExecutionPart!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md) non-null object
+#### `parts` · [`[RuleCheckExecutionPart!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md) non-null object
 
-#### `RuleCheckAggregateExecution_Preview.revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `revisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `RuleCheckAggregateExecution_Preview.status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `RuleCheckAggregateExecution_Preview.violations` · [`[RuleViolation_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-preview.md) non-null object
+#### `violations` · [`[RuleViolation_Preview!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-violation-preview.md) non-null object
 
 #### Deprecated
 
-#### `RuleCheckAggregateExecution_Preview.ruleChecks` · [`[RuleCheckExecutionPart!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md) **DEPRECATED** list object
+#### `ruleChecks` · [`[RuleCheckExecutionPart!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/rule-check-execution-part.md) **DEPRECATED** list object
 
 > **Deprecated:** Use `parts` instead.
 

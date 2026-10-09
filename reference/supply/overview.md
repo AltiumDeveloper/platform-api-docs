@@ -52,7 +52,7 @@ Look up entities by identifier:
 | - | - | - |
 | Queries | 39 | 0 |
 | Mutations | 46 | 0 |
-| Objects | 123 | 0 |
+| Objects | 124 | 0 |
 | Inputs | 105 | 0 |
 | Enums | 20 | 0 |
 | Interfaces | 1 | 0 |

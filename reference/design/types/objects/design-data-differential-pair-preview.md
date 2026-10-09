@@ -30,10 +30,10 @@ type DesignDataDifferentialPair_Preview {
 
 ### Fields
 
-#### `DesignDataDifferentialPair_Preview.negativeNet` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+#### `negativeNet` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The name of the negative net in the differential pair.
 
-#### `DesignDataDifferentialPair_Preview.positiveNet` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+#### `positiveNet` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The name of the positive net in the differential pair.
