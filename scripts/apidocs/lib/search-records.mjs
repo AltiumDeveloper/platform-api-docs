@@ -56,7 +56,8 @@ function signature(field) {
 
 // Field / enum value name → anchor, read from the level-4 member headings of a generated type page. graphql-markdown
 // MDX-escapes some characters in names as numeric entities (`IN&#x005F;PROGRESS`), so headings are decoded first.
-const MEMBER_HEADING = /^#### \[<code[^>]*><b>([^<]+)<\/b><\/code>\]\(#([^)\s]+)\)/gm;
+// The `Type.` prefix before <b> is normally stripped by postprocess, but survives on names it does not recognise.
+const MEMBER_HEADING = /^#### \[<code[^>]*>[^<]*<b>([^<]+)<\/b><\/code>\]\(#([^)\s]+)\)/gm;
 const decodeEntities = (text) => text
   .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
   .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)));
