@@ -1,0 +1,46 @@
+# Search ranking eval: `npm run search:eval`. Each case is a query and the result a reader expects, which must appear
+# within the first `within` results (default 1) of the list the search box shows (members sharing a name collapsed).
+# `expect` matches a record name (or any of a list of names); `parent` narrows it to a member of that type; `kind` to a record kind.
+# Replace or extend with real queries from users as they come in.
+cases:
+  # Exact names
+  - { query: desProjectById, expect: desProjectById }
+  - { query: DesProject, expect: DesProject }
+  - { query: PageInfo, expect: PageInfo }
+  - { query: ID, expect: ID, kind: scalar }
+  - { query: desWorkspaceInfos, expect: desWorkspaceInfos }
+  - { query: requirements.project.byId, expect: requirements.project.byId }
+  - { query: DesProject.name, expect: name, parent: DesProject }
+  - { query: gloUserById, expect: gloUserById }
+  # Partial names, typed as you go
+  - { query: desLib, expect: desLibrary, within: 2 }
+  - { query: desProjectBy, expect: desProjectById, within: 2 }
+  - { query: DesComp, expect: DesComponent, within: 3 }
+  # Words of a name
+  - { query: project by id, expect: desProjectById, within: 3 }
+  - { query: create comment, expect: desCreateComment }
+  - { query: comment thread, expect: DesCommentThread, within: 3 }
+  - { query: upload project, expect: desUploadProject, within: 3 }
+  - { query: user by id, expect: gloUserById, within: 3 }
+  - { query: release by id, expect: desReleaseById, within: 3 }
+  - { query: bom by id, expect: bomBomById, within: 3 }
+  - { query: search components by mpn, expect: desSearchComponentsByMpns, within: 3 }
+  # A single concept
+  - { query: workspace, expect: DesWorkspace, within: 3 }
+  - { query: bom, expect: Bom, within: 3 }
+  - { query: datasheet, expect: DesDatasheet, within: 3 }
+  - { query: component, expect: DesComponent, within: 3 }
+  - { query: part, expect: DesPart, within: 3 }
+  - { query: token, expect: PlatformToken, within: 5 }
+  - { query: project template, expect: DesProjectTemplate, within: 3 }
+  # Members
+  - { query: releaseId, expect: releaseId, within: 1 }
+  # Synonyms and prose
+  - { query: bill of materials, expect: [Bom, DesBom, bomBoms], within: 3 }
+  - { query: procurement, expect: Procurement, kind: overview }
+  - { query: pagination, expect: Pagination, kind: guide }
+  - { query: paging, expect: Pagination, kind: guide, within: 3 }
+  - { query: error codes, expect: Shared error codes, within: 3 }
+  - { query: byId, expect: byId and byIds, within: 3 }
+  - { query: lifecycle, expect: Lifecycle, kind: guide, within: 3 }
+  - { query: authentication, expect: Authentication, kind: guide, within: 3 }

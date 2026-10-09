@@ -10,6 +10,7 @@
 /.schema/
 /docs/reference/
 /static/schema.graphql
+/static/search-index.json
 
 # Internal design notes and working logs (never published)
 /docs/superpowers/

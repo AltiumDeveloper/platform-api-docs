@@ -192,32 +192,6 @@ html {
   }
 }
 
-/* Local search button (docusaurus-search-local uses Algolia autocomplete) on the dark bar */
-.navbar .aa-DetachedSearchButton {
-  height: 2.1rem;
-  width: 13rem;
-  padding: 0 0.6rem;
-  border: 1px solid #2a303b;
-  border-radius: 6px;
-  background: #171b22;
-  color: #8b94a5;
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.85rem;
-}
-
-.navbar .aa-DetachedSearchButton:hover {
-  border-color: #3b4352;
-  background: #1d222c;
-}
-
-.navbar .aa-DetachedSearchButtonIcon {
-  color: #8b94a5;
-}
-
-.navbar .aa-DetachedSearchButtonPlaceholder {
-  color: #8b94a5;
-}
-
 /* ---------- Sidebar ---------- */
 
 .theme-doc-sidebar-container {

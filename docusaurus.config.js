@@ -60,7 +60,7 @@ const config = {
       },
     ],
     ['@docusaurus/plugin-client-redirects', { redirects }],
-    ['@cmfcmf/docusaurus-search-local', { indexBlog: false }],
+    // Search: src/theme/SearchBar over static/search-index.json (npm run search:index).
   ],
   presets: [
     [
