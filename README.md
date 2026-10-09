@@ -15,6 +15,7 @@ Altium 365 API, grouped by bounded context and cross-linked with the
    The build fails if a name is unassigned and not listed in `config/unassigned-allowlist.txt`.
 4. `graphql-to-doc` — graphql-markdown renders `docs/reference/**`.
 5. `postprocess` — writes BC overview pages, the sidebar index and redirects for old URLs.
+6. `search:index` — writes the search index `static/search-index.json` (see [Search](#search)).
 
 `npm run build` then builds the Docusaurus site, and `npm run llms` adds the LLM surface to `build/`
 (see below). The GitHub workflow runs all three nightly.
@@ -63,6 +64,31 @@ It prints token estimates (characters / 4). `npm run serve` serves the files loc
 schema slice in `build/`: it fails on JSX, `export const`, zero-width characters, Docusaurus anchors
 (`hash-link`, "Direct link to"), relative or `.mdx` links, internal absolute links that do not resolve to a file
 in `build/`, and slices that do not parse.
+
+## Search
+
+Search runs entirely in the browser; there is no search service. `npm run search:index` builds one record per
+operation, type, field, input field, enum value, guide section and bounded-context overview from the SDL,
+`.schema/pages.json` and the generated pages (member links use the anchors graphql-markdown wrote), and writes them to
+`static/search-index.json` (about 200 KB gzipped). The navbar `SearchBar` (`src/theme/SearchBar`, ⌘K / Ctrl+K or `/`)
+fetches it on first use and indexes it with MiniSearch.
+
+The build also publishes the index as `search-index.<hash>.json` (`plugins/search-index.cjs`; the SearchBar reads the
+name from `usePluginData('search-index').file`), so a deploy never pairs a cached index with new code; the dev server
+keeps using `static/search-index.json`. `npm run search:check`, run in CI after `npm run build`, fails when the hashed
+file is missing, duplicated or differs from `build/search-index.json`, when record ids, kinds or context indexes are
+invalid, or when a record URL or `#anchor` does not exist in the built HTML.
+
+Ranking is in `src/search/engine.mjs`, shared by the browser and the scripts: candidates from boosted fields (name
+above guide title above description, parent type barely), then explicit rules — exact name, then a name equal to the
+query once its context prefix (`des`, `bom`, …) is dropped, then typed-ahead prefixes; operations and types above
+members; deprecated items demoted; members sharing a name collapsed into one row.
+
+`npm run search:eval` checks the ranking against the cases in `config/search-eval.yaml` (expected result within the
+first N) and prints the MRR; `npm run search:eval -- --query "project by id"` shows the ranked list for one query. Add
+a case for every query that ranked badly before changing weights. `--index <path>` and `--cases <path>` override the
+inputs. The `search-eval` CI job runs it against the built `build/search-index.json`; a failure shows
+as a failed check but does not block deploy and, unlike `validate-guides`, opens no issue.
 
 ## Changing the grouping
 

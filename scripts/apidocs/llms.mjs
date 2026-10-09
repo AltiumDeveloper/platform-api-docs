@@ -64,6 +64,7 @@ export function readGuides(guidesDir, { routeBase = 'guides' } = {}) {
       const route = guideRoute(entry, frontMatter, routeBase);
       return {
         route,
+        path: entry.path,
         title: frontMatter.title ?? route.split('/').pop(),
         description: frontMatter.description ?? '',
         position: frontMatter.sidebar_position ?? prefixNumber(entry.file) ?? LAST,

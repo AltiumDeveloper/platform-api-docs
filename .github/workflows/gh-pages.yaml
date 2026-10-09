@@ -55,6 +55,10 @@ jobs:
       - name: Build site
         run: npm run build
 
+      # Only reads the HTML and the index the build wrote, so it runs before the LLM steps and fails fast.
+      - name: Check search index
+        run: npm run search:check
+
       - name: Generate LLM files
         run: npm run llms
 
@@ -117,6 +121,34 @@ jobs:
         run: npm run test:guides
         env:
           APIDOCS_GUIDES_SCHEMA: build/schema.graphql
+
+  # Search ranking eval (config/search-eval.yaml) against the index the build shipped. Advisory while the cases
+  # settle: a failure shows as a failed check but does not block publishing, and opens no issue.
+  search-eval:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Download site
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: build
+
+      - name: Evaluate search ranking
+        run: node scripts/apidocs/search-eval.mjs --index build/search-index.json
 
   deploy:
     needs: build
