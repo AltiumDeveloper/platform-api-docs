@@ -29,7 +29,7 @@ const config = {
   baseUrl: '/platform-api-docs/',
   organizationName: 'AltiumDeveloper',
   projectName: 'platform-api-docs',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   onBrokenLinks: brokenLinks,
   markdown: {
     hooks: { onBrokenMarkdownLinks: brokenLinks },
@@ -81,6 +81,8 @@ const config = {
         title: 'Altium 365 API - Reference Documentation',
         logo: { alt: 'Altium', src: 'img/altium-logo.svg', width: 90, height: 20 },
         items: [
+          // Sibling sites first, in the same order as the CDM site's header: each links to the other
+          { href: CDM_DOCS, label: 'Common Data Model', position: 'right' },
           { href: DEVELOPER_CENTER, label: 'Developer Center', position: 'right' },
           { href: REPO, label: 'GitHub', position: 'right' },
         ],
