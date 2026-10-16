@@ -1,4 +1,4 @@
-// Schema-aware search engine shared by the browser (src/theme/SearchBar), the index build
+// Schema-aware search engine shared by the browser (the theme's SearchBar), the index build
 // (scripts/apidocs/search-index.mjs) and the ranking eval (scripts/apidocs/search-eval.mjs).
 //
 // Records come from the schema, not from rendered HTML: one per operation, type, field, input field, enum value,
@@ -7,6 +7,14 @@
 // types beat members, deprecated items sink — so a type named like the query never drowns among the fields that share
 // a word with it.
 import MiniSearch from 'minisearch';
+import {
+  compileSynonyms, coverage as wordCoverage, dropTail, identifierWords, isStopWord, makeTokenizer, normalise, queryWords,
+  singular, synonymsOf, withinEdits,
+} from '@altium-developer/docusaurus-theme/search';
+
+// Text helpers come from the theme; the SearchBar highlights with identifierWords and isStopWord, the tests and build
+// scripts use the rest through this module.
+export { compileSynonyms, identifierWords, isStopWord, singular, synonymsOf, withinEdits };
 
 // Record kinds, in the order of the UI tabs. `group` drives the tabs; `weight` is the kind's prior.
 export const KINDS = {
@@ -29,10 +37,10 @@ export const KINDS = {
 
 export const GROUPS = [
   { id: 'all', label: 'All' },
-  { id: 'operations', label: 'Operations' },
-  { id: 'types', label: 'Types' },
-  { id: 'fields', label: 'Fields' },
-  { id: 'guides', label: 'Guides' },
+  { id: 'operations', label: 'Operations', tone: 'accent' },
+  { id: 'types', label: 'Types', tone: 'neutral' },
+  { id: 'fields', label: 'Fields', tone: 'outline' },
+  { id: 'guides', label: 'Guides', tone: 'green' },
 ];
 
 export const FLAG_EXPERIMENTAL = 1;
@@ -41,60 +49,17 @@ export const FLAG_DEPRECATED = 2;
 const MEMBER_KINDS = new Set(['field', 'inputField', 'enumValue']);
 export const isMember = (kind) => MEMBER_KINDS.has(kind);
 
-// Splits an identifier into its words: `desProjectById` → des project by id, `BOMItem_v2` → bom item v 2,
-// `design.project.byId` → design project by id.
-export function identifierWords(identifier) {
-  return identifier
-    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
-    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2')
-    .replace(/([a-zA-Z])([0-9])/g, '$1 $2')
-    .toLowerCase()
-    .split(/[^a-z0-9]+/)
-    .filter(Boolean);
-}
-
-const WORD = /[A-Za-z0-9_][\w.]*[A-Za-z0-9_]|[A-Za-z0-9]/g;
-
-// English plural → singular for name words (`comments` → comment, `entries` → entry, `addresses` → address), leaving
-// words that only look plural alone (`status`, `class`, `analysis`, `bus`).
-export function singular(word) {
-  if (word.length <= 3 || /(?:ss|us|is|ics)$/.test(word)) return word;
-  if (/ies$/.test(word) && word.length > 4) return `${word.slice(0, -3)}y`;
-  if (/(?:ches|shes|sses|xes|zes)$/.test(word)) return word.slice(0, -2);
-  if (/s$/.test(word)) return word.slice(0, -1);
-  return word;
-}
-
 // Every word becomes its lower-cased self (identifiers stay whole, `desProjectById` → `desprojectbyid`) plus its parts
 // and their singulars, so a query matches either the whole name or any word in it, in either number. Used for both
 // indexing and querying.
 // Names also get their suffixes at word boundaries (`desComponentType` → `componenttype`): type and operation names
 // start with a context prefix (`Des`, `bom`, `sup`, …) that readers rarely type, so without them a prefix query
 // ("componentTy") would only ever complete field names, which have no prefix.
-export function tokenize(text, fieldName) {
-  const tokens = [];
-  for (const word of String(text ?? '').match(WORD) ?? []) {
-    const whole = word.toLowerCase();
-    tokens.push(whole);
-    const parts = identifierWords(word);
-    if (parts.length > 1 || parts[0] !== whole) tokens.push(...parts);
-    for (const part of parts) {
-      const one = singular(part);
-      if (one !== part) tokens.push(one);
-    }
-    if (fieldName === 'name') for (let k = 1; k < parts.length - 1; k += 1) tokens.push(parts.slice(k).join(''));
-  }
-  return tokens;
-}
-
-const STOP_WORDS = new Set(['a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'can', 'do', 'does', 'for', 'from', 'how',
-  'i', 'in', 'is', 'it', 'my', 'of', 'on', 'or', 'that', 'the', 'this', 'to', 'what', 'which', 'with']);
-
-export const isStopWord = (word) => STOP_WORDS.has(word);
+export const tokenize = makeTokenizer({ suffixFields: ['name'] });
 
 // Stop words are dropped from prose only: in names, `by` (`desProjectById`) and `of` are meaningful. Queries drop
 // them only when they are phrases ("how to page a connection"), not names.
-const processTerm = (term, fieldName) => (fieldName === 'text' && STOP_WORDS.has(term) ? null : term);
+const processTerm = (term, fieldName) => (fieldName === 'text' && isStopWord(term) ? null : term);
 
 const FIELDS = ['name', 'parent', 'title', 'text'];
 // The parent type only qualifies a member ("DesProject name"): weighted high, every field of DesComponent would
@@ -123,11 +88,9 @@ export function createIndex(records) {
   return index;
 }
 
-const normalise = (text) => String(text ?? '').toLowerCase().replace(/[^a-z0-9]/g, '');
-
 // How strongly the record's name answers the query as a whole. Members get smaller bonuses: hundreds of types have an
 // `id` or a `name`, and none of those should outrank the type called that.
-function nameBonus(record, query, prefixes, allowTypos) {
+function nameBonus(record, query, prefixes, allowTypos, allowCorePrefix = false) {
   const q = normalise(query);
   if (!q) return 1;
   const member = isMember(record.k);
@@ -152,6 +115,11 @@ function nameBonus(record, query, prefixes, allowTypos) {
   // DesComponentParameter).
   if (q.length >= 3 && name.startsWith(q)) return member ? 1.4 : 1.5 + 4.5 * (q.length / name.length);
   if (qualified && q.length >= 3 && qualified.startsWith(q)) return 3;
+  // The same without the context prefix readers rarely type, when no type or operation is named like the query:
+  // `supplier` → DesSupplierPart, where a field named `supplier` would otherwise outrank every type. With such a name
+  // (`project` → DesProject) the longer DesProject* types would crowd it out.
+  const coreName = core.join('');
+  if (allowCorePrefix && !member && q.length >= 3 && coreName.startsWith(q)) return 1.5 + 4.5 * (q.length / coreName.length);
   // A mistyped name (`desProjcetById`, `workspce`): one edit away, or two for long names. Only when nothing matches the
   // query exactly, or `releaseId` (a field) would lose to `desReleaseById` (two edits away).
   if (allowTypos && q.length >= 5 && !/\s/.test(query.trim())) {
@@ -159,28 +127,6 @@ function nameBonus(record, query, prefixes, allowTypos) {
     if (withinEdits(q, name, allowed) || withinEdits(q, core.join(''), allowed)) return member ? 1.5 : 4;
   }
   return 1;
-}
-
-// Damerau-Levenshtein distance (adjacent transpositions count as one edit) ≤ max, with an early exit.
-export function withinEdits(a, b, max) {
-  if (Math.abs(a.length - b.length) > max) return false;
-  let prevPrev = null;
-  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
-  for (let i = 1; i <= a.length; i += 1) {
-    const row = [i];
-    let best = i;
-    for (let j = 1; j <= b.length; j += 1) {
-      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
-      let value = Math.min(prev[j] + 1, row[j - 1] + 1, prev[j - 1] + cost);
-      if (prevPrev && i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) value = Math.min(value, prevPrev[j - 2] + 1);
-      row.push(value);
-      if (value < best) best = value;
-    }
-    if (best > max) return false;
-    prevPrev = prev;
-    prev = row;
-  }
-  return prev[b.length] <= max;
 }
 
 // Share of the name's words that the query accounts for: for "project by id", `desProjectById` (3 of 4) is a better
@@ -209,23 +155,12 @@ function nameFit(record, queryParts, prefixes) {
   return 0.35 + 0.65 * fit;
 }
 
-// Phrasings that never appear in names (config/search.yaml `synonyms`, compiled by loadIndex): `[pattern, words]`.
-export const compileSynonyms = (synonyms = []) => synonyms.map(({ match, add }) => [new RegExp(match, 'i'), String(add)]);
-
-// → the identifier words the query stands for ("bill of materials" → ['bom']); empty when none applies.
-export function synonymsOf(query, synonyms = []) {
-  const lower = query.toLowerCase();
-  return synonyms.filter(([pattern, word]) => pattern.test(lower) && !lower.includes(word)).map(([, word]) => word);
-}
-
 // Share of the query's words that the record actually contains (in any field). BM25 already rewards it, but a single
 // rare word in a long description can still beat a name that contains two of three words; squaring keeps partial
 // matches below complete ones.
 function coverage(record, words) {
   if (words.length < 2) return 1;
-  const haystack = `${normalise(record.n)} ${normalise(record.p)} ${(record.t ?? '').toLowerCase()} ${(record.d ?? '').toLowerCase()}`;
-  const hits = words.filter((word) => haystack.includes(word)).length;
-  return (hits / words.length) ** 2;
+  return wordCoverage(`${normalise(record.n)} ${normalise(record.p)} ${(record.t ?? '').toLowerCase()} ${(record.d ?? '').toLowerCase()}`, words);
 }
 
 /**
@@ -243,9 +178,7 @@ export function search(index, records, query, options = {}) {
   } = options;
   const trimmed = query.trim();
   if (!trimmed) return [];
-  let words = trimmed.toLowerCase().split(/\s+/).map(normalise).filter(Boolean);
-  const phrase = words.length > 2;
-  if (phrase) words = words.filter((word) => !STOP_WORDS.has(word));
+  const { words, phrase } = queryWords(trimmed);
   if (!words.length) return [];
   const synonyms = synonymsOf(trimmed, synonymTable);
   const text = [phrase ? words.join(' ') : trimmed, ...synonyms].join(' ');
@@ -268,6 +201,13 @@ export function search(index, records, query, options = {}) {
   const candidates = hits.slice(0, 600);
   const q = normalise(trimmed);
   const allowTypos = !candidates.some(({ id }) => normalise(records[id].n) === q || coreWords(records[id], prefixes).join('') === q);
+  const qSingular = identifierWords(trimmed).map(singular).join('');
+  const allowCorePrefix = !candidates.some(({ id }) => {
+    const record = records[id];
+    if (isMember(record.k)) return false;
+    const core = coreWords(record, prefixes);
+    return normalise(record.n) === q || core.join('') === q || core.map(singular).join('') === qSingular;
+  });
   // `@deprecated` names a directive, not the guide about deprecation.
   const directiveQuery = trimmed.startsWith('@');
   const scored = candidates.map((hit) => {
@@ -276,7 +216,7 @@ export function search(index, records, query, options = {}) {
     score *= KINDS[record.k]?.weight ?? 1;
     if (directiveQuery && record.k === 'directive') score *= 3;
     // A synonym stands for a name as much as the query does ("reference design" → `ref design` → SupRefDesign).
-    const bonus = Math.max(nameBonus(record, trimmed, prefixes, allowTypos), ...synonyms.map((synonym) => nameBonus(record, synonym, prefixes, false)));
+    const bonus = Math.max(nameBonus(record, trimmed, prefixes, allowTypos, allowCorePrefix), ...synonyms.map((synonym) => nameBonus(record, synonym, prefixes, false)));
     score *= bonus;
     if (bonus === 1) score *= nameFit(record, queryParts, prefixes);
     // A record matched through a synonym answers the phrase as well as one containing its words.
@@ -289,12 +229,9 @@ export function search(index, records, query, options = {}) {
   });
   scored.sort((a, b) => b.score - a.score || a.record.n.length - b.record.n.length);
   // The long tail of a broad OR query (one fuzzy word out of three in a description) is noise, and it inflates the
-  // result counts: keep what scores within MIN_RELATIVE_SCORE of the best.
-  const floor = (scored[0]?.score ?? 0) * MIN_RELATIVE_SCORE;
-  return scored.filter((result) => result.score >= floor).slice(0, limit);
+  // result counts: dropTail keeps what scores within 2% of the best.
+  return dropTail(scored).slice(0, limit);
 }
-
-const MIN_RELATIVE_SCORE = 0.02;
 
 // Members sharing a name (`id` on 400 types) collapse into their best-scored record; the others are kept in `others`
 // (in rank order) for the UI to expand, and counted in `more`.
@@ -320,6 +257,10 @@ export function collapseMembers(results, { keepAll = false } = {}) {
   }
   return out;
 }
+
+// The theme SearchBar folds results with this before counting and showing them: the Fields tab lists every member,
+// the other tabs collapse members that share a name.
+export const present = (results, group) => collapseMembers(results, { keepAll: group === 'fields' });
 
 export function loadIndex(payload) {
   const records = payload.records;

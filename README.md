@@ -70,11 +70,12 @@ in `build/`, and slices that do not parse.
 Search runs entirely in the browser; there is no search service. `npm run search:index` builds one record per
 operation, type, field, input field, enum value, guide section and bounded-context overview from the SDL,
 `.schema/pages.json` and the generated pages (member links use the anchors graphql-markdown wrote), and writes them to
-`static/search-index.json` (about 200 KB gzipped). The navbar `SearchBar` (`src/theme/SearchBar`, ⌘K / Ctrl+K or `/`)
-fetches it on first use and indexes it with MiniSearch.
+`static/search-index.json` (about 200 KB gzipped). The navbar `SearchBar` (from the shared theme, ⌘K / Ctrl+K or `/`)
+fetches it on first use and indexes it with MiniSearch, ranked by `src/search/engine.mjs`. The API-specific result rows
+and filters are swizzled in `src/theme/SearchResult` and `src/theme/SearchFilters`.
 
-The build also publishes the index as `search-index.<hash>.json` (`plugins/search-index.cjs`; the SearchBar reads the
-name from `usePluginData('search-index').file`), so a deploy never pairs a cached index with new code; the dev server
+The build also publishes the index as `search-index.<hash>.json` (done by the theme, which passes the name to the
+SearchBar as global data), so a deploy never pairs a cached index with new code; the dev server
 keeps using `static/search-index.json`. `npm run search:check`, run in CI after `npm run build`, fails when the hashed
 file is missing, duplicated or differs from `build/search-index.json`, when record ids, kinds or context indexes are
 invalid, or when a record URL or `#anchor` does not exist in the built HTML.

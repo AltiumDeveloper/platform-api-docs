@@ -4,9 +4,9 @@ import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { checkIndex, htmlIds, pageTarget, runSearchCheck } from '../scripts/apidocs/lib/search-check.mjs';
-import searchIndexPlugin from '../plugins/search-index.cjs';
+import altiumTheme from '@altium-developer/docusaurus-theme';
 
-const { hashedName } = searchIndexPlugin;
+const { hashedName } = altiumTheme;
 
 const payload = (records, contexts = [{ id: 'design', title: 'Design', slug: 'design' }]) => ({ version: 1, contexts, prefixes: [], records });
 const PAGES = {
@@ -89,25 +89,4 @@ test('runSearchCheck fails on a missing, duplicated, stale or mismatched hashed 
     [`search-index.0000000000.json does not match its content hash (${hashedName(json)})`]);
   assert.match(messages({ [hashedName(json)]: json, 'search-index.json': `${json} ` })[0], /differs from/);
   assert.match(messages({ [hashedName(json)]: json })[0], /search-index\.json missing/);
-});
-
-test('search-index plugin hashes the static index into global data and writes it on postBuild', async () => {
-  const json = JSON.stringify(good);
-  const site = makeBuild({ 'static/search-index.json': json });
-  const plugin = searchIndexPlugin({ siteDir: site });
-  assert.equal(plugin.name, 'search-index');
-  const content = await plugin.loadContent();
-  let data;
-  await plugin.contentLoaded({ content, actions: { setGlobalData: (value) => { data = value; } } });
-  assert.deepEqual(data, { file: hashedName(json) });
-  assert.match(data.file, /^search-index\.[0-9a-f]{10}\.json$/);
-  const outDir = makeBuild({});
-  await plugin.postBuild({ content, outDir });
-  assert.deepEqual(runSearchCheck({ buildDir: outDir }).problems.slice(0, 1), [{ record: null, message: `${join(outDir, 'search-index.json')} missing` }]);
-
-  const empty = searchIndexPlugin({ siteDir: makeBuild({}) });
-  const none = await empty.loadContent();
-  await empty.contentLoaded({ content: none, actions: { setGlobalData: (value) => { data = value; } } });
-  assert.deepEqual(data, { file: null });
-  await empty.postBuild({ content: none, outDir: makeBuild({}) });
 });

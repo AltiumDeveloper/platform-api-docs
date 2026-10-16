@@ -1,5 +1,5 @@
 // Integrity of the search index the build shipped (scripts/apidocs/search-check.mjs): the content-hashed file named by
-// plugins/search-index.cjs exists once, matches its hash and the plain build/search-index.json byte for byte, and
+// @altium-developer/docusaurus-theme exists once, matches its hash and the plain build/search-index.json byte for byte, and
 // every record points at a built page and an existing anchor.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { KINDS } from '../../../src/search/engine.mjs';
 
 const require = createRequire(import.meta.url);
-const { hashedName } = require('../../../plugins/search-index.cjs');
+const { hashedName } = require('@altium-developer/docusaurus-theme');
 
 const HASHED = /^search-index\.[0-9a-f]+\.json$/;
 const ID_ATTR = /\sid="([^"]*)"/g;

@@ -3,6 +3,7 @@ const { existsSync, readFileSync } = require('node:fs');
 const { pathToFileURL } = require('node:url');
 const { GlobExcludeDefault } = require('@docusaurus/utils');
 const { themes } = require('prism-react-renderer');
+const altiumTheme = require('@altium-developer/docusaurus-theme');
 const { buildDecorators } = require('./scripts/apidocs/decorators.cjs');
 const { sidebarItemsGenerator } = require('./scripts/apidocs/sidebar.cjs');
 
@@ -30,6 +31,7 @@ const config = {
   organizationName: 'AltiumDeveloper',
   projectName: 'platform-api-docs',
   favicon: 'img/favicon.svg',
+  staticDirectories: ['static', altiumTheme.staticDir],
   onBrokenLinks: brokenLinks,
   markdown: {
     hooks: { onBrokenMarkdownLinks: brokenLinks },
@@ -60,9 +62,29 @@ const config = {
       },
     ],
     ['@docusaurus/plugin-client-redirects', { redirects }],
-    // Search: src/theme/SearchBar over static/search-index.json (npm run search:index), also published under a
-    // content-hashed name (usePluginData('search-index').file).
-    './plugins/search-index.cjs',
+  ],
+  // Shared look of the Altium developer sites (CSS, fonts, logo, Markdown-twin links) and the search UI over
+  // static/search-index.json (npm run search:index), ranked by src/search/engine.mjs. The API-specific result rows and
+  // filters are swizzled: src/theme/SearchResult and src/theme/SearchFilters.
+  themes: [
+    [
+      '@altium-developer/docusaurus-theme',
+      {
+        search: {
+          engine: 'src/search/engine.mjs',
+          recentKey: 'api-search-recent',
+          label: 'Search the API reference',
+          placeholder: 'Search operations, types, fields and guides',
+          intro: 'Type a name or a few words. Exact names come first, then operations and types, then fields.',
+          examples: [
+            { query: 'desProjectById', text: 'an exact operation or type name' },
+            { query: 'project by id', text: 'the words of a name, in any case' },
+            { query: 'DesProject.name', text: 'a field of a type' },
+            { query: 'pagination', text: 'guides and bounded contexts' },
+          ],
+        },
+      },
+    ],
   ],
   presets: [
     [
