@@ -159,7 +159,7 @@ contexts:
     cdm: [procurement]
     query: ['^bom', '^procurement']
     mutation: ['^bom', '^procurement']
-    type: ['^Bom', '^Procurement']
+    type: ['^Bom', '^Procurement', '^CostedBoms(Connection|Edge)$']
   - id: supply
     title: Supply
     description: Parts, offers, part families, reference designs, evaluation kits, software projects and solution templates.
