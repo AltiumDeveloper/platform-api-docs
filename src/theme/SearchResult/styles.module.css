@@ -1,0 +1,141 @@
+/* The API-specific parts of a search result and the search filters; the rest is the theme's SearchBar styles. */
+
+.select {
+  max-width: 13rem;
+  padding: 0.15rem 0.35rem;
+  border: 1px solid var(--alt-border-strong);
+  border-radius: 6px;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--ifm-color-content-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* The name keeps its width; the signature gives way first. */
+.name {
+  flex: 0 0 auto;
+  max-width: 75%;
+  overflow: hidden;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.parent {
+  color: var(--ifm-color-content-secondary);
+  font-weight: 450;
+}
+
+.signature {
+  flex: 0 1 auto;
+  min-width: 2rem;
+  overflow: hidden;
+  color: var(--ifm-color-content-secondary);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.exp,
+.deprecated {
+  flex: none;
+  padding: 0 0.35rem;
+  border-radius: 4px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+}
+
+.exp {
+  background: var(--alt-warn-bg);
+  color: var(--alt-warn-fg);
+}
+
+.deprecated {
+  border: 1px solid var(--alt-border-strong);
+  color: var(--ifm-color-content-secondary);
+  text-decoration: line-through;
+}
+
+.context {
+  flex: none;
+  font-size: 0.68rem;
+}
+
+.reason {
+  margin: 0.1rem 0 0 5.1rem;
+  color: var(--alt-warn-fg);
+  font-size: 0.78rem;
+}
+
+.othersLine {
+  margin: 0.15rem 0 0 5.1rem;
+  font-size: 0.78rem;
+}
+
+.othersToggle {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ifm-color-content-secondary);
+  font: inherit;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.othersToggle:hover {
+  color: var(--ifm-color-primary);
+}
+
+.others {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.other {
+  padding: 0 0.35rem;
+  border: 1px solid var(--alt-border-strong);
+  border-radius: 4px;
+  color: var(--ifm-font-color-base);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.74rem;
+}
+
+.other:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.more {
+  font-style: italic;
+}
+
+
+@media (max-width: 640px) {
+  .reason,
+  .othersLine {
+    margin-left: 0;
+  }
+
+  .signature {
+    display: none;
+  }
+
+  .name {
+    max-width: 100%;
+  }
+}

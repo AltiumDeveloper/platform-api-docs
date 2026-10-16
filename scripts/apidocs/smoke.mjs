@@ -62,7 +62,7 @@ function runSmoke() {
   assert.ok(existsSync('static/search-index.json'), 'npm run apidocs must write static/search-index.json');
   run('npm run build');
 
-  // search:check: hashed index (plugins/search-index.cjs) present and equal to the plain copy, every record resolves.
+  // search:check: hashed index (written by the theme) present and equal to the plain copy, every record resolves.
   const search = runSearchCheck({ buildDir: 'build' });
   assert.deepEqual(search.problems, [], 'search:check problems');
   assert.ok(search.records > 0 && search.anchors > 0);
