@@ -37,11 +37,11 @@ Assembly variants connected to the insight.
 
 #### `bomReleases` · [`[DesWorkspaceInsInsightBomReleaseLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-bom-release-link.md) non-null object
 
-Released BOMs connected to the insight.
+Released managed BOMs connected to the insight.
 
 #### `boms` · [`[DesWorkspaceInsInsightBomLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-bom-link.md) non-null object
 
-Work-in-progress BOMs connected to the insight.
+Managed BOMs connected to the insight.
 
 #### `componentRevisions` · [`[DesWorkspaceInsInsightComponentRevisionLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-component-revision-link.md) non-null object
 

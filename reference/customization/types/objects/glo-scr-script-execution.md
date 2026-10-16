@@ -16,7 +16,7 @@ Represents the execution of a script with status and result information.
 - [Script Execution](https://w3id.org/altium/cdm/customization/ScriptExecution)
 
   - IRI: [`https://w3id.org/altium/cdm/customization/ScriptExecution`](https://w3id.org/altium/cdm/customization/ScriptExecution)
-  - GRID: `grid:workspace:{workspace-id}:scripts:script-execution/{id}`
+  - GRID: `grid:workspace:{workspace-id}:scripts:execution/{id}`
 
 ### Returned By
 

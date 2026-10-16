@@ -27,7 +27,7 @@ input DesWorkspaceInsProjectSettingsInput {
 
 #### `excludedEntities` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Entities that should be excluded from insight calculations.
+Entity identifiers that should be excluded from insight calculations.
 
 #### `excludeNonActiveProjects` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 

@@ -27,4 +27,4 @@ bomBomById(
 
 #### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-ID of the BOM.
+Identifier of the BOM.

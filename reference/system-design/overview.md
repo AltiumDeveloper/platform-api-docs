@@ -15,7 +15,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 ## Common Data Model
 
-- [System Design](https://altiumdeveloper.github.io/cdm/subsets/system/) — Models the Electronic System Design (ESD) document of a Renesas 365 solution: a system-level block diagram of functional blocks with their key (hardware) and software components, ports and parameters, the connections between blocks, and entries for the hardware and software projects that implement the system. It corresponds to Electronic System Design in a Renesas 365 Workspace.
+- [System Design](https://altiumdeveloper.github.io/cdm/subsets/system/) — Models the Electronic System Design (ESD) document of a Renesas 365 solution: a system-level block diagram of functional blocks with their key (hardware) and software components, ports and parameters, the connections between blocks, and entries for the hardware and software projects that implement the system. It corresponds to Electronic System Design in a Renesas 365 Workspace; a Global ESD has the same content outside of any Workspace.
 - [System Design - System Data Model](https://altiumdeveloper.github.io/cdm/subsets/system-sdm/) — Models the System Data Model (SDM) of a Renesas 365 solution and its versions, each combining a functional model with device, hardware and software models, plus metadata recording who created a version and with which application, and client-specific metadata (e.g. for ESD, Altium Designer or e² studio). The ESD document and e² studio push changes to and pull changes from the SDM, and Altium Designer pulls it into hardware projects.
 
 ## Entities

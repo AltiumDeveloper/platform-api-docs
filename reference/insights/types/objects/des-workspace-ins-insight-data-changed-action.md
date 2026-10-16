@@ -32,7 +32,7 @@ Updated full data payload for the insight.
 
 #### `newShortData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar
 
-Updated summary data payload for the insight.
+Updated short data payload for the insight.
 
 #### `oldData` · [`JSON`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) scalar
 
@@ -40,4 +40,4 @@ Previous full data payload, if available.
 
 #### `oldShortData` · [`JSON`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) scalar
 
-Previous summary data payload, if available.
+Previous short data payload, if available.

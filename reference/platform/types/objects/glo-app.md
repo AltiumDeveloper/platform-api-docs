@@ -16,7 +16,7 @@ Represents an Altium application.
 - [Application](https://w3id.org/altium/cdm/platform/Application)
 
   - IRI: [`https://w3id.org/altium/cdm/platform/Application`](https://w3id.org/altium/cdm/platform/Application)
-  - GRID: `grid:global::platform:application/{id}`
+  - GRID: `grid:global::platform:app/{id}`
 
 ### Returned By
 

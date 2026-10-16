@@ -39,4 +39,4 @@ Recipient configuration for insight notifications.
 
 #### `unsubscribedUserIds` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Users who should not receive insight notifications.
+User identifiers who should not receive insight notifications.

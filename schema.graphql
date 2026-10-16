@@ -8,7 +8,7 @@ schema {
 interface Bom {
   "Effective health checks applicable to this BOM."
   healthChecks: [BomHealthCheck!]!
-  "ID of the BOM."
+  "Identifier of the BOM."
   id: ID!
   """
   List of incomplete health checks.
@@ -52,7 +52,7 @@ interface BomItemElement {
   componentReference: BomComponentReference
   "Description of the element."
   description: String!
-  "Unique ID of the element."
+  "Unique identifier of the element."
   elementId: String!
   "Issues associated with the element."
   issues: [BomIssue!]!
@@ -195,16 +195,19 @@ type BomBomsEdge {
   node: BomWip!
 }
 
+"Result of changing the lifecycle state of a BOM release."
 type BomChangeBomReleaseLifecycleStatePayload {
+  "The BOM release with its updated lifecycle state, if the mutation succeeded."
   bomRelease: BomRelease
+  "Errors that occurred while executing the mutation, if any."
   errors: [BomError!]!
 }
 
 "A reference to a component."
 type BomComponentReference {
-  "ID of the referenced component."
+  "Identifier of the referenced component."
   componentId: String!
-  "ID of the referenced component revision."
+  "Identifier of the referenced component revision."
   componentRevisionId: String!
 }
 
@@ -216,8 +219,11 @@ type BomCountry {
   name: String!
 }
 
+"Result of creating a new BOM."
 type BomCreateBomPayload {
+  "The created BOM, if the mutation succeeded."
   bom: BomWip
+  "Errors that occurred while executing the mutation, if any."
   errors: [BomError!]!
 }
 
@@ -231,23 +237,23 @@ type BomCurrency {
 
 "Describes the source design release used to create the current BOM."
 type BomDesignReleaseSource implements BomSource {
-  "ID of the assembly used to create the BOM."
+  "Identifier of the assembly used to create the BOM."
   assemblyRevisionId: String!
-  "ID of the design."
+  "Identifier of the design."
   designId: String!
   "Quantity of the source (i.e., how many times the source is included into this BOM)."
   quantity: Int!
-  "ID of the source revision used to create the BOM."
+  "Identifier of the source revision used to create the BOM."
   sourceRevisionId: String!
 }
 
 "Describes the source design revision used to create the current BOM."
 type BomDesignRevisionSource implements BomSource {
-  "ID of the design."
+  "Identifier of the design."
   designId: String!
   "Quantity of the source (i.e., how many times the source is included into this BOM)."
   quantity: Int!
-  "ID of the source revision used to create the BOM."
+  "Identifier of the source revision used to create the BOM."
   sourceRevisionId: String!
   "Name of the variant used to create the BOM."
   variantName: String
@@ -255,7 +261,7 @@ type BomDesignRevisionSource implements BomSource {
 
 "Describes the source design used to create the current BOM."
 type BomDesignSource implements BomSource {
-  "ID of the design."
+  "Identifier of the design."
   designId: String!
   "Quantity of the source (i.e., how many times the source is included into this BOM)."
   quantity: Int!
@@ -263,11 +269,15 @@ type BomDesignSource implements BomSource {
   variantName: String!
 }
 
+"Result of exporting a BOM to a file."
 type BomExportBomPayload {
+  "URL to download the exported BOM file, if the export succeeded."
   downloadUrl: URL
 }
 
+"Result of exporting a BOM release to a file."
 type BomExportBomReleasePayload {
+  "URL to download the exported BOM release file, if the export succeeded."
   downloadUrl: URL
 }
 
@@ -290,7 +300,7 @@ type BomHealthCheck {
   E.g., the group might be named *RoHS status*, and the descriptions of the health checks in the group might be *No*, *Yes with Exemption*, and *Unknown*.
   """
   group: String
-  "Health check ID."
+  "Health check identifier."
   healthCheckId: String!
   "Recommended action to address the issue produced by the health check (e.g., *Consider using a different Manufacturer Part Number*)."
   howToFix: String
@@ -304,7 +314,7 @@ type BomHealthCheck {
 
 "Information about the health check category (e.g., *Supply Chain*, *Manufacturer Lifecycles*)."
 type BomHealthCheckCategory {
-  "ID of the category."
+  "Identifier of the category."
   categoryId: String!
   "Name of the category."
   name: String!
@@ -314,7 +324,7 @@ type BomHealthCheckCategory {
 type BomHealthCheckProvider {
   "Name of the provider."
   name: String!
-  "ID of the provider."
+  "Identifier of the provider."
   providerId: String!
 }
 
@@ -332,7 +342,7 @@ type BomIssue {
   description: String!
   "Health check definition."
   healthCheck: BomHealthCheck!
-  "Health check definition ID."
+  "Health check definition identifier."
   healthcheckDefinitionId: String! @deprecated(reason: "Use healthCheck.healthCheckId instead.")
   "Recommended action to address the issue produced by the health check (e.g., *Consider using a different Manufacturer Part Number*)."
   howToFix: String
@@ -358,7 +368,7 @@ type BomItem {
   hiddenElements: [BomItemElement!]!
   "Issues associated with the item."
   issues: [BomIssue!]!
-  "ID of the item. Items preserve their ID across releases of the BOM."
+  "Identifier of the item. Items preserve their identifier across releases of the BOM."
   itemId: String!
   "The primary element chosen for this item."
   primaryElement: BomItemElement
@@ -376,7 +386,7 @@ type BomItemAlternate implements BomItemElement {
   componentReference: BomComponentReference
   "Description of the element."
   description: String!
-  "Unique ID of the element."
+  "Unique identifier of the element."
   elementId: String!
   "Issues associated with the element."
   issues: [BomIssue!]!
@@ -396,7 +406,7 @@ type BomItemAlternate implements BomItemElement {
 
 "Describes a BOM item element's attribute."
 type BomItemElementAttribute {
-  "ID of the attribute."
+  "Identifier of the attribute."
   attributeId: String!
   "Name of the attribute."
   name: String!
@@ -464,7 +474,7 @@ type BomItemSubstitute implements BomItemElement {
   componentReference: BomComponentReference
   "Description of the element."
   description: String!
-  "Unique ID of the element."
+  "Unique identifier of the element."
   elementId: String!
   "Issues associated with the element."
   issues: [BomIssue!]!
@@ -504,13 +514,13 @@ type BomItemsEdge {
 
 "A reference to an offer in Octopart."
 type BomOctopartOfferReference {
-  "ID of the offer in Octopart."
+  "Identifier of the offer in Octopart."
   offerId: String!
 }
 
 "A reference to a part in Octopart."
 type BomOctopartPartReference {
-  "ID of the part in Octopart."
+  "Identifier of the part in Octopart."
   partId: String!
 }
 
@@ -554,21 +564,21 @@ type BomProduction {
 
 "Describes the source project release used to create the current BOM."
 type BomProjectReleaseSource implements BomSource {
-  "ID of the design."
+  "Identifier of the design."
   designId: String!
   "Quantity of the source (i.e., how many times the source is included into this BOM)."
   quantity: Int!
-  "ID of the source revision used to create the BOM."
+  "Identifier of the source revision used to create the BOM."
   sourceRevisionId: String!
 }
 
 "Represents a release of the BOM (i.e., a snapshot of a work-in-progress BOM)."
 type BomRelease implements Bom {
-  "ID of the BOM."
+  "Identifier of the BOM."
   bomId: String!
   "Effective health checks applicable to this BOM."
   healthChecks: [BomHealthCheck!]!
-  "ID of the BOM."
+  "Identifier of the BOM."
   id: ID!
   """
   List of incomplete health checks.
@@ -591,17 +601,17 @@ type BomRelease implements Bom {
     "Returns the last _n_ elements from the list."
     last: Int
   ): BomItemsConnection
-  "ID of the lifecycle definition used for this release."
+  "Identifier of the lifecycle definition used for this release."
   lifeCycleDefinitionId: String!
-  "ID of the lifecycle state the release is in."
+  "Identifier of the lifecycle state the release is in."
   lifeCycleStateId: String!
   "Name of the BOM."
   name: String!
   "Timestamp of the release creation."
   releasedAt: DateTime!
-  "Human-readable ID of the release."
+  "Human-readable identifier of the release."
   releaseHrid: String!
-  "ID of the release."
+  "Identifier of the release."
   releaseId: String!
   "Release notes specified for the release."
   releaseNotes: String!
@@ -681,23 +691,34 @@ type BomSettings {
 
 "Describes the source BOM snapshot used to create the current BOM."
 type BomSnapshotSource implements BomSource {
-  "ID of the BOM."
+  "Identifier of the BOM."
   bomId: String!
   "Quantity of the source (i.e., how many times the source is included into this BOM)."
   quantity: Int!
-  "ID of the BOM snapshot."
+  "Identifier of the BOM snapshot."
   snapshotId: String!
 }
 
 "Represents a work-in-progress BOM (i.e., it is mutable and could change dynamically)."
 type BomWip implements Bom {
-  "ID of the BOM."
+  "Identifier of the BOM."
   bomId: String!
+  "A collection of all costed BOMs created from this BOM."
+  costedBoms(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+  ): CostedBomsConnection
   "Timestamp of the BOM creation."
   createdAt: DateTime!
   "Effective health checks applicable to this BOM."
   healthChecks: [BomHealthCheck!]!
-  "ID of the BOM."
+  "Identifier of the BOM."
   id: ID!
   """
   List of incomplete health checks.
@@ -739,6 +760,26 @@ type BomWip implements Bom {
   sources: [BomSource!]!
   "Timestamp of the last change in the BOM."
   updatedAt: DateTime!
+}
+
+"A connection to a list of items."
+type CostedBomsConnection {
+  "A list of edges."
+  edges: [CostedBomsEdge!]
+  "A flattened list of the nodes."
+  nodes: [BomWip!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type CostedBomsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: BomWip!
 }
 
 "Payload associated with adding part choices for a component."
@@ -795,6 +836,10 @@ type DesAnnotationDocumentBinding {
 
 type DesAnnotationManagedBomRowBinding {
   rowId: String!
+}
+
+type DesAnnotationManagedPartBinding {
+  partId: String!
 }
 
 type DesAnnotationReleaseBinding {
@@ -3474,14 +3519,20 @@ type DesPartTag {
   tagId: String!
 }
 
-"Represents the result of the upload components operation."
+"Represents the result of one record of the upload components operation."
 type DesPartUploadComponentOperationResult {
-  "The error message if the operation failed."
-  errorMessage: String
-  "The identifiers of the part."
+  "The result of the component processing: *Created*, *AlreadyExists*, *Failed* or *Skipped*."
+  componentStatus: String!
+  "The validation or technical reason the record failed or was skipped."
+  errorDetails: String
+  "A human readable summary of the component and part choice processing."
+  message: String!
+  "The result of the part choice processing: *Created*, *AlreadyExists*, *Failed* or *Skipped*."
+  partChoiceStatus: String!
+  "The identifiers of the record: its IPN, MPN and manufacturer name."
   partId: DesPartManufacturerPartIdWithIpn!
-  "The status of the operation: *Created*, *Updated*, *AlreadyExists*, *Duplicated* or *Failed*."
-  status: String!
+  "The revision of the created or existing component. Returned only when the component was resolved."
+  revisionId: String
 }
 
 "Column mapping for components upload. Only MPN, Manufacturer and IPN columns are supported."
@@ -3510,13 +3561,15 @@ type DesPartUploadCustomPartFilePayload {
   url: String
 }
 
-"Represents the result of a library part upload operation."
+"Represents the result of one record of a library part upload operation."
 type DesPartUploadLibraryPartOperationResult {
-  "The error message if the operation failed."
-  errorMessage: String
-  "The identifiers of the part."
+  "The validation or technical reason the record failed."
+  errorDetails: String
+  "A human readable summary of the part processing."
+  message: String!
+  "The identifiers of the record: its MPN and manufacturer name."
   partId: DesPartManufacturerPartId!
-  "The status of the operation: *Created*, *Updated*, *Duplicated* or *Failed*."
+  "The result of the part processing: *Created*, *Updated*, *Failed* or *Skipped*."
   status: String!
 }
 
@@ -3556,6 +3609,8 @@ type DesPartUploadOperationPayload {
   componentsColumnMapping: DesPartUploadComponentsColumnMapping
   "When the upload was started by the user."
   createdAt: DateTime!
+  "Why the operation failed, ready to display as it is. Set for a *Failed* operation only."
+  failureReason: String
   "The identifier of the uploaded file."
   fileId: String!
   "The name of the uploaded file."
@@ -5090,6 +5145,7 @@ type DesWorkspaceGroup {
   groupId: String!
   "Identifies a workspace group."
   id: ID!
+  "The workspace users that belong to this group."
   members(
     "Returns the elements in the list that come after the specified cursor."
     after: String
@@ -5097,7 +5153,7 @@ type DesWorkspaceGroup {
     first: Int
     orderBy: DesWorkspaceUserOrderBy
     sortDirection: DesWorkspaceTeamSortDirection
-  ): DesWorkspaceUserConnection
+  ): DesWorkspaceUserConnection @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "A unique name of this group within the workspace."
   name: String!
 }
@@ -5181,7 +5237,7 @@ type DesWorkspaceInsInsight {
   relatedTasks: DesWorkspaceInsRelatedTasks!
   "Severity level assigned to the insight."
   severity: String!
-  "Compact, UI-friendly representation of the insight data."
+  "Short data payload for the insight."
   shortData: JSON!
   "Current status of the insight lifecycle."
   status: String!
@@ -5199,7 +5255,7 @@ type DesWorkspaceInsInsightAssemblyVariantLink {
   id: ID!
 }
 
-"Link to a work-in-progress BOM associated with the insight."
+"Link to a managed BOM associated with the insight."
 type DesWorkspaceInsInsightBomLink {
   "Information about when and by whom the link was created."
   created: DesWorkspaceInsUserActionTimestamp!
@@ -5207,7 +5263,7 @@ type DesWorkspaceInsInsightBomLink {
   id: ID!
 }
 
-"Link to a released BOM associated with the insight."
+"Link to a released managed BOM associated with the insight."
 type DesWorkspaceInsInsightBomReleaseLink {
   "Information about when and by whom the link was created."
   created: DesWorkspaceInsUserActionTimestamp!
@@ -5251,19 +5307,19 @@ type DesWorkspaceInsInsightConsolidatedBomReleaseLink {
 type DesWorkspaceInsInsightDataChangedAction {
   "Updated full data payload for the insight."
   newData: JSON!
-  "Updated summary data payload for the insight."
+  "Updated short data payload for the insight."
   newShortData: JSON!
   "Previous full data payload, if available."
   oldData: JSON
-  "Previous summary data payload, if available."
+  "Previous short data payload, if available."
   oldShortData: JSON
 }
 
 "History entry capturing changes to linked entities."
 type DesWorkspaceInsInsightEntityLinksChangedAction {
-  "Entities that were added to the insight."
+  "Entity identifiers that were added to the insight."
   newEntities: [ID!]!
-  "Entities that were removed from the insight."
+  "Entity identifiers that were removed from the insight."
   removedEntities: [ID!]!
 }
 
@@ -5335,6 +5391,12 @@ type DesWorkspaceInsInsightTaskLinksChangedAction {
   newTasks: [ID!]!
 }
 
+"Insight-type preferences affecting which insights are shown."
+type DesWorkspaceInsInsightTypesSettingsGql {
+  "Insight types that should be excluded from insights."
+  excludedInsightTypes: [String!]!
+}
+
 "A connection to a list of items."
 type DesWorkspaceInsInsightsConnection {
   "A list of edges."
@@ -5371,23 +5433,23 @@ type DesWorkspaceInsNotificationSettings {
   enabled: Boolean!
   "Recipient configuration for insight notifications."
   recipientSettings: DesWorkspaceInsNotificationRecipientSettings!
-  "Users who should not receive insight notifications."
+  "User identifiers who should not receive insight notifications."
   unsubscribedUserIds: [ID!]!
 }
 
 "Project-level preferences affecting insight generation and visibility."
 type DesWorkspaceInsProjectsSettings {
-  "Assembly variants that should be excluded from insights."
+  "Assembly variant identifiers that should be excluded from insights."
   excludedAssemblyVariants: [ID!]!
-  "Released BOMs excluded from insight consideration."
+  "Released managed BOM identifiers excluded from insight consideration."
   excludedBomReleases: [ID!]!
-  "Consolidated BOM releases excluded from insight consideration."
+  "Consolidated BOM release identifiers excluded from insight consideration."
   excludedConsolidatedBomReleases: [ID!]!
-  "Consolidated BOMs excluded from insight consideration."
+  "Consolidated BOM identifiers excluded from insight consideration."
   excludedConsolidatedBoms: [ID!]!
-  "Projects that should be excluded from insights."
+  "Project identifiers that should be excluded from insights."
   excludedProjects: [ID!]!
-  "Work-in-progress BOMs excluded from insight consideration."
+  "Managed BOM identifiers excluded from insight consideration."
   excludedWipBoms: [ID!]!
   "Exclude non-active projects from insight processing."
   excludeNonActiveProjects: Boolean!
@@ -5411,9 +5473,9 @@ type DesWorkspaceInsRecipientUser {
 type DesWorkspaceInsRelatedEntities {
   "Assembly variants connected to the insight."
   assemblyVariants: [DesWorkspaceInsInsightAssemblyVariantLink!]!
-  "Released BOMs connected to the insight."
+  "Released managed BOMs connected to the insight."
   bomReleases: [DesWorkspaceInsInsightBomReleaseLink!]!
-  "Work-in-progress BOMs connected to the insight."
+  "Managed BOMs connected to the insight."
   boms: [DesWorkspaceInsInsightBomLink!]!
   "Component revisions referenced by the insight."
   componentRevisions: [DesWorkspaceInsInsightComponentRevisionLink!]!
@@ -5471,6 +5533,8 @@ type DesWorkspaceInsUserActionTimestamp {
 
 "User settings related to insights."
 type DesWorkspaceInsUserSettings {
+  "Preferences for including or excluding specific insight types."
+  insightTypesSettings: DesWorkspaceInsInsightTypesSettingsGql!
   "Project settings that influence which insights are shown."
   projectsSettings: DesWorkspaceInsProjectsSettings!
 }
@@ -5518,7 +5582,7 @@ type DesWorkspaceTeam {
     orderBy: DesProjectGuestOrderBy
     "Specifies the direction for the result ordering."
     sortDirection: DesWorkspaceTeamSortDirection
-  ): DesProjectGuestConnection
+  ): DesProjectGuestConnection @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves a list of workspace groups."
   workspaceGroups(
     "Returns the elements in the list that come after the specified cursor."
@@ -5529,7 +5593,7 @@ type DesWorkspaceTeam {
     orderBy: DesWorkspaceGroupOrderBy
     "Specifies the direction for the result ordering."
     sortDirection: DesWorkspaceTeamSortDirection
-  ): DesWorkspaceGroupConnection
+  ): DesWorkspaceGroupConnection @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves a list of workspace users."
   workspaceUsers(
     "Returns the elements in the list that come after the specified cursor."
@@ -5542,7 +5606,7 @@ type DesWorkspaceTeam {
     orderBy: DesWorkspaceUserOrderBy
     "Specifies the direction for the result ordering."
     sortDirection: DesWorkspaceTeamSortDirection
-  ): DesWorkspaceUserConnection
+  ): DesWorkspaceUserConnection @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
 }
 
 "Represents a user registered in a workspace."
@@ -5557,6 +5621,7 @@ type DesWorkspaceUser {
   if the user has never logged into the workspace.
   """
   globalUserId: String
+  "The workspace groups to which the user belongs."
   groups: [DesWorkspaceGroup!]!
   "The node identifier for the workspace user."
   id: ID!
@@ -6864,12 +6929,14 @@ type DmRaPartNumberModel @experimental {
   family: String!
   "**Experimental** Feature set indicator for the device."
   featureSet: String!
-  "**Experimental** On-chip flash memory size in kilobytes."
+  "**Experimental** On-chip flash memory size in kilobytes. Zero for SiP/Jacketed wireless parts where the position-8 character does not encode a Flash size; see onChipMemoryCode."
   flashMemorySizeKB: Int!
   "**Experimental** Group identifier within the family."
   groupNumber: String!
   "**Experimental** True when the package uses a two-dimensional array/grid pin layout with coordinate-named pins (BGA, LGA, WLCSP, and A-QFN) rather than a single perimeter row (standard QFN, LQFP, etc.). Lets the Device Explorer pick the correct package icon for array variants such as A-QFN."
   isArrayPackage: Boolean!
+  "**Experimental** Raw position-8 character from the part number, retained so SiP/Jacketed wireless parts (where flashMemorySizeKB is 0) still surface the memory-tier code."
+  onChipMemoryCode: String!
   "**Experimental** Package type (e.g., LQFP, BGA, QFN)."
   package: String!
   "**Experimental** Packing type (e.g., Tray, TapeAndReel, FullCarton, Unknown)."
@@ -6926,21 +6993,21 @@ type DmResolverFeasibilityResult @experimental {
   constraintModel: DmConstraintModel
   "**Experimental** Legacy group/series prefix (e.g. \"R7FA8\"). Prefer deviceFamilyKey for the true family."
   deviceFamily: String!
-  "**Experimental** Stable family key of the device (\"RA\", \"RAFW\", \"RX\")."
+  "**Experimental** Stable family key of the resolved device (\"RA\", \"RAFW\", \"RX\"). Empty when the device's family could not be determined. Prefer this over the legacy deviceFamily prefix."
   deviceFamilyKey: String!
-  "**Experimental** Manufacturer part number of the candidate device."
+  "**Experimental** Manufacturer part number associated with this result."
   deviceMpn: String!
   "**Experimental** Errors encountered during solving."
   errors: [String!]!
   "**Experimental** Lean device model (MPN + family part details) without configured ports/peripherals."
   feasibleModel: DmFeasibleDeviceModel!
-  "**Experimental** Indicates whether a feasible solution exists for this device."
+  "**Experimental** Indicates whether a feasible solution was found."
   isFeasible: Boolean!
   "**Experimental** Log lines collected during solving. Populated only when the evaluation runs with includeDiagnostics=true."
   logs: [String!]!
   "**Experimental** Final status returned by the constraint solver."
   solverStatus: String!
-  "**Experimental** Silicon vendor of the device, e.g. \"Renesas\"."
+  "**Experimental** Silicon vendor of the resolved device, e.g. \"Renesas\". Empty when the device's family could not be determined."
   vendor: String!
   "**Experimental** Wall-clock time spent solving (seconds)."
   wallTimeSeconds: Float!
@@ -6968,11 +7035,11 @@ type DmResolverResult @experimental {
   completedOpModeGroups: [String!]! @deprecated(reason: "No longer populated. Use 'selections' instead to inspect completed candidate instances.")
   "**Experimental** Configured device model produced by the solution, if available."
   configuredModel: DmDeviceModelAsConfigured
-  "**Experimental** Snapshot of the CP-SAT constraint model built before solving, including variables, constraint groups, and the objective. Null when the model was not captured."
+  "**Experimental** Snapshot of the CP-SAT constraint model built before solving, including variables, constraint groups, and the objective. Populated only when the evaluation runs with includeDiagnostics=true; null otherwise."
   constraintModel: DmConstraintModel
   "**Experimental** Legacy group/series prefix (e.g. \"R7FA8\"). Prefer deviceFamilyKey for the true family."
   deviceFamily: String!
-  "**Experimental** Stable family key of the device (\"RA\", \"RAFW\", \"RX\")."
+  "**Experimental** Stable family key of the resolved device (\"RA\", \"RAFW\", \"RX\"). Empty when the device's family could not be determined. Prefer this over the legacy deviceFamily prefix."
   deviceFamilyKey: String!
   "**Experimental** Manufacturer part number associated with this result."
   deviceMpn: String!
@@ -6984,7 +7051,7 @@ type DmResolverResult @experimental {
   isFeasible: Boolean!
   "**Experimental** Indicates whether the found solution is proven optimal."
   isOptimal: Boolean!
-  "**Experimental** Log lines collected during solving."
+  "**Experimental** Log lines collected during solving. Populated only when the evaluation runs with includeDiagnostics=true."
   logs: [String!]!
   "**Experimental** Objective value reported by the solver (if applicable)."
   objectiveValue: Float!
@@ -7000,7 +7067,7 @@ type DmResolverResult @experimental {
   solverStatus: String!
   "**Experimental** UTC timestamp when solving started."
   startedAt: DateTime!
-  "**Experimental** Silicon vendor of the device, e.g. \"Renesas\"."
+  "**Experimental** Silicon vendor of the resolved device, e.g. \"Renesas\". Empty when the device's family could not be determined."
   vendor: String!
   "**Experimental** Wall-clock time spent solving (seconds)."
   wallTimeSeconds: Float!
@@ -7252,7 +7319,7 @@ type GloAppNotUninstalledError implements Error {
   message: String!
 }
 
-"Error that occurs when granting access to a *OAuth client* fails."
+"Error that occurs when granting access to an *OAuth client* fails."
 type GloAppOAuthClientGrantAccessError implements Error {
   message: String!
 }
@@ -7422,7 +7489,7 @@ type GloCusExtensionPoint {
     last: Int
     order: [GloCusAssignmentSortInput!]
     where: GloCusAssignmentFilterInput
-  ): GloCusAssignmentConnection
+  ): GloCusAssignmentConnection @listSize(assumedSize: 100, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Declared extension point configuration parameters."
   configurationParameters: [GloCusExtensionPointParameter!]!
   description: String
@@ -7753,7 +7820,7 @@ type GloScrScript {
     "Returns the last _n_ elements from the list."
     last: Int
     order: [GloScrScriptVersionSortInput!]
-  ): GloScrScriptVersionConnection
+  ): GloScrScriptVersionConnection @listSize(assumedSize: 2147483647, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
 }
 
 "A connection to a list of items."
@@ -8334,7 +8401,7 @@ type Mutation {
   dmExecuteDeviceEvaluation(input: DmExecuteDeviceEvaluationInput!): DmExecuteDeviceEvaluationPayload! @experimental
   "**Experimental** Fast, family-scoped feasibility evaluation. Returns candidate devices with feasibility and a lean feasibleModel (no configured ports/peripherals). An empty family yields an empty summary so callers can fall back to the next family."
   dmExecuteDeviceEvaluationByFamily(input: DmExecuteDeviceEvaluationByFamilyInput!): DmExecuteDeviceEvaluationByFamilyPayload! @experimental
-  "**Experimental** Evaluates required peripherals against a single, already-chosen device (by MPN) and returns the full configured model (concrete ports and peripherals)."
+  "**Experimental** Evaluates required peripherals against a single, already-chosen device (by MPN) and returns the full configured model (concrete ports and peripherals). An unknown MPN returns an empty summary rather than evaluating the whole catalog."
   dmExecuteDeviceEvaluationByMpn(input: DmExecuteDeviceEvaluationByMpnInput!): DmExecuteDeviceEvaluationByMpnPayload! @experimental
   "**Experimental**"
   dmExecuteDeviceEvaluationFromConfiguration(input: DmExecuteDeviceEvaluationFromConfigurationInput!): DmExecuteDeviceEvaluationFromConfigurationPayload! @experimental
@@ -8434,6 +8501,12 @@ type Mutation {
   kgAddNode(input: KgAddNodeInput!): KgAddNodePayload! @experimental
   "**Experimental** Deletes a Vault entity registered in the knowledge graph."
   kgDeleteNode(input: KgDeleteNodeInput!): KgDeleteNodePayload! @experimental
+  "Adds an entry and fails if the key already exists. Requires the `platform:storage.write` scope."
+  platformKeyValueStoreAdd(input: PlatformKeyValueStoreAddInput!): PlatformKeyValueStoreAddPayload!
+  "Deletes an entry, succeeding without changes if it does not exist; *isDeleted* tells whether it existed. Requires the `platform:storage.write` scope."
+  platformKeyValueStoreDelete(input: PlatformKeyValueStoreDeleteInput!): PlatformKeyValueStoreDeletePayload!
+  "Replaces the value of an existing entry, failing if it does not exist; the last write wins. Requires the `platform:storage.write` scope."
+  platformKeyValueStoreUpdate(input: PlatformKeyValueStoreUpdateInput!): PlatformKeyValueStoreUpdatePayload!
   "Deletes a `PlatformToken`. Returns the identifier of the deleted token."
   platformTokenDelete(input: PlatformTokenDeleteInput!): PlatformTokenDeletePayload!
   "Updates the name and/or description of an existing `PlatformToken`."
@@ -8702,7 +8775,107 @@ type PageInfo {
   startCursor: String
 }
 
+type PlatformKeyValueStoreAddPayload {
+  entry: PlatformKeyValueStoreEntry
+  errors: [PlatformKeyValueStoreAddError!]
+}
+
+type PlatformKeyValueStoreDeletePayload {
+  errors: [PlatformKeyValueStoreDeleteError!]
+  isDeleted: Boolean
+}
+
+"A value stored in the key-value store of an app installation, in the workspace of the access token."
+type PlatformKeyValueStoreEntry {
+  "Time the entry was created."
+  createdAt: DateTime!
+  "Key chosen by the app, unique within the app installation."
+  key: String!
+  "Size of the value in bytes when UTF-8 encoded."
+  sizeBytes: Int!
+  "Time of the last write."
+  updatedAt: DateTime!
+  "Stored value, at most 16 *KiB* when UTF-8 encoded."
+  value: String!
+}
+
+type PlatformKeyValueStoreEntryExistsError implements Error {
+  key: String!
+  message: String!
+}
+
+type PlatformKeyValueStoreEntryNotFoundError implements Error {
+  key: String!
+  message: String!
+}
+
+"Entry metadata returned by *all*, without the value."
+type PlatformKeyValueStoreEntrySummary {
+  createdAt: DateTime!
+  key: String!
+  sizeBytes: Int!
+  updatedAt: DateTime!
+}
+
+"A connection to a list of items."
+type PlatformKeyValueStoreEntrySummaryConnection {
+  "A list of edges."
+  edges: [PlatformKeyValueStoreEntrySummaryEdge!]
+  "A flattened list of the nodes."
+  nodes: [PlatformKeyValueStoreEntrySummary!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+}
+
+"An edge in a connection."
+type PlatformKeyValueStoreEntrySummaryEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: PlatformKeyValueStoreEntrySummary!
+}
+
+type PlatformKeyValueStoreKeyInvalidError implements Error {
+  key: String!
+  message: String!
+}
+
+type PlatformKeyValueStoreQueries {
+  "Gets entry summaries without values, ordered by key; *prefix* limits the results to keys starting with it."
+  all(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    prefix: String
+  ): PlatformKeyValueStoreEntrySummaryConnection! @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 100, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  "Gets the entry with the given key, or null if it does not exist."
+  byKey(key: String!): PlatformKeyValueStoreEntry
+  "Gets up to 25 entries by key, returning null in the position of each missing entry."
+  byKeys(keys: [String!]!): [PlatformKeyValueStoreEntry]!
+}
+
+"Returned when adding the entry, or growing its value, would exceed the installation's quota."
+type PlatformKeyValueStoreQuotaExceededError implements Error {
+  maxEntryCount: Int!
+  maxTotalSizeBytes: Int!
+  message: String!
+}
+
+type PlatformKeyValueStoreUpdatePayload {
+  entry: PlatformKeyValueStoreEntry
+  errors: [PlatformKeyValueStoreUpdateError!]
+}
+
+type PlatformKeyValueStoreValueTooLargeError implements Error {
+  maxSizeBytes: Int!
+  message: String!
+  sizeBytes: Int!
+}
+
 type PlatformQueries {
+  "Key-value store of the calling app in the workspace of the access token. Requires the `platform:storage.read` or `platform:storage.write` scope."
+  keyValueStore: PlatformKeyValueStoreQueries!
   "Context for `TokenQueries`."
   token: TokenQueries!
 }
@@ -8754,6 +8927,11 @@ type PlatformTokenEdge {
 
 "Error that occurs when the `PlatformToken` has not been successfully generated."
 type PlatformTokenGenerationError implements Error {
+  message: String!
+}
+
+"Error returned by the Token API when an input name for a `PlatformToken` is invalid."
+type PlatformTokenInvalidNameError implements Error {
   message: String!
 }
 
@@ -8890,19 +9068,19 @@ type PlatformWorkspaceTokenQuota {
 type Query {
   "Get the specified BOM."
   bomBom(
-    "ID of the BOM."
+    "Identifier of the BOM."
     bomId: String!
   ): BomWip! @deprecated(reason: "Use bomBomById(id: \"grid:...\") instead.")
   "Get the specified BOM."
   bomBomById(
-    "ID of the BOM."
+    "Identifier of the BOM."
     id: ID!
   ): Bom!
   "Get the specified BOM release."
   bomBomRelease(
-    "ID of the BOM."
+    "Identifier of the BOM."
     bomId: String!
-    "ID of the release."
+    "Identifier of the release."
     releaseId: String!
   ): BomRelease! @deprecated(reason: "Use bomBomById(id: \"grid:...\") instead.")
   "Get all available BOMs in the workspace."
@@ -8928,7 +9106,7 @@ type Query {
     last: Int
     projectId: String!
     where: RequirementFilterInput
-  ): DesAnnotationsConnection
+  ): DesAnnotationsConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Search for a specific comment thread associated with a project."
   desCommentThread(
     "The project identifier (`DesProject.id`)."
@@ -9049,7 +9227,7 @@ type Query {
     order: DesPartGlobalSearchSortInput
     "The filter to apply to the global part search."
     where: DesPartGlobalSearchFilterInput
-  ): DesPartGlobalSearchConnection
+  ): DesPartGlobalSearchConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Gets manufacturers list by provider."
   desPartManufacturersByProvider: DesPartManufacturers!
   "Searches parts by attributes."
@@ -9066,7 +9244,7 @@ type Query {
     order: [DesPartSortInput!]
     "The filter to apply to the part search."
     where: DesPartSearchFilterInput
-  ): DesPartSearchConnection
+  ): DesPartSearchConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Searches parts by their manufacturer name and part number."
   desPartSearchByManufacturerPartIds(
     "The manufacturer part identifiers to search by."
@@ -9368,7 +9546,7 @@ type Query {
     "Returns the last _n_ elements from the list."
     last: Int
     sorting: DesWorkspaceInsOrderingInput
-  ): DesWorkspaceInsInsightsConnection
+  ): DesWorkspaceInsInsightsConnection @listSize(assumedSize: 100, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Gets all available insight severities."
   desWorkspaceInsInsightSeverities: [String!]!
   "Gets all available insight sorting fields."
@@ -9396,7 +9574,7 @@ type Query {
     "The URL of the workspace to get tasks from."
     workspaceUrl: String
   ): DesTaskConnection
-  "Retrieves a workspace team based on the authenticity of the requester."
+  "Retrieves a workspace team based on the identity of the requester."
   desWorkspaceTeamByAuth: DesWorkspaceTeam!
   "Retrieves a workspace user associated with the identity of the requester."
   desWorkspaceUserByAuth: DesWorkspaceUser!
@@ -9458,7 +9636,7 @@ type Query {
     last: Int
     order: [GloAppSortInput!]
     where: GloAppFilterInput
-  ): GloAppsConnection
+  ): GloAppsConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves a list of registered extension points."
   gloCusExtensionPoints(order: [GloCusExtensionPointSortInput!], where: GloCusExtensionPointFilterInput): [GloCusExtensionPoint!]!
   "Retrieves the execution info by execution identifier."
@@ -9486,7 +9664,7 @@ type Query {
     order: [GloScrScriptExecutionSortInput!]
     scriptId: String!
     versionId: String
-  ): GloScrScriptExecutionConnection
+  ): GloScrScriptExecutionConnection @listSize(assumedSize: 2147483647, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves a list of scripts with pagination options."
   gloScrScripts(
     "Returns the elements in the list that come after the specified cursor."
@@ -9498,7 +9676,7 @@ type Query {
     "Returns the last _n_ elements from the list."
     last: Int
     order: [GloScrScriptSortInput!]
-  ): GloScrScriptConnection
+  ): GloScrScriptConnection @listSize(assumedSize: 2147483647, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves the secrets a script revision declares. Omit the revision to read the latest one, the same revision a script execution uses by default. Values are never returned."
   gloScrScriptSecrets(scriptId: String!, scriptVersionId: String): [GloScrScriptSecret!]!
   "Retrieves the names of the workspace secrets. Values are write-only and are never returned."
@@ -9517,7 +9695,7 @@ type Query {
     "Returns the last _n_ elements from the list."
     last: Int
     order: [GloUserGroupSortInput!]
-  ): GloUserGroupConnection
+  ): GloUserGroupConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 50, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves list of users by filter."
   gloUsers(
     "Returns the elements in the list that come after the specified cursor."
@@ -9530,7 +9708,7 @@ type Query {
     "Returns the last _n_ elements from the list."
     last: Int
     order: [GloUserSortInput!]
-  ): GloUserConnection
+  ): GloUserConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 50, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves list of users by their identifiers."
   gloUsersByIds(userIds: [ID!]!): [GloUser]!
   "**Experimental**"
@@ -9606,7 +9784,7 @@ type Query {
   "Gets software projects by IDs."
   sftSoftwareProjectsByIds(ids: [ID!]!): [SftSoftwareProject!]!
   "Retrieves a entity scaffolding status."
-  solBldEntityScaffoldingStatus(id: ID!): SolBldEntityScaffoldingStatusPayload!
+  solBldEntityScaffoldingStatus(id: ID!): SolBldEntityScaffoldingStatusPayload! @deprecated(reason: "Use isScaffolding field instead")
   "Retrieves a job status."
   solBldScaffoldingStatus(jobId: ID!): SolBldScaffoldingStatusPayload!
   "Retrieves cached job statuses for a solution."
@@ -12938,7 +13116,7 @@ type TokenQueries {
     last: Int
     order: [PlatformTokenSortInput!]
     where: PlatformTokenFilterInput
-  ): PlatformTokenConnection
+  ): PlatformTokenConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Gets the `PlatformToken` quota for the Workspace."
   workspaceTokenQuota: PlatformWorkspaceTokenQuota
 }
@@ -12956,7 +13134,7 @@ union BomOfferReference = BomOctopartOfferReference | BomPartCatalogOfferReferen
 union BomPartReference = BomOctopartPartReference | BomPartCatalogPartReference
 
 "There may be multiple bindings associated with annotation instance. Together the bindings provide detailed information about the context of the annotation placement and associated design entities."
-union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
+union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationManagedPartBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
 
 "Union type for various payloads."
 union DesUnionPayload = DesComponent | DesErrorPayload
@@ -13000,17 +13178,23 @@ union GloUpdateAppHridError = GloAppNotFoundError | GloAppDeletedError | GloAppH
 
 union GloUpdateAppNameError = GloAppNotFoundError | GloAppDeletedError | GloAppNameNotUpdatedError
 
+union PlatformKeyValueStoreAddError = PlatformKeyValueStoreKeyInvalidError | PlatformKeyValueStoreValueTooLargeError | PlatformKeyValueStoreEntryExistsError | PlatformKeyValueStoreQuotaExceededError
+
+union PlatformKeyValueStoreDeleteError = PlatformKeyValueStoreKeyInvalidError
+
+union PlatformKeyValueStoreUpdateError = PlatformKeyValueStoreKeyInvalidError | PlatformKeyValueStoreValueTooLargeError | PlatformKeyValueStoreEntryNotFoundError | PlatformKeyValueStoreQuotaExceededError
+
 union PlatformTokenDeleteError = PlatformTokenNotFoundError | PlatformTokenDeleteFailedError | PlatformTokenDeletePartiallyFailedError
 
-union PlatformTokenUpdateError = PlatformTokenUpdateInvalidError | PlatformTokenUpdateFailedError | PlatformTokenNameExistsError
+union PlatformTokenUpdateError = PlatformTokenUpdateInvalidError | PlatformTokenUpdateFailedError | PlatformTokenNameExistsError | PlatformTokenInvalidNameError
 
-union PlatformWorkspaceRefreshTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError
+union PlatformWorkspaceRefreshTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError | PlatformTokenInvalidNameError
 
 union PlatformWorkspaceRefreshTokenCreateNewSecretError = PlatformTokenNotFoundError | PlatformRefreshTokenCreateNewSecretError
 
 union PlatformWorkspaceRefreshTokenDeleteSecretError = PlatformTokenNotFoundError | PlatformTokenDeleteRefreshTokenSecretError
 
-union PlatformWorkspaceTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError
+union PlatformWorkspaceTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError | PlatformTokenInvalidNameError
 
 union SupEvalKitAddDevicesError = SupEvalKitOperationFailedError | SupEvalKitNotFoundError
 
@@ -13107,15 +13291,17 @@ union SupSolutionTemplateUpdateSolutionTemplateError = SupSolutionTemplateOperat
 
 union SupSolutionTemplateUpdateSolutionTemplateStatusError = SupSolutionTemplateOperationFailedError | SupSolutionTemplateNotFoundError
 
+"Input for changing the lifecycle state of a BOM release."
 input BomChangeBomReleaseLifecycleStateInput {
-  "ID of the BOM to update."
+  "Identifier of the BOM to update."
   bomId: String!
-  "ID of the release to update."
+  "Identifier of the release to update."
   releaseId: String!
-  "ID of the transition to apply."
+  "Identifier of the transition to apply."
   transitionId: String!
 }
 
+"Input for creating a new BOM."
 input BomCreateBomInput {
   "A country associated with the BOM. It is primarily used to provide region-specific information about parts."
   countryCode: String
@@ -13151,7 +13337,7 @@ input BomCreateBomInput {
 input BomCreateBomItemElementAttributeDeclarationInput {
   """
   A transient identifier that uniquely identifies this attribute within the current mutation call.
-  This ID is used to correlate this attribute with attribute values in BOM item elements.
+  This identifier is used to correlate this attribute with attribute values in BOM item elements.
   """
   attributeId: String!
   "Name of the attribute."
@@ -13164,7 +13350,7 @@ input BomCreateBomItemElementAttributeDeclarationInput {
 input BomCreateBomItemElementAttributeInput {
   """
   A transient identifier that uniquely identifies this attribute within the current mutation call.
-  This ID is used to correlate this attribute with the corresponding attribute declaration.
+  This identifier is used to correlate this attribute with the corresponding attribute declaration.
   """
   attributeId: String!
   "Value of the attribute."
@@ -13172,7 +13358,7 @@ input BomCreateBomItemElementAttributeInput {
 }
 
 "BOM item element attribute's value."
-input BomCreateBomItemElementAttributeValueInput {
+input BomCreateBomItemElementAttributeValueInput @oneOf {
   "Floating-point value of a BOM element attribute."
   floatValue: Float
   "Integer value of a BOM element attribute."
@@ -13214,7 +13400,7 @@ input BomCreateBomItemInput {
 Describes an offer selected for an element.
 Only a single field must be specified.
 """
-input BomCreateBomOfferReferenceInput {
+input BomCreateBomOfferReferenceInput @oneOf {
   "A reference to an offer in Octopart."
   octopart: BomOctopartOfferReferenceInput
 }
@@ -13237,7 +13423,7 @@ input BomCreateBomPackagingPrioritiesSettingsInput {
 Describes a part associated with an element.
 Only a single field must be specified.
 """
-input BomCreateBomPartReferenceInput {
+input BomCreateBomPartReferenceInput @oneOf {
   "A reference to a part in Octopart."
   octopart: BomOctopartPartReferenceInput
   "A raw part descriptor (MPN + Manufacturer)."
@@ -13256,43 +13442,46 @@ input BomCreateBomProductionSettingsInput {
 Describes a supplier used in a BOM.
 Only a single field must be specified.
 """
-input BomCreateBomSupplierReferenceInput {
+input BomCreateBomSupplierReferenceInput @oneOf {
   "A reference to a supplier in Octopart."
   octopart: BomOctopartSupplierReferenceInput
 }
 
+"Input for exporting a BOM by its identifier."
 input BomExportBomByIdInput {
-  "ID of the BOM to export."
+  "Identifier of the BOM to export."
   id: ID!
 }
 
+"Input for exporting a BOM."
 input BomExportBomInput {
-  "ID of the BOM to export."
+  "Identifier of the BOM to export."
   bomId: String!
 }
 
+"Input for exporting a BOM release."
 input BomExportBomReleaseInput {
-  "ID of the BOM to export."
+  "Identifier of the BOM to export."
   bomId: String!
-  "ID of the release to export."
+  "Identifier of the release to export."
   releaseId: String!
 }
 
 "A reference to an offer in Octopart."
 input BomOctopartOfferReferenceInput {
-  "ID of the offer in Octopart."
+  "Identifier of the offer in Octopart."
   offerId: String!
 }
 
 "A reference to a part in Octopart."
 input BomOctopartPartReferenceInput {
-  "ID of the part in Octopart."
+  "Identifier of the part in Octopart."
   partId: String!
 }
 
 "A reference to a supplier in Octopart."
 input BomOctopartSupplierReferenceInput {
-  "ID of the supplier in Octopart."
+  "Identifier of the supplier in Octopart."
   supplierId: String!
 }
 
@@ -15671,6 +15860,12 @@ input DesWorkspaceInsInsightFilterInput {
   type: [String!]
 }
 
+"Insight-type preferences that define which insights are shown."
+input DesWorkspaceInsInsightTypesSettingsInputGqlInput {
+  "Insight types that should be excluded from insights."
+  excludedInsightTypes: [String!]!
+}
+
 "User action parameters applied to an insight update."
 input DesWorkspaceInsInsightUserActionInput {
   "Whether the insight is acknowledged by the user."
@@ -15697,7 +15892,7 @@ input DesWorkspaceInsNotificationSettingsInput {
   enabled: Boolean!
   "Recipient rules describing who should receive notifications."
   recipientSettings: DesWorkspaceInsNotificationRecipientSettingsInput
-  "Users who should not receive notifications for insights."
+  "User identifiers who should not receive notifications for insights."
   unsubscribedUserIds: [ID!]
 }
 
@@ -15711,7 +15906,7 @@ input DesWorkspaceInsOrderingInput {
 
 "User-level project filtering preferences for insights."
 input DesWorkspaceInsProjectSettingsInput {
-  "Entities that should be excluded from insight calculations."
+  "Entity identifiers that should be excluded from insight calculations."
   excludedEntities: [ID!]!
   "Exclude projects that are no longer active from insight results."
   excludeNonActiveProjects: Boolean!
@@ -15733,7 +15928,7 @@ input DesWorkspaceInsRecipientUserInput {
 
 "Input for removing a user from insight notifications."
 input DesWorkspaceInsUnsubscribeFromNotificationsInput {
-  "User to exclude from receiving notifications."
+  "User identifier to exclude from receiving notifications."
   userId: ID!
 }
 
@@ -15761,7 +15956,7 @@ input DesWorkspaceInsUpsertInsightInput {
   relatedEntityIds: [ID!]!
   "The severity level of the insight."
   severity: String!
-  "Short, UI-friendly payload representing the insight."
+  "Short data payload for the insight."
   shortData: JSON!
   "Status value to assign to the insight."
   status: String
@@ -15771,6 +15966,8 @@ input DesWorkspaceInsUpsertInsightInput {
 
 "User-specific settings that control insight experience."
 input DesWorkspaceInsUserSettingsInput {
+  "Preferences for including or excluding specific insight types."
+  insightTypesSettings: DesWorkspaceInsInsightTypesSettingsInputGqlInput
   "Project-level preferences used when delivering insights."
   projectsSettings: DesWorkspaceInsProjectSettingsInput
 }
@@ -15779,7 +15976,7 @@ input DesWorkspaceInsUserSettingsInput {
 input DesWorkspaceUserFilterInput {
   "**Experimental**"
   and: [DesWorkspaceUserFilterInput!] @experimental
-  "Workspace specific identifiers of the user groups (id or grid)."
+  "Workspace specific identifiers of the groups."
   groupIds: [String!]
   "**Experimental**"
   id: GridFilterInput @experimental
@@ -15787,9 +15984,9 @@ input DesWorkspaceUserFilterInput {
   or: [DesWorkspaceUserFilterInput!] @experimental
   "The text that either the guest first or last names or emails must contain. Case-insensitive."
   text: String
-  "Workspace specific identifiers of the users (id or grid)."
+  "Workspace specific identifiers of the users."
   userIds: [String!]
-  "The specific types of users to search."
+  "The specific type of users to search."
   userTypes: [DesWorkspaceUserType!]
 }
 
@@ -16318,7 +16515,7 @@ input GloCusUpdateAssignmentConfigurationsInput {
 }
 
 "Represents input value for extension point assignment update."
-input GloCusUpdateAssignmentInput {
+input GloCusUpdateAssignmentInput @oneOf {
   "Represents input value for assignment update with script id."
   script: GloCusUpdateWithScriptAssignmentInput
   "Represents input value for assignment update with script file."
@@ -16766,6 +16963,25 @@ input PathFilterInput @experimental {
   isEmpty: BooleanOperationFilterInput
   "**Experimental**"
   or: [PathFilterInput!]
+}
+
+input PlatformKeyValueStoreAddInput {
+  "Key of 1 to 256 characters from *A-Z a-z 0-9 . _ - /*, case-insensitive. */* separates segments, which must be non-empty, must not end with *.* and must not be *.*, *..* or a reserved device name such as *con*."
+  key: String!
+  "Value of at most 16 *KiB* when UTF-8 encoded."
+  value: String!
+}
+
+input PlatformKeyValueStoreDeleteInput {
+  "Key of 1 to 256 characters from *A-Z a-z 0-9 . _ - /*, case-insensitive. */* separates segments, which must be non-empty, must not end with *.* and must not be *.*, *..* or a reserved device name such as *con*."
+  key: String!
+}
+
+input PlatformKeyValueStoreUpdateInput {
+  "Key of 1 to 256 characters from *A-Z a-z 0-9 . _ - /*, case-insensitive. */* separates segments, which must be non-empty, must not end with *.* and must not be *.*, *..* or a reserved device name such as *con*."
+  key: String!
+  "Value of at most 16 *KiB* when UTF-8 encoded."
+  value: String!
 }
 
 input PlatformTokenDeleteInput {
@@ -17474,6 +17690,7 @@ input SftSoftwareUpdateProjectPropertiesInput {
   id: ID!
 }
 
+"Specifies the grids whose permissions must provide access to a solution."
 input SolAccessibleToInput {
   "The user, organization, or user group grids that must have access."
   ids: [ID!]
@@ -19873,6 +20090,29 @@ enum TuningType @experimental {
 }
 
 directive @experimental on QUERY | MUTATION | SUBSCRIPTION | FIELD | FRAGMENT_DEFINITION | FRAGMENT_SPREAD | INLINE_FRAGMENT | VARIABLE_DEFINITION | SCALAR | OBJECT | FIELD_DEFINITION | ARGUMENT_DEFINITION | INTERFACE | UNION | ENUM | ENUM_VALUE | INPUT_OBJECT | INPUT_FIELD_DEFINITION
+
+"The purpose of the `@listSize` directive is to either inform the static analysis about the size of returned lists (if that information is statically available), or to point the analysis to where to find that information."
+directive @listSize(
+  "The `assumedSize` argument can be used to statically define the maximum length of a list returned by a field."
+  assumedSize: Int
+  "The `slicingArguments` argument can be used to define which of the field's arguments with numeric type are slicing arguments, so that their value determines the size of the list returned by that field. It may specify a list of multiple slicing arguments."
+  slicingArguments: [String!]
+  "The `slicingArgumentDefaultValue` argument can be used to define a default value for a slicing argument, which is used if the argument is not present in a query."
+  slicingArgumentDefaultValue: Int
+  "The `sizedFields` argument can be used to define that the value of the `assumedSize` argument or of a slicing argument does not affect the size of a list returned by a field itself, but that of a list returned by one of its sub-fields."
+  sizedFields: [String!]
+  "The `requireOneSlicingArgument` argument can be used to inform the static analysis that it should expect that exactly one of the defined slicing arguments is present in a query. If that is not the case (i.e., if none or multiple slicing arguments are present), the static analysis may throw an error."
+  requireOneSlicingArgument: Boolean! = true
+) on FIELD_DEFINITION
+
+"""
+The `@oneOf` directive is used within the type system definition language
+ to indicate:
+
+ - an Input Object is a Oneof Input Object, or
+ - an Object Type's Field is a Oneof Field.
+"""
+directive @oneOf on INPUT_OBJECT
 
 "The `@specifiedBy` directive is used within the type system definition language to provide a URL for specifying the behavior of custom scalar definitions."
 directive @specifiedBy(

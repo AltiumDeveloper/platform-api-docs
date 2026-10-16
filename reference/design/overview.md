@@ -15,7 +15,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 ## Common Data Model
 
-- [Design](https://altiumdeveloper.github.io/cdm/subsets/design/) — Models design projects stored in a Workspace, including multi-board and harness projects, with their parameters, variants and releases, the manufacturing packages shared from releases, project templates with their revisions, and rule checks run against projects. It corresponds to Workspace projects in Altium 365 and Altium Designer, from project creation through to design release.
+- [Design](https://altiumdeveloper.github.io/cdm/subsets/design/) — Models design projects stored in a Workspace, including multi-board and harness projects, with their parameters, variants and releases, the manufacturing packages shared from releases, project templates with their revisions, rule checks run against projects, and design reviews of projects. It corresponds to Workspace projects in Altium 365 and Altium Designer, from project creation through to design release.
 
 ## Entities
 
@@ -23,7 +23,7 @@ API types in this bounded context that represent Common Data Model (CDM) entitie
 
 | API type | CDM entity |
 | - | - |
-| [`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) | [Harness Project](https://w3id.org/altium/cdm/design/HarnessProject) [`https://w3id.org/altium/cdm/design/HarnessProject`](https://w3id.org/altium/cdm/design/HarnessProject) [Multiboard Project](https://w3id.org/altium/cdm/design/MultiboardProject) [`https://w3id.org/altium/cdm/design/MultiboardProject`](https://w3id.org/altium/cdm/design/MultiboardProject) [Hardware Project](https://w3id.org/altium/cdm/design/Project) [`https://w3id.org/altium/cdm/design/Project`](https://w3id.org/altium/cdm/design/Project) |
+| [`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) | [Hardware Project](https://w3id.org/altium/cdm/design/Project) [`https://w3id.org/altium/cdm/design/Project`](https://w3id.org/altium/cdm/design/Project) |
 | [`DesProjectParameter`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-parameter.md) | [Project Parameter](https://w3id.org/altium/cdm/design/ProjectParameter) [`https://w3id.org/altium/cdm/design/ProjectParameter`](https://w3id.org/altium/cdm/design/ProjectParameter) |
 | [`DesRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release.md) | [Hardware Project Release](https://w3id.org/altium/cdm/design/ProjectRelease) [`https://w3id.org/altium/cdm/design/ProjectRelease`](https://w3id.org/altium/cdm/design/ProjectRelease) |
 | [`DesWipVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md) | [Hardware Project Variant](https://w3id.org/altium/cdm/design/ProjectVariant) [`https://w3id.org/altium/cdm/design/ProjectVariant`](https://w3id.org/altium/cdm/design/ProjectVariant) |

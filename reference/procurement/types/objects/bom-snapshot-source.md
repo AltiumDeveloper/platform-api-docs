@@ -29,7 +29,7 @@ type BomSnapshotSource implements BomSource {
 
 #### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the BOM.
+Identifier of the BOM.
 
 #### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
@@ -37,4 +37,4 @@ Quantity of the source (i.e., how many times the source is included into this BO
 
 #### `snapshotId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the BOM snapshot.
+Identifier of the BOM snapshot.

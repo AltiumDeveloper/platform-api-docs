@@ -33,7 +33,7 @@ input DesWorkspaceUserFilterInput {
 
 #### `groupIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-Workspace specific identifiers of the user groups (id or grid).
+Workspace specific identifiers of the groups.
 
 #### `id` · [`GridFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) input **EXPERIMENTAL**
 
@@ -45,8 +45,8 @@ The text that either the guest first or last names or emails must contain. Case-
 
 #### `userIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-Workspace specific identifiers of the users (id or grid).
+Workspace specific identifiers of the users.
 
 #### `userTypes` · [`[DesWorkspaceUserType!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-type.md) list enum
 
-The specific types of users to search.
+The specific type of users to search.

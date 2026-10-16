@@ -14,7 +14,7 @@ deprecated: false
 [`PlatformTokenUpdatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-update-payload.md) object
 
 ```graphql
-union PlatformTokenUpdateError = PlatformTokenUpdateInvalidError | PlatformTokenUpdateFailedError | PlatformTokenNameExistsError
+union PlatformTokenUpdateError = PlatformTokenUpdateInvalidError | PlatformTokenUpdateFailedError | PlatformTokenNameExistsError | PlatformTokenInvalidNameError
 ```
 
 ### Possible types
@@ -30,3 +30,7 @@ Error that occurs when no [`PlatformToken`](https://altiumdeveloper.github.io/pl
 #### [`PlatformTokenNameExistsError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-name-exists-error.md) object
 
 Error that occurs when the input [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) name already exists.
+
+#### [`PlatformTokenInvalidNameError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-invalid-name-error.md) object
+
+Error returned by the Token API when an input name for a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) is invalid.

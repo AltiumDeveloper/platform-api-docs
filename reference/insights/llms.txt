@@ -1,10 +1,10 @@
 # Insights — Altium 365 API
 > Workspace insights about parts and designs.
 
-Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/schema.graphql) (~4668 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/overview.md).
+Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/schema.graphql) (~4903 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/overview.md).
 
 ## Entities
-- [DesWorkspaceInsInsight](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md): Part Insight. GRID `grid:workspace:{workspace-id}:insights:insight/{id}`. Via: desWorkspaceInsInsightById, desWorkspaceInsInsightByName, desWorkspaceInsInsights
+- [DesWorkspaceInsInsight](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md): Insight — A finding, detected asynchronously, that gives the user insight within one domain area: the library (part insights) or design (design insights). GRID `grid:workspace:{workspace-id}:insights:insight/{id}`. Via: desWorkspaceInsInsightById, desWorkspaceInsInsightByName, desWorkspaceInsInsights
 
 ## Entry points
 - [desWorkspaceInsInsightById](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insight-by-id.md): Gets an insight by its identifier.
@@ -28,4 +28,4 @@ Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). S
 - [desWorkspaceInsUpsertInsightByKey](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/mutations/des-workspace-ins-upsert-insight-by-key.md): Creates or updates an insight by key.
 
 ## Optional
-- [All types in Insights](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types.txt): one line per type (~2716 tokens)
+- [All types in Insights](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types.txt): one line per type (~2841 tokens)

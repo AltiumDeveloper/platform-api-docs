@@ -9,6 +9,8 @@ deprecated: false
 
 # BomExportBomReleasePayload
 
+Result of exporting a BOM release to a file.
+
 ### Returned By
 
 [`bomExportBomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/procurement/operations/mutations/bom-export-bom-release.md) mutation
@@ -22,3 +24,5 @@ type BomExportBomReleasePayload {
 ### Fields
 
 #### `downloadUrl` · [`URL`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/url.md) scalar
+
+URL to download the exported BOM release file, if the export succeeded.

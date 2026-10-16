@@ -68,7 +68,7 @@
 - [GloAppNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-found-error.md): Error that occurs when a `GloApp` is not found.
 - [GloAppNotInstalledError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-installed-error.md): Error that occurs when a `GloApp` cannot be installed into a workspace.
 - [GloAppNotUninstalledError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-not-uninstalled-error.md): Error that occurs when a `GloApp` cannot be uninstalled from a workspace.
-- [GloAppOAuthClientGrantAccessError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-grant-access-error.md): Error that occurs when granting access to a *OAuth client* fails.
+- [GloAppOAuthClientGrantAccessError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-grant-access-error.md): Error that occurs when granting access to an *OAuth client* fails.
 - [GloAppOAuthClientNotDeletedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-deleted-error.md): Error that occurs when an *OAuth client* cannot be deleted.
 - [GloAppOAuthClientNotRestoredError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-restored-error.md): Error that occurs when an *OAuth client* cannot be restored.
 - [GloAppRedirectUriNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-redirect-uri-not-updated-error.md): Error that occurs when updating the redirect URI for a `GloApp` is unsuccessful.
@@ -109,12 +109,23 @@
 - [KgNodeQueries](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-node-queries.md) [EXPERIMENTAL]
 - [KgRelation](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-relation.md) [EXPERIMENTAL]
 - [KgRelationQueries](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/kg-relation-queries.md) [EXPERIMENTAL]
+- [PlatformKeyValueStoreAddPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-add-payload.md)
+- [PlatformKeyValueStoreDeletePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-delete-payload.md)
+- [PlatformKeyValueStoreEntry](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-entry.md): A value stored in the key-value store of an app installation, in the workspace of the access token.
+- [PlatformKeyValueStoreEntryExistsError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-entry-exists-error.md)
+- [PlatformKeyValueStoreEntryNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-entry-not-found-error.md)
+- [PlatformKeyValueStoreEntrySummary](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-entry-summary.md): Entry metadata returned by *all*, without the value.
+- [PlatformKeyValueStoreKeyInvalidError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-key-invalid-error.md)
+- [PlatformKeyValueStoreQuotaExceededError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-quota-exceeded-error.md): Returned when adding the entry, or growing its value, would exceed the installation's quota.
+- [PlatformKeyValueStoreUpdatePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-update-payload.md)
+- [PlatformKeyValueStoreValueTooLargeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-key-value-store-value-too-large-error.md)
 - [PlatformRefreshTokenCreateNewSecretError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-refresh-token-create-new-secret-error.md): Error returned by the Token API when a new client secret for a `PlatformWorkspaceRefreshToken` could not be created.
 - [PlatformTokenDeleteFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-failed-error.md): Error returned by the Token API when a `PlatformToken` could not be deleted.
 - [PlatformTokenDeletePartiallyFailedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-partially-failed-error.md): Error returned by the Token API when a `PlatformToken` could not be fully deleted, leaving it in an inconsistent state.
 - [PlatformTokenDeletePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-payload.md)
 - [PlatformTokenDeleteRefreshTokenSecretError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-delete-refresh-token-secret-error.md): Error returned by the Token API when a client secret for a `PlatformWorkspaceRefreshToken` could not be deleted.
 - [PlatformTokenGenerationError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-generation-error.md): Error that occurs when the `PlatformToken` has not been successfully generated.
+- [PlatformTokenInvalidNameError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-invalid-name-error.md): Error returned by the Token API when an input name for a `PlatformToken` is invalid.
 - [PlatformTokenInvalidTokenLifetimeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-invalid-token-lifetime-error.md): Error returned by the Token API when an input token lifetime for a new `PlatformToken` is invalid.
 - [PlatformTokenNameExistsError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-name-exists-error.md): Error that occurs when the input `PlatformToken` name already exists.
 - [PlatformTokenNotFoundError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-not-found-error.md): Error that occurs when a `PlatformToken` with the specified identifier could not be found.
@@ -181,6 +192,9 @@
 - [GloUpdateAppDescriptionError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-description-error.md)
 - [GloUpdateAppHridError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-hrid-error.md)
 - [GloUpdateAppNameError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-name-error.md)
+- [PlatformKeyValueStoreAddError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-key-value-store-add-error.md)
+- [PlatformKeyValueStoreDeleteError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-key-value-store-delete-error.md)
+- [PlatformKeyValueStoreUpdateError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-key-value-store-update-error.md)
 - [PlatformTokenDeleteError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-token-delete-error.md)
 - [PlatformTokenUpdateError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-token-update-error.md)
 - [PlatformWorkspaceRefreshTokenCreateError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/platform-workspace-refresh-token-create-error.md)
@@ -261,6 +275,9 @@
 - [KgAddNodeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-add-node-input.md) [EXPERIMENTAL]
 - [KgDeleteNodeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-delete-node-input.md) [EXPERIMENTAL]
 - [KgNodeParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/kg-node-parameter-input.md) [EXPERIMENTAL]
+- [PlatformKeyValueStoreAddInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-key-value-store-add-input.md)
+- [PlatformKeyValueStoreDeleteInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-key-value-store-delete-input.md)
+- [PlatformKeyValueStoreUpdateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-key-value-store-update-input.md)
 - [PlatformTokenDeleteInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-delete-input.md)
 - [PlatformTokenFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-filter-input.md)
 - [PlatformTokenSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-token-sort-input.md)
@@ -269,7 +286,7 @@
 - [PlatformWorkspaceRefreshTokenCreateNewSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-create-new-secret-input.md)
 - [PlatformWorkspaceRefreshTokenDeleteSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-refresh-token-delete-secret-input.md)
 - [PlatformWorkspaceTokenCreateInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/platform-workspace-token-create-input.md): Input for creating a new `PlatformWorkspaceToken`.
-- [SolAccessibleToInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-accessible-to-input.md)
+- [SolAccessibleToInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-accessible-to-input.md): Specifies the grids whose permissions must provide access to a solution.
 - [SolAddAttachmentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-add-attachment-input.md)
 - [SolBldCreateSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-create-solution-input.md)
 - [SolBldImportRefDesignsInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-bld-import-ref-designs-input.md)

@@ -30,6 +30,7 @@
 - [deprecated](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/directives/deprecated.md): Marks an element of a GraphQL schema as no longer supported.
 - [experimental](https://altiumdeveloper.github.io/platform-api-docs/reference/common/operations/directives/experimental.md)
 - [include](https://altiumdeveloper.github.io/platform-api-docs/reference/common/operations/directives/include.md): Directs the executor to include this field or fragment only when the `if` argument is true.
-- [oneOf](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/directives/one-of.md): Indicates exactly one field must be supplied and this field must not be `null`.
+- [listSize](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/directives/list-size.md): The purpose of the `@listSize` directive is to either inform the static analysis about the size of returned lists (if that information is statically available), or to point the analysis to where to f…
+- [oneOf](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/directives/one-of.md): The `@oneOf` directive is used within the type system definition language to indicate: - an Input Object is a Oneof Input Object, or - an Object Type's Field is a Oneof Field.
 - [skip](https://altiumdeveloper.github.io/platform-api-docs/reference/common/operations/directives/skip.md): Directs the executor to skip this field or fragment when the `if` argument is true.
 - [specifiedBy](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/directives/specified-by.md): The `@specifiedBy` directive is used within the type system definition language to provide a URL for specifying the behavior of custom scalar definitions.

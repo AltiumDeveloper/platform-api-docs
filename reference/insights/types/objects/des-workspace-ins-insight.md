@@ -13,9 +13,9 @@ Insight aggregated from workspace signals and related resources.
 
 ### Common Data Model
 
-- [Part Insight](https://w3id.org/altium/cdm/insights/PartInsight)
+- [Insight](https://w3id.org/altium/cdm/insights/Insight) — A finding, detected asynchronously, that gives the user insight within one domain area: the library (part insights) or design (design insights). Insights can be followed up by tasks.
 
-  - IRI: [`https://w3id.org/altium/cdm/insights/PartInsight`](https://w3id.org/altium/cdm/insights/PartInsight)
+  - IRI: [`https://w3id.org/altium/cdm/insights/Insight`](https://w3id.org/altium/cdm/insights/Insight)
   - GRID: `grid:workspace:{workspace-id}:insights:insight/{id}`
 
 ### Returned By
@@ -84,7 +84,7 @@ Severity level assigned to the insight.
 
 #### `shortData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar
 
-Compact, UI-friendly representation of the insight data.
+Short data payload for the insight.
 
 #### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

@@ -17,6 +17,8 @@ Exports the specified BOM into a file and provides a download URL.
 
 #### [`BomExportBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-export-bom-payload.md) object
 
+Result of exporting a BOM to a file.
+
 ```graphql
 bomExportBom(
   input: BomExportBomInput!

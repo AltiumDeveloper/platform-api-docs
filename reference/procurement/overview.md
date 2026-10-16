@@ -29,7 +29,7 @@ API types in this bounded context that represent Common Data Model (CDM) entitie
 | [`BomItemElement`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) | [BOM Item Element](https://w3id.org/altium/cdm/procurement/BomItemElement) [`https://w3id.org/altium/cdm/procurement/BomItemElement`](https://w3id.org/altium/cdm/procurement/BomItemElement) |
 | [`BomItemSubstitute`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-item-substitute.md) | [BOM Item Substitute](https://w3id.org/altium/cdm/procurement/BomItemSubstitute) [`https://w3id.org/altium/cdm/procurement/BomItemSubstitute`](https://w3id.org/altium/cdm/procurement/BomItemSubstitute) |
 | [`BomRelease`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-release.md) | [BOM Release](https://w3id.org/altium/cdm/procurement/BomRelease) [`https://w3id.org/altium/cdm/procurement/BomRelease`](https://w3id.org/altium/cdm/procurement/BomRelease) |
-| [`BomWip`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md) | [Consolidated BOM](https://w3id.org/altium/cdm/procurement/ConsolidatedBOM) [`https://w3id.org/altium/cdm/procurement/ConsolidatedBOM`](https://w3id.org/altium/cdm/procurement/ConsolidatedBOM) [Managed BOM](https://w3id.org/altium/cdm/procurement/ManagedBOM) [`https://w3id.org/altium/cdm/procurement/ManagedBOM`](https://w3id.org/altium/cdm/procurement/ManagedBOM) |
+| [`BomWip`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-wip.md) | [BOM WIP](https://w3id.org/altium/cdm/procurement/BomWIP) [`https://w3id.org/altium/cdm/procurement/BomWIP`](https://w3id.org/altium/cdm/procurement/BomWIP) |
 
 ## Entry points
 
@@ -43,7 +43,7 @@ Look up entities by identifier:
 | - | - | - |
 | Queries | 2 | 0 |
 | Mutations | 3 | 0 |
-| Objects | 45 | 0 |
+| Objects | 47 | 0 |
 | Inputs | 19 | 0 |
 | Enums | 4 | 0 |
 | Interfaces | 5 | 0 |

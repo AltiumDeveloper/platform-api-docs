@@ -15,6 +15,8 @@ Creates a new BOM.
 
 #### [`BomCreateBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-create-bom-payload.md) object
 
+Result of creating a new BOM.
+
 ```graphql
 bomCreateBom(
   input: BomCreateBomInput!

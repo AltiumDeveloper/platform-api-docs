@@ -15,7 +15,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 ## Common Data Model
 
-- [Insights](https://altiumdeveloper.github.io/cdm/subsets/insights/) — Models insights that can be followed up by tasks. The only concrete kind is the part insight: it concerns one Workspace part, may be informed by BOMs or design projects, and occurs in BOM releases, project releases or component revisions.
+- [Insights](https://altiumdeveloper.github.io/cdm/subsets/insights/) — Models insights: findings, detected asynchronously, that give the user insight within one domain area and can be followed up by tasks. There are two concrete kinds. A part insight concerns one Workspace part, may be informed by BOMs or design projects, and occurs in BOM releases, project releases or component revisions. A design insight concerns a design and is part of a design review.
 
 ## Entities
 
@@ -23,7 +23,7 @@ API types in this bounded context that represent Common Data Model (CDM) entitie
 
 | API type | CDM entity |
 | - | - |
-| [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) | [Part Insight](https://w3id.org/altium/cdm/insights/PartInsight) [`https://w3id.org/altium/cdm/insights/PartInsight`](https://w3id.org/altium/cdm/insights/PartInsight) |
+| [`DesWorkspaceInsInsight`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md) | [Insight](https://w3id.org/altium/cdm/insights/Insight) [`https://w3id.org/altium/cdm/insights/Insight`](https://w3id.org/altium/cdm/insights/Insight) |
 
 ## Entry points
 
@@ -37,6 +37,6 @@ Look up entities by identifier:
 | - | - | - |
 | Queries | 9 | 0 |
 | Mutations | 6 | 0 |
-| Objects | 35 | 0 |
-| Inputs | 13 | 0 |
+| Objects | 36 | 0 |
+| Inputs | 14 | 0 |
 | Unions | 1 | 0 |

@@ -5,6 +5,7 @@
 - [DesAnnotationDesignReviewBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-design-review-binding.md)
 - [DesAnnotationDocumentBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-document-binding.md)
 - [DesAnnotationManagedBomRowBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-managed-bom-row-binding.md)
+- [DesAnnotationManagedPartBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-managed-part-binding.md)
 - [DesAnnotationReleaseBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-release-binding.md)
 - [DesAnnotationRequirementBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirement-binding.md)
 - [DesAnnotationRequirements](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirements.md)

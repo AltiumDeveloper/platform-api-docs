@@ -59,7 +59,7 @@ Issues associated with the item.
 
 #### `itemId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the item. Items preserve their ID across releases of the BOM.
+Identifier of the item. Items preserve their identifier across releases of the BOM.
 
 #### `primaryElement` · [`BomItemElement`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/interfaces/bom-item-element.md) interface
 

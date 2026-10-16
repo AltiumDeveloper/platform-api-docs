@@ -1,4 +1,4 @@
-# Altium 365 API — Collaboration schema slice (~4390 tokens)
+# Altium 365 API — Collaboration schema slice (~4454 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -24,7 +24,7 @@ type Query {
     last: Int
     projectId: String!
     where: RequirementFilterInput
-  ): DesAnnotationsConnection
+  ): DesAnnotationsConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Search for a specific comment thread associated with a project."
   desCommentThread(
     "The project identifier (`DesProject.id`)."
@@ -127,6 +127,10 @@ type DesAnnotationDocumentBinding {
 
 type DesAnnotationManagedBomRowBinding {
   rowId: String!
+}
+
+type DesAnnotationManagedPartBinding {
+  partId: String!
 }
 
 type DesAnnotationReleaseBinding {
@@ -394,7 +398,7 @@ type DesUpdateTaskPayload {
 }
 
 "There may be multiple bindings associated with annotation instance. Together the bindings provide detailed information about the context of the annotation placement and associated design entities."
-union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
+union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationManagedPartBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
 
 "Input for comment creation."
 input DesCreateCommentInput {

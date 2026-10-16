@@ -26,8 +26,8 @@ type DesWorkspaceInsInsightEntityLinksChangedAction {
 
 #### `newEntities` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Entities that were added to the insight.
+Entity identifiers that were added to the insight.
 
 #### `removedEntities` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Entities that were removed from the insight.
+Entity identifiers that were removed from the insight.
