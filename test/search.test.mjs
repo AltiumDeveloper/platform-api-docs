@@ -180,6 +180,21 @@ test('a concept finds its entity type before fields and sub-types that share the
   assert.equal(top(loaded, 'parts list')[0].record.n, 'DesComponent'); // through the configured synonym
 });
 
+test('with no type named like the query, types it prefixes (context prefix aside) beat a member named exactly so', () => {
+  const records = [
+    { i: 0, n: 'supplier', k: 'field', p: 'BomOfferReference', c: 0, u: '/a', d: 'The supplier of the offer.' },
+    { i: 1, n: 'DesSupplierPart', k: 'object', c: 0, u: '/b', d: 'A part offered by a supplier.' },
+    { i: 2, n: 'DesSupplierStock', k: 'object', c: 0, u: '/c', d: 'Stock a supplier holds.' },
+    // Unrelated types, so that "supplier" is a rare term, as in the real index.
+    ...Array.from({ length: 30 }, (_, j) => ({ i: 3 + j, n: `DesThing${j}`, k: 'object', c: 0, u: `/t${j}`, d: 'Unrelated.' })),
+  ];
+  const loaded = loadIndex({ version: 1, contexts: [{ id: 'design', title: 'Design', slug: 'design' }], prefixes: ['des'], records });
+  assert.equal(top(loaded, 'supplier')[0].record.n, 'DesSupplierPart');
+  // A type named like the query keeps the lead over the longer types it prefixes.
+  const { loaded: full } = fixture();
+  assert.equal(top(full, 'component')[0].record.n, 'DesComponent');
+});
+
 test('a member written as Type.member beats a type spelled with the same letters', () => {
   const { loaded } = fixture();
   const first = top(loaded, 'DesProject.component')[0].record;

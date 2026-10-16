@@ -90,7 +90,7 @@ export function createIndex(records) {
 
 // How strongly the record's name answers the query as a whole. Members get smaller bonuses: hundreds of types have an
 // `id` or a `name`, and none of those should outrank the type called that.
-function nameBonus(record, query, prefixes, allowTypos) {
+function nameBonus(record, query, prefixes, allowTypos, allowCorePrefix = false) {
   const q = normalise(query);
   if (!q) return 1;
   const member = isMember(record.k);
@@ -115,6 +115,11 @@ function nameBonus(record, query, prefixes, allowTypos) {
   // DesComponentParameter).
   if (q.length >= 3 && name.startsWith(q)) return member ? 1.4 : 1.5 + 4.5 * (q.length / name.length);
   if (qualified && q.length >= 3 && qualified.startsWith(q)) return 3;
+  // The same without the context prefix readers rarely type, when no type or operation is named like the query:
+  // `supplier` → DesSupplierPart, where a field named `supplier` would otherwise outrank every type. With such a name
+  // (`project` → DesProject) the longer DesProject* types would crowd it out.
+  const coreName = core.join('');
+  if (allowCorePrefix && !member && q.length >= 3 && coreName.startsWith(q)) return 1.5 + 4.5 * (q.length / coreName.length);
   // A mistyped name (`desProjcetById`, `workspce`): one edit away, or two for long names. Only when nothing matches the
   // query exactly, or `releaseId` (a field) would lose to `desReleaseById` (two edits away).
   if (allowTypos && q.length >= 5 && !/\s/.test(query.trim())) {
@@ -196,6 +201,13 @@ export function search(index, records, query, options = {}) {
   const candidates = hits.slice(0, 600);
   const q = normalise(trimmed);
   const allowTypos = !candidates.some(({ id }) => normalise(records[id].n) === q || coreWords(records[id], prefixes).join('') === q);
+  const qSingular = identifierWords(trimmed).map(singular).join('');
+  const allowCorePrefix = !candidates.some(({ id }) => {
+    const record = records[id];
+    if (isMember(record.k)) return false;
+    const core = coreWords(record, prefixes);
+    return normalise(record.n) === q || core.join('') === q || core.map(singular).join('') === qSingular;
+  });
   // `@deprecated` names a directive, not the guide about deprecation.
   const directiveQuery = trimmed.startsWith('@');
   const scored = candidates.map((hit) => {
@@ -204,7 +216,7 @@ export function search(index, records, query, options = {}) {
     score *= KINDS[record.k]?.weight ?? 1;
     if (directiveQuery && record.k === 'directive') score *= 3;
     // A synonym stands for a name as much as the query does ("reference design" → `ref design` → SupRefDesign).
-    const bonus = Math.max(nameBonus(record, trimmed, prefixes, allowTypos), ...synonyms.map((synonym) => nameBonus(record, synonym, prefixes, false)));
+    const bonus = Math.max(nameBonus(record, trimmed, prefixes, allowTypos, allowCorePrefix), ...synonyms.map((synonym) => nameBonus(record, synonym, prefixes, false)));
     score *= bonus;
     if (bonus === 1) score *= nameFit(record, queryParts, prefixes);
     // A record matched through a synonym answers the phrase as well as one containing its words.
