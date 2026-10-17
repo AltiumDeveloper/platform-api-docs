@@ -20,6 +20,7 @@ Represents global the part details.
 ```graphql
 desPartGlobalPartByIds(
   globalPartIds: [String!]!
+  requestPaidData: Boolean
 ): [DesPartGlobalPart]!
 ```
 
@@ -28,3 +29,7 @@ desPartGlobalPartByIds(
 #### `globalPartIds` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 The unique identifiers of the global parts.
+
+#### `requestPaidData` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
+
+Specifies whether paid data from \*SiliconExpert\* or \*Z2Data\* is requested. When set to true, the provider quota is consumed.

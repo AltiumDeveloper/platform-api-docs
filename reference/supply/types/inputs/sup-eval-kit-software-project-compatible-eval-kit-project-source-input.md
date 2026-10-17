@@ -21,6 +21,8 @@ input SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput {
   framework: SupSoftwareProjectEvalKitProjectSourceFramework
   sourceFile: SupEvalKitFileInput
   sourceUrl: String
+  toolchainId: String
+  toolchainVersion: String
   type: SupSoftwareProjectEvalKitProjectSourceType!
 }
 ```
@@ -50,6 +52,14 @@ The upload file of the source associated with the evaluation kit source.
 #### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The URL of the source associated with the evaluation kit source.
+
+#### `toolchainId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+The toolchain identifier. A toolchain may be selected without a version.
+
+#### `toolchainVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+The supported version string from the toolchain catalog. Must belong to the selected toolchain.
 
 #### `type` · [`SupSoftwareProjectEvalKitProjectSourceType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-software-project-eval-kit-project-source-type.md) non-null enum
 

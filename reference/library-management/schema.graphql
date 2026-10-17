@@ -1,4 +1,4 @@
-# Altium 365 API — Library Management schema slice (~25875 tokens)
+# Altium 365 API — Library Management schema slice (~25915 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -81,6 +81,8 @@ type Query {
   desPartGlobalPartByIds(
     "The unique identifiers of the global parts."
     globalPartIds: [String!]!
+    "Specifies whether paid data from *SiliconExpert* or *Z2Data* is requested. When set to true, the provider quota is consumed."
+    requestPaidData: Boolean
   ): [DesPartGlobalPart]!
   "Searches part by attributes globally."
   desPartGlobalSearch(

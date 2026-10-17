@@ -1,4 +1,4 @@
-# Altium 365 API — Supply schema slice (~29331 tokens)
+# Altium 365 API — Supply schema slice (~29474 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -1052,6 +1052,10 @@ type SupSoftwareProjectEvalKitProjectSource {
   projectSourceId: String! @deprecated(reason: "Fields play a technical role for internal uses.")
   "The URL of the source."
   sourceUrl: String!
+  "The selected toolchain and its supported versions."
+  toolchain: SupSoftwareProjectToolchain
+  "The selected toolchain version string."
+  toolchainVersion: String
   "The type of the compatible evaluation kit project source."
   type: SupSoftwareProjectEvalKitProjectSourceType!
   "The last updated date."
@@ -1181,6 +1185,12 @@ type SupSoftwareProjectSolutionTemplateSoftwareProjectsResult {
   softwareProjects: [SupSoftwareProject!]!
   "The solution template identifier."
   solutionTemplateId: ID!
+}
+
+type SupSoftwareProjectToolchain {
+  name: String!
+  supportedVersions: [String!]!
+  toolchainId: String! @deprecated(reason: "Fields play a technical role for internal uses.")
 }
 
 "Payload associated with updating a evaluation kit compatible software projects."
@@ -1934,6 +1944,10 @@ input SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput {
   sourceFile: SupEvalKitFileInput
   "The URL of the source associated with the evaluation kit source."
   sourceUrl: String
+  "The toolchain identifier. A toolchain may be selected without a version."
+  toolchainId: String
+  "The supported version string from the toolchain catalog. Must belong to the selected toolchain."
+  toolchainVersion: String
   "The project source type."
   type: SupSoftwareProjectEvalKitProjectSourceType!
 }
