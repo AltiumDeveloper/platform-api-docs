@@ -17,6 +17,7 @@ deprecated: false
 enum SupSoftwareProjectEvalKitProjectSourceType {
   CMAKE
   E2STUDIO
+  RASC_CMAKE
 }
 ```
 
@@ -29,3 +30,7 @@ CMAKE project.
 #### `E2STUDIO`
 
 E2STUDIO project.
+
+#### `RASC_CMAKE`
+
+RASC CMAKE project.

@@ -1,4 +1,4 @@
-# Altium 365 API — Supply schema slice (~29474 tokens)
+# Altium 365 API — Supply schema slice (~29483 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -2955,6 +2955,8 @@ enum SupSoftwareProjectEvalKitProjectSourceType {
   CMAKE
   "E2STUDIO project."
   E2STUDIO
+  "RASC CMAKE project."
+  RASC_CMAKE
 }
 
 enum SupSoftwareProjectOrderDirection {
