@@ -6,6 +6,17 @@
 
 /* ---------- Sidebar ---------- */
 
+/* Changelog section link: matches the section-header style (uppercase, small, spaced) but stays clickable */
+.sidebar-changelog > .menu__link {
+  margin: 1rem 0 0.25rem;
+  padding-left: 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-secondary);
+}
+
 /* Experimental markers */
 .sidebar-exp > .menu__link::after {
   content: 'EXP';
