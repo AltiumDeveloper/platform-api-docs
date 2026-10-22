@@ -15,10 +15,11 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Changelog',
+      label: 'CHANGELOG',
       collapsible: false,
       link: { type: 'doc', id: 'changelog/index' },
       items: [],
+      className: 'sidebar-changelog',
     },
   ],
 };
