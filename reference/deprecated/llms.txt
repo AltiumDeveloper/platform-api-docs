@@ -3,6 +3,7 @@
 
 ## Platform
 - [desFolderById](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/des-folder-by-id.md) (deprecated: Use `DesFolderByFolderId` instead.)
+- [globalTrackedEvent](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/global-tracked-event.md) (deprecated: No longer supported)
 - [solBldEntityScaffoldingStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/sol-bld-entity-scaffolding-status.md): Retrieves a entity scaffolding status. (deprecated: Use isScaffolding field instead)
 - [solSolutionsByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/sol-solutions-by-ids.md): Gets solutions by IDs. (deprecated: Internal resolver used by the Fusion gateway for batched entity resolution. Not intended for direct client use.)
 - [solSolutionsByPage](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/sol-solutions-by-page.md): Gets all available solutions with pagination. (deprecated: Use solSolutionsByPagev2 query)

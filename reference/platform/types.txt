@@ -73,6 +73,9 @@
 - [GloAppOAuthClientNotRestoredError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-restored-error.md): Error that occurs when an *OAuth client* cannot be restored.
 - [GloAppRedirectUriNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-redirect-uri-not-updated-error.md): Error that occurs when updating the redirect URI for a `GloApp` is unsuccessful.
 - [GloAppScopeNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-scope-not-updated-error.md): Error that occurs when updating the scope for a `GloApp` is unsuccessful.
+- [GlobalTrackedEventContextObjectIdInvalidError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/global-tracked-event-context-object-id-invalid-error.md): Indicates that the supplied context object identifier is rejected.
+- [GlobalTrackedEventNameInvalidError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/global-tracked-event-name-invalid-error.md): Indicates that the supplied event name is rejected.
+- [GlobalTrackedEventReportPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/global-tracked-event-report-payload.md): Result of reporting a business analytics event.
 - [GloCreateAppFromOAuthClientPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-from-oauth-client-payload.md)
 - [GloCreateAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-payload.md)
 - [GloCreateAppWarning](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-warning.md)
@@ -178,6 +181,7 @@
 - [GloAddAppGrantTypeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-grant-type-error.md)
 - [GloAddAppRedirectUriError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-redirect-uri-error.md)
 - [GloAddAppScopeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-scope-error.md)
+- [GlobalTrackedEventReportError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/global-tracked-event-report-error.md)
 - [GloCreateAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-error.md)
 - [GloCreateAppFromOAuthClientError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-from-oauth-client-error.md)
 - [GloDeleteAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-delete-app-error.md)
@@ -242,6 +246,7 @@
 - [GloAddUsersToGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-users-to-group-input.md): Represents input value for adding user into group.
 - [GloAppFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-app-filter-input.md): Represents an Altium application.
 - [GloAppSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-app-sort-input.md): Represents an Altium application.
+- [GlobalTrackedEventReportInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/global-tracked-event-report-input.md): Business analytics event to record.
 - [GloCreateAppFromOAuthClientInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-from-oauth-client-input.md): Input for creating a new `GloApp`.
 - [GloCreateAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-input.md): Input for creating a new `GloApp`.
 - [GloCreateAppOAuthClientInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-create-app-oauth-client-input.md): Input for creating a new *OAuth 2.0 client*.

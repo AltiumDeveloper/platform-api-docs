@@ -1,4 +1,4 @@
-# Altium 365 API — Platform schema slice (~32162 tokens)
+# Altium 365 API — Platform schema slice (~32604 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -177,6 +177,7 @@ type Query {
     order: [GloAppSortInput!]
     where: GloAppFilterInput
   ): GloAppsConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  globalTrackedEvent: String! @deprecated
   "Retrieves the information about subscription with given identifier."
   gloEvtSubscriptionById(subscriptionId: String!): GloEvtSubscription
   "Retrieves an organization by its identifier."
@@ -297,6 +298,8 @@ type Mutation {
   gloAddAppScope(input: GloAddAppScopeInput!): GloAddAppScopePayload!
   "Add users to group."
   gloAddUsersToGroup(input: GloAddUsersToGroupInput!): GloAddUsersToGroupPayload!
+  "Reports a business analytics event for the calling application's workspace."
+  globalTrackedEventReport(input: GlobalTrackedEventReportInput!): GlobalTrackedEventReportPayload!
   "Creates a new App with an *OAuth 2.0 client*."
   gloCreateApp(input: GloCreateAppInput!): GloCreateAppPayload!
   "Creates a new App with an existing *OAuth 2.0 client*."
@@ -1755,6 +1758,28 @@ type GloUserSpace {
   userSpaceId: String
 }
 
+"Indicates that the supplied context object identifier is rejected."
+type GlobalTrackedEventContextObjectIdInvalidError implements Error {
+  "Context object identifier that was rejected."
+  contextObjectId: String!
+  "Description of the problem."
+  message: String!
+}
+
+"Indicates that the supplied event name is rejected."
+type GlobalTrackedEventNameInvalidError implements Error {
+  "Event name that was rejected."
+  eventName: String!
+  "Description of the problem."
+  message: String!
+}
+
+"Result of reporting a business analytics event."
+type GlobalTrackedEventReportPayload {
+  "Errors that prevented the event from being recorded. Empty when the event is accepted."
+  errors: [GlobalTrackedEventReportError!]
+}
+
 "**Experimental**"
 type KgAccessLevel @experimental {
   "**Experimental**"
@@ -2342,6 +2367,8 @@ union GloUpdateAppDescriptionError = GloAppNotFoundError | GloAppDeletedError
 union GloUpdateAppHridError = GloAppNotFoundError | GloAppDeletedError | GloAppHridExistsError | GloAppInvalidHridError
 
 union GloUpdateAppNameError = GloAppNotFoundError | GloAppDeletedError | GloAppNameNotUpdatedError
+
+union GlobalTrackedEventReportError = GlobalTrackedEventNameInvalidError | GlobalTrackedEventContextObjectIdInvalidError
 
 union PlatformKeyValueStoreAddError = PlatformKeyValueStoreKeyInvalidError | PlatformKeyValueStoreValueTooLargeError | PlatformKeyValueStoreEntryExistsError | PlatformKeyValueStoreQuotaExceededError
 
@@ -3183,6 +3210,20 @@ input GloUserSortInput {
   userName: SortEnumType
 }
 
+"Business analytics event to record."
+input GlobalTrackedEventReportInput {
+  "Identifier of the object the event relates to, as a GUID string in D format. Omit when the event relates to no particular object."
+  contextObjectId: String
+  "Name of the event, as dot-separated segments of letters, digits, hyphens and periods, for example Component.Footprint.Edit."
+  eventName: String!
+  "Name of the reporter. It could be service or App. Optional parameter."
+  sourceName: String
+  "Global user ID as GUID."
+  userId: String!
+  "A365 Workspace ID as GUID."
+  workspaceId: String!
+}
+
 "**Experimental**"
 input KgAddNodeInput @experimental {
   "**Experimental** An optional description of the entity."
@@ -3397,6 +3438,8 @@ input SolCreateSolutionInput {
   evalKitId: ID
   flowType: String
   folderId: String!
+  "Items to link to the solution on creation. The solution is not created if any of them cannot be linked."
+  itemIds: [ID!]
   name: String!
   parameterBundle: String
   previewUrl: String @deprecated(reason: "The field is being removed as it is no longer required and does not serve any functional purpose in the current API design.")
