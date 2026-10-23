@@ -110,6 +110,10 @@ export function runLlms({
   const contexts = manifest.contexts;
   const contextById = new Map(contexts.map((context) => [context.id, context]));
   const guides = readGuides(guidesDir);
+  const changelogMdx = join(dirname(guidesDir), 'changelog', 'index.mdx');
+  const changelog = existsSync(changelogMdx)
+    ? (() => { const fm = readFrontMatter(readFileSync(changelogMdx, 'utf8')); return { route: 'changelog', title: fm.title ?? 'Changelog', description: fm.description ?? '' }; })()
+    : null;
 
   // 1. Clean .md pages.
   const markdown = new Map();
@@ -123,6 +127,7 @@ export function runLlms({
   const flags = { experimental: false, deprecated: false };
   convert('', { bounded_context: 'none', kind: 'overview', ...flags });
   for (const guide of guides) convert(guide.route, { bounded_context: 'none', kind: 'guide', ...flags });
+  if (changelog) convert(changelog.route, { bounded_context: 'none', kind: 'guide', ...flags });
   for (const context of contexts) convert(`reference/${context.slug}/overview`, { bounded_context: context.title, kind: 'overview', ...flags });
   for (const page of pages) {
     convert(page.url.replace(/^\/+/, ''), {
@@ -153,9 +158,10 @@ export function runLlms({
   write(join(buildDir, 'reference', 'deprecated', 'llms.txt'), deprecated);
   tokens.deprecated = estimateTokens(deprecated);
 
-  // 3. llms-full.txt: guides, then each context (overview, operations, types, deprecated), each page with its front matter.
+  // 3. llms-full.txt: guides, changelog, then each context (overview, operations, types, deprecated), each page with its front matter.
   const fullRoutes = [
     ...guides.map((guide) => guide.route),
+    ...(changelog ? [changelog.route] : []),
     ...contexts.flatMap((context) => [
       `reference/${context.slug}/overview`,
       ...orderedPages(pages, context.id).map((page) => page.url.replace(/^\/+/, '')),
@@ -166,7 +172,7 @@ export function runLlms({
   tokens.full = estimateTokens(full);
 
   // 4. Root llms.txt.
-  const root = renderRootIndex({ contexts, guides, siteUrl, schemaTokens: estimateTokens(sdl), fullTokens: tokens.full });
+  const root = renderRootIndex({ contexts, guides, changelog, siteUrl, schemaTokens: estimateTokens(sdl), fullTokens: tokens.full });
   write(join(buildDir, 'llms.txt'), root);
   tokens.root = estimateTokens(root);
   return { pages: markdown.size, tokens };

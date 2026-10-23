@@ -85,7 +85,7 @@ function resolveOperation(schema, kind, name) {
  *   synonyms?: {match: string, add: string}[], contextWeights?: Record<string, number>}}} input
  * `config` is config/search.yaml; it is passed through to the engine in the payload.
  */
-export function buildSearchRecords({ schema, manifest, pages, docsDir, guides = [], config = {} }) {
+export function buildSearchRecords({ schema, manifest, pages, docsDir, guides = [], changelog = null, config = {} }) {
   const weights = config.contextWeights ?? {};
   const contexts = manifest.contexts.map(({ id, title, slug }) => ({ id, title, slug, ...(weights[id] ? { weight: weights[id] } : {}) }));
   for (const { match } of config.synonyms ?? []) new RegExp(match, 'i'); // fail the build on an invalid pattern
@@ -163,6 +163,12 @@ export function buildSearchRecords({ schema, manifest, pages, docsDir, guides = 
     for (const section of guideSections(readFileSync(guide.path, 'utf8'))) {
       const url = `/${guide.route}${section.anchor ? `#${section.anchor}` : ''}`.replace(/^\/+$/, '/');
       add({ n: section.heading ?? guide.title, k: 'guide', t: guide.title, u: url, d: section.text });
+    }
+  }
+  if (changelog) {
+    for (const section of guideSections(readFileSync(changelog.path, 'utf8'))) {
+      const url = `/${changelog.route}${section.anchor ? `#${section.anchor}` : ''}`;
+      add({ n: section.heading ?? changelog.title, k: 'guide', t: changelog.title, u: url, d: section.text });
     }
   }
   return { contexts, prefixes: config.prefixes ?? [], synonyms: config.synonyms ?? [], records };

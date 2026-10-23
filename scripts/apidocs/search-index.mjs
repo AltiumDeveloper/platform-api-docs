@@ -24,11 +24,15 @@ export function runSearchIndex({
   const schema = buildSchema(readFileSync(join(schemaDir, 'annotated.graphql'), 'utf8'), { assumeValidSDL: true });
 
   const home = join(docsDir, 'index.mdx');
+  const changelogMdx = join(docsDir, 'changelog', 'index.mdx');
   const guides = [
     ...(existsSync(home) ? [{ route: '', path: home, title: readFrontMatter(readFileSync(home, 'utf8')).title ?? 'Overview' }] : []),
     ...readGuides(join(docsDir, 'guides')),
   ];
-  const payload = { version: 1, ...buildSearchRecords({ schema, manifest, pages, docsDir, guides, config }) };
+  const changelog = existsSync(changelogMdx)
+    ? { route: 'changelog', path: changelogMdx, title: readFrontMatter(readFileSync(changelogMdx, 'utf8')).title ?? 'Changelog' }
+    : null;
+  const payload = { version: 1, ...buildSearchRecords({ schema, manifest, pages, docsDir, guides, changelog, config }) };
   const json = JSON.stringify(payload);
   mkdirSync(dirname(out), { recursive: true });
   writeFileSync(out, json);

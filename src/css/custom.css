@@ -6,6 +6,27 @@
 
 /* ---------- Sidebar ---------- */
 
+/* Changelog: progressive indentation + spacing + weight */
+/* font-weight !important: overrides the .markdown h4/.markdown h5 rule below (line ~100) which sets font-weight: 450 for API reference pages */
+.changelog-page h3 { margin-top: 2.5rem; }
+.changelog-page h4 { font-weight: 700 !important; }
+.changelog-page h5 { padding-left: 1.5rem; font-weight: 700 !important; margin-top: 1.2rem; margin-bottom: 0.4rem; }
+.changelog-page h6 { padding-left: 3rem; font-weight: 700 !important; margin-top: 0.8rem; margin-bottom: 0.3rem; }
+.changelog-page .cl-entry { padding-left: 4.5rem; margin: 0.15rem 0; }
+
+/* Year anchors (e.g. [2026]) — same size as date headings (h3) */
+.changelog-page p > a[href*="year-"] {
+  font-size: var(--ifm-h3-font-size);
+  font-weight: var(--ifm-heading-font-weight);
+  line-height: var(--ifm-heading-line-height);
+  display: block;
+}
+
+/* Changelog entry icons */
+.cl-add    { color: var(--ifm-color-success); font-weight: 700; }
+.cl-remove { color: var(--ifm-color-danger);  font-weight: 700; }
+.cl-change { color: var(--ifm-color-warning-dark); font-weight: 700; }
+
 /* Changelog section link: matches the section-header style (uppercase, small, spaced) but stays clickable */
 .sidebar-changelog > .menu__link {
   margin: 1rem 0 0.25rem;
