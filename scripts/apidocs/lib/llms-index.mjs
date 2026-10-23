@@ -235,7 +235,7 @@ export function renderDeprecatedIndex({ contexts, pages, schema, siteUrl }) {
 }
 
 // Site root /llms.txt.
-export function renderRootIndex({ contexts, guides, siteUrl, schemaTokens, fullTokens }) {
+export function renderRootIndex({ contexts, guides, changelog = null, siteUrl, schemaTokens, fullTokens }) {
   const bcs = contexts.filter((context) => context.id !== 'common').map((context) => {
     const cdm = concepts(context);
     const flag = context.id === 'renesas-preview' ? ' (preview, Renesas-specific)' : '';
@@ -254,6 +254,7 @@ export function renderRootIndex({ contexts, guides, siteUrl, schemaTokens, fullT
     '',
     ...section('Bounded contexts', bcs),
     ...section('Guides', guides.map((guide) => `- [${guide.title}](${siteUrl}/${guide.route}.md): ${guide.description}`)),
+    ...section('Changelog', changelog ? [`- [${changelog.title}](${siteUrl}/${changelog.route}.md): ${changelog.description}`] : []),
     ...section('Developer Center', DEVELOPER_CENTER_LINKS.map(([title, url]) => `- [${title}](${url})`)),
     ...section('Optional', [
       ...(common ? [`- [${common.title} types](${siteUrl}/reference/${common.slug}/llms.txt): ${common.description}`] : []),
