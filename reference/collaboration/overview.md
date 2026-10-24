@@ -15,7 +15,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 ## Common Data Model
 
-- [Collaboration](https://altiumdeveloper.github.io/cdm/subsets/collaboration/) — Models collaboration on Workspace content: comment threads attached to a point, object or area of a document, the individual comments in each thread, and tasks that assign work to users or teams. In the product, comments are placed on documents of Workspace projects (e.g. through the Comments and Tasks panel in Altium Designer), and tasks are tracked on the Tasks page of a Workspace.
+- [Collaboration](https://altiumdeveloper.github.io/cdm/subsets/collaboration/) — Models collaboration on Workspace content: comment threads attached to a point, object or area of a document, the individual comments in each thread, tasks that assign work to users or teams, and design reviews in which assigned reviewers assess a snapshot of a design project. In the product, comments are placed on documents of Workspace projects (e.g. through the Comments and Tasks panel in Altium Designer), and tasks are tracked on the Tasks page of a Workspace.
 
 ## Entities
 
@@ -34,7 +34,7 @@ API types in this bounded context that represent Common Data Model (CDM) entitie
 | Queries | 5 | 0 |
 | Mutations | 13 | 0 |
 | Subscriptions | 1 | 0 |
-| Objects | 33 | 0 |
+| Objects | 34 | 0 |
 | Inputs | 15 | 0 |
 | Enums | 5 | 0 |
 | Unions | 1 | 0 |

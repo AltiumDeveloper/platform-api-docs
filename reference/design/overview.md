@@ -15,7 +15,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 
 ## Common Data Model
 
-- [Design](https://altiumdeveloper.github.io/cdm/subsets/design/) — Models design projects stored in a Workspace, including multi-board and harness projects, with their parameters, variants and releases, the manufacturing packages shared from releases, project templates with their revisions, rule checks run against projects, and design reviews of projects. It corresponds to Workspace projects in Altium 365 and Altium Designer, from project creation through to design release.
+- [Design](https://altiumdeveloper.github.io/cdm/subsets/design/) — Models design projects stored in a Workspace, including multi-board and harness projects, with their parameters, variants and releases, the manufacturing packages shared from releases, project templates with their revisions, and rule checks run against projects. It corresponds to Workspace projects in Altium 365 and Altium Designer, from project creation through to design release.
 
 ## Entities
 

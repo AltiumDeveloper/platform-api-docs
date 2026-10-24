@@ -1578,7 +1578,7 @@ type DesCommentNotificationData {
 }
 
 "A comment thread contains an initial remark associated with the design and a collection of replies."
-type DesCommentThread {
+type DesCommentThread implements Node {
   "The account information for the owner of any action or response to this comment thread."
   assignedTo: DesUser
   "The list of replies associated with this comment thread."
@@ -1591,16 +1591,28 @@ type DesCommentThread {
   createdAt: DateTime!
   "The account information for who created this comment thread."
   createdBy: DesUser!
+  "The node identifier for this comment thread (used by `node`)."
+  id: ID!
   "The `DateTime` for the most recent modification of this comment thread."
   modifiedAt: DateTime!
   "The account information for who most recently modified this comment thread."
   modifiedBy: DesUser!
   "The web address to download the screenshot associated with the creation of this comment thread."
   originalStateScreenshotUrl: String
+  "Metadata entries on the comment thread, including service-set entries such as *DocumentType* and *ReleaseGuid*."
+  properties: [DesCommentThreadProperty!]!
   "Comment thread status. 0 = *Resolved*, 1 = *Active*."
   status: Int!
   "The sequence number of this comment thread."
   threadNumber: Int!
+}
+
+"Comment thread metadata entry."
+type DesCommentThreadProperty {
+  "Parameter name."
+  name: String!
+  "Parameter value."
+  value: String!
 }
 
 type DesComparisonRunPayload {
