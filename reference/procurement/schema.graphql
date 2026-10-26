@@ -1,4 +1,4 @@
-# Altium 365 API — Procurement schema slice (~7958 tokens)
+# Altium 365 API — Procurement schema slice (~7961 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -165,6 +165,26 @@ type BomComponentReference {
   componentId: String!
   "Identifier of the referenced component revision."
   componentRevisionId: String!
+}
+
+"A connection to a list of items."
+type BomCostedBomsConnection {
+  "A list of edges."
+  edges: [BomCostedBomsEdge!]
+  "A flattened list of the nodes."
+  nodes: [BomWip!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type BomCostedBomsEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: BomWip!
 }
 
 "Information about a country."
@@ -669,7 +689,7 @@ type BomWip implements Bom {
     first: Int
     "Returns the last _n_ elements from the list."
     last: Int
-  ): CostedBomsConnection
+  ): BomCostedBomsConnection
   "Timestamp of the BOM creation."
   createdAt: DateTime!
   "Effective health checks applicable to this BOM."
@@ -716,26 +736,6 @@ type BomWip implements Bom {
   sources: [BomSource!]!
   "Timestamp of the last change in the BOM."
   updatedAt: DateTime!
-}
-
-"A connection to a list of items."
-type CostedBomsConnection {
-  "A list of edges."
-  edges: [CostedBomsEdge!]
-  "A flattened list of the nodes."
-  nodes: [BomWip!]
-  "Information to aid in pagination."
-  pageInfo: PageInfo!
-  "Identifies the total count of items in the connection."
-  totalCount: Int!
-}
-
-"An edge in a connection."
-type CostedBomsEdge {
-  "A cursor for use in pagination."
-  cursor: String!
-  "The item at the end of the edge."
-  node: BomWip!
 }
 
 "A reference to an offer."

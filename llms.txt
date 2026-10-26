@@ -30,6 +30,9 @@ Conventions: prefer bounded-context queries (`platform.token.byWorkspace`, `requ
 - [Errors](https://altiumdeveloper.github.io/platform-api-docs/guides/errors.md): The errors array and partial data, extensions.code values, mutation payload errors, and HTTP status codes.
 - [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md): Experimental, stable, deprecated and removed — what each stage means and how it is shown in the SDL, this reference and llms.txt.
 
+## Changelog
+- [Changelog](https://altiumdeveloper.github.io/platform-api-docs/changelog.md): History of additions, changes, and removals to the Platform API.
+
 ## Developer Center
 - [Using an access token](https://www.altium.com/documentation/altium-developer-center/altium-365/key-concepts/tokens/access)
 - [Quick start (Altium 365 API)](https://www.altium.com/documentation/altium-developer-center/quick-starts/365-api)
@@ -40,5 +43,5 @@ Conventions: prefer bounded-context queries (`platform.token.byWorkspace`, `requ
 ## Optional
 - [Common types](https://altiumdeveloper.github.io/platform-api-docs/reference/common/llms.txt): Shared scalars, paging, errors, filtering and sorting types, and directives used across all bounded contexts.
 - [Deprecated](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/llms.txt): deprecated operations by bounded context
-- [Full schema SDL](https://altiumdeveloper.github.io/platform-api-docs/schema.graphql): ~170913 tokens — prefer per-context slices
-- [llms-full.txt](https://altiumdeveloper.github.io/platform-api-docs/llms-full.txt): all guides and reference pages as markdown (~914904 tokens)
+- [Full schema SDL](https://altiumdeveloper.github.io/platform-api-docs/schema.graphql): ~169497 tokens — prefer per-context slices
+- [llms-full.txt](https://altiumdeveloper.github.io/platform-api-docs/llms-full.txt): all guides and reference pages as markdown (~1143792 tokens)

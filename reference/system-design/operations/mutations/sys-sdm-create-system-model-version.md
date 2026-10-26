@@ -3,23 +3,17 @@ title: "sysSdmCreateSystemModelVersion"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/operations/mutations/sys-sdm-create-system-model-version"
 bounded_context: "System Design"
 kind: "mutations"
-experimental: true
+experimental: false
 deprecated: false
 ---
 
 # sysSdmCreateSystemModelVersion
 
-**EXPERIMENTAL**
-
-### Experimental
-
-> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
-
 Add new system model
 
 ### Type
 
-#### [`SysSdmCreateSystemModelVersionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-create-system-model-version-payload.md) object **EXPERIMENTAL**
+#### [`SysSdmCreateSystemModelVersionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-create-system-model-version-payload.md) object
 
 ```graphql
 sysSdmCreateSystemModelVersion(

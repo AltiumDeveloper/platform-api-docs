@@ -22,7 +22,7 @@ Represents a work-in-progress BOM (i.e., it is mutable and could change dynamica
 
 ### Member Of
 
-[`BomBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-connection.md) object · [`BomBomsEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-edge.md) object · [`BomCreateBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-create-bom-payload.md) object · [`CostedBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/costed-boms-connection.md) object · [`CostedBomsEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/costed-boms-edge.md) object
+[`BomBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-connection.md) object · [`BomBomsEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-edge.md) object · [`BomCostedBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-costed-boms-connection.md) object · [`BomCostedBomsEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-costed-boms-edge.md) object · [`BomCreateBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-create-bom-payload.md) object
 
 ### Interfaces
 
@@ -38,7 +38,7 @@ type BomWip implements Bom {
     before: String
     first: Int
     last: Int
-  ): CostedBomsConnection
+  ): BomCostedBomsConnection
   createdAt: DateTime!
   healthChecks: [BomHealthCheck!]!
   id: ID!
@@ -70,7 +70,7 @@ type BomWip implements Bom {
 
 Identifier of the BOM.
 
-#### `costedBoms` · [`CostedBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/costed-boms-connection.md) object
+#### `costedBoms` · [`BomCostedBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-costed-boms-connection.md) object
 
 A collection of all costed BOMs created from this BOM.
 

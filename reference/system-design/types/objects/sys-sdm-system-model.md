@@ -43,8 +43,8 @@ type SysSdmSystemModel {
 
 #### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-#### `latestVersion` · [`SysSdmSystemModelVersion!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) non-null object **EXPERIMENTAL**
+#### `latestVersion` · [`SysSdmSystemModelVersion!`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) non-null object
 
-#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar **EXPERIMENTAL**
+#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `versions` · [`[SysSdmSystemModelVersion!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) list object **EXPERIMENTAL**
+#### `versions` · [`[SysSdmSystemModelVersion!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version.md) list object
