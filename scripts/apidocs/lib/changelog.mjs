@@ -9,16 +9,31 @@ const escapeJsx = (text) => text.replace(/\{/g, '&#123;').replace(/\}/g, '&#125;
 const clEntry = (icon, cls) => (_, text) =>
   `<div className="cl-entry"><span className="${cls}">${icon}</span> ${escapeJsx(text)}</div>`;
 
+const STRIP_TAGS = new Set(['nav', 'footer']);
+const stripChrome = () => (tree) => {
+  const walk = (node) => {
+    if (!node.children) return;
+    node.children = node.children.filter((child) => {
+      if (child.type === 'element' && STRIP_TAGS.has(child.tagName)) return false;
+      walk(child);
+      return true;
+    });
+  };
+  walk(tree);
+};
+
 // Converts the tracker's changelog HTML to the Markdown body (without the MDX frontmatter wrapper).
 // remark-stringify escapes leading + as \+; − is U+2212; Δ is U+0394.
 export async function htmlToChangelog(html) {
   const file = await unified()
     .use(rehypeParse)
+    .use(stripChrome)
     .use(rehypeRemark)
     .use(remarkStringify, { bullet: '-', fence: '`', fences: true })
     .process(html);
 
   return String(file)
+    .replace(/^(\*\*\*|---|___)\s*$/gm, '')
     .replace(/\[([^\]]+)\]\(#(?:entry|year)-[^)]+\)/g, '$1')
     .replace(/^- \\\+\s+(.+)$/gm, clEntry('+', 'cl-add'))
     .replace(/^- −\s+(.+)$/gm,    clEntry('−', 'cl-remove'))

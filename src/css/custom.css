@@ -300,8 +300,8 @@ h5:hover .hash-link {
 /* ---------- Changelog page ---------- */
 
 /* Progressive indentation + spacing; .markdown prefix raises specificity over .markdown h4/.markdown h5 */
-.markdown .changelog-page h3 { margin-top: 2.5rem; }
-.markdown .changelog-page h4 { font-weight: 700; }
+.markdown .changelog-page h3 { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--alt-border); }
+.markdown .changelog-page h4 { font-weight: 700; border-top: 0; }
 .markdown .changelog-page h5 { padding-left: 1.5rem; font-weight: 700; margin-top: 1.2rem; margin-bottom: 0.4rem; }
 .markdown .changelog-page h6 { padding-left: 3rem; font-weight: 700; margin-top: 0.8rem; margin-bottom: 0.3rem; }
 .changelog-page .cl-entry { padding-left: 4.5rem; margin: 0.15rem 0; }
