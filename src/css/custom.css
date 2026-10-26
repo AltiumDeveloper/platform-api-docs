@@ -1,7 +1,7 @@
 /**
  * Altium 365 API reference: the rules of this site only. The shared look (fonts, tokens, navbar, sidebar, breadcrumbs,
  * content, landing page, footer) comes from @altium-developer/docusaurus-theme, which loads before this file.
- * Grouped by area: sidebar markers, badges, API reference pages, CDM section, bounded-context icons.
+ * Grouped by area: sidebar markers, badges, API reference pages, CDM section, changelog page, bounded-context icons.
  */
 
 /* ---------- Sidebar ---------- */
@@ -296,6 +296,20 @@ h5:hover .hash-link {
   overflow-wrap: anywhere;
   font-size: 0.78rem;
 }
+
+/* ---------- Changelog page ---------- */
+
+/* Progressive indentation + spacing; .markdown prefix raises specificity over .markdown h4/.markdown h5 */
+.markdown .changelog-page h3 { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--alt-border); }
+.markdown .changelog-page h4 { font-weight: 700; border-top: 0; }
+.markdown .changelog-page h5 { padding-left: 1.5rem; font-weight: 700; margin-top: 1.2rem; margin-bottom: 0.4rem; }
+.markdown .changelog-page h6 { padding-left: 3rem; font-weight: 700; margin-top: 0.8rem; margin-bottom: 0.3rem; }
+.changelog-page .cl-entry { padding-left: 4.5rem; margin: 0.15rem 0; }
+
+/* Changelog entry icons */
+.cl-add    { color: var(--ifm-color-success); font-weight: 700; }
+.cl-remove { color: var(--ifm-color-danger);  font-weight: 700; }
+.cl-change { color: var(--ifm-color-warning-dark); font-weight: 700; }
 
 /* ---------- Bounded-context icons ----------
  * Colours are the CDM subset colours (`annotations.style` fill in the CDM schema); `common` has none in the CDM.

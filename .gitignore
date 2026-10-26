@@ -9,6 +9,7 @@
 .cache-loader
 /.schema/
 /docs/reference/
+/docs/changelog/
 /static/schema.graphql
 /static/search-index.json
 

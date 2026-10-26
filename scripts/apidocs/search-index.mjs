@@ -10,7 +10,7 @@ import { buildSchema } from 'graphql';
 import { parse } from 'yaml';
 import { readFrontMatter } from './lib/pages.mjs';
 import { buildSearchRecords } from './lib/search-records.mjs';
-import { readGuides } from './llms.mjs';
+import { readChangelog, readGuides } from './llms.mjs';
 
 const readJson = (path) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : null);
 
@@ -28,7 +28,8 @@ export function runSearchIndex({
     ...(existsSync(home) ? [{ route: '', path: home, title: readFrontMatter(readFileSync(home, 'utf8')).title ?? 'Overview' }] : []),
     ...readGuides(join(docsDir, 'guides')),
   ];
-  const payload = { version: 1, ...buildSearchRecords({ schema, manifest, pages, docsDir, guides, config }) };
+  const changelog = readChangelog(docsDir);
+  const payload = { version: 1, ...buildSearchRecords({ schema, manifest, pages, docsDir, guides, changelog, config }) };
   const json = JSON.stringify(payload);
   mkdirSync(dirname(out), { recursive: true });
   writeFileSync(out, json);

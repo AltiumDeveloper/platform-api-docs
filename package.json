@@ -19,7 +19,7 @@
     "clear": "docusaurus clear",
     "swizzle": "docusaurus swizzle",
     "apidocs": "npm run apidocs:fetch && npm run apidocs:annotate && npm run apidocs:generate && npm run apidocs:postprocess && npm run search:index",
-    "apidocs:fetch": "node scripts/apidocs/fetch-schema.mjs && node scripts/apidocs/fetch-cdm.mjs",
+    "apidocs:fetch": "node scripts/apidocs/fetch-schema.mjs && node scripts/apidocs/fetch-cdm.mjs && node scripts/apidocs/fetch-changelog.mjs",
     "apidocs:annotate": "node scripts/apidocs/annotate.mjs",
     "apidocs:generate": "docusaurus graphql-to-doc --force",
     "apidocs:postprocess": "node scripts/apidocs/postprocess.mjs",
