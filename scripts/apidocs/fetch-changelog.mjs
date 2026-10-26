@@ -39,6 +39,7 @@ const html = await response.text();
 const file = await unified()
   .use(rehypeParse)
   .use(rehypeRemark)
+  .use(remarkMdx)
   .use(remarkStringify, { bullet: '-', fence: '`', fences: true })
   .process(html);
 
