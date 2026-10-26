@@ -10,12 +10,13 @@ Altium 365 API, grouped by bounded context and cross-linked with the
 
 1. `fetch-schema` — downloads the SDL (with applied directives) from the EUR gateway (`?sdl`).
 2. `fetch-cdm` — builds an API-type → CDM-entity index from the public CDM schema.
-3. `annotate` — assigns every type and operation to a bounded context using
+3. `fetch-changelog` — fetches the changelog HTML from [graphql-changelog-tracker](https://github.com/AltiumDeveloper/graphql-changelog-tracker) and converts it to `docs/changelog/index.mdx`. Writes a placeholder page if the fetch fails so the build is never blocked.
+4. `annotate` — assigns every type and operation to a bounded context using
    `config/context-map.yaml`, strips internal directives, and writes `.schema/report.json`.
    The build fails if a name is unassigned and not listed in `config/unassigned-allowlist.txt`.
-4. `graphql-to-doc` — graphql-markdown renders `docs/reference/**`.
-5. `postprocess` — writes BC overview pages, the sidebar index and redirects for old URLs.
-6. `search:index` — writes the search index `static/search-index.json` (see [Search](#search)).
+5. `graphql-to-doc` — graphql-markdown renders `docs/reference/**`.
+6. `postprocess` — writes BC overview pages, the sidebar index and redirects for old URLs.
+7. `search:index` — writes the search index `static/search-index.json` (see [Search](#search)).
 
 `npm run build` then builds the Docusaurus site, and `npm run llms` adds the LLM surface to `build/`
 (see below). The GitHub workflow runs all three nightly.
@@ -56,7 +57,7 @@ shows up as a failed check on the workflow run, but it does not stop publishing:
   line per non-entity type (without Relay `*Connection`/`*Edge` types); `build/reference/deprecated/llms.txt`;
 - a `.md` twin of every docs page (`/reference/design/overview` → `/reference/design/overview.md`, home →
   `/index.md`), advertised by `<link rel="alternate" type="text/markdown">`;
-- `build/llms-full.txt` — all guides and reference pages as Markdown.
+- `build/llms-full.txt` — all guides, the changelog, and reference pages as Markdown.
 
 It prints token estimates (characters / 4). `npm run serve` serves the files locally.
 
@@ -68,7 +69,7 @@ in `build/`, and slices that do not parse.
 ## Search
 
 Search runs entirely in the browser; there is no search service. `npm run search:index` builds one record per
-operation, type, field, input field, enum value, guide section and bounded-context overview from the SDL,
+operation, type, field, input field, enum value, guide section, changelog page and bounded-context overview from the SDL,
 `.schema/pages.json` and the generated pages (member links use the anchors graphql-markdown wrote), and writes them to
 `static/search-index.json` (about 200 KB gzipped). The navbar `SearchBar` (from the shared theme, ⌘K / Ctrl+K or `/`)
 fetches it on first use and indexes it with MiniSearch, ranked by `src/search/engine.mjs`. The API-specific result rows

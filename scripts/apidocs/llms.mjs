@@ -54,6 +54,13 @@ function guideRoute({ parents, file }, frontMatter, routeBase) {
   return routePath(routeBase, dirs, folderPage ? [] : name);
 }
 
+export function readChangelog(docsDir) {
+  const changelogMdx = join(docsDir, 'changelog', 'index.mdx');
+  if (!existsSync(changelogMdx)) return null;
+  const fm = readFrontMatter(readFileSync(changelogMdx, 'utf8'));
+  return { route: 'changelog', path: changelogMdx, title: fm.title ?? 'Changelog', description: fm.description ?? '' };
+}
+
 // Hand-written guides in sidebar order: top-level guides first, then each subfolder (by its number prefix, then
 // name); within a folder by sidebar_position (default: the file's number prefix), then title.
 export function readGuides(guidesDir, { routeBase = 'guides' } = {}) {
@@ -110,10 +117,7 @@ export function runLlms({
   const contexts = manifest.contexts;
   const contextById = new Map(contexts.map((context) => [context.id, context]));
   const guides = readGuides(guidesDir);
-  const changelogMdx = join(dirname(guidesDir), 'changelog', 'index.mdx');
-  const changelog = existsSync(changelogMdx)
-    ? (() => { const fm = readFrontMatter(readFileSync(changelogMdx, 'utf8')); return { route: 'changelog', title: fm.title ?? 'Changelog', description: fm.description ?? '' }; })()
-    : null;
+  const changelog = readChangelog(dirname(guidesDir));
 
   // 1. Clean .md pages.
   const markdown = new Map();
