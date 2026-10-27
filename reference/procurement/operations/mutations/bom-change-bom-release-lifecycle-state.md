@@ -15,8 +15,6 @@ Changes the lifecycle state of the specified BOM release by applying the specifi
 
 #### [`BomChangeBomReleaseLifecycleStatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-change-bom-release-lifecycle-state-payload.md) object
 
-Result of changing the lifecycle state of a BOM release.
-
 ```graphql
 bomChangeBomReleaseLifecycleState(
   input: BomChangeBomReleaseLifecycleStateInput!

@@ -26,25 +26,17 @@ A comment thread contains an initial remark associated with the design and a col
 
 [`DesDesignItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) object · [`DesPcb`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb.md) object · [`DesSchematic`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-schematic.md) object
 
-### Interfaces
-
-#### [`Node`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/interfaces/node.md) interface
-
-The node interface is implemented by entities that have a global unique identifier.
-
 ```graphql
-type DesCommentThread implements Node {
+type DesCommentThread {
   assignedTo: DesUser
   comments: [DesComment!]!
   commentThreadId: String!
   context: DesCommentContext!
   createdAt: DateTime!
   createdBy: DesUser!
-  id: ID!
   modifiedAt: DateTime!
   modifiedBy: DesUser!
   originalStateScreenshotUrl: String
-  properties: [DesCommentThreadProperty!]!
   status: Int!
   threadNumber: Int!
 }
@@ -76,10 +68,6 @@ The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/c
 
 The account information for who created this comment thread.
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
-
-The node identifier for this comment thread (used by [`node`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/node.md)).
-
 #### `modifiedAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 The [`DateTime`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) for the most recent modification of this comment thread.
@@ -91,10 +79,6 @@ The account information for who most recently modified this comment thread.
 #### `originalStateScreenshotUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The web address to download the screenshot associated with the creation of this comment thread.
-
-#### `properties` · [`[DesCommentThreadProperty!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread-property.md) non-null object
-
-Metadata entries on the comment thread, including service-set entries such as \*DocumentType\* and \*ReleaseGuid\*.
 
 #### `status` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 

@@ -1,4 +1,4 @@
-# Altium 365 API — Collaboration schema slice (~4552 tokens)
+# Altium 365 API — Collaboration schema slice (~4390 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -24,7 +24,7 @@ type Query {
     last: Int
     projectId: String!
     where: RequirementFilterInput
-  ): DesAnnotationsConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  ): DesAnnotationsConnection
   "Search for a specific comment thread associated with a project."
   desCommentThread(
     "The project identifier (`DesProject.id`)."
@@ -127,10 +127,6 @@ type DesAnnotationDocumentBinding {
 
 type DesAnnotationManagedBomRowBinding {
   rowId: String!
-}
-
-type DesAnnotationManagedPartBinding {
-  partId: String!
 }
 
 type DesAnnotationReleaseBinding {
@@ -236,7 +232,7 @@ type DesCommentNotificationData {
 }
 
 "A comment thread contains an initial remark associated with the design and a collection of replies."
-type DesCommentThread implements Node {
+type DesCommentThread {
   "The account information for the owner of any action or response to this comment thread."
   assignedTo: DesUser
   "The list of replies associated with this comment thread."
@@ -249,28 +245,16 @@ type DesCommentThread implements Node {
   createdAt: DateTime!
   "The account information for who created this comment thread."
   createdBy: DesUser!
-  "The node identifier for this comment thread (used by `node`)."
-  id: ID!
   "The `DateTime` for the most recent modification of this comment thread."
   modifiedAt: DateTime!
   "The account information for who most recently modified this comment thread."
   modifiedBy: DesUser!
   "The web address to download the screenshot associated with the creation of this comment thread."
   originalStateScreenshotUrl: String
-  "Metadata entries on the comment thread, including service-set entries such as *DocumentType* and *ReleaseGuid*."
-  properties: [DesCommentThreadProperty!]!
   "Comment thread status. 0 = *Resolved*, 1 = *Active*."
   status: Int!
   "The sequence number of this comment thread."
   threadNumber: Int!
-}
-
-"Comment thread metadata entry."
-type DesCommentThreadProperty {
-  "Parameter name."
-  name: String!
-  "Parameter value."
-  value: String!
 }
 
 "Payload associated with creating a comment."
@@ -410,7 +394,7 @@ type DesUpdateTaskPayload {
 }
 
 "There may be multiple bindings associated with annotation instance. Together the bindings provide detailed information about the context of the annotation placement and associated design entities."
-union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationManagedPartBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
+union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
 
 "Input for comment creation."
 input DesCreateCommentInput {

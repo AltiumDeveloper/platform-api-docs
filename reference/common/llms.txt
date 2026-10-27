@@ -1,7 +1,7 @@
 # Common — Altium 365 API
 > Shared scalars, paging, errors, filtering and sorting types, and directives used across all bounded contexts.
 
-Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql) (~1637 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/common/overview.md).
+Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql) (~1206 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/common/overview.md).
 
 ## Optional
-- [All types in Common](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types.txt): one line per type (~1520 tokens)
+- [All types in Common](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types.txt): one line per type (~1418 tokens)

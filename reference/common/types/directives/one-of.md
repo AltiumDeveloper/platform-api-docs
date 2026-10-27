@@ -9,10 +9,7 @@ deprecated: false
 
 # oneOf
 
-The `@oneOf` directive is used within the type system definition language to indicate:
-
-- an Input Object is a Oneof Input Object, or
-- an Object Type's Field is a Oneof Field.
+Indicates exactly one field must be supplied and this field must not be `null`.
 
 ```graphql
 directive @oneOf on INPUT_OBJECT

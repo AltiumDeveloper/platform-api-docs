@@ -55,11 +55,11 @@ Legacy group/series prefix (e.g. "R7FA8"). Prefer deviceFamilyKey for the true f
 
 #### `deviceFamilyKey` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Stable family key of the resolved device ("RA", "RAFW", "RX"). Empty when the device's family could not be determined. Prefer this over the legacy deviceFamily prefix.
+Stable family key of the device ("RA", "RAFW", "RX").
 
 #### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Manufacturer part number associated with this result.
+Manufacturer part number of the candidate device.
 
 #### `errors` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
@@ -71,7 +71,7 @@ Lean device model (MPN + family part details) without configured ports/periphera
 
 #### `isFeasible` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
-Indicates whether a feasible solution was found.
+Indicates whether a feasible solution exists for this device.
 
 #### `logs` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
@@ -83,7 +83,7 @@ Final status returned by the constraint solver.
 
 #### `vendor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Silicon vendor of the resolved device, e.g. "Renesas". Empty when the device's family could not be determined.
+Silicon vendor of the device, e.g. "Renesas".
 
 #### `wallTimeSeconds` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 

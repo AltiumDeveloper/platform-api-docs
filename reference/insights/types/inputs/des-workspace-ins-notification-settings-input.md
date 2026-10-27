@@ -35,4 +35,4 @@ Recipient rules describing who should receive notifications.
 
 #### `unsubscribedUserIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
-User identifiers who should not receive notifications for insights.
+Users who should not receive notifications for insights.

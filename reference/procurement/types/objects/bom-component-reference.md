@@ -26,8 +26,8 @@ type BomComponentReference {
 
 #### `componentId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Identifier of the referenced component.
+ID of the referenced component.
 
 #### `componentRevisionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Identifier of the referenced component revision.
+ID of the referenced component revision.

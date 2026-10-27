@@ -1,4 +1,4 @@
-# Altium 365 API — Customization schema slice (~7483 tokens)
+# Altium 365 API — Customization schema slice (~7311 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -30,7 +30,7 @@ type Query {
     order: [GloScrScriptExecutionSortInput!]
     scriptId: String!
     versionId: String
-  ): GloScrScriptExecutionConnection @listSize(assumedSize: 2147483647, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  ): GloScrScriptExecutionConnection
   "Retrieves a list of scripts with pagination options."
   gloScrScripts(
     "Returns the elements in the list that come after the specified cursor."
@@ -42,7 +42,7 @@ type Query {
     "Returns the last _n_ elements from the list."
     last: Int
     order: [GloScrScriptSortInput!]
-  ): GloScrScriptConnection @listSize(assumedSize: 2147483647, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  ): GloScrScriptConnection
   "Retrieves the secrets a script revision declares. Omit the revision to read the latest one, the same revision a script execution uses by default. Values are never returned."
   gloScrScriptSecrets(scriptId: String!, scriptVersionId: String): [GloScrScriptSecret!]!
   "Retrieves the names of the workspace secrets. Values are write-only and are never returned."
@@ -281,7 +281,7 @@ type GloCusExtensionPoint {
     last: Int
     order: [GloCusAssignmentSortInput!]
     where: GloCusAssignmentFilterInput
-  ): GloCusAssignmentConnection @listSize(assumedSize: 100, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  ): GloCusAssignmentConnection
   "Declared extension point configuration parameters."
   configurationParameters: [GloCusExtensionPointParameter!]!
   description: String
@@ -431,7 +431,7 @@ type GloScrScript {
     "Returns the last _n_ elements from the list."
     last: Int
     order: [GloScrScriptVersionSortInput!]
-  ): GloScrScriptVersionConnection @listSize(assumedSize: 2147483647, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  ): GloScrScriptVersionConnection
 }
 
 "A connection to a list of items."
@@ -774,7 +774,7 @@ input GloCusUpdateAssignmentConfigurationsInput {
 }
 
 "Represents input value for extension point assignment update."
-input GloCusUpdateAssignmentInput @oneOf {
+input GloCusUpdateAssignmentInput {
   "Represents input value for assignment update with script id."
   script: GloCusUpdateWithScriptAssignmentInput
   "Represents input value for assignment update with script file."

@@ -44,7 +44,7 @@ If set, designates the name of a group the health check belongs to. E.g., the gr
 
 #### `healthCheckId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Health check identifier.
+Health check ID.
 
 #### `howToFix` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

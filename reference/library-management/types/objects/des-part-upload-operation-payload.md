@@ -23,7 +23,6 @@ Represents a parts upload operation of the workspace.
 type DesPartUploadOperationPayload {
   componentsColumnMapping: DesPartUploadComponentsColumnMapping
   createdAt: DateTime!
-  failureReason: String
   fileId: String!
   fileName: String!
   finishedAt: DateTime
@@ -46,10 +45,6 @@ Column mapping the upload was started with. Set for the \*Components\* upload on
 #### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
 When the upload was started by the user.
-
-#### `failureReason` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
-
-Why the operation failed, ready to display as it is. Set for a \*Failed\* operation only.
 
 #### `fileId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

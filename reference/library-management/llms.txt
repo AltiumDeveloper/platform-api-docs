@@ -1,7 +1,7 @@
 # Library Management — Altium 365 API
 > Managed components, component templates, parts, symbols, footprints, datasheets, reuse blocks and library search.
 
-Concepts: [library](https://altiumdeveloper.github.io/cdm/subsets/library/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/schema.graphql) (~25915 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview.md).
+Concepts: [library](https://altiumdeveloper.github.io/cdm/subsets/library/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/schema.graphql) (~25625 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/overview.md).
 
 ## Entities
 - [DesComponent](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-component.md): Component Revision — Revision of a Component. GRID `grid:workspace:{workspace-id}:library:component-revision/{id}`. Via: desComponentById, desSearchComponentsByIpns, DesLibrary.components, DesSymbolUsedBy.components, DesBomItem.component, …
@@ -89,4 +89,4 @@ Concepts: [library](https://altiumdeveloper.github.io/cdm/subsets/library/). Sch
 - [desUpgradeComponentsToLatestSymbol](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/operations/mutations/des-upgrade-components-to-latest-symbol.md): Upgrades components to use the latest symbol revision.
 
 ## Optional
-- [All types in Library Management](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types.txt): one line per type (~10808 tokens)
+- [All types in Library Management](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types.txt): one line per type (~10801 tokens)

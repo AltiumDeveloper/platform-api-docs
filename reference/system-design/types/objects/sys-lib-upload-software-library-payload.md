@@ -3,11 +3,17 @@ title: "SysLibUploadSoftwareLibraryPayload"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-upload-software-library-payload"
 bounded_context: "System Design"
 kind: "objects"
-experimental: false
+experimental: true
 deprecated: false
 ---
 
 # SysLibUploadSoftwareLibraryPayload
+
+**EXPERIMENTAL**
+
+### Experimental
+
+> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 ### Returned By
 

@@ -21,16 +21,11 @@ User settings related to insights.
 
 ```graphql
 type DesWorkspaceInsUserSettings {
-  insightTypesSettings: DesWorkspaceInsInsightTypesSettingsGql!
   projectsSettings: DesWorkspaceInsProjectsSettings!
 }
 ```
 
 ### Fields
-
-#### `insightTypesSettings` · [`DesWorkspaceInsInsightTypesSettingsGql!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-types-settings-gql.md) non-null object
-
-Preferences for including or excluding specific insight types.
 
 #### `projectsSettings` · [`DesWorkspaceInsProjectsSettings!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-projects-settings.md) non-null object
 

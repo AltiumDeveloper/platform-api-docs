@@ -11,7 +11,7 @@ deprecated: false
 
 ### Returned By
 
-[`solBldEntityScaffoldingStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/platform/operations/queries/sol-bld-entity-scaffolding-status.md) query
+[`solBldEntityScaffoldingStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-bld-entity-scaffolding-status.md) query
 
 ```graphql
 type SolBldEntityScaffoldingStatusPayload {

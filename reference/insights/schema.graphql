@@ -1,4 +1,4 @@
-# Altium 365 API — Insights schema slice (~4903 tokens)
+# Altium 365 API — Insights schema slice (~4668 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -23,7 +23,7 @@ type Query {
     "Returns the last _n_ elements from the list."
     last: Int
     sorting: DesWorkspaceInsOrderingInput
-  ): DesWorkspaceInsInsightsConnection @listSize(assumedSize: 100, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  ): DesWorkspaceInsInsightsConnection
   "Gets all available insight severities."
   desWorkspaceInsInsightSeverities: [String!]!
   "Gets all available insight sorting fields."
@@ -81,7 +81,7 @@ type DesWorkspaceInsInsight {
   relatedTasks: DesWorkspaceInsRelatedTasks!
   "Severity level assigned to the insight."
   severity: String!
-  "Short data payload for the insight."
+  "Compact, UI-friendly representation of the insight data."
   shortData: JSON!
   "Current status of the insight lifecycle."
   status: String!
@@ -99,7 +99,7 @@ type DesWorkspaceInsInsightAssemblyVariantLink {
   id: ID!
 }
 
-"Link to a managed BOM associated with the insight."
+"Link to a work-in-progress BOM associated with the insight."
 type DesWorkspaceInsInsightBomLink {
   "Information about when and by whom the link was created."
   created: DesWorkspaceInsUserActionTimestamp!
@@ -107,7 +107,7 @@ type DesWorkspaceInsInsightBomLink {
   id: ID!
 }
 
-"Link to a released managed BOM associated with the insight."
+"Link to a released BOM associated with the insight."
 type DesWorkspaceInsInsightBomReleaseLink {
   "Information about when and by whom the link was created."
   created: DesWorkspaceInsUserActionTimestamp!
@@ -151,19 +151,19 @@ type DesWorkspaceInsInsightConsolidatedBomReleaseLink {
 type DesWorkspaceInsInsightDataChangedAction {
   "Updated full data payload for the insight."
   newData: JSON!
-  "Updated short data payload for the insight."
+  "Updated summary data payload for the insight."
   newShortData: JSON!
   "Previous full data payload, if available."
   oldData: JSON
-  "Previous short data payload, if available."
+  "Previous summary data payload, if available."
   oldShortData: JSON
 }
 
 "History entry capturing changes to linked entities."
 type DesWorkspaceInsInsightEntityLinksChangedAction {
-  "Entity identifiers that were added to the insight."
+  "Entities that were added to the insight."
   newEntities: [ID!]!
-  "Entity identifiers that were removed from the insight."
+  "Entities that were removed from the insight."
   removedEntities: [ID!]!
 }
 
@@ -235,12 +235,6 @@ type DesWorkspaceInsInsightTaskLinksChangedAction {
   newTasks: [ID!]!
 }
 
-"Insight-type preferences affecting which insights are shown."
-type DesWorkspaceInsInsightTypesSettingsGql {
-  "Insight types that should be excluded from insights."
-  excludedInsightTypes: [String!]!
-}
-
 "A connection to a list of items."
 type DesWorkspaceInsInsightsConnection {
   "A list of edges."
@@ -277,23 +271,23 @@ type DesWorkspaceInsNotificationSettings {
   enabled: Boolean!
   "Recipient configuration for insight notifications."
   recipientSettings: DesWorkspaceInsNotificationRecipientSettings!
-  "User identifiers who should not receive insight notifications."
+  "Users who should not receive insight notifications."
   unsubscribedUserIds: [ID!]!
 }
 
 "Project-level preferences affecting insight generation and visibility."
 type DesWorkspaceInsProjectsSettings {
-  "Assembly variant identifiers that should be excluded from insights."
+  "Assembly variants that should be excluded from insights."
   excludedAssemblyVariants: [ID!]!
-  "Released managed BOM identifiers excluded from insight consideration."
+  "Released BOMs excluded from insight consideration."
   excludedBomReleases: [ID!]!
-  "Consolidated BOM release identifiers excluded from insight consideration."
+  "Consolidated BOM releases excluded from insight consideration."
   excludedConsolidatedBomReleases: [ID!]!
-  "Consolidated BOM identifiers excluded from insight consideration."
+  "Consolidated BOMs excluded from insight consideration."
   excludedConsolidatedBoms: [ID!]!
-  "Project identifiers that should be excluded from insights."
+  "Projects that should be excluded from insights."
   excludedProjects: [ID!]!
-  "Managed BOM identifiers excluded from insight consideration."
+  "Work-in-progress BOMs excluded from insight consideration."
   excludedWipBoms: [ID!]!
   "Exclude non-active projects from insight processing."
   excludeNonActiveProjects: Boolean!
@@ -317,9 +311,9 @@ type DesWorkspaceInsRecipientUser {
 type DesWorkspaceInsRelatedEntities {
   "Assembly variants connected to the insight."
   assemblyVariants: [DesWorkspaceInsInsightAssemblyVariantLink!]!
-  "Released managed BOMs connected to the insight."
+  "Released BOMs connected to the insight."
   bomReleases: [DesWorkspaceInsInsightBomReleaseLink!]!
-  "Managed BOMs connected to the insight."
+  "Work-in-progress BOMs connected to the insight."
   boms: [DesWorkspaceInsInsightBomLink!]!
   "Component revisions referenced by the insight."
   componentRevisions: [DesWorkspaceInsInsightComponentRevisionLink!]!
@@ -377,8 +371,6 @@ type DesWorkspaceInsUserActionTimestamp {
 
 "User settings related to insights."
 type DesWorkspaceInsUserSettings {
-  "Preferences for including or excluding specific insight types."
-  insightTypesSettings: DesWorkspaceInsInsightTypesSettingsGql!
   "Project settings that influence which insights are shown."
   projectsSettings: DesWorkspaceInsProjectsSettings!
 }
@@ -408,12 +400,6 @@ input DesWorkspaceInsInsightFilterInput {
   type: [String!]
 }
 
-"Insight-type preferences that define which insights are shown."
-input DesWorkspaceInsInsightTypesSettingsInputGqlInput {
-  "Insight types that should be excluded from insights."
-  excludedInsightTypes: [String!]!
-}
-
 "User action parameters applied to an insight update."
 input DesWorkspaceInsInsightUserActionInput {
   "Whether the insight is acknowledged by the user."
@@ -440,7 +426,7 @@ input DesWorkspaceInsNotificationSettingsInput {
   enabled: Boolean!
   "Recipient rules describing who should receive notifications."
   recipientSettings: DesWorkspaceInsNotificationRecipientSettingsInput
-  "User identifiers who should not receive notifications for insights."
+  "Users who should not receive notifications for insights."
   unsubscribedUserIds: [ID!]
 }
 
@@ -454,7 +440,7 @@ input DesWorkspaceInsOrderingInput {
 
 "User-level project filtering preferences for insights."
 input DesWorkspaceInsProjectSettingsInput {
-  "Entity identifiers that should be excluded from insight calculations."
+  "Entities that should be excluded from insight calculations."
   excludedEntities: [ID!]!
   "Exclude projects that are no longer active from insight results."
   excludeNonActiveProjects: Boolean!
@@ -476,7 +462,7 @@ input DesWorkspaceInsRecipientUserInput {
 
 "Input for removing a user from insight notifications."
 input DesWorkspaceInsUnsubscribeFromNotificationsInput {
-  "User identifier to exclude from receiving notifications."
+  "User to exclude from receiving notifications."
   userId: ID!
 }
 
@@ -504,7 +490,7 @@ input DesWorkspaceInsUpsertInsightInput {
   relatedEntityIds: [ID!]!
   "The severity level of the insight."
   severity: String!
-  "Short data payload for the insight."
+  "Short, UI-friendly payload representing the insight."
   shortData: JSON!
   "Status value to assign to the insight."
   status: String
@@ -514,8 +500,6 @@ input DesWorkspaceInsUpsertInsightInput {
 
 "User-specific settings that control insight experience."
 input DesWorkspaceInsUserSettingsInput {
-  "Preferences for including or excluding specific insight types."
-  insightTypesSettings: DesWorkspaceInsInsightTypesSettingsInputGqlInput
   "Project-level preferences used when delivering insights."
   projectsSettings: DesWorkspaceInsProjectSettingsInput
 }

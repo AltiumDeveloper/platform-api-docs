@@ -9,7 +9,7 @@ deprecated: false
 
 # DesWorkspaceInsInsightBomReleaseLink
 
-Link to a released managed BOM associated with the insight.
+Link to a released BOM associated with the insight.
 
 ### Member Of
 

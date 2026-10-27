@@ -27,7 +27,7 @@ type BomItemElementAttribute {
 
 #### `attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Identifier of the attribute.
+ID of the attribute.
 
 #### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

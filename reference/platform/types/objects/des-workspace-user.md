@@ -64,8 +64,6 @@ The global user identifier. Null in case of some old workspaces that have never 
 
 #### `groups` · [`[DesWorkspaceGroup!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-group.md) non-null object
 
-The workspace groups to which the user belongs.
-
 #### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The node identifier for the workspace user.

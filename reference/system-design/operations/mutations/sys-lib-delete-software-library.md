@@ -3,17 +3,23 @@ title: "sysLibDeleteSoftwareLibrary"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/operations/mutations/sys-lib-delete-software-library"
 bounded_context: "System Design"
 kind: "mutations"
-experimental: false
+experimental: true
 deprecated: false
 ---
 
 # sysLibDeleteSoftwareLibrary
 
+**EXPERIMENTAL**
+
+### Experimental
+
+> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
+
 Delete an uploaded user software library
 
 ### Type
 
-#### [`SysLibDeleteSoftwareLibraryPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-delete-software-library-payload.md) object
+#### [`SysLibDeleteSoftwareLibraryPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-delete-software-library-payload.md) object **EXPERIMENTAL**
 
 ```graphql
 sysLibDeleteSoftwareLibrary(

@@ -9,7 +9,7 @@ deprecated: false
 
 # desWorkspaceTeamByAuth
 
-Retrieves a workspace team based on the identity of the requester.
+Retrieves a workspace team based on the authenticity of the requester.
 
 ```graphql
 desWorkspaceTeamByAuth: DesWorkspaceTeam!

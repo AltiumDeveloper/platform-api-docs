@@ -22,4 +22,4 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 | Enums | 1 | 0 |
 | Interfaces | 2 | 0 |
 | Scalars | 13 | 1 |
-| Directives | 7 | 0 |
+| Directives | 6 | 0 |

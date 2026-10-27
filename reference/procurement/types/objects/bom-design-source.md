@@ -29,7 +29,7 @@ type BomDesignSource implements BomSource {
 
 #### `designId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Identifier of the design.
+ID of the design.
 
 #### `quantity` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 

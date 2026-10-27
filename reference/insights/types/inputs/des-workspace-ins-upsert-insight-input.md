@@ -42,7 +42,7 @@ The severity level of the insight.
 
 #### `shortData` · [`JSON!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/json.md) non-null scalar
 
-Short data payload for the insight.
+Short, UI-friendly payload representing the insight.
 
 #### `status` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

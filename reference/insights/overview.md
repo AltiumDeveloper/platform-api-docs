@@ -37,6 +37,6 @@ Look up entities by identifier:
 | - | - | - |
 | Queries | 9 | 0 |
 | Mutations | 6 | 0 |
-| Objects | 36 | 0 |
-| Inputs | 14 | 0 |
+| Objects | 35 | 0 |
+| Inputs | 13 | 0 |
 | Unions | 1 | 0 |

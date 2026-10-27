@@ -65,7 +65,7 @@ Configured device model produced by the solution, if available.
 
 #### `constraintModel` · [`DmConstraintModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-constraint-model.md) object
 
-Snapshot of the CP-SAT constraint model built before solving, including variables, constraint groups, and the objective. Populated only when the evaluation runs with includeDiagnostics=true; null otherwise.
+Snapshot of the CP-SAT constraint model built before solving, including variables, constraint groups, and the objective. Null when the model was not captured.
 
 #### `deviceFamily` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
@@ -73,7 +73,7 @@ Legacy group/series prefix (e.g. "R7FA8"). Prefer deviceFamilyKey for the true f
 
 #### `deviceFamilyKey` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Stable family key of the resolved device ("RA", "RAFW", "RX"). Empty when the device's family could not be determined. Prefer this over the legacy deviceFamily prefix.
+Stable family key of the device ("RA", "RAFW", "RX").
 
 #### `deviceMpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
@@ -97,7 +97,7 @@ Indicates whether the found solution is proven optimal.
 
 #### `logs` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Log lines collected during solving. Populated only when the evaluation runs with includeDiagnostics=true.
+Log lines collected during solving.
 
 #### `objectiveValue` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
@@ -129,7 +129,7 @@ UTC timestamp when solving started.
 
 #### `vendor` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Silicon vendor of the resolved device, e.g. "Renesas". Empty when the device's family could not be determined.
+Silicon vendor of the device, e.g. "Renesas".
 
 #### `wallTimeSeconds` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 

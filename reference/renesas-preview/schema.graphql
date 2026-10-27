@@ -1,4 +1,4 @@
-# Altium 365 API — Renesas (preview) schema slice (~24589 tokens)
+# Altium 365 API — Renesas (preview) schema slice (~24371 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -109,7 +109,7 @@ type Mutation {
   dmExecuteDeviceEvaluation(input: DmExecuteDeviceEvaluationInput!): DmExecuteDeviceEvaluationPayload! @experimental
   "**Experimental** Fast, family-scoped feasibility evaluation. Returns candidate devices with feasibility and a lean feasibleModel (no configured ports/peripherals). An empty family yields an empty summary so callers can fall back to the next family."
   dmExecuteDeviceEvaluationByFamily(input: DmExecuteDeviceEvaluationByFamilyInput!): DmExecuteDeviceEvaluationByFamilyPayload! @experimental
-  "**Experimental** Evaluates required peripherals against a single, already-chosen device (by MPN) and returns the full configured model (concrete ports and peripherals). An unknown MPN returns an empty summary rather than evaluating the whole catalog."
+  "**Experimental** Evaluates required peripherals against a single, already-chosen device (by MPN) and returns the full configured model (concrete ports and peripherals)."
   dmExecuteDeviceEvaluationByMpn(input: DmExecuteDeviceEvaluationByMpnInput!): DmExecuteDeviceEvaluationByMpnPayload! @experimental
   "**Experimental**"
   dmExecuteDeviceEvaluationFromConfiguration(input: DmExecuteDeviceEvaluationFromConfigurationInput!): DmExecuteDeviceEvaluationFromConfigurationPayload! @experimental
@@ -993,14 +993,12 @@ type DmRaPartNumberModel @experimental {
   family: String!
   "**Experimental** Feature set indicator for the device."
   featureSet: String!
-  "**Experimental** On-chip flash memory size in kilobytes. Zero for SiP/Jacketed wireless parts where the position-8 character does not encode a Flash size; see onChipMemoryCode."
+  "**Experimental** On-chip flash memory size in kilobytes."
   flashMemorySizeKB: Int!
   "**Experimental** Group identifier within the family."
   groupNumber: String!
   "**Experimental** True when the package uses a two-dimensional array/grid pin layout with coordinate-named pins (BGA, LGA, WLCSP, and A-QFN) rather than a single perimeter row (standard QFN, LQFP, etc.). Lets the Device Explorer pick the correct package icon for array variants such as A-QFN."
   isArrayPackage: Boolean!
-  "**Experimental** Raw position-8 character from the part number, retained so SiP/Jacketed wireless parts (where flashMemorySizeKB is 0) still surface the memory-tier code."
-  onChipMemoryCode: String!
   "**Experimental** Package type (e.g., LQFP, BGA, QFN)."
   package: String!
   "**Experimental** Packing type (e.g., Tray, TapeAndReel, FullCarton, Unknown)."
@@ -1057,21 +1055,21 @@ type DmResolverFeasibilityResult @experimental {
   constraintModel: DmConstraintModel
   "**Experimental** Legacy group/series prefix (e.g. \"R7FA8\"). Prefer deviceFamilyKey for the true family."
   deviceFamily: String!
-  "**Experimental** Stable family key of the resolved device (\"RA\", \"RAFW\", \"RX\"). Empty when the device's family could not be determined. Prefer this over the legacy deviceFamily prefix."
+  "**Experimental** Stable family key of the device (\"RA\", \"RAFW\", \"RX\")."
   deviceFamilyKey: String!
-  "**Experimental** Manufacturer part number associated with this result."
+  "**Experimental** Manufacturer part number of the candidate device."
   deviceMpn: String!
   "**Experimental** Errors encountered during solving."
   errors: [String!]!
   "**Experimental** Lean device model (MPN + family part details) without configured ports/peripherals."
   feasibleModel: DmFeasibleDeviceModel!
-  "**Experimental** Indicates whether a feasible solution was found."
+  "**Experimental** Indicates whether a feasible solution exists for this device."
   isFeasible: Boolean!
   "**Experimental** Log lines collected during solving. Populated only when the evaluation runs with includeDiagnostics=true."
   logs: [String!]!
   "**Experimental** Final status returned by the constraint solver."
   solverStatus: String!
-  "**Experimental** Silicon vendor of the resolved device, e.g. \"Renesas\". Empty when the device's family could not be determined."
+  "**Experimental** Silicon vendor of the device, e.g. \"Renesas\"."
   vendor: String!
   "**Experimental** Wall-clock time spent solving (seconds)."
   wallTimeSeconds: Float!
@@ -1099,11 +1097,11 @@ type DmResolverResult @experimental {
   completedOpModeGroups: [String!]! @deprecated(reason: "No longer populated. Use 'selections' instead to inspect completed candidate instances.")
   "**Experimental** Configured device model produced by the solution, if available."
   configuredModel: DmDeviceModelAsConfigured
-  "**Experimental** Snapshot of the CP-SAT constraint model built before solving, including variables, constraint groups, and the objective. Populated only when the evaluation runs with includeDiagnostics=true; null otherwise."
+  "**Experimental** Snapshot of the CP-SAT constraint model built before solving, including variables, constraint groups, and the objective. Null when the model was not captured."
   constraintModel: DmConstraintModel
   "**Experimental** Legacy group/series prefix (e.g. \"R7FA8\"). Prefer deviceFamilyKey for the true family."
   deviceFamily: String!
-  "**Experimental** Stable family key of the resolved device (\"RA\", \"RAFW\", \"RX\"). Empty when the device's family could not be determined. Prefer this over the legacy deviceFamily prefix."
+  "**Experimental** Stable family key of the device (\"RA\", \"RAFW\", \"RX\")."
   deviceFamilyKey: String!
   "**Experimental** Manufacturer part number associated with this result."
   deviceMpn: String!
@@ -1115,7 +1113,7 @@ type DmResolverResult @experimental {
   isFeasible: Boolean!
   "**Experimental** Indicates whether the found solution is proven optimal."
   isOptimal: Boolean!
-  "**Experimental** Log lines collected during solving. Populated only when the evaluation runs with includeDiagnostics=true."
+  "**Experimental** Log lines collected during solving."
   logs: [String!]!
   "**Experimental** Objective value reported by the solver (if applicable)."
   objectiveValue: Float!
@@ -1131,7 +1129,7 @@ type DmResolverResult @experimental {
   solverStatus: String!
   "**Experimental** UTC timestamp when solving started."
   startedAt: DateTime!
-  "**Experimental** Silicon vendor of the resolved device, e.g. \"Renesas\". Empty when the device's family could not be determined."
+  "**Experimental** Silicon vendor of the device, e.g. \"Renesas\"."
   vendor: String!
   "**Experimental** Wall-clock time spent solving (seconds)."
   wallTimeSeconds: Float!

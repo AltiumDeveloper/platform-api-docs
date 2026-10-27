@@ -20,7 +20,6 @@ input SolCreateSolutionInput {
   evalKitId: ID
   flowType: String
   folderId: String!
-  itemIds: [ID!]
   name: String!
   parameterBundle: String
   previewUrl: String @deprecated
@@ -40,10 +39,6 @@ input SolCreateSolutionInput {
 #### `flowType` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 #### `folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
-
-#### `itemIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
-
-Items to link to the solution on creation. The solution is not created if any of them cannot be linked.
 
 #### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

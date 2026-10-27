@@ -1,4 +1,4 @@
-# Altium 365 API — System Design schema slice (~3260 tokens)
+# Altium 365 API — System Design schema slice (~4679 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -13,20 +13,20 @@ type Query {
   sysEsdDocuments: [SysEsdDocument!]!
   "Gets ESD Document by identifiers."
   sysEsdDocumentsByIds(ids: [ID!]!): [SysEsdDocument!]!
-  "Retrieves a software component"
-  sysLibSoftwareComponentById(id: ID!): SysLibSoftwareComponent
-  "Retrieves all available software components"
-  sysLibSoftwareComponents: [SysLibSoftwareComponent]!
-  "Resolves uploaded user libraries to presigned archive download urls"
-  sysLibSoftwareLibraryDownloads(ids: [ID!]!): [SysLibSoftwareLibraryDownload!]!
-  "Retrieves all available schema versions"
-  sysSdmSchemaVersionRegistry: [SchemaRegistryEntry!]!
-  "Retrieves a system model"
-  sysSdmSystemModelById(id: ID!): SysSdmSystemModel!
-  "Retrieves a list of system models"
-  sysSdmSystemModelsByIds(ids: [ID!]!): [SysSdmSystemModel]!
-  "Retrieves a system model version"
-  sysSdmSystemModelVersionById(id: ID!): SysSdmSystemModelVersion!
+  "**Experimental** Retrieves a software component"
+  sysLibSoftwareComponentById(id: ID!): SysLibSoftwareComponent @experimental
+  "**Experimental** Retrieves all available software components"
+  sysLibSoftwareComponents: [SysLibSoftwareComponent]! @experimental
+  "**Experimental** Resolves uploaded user libraries to presigned archive download urls"
+  sysLibSoftwareLibraryDownloads(ids: [ID!]!): [SysLibSoftwareLibraryDownload!]! @experimental
+  "**Experimental** Retrieves all available schema versions"
+  sysSdmSchemaVersionRegistry: [SchemaRegistryEntry!]! @experimental
+  "**Experimental** Retrieves a system model"
+  sysSdmSystemModelById(id: ID!): SysSdmSystemModel! @experimental
+  "**Experimental** Retrieves a list of system models"
+  sysSdmSystemModelsByIds(ids: [ID!]!): [SysSdmSystemModel]! @experimental
+  "**Experimental** Retrieves a system model version"
+  sysSdmSystemModelVersionById(id: ID!): SysSdmSystemModelVersion! @experimental
 }
 
 type Mutation {
@@ -40,24 +40,35 @@ type Mutation {
   sysEsdImportDocument(input: SysEsdImportDocumentInput!): SysEsdImportDocumentPayload!
   "Updates the ESD Document."
   sysEsdUpdateDocument(input: SysEsdUpdateDocumentInput!): SysEsdUpdateDocumentPayload!
-  "Delete an uploaded user software library"
-  sysLibDeleteSoftwareLibrary(input: SysLibDeleteSoftwareLibraryInput!): SysLibDeleteSoftwareLibraryPayload!
-  "Upload a user software library archive, or replace one by libraryId"
-  sysLibUploadSoftwareLibrary(input: SysLibUploadSoftwareLibraryInput!): SysLibUploadSoftwareLibraryPayload!
-  "Add new system model"
-  sysSdmCreateSystemModelVersion(input: SysSdmCreateSystemModelVersionInput!): SysSdmCreateSystemModelVersionPayload!
+  "**Experimental** Delete an uploaded user software library"
+  sysLibDeleteSoftwareLibrary(input: SysLibDeleteSoftwareLibraryInput!): SysLibDeleteSoftwareLibraryPayload! @experimental
+  "**Experimental** Upload a user software library archive, or replace one by libraryId"
+  sysLibUploadSoftwareLibrary(input: SysLibUploadSoftwareLibraryInput!): SysLibUploadSoftwareLibraryPayload! @experimental
+  "**Experimental** Add new system model"
+  sysSdmCreateSystemModelVersion(input: SysSdmCreateSystemModelVersionInput!): SysSdmCreateSystemModelVersionPayload! @experimental
 }
 
-type SchemaRegistryEntry {
+"**Experimental**"
+type SchemaRegistryEntry @experimental {
+  "**Experimental**"
   cdmReleaseUrl: String!
+  "**Experimental**"
   cdmVersion: String!
+  "**Experimental**"
   description: String!
+  "**Experimental**"
   isLatest: Boolean!
+  "**Experimental**"
   isOnlySemantic: Boolean!
+  "**Experimental**"
   isPullDeprecated: Boolean!
+  "**Experimental**"
   isPushDeprecated: Boolean!
+  "**Experimental**"
   migrationNotes: String!
+  "**Experimental**"
   schemaVersion: String!
+  "**Experimental**"
   status: String!
 }
 
@@ -176,237 +187,405 @@ type SysEsdUpdateDocumentPayload {
   data: SysEsdDocument!
 }
 
-type SysLibDeleteSoftwareLibraryPayload {
+"**Experimental**"
+type SysLibDeleteSoftwareLibraryPayload @experimental {
+  "**Experimental**"
   boolean: Boolean
 }
 
-type SysLibSoftwareComponent {
+"**Experimental**"
+type SysLibSoftwareComponent @experimental {
+  "**Experimental**"
   category: String!
+  "**Experimental**"
   id: ID!
+  "**Experimental**"
   name: String!
+  "**Experimental**"
   specifications: [SysLibSoftwareComponentSpecification!]!
 }
 
-type SysLibSoftwareComponentSpecification {
+"**Experimental**"
+type SysLibSoftwareComponentSpecification @experimental {
+  "**Experimental**"
   ecosystem: String!
+  "**Experimental**"
   name: String!
+  "**Experimental**"
   vendor: String!
 }
 
-type SysLibSoftwareLibraryDownload {
+"**Experimental**"
+type SysLibSoftwareLibraryDownload @experimental {
+  "**Experimental**"
   downloadUrl: String
+  "**Experimental**"
   fileName: String!
+  "**Experimental**"
   id: ID!
+  "**Experimental**"
   name: String!
 }
 
-type SysLibUploadSoftwareLibraryPayload {
+"**Experimental**"
+type SysLibUploadSoftwareLibraryPayload @experimental {
+  "**Experimental**"
   sysLibSoftwareComponent: SysLibSoftwareComponent
 }
 
-type SysSdmAuthoringApplication {
+"**Experimental**"
+type SysSdmAuthoringApplication @experimental {
+  "**Experimental**"
   applicationId: String!
+  "**Experimental**"
   name: String
+  "**Experimental**"
   version: String
 }
 
-type SysSdmConnection {
+"**Experimental**"
+type SysSdmConnection @experimental {
+  "**Experimental**"
   endpoints: [SysSdmEndpoint!]
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
+  "**Experimental**"
   parameters: [SysSdmParameter!]
 }
 
-type SysSdmCreateSystemModelVersionPayload {
+"**Experimental**"
+type SysSdmCreateSystemModelVersionPayload @experimental {
+  "**Experimental**"
   sysSdmSystemModelVersion: SysSdmSystemModelVersion
 }
 
-type SysSdmDeviceModel {
+"**Experimental**"
+type SysSdmDeviceModel @experimental {
+  "**Experimental**"
   boardName: String
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   mpn: String!
+  "**Experimental**"
   peripherals: [SysSdmPeripheral!]
+  "**Experimental**"
   ports: [SysSdmDmPort!]
 }
 
-type SysSdmDmPeripheralConfiguration {
+"**Experimental**"
+type SysSdmDmPeripheralConfiguration @experimental {
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   parameters: [SysSdmDmPeripheralParameter!]
+  "**Experimental**"
   pinConfigs: [SysSdmDmPeripheralPinConfig!]
+  "**Experimental**"
   pinDependencyConfigs: [SysSdmDmPeripheralPinDependencyConfig!]
 }
 
-type SysSdmDmPeripheralInstance {
+"**Experimental**"
+type SysSdmDmPeripheralInstance @experimental {
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   interfaceType: String
+  "**Experimental**"
   modes: [SysSdmDmPeripheralMode!]
+  "**Experimental**"
   name: String
+  "**Experimental**"
   unit: String
+  "**Experimental**"
   virtualization: SysSdmDmPeripheralVirtualization
 }
 
-type SysSdmDmPeripheralMode {
+"**Experimental**"
+type SysSdmDmPeripheralMode @experimental {
+  "**Experimental**"
   configurations: [SysSdmDmPeripheralConfiguration!]
+  "**Experimental**"
   name: String
 }
 
-type SysSdmDmPeripheralParameter {
+"**Experimental**"
+type SysSdmDmPeripheralParameter @experimental {
+  "**Experimental**"
   name: String!
+  "**Experimental**"
   value: String!
 }
 
-type SysSdmDmPeripheralPinConfig {
+"**Experimental**"
+type SysSdmDmPeripheralPinConfig @experimental {
+  "**Experimental**"
   channel: String
+  "**Experimental**"
   function: String
+  "**Experimental**"
   pinName: String
+  "**Experimental**"
   pinValue: String
+  "**Experimental**"
   port: String
+  "**Experimental**"
   portName: String
 }
 
-type SysSdmDmPeripheralPinDependencyConfig {
+"**Experimental**"
+type SysSdmDmPeripheralPinDependencyConfig @experimental {
+  "**Experimental**"
   name: String
+  "**Experimental**"
   value: String
 }
 
-type SysSdmDmPort {
+"**Experimental**"
+type SysSdmDmPort @experimental {
+  "**Experimental**"
   configurations: [SysSdmDmPortConfiguration!]
+  "**Experimental**"
   connections: [SysSdmDmPortConnection!]
+  "**Experimental**"
   description: String
+  "**Experimental**"
   functions: [SysSdmDmPortFunction!]
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
+  "**Experimental**"
   pin: String
+  "**Experimental**"
   symbolicName: String
 }
 
-type SysSdmDmPortConfiguration {
+"**Experimental**"
+type SysSdmDmPortConfiguration @experimental {
+  "**Experimental**"
   enumValues: [SysSdmDmPortConfigurationEnumValue!]
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
 }
 
-type SysSdmDmPortConfigurationDependency {
+"**Experimental**"
+type SysSdmDmPortConfigurationDependency @experimental {
+  "**Experimental**"
   altRef: String
+  "**Experimental**"
   configRef: String!
+  "**Experimental**"
   functionName: String
+  "**Experimental**"
   gpioMode: SysSdmDmGpioMode
+  "**Experimental**"
   peripheralInstanceName: String
+  "**Experimental**"
   port: String
+  "**Experimental**"
   portMode: SysSdmDmPortMode
 }
 
-type SysSdmDmPortConfigurationEnumValue {
+"**Experimental**"
+type SysSdmDmPortConfigurationEnumValue @experimental {
+  "**Experimental**"
   dependencies: [SysSdmDmPortConfigurationDependency!]
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
 }
 
-type SysSdmDmPortConnection {
+"**Experimental**"
+type SysSdmDmPortConnection @experimental {
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
 }
 
-type SysSdmDmPortFunction {
+"**Experimental**"
+type SysSdmDmPortFunction @experimental {
+  "**Experimental**"
   name: String
+  "**Experimental**"
   peripheralInstance: String
 }
 
-type SysSdmEndpoint {
+"**Experimental**"
+type SysSdmEndpoint @experimental {
+  "**Experimental**"
   functionalBlockId: String!
+  "**Experimental**"
   portId: String!
 }
 
-type SysSdmFunctionalBlock {
+"**Experimental**"
+type SysSdmFunctionalBlock @experimental {
+  "**Experimental**"
   hardwareComponentIds: [String!]
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
+  "**Experimental**"
   parameters: [SysSdmParameter!]
+  "**Experimental**"
   ports: [SysSdmPort!]
+  "**Experimental**"
   sdmReferenceDesignator: String!
 }
 
-type SysSdmFunctionalModel {
+"**Experimental**"
+type SysSdmFunctionalModel @experimental {
+  "**Experimental**"
   connections: [SysSdmConnection!]
+  "**Experimental**"
   functionalBlocks: [SysSdmFunctionalBlock!]
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   implementedBy: String
+  "**Experimental**"
   name: String
 }
 
-type SysSdmHardwareComponent {
+"**Experimental**"
+type SysSdmHardwareComponent @experimental {
+  "**Experimental**"
   deviceModelId: String
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
+  "**Experimental**"
   parameters: [SysSdmParameter!]
+  "**Experimental**"
   sdmReferenceDesignator: String!
 }
 
-type SysSdmHardwareModel {
+"**Experimental**"
+type SysSdmHardwareModel @experimental {
+  "**Experimental**"
   functionalBlockIds: [String!]
+  "**Experimental**"
   hardwareComponents: [SysSdmHardwareComponent!]
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   implementedBy: String
+  "**Experimental**"
   name: String
+  "**Experimental**"
   sdmReferenceDesignator: String!
 }
 
-type SysSdmParameter {
+"**Experimental**"
+type SysSdmParameter @experimental {
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
+  "**Experimental**"
   value: String!
 }
 
-type SysSdmPeripheral {
+"**Experimental**"
+type SysSdmPeripheral @experimental {
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   instances: [SysSdmDmPeripheralInstance!]
+  "**Experimental**"
   name: String
 }
 
-type SysSdmPort {
+"**Experimental**"
+type SysSdmPort @experimental {
+  "**Experimental**"
   hardwareComponentId: String
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
+  "**Experimental**"
   parameters: [SysSdmParameter!]
+  "**Experimental**"
   peripheralInstanceId: String
+  "**Experimental**"
   portType: String
+  "**Experimental**"
   sdmReferenceDesignator: String!
+  "**Experimental**"
   softwareComponentId: String
 }
 
-type SysSdmSoftwareComponent {
+"**Experimental**"
+type SysSdmSoftwareComponent @experimental {
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   implementedBy: [String!]
+  "**Experimental**"
   libraryComponentId: String
+  "**Experimental**"
   name: String
+  "**Experimental**"
   parameters: [SysSdmParameter!]
+  "**Experimental**"
   sdmReferenceDesignator: String!
 }
 
-type SysSdmSoftwareModel {
+"**Experimental**"
+type SysSdmSoftwareModel @experimental {
+  "**Experimental**"
   deviceModelId: String
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   implementedBy: String
+  "**Experimental**"
   name: String
+  "**Experimental**"
   sdmReferenceDesignator: String!
+  "**Experimental**"
   softwareComponents: [SysSdmSoftwareComponent!]
+  "**Experimental**"
   softwareStackInstances: [SysSdmSoftwareStackInstance!]
 }
 
-type SysSdmSoftwareSpecification {
+"**Experimental**"
+type SysSdmSoftwareSpecification @experimental {
+  "**Experimental**"
   category: SysSdmSoftwareComponentCategory
+  "**Experimental**"
   ecosystem: String
+  "**Experimental**"
   name: String
+  "**Experimental**"
   vendor: String
+  "**Experimental**"
   version: String
 }
 
-type SysSdmSoftwareStackInstance {
+"**Experimental**"
+type SysSdmSoftwareStackInstance @experimental {
+  "**Experimental**"
   dependencyIds: [String!]!
+  "**Experimental**"
   id: String!
+  "**Experimental**"
   name: String
+  "**Experimental**"
   parameters: [SysSdmParameter!]
+  "**Experimental**"
   peripheralInstanceId: String
+  "**Experimental**"
   specification: SysSdmSoftwareSpecification!
 }
 
@@ -414,28 +593,47 @@ type SysSdmSoftwareStackInstance {
 type SysSdmSystemModel @experimental {
   "**Experimental**"
   id: ID!
-  latestVersion: SysSdmSystemModelVersion!
-  name: String!
-  versions: [SysSdmSystemModelVersion!]
+  "**Experimental**"
+  latestVersion: SysSdmSystemModelVersion! @experimental
+  "**Experimental**"
+  name: String! @experimental
+  "**Experimental**"
+  versions: [SysSdmSystemModelVersion!] @experimental
 }
 
-type SysSdmSystemModelVersion {
+"**Experimental**"
+type SysSdmSystemModelVersion @experimental {
+  "**Experimental**"
   deviceModels: [SysSdmDeviceModel!]
+  "**Experimental**"
   downloadUrl(schemaVersion: String): String!
+  "**Experimental**"
   functionalModel: SysSdmFunctionalModel
+  "**Experimental**"
   hardwareModels: [SysSdmHardwareModel!]
+  "**Experimental**"
   id: ID!
+  "**Experimental**"
   metadata: SysSdmSystemModelVersionMetadata
+  "**Experimental**"
   name: String
+  "**Experimental**"
   schemaVersion: String
+  "**Experimental**"
   softwareModels: [SysSdmSoftwareModel!]
+  "**Experimental**"
   version: Int!
 }
 
-type SysSdmSystemModelVersionMetadata {
+"**Experimental**"
+type SysSdmSystemModelVersionMetadata @experimental {
+  "**Experimental**"
   authoringApplication: SysSdmAuthoringApplication!
+  "**Experimental**"
   createdAt: DateTime!
+  "**Experimental**"
   createdBy: String!
+  "**Experimental**"
   tags: [String!]!
 }
 
@@ -479,47 +677,78 @@ input SysEsdUpdateDocumentInput {
   name: String!
 }
 
-input SysLibDeleteSoftwareLibraryInput {
+"**Experimental**"
+input SysLibDeleteSoftwareLibraryInput @experimental {
+  "**Experimental**"
   libraryId: ID!
 }
 
-input SysLibUploadSoftwareLibraryInput {
+"**Experimental**"
+input SysLibUploadSoftwareLibraryInput @experimental {
+  "**Experimental**"
   fileId: String!
+  "**Experimental**"
   fileName: String!
+  "**Experimental**"
   libraryId: ID
+  "**Experimental**"
   name: String!
 }
 
-input SysSdmCreateSystemModelVersionInput {
+"**Experimental**"
+input SysSdmCreateSystemModelVersionInput @experimental {
+  "**Experimental**"
   applicationVersion: String
+  "**Experimental**"
   schemaVersion: String
+  "**Experimental**"
   systemModelId: ID!
+  "**Experimental**"
   systemModelVersionFileId: String!
+  "**Experimental**"
   tags: [String!]
+  "**Experimental**"
   version: Int!
 }
 
-enum SysSdmDmGpioMode {
+"**Experimental**"
+enum SysSdmDmGpioMode @experimental {
+  "**Experimental**"
   INPUT
+  "**Experimental**"
   NONE
+  "**Experimental**"
   OUTPUT_HIGH
+  "**Experimental**"
   OUTPUT_LOW
 }
 
-enum SysSdmDmPeripheralVirtualization {
+"**Experimental**"
+enum SysSdmDmPeripheralVirtualization @experimental {
+  "**Experimental**"
   CHANNEL
+  "**Experimental**"
   NONE
 }
 
-enum SysSdmDmPortMode {
+"**Experimental**"
+enum SysSdmDmPortMode @experimental {
+  "**Experimental**"
   ALTERNATE_FUNCTION
+  "**Experimental**"
   GPIO
 }
 
-enum SysSdmSoftwareComponentCategory {
+"**Experimental**"
+enum SysSdmSoftwareComponentCategory @experimental {
+  "**Experimental**"
   APPLICATION
+  "**Experimental**"
   DRIVER
+  "**Experimental**"
   LIBRARY
+  "**Experimental**"
   MIDDLEWARE
+  "**Experimental**"
   OPERATING_SYSTEM
 }

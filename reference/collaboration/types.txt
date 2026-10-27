@@ -5,7 +5,6 @@
 - [DesAnnotationDesignReviewBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-design-review-binding.md)
 - [DesAnnotationDocumentBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-document-binding.md)
 - [DesAnnotationManagedBomRowBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-managed-bom-row-binding.md)
-- [DesAnnotationManagedPartBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-managed-part-binding.md)
 - [DesAnnotationReleaseBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-release-binding.md)
 - [DesAnnotationRequirementBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirement-binding.md)
 - [DesAnnotationRequirements](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirements.md)
@@ -14,7 +13,6 @@
 - [DesCommentContext](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-context.md): A comment context provides additional information about associations for a comment thread.
 - [DesCommentNotification](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-notification.md): Notification for comment.
 - [DesCommentNotificationData](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-notification-data.md): Information contained in comment notification data.
-- [DesCommentThreadProperty](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread-property.md): Comment thread metadata entry.
 - [DesCreateCommentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-comment-payload.md): Payload associated with creating a comment.
 - [DesCreateCommentThreadPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-comment-thread-payload.md): Payload associated with creating a comment thread.
 - [DesCreateTaskCommentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-task-comment-payload.md): Payload associated with creating a task comment.

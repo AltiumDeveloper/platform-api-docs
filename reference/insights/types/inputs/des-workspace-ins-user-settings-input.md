@@ -17,16 +17,11 @@ User-specific settings that control insight experience.
 
 ```graphql
 input DesWorkspaceInsUserSettingsInput {
-  insightTypesSettings: DesWorkspaceInsInsightTypesSettingsInputGqlInput
   projectsSettings: DesWorkspaceInsProjectSettingsInput
 }
 ```
 
 ### Fields
-
-#### `insightTypesSettings` · [`DesWorkspaceInsInsightTypesSettingsInputGqlInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-insight-types-settings-input-gql-input.md) input
-
-Preferences for including or excluding specific insight types.
 
 #### `projectsSettings` · [`DesWorkspaceInsProjectSettingsInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-project-settings-input.md) input
 

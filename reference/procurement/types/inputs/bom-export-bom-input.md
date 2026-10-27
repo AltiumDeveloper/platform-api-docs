@@ -9,8 +9,6 @@ deprecated: false
 
 # BomExportBomInput
 
-Input for exporting a BOM.
-
 ### Member Of
 
 [`bomExportBom`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/procurement/operations/mutations/bom-export-bom.md) mutation
@@ -25,4 +23,4 @@ input BomExportBomInput {
 
 #### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Identifier of the BOM to export.
+ID of the BOM to export.

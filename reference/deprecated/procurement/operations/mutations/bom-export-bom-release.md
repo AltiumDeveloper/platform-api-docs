@@ -17,8 +17,6 @@ Exports the specified BOM release into a file and provides a download URL.
 
 #### [`BomExportBomReleasePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-export-bom-release-payload.md) object
 
-Result of exporting a BOM release to a file.
-
 ```graphql
 bomExportBomRelease(
   input: BomExportBomReleaseInput!

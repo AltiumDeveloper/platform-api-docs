@@ -1,4 +1,4 @@
-# Altium 365 API — Library Management schema slice (~25915 tokens)
+# Altium 365 API — Library Management schema slice (~25625 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -81,8 +81,6 @@ type Query {
   desPartGlobalPartByIds(
     "The unique identifiers of the global parts."
     globalPartIds: [String!]!
-    "Specifies whether paid data from *SiliconExpert* or *Z2Data* is requested. When set to true, the provider quota is consumed."
-    requestPaidData: Boolean
   ): [DesPartGlobalPart]!
   "Searches part by attributes globally."
   desPartGlobalSearch(
@@ -100,7 +98,7 @@ type Query {
     order: DesPartGlobalSearchSortInput
     "The filter to apply to the global part search."
     where: DesPartGlobalSearchFilterInput
-  ): DesPartGlobalSearchConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  ): DesPartGlobalSearchConnection
   "Gets manufacturers list by provider."
   desPartManufacturersByProvider: DesPartManufacturers!
   "Searches parts by attributes."
@@ -117,7 +115,7 @@ type Query {
     order: [DesPartSortInput!]
     "The filter to apply to the part search."
     where: DesPartSearchFilterInput
-  ): DesPartSearchConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  ): DesPartSearchConnection
   "Searches parts by their manufacturer name and part number."
   desPartSearchByManufacturerPartIds(
     "The manufacturer part identifiers to search by."
@@ -1626,20 +1624,14 @@ type DesPartTag {
   tagId: String!
 }
 
-"Represents the result of one record of the upload components operation."
+"Represents the result of the upload components operation."
 type DesPartUploadComponentOperationResult {
-  "The result of the component processing: *Created*, *AlreadyExists*, *Failed* or *Skipped*."
-  componentStatus: String!
-  "The validation or technical reason the record failed or was skipped."
-  errorDetails: String
-  "A human readable summary of the component and part choice processing."
-  message: String!
-  "The result of the part choice processing: *Created*, *AlreadyExists*, *Failed* or *Skipped*."
-  partChoiceStatus: String!
-  "The identifiers of the record: its IPN, MPN and manufacturer name."
+  "The error message if the operation failed."
+  errorMessage: String
+  "The identifiers of the part."
   partId: DesPartManufacturerPartIdWithIpn!
-  "The revision of the created or existing component. Returned only when the component was resolved."
-  revisionId: String
+  "The status of the operation: *Created*, *Updated*, *AlreadyExists*, *Duplicated* or *Failed*."
+  status: String!
 }
 
 "Column mapping for components upload. Only MPN, Manufacturer and IPN columns are supported."
@@ -1668,15 +1660,13 @@ type DesPartUploadCustomPartFilePayload {
   url: String
 }
 
-"Represents the result of one record of a library part upload operation."
+"Represents the result of a library part upload operation."
 type DesPartUploadLibraryPartOperationResult {
-  "The validation or technical reason the record failed."
-  errorDetails: String
-  "A human readable summary of the part processing."
-  message: String!
-  "The identifiers of the record: its MPN and manufacturer name."
+  "The error message if the operation failed."
+  errorMessage: String
+  "The identifiers of the part."
   partId: DesPartManufacturerPartId!
-  "The result of the part processing: *Created*, *Updated*, *Failed* or *Skipped*."
+  "The status of the operation: *Created*, *Updated*, *Duplicated* or *Failed*."
   status: String!
 }
 
@@ -1716,8 +1706,6 @@ type DesPartUploadOperationPayload {
   componentsColumnMapping: DesPartUploadComponentsColumnMapping
   "When the upload was started by the user."
   createdAt: DateTime!
-  "Why the operation failed, ready to display as it is. Set for a *Failed* operation only."
-  failureReason: String
   "The identifier of the uploaded file."
   fileId: String!
   "The name of the uploaded file."

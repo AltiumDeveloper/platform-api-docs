@@ -27,7 +27,7 @@ input BomCreateBomItemElementAttributeDeclarationInput {
 
 #### `attributeId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-A transient identifier that uniquely identifies this attribute within the current mutation call. This identifier is used to correlate this attribute with attribute values in BOM item elements.
+A transient identifier that uniquely identifies this attribute within the current mutation call. This ID is used to correlate this attribute with attribute values in BOM item elements.
 
 #### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

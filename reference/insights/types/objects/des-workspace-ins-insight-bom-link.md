@@ -9,7 +9,7 @@ deprecated: false
 
 # DesWorkspaceInsInsightBomLink
 
-Link to a managed BOM associated with the insight.
+Link to a work-in-progress BOM associated with the insight.
 
 ### Member Of
 

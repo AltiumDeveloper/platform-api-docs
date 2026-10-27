@@ -25,4 +25,4 @@ input BomOctopartSupplierReferenceInput {
 
 #### `supplierId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Identifier of the supplier in Octopart.
+ID of the supplier in Octopart.

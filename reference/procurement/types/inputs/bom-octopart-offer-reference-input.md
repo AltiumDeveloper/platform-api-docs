@@ -25,4 +25,4 @@ input BomOctopartOfferReferenceInput {
 
 #### `offerId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Identifier of the offer in Octopart.
+ID of the offer in Octopart.

@@ -3,11 +3,17 @@ title: "SysSdmCreateSystemModelVersionPayload"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-create-system-model-version-payload"
 bounded_context: "System Design"
 kind: "objects"
-experimental: false
+experimental: true
 deprecated: false
 ---
 
 # SysSdmCreateSystemModelVersionPayload
+
+**EXPERIMENTAL**
+
+### Experimental
+
+> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 ### Returned By
 

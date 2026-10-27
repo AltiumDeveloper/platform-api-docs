@@ -54,7 +54,7 @@ Description of the element.
 
 #### `elementId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Unique identifier of the element.
+Unique ID of the element.
 
 #### `issues` · [`[BomIssue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-issue.md) non-null object
 

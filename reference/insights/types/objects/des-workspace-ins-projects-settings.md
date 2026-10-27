@@ -32,27 +32,27 @@ type DesWorkspaceInsProjectsSettings {
 
 #### `excludedAssemblyVariants` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Assembly variant identifiers that should be excluded from insights.
+Assembly variants that should be excluded from insights.
 
 #### `excludedBomReleases` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Released managed BOM identifiers excluded from insight consideration.
+Released BOMs excluded from insight consideration.
 
 #### `excludedConsolidatedBomReleases` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Consolidated BOM release identifiers excluded from insight consideration.
+Consolidated BOM releases excluded from insight consideration.
 
 #### `excludedConsolidatedBoms` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Consolidated BOM identifiers excluded from insight consideration.
+Consolidated BOMs excluded from insight consideration.
 
 #### `excludedProjects` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Project identifiers that should be excluded from insights.
+Projects that should be excluded from insights.
 
 #### `excludedWipBoms` · [`[ID!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Managed BOM identifiers excluded from insight consideration.
+Work-in-progress BOMs excluded from insight consideration.
 
 #### `excludeNonActiveProjects` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 

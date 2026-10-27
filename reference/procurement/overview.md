@@ -43,7 +43,7 @@ Look up entities by identifier:
 | - | - | - |
 | Queries | 2 | 0 |
 | Mutations | 3 | 0 |
-| Objects | 47 | 0 |
+| Objects | 45 | 0 |
 | Inputs | 19 | 0 |
 | Enums | 4 | 0 |
 | Interfaces | 5 | 0 |
