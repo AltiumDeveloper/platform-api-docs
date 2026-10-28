@@ -11,6 +11,496 @@ deprecated: false
 
 GraphQL schema changelog
 
+### 27-Oct-2026
+
+#### 🔴 Breaking Changes (52)
+
+##### Collaboration
+
+###### Types
+
+− Type `DesAnnotationManagedPartBinding` was removed
+
+− Member `DesAnnotationManagedPartBinding` was removed from Union type `DesAnnotationBinding`
+
+##### Common
+
+###### Directives
+
+− Directive `listSize` was removed
+
+##### Design
+
+###### Types
+
+− Type `DesCommentThreadProperty` was removed
+
+Δ `DesCommentThread` object type no longer implements `Node` interface
+
+###### Fields
+
+− Field `id` was removed from object type `DesCommentThread`
+
+− Field `properties` was removed from object type `DesCommentThread`
+
+##### Insights
+
+###### Types
+
+− Type `DesWorkspaceInsInsightTypesSettingsGql` was removed
+
+− Type `DesWorkspaceInsInsightTypesSettingsInputGqlInput` was removed
+
+###### Fields
+
+− Field `insightTypesSettings` was removed from object type `DesWorkspaceInsUserSettings`
+
+###### Input / Payload
+
+− Input field `insightTypesSettings` was removed from input object type `DesWorkspaceInsUserSettingsInput`
+
+##### Library Management
+
+###### 🔍 Query
+
+− Argument `requestPaidData: Boolean` was removed from field `Query.desPartGlobalPartByIds`
+
+###### Fields
+
+− Field `componentStatus` was removed from object type `DesPartUploadComponentOperationResult`
+
+− Field `errorDetails` was removed from object type `DesPartUploadComponentOperationResult`
+
+− Field `message` was removed from object type `DesPartUploadComponentOperationResult`
+
+− Field `partChoiceStatus` was removed from object type `DesPartUploadComponentOperationResult`
+
+− Field `revisionId` was removed from object type `DesPartUploadComponentOperationResult`
+
+− Field `errorDetails` was removed from object type `DesPartUploadLibraryPartOperationResult`
+
+− Field `message` was removed from object type `DesPartUploadLibraryPartOperationResult`
+
+− Field `failureReason` was removed from object type `DesPartUploadOperationPayload`
+
+##### Platform
+
+###### ✏️ Mutation
+
+− Field `platformKeyValueStoreAdd` was removed from object type `Mutation`
+
+− Field `platformKeyValueStoreDelete` was removed from object type `Mutation`
+
+− Field `platformKeyValueStoreUpdate` was removed from object type `Mutation`
+
+###### Types
+
+− Type `PlatformKeyValueStoreAddPayload` was removed
+
+− Type `PlatformKeyValueStoreDeletePayload` was removed
+
+− Type `PlatformKeyValueStoreEntry` was removed
+
+− Type `PlatformKeyValueStoreEntryExistsError` was removed
+
+− Type `PlatformKeyValueStoreEntryNotFoundError` was removed
+
+− Type `PlatformKeyValueStoreEntrySummary` was removed
+
+− Type `PlatformKeyValueStoreEntrySummaryConnection` was removed
+
+− Type `PlatformKeyValueStoreEntrySummaryEdge` was removed
+
+− Type `PlatformKeyValueStoreKeyInvalidError` was removed
+
+− Type `PlatformKeyValueStoreQueries` was removed
+
+− Type `PlatformKeyValueStoreQuotaExceededError` was removed
+
+− Type `PlatformKeyValueStoreUpdatePayload` was removed
+
+− Type `PlatformKeyValueStoreValueTooLargeError` was removed
+
+− Type `PlatformTokenInvalidNameError` was removed
+
+− Type `PlatformKeyValueStoreAddError` was removed
+
+− Type `PlatformKeyValueStoreDeleteError` was removed
+
+− Type `PlatformKeyValueStoreUpdateError` was removed
+
+− Type `PlatformKeyValueStoreAddInput` was removed
+
+− Type `PlatformKeyValueStoreDeleteInput` was removed
+
+− Type `PlatformKeyValueStoreUpdateInput` was removed
+
+− Member `PlatformTokenInvalidNameError` was removed from Union type `PlatformTokenUpdateError`
+
+− Member `PlatformTokenInvalidNameError` was removed from Union type `PlatformWorkspaceRefreshTokenCreateError`
+
+− Member `PlatformTokenInvalidNameError` was removed from Union type `PlatformWorkspaceTokenCreateError`
+
+###### Fields
+
+− Field `keyValueStore` was removed from object type `PlatformQueries`
+
+###### Input / Payload
+
+− Input field `itemIds` was removed from input object type `SolCreateSolutionInput`
+
+##### Procurement
+
+###### Types
+
+− Type `CostedBomsConnection` was removed
+
+− Type `CostedBomsEdge` was removed
+
+###### Fields
+
+− Field `costedBoms` was removed from object type `BomWip`
+
+##### Renesas (preview)
+
+###### Fields
+
+− Field `onChipMemoryCode` was removed from object type `DmRaPartNumberModel`
+
+#### ⚠️ Dangerous Changes (114)
+
+##### Collaboration
+
+###### 🔍 Query
+
+Δ Directive `authorize` was removed from field `Query.desAnnotations`
+
+Δ Directive `listSize` was removed from field `Query.desAnnotations`
+
+##### Customization
+
+###### 🔍 Query
+
+Δ Directive `listSize` was removed from field `Query.gloScrScriptExecutionResults`
+
+Δ Directive `listSize` was removed from field `Query.gloScrScripts`
+
+Δ Directive `authorize` was removed from field `Query.gloScrScriptSecrets`
+
+Δ Directive `authorize` was removed from field `Query.gloScrSecrets`
+
+###### ✏️ Mutation
+
+Δ Directive `authorize` was removed from field `Mutation.gloCusAddAssignment`
+
+Δ Directive `authorize` was removed from field `Mutation.gloCusDeleteAssignment`
+
+Δ Directive `authorize` was removed from field `Mutation.gloCusUpdateAssignment`
+
+Δ Directive `authorize` was removed from field `Mutation.gloCusUpdateAssignmentConfigurations`
+
+Δ Directive `authorize` was removed from field `Mutation.gloScrCreateScript`
+
+Δ Directive `authorize` was removed from field `Mutation.gloScrCreateSecret`
+
+Δ Directive `authorize` was removed from field `Mutation.gloScrDeleteScript`
+
+Δ Directive `authorize` was removed from field `Mutation.gloScrDeleteSecret`
+
+Δ Directive `authorize` was removed from field `Mutation.gloScrExecuteScript`
+
+Δ Directive `authorize` was removed from field `Mutation.gloScrRenameScript`
+
+Δ Directive `authorize` was removed from field `Mutation.gloScrSetScriptSecrets`
+
+Δ Directive `authorize` was removed from field `Mutation.gloScrUpdateScript`
+
+###### Fields
+
+Δ Directive `listSize` was removed from field `GloCusExtensionPoint.assignments`
+
+Δ Directive `listSize` was removed from field `GloScrScript.versions`
+
+Δ Directive `authorize` was removed from object `GloScrScript`
+
+Δ Directive `authorize` was removed from field `GloScrScriptVersion.package`
+
+##### Design
+
+###### 🔍 Query
+
+Δ Directive `authorize` was removed from field `Query.desComparisonHealthcheck`
+
+###### ✏️ Mutation
+
+Δ Directive `authorize` was removed from field `Mutation.desCompareReleases`
+
+##### Insights
+
+###### 🔍 Query
+
+Δ Directive `listSize` was removed from field `Query.desWorkspaceInsInsights`
+
+##### Library Management
+
+###### 🔍 Query
+
+Δ Directive `listSize` was removed from field `Query.desPartGlobalSearch`
+
+Δ Directive `listSize` was removed from field `Query.desPartSearch`
+
+##### Platform
+
+###### 🔍 Query
+
+Δ Directive `authorize` was removed from field `Query.desWorkspaceGroupById`
+
+Δ Directive `authorize` was removed from field `Query.desWorkspaceGroupsByIds`
+
+Δ Directive `authorize` was removed from field `Query.desWorkspaceTeamByAuth`
+
+Δ Directive `authorize` was removed from field `Query.desWorkspaceUserByAuth`
+
+Δ Directive `authorize` was removed from field `Query.desWorkspaceUserById`
+
+Δ Directive `authorize` was removed from field `Query.desWorkspaceUsersByIds`
+
+Δ Directive `authorize` was removed from field `Query.gloAppByClientId`
+
+Δ Directive `authorize` was removed from field `Query.gloAppById`
+
+Δ Directive `authorize` was removed from field `Query.gloAppInstalledApps`
+
+Δ Directive `authorize` was removed from field `Query.gloApps`
+
+Δ Directive `listSize` was removed from field `Query.gloApps`
+
+Δ Directive `authorize` was removed from field `Query.gloEvtSubscriptionById`
+
+Δ Directive `authorize` was removed from field `Query.gloOrganization`
+
+Δ Directive `authorize` was removed from field `Query.gloOrganizationById`
+
+Δ Directive `authorize` was removed from field `Query.gloUserById`
+
+Δ Directive `authorize` was removed from field `Query.gloUserGroups`
+
+Δ Directive `listSize` was removed from field `Query.gloUserGroups`
+
+Δ Directive `authorize` was removed from field `Query.gloUsers`
+
+Δ Directive `listSize` was removed from field `Query.gloUsers`
+
+Δ Directive `authorize` was removed from field `Query.gloUsersByIds`
+
+###### ✏️ Mutation
+
+Δ Directive `authorize` was removed from field `Mutation.gloAddAppClientSecret`
+
+Δ Directive `authorize` was removed from field `Mutation.gloAddAppGrantType`
+
+Δ Directive `authorize` was removed from field `Mutation.gloAddAppRedirectUri`
+
+Δ Directive `authorize` was removed from field `Mutation.gloAddAppScope`
+
+Δ Directive `authorize` was removed from field `Mutation.gloAddUsersToGroup`
+
+Δ Directive `authorize` was removed from field `Mutation.globalTrackedEventReport`
+
+Δ Directive `authorize` was removed from field `Mutation.gloCreateApp`
+
+Δ Directive `authorize` was removed from field `Mutation.gloCreateAppFromOAuthClient`
+
+Δ Directive `authorize` was removed from field `Mutation.gloCreateUser`
+
+Δ Directive `authorize` was removed from field `Mutation.gloCreateUserGroup`
+
+Δ Directive `authorize` was removed from field `Mutation.gloDeleteApp`
+
+Δ Directive `authorize` was removed from field `Mutation.gloEvtCreateWebhookSubscription`
+
+Δ Directive `authorize` was removed from field `Mutation.gloEvtDeleteSubscription`
+
+Δ Directive `authorize` was removed from field `Mutation.gloEvtPublishEvent`
+
+Δ Directive `authorize` was removed from field `Mutation.gloInstallApp`
+
+Δ Directive `authorize` was removed from field `Mutation.gloRemoveAppClientSecret`
+
+Δ Directive `authorize` was removed from field `Mutation.gloRemoveAppGrantType`
+
+Δ Directive `authorize` was removed from field `Mutation.gloRemoveAppRedirectUri`
+
+Δ Directive `authorize` was removed from field `Mutation.gloRemoveAppScope`
+
+Δ Directive `authorize` was removed from field `Mutation.gloRemoveUsersFromGroup`
+
+Δ Directive `authorize` was removed from field `Mutation.gloRestoreApp`
+
+Δ Directive `authorize` was removed from field `Mutation.gloUninstallApp`
+
+Δ Directive `authorize` was removed from field `Mutation.gloUpdateAppContactEmail`
+
+Δ Directive `authorize` was removed from field `Mutation.gloUpdateAppDescription`
+
+Δ Directive `authorize` was removed from field `Mutation.gloUpdateAppHrid`
+
+Δ Directive `authorize` was removed from field `Mutation.gloUpdateAppName`
+
+Δ Directive `authorize` was removed from field `Mutation.platformTokenDelete`
+
+Δ Directive `authorize` was removed from field `Mutation.platformTokenUpdate`
+
+Δ Directive `authorize` was removed from field `Mutation.platformWorkspaceRefreshTokenCreate`
+
+Δ Directive `authorize` was removed from field `Mutation.platformWorkspaceRefreshTokenCreateNewSecret`
+
+Δ Directive `authorize` was removed from field `Mutation.platformWorkspaceRefreshTokenDeleteSecret`
+
+Δ Directive `authorize` was removed from field `Mutation.platformWorkspaceTokenCreate`
+
+###### Fields
+
+Δ Directive `authorize` was removed from field `DesWorkspaceGroup.members`
+
+Δ Directive `listSize` was removed from field `DesWorkspaceGroup.members`
+
+Δ Directive `authorize` was removed from field `DesWorkspaceTeam.projectGuests`
+
+Δ Directive `listSize` was removed from field `DesWorkspaceTeam.projectGuests`
+
+Δ Directive `authorize` was removed from field `DesWorkspaceTeam.workspaceGroups`
+
+Δ Directive `listSize` was removed from field `DesWorkspaceTeam.workspaceGroups`
+
+Δ Directive `authorize` was removed from field `DesWorkspaceTeam.workspaceUsers`
+
+Δ Directive `listSize` was removed from field `DesWorkspaceTeam.workspaceUsers`
+
+Δ Directive `authorize` was removed from field `TokenQueries.byTokenId`
+
+Δ Directive `authorize` was removed from field `TokenQueries.byWorkspace`
+
+Δ Directive `listSize` was removed from field `TokenQueries.byWorkspace`
+
+Δ Directive `authorize` was removed from field `TokenQueries.workspaceTokenQuota`
+
+##### Procurement
+
+###### 🔍 Query
+
+Δ Directive `authorize` was removed from field `Query.bomBom`
+
+Δ Directive `authorize` was removed from field `Query.bomBomById`
+
+Δ Directive `authorize` was removed from field `Query.bomBomRelease`
+
+Δ Directive `authorize` was removed from field `Query.bomBoms`
+
+###### ✏️ Mutation
+
+Δ Directive `authorize` was removed from field `Mutation.bomChangeBomReleaseLifecycleState`
+
+Δ Directive `authorize` was removed from field `Mutation.bomCreateBom`
+
+Δ Directive `authorize` was removed from field `Mutation.bomExportBom`
+
+Δ Directive `authorize` was removed from field `Mutation.bomExportBom`
+
+Δ Directive `authorize` was removed from field `Mutation.bomExportBomById`
+
+Δ Directive `authorize` was removed from field `Mutation.bomExportBomById`
+
+Δ Directive `authorize` was removed from field `Mutation.bomExportBomRelease`
+
+Δ Directive `authorize` was removed from field `Mutation.bomExportBomRelease`
+
+###### Fields
+
+Δ Directive `authorize` was removed from field `BomItem.issues`
+
+Δ Directive `authorize` was removed from field `BomItemAlternate.issues`
+
+Δ Directive `authorize` was removed from field `BomItemAlternate.selectedOffer`
+
+Δ Directive `authorize` was removed from field `BomItemSubstitute.issues`
+
+Δ Directive `authorize` was removed from field `BomItemSubstitute.selectedOffer`
+
+Δ Directive `authorize` was removed from field `BomRelease.healthChecks`
+
+Δ Directive `authorize` was removed from field `BomRelease.incompleteHealthChecks`
+
+Δ Directive `authorize` was removed from field `BomRelease.issues`
+
+Δ Directive `authorize` was removed from field `BomWip.healthChecks`
+
+Δ Directive `authorize` was removed from field `BomWip.incompleteHealthChecks`
+
+Δ Directive `authorize` was removed from field `BomWip.issues`
+
+#### ✅ Non-Breaking Changes (20)
+
+##### Customization
+
+###### Input / Payload
+
+Δ Directive `oneOf` was removed from input object `GloCusUpdateAssignmentInput`
+
+##### Library Management
+
+###### Fields
+
+\+ Field `errorMessage` was added to object type `DesPartUploadComponentOperationResult`
+
+\+ Field `status` was added to object type `DesPartUploadComponentOperationResult`
+
+\+ Field `errorMessage` was added to object type `DesPartUploadLibraryPartOperationResult`
+
+##### Platform
+
+###### 🔍 Query
+
+Δ Field `Query.solBldEntityScaffoldingStatus` is no longer deprecated
+
+Δ Directive `deprecated` was removed from field `Query.solBldEntityScaffoldingStatus`
+
+###### Types
+
+− Description `Specifies the grids whose permissions must provide access to a solution.` was removed from object type `SolAccessibleToInput`
+
+##### Procurement
+
+###### Types
+
+− Description `Result of changing the lifecycle state of a BOM release.` was removed from object type `BomChangeBomReleaseLifecycleStatePayload`
+
+− Description `Result of creating a new BOM.` was removed from object type `BomCreateBomPayload`
+
+− Description `Result of exporting a BOM to a file.` was removed from object type `BomExportBomPayload`
+
+− Description `Result of exporting a BOM release to a file.` was removed from object type `BomExportBomReleasePayload`
+
+− Description `Input for changing the lifecycle state of a BOM release.` was removed from object type `BomChangeBomReleaseLifecycleStateInput`
+
+− Description `Input for creating a new BOM.` was removed from object type `BomCreateBomInput`
+
+− Description `Input for exporting a BOM by its identifier.` was removed from object type `BomExportBomByIdInput`
+
+− Description `Input for exporting a BOM.` was removed from object type `BomExportBomInput`
+
+− Description `Input for exporting a BOM release.` was removed from object type `BomExportBomReleaseInput`
+
+###### Input / Payload
+
+Δ Directive `oneOf` was removed from input object `BomCreateBomItemElementAttributeValueInput`
+
+Δ Directive `oneOf` was removed from input object `BomCreateBomOfferReferenceInput`
+
+Δ Directive `oneOf` was removed from input object `BomCreateBomPartReferenceInput`
+
+Δ Directive `oneOf` was removed from input object `BomCreateBomSupplierReferenceInput`
+
 ### 24-Oct-2026
 
 #### ⚠️ Dangerous Changes (1)

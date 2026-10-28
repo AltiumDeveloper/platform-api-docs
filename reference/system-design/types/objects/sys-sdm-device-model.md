@@ -3,17 +3,11 @@ title: "SysSdmDeviceModel"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-device-model"
 bounded_context: "System Design"
 kind: "objects"
-experimental: true
+experimental: false
 deprecated: false
 ---
 
 # SysSdmDeviceModel
-
-**EXPERIMENTAL**
-
-### Experimental
-
-> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 ### Common Data Model
 
@@ -27,7 +21,7 @@ deprecated: false
 ```graphql
 type SysSdmDeviceModel {
   boardName: String
-  id: String!
+  id: ID!
   mpn: String!
   peripherals: [SysSdmPeripheral!]
   ports: [SysSdmDmPort!]
@@ -38,7 +32,7 @@ type SysSdmDeviceModel {
 
 #### `boardName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 #### `mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

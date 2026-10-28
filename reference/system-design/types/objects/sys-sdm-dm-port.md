@@ -3,17 +3,11 @@ title: "SysSdmDmPort"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port"
 bounded_context: "System Design"
 kind: "objects"
-experimental: true
+experimental: false
 deprecated: false
 ---
 
 # SysSdmDmPort
-
-**EXPERIMENTAL**
-
-### Experimental
-
-> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 ### Member Of
 
@@ -25,7 +19,7 @@ type SysSdmDmPort {
   connections: [SysSdmDmPortConnection!]
   description: String
   functions: [SysSdmDmPortFunction!]
-  id: String!
+  id: ID!
   name: String
   pin: String
   symbolicName: String
@@ -42,7 +36,7 @@ type SysSdmDmPort {
 
 #### `functions` · [`[SysSdmDmPortFunction!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-function.md) list object
 
-#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 #### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

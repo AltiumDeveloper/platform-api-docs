@@ -3,17 +3,11 @@ title: "SysLibUploadSoftwareLibraryInput"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-lib-upload-software-library-input"
 bounded_context: "System Design"
 kind: "inputs"
-experimental: true
+experimental: false
 deprecated: false
 ---
 
 # SysLibUploadSoftwareLibraryInput
-
-**EXPERIMENTAL**
-
-### Experimental
-
-> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 ### Member Of
 

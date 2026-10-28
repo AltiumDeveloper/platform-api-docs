@@ -22,7 +22,7 @@ type SupSoftwareProjectEvalKitProjectSource {
   framework: SupSoftwareProjectEvalKitProjectSourceFramework
   projectSourceId: String! @deprecated
   sourceUrl: String!
-  toolchain: SupSoftwareProjectToolchain
+  toolchain: SupEvalKitSoftwareProjectToolchain
   toolchainVersion: String
   type: SupSoftwareProjectEvalKitProjectSourceType!
   updatedAt: DateTime!
@@ -55,7 +55,7 @@ The driver framework of the project source.
 
 The URL of the source.
 
-#### `toolchain` · [`SupSoftwareProjectToolchain`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-toolchain.md) object
+#### `toolchain` · [`SupEvalKitSoftwareProjectToolchain`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-software-project-toolchain.md) object
 
 The selected toolchain and its supported versions.
 

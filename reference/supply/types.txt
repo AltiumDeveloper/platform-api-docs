@@ -22,6 +22,7 @@
 - [SupEvalKitSetMainRefDesignPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-set-main-ref-design-payload.md): Payload returned after setting the main reference design of an evaluation kit.
 - [SupEvalKitSetParametersPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-set-parameters-payload.md): Payload returned after setting parameters on an evaluation kit.
 - [SupEvalKitSoftwareProjectCompatibleEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-software-project-compatible-eval-kit-payload.md): Payload associated with updating a software project compatible evaluation kits.
+- [SupEvalKitSoftwareProjectToolchain](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-software-project-toolchain.md)
 - [SupEvalKitSortPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-sort-preview-images-payload.md)
 - [SupEvalKitUnsetMainRefDesignPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-unset-main-ref-design-payload.md): Payload returned after unsetting the main reference design of an evaluation kit.
 - [SupEvalKitUpdateEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-update-eval-kit-payload.md): Payload associated with updating a evaluation kit.
@@ -61,7 +62,6 @@
 - [SupSoftwareProjectSetPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-set-preview-images-payload.md): Payload for replacing all preview images on a software project.
 - [SupSoftwareProjectSetSoftwareProjectSolutionTemplatesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-set-software-project-solution-templates-payload.md): Payload returned after setting software projects on a solution template.
 - [SupSoftwareProjectSolutionTemplateSoftwareProjectsResult](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-solution-template-software-projects-result.md)
-- [SupSoftwareProjectToolchain](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-toolchain.md)
 - [SupSoftwareProjectUpdateEvalKitCompatibleSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-update-eval-kit-compatible-software-project-payload.md): Payload associated with updating a evaluation kit compatible software projects.
 - [SupSoftwareProjectUpdateSoftwareProjectPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-software-project-update-software-project-payload.md): Payload associated with updating a software project.
 - [SupSolutionTemplateApplication](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-solution-template-application.md)
@@ -180,6 +180,8 @@
 - [SupEvalKitSetParametersInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-set-parameters-input.md): Input for replacing all parameters on an evaluation kit.
 - [SupEvalKitSoftwareProjectCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-software-project-compatible-eval-kit-input.md): Input for software project update.
 - [SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-software-project-compatible-eval-kit-project-source-input.md)
+- [SupEvalKitSoftwareProjectToolchainFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-software-project-toolchain-filter-input.md): Represents the filter for searching project source toolchains.
+- [SupEvalKitSoftwareProjectToolchainSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-software-project-toolchain-sort-input.md): Input type for sorting.
 - [SupEvalKitSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-input.md): Input type for sorting.
 - [SupEvalKitSortPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-preview-images-input.md): Input for reordering preview images of an evaluation kit.
 - [SupEvalKitUnsetMainRefDesignInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-unset-main-ref-design-input.md): Input for unsetting the main reference design of an evaluation kit.

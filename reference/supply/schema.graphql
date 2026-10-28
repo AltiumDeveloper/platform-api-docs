@@ -1,4 +1,4 @@
-# Altium 365 API — Supply schema slice (~29483 tokens)
+# Altium 365 API — Supply schema slice (~29872 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -73,6 +73,19 @@ type Query {
     softwareProjectId: ID!
     where: SupSoftwareProjectCompatibleEvalKitFilterInput
   ): SupSoftwareProjectEvalKitSourceConnection
+  "Search project source toolchains by querying in the database."
+  supEvalKitSoftwareProjectToolchains(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the elements in the list that come before the specified cursor."
+    before: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    "Returns the last _n_ elements from the list."
+    last: Int
+    order: [SupEvalKitSoftwareProjectToolchainSortInput!]
+    where: SupEvalKitSoftwareProjectToolchainFilterInput
+  ): SupEvalKitSoftwareProjectToolchainConnection
   "Get a specific part group by its unique identifier (GRID)."
   supPartGroupById(id: ID!): SupPartGroup!
   "Get a part group by the ID of the part."
@@ -571,6 +584,32 @@ type SupEvalKitSoftwareProjectCompatibleEvalKitPayload {
   errors: [SupEvalKitSoftwareProjectCompatibleEvalKitError!]
 }
 
+type SupEvalKitSoftwareProjectToolchain {
+  name: String!
+  supportedVersions: [String!]!
+  toolchainId: String! @deprecated(reason: "Fields play a technical role for internal uses.")
+}
+
+"A connection to a list of items."
+type SupEvalKitSoftwareProjectToolchainConnection {
+  "A list of edges."
+  edges: [SupEvalKitSoftwareProjectToolchainEdge!]
+  "A flattened list of the nodes."
+  nodes: [SupEvalKitSoftwareProjectToolchain!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "Identifies the total count of items in the connection."
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type SupEvalKitSoftwareProjectToolchainEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: SupEvalKitSoftwareProjectToolchain!
+}
+
 type SupEvalKitSortPreviewImagesPayload {
   errors: [SupEvalKitSortPreviewImagesError!]
 }
@@ -1053,7 +1092,7 @@ type SupSoftwareProjectEvalKitProjectSource {
   "The URL of the source."
   sourceUrl: String!
   "The selected toolchain and its supported versions."
-  toolchain: SupSoftwareProjectToolchain
+  toolchain: SupEvalKitSoftwareProjectToolchain
   "The selected toolchain version string."
   toolchainVersion: String
   "The type of the compatible evaluation kit project source."
@@ -1185,12 +1224,6 @@ type SupSoftwareProjectSolutionTemplateSoftwareProjectsResult {
   softwareProjects: [SupSoftwareProject!]!
   "The solution template identifier."
   solutionTemplateId: ID!
-}
-
-type SupSoftwareProjectToolchain {
-  name: String!
-  supportedVersions: [String!]!
-  toolchainId: String! @deprecated(reason: "Fields play a technical role for internal uses.")
 }
 
 "Payload associated with updating a evaluation kit compatible software projects."
@@ -1950,6 +1983,20 @@ input SupEvalKitSoftwareProjectCompatibleEvalKitProjectSourceInput {
   toolchainVersion: String
   "The project source type."
   type: SupSoftwareProjectEvalKitProjectSourceType!
+}
+
+"Represents the filter for searching project source toolchains."
+input SupEvalKitSoftwareProjectToolchainFilterInput {
+  "Searches by toolchain identifiers."
+  ids: [String!]
+  "Searches by toolchain name."
+  q: String
+}
+
+"Input type for sorting."
+input SupEvalKitSoftwareProjectToolchainSortInput {
+  "Sorting by toolchain name."
+  name: SortEnumType
 }
 
 "Input type for sorting."

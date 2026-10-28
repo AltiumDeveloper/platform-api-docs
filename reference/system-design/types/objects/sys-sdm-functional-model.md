@@ -3,17 +3,11 @@ title: "SysSdmFunctionalModel"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-functional-model"
 bounded_context: "System Design"
 kind: "objects"
-experimental: true
+experimental: false
 deprecated: false
 ---
 
 # SysSdmFunctionalModel
-
-**EXPERIMENTAL**
-
-### Experimental
-
-> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 ### Common Data Model
 
@@ -28,7 +22,7 @@ deprecated: false
 type SysSdmFunctionalModel {
   connections: [SysSdmConnection!]
   functionalBlocks: [SysSdmFunctionalBlock!]
-  id: String!
+  id: ID!
   implementedBy: String
   name: String
 }
@@ -40,7 +34,7 @@ type SysSdmFunctionalModel {
 
 #### `functionalBlocks` · [`[SysSdmFunctionalBlock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-functional-block.md) list object
 
-#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 #### `implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

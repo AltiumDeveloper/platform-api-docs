@@ -3,17 +3,11 @@ title: "SysSdmDmPortConfiguration"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-configuration"
 bounded_context: "System Design"
 kind: "objects"
-experimental: true
+experimental: false
 deprecated: false
 ---
 
 # SysSdmDmPortConfiguration
-
-**EXPERIMENTAL**
-
-### Experimental
-
-> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 ### Member Of
 
@@ -22,7 +16,7 @@ deprecated: false
 ```graphql
 type SysSdmDmPortConfiguration {
   enumValues: [SysSdmDmPortConfigurationEnumValue!]
-  id: String!
+  id: ID!
   name: String
 }
 ```
@@ -31,6 +25,6 @@ type SysSdmDmPortConfiguration {
 
 #### `enumValues` · [`[SysSdmDmPortConfigurationEnumValue!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-configuration-enum-value.md) list object
 
-#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 #### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

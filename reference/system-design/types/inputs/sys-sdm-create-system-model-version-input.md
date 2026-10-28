@@ -3,17 +3,11 @@ title: "SysSdmCreateSystemModelVersionInput"
 url: "https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-sdm-create-system-model-version-input"
 bounded_context: "System Design"
 kind: "inputs"
-experimental: true
+experimental: false
 deprecated: false
 ---
 
 # SysSdmCreateSystemModelVersionInput
-
-**EXPERIMENTAL**
-
-### Experimental
-
-> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
 ### Member Of
 

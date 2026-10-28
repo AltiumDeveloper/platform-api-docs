@@ -1,7 +1,7 @@
 # Supply — Altium 365 API
 > Parts, offers, part families, reference designs, evaluation kits, software projects and solution templates.
 
-Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/schema.graphql) (~29483 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/overview.md).
+Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/schema.graphql) (~29872 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/overview.md).
 
 ## Entities
 - [SupEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md): Evaluation Kit — A vendor evaluation kit in the supply catalog, described by its associated devices, its reference designs (including a main one) and the software projects compatible with it. GRID `grid:supply::platform:eval-kit/{id}`. Via: supEvalKitById, supEvalKitsByIds, supEvalKitDetailsByRefDesignId, supEvalKits, supEvalKitSearch, …
@@ -40,6 +40,7 @@ Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schem
 - [supEvalKitSoftwareProjectCompatibleEvalKitBySoftwareProjectIdAndEvalKitId](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-eval-kit-software-project-compatible-eval-kit-by-software-project-id-and-eval-kit-id.md): The evaluation kit source associated with the software project.
 - [supEvalKitSoftwareProjectCompatibleEvalKitsBySoftwareProjectId](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-eval-kit-software-project-compatible-eval-kits-by-software-project-id.md): The list of evaluation kit sources associated with the software project.
 - [supEvalKitSoftwareProjectCompatibleEvalKitSearch](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-eval-kit-software-project-compatible-eval-kit-search.md): Searches evauation kit compatible software projects.
+- [supEvalKitSoftwareProjectToolchains](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-eval-kit-software-project-toolchains.md): Search project source toolchains by querying in the database.
 - [supPartGroupByPartId](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-part-group-by-part-id.md): Get a part group by the ID of the part.
 - [supRefDesignByName](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-ref-design-by-name.md): Search a specific reference design by its unique name.
 - [supRefDesigns](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/queries/sup-ref-designs.md): Search a reference designs.
@@ -103,4 +104,4 @@ Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schem
 - [supSolutionTemplateUpdateSolutionTemplateStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-update-solution-template-status.md): Update the status of a solution template.
 
 ## Optional
-- [All types in Supply](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types.txt): one line per type (~14111 tokens)
+- [All types in Supply](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types.txt): one line per type (~14231 tokens)
