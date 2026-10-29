@@ -11,6 +11,380 @@ deprecated: false
 
 GraphQL schema changelog
 
+### 28-Oct-2026
+
+#### 🔴 Breaking Changes (22)
+
+##### Common
+
+###### Types
+
+− Type `SchemaRegistryEntry` was removed
+
+##### Renesas (preview)
+
+###### Types
+
+− Type `SupSoftwareProjectToolchain` was removed
+
+###### Fields
+
+Δ Field `SupSoftwareProjectEvalKitProjectSource.toolchain` changed type from `SupSoftwareProjectToolchain` to `SupEvalKitSoftwareProjectToolchain`
+
+##### System Design
+
+###### 🔍 Query
+
+Δ Field `Query.sysSdmSchemaVersionRegistry` changed type from `[SchemaRegistryEntry!]!` to `[SysSdmSchemaRegistryEntry!]!`
+
+###### Fields
+
+Δ Field `SysSdmConnection.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmDeviceModel.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmDmPeripheralConfiguration.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmDmPeripheralInstance.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmDmPort.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmDmPortConfiguration.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmDmPortConfigurationEnumValue.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmDmPortConnection.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmFunctionalBlock.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmFunctionalModel.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmHardwareComponent.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmHardwareModel.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmParameter.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmPeripheral.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmPort.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmSoftwareComponent.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmSoftwareModel.id` changed type from `String!` to `ID!`
+
+Δ Field `SysSdmSoftwareStackInstance.id` changed type from `String!` to `ID!`
+
+#### ⚠️ Dangerous Changes (56)
+
+##### System Design
+
+###### 🔍 Query
+
+Δ Directive `experimental` was removed from field `Query.sysLibSoftwareComponentById`
+
+Δ Directive `experimental` was removed from field `Query.sysLibSoftwareComponents`
+
+Δ Directive `experimental` was removed from field `Query.sysLibSoftwareLibraryDownloads`
+
+Δ Directive `experimental` was removed from field `Query.sysSdmSchemaVersionRegistry`
+
+Δ Directive `experimental` was removed from field `Query.sysSdmSystemModelById`
+
+Δ Directive `experimental` was removed from field `Query.sysSdmSystemModelsByIds`
+
+Δ Directive `experimental` was removed from field `Query.sysSdmSystemModelVersionById`
+
+###### ✏️ Mutation
+
+Δ Directive `experimental` was removed from field `Mutation.sysLibDeleteSoftwareLibrary`
+
+Δ Directive `experimental` was removed from field `Mutation.sysLibUploadSoftwareLibrary`
+
+Δ Directive `experimental` was removed from field `Mutation.sysSdmCreateSystemModelVersion`
+
+###### Fields
+
+Δ Directive `experimental` was removed from object `SysLibDeleteSoftwareLibraryPayload`
+
+Δ Directive `experimental` was removed from object `SysLibSoftwareComponent`
+
+Δ Directive `experimental` was removed from object `SysLibSoftwareComponentSpecification`
+
+Δ Directive `experimental` was removed from object `SysLibSoftwareLibraryDownload`
+
+Δ Directive `experimental` was removed from object `SysLibUploadSoftwareLibraryPayload`
+
+Δ Directive `experimental` was removed from object `SysSdmAuthoringApplication`
+
+Δ Directive `experimental` was removed from object `SysSdmConnection`
+
+Δ Directive `experimental` was removed from object `SysSdmCreateSystemModelVersionPayload`
+
+Δ Directive `experimental` was removed from object `SysSdmDeviceModel`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPeripheralConfiguration`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPeripheralInstance`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPeripheralMode`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPeripheralParameter`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPeripheralPinConfig`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPeripheralPinDependencyConfig`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPort`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPortConfiguration`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPortConfigurationDependency`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPortConfigurationEnumValue`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPortConnection`
+
+Δ Directive `experimental` was removed from object `SysSdmDmPortFunction`
+
+Δ Directive `experimental` was removed from object `SysSdmEndpoint`
+
+Δ Directive `experimental` was removed from object `SysSdmFunctionalBlock`
+
+Δ Directive `experimental` was removed from object `SysSdmFunctionalModel`
+
+Δ Directive `experimental` was removed from object `SysSdmHardwareComponent`
+
+Δ Directive `experimental` was removed from object `SysSdmHardwareModel`
+
+Δ Directive `experimental` was removed from object `SysSdmParameter`
+
+Δ Directive `experimental` was removed from object `SysSdmPeripheral`
+
+Δ Directive `experimental` was removed from object `SysSdmPort`
+
+Δ Directive `experimental` was removed from object `SysSdmSoftwareComponent`
+
+Δ Directive `experimental` was removed from object `SysSdmSoftwareModel`
+
+Δ Directive `experimental` was removed from object `SysSdmSoftwareSpecification`
+
+Δ Directive `experimental` was removed from object `SysSdmSoftwareStackInstance`
+
+Δ Directive `experimental` was removed from field `SysSdmSystemModel.latestVersion`
+
+Δ Directive `experimental` was removed from field `SysSdmSystemModel.name`
+
+Δ Directive `experimental` was removed from field `SysSdmSystemModel.versions`
+
+Δ Directive `experimental` was removed from object `SysSdmSystemModel`
+
+Δ Directive `experimental` was removed from object `SysSdmSystemModelVersion`
+
+Δ Directive `experimental` was removed from object `SysSdmSystemModelVersionMetadata`
+
+Δ Directive `experimental` was removed from enum `SysSdmDmGpioMode`
+
+Δ Directive `experimental` was removed from enum `SysSdmDmPeripheralVirtualization`
+
+Δ Directive `experimental` was removed from enum `SysSdmDmPortMode`
+
+Δ Directive `experimental` was removed from enum `SysSdmSoftwareComponentCategory`
+
+###### Input / Payload
+
+Δ Directive `experimental` was removed from input object `SysLibDeleteSoftwareLibraryInput`
+
+Δ Directive `experimental` was removed from input object `SysLibUploadSoftwareLibraryInput`
+
+Δ Directive `experimental` was removed from input object `SysSdmCreateSystemModelVersionInput`
+
+#### ✅ Non-Breaking Changes (84)
+
+##### Supply
+
+###### 🔍 Query
+
+\+ Field `supEvalKitSoftwareProjectToolchains` was added to object type `Query`
+
+\+ Argument `after: String` added to `Query.supEvalKitSoftwareProjectToolchains`
+
+\+ Argument `before: String` added to `Query.supEvalKitSoftwareProjectToolchains`
+
+\+ Argument `first: Int` added to `Query.supEvalKitSoftwareProjectToolchains`
+
+\+ Argument `last: Int` added to `Query.supEvalKitSoftwareProjectToolchains`
+
+\+ Argument `order: [SupEvalKitSoftwareProjectToolchainSortInput!]` added to `Query.supEvalKitSoftwareProjectToolchains`
+
+\+ Argument `where: SupEvalKitSoftwareProjectToolchainFilterInput` added to `Query.supEvalKitSoftwareProjectToolchains`
+
+###### Types
+
+\+ Type `SupEvalKitSoftwareProjectToolchain` was added
+
+\+ Type `SupEvalKitSoftwareProjectToolchainConnection` was added
+
+Δ Object type `SupEvalKitSoftwareProjectToolchainConnection` has description `A connection to a list of items.`
+
+\+ Type `SupEvalKitSoftwareProjectToolchainEdge` was added
+
+Δ Object type `SupEvalKitSoftwareProjectToolchainEdge` has description `An edge in a connection.`
+
+\+ Type `SupEvalKitSoftwareProjectToolchainFilterInput` was added
+
+Δ Object type `SupEvalKitSoftwareProjectToolchainFilterInput` has description `Represents the filter for searching project source toolchains.`
+
+\+ Type `SupEvalKitSoftwareProjectToolchainSortInput` was added
+
+Δ Object type `SupEvalKitSoftwareProjectToolchainSortInput` has description `Input type for sorting.`
+
+###### Fields
+
+\+ Field `name` was added to object type `SupEvalKitSoftwareProjectToolchain`
+
+\+ Field `supportedVersions` was added to object type `SupEvalKitSoftwareProjectToolchain`
+
+\+ Field `toolchainId` was added to object type `SupEvalKitSoftwareProjectToolchain`
+
+Δ Field `SupEvalKitSoftwareProjectToolchain.toolchainId` is deprecated
+
+Δ Directive `deprecated` was added to `SupEvalKitSoftwareProjectToolchain.toolchainId`
+
+\+ Field `edges` was added to object type `SupEvalKitSoftwareProjectToolchainConnection`
+
+\+ Field `nodes` was added to object type `SupEvalKitSoftwareProjectToolchainConnection`
+
+\+ Field `pageInfo` was added to object type `SupEvalKitSoftwareProjectToolchainConnection`
+
+\+ Field `totalCount` was added to object type `SupEvalKitSoftwareProjectToolchainConnection`
+
+\+ Field `cursor` was added to object type `SupEvalKitSoftwareProjectToolchainEdge`
+
+\+ Field `node` was added to object type `SupEvalKitSoftwareProjectToolchainEdge`
+
+###### Input / Payload
+
+\+ Input field `ids` of type `[String!]` was added to input object type `SupEvalKitSoftwareProjectToolchainFilterInput`
+
+\+ Input field `q` of type `String` was added to input object type `SupEvalKitSoftwareProjectToolchainFilterInput`
+
+\+ Input field `name` of type `SortEnumType` was added to input object type `SupEvalKitSoftwareProjectToolchainSortInput`
+
+##### System Design
+
+###### Types
+
+\+ Type `SysSdmSchemaRegistryEntry` was added
+
+− Description `**Experimental**` was removed from object type `SysLibDeleteSoftwareLibraryPayload`
+
+− Description `**Experimental**` was removed from object type `SysLibSoftwareComponent`
+
+− Description `**Experimental**` was removed from object type `SysLibSoftwareComponentSpecification`
+
+− Description `**Experimental**` was removed from object type `SysLibSoftwareLibraryDownload`
+
+− Description `**Experimental**` was removed from object type `SysLibUploadSoftwareLibraryPayload`
+
+− Description `**Experimental**` was removed from object type `SysSdmAuthoringApplication`
+
+− Description `**Experimental**` was removed from object type `SysSdmConnection`
+
+− Description `**Experimental**` was removed from object type `SysSdmCreateSystemModelVersionPayload`
+
+− Description `**Experimental**` was removed from object type `SysSdmDeviceModel`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPeripheralConfiguration`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPeripheralInstance`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPeripheralMode`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPeripheralParameter`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPeripheralPinConfig`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPeripheralPinDependencyConfig`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPort`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPortConfiguration`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPortConfigurationDependency`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPortConfigurationEnumValue`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPortConnection`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPortFunction`
+
+− Description `**Experimental**` was removed from object type `SysSdmEndpoint`
+
+− Description `**Experimental**` was removed from object type `SysSdmFunctionalBlock`
+
+− Description `**Experimental**` was removed from object type `SysSdmFunctionalModel`
+
+− Description `**Experimental**` was removed from object type `SysSdmHardwareComponent`
+
+− Description `**Experimental**` was removed from object type `SysSdmHardwareModel`
+
+− Description `**Experimental**` was removed from object type `SysSdmParameter`
+
+− Description `**Experimental**` was removed from object type `SysSdmPeripheral`
+
+− Description `**Experimental**` was removed from object type `SysSdmPort`
+
+− Description `**Experimental**` was removed from object type `SysSdmSoftwareComponent`
+
+− Description `**Experimental**` was removed from object type `SysSdmSoftwareModel`
+
+− Description `**Experimental**` was removed from object type `SysSdmSoftwareSpecification`
+
+− Description `**Experimental**` was removed from object type `SysSdmSoftwareStackInstance`
+
+− Description `**Experimental**` was removed from object type `SysSdmSystemModel`
+
+− Description `**Experimental**` was removed from object type `SysSdmSystemModelVersion`
+
+− Description `**Experimental**` was removed from object type `SysSdmSystemModelVersionMetadata`
+
+− Description `**Experimental**` was removed from object type `SysLibDeleteSoftwareLibraryInput`
+
+− Description `**Experimental**` was removed from object type `SysLibUploadSoftwareLibraryInput`
+
+− Description `**Experimental**` was removed from object type `SysSdmCreateSystemModelVersionInput`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmGpioMode`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPeripheralVirtualization`
+
+− Description `**Experimental**` was removed from object type `SysSdmDmPortMode`
+
+− Description `**Experimental**` was removed from object type `SysSdmSoftwareComponentCategory`
+
+###### Fields
+
+\+ Field `cdmReleaseUrl` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `cdmVersion` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `description` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `isLatest` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `isOnlySemantic` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `isPullDeprecated` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `isPushDeprecated` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `migrationNotes` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `schemaVersion` was added to object type `SysSdmSchemaRegistryEntry`
+
+\+ Field `status` was added to object type `SysSdmSchemaRegistryEntry`
+
 ### 27-Oct-2026
 
 #### 🔴 Breaking Changes (52)
