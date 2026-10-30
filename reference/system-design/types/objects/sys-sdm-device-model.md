@@ -21,7 +21,7 @@ deprecated: false
 ```graphql
 type SysSdmDeviceModel {
   boardName: String
-  id: ID!
+  id: String!
   mpn: String!
   peripherals: [SysSdmPeripheral!]
   ports: [SysSdmDmPort!]
@@ -32,7 +32,7 @@ type SysSdmDeviceModel {
 
 #### `boardName` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `mpn` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

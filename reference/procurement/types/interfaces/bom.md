@@ -46,7 +46,7 @@ Effective health checks applicable to this BOM.
 
 #### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-ID of the BOM.
+Identifier of the BOM.
 
 #### `incompleteHealthChecks` · [`[BomHealthCheck!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check.md) non-null object
 

@@ -9,7 +9,7 @@ deprecated: false
 
 # DesPartUploadComponentOperationResult
 
-Represents the result of the upload components operation.
+Represents the result of one record of the upload components operation.
 
 ### Member Of
 
@@ -17,22 +17,37 @@ Represents the result of the upload components operation.
 
 ```graphql
 type DesPartUploadComponentOperationResult {
-  errorMessage: String
+  componentStatus: String!
+  errorDetails: String
+  message: String!
+  partChoiceStatus: String!
   partId: DesPartManufacturerPartIdWithIpn!
-  status: String!
+  revisionId: String
 }
 ```
 
 ### Fields
 
-#### `errorMessage` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+#### `componentStatus` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The error message if the operation failed.
+The result of the component processing: \*Created\*, \*AlreadyExists\*, \*Failed\* or \*Skipped\*.
+
+#### `errorDetails` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+The validation or technical reason the record failed or was skipped.
+
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+
+A human readable summary of the component and part choice processing.
+
+#### `partChoiceStatus` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+
+The result of the part choice processing: \*Created\*, \*AlreadyExists\*, \*Failed\* or \*Skipped\*.
 
 #### `partId` · [`DesPartManufacturerPartIdWithIpn!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-manufacturer-part-id-with-ipn.md) non-null object
 
-The identifiers of the part.
+The identifiers of the record: its IPN, MPN and manufacturer name.
 
-#### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `revisionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-The status of the operation: \*Created\*, \*Updated\*, \*AlreadyExists\*, \*Duplicated\* or \*Failed\*.
+The revision of the created or existing component. Returned only when the component was resolved.

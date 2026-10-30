@@ -31,6 +31,7 @@ type DmRaPartNumberModel {
   flashMemorySizeKB: Int!
   groupNumber: String!
   isArrayPackage: Boolean!
+  onChipMemoryCode: String!
   package: String!
   packing: String!
   partNumber: String!
@@ -69,7 +70,7 @@ Feature set indicator for the device.
 
 #### `flashMemorySizeKB` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-On-chip flash memory size in kilobytes.
+On-chip flash memory size in kilobytes. Zero for SiP/Jacketed wireless parts where the position-8 character does not encode a Flash size; see onChipMemoryCode.
 
 #### `groupNumber` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
@@ -78,6 +79,10 @@ Group identifier within the family.
 #### `isArrayPackage` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 
 True when the package uses a two-dimensional array/grid pin layout with coordinate-named pins (BGA, LGA, WLCSP, and A-QFN) rather than a single perimeter row (standard QFN, LQFP, etc.). Lets the Device Explorer pick the correct package icon for array variants such as A-QFN.
+
+#### `onChipMemoryCode` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+
+Raw position-8 character from the part number, retained so SiP/Jacketed wireless parts (where flashMemorySizeKB is 0) still surface the memory-tier code.
 
 #### `package` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

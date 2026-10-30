@@ -9,12 +9,12 @@ deprecated: false
 
 # sysSdmSchemaVersionRegistry
 
-Retrieves all available schema versions.
+Retrieves all available schema versions
 
 ```graphql
-sysSdmSchemaVersionRegistry: [SysSdmSchemaRegistryEntry!]!
+sysSdmSchemaVersionRegistry: [SchemaRegistryEntry!]!
 ```
 
 ### Type
 
-#### [`SysSdmSchemaRegistryEntry`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-schema-registry-entry.md) object
+#### [`SchemaRegistryEntry`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/schema-registry-entry.md) object

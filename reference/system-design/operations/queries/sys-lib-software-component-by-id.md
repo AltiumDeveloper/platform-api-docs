@@ -9,7 +9,7 @@ deprecated: false
 
 # sysLibSoftwareComponentById
 
-Retrieves a software component.
+Retrieves a software component
 
 ### Type
 

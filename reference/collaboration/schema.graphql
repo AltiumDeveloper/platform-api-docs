@@ -1,4 +1,4 @@
-# Altium 365 API — Collaboration schema slice (~4390 tokens)
+# Altium 365 API — Collaboration schema slice (~4784 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -24,7 +24,7 @@ type Query {
     last: Int
     projectId: String!
     where: RequirementFilterInput
-  ): DesAnnotationsConnection
+  ): DesAnnotationsConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Search for a specific comment thread associated with a project."
   desCommentThread(
     "The project identifier (`DesProject.id`)."
@@ -127,6 +127,10 @@ type DesAnnotationDocumentBinding {
 
 type DesAnnotationManagedBomRowBinding {
   rowId: String!
+}
+
+type DesAnnotationManagedPartBinding {
+  partId: String!
 }
 
 type DesAnnotationReleaseBinding {
@@ -232,7 +236,7 @@ type DesCommentNotificationData {
 }
 
 "A comment thread contains an initial remark associated with the design and a collection of replies."
-type DesCommentThread {
+type DesCommentThread implements Node {
   "The account information for the owner of any action or response to this comment thread."
   assignedTo: DesUser
   "The list of replies associated with this comment thread."
@@ -245,16 +249,28 @@ type DesCommentThread {
   createdAt: DateTime!
   "The account information for who created this comment thread."
   createdBy: DesUser!
+  "The node identifier for this comment thread (used by `node`)."
+  id: ID!
   "The `DateTime` for the most recent modification of this comment thread."
   modifiedAt: DateTime!
   "The account information for who most recently modified this comment thread."
   modifiedBy: DesUser!
   "The web address to download the screenshot associated with the creation of this comment thread."
   originalStateScreenshotUrl: String
+  "Metadata entries on the comment thread, including service-set entries such as *DocumentType* and *ReleaseGuid*."
+  properties: [DesCommentThreadProperty!]!
   "Comment thread status. 0 = *Resolved*, 1 = *Active*."
   status: Int!
   "The sequence number of this comment thread."
   threadNumber: Int!
+}
+
+"Comment thread metadata entry."
+type DesCommentThreadProperty {
+  "Parameter name."
+  name: String!
+  "Parameter value."
+  value: String!
 }
 
 "Payload associated with creating a comment."
@@ -394,7 +410,7 @@ type DesUpdateTaskPayload {
 }
 
 "There may be multiple bindings associated with annotation instance. Together the bindings provide detailed information about the context of the annotation placement and associated design entities."
-union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
+union DesAnnotationBinding = DesAnnotationDocumentBinding | DesAnnotationReleaseBinding | DesAnnotationRevisionBinding | DesAnnotationManagedBomRowBinding | DesAnnotationManagedPartBinding | DesAnnotationDesignReviewBinding | DesAnnotationRequirementBinding
 
 "Input for comment creation."
 input DesCreateCommentInput {
@@ -402,6 +418,8 @@ input DesCreateCommentInput {
   commentThreadId: String!
   "Comment entity identifier."
   entityId: ID!
+  "User or group mentions to add to the comment. Omit to create a comment without mentions."
+  mentions: [DesMentionInput!]
   "Comment text."
   text: String!
 }
@@ -426,6 +444,8 @@ input DesCreateCommentThreadInput {
   itemAsDesignItemSchUniqueId: String
   "Comment thread item as internal object identifier."
   itemAsInternalObjectId: String
+  "User or group mentions to add to the first comment. Omit to create a thread without mentions."
+  mentions: [DesMentionInput!]
   "Comment thread release identifier."
   releaseId: String
   "Comment thread text."
@@ -500,6 +520,16 @@ input DesDeleteTaskInput {
   taskId: ID!
 }
 
+"A user or group mention operation in a comment."
+input DesMentionInput {
+  "The workspace user or group GUID, not an encoded GraphQL identifier."
+  mentionGuid: String!
+  "The type of the mentioned entity."
+  mentionType: DesMentionType!
+  "The mention operation. Use ADD when creating a comment; updates support ADD and REMOVE."
+  operationType: DesMentionOperationType! = ADD
+}
+
 "Input for subscribing to comment update notifications."
 input DesOnCommentUpdatedInput {
   "Access token for authorization."
@@ -516,6 +546,8 @@ input DesUpdateCommentInput {
   commentThreadId: String!
   "Entity identifier for updating a comment."
   entityId: ID!
+  "User or group mention operations to apply. Omit to leave existing mentions unchanged."
+  mentions: [DesMentionInput!]
   "Comment text."
   text: String!
 }
@@ -575,6 +607,18 @@ enum DesCommentThreadStatus {
 enum DesDocumentType {
   PCB
   SCHEMATIC
+}
+
+"An operation on a comment mention."
+enum DesMentionOperationType {
+  ADD
+  REMOVE
+}
+
+"The type of entity mentioned in a comment."
+enum DesMentionType {
+  GROUP
+  USER
 }
 
 "Priority levels for a task."

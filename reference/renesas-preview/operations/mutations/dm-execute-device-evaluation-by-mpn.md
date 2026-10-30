@@ -15,7 +15,7 @@ deprecated: false
 
 > **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
 
-Evaluates required peripherals against a single, already-chosen device (by MPN) and returns the full configured model (concrete ports and peripherals).
+Evaluates required peripherals against a single, already-chosen device (by MPN) and returns the full configured model (concrete ports and peripherals). An unknown MPN returns an empty summary rather than evaluating the whole catalog.
 
 ### Type
 

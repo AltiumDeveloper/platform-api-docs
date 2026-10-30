@@ -22,7 +22,7 @@ deprecated: false
 type SysSdmHardwareModel {
   functionalBlockIds: [String!]
   hardwareComponents: [SysSdmHardwareComponent!]
-  id: ID!
+  id: String!
   implementedBy: String
   name: String
   sdmReferenceDesignator: String!
@@ -35,7 +35,7 @@ type SysSdmHardwareModel {
 
 #### `hardwareComponents` · [`[SysSdmHardwareComponent!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-hardware-component.md) list object
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

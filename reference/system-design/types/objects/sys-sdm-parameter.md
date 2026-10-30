@@ -15,7 +15,7 @@ deprecated: false
 
 ```graphql
 type SysSdmParameter {
-  id: ID!
+  id: String!
   name: String
   value: String!
 }
@@ -23,7 +23,7 @@ type SysSdmParameter {
 
 ### Fields
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

@@ -9,6 +9,8 @@ deprecated: false
 
 # BomCreateBomInput
 
+Input for creating a new BOM.
+
 ### Member Of
 
 [`bomCreateBom`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/operations/mutations/bom-create-bom.md) mutation

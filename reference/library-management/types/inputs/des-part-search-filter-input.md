@@ -67,7 +67,7 @@ The keyword to search for.
 
 #### `lifecycleState` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-A collection of lifecycle state identifiers to search by. Not supported yet and must not be provided.
+A collection of lifecycle states to search by, each either a state name or a state identifier. Not supported yet and must not be provided: lifecycle data is not indexed.
 
 #### `manufacturerName` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
@@ -83,7 +83,7 @@ The filter for part providers.
 
 #### `tags` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-A collection of tag identifiers to search by. Not supported yet and must not be provided.
+A collection of tags to search by, each either a tag identifier or a tag name. Not supported yet and must not be provided: tag data is not indexed.
 
 #### `usages` · [`[DesPartSearchUsagesFilterInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/inputs/des-part-search-usages-filter-input.md) list input
 

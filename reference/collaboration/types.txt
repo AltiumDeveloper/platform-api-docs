@@ -5,6 +5,7 @@
 - [DesAnnotationDesignReviewBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-design-review-binding.md)
 - [DesAnnotationDocumentBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-document-binding.md)
 - [DesAnnotationManagedBomRowBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-managed-bom-row-binding.md)
+- [DesAnnotationManagedPartBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-managed-part-binding.md)
 - [DesAnnotationReleaseBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-release-binding.md)
 - [DesAnnotationRequirementBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirement-binding.md)
 - [DesAnnotationRequirements](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-annotation-requirements.md)
@@ -13,6 +14,7 @@
 - [DesCommentContext](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-context.md): A comment context provides additional information about associations for a comment thread.
 - [DesCommentNotification](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-notification.md): Notification for comment.
 - [DesCommentNotificationData](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-notification-data.md): Information contained in comment notification data.
+- [DesCommentThreadProperty](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-thread-property.md): Comment thread metadata entry.
 - [DesCreateCommentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-comment-payload.md): Payload associated with creating a comment.
 - [DesCreateCommentThreadPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-comment-thread-payload.md): Payload associated with creating a comment thread.
 - [DesCreateTaskCommentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-create-task-comment-payload.md): Payload associated with creating a task comment.
@@ -37,6 +39,7 @@
 - [DesDeleteCommentThreadInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-comment-thread-input.md): Input for deleting a comment thread.
 - [DesDeleteTaskCommentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-task-comment-input.md): Input for deleting a task comment.
 - [DesDeleteTaskInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-delete-task-input.md): Input for deleting a task.
+- [DesMentionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-mention-input.md): A user or group mention operation in a comment.
 - [DesOnCommentUpdatedInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-on-comment-updated-input.md): Input for subscribing to comment update notifications.
 - [DesUpdateCommentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-update-comment-input.md): Input for updating comment.
 - [DesUpdateCommentThreadInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-update-comment-thread-input.md): Input for updating a comment thread.
@@ -45,5 +48,7 @@
 - [DesCommentContextType](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-comment-context-type.md): The comment context type.
 - [DesCommentThreadStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-comment-thread-status.md): Specifies a comment thread status.
 - [DesDocumentType](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-document-type.md): The document type.
+- [DesMentionOperationType](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-mention-operation-type.md): An operation on a comment mention.
+- [DesMentionType](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-mention-type.md): The type of entity mentioned in a comment.
 - [DesTaskPriority](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-priority.md): Priority levels for a task.
 - [DesTaskStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-task-status.md): Status values for a task.

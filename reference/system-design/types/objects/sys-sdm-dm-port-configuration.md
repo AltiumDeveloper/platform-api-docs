@@ -16,7 +16,7 @@ deprecated: false
 ```graphql
 type SysSdmDmPortConfiguration {
   enumValues: [SysSdmDmPortConfigurationEnumValue!]
-  id: ID!
+  id: String!
   name: String
 }
 ```
@@ -25,6 +25,6 @@ type SysSdmDmPortConfiguration {
 
 #### `enumValues` · [`[SysSdmDmPortConfigurationEnumValue!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-configuration-enum-value.md) list object
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar

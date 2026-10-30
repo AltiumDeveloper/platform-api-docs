@@ -64,4 +64,4 @@ A token whose value reflects the conditions that led to the issue. It changes if
 
 > **Deprecated:** Use healthCheck.healthCheckId instead.
 
-Health check definition ID.
+Health check definition identifier.

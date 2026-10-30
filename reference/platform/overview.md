@@ -60,10 +60,10 @@ Look up entities by identifier:
 
 | Kind | Items | Experimental |
 | - | - | - |
-| Queries | 48 | 3 |
-| Mutations | 76 | 2 |
-| Objects | 185 | 7 |
-| Inputs | 105 | 4 |
+| Queries | 50 | 3 |
+| Mutations | 79 | 2 |
+| Objects | 198 | 7 |
+| Inputs | 108 | 4 |
 | Enums | 21 | 2 |
 | Interfaces | 5 | 1 |
-| Unions | 25 | 0 |
+| Unions | 28 | 0 |

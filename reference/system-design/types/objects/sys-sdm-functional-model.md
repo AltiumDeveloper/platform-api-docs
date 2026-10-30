@@ -22,7 +22,7 @@ deprecated: false
 type SysSdmFunctionalModel {
   connections: [SysSdmConnection!]
   functionalBlocks: [SysSdmFunctionalBlock!]
-  id: ID!
+  id: String!
   implementedBy: String
   name: String
 }
@@ -34,7 +34,7 @@ type SysSdmFunctionalModel {
 
 #### `functionalBlocks` · [`[SysSdmFunctionalBlock!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-functional-block.md) list object
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

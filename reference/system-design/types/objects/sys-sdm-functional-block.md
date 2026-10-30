@@ -21,7 +21,7 @@ deprecated: false
 ```graphql
 type SysSdmFunctionalBlock {
   hardwareComponentIds: [String!]
-  id: ID!
+  id: String!
   name: String
   parameters: [SysSdmParameter!]
   ports: [SysSdmPort!]
@@ -33,7 +33,7 @@ type SysSdmFunctionalBlock {
 
 #### `hardwareComponentIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

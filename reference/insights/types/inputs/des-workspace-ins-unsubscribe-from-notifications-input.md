@@ -25,4 +25,4 @@ input DesWorkspaceInsUnsubscribeFromNotificationsInput {
 
 #### `userId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-User to exclude from receiving notifications.
+User identifier to exclude from receiving notifications.

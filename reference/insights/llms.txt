@@ -1,7 +1,7 @@
 # Insights — Altium 365 API
 > Workspace insights about parts and designs.
 
-Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/schema.graphql) (~4668 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/overview.md).
+Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/schema.graphql) (~5091 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/overview.md).
 
 ## Entities
 - [DesWorkspaceInsInsight](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight.md): Insight — A finding, detected asynchronously, that gives the user insight within one domain area: the library (part insights) or design (design insights). GRID `grid:workspace:{workspace-id}:insights:insight/{id}`. Via: desWorkspaceInsInsightById, desWorkspaceInsInsightByName, desWorkspaceInsInsights
@@ -13,6 +13,7 @@ Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). S
 ## Queries
 - [desWorkspaceInsInsightByName](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insight-by-name.md): Gets an insight by its name.
 - [desWorkspaceInsInsightSeverities](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insight-severities.md): Gets all available insight severities.
+- [desWorkspaceInsInsightsInitialized](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insights-initialized.md): Indicates whether insights are initialized for the current workspace.
 - [desWorkspaceInsInsightSortingFields](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insight-sorting-fields.md): Gets all available insight sorting fields.
 - [desWorkspaceInsInsightStatuses](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insight-statuses.md): Gets all available insight statuses.
 - [desWorkspaceInsInsightTypes](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insight-types.md): Gets all available insight types.
@@ -28,4 +29,4 @@ Concepts: [insights](https://altiumdeveloper.github.io/cdm/subsets/insights/). S
 - [desWorkspaceInsUpsertInsightByKey](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/mutations/des-workspace-ins-upsert-insight-by-key.md): Creates or updates an insight by key.
 
 ## Optional
-- [All types in Insights](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types.txt): one line per type (~2716 tokens)
+- [All types in Insights](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types.txt): one line per type (~2899 tokens)

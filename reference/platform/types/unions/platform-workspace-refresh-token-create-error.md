@@ -14,7 +14,7 @@ deprecated: false
 [`PlatformWorkspaceRefreshTokenCreatePayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-workspace-refresh-token-create-payload.md) object
 
 ```graphql
-union PlatformWorkspaceRefreshTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError
+union PlatformWorkspaceRefreshTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError | PlatformTokenInvalidNameError
 ```
 
 ### Possible types
@@ -38,3 +38,7 @@ Error that occurs when the maximum number of [`PlatformToken`](https://altiumdev
 #### [`PlatformTokenInvalidTokenLifetimeError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-invalid-token-lifetime-error.md) object
 
 Error returned by the Token API when an input token lifetime for a new [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) is invalid.
+
+#### [`PlatformTokenInvalidNameError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/platform-token-invalid-name-error.md) object
+
+Error returned by the Token API when an input name for a [`PlatformToken`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/platform-token.md) is invalid.

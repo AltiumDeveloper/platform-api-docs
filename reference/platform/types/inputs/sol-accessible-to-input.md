@@ -9,6 +9,8 @@ deprecated: false
 
 # SolAccessibleToInput
 
+Specifies the grids whose permissions must provide access to a solution.
+
 ### Member Of
 
 [`SolSolutionFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/sol-solution-filter-input.md) input

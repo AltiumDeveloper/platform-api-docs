@@ -19,6 +19,8 @@ Represents fixed search facets.
 type DesPartSearchFixedFacets {
   categoryNames: [DesPartSearchFacetValue!]!
   hasBomOrProjectUsages: [DesPartSearchFacetValue!]!
+  hasComponentsUsages: [DesPartSearchFacetValue!]!
+  lifecycleStates: [DesPartSearchFacetValue!]!
   manufacturerNames: [DesPartSearchFacetValue!]!
   overallHealthCheckStatuses: [DesPartSearchFacetValue!]!
   tags: [DesPartSearchFacetValue!]!
@@ -35,6 +37,14 @@ The category names.
 
 Indicates if the part has BOM or project usages.
 
+#### `hasComponentsUsages` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object
+
+Indicates if the part is used in components.
+
+#### `lifecycleStates` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object
+
+The lifecycle state names. Not calculated yet, so it is always empty.
+
 #### `manufacturerNames` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object
 
 The manufacturer names.
@@ -45,4 +55,4 @@ The overall health check statuses.
 
 #### `tags` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object
 
-The tags. Not calculated yet, so it is always empty.
+The tag names. Not calculated yet, so it is always empty.

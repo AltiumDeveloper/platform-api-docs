@@ -9,11 +9,11 @@ deprecated: false
 
 # sysSdmSystemModelById
 
-Retrieves a system model.
+Retrieves a system model
 
 ### Type
 
-#### [`SysSdmSystemModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model.md) object
+#### [`SysSdmSystemModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model.md) object **EXPERIMENTAL**
 
 ```graphql
 sysSdmSystemModelById(

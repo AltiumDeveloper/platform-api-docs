@@ -38,7 +38,7 @@ The sort order for the category name.
 
 #### `lifecycleState` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
-The sort order for the lifecycle state. Not supported yet and must not be provided.
+The sort order for the lifecycle state name. Not supported yet and must not be provided: lifecycle data is not indexed.
 
 #### `manufacturerName` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 

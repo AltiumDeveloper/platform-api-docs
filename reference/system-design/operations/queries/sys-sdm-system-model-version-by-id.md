@@ -9,7 +9,7 @@ deprecated: false
 
 # sysSdmSystemModelVersionById
 
-Retrieves a system model version.
+Retrieves a system model version
 
 ### Type
 

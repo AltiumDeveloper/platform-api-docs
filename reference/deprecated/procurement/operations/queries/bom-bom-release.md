@@ -30,8 +30,8 @@ bomBomRelease(
 
 #### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the BOM.
+Identifier of the BOM.
 
 #### `releaseId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the release.
+Identifier of the release.

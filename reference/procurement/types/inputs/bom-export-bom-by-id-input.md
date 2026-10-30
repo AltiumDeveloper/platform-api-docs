@@ -9,6 +9,8 @@ deprecated: false
 
 # BomExportBomByIdInput
 
+Input for exporting a BOM by its identifier.
+
 ### Member Of
 
 [`bomExportBomById`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/operations/mutations/bom-export-bom-by-id.md) mutation
@@ -23,4 +25,4 @@ input BomExportBomByIdInput {
 
 #### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-ID of the BOM to export.
+Identifier of the BOM to export.

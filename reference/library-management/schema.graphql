@@ -1,4 +1,4 @@
-# Altium 365 API — Library Management schema slice (~25625 tokens)
+# Altium 365 API — Library Management schema slice (~26012 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -81,6 +81,8 @@ type Query {
   desPartGlobalPartByIds(
     "The unique identifiers of the global parts."
     globalPartIds: [String!]!
+    "Specifies whether paid data from *SiliconExpert* or *Z2Data* is requested. When set to true, the provider quota is consumed."
+    requestPaidData: Boolean
   ): [DesPartGlobalPart]!
   "Searches part by attributes globally."
   desPartGlobalSearch(
@@ -98,7 +100,7 @@ type Query {
     order: DesPartGlobalSearchSortInput
     "The filter to apply to the global part search."
     where: DesPartGlobalSearchFilterInput
-  ): DesPartGlobalSearchConnection
+  ): DesPartGlobalSearchConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Gets manufacturers list by provider."
   desPartManufacturersByProvider: DesPartManufacturers!
   "Searches parts by attributes."
@@ -115,7 +117,7 @@ type Query {
     order: [DesPartSortInput!]
     "The filter to apply to the part search."
     where: DesPartSearchFilterInput
-  ): DesPartSearchConnection
+  ): DesPartSearchConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Searches parts by their manufacturer name and part number."
   desPartSearchByManufacturerPartIds(
     "The manufacturer part identifiers to search by."
@@ -1448,11 +1450,15 @@ type DesPartSearchFixedFacets {
   categoryNames: [DesPartSearchFacetValue!]!
   "Indicates if the part has BOM or project usages."
   hasBomOrProjectUsages: [DesPartSearchFacetValue!]!
+  "Indicates if the part is used in components."
+  hasComponentsUsages: [DesPartSearchFacetValue!]!
+  "The lifecycle state names. Not calculated yet, so it is always empty."
+  lifecycleStates: [DesPartSearchFacetValue!]!
   "The manufacturer names."
   manufacturerNames: [DesPartSearchFacetValue!]!
   "The overall health check statuses."
   overallHealthCheckStatuses: [DesPartSearchFacetValue!]!
-  "The tags. Not calculated yet, so it is always empty."
+  "The tag names. Not calculated yet, so it is always empty."
   tags: [DesPartSearchFacetValue!]!
 }
 
@@ -1624,14 +1630,20 @@ type DesPartTag {
   tagId: String!
 }
 
-"Represents the result of the upload components operation."
+"Represents the result of one record of the upload components operation."
 type DesPartUploadComponentOperationResult {
-  "The error message if the operation failed."
-  errorMessage: String
-  "The identifiers of the part."
+  "The result of the component processing: *Created*, *AlreadyExists*, *Failed* or *Skipped*."
+  componentStatus: String!
+  "The validation or technical reason the record failed or was skipped."
+  errorDetails: String
+  "A human readable summary of the component and part choice processing."
+  message: String!
+  "The result of the part choice processing: *Created*, *AlreadyExists*, *Failed* or *Skipped*."
+  partChoiceStatus: String!
+  "The identifiers of the record: its IPN, MPN and manufacturer name."
   partId: DesPartManufacturerPartIdWithIpn!
-  "The status of the operation: *Created*, *Updated*, *AlreadyExists*, *Duplicated* or *Failed*."
-  status: String!
+  "The revision of the created or existing component. Returned only when the component was resolved."
+  revisionId: String
 }
 
 "Column mapping for components upload. Only MPN, Manufacturer and IPN columns are supported."
@@ -1660,13 +1672,15 @@ type DesPartUploadCustomPartFilePayload {
   url: String
 }
 
-"Represents the result of a library part upload operation."
+"Represents the result of one record of a library part upload operation."
 type DesPartUploadLibraryPartOperationResult {
-  "The error message if the operation failed."
-  errorMessage: String
-  "The identifiers of the part."
+  "The validation or technical reason the record failed."
+  errorDetails: String
+  "A human readable summary of the part processing."
+  message: String!
+  "The identifiers of the record: its MPN and manufacturer name."
   partId: DesPartManufacturerPartId!
-  "The status of the operation: *Created*, *Updated*, *Duplicated* or *Failed*."
+  "The result of the part processing: *Created*, *Updated*, *Failed* or *Skipped*."
   status: String!
 }
 
@@ -1706,6 +1720,8 @@ type DesPartUploadOperationPayload {
   componentsColumnMapping: DesPartUploadComponentsColumnMapping
   "When the upload was started by the user."
   createdAt: DateTime!
+  "Why the operation failed, ready to display as it is. Set for a *Failed* operation only."
+  failureReason: String
   "The identifier of the uploaded file."
   fileId: String!
   "The name of the uploaded file."
@@ -2553,7 +2569,7 @@ input DesPartSearchFilterInput {
   hasUsages: Boolean
   "The keyword to search for."
   keyword: String
-  "A collection of lifecycle state identifiers to search by. Not supported yet and must not be provided."
+  "A collection of lifecycle states to search by, each either a state name or a state identifier. Not supported yet and must not be provided: lifecycle data is not indexed."
   lifecycleState: [String!]
   "A collection of manufacturer names to search by."
   manufacturerName: [String!]
@@ -2565,7 +2581,7 @@ input DesPartSearchFilterInput {
   supplierName: [String!] @deprecated(reason: "Supplier data is no longer indexed, so this field is not supported and must not be provided.")
   "A collection of supplier part numbers to search by."
   supplierPartNumber: [String!] @deprecated(reason: "Supplier data is no longer indexed, so this field is not supported and must not be provided.")
-  "A collection of tag identifiers to search by. Not supported yet and must not be provided."
+  "A collection of tags to search by, each either a tag identifier or a tag name. Not supported yet and must not be provided: tag data is not indexed."
   tags: [String!]
   "A collection of usage filters to search by."
   usages: [DesPartSearchUsagesFilterInput!]
@@ -2623,7 +2639,7 @@ input DesPartSortInput {
   attribute: DesPartAttributeSortInput
   "The sort order for the category name."
   categoryName: SortEnumType
-  "The sort order for the lifecycle state. Not supported yet and must not be provided."
+  "The sort order for the lifecycle state name. Not supported yet and must not be provided: lifecycle data is not indexed."
   lifecycleState: SortEnumType
   "The sort order for the manufacturer name."
   manufacturerName: SortEnumType

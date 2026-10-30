@@ -21,7 +21,7 @@ deprecated: false
 ```graphql
 type SysSdmConnection {
   endpoints: [SysSdmEndpoint!]
-  id: ID!
+  id: String!
   name: String
   parameters: [SysSdmParameter!]
 }
@@ -31,7 +31,7 @@ type SysSdmConnection {
 
 #### `endpoints` · [`[SysSdmEndpoint!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-endpoint.md) list object
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

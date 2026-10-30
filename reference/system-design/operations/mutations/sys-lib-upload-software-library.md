@@ -9,7 +9,7 @@ deprecated: false
 
 # sysLibUploadSoftwareLibrary
 
-Uploads a user software library archive, or replaces an existing one by its library identifier.
+Upload a user software library archive, or replace one by libraryId
 
 ### Type
 

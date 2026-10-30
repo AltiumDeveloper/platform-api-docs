@@ -20,7 +20,7 @@ deprecated: false
 
 ```graphql
 type SysSdmSoftwareComponent {
-  id: ID!
+  id: String!
   implementedBy: [String!]
   libraryComponentId: String
   name: String
@@ -31,7 +31,7 @@ type SysSdmSoftwareComponent {
 
 ### Fields
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `implementedBy` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 

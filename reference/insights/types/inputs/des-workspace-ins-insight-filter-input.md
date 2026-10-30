@@ -21,7 +21,7 @@ input DesWorkspaceInsInsightFilterInput {
   name: [String!]
   severity: [String!]
   status: [String!]
-  type: [String!]
+  type: [String!]!
 }
 ```
 
@@ -43,6 +43,6 @@ Filter insights by severity levels.
 
 Filter insights by their status values.
 
-#### `type` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
+#### `type` · [`[String!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Filter insights by their type identifiers.

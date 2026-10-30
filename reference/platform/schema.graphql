@@ -1,4 +1,4 @@
-# Altium 365 API — Platform schema slice (~30808 tokens)
+# Altium 365 API — Platform schema slice (~32604 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -138,7 +138,7 @@ type Query {
   desWorkspaceInfos: [DesWorkspaceInfo!]!
   "Get a list of workspace locations."
   desWorkspaceLocations: [DesWorkspaceLocation!]!
-  "Retrieves a workspace team based on the authenticity of the requester."
+  "Retrieves a workspace team based on the identity of the requester."
   desWorkspaceTeamByAuth: DesWorkspaceTeam!
   "Retrieves a workspace user associated with the identity of the requester."
   desWorkspaceUserByAuth: DesWorkspaceUser!
@@ -176,7 +176,7 @@ type Query {
     last: Int
     order: [GloAppSortInput!]
     where: GloAppFilterInput
-  ): GloAppsConnection
+  ): GloAppsConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   globalTrackedEvent: String! @deprecated
   "Retrieves the information about subscription with given identifier."
   gloEvtSubscriptionById(subscriptionId: String!): GloEvtSubscription
@@ -198,7 +198,7 @@ type Query {
     "Returns the last _n_ elements from the list."
     last: Int
     order: [GloUserGroupSortInput!]
-  ): GloUserGroupConnection
+  ): GloUserGroupConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 50, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves list of users by filter."
   gloUsers(
     "Returns the elements in the list that come after the specified cursor."
@@ -211,7 +211,7 @@ type Query {
     "Returns the last _n_ elements from the list."
     last: Int
     order: [GloUserSortInput!]
-  ): GloUserConnection
+  ): GloUserConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 50, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves list of users by their identifiers."
   gloUsersByIds(userIds: [ID!]!): [GloUser]!
   "**Experimental**"
@@ -226,7 +226,7 @@ type Query {
   "Context for `PlatformQueries`."
   platform: PlatformQueries!
   "Retrieves a entity scaffolding status."
-  solBldEntityScaffoldingStatus(id: ID!): SolBldEntityScaffoldingStatusPayload!
+  solBldEntityScaffoldingStatus(id: ID!): SolBldEntityScaffoldingStatusPayload! @deprecated(reason: "Use isScaffolding field instead")
   "Retrieves a job status."
   solBldScaffoldingStatus(jobId: ID!): SolBldScaffoldingStatusPayload!
   "Retrieves cached job statuses for a solution."
@@ -346,6 +346,12 @@ type Mutation {
   kgAddNode(input: KgAddNodeInput!): KgAddNodePayload! @experimental
   "**Experimental** Deletes a Vault entity registered in the knowledge graph."
   kgDeleteNode(input: KgDeleteNodeInput!): KgDeleteNodePayload! @experimental
+  "Adds an entry and fails if the key already exists. Requires the `platform:storage.write` scope."
+  platformKeyValueStoreAdd(input: PlatformKeyValueStoreAddInput!): PlatformKeyValueStoreAddPayload!
+  "Deletes an entry, succeeding without changes if it does not exist; *isDeleted* tells whether it existed. Requires the `platform:storage.write` scope."
+  platformKeyValueStoreDelete(input: PlatformKeyValueStoreDeleteInput!): PlatformKeyValueStoreDeletePayload!
+  "Replaces the value of an existing entry, failing if it does not exist; the last write wins. Requires the `platform:storage.write` scope."
+  platformKeyValueStoreUpdate(input: PlatformKeyValueStoreUpdateInput!): PlatformKeyValueStoreUpdatePayload!
   "Deletes a `PlatformToken`. Returns the identifier of the deleted token."
   platformTokenDelete(input: PlatformTokenDeleteInput!): PlatformTokenDeletePayload!
   "Updates the name and/or description of an existing `PlatformToken`."
@@ -996,6 +1002,7 @@ type DesWorkspaceGroup {
   groupId: String!
   "Identifies a workspace group."
   id: ID!
+  "The workspace users that belong to this group."
   members(
     "Returns the elements in the list that come after the specified cursor."
     after: String
@@ -1003,7 +1010,7 @@ type DesWorkspaceGroup {
     first: Int
     orderBy: DesWorkspaceUserOrderBy
     sortDirection: DesWorkspaceTeamSortDirection
-  ): DesWorkspaceUserConnection
+  ): DesWorkspaceUserConnection @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "A unique name of this group within the workspace."
   name: String!
 }
@@ -1094,7 +1101,7 @@ type DesWorkspaceTeam {
     orderBy: DesProjectGuestOrderBy
     "Specifies the direction for the result ordering."
     sortDirection: DesWorkspaceTeamSortDirection
-  ): DesProjectGuestConnection
+  ): DesProjectGuestConnection @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves a list of workspace groups."
   workspaceGroups(
     "Returns the elements in the list that come after the specified cursor."
@@ -1105,7 +1112,7 @@ type DesWorkspaceTeam {
     orderBy: DesWorkspaceGroupOrderBy
     "Specifies the direction for the result ordering."
     sortDirection: DesWorkspaceTeamSortDirection
-  ): DesWorkspaceGroupConnection
+  ): DesWorkspaceGroupConnection @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Retrieves a list of workspace users."
   workspaceUsers(
     "Returns the elements in the list that come after the specified cursor."
@@ -1118,7 +1125,7 @@ type DesWorkspaceTeam {
     orderBy: DesWorkspaceUserOrderBy
     "Specifies the direction for the result ordering."
     sortDirection: DesWorkspaceTeamSortDirection
-  ): DesWorkspaceUserConnection
+  ): DesWorkspaceUserConnection @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 20, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
 }
 
 "Represents a user registered in a workspace."
@@ -1133,6 +1140,7 @@ type DesWorkspaceUser {
   if the user has never logged into the workspace.
   """
   globalUserId: String
+  "The workspace groups to which the user belongs."
   groups: [DesWorkspaceGroup!]!
   "The node identifier for the workspace user."
   id: ID!
@@ -1341,7 +1349,7 @@ type GloAppNotUninstalledError implements Error {
   message: String!
 }
 
-"Error that occurs when granting access to a *OAuth client* fails."
+"Error that occurs when granting access to an *OAuth client* fails."
 type GloAppOAuthClientGrantAccessError implements Error {
   message: String!
 }
@@ -1828,7 +1836,107 @@ type KgRelationQueries @experimental {
   all: [KgRelation!]!
 }
 
+type PlatformKeyValueStoreAddPayload {
+  entry: PlatformKeyValueStoreEntry
+  errors: [PlatformKeyValueStoreAddError!]
+}
+
+type PlatformKeyValueStoreDeletePayload {
+  errors: [PlatformKeyValueStoreDeleteError!]
+  isDeleted: Boolean
+}
+
+"A value stored in the key-value store of an app installation, in the workspace of the access token."
+type PlatformKeyValueStoreEntry {
+  "Time the entry was created."
+  createdAt: DateTime!
+  "Key chosen by the app, unique within the app installation."
+  key: String!
+  "Size of the value in bytes when UTF-8 encoded."
+  sizeBytes: Int!
+  "Time of the last write."
+  updatedAt: DateTime!
+  "Stored value, at most 16 *KiB* when UTF-8 encoded."
+  value: String!
+}
+
+type PlatformKeyValueStoreEntryExistsError implements Error {
+  key: String!
+  message: String!
+}
+
+type PlatformKeyValueStoreEntryNotFoundError implements Error {
+  key: String!
+  message: String!
+}
+
+"Entry metadata returned by *all*, without the value."
+type PlatformKeyValueStoreEntrySummary {
+  createdAt: DateTime!
+  key: String!
+  sizeBytes: Int!
+  updatedAt: DateTime!
+}
+
+"A connection to a list of items."
+type PlatformKeyValueStoreEntrySummaryConnection {
+  "A list of edges."
+  edges: [PlatformKeyValueStoreEntrySummaryEdge!]
+  "A flattened list of the nodes."
+  nodes: [PlatformKeyValueStoreEntrySummary!]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+}
+
+"An edge in a connection."
+type PlatformKeyValueStoreEntrySummaryEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: PlatformKeyValueStoreEntrySummary!
+}
+
+type PlatformKeyValueStoreKeyInvalidError implements Error {
+  key: String!
+  message: String!
+}
+
+type PlatformKeyValueStoreQueries {
+  "Gets entry summaries without values, ordered by key; *prefix* limits the results to keys starting with it."
+  all(
+    "Returns the elements in the list that come after the specified cursor."
+    after: String
+    "Returns the first _n_ elements from the list."
+    first: Int
+    prefix: String
+  ): PlatformKeyValueStoreEntrySummaryConnection! @listSize(assumedSize: 100, slicingArguments: ["first"], slicingArgumentDefaultValue: 100, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
+  "Gets the entry with the given key, or null if it does not exist."
+  byKey(key: String!): PlatformKeyValueStoreEntry
+  "Gets up to 25 entries by key, returning null in the position of each missing entry."
+  byKeys(keys: [String!]!): [PlatformKeyValueStoreEntry]!
+}
+
+"Returned when adding the entry, or growing its value, would exceed the installation's quota."
+type PlatformKeyValueStoreQuotaExceededError implements Error {
+  maxEntryCount: Int!
+  maxTotalSizeBytes: Int!
+  message: String!
+}
+
+type PlatformKeyValueStoreUpdatePayload {
+  entry: PlatformKeyValueStoreEntry
+  errors: [PlatformKeyValueStoreUpdateError!]
+}
+
+type PlatformKeyValueStoreValueTooLargeError implements Error {
+  maxSizeBytes: Int!
+  message: String!
+  sizeBytes: Int!
+}
+
 type PlatformQueries {
+  "Key-value store of the calling app in the workspace of the access token. Requires the `platform:storage.read` or `platform:storage.write` scope."
+  keyValueStore: PlatformKeyValueStoreQueries!
   "Context for `TokenQueries`."
   token: TokenQueries!
 }
@@ -1880,6 +1988,11 @@ type PlatformTokenEdge {
 
 "Error that occurs when the `PlatformToken` has not been successfully generated."
 type PlatformTokenGenerationError implements Error {
+  message: String!
+}
+
+"Error returned by the Token API when an input name for a `PlatformToken` is invalid."
+type PlatformTokenInvalidNameError implements Error {
   message: String!
 }
 
@@ -2214,7 +2327,7 @@ type TokenQueries {
     last: Int
     order: [PlatformTokenSortInput!]
     where: PlatformTokenFilterInput
-  ): PlatformTokenConnection
+  ): PlatformTokenConnection @listSize(assumedSize: 50, slicingArguments: ["first", "last"], slicingArgumentDefaultValue: 10, sizedFields: ["edges", "nodes"], requireOneSlicingArgument: false)
   "Gets the `PlatformToken` quota for the Workspace."
   workspaceTokenQuota: PlatformWorkspaceTokenQuota
 }
@@ -2257,17 +2370,23 @@ union GloUpdateAppNameError = GloAppNotFoundError | GloAppDeletedError | GloAppN
 
 union GlobalTrackedEventReportError = GlobalTrackedEventNameInvalidError | GlobalTrackedEventContextObjectIdInvalidError
 
+union PlatformKeyValueStoreAddError = PlatformKeyValueStoreKeyInvalidError | PlatformKeyValueStoreValueTooLargeError | PlatformKeyValueStoreEntryExistsError | PlatformKeyValueStoreQuotaExceededError
+
+union PlatformKeyValueStoreDeleteError = PlatformKeyValueStoreKeyInvalidError
+
+union PlatformKeyValueStoreUpdateError = PlatformKeyValueStoreKeyInvalidError | PlatformKeyValueStoreValueTooLargeError | PlatformKeyValueStoreEntryNotFoundError | PlatformKeyValueStoreQuotaExceededError
+
 union PlatformTokenDeleteError = PlatformTokenNotFoundError | PlatformTokenDeleteFailedError | PlatformTokenDeletePartiallyFailedError
 
-union PlatformTokenUpdateError = PlatformTokenUpdateInvalidError | PlatformTokenUpdateFailedError | PlatformTokenNameExistsError
+union PlatformTokenUpdateError = PlatformTokenUpdateInvalidError | PlatformTokenUpdateFailedError | PlatformTokenNameExistsError | PlatformTokenInvalidNameError
 
-union PlatformWorkspaceRefreshTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError
+union PlatformWorkspaceRefreshTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError | PlatformTokenInvalidNameError
 
 union PlatformWorkspaceRefreshTokenCreateNewSecretError = PlatformTokenNotFoundError | PlatformRefreshTokenCreateNewSecretError
 
 union PlatformWorkspaceRefreshTokenDeleteSecretError = PlatformTokenNotFoundError | PlatformTokenDeleteRefreshTokenSecretError
 
-union PlatformWorkspaceTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError
+union PlatformWorkspaceTokenCreateError = PlatformTokenNameExistsError | PlatformTokenWorkspaceAccessDeniedError | PlatformTokenGenerationError | PlatformTokenQuotaExceededError | PlatformTokenInvalidTokenLifetimeError | PlatformTokenInvalidNameError
 
 "Input for adding users to a group."
 input DesAddUsersToGroupInput {
@@ -2640,7 +2759,7 @@ input DesUpdateUserInput {
 input DesWorkspaceUserFilterInput {
   "**Experimental**"
   and: [DesWorkspaceUserFilterInput!] @experimental
-  "Workspace specific identifiers of the user groups (id or grid)."
+  "Workspace specific identifiers of the groups."
   groupIds: [String!]
   "**Experimental**"
   id: GridFilterInput @experimental
@@ -2648,9 +2767,9 @@ input DesWorkspaceUserFilterInput {
   or: [DesWorkspaceUserFilterInput!] @experimental
   "The text that either the guest first or last names or emails must contain. Case-insensitive."
   text: String
-  "Workspace specific identifiers of the users (id or grid)."
+  "Workspace specific identifiers of the users."
   userIds: [String!]
-  "The specific types of users to search."
+  "The specific type of users to search."
   userTypes: [DesWorkspaceUserType!]
 }
 
@@ -3135,6 +3254,25 @@ input KgNodeParameterInput @experimental {
   value: String!
 }
 
+input PlatformKeyValueStoreAddInput {
+  "Key of 1 to 256 characters from *A-Z a-z 0-9 . _ - /*, case-insensitive. */* separates segments, which must be non-empty, must not end with *.* and must not be *.*, *..* or a reserved device name such as *con*."
+  key: String!
+  "Value of at most 16 *KiB* when UTF-8 encoded."
+  value: String!
+}
+
+input PlatformKeyValueStoreDeleteInput {
+  "Key of 1 to 256 characters from *A-Z a-z 0-9 . _ - /*, case-insensitive. */* separates segments, which must be non-empty, must not end with *.* and must not be *.*, *..* or a reserved device name such as *con*."
+  key: String!
+}
+
+input PlatformKeyValueStoreUpdateInput {
+  "Key of 1 to 256 characters from *A-Z a-z 0-9 . _ - /*, case-insensitive. */* separates segments, which must be non-empty, must not end with *.* and must not be *.*, *..* or a reserved device name such as *con*."
+  key: String!
+  "Value of at most 16 *KiB* when UTF-8 encoded."
+  value: String!
+}
+
 input PlatformTokenDeleteInput {
   "The identifier of the `PlatformToken` to delete."
   tokenId: String!
@@ -3210,6 +3348,7 @@ input PlatformWorkspaceTokenCreateInput {
   returnUrl: String!
 }
 
+"Specifies the grids whose permissions must provide access to a solution."
 input SolAccessibleToInput {
   "The user, organization, or user group grids that must have access."
   ids: [ID!]
@@ -3299,6 +3438,8 @@ input SolCreateSolutionInput {
   evalKitId: ID
   flowType: String
   folderId: String!
+  "Items to link to the solution on creation. The solution is not created if any of them cannot be linked."
+  itemIds: [ID!]
   name: String!
   parameterBundle: String
   previewUrl: String @deprecated(reason: "The field is being removed as it is no longer required and does not serve any functional purpose in the current API design.")

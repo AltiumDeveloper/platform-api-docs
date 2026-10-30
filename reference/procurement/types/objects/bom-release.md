@@ -62,7 +62,7 @@ type BomRelease implements Bom {
 
 #### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the BOM.
+Identifier of the BOM.
 
 #### `healthChecks` · [`[BomHealthCheck!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check.md) non-null object
 
@@ -70,7 +70,7 @@ Effective health checks applicable to this BOM.
 
 #### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-ID of the BOM.
+Identifier of the BOM.
 
 #### `incompleteHealthChecks` · [`[BomHealthCheck!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check.md) non-null object
 
@@ -106,11 +106,11 @@ Returns the last \_n\_ elements from the list.
 
 #### `lifeCycleDefinitionId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the lifecycle definition used for this release.
+Identifier of the lifecycle definition used for this release.
 
 #### `lifeCycleStateId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the lifecycle state the release is in.
+Identifier of the lifecycle state the release is in.
 
 #### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
@@ -122,11 +122,11 @@ Timestamp of the release creation.
 
 #### `releaseHrid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Human-readable ID of the release.
+Human-readable identifier of the release.
 
 #### `releaseId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the release.
+Identifier of the release.
 
 #### `releaseNotes` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

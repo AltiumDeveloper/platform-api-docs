@@ -21,7 +21,7 @@ A connection to a list of items.
 desWorkspaceInsInsights(
   after: String
   before: String
-  filter: DesWorkspaceInsInsightFilterInput
+  filter: DesWorkspaceInsInsightFilterInput!
   first: Int
   last: Int
   sorting: DesWorkspaceInsOrderingInput
@@ -38,7 +38,7 @@ Returns the elements in the list that come after the specified cursor.
 
 Returns the elements in the list that come before the specified cursor.
 
-#### `filter` · [`DesWorkspaceInsInsightFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-insight-filter-input.md) input
+#### `filter` · [`DesWorkspaceInsInsightFilterInput!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/inputs/des-workspace-ins-insight-filter-input.md) non-null input
 
 #### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
 

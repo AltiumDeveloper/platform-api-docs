@@ -18,7 +18,8 @@ Payload returned when initializing insights on first use.
 ```graphql
 type DesWorkspaceInsInitializeInsightsIfRequiredPayload {
   errors: [DesWorkspaceInsInsightErrorPayload!]!
-  isSuccess: Boolean!
+  isSuccess: Boolean! @deprecated
+  status: String!
 }
 ```
 
@@ -28,6 +29,14 @@ type DesWorkspaceInsInitializeInsightsIfRequiredPayload {
 
 Errors that occurred while performing the operation.
 
-#### `isSuccess` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
+#### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+
+Initialization result: Completed, Deferred (first-time initialization postponed by the rate limit; a later request retries it) or Failed (see errors).
+
+#### Deprecated
+
+#### `isSuccess` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) **DEPRECATED** non-null scalar
+
+> **Deprecated:** Use status. Kept for frontend compatibility.
 
 Indicates whether the initialization finished successfully.

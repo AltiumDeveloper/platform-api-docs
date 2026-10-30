@@ -52,6 +52,8 @@ Identifies a workspace group.
 
 #### `members` · [`DesWorkspaceUserConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user-connection.md) object
 
+The workspace users that belong to this group.
+
 ##### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Returns the elements in the list that come after the specified cursor.

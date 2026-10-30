@@ -24,6 +24,7 @@ type DesWorkspaceInsRelatedEntities {
   components: [DesWorkspaceInsInsightComponentLink!]!
   consolidatedBomReleases: [DesWorkspaceInsInsightConsolidatedBomReleaseLink!]!
   consolidatedBoms: [DesWorkspaceInsInsightConsolidatedBomLink!]!
+  designReviews: [DesWorkspaceInsInsightDesignReviewLink!]!
   parts: [DesWorkspaceInsInsightPartLink!]!
   projects: [DesWorkspaceInsInsightProjectLink!]!
 }
@@ -37,11 +38,11 @@ Assembly variants connected to the insight.
 
 #### `bomReleases` · [`[DesWorkspaceInsInsightBomReleaseLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-bom-release-link.md) non-null object
 
-Released BOMs connected to the insight.
+Released managed BOMs connected to the insight.
 
 #### `boms` · [`[DesWorkspaceInsInsightBomLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-bom-link.md) non-null object
 
-Work-in-progress BOMs connected to the insight.
+Managed BOMs connected to the insight.
 
 #### `componentRevisions` · [`[DesWorkspaceInsInsightComponentRevisionLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-component-revision-link.md) non-null object
 
@@ -58,6 +59,10 @@ Consolidated BOM releases linked to the insight.
 #### `consolidatedBoms` · [`[DesWorkspaceInsInsightConsolidatedBomLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-consolidated-bom-link.md) non-null object
 
 Consolidated BOMs linked to the insight.
+
+#### `designReviews` · [`[DesWorkspaceInsInsightDesignReviewLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-design-review-link.md) non-null object
+
+Design reviews associated with the insight.
 
 #### `parts` · [`[DesWorkspaceInsInsightPartLink!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/types/objects/des-workspace-ins-insight-part-link.md) non-null object
 

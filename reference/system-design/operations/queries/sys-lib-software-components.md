@@ -9,7 +9,7 @@ deprecated: false
 
 # sysLibSoftwareComponents
 
-Retrieves all available software components.
+Retrieves all available software components
 
 ```graphql
 sysLibSoftwareComponents: [SysLibSoftwareComponent]!

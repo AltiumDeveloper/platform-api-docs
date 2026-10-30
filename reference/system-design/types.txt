@@ -1,6 +1,7 @@
 # System Design — types
 > Types of the System Design bounded context that are not entities, one line each; Relay `*Connection` and `*Edge` types are omitted. Entities, entry points and operations: [llms.txt](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/llms.txt).
 
+- [SchemaRegistryEntry](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/schema-registry-entry.md)
 - [SysEsdCompiledMetadata](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-compiled-metadata.md)
 - [SysEsdCreateDocumentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-create-document-payload.md): Result of creating a new ESD document.
 - [SysEsdDeleteDocumentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-delete-document-payload.md): Result of deleting an ESD document.
@@ -33,7 +34,6 @@
 - [SysSdmDmPortFunction](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-function.md)
 - [SysSdmParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md)
 - [SysSdmPeripheral](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-peripheral.md)
-- [SysSdmSchemaRegistryEntry](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-schema-registry-entry.md)
 - [SysSdmSystemModelVersionMetadata](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version-metadata.md)
 - [SysEsdCreateDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-create-document-input.md): Input for creating a new ESD document.
 - [SysEsdDeleteDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-delete-document-input.md): Input for deleting an ESD document.

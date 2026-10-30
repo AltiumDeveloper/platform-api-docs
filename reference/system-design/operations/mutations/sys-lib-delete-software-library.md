@@ -9,7 +9,7 @@ deprecated: false
 
 # sysLibDeleteSoftwareLibrary
 
-Deletes an uploaded user software library.
+Delete an uploaded user software library
 
 ### Type
 

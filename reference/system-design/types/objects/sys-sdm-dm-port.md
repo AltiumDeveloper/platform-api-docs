@@ -19,7 +19,7 @@ type SysSdmDmPort {
   connections: [SysSdmDmPortConnection!]
   description: String
   functions: [SysSdmDmPortFunction!]
-  id: ID!
+  id: String!
   name: String
   pin: String
   symbolicName: String
@@ -36,7 +36,7 @@ type SysSdmDmPort {
 
 #### `functions` · [`[SysSdmDmPortFunction!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-port-function.md) list object
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

@@ -21,7 +21,7 @@ deprecated: false
 ```graphql
 type SysSdmPort {
   hardwareComponentId: String
-  id: ID!
+  id: String!
   name: String
   parameters: [SysSdmParameter!]
   peripheralInstanceId: String
@@ -35,7 +35,7 @@ type SysSdmPort {
 
 #### `hardwareComponentId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

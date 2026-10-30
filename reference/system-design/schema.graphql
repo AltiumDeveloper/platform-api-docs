@@ -1,4 +1,4 @@
-# Altium 365 API — System Design schema slice (~3242 tokens)
+# Altium 365 API — System Design schema slice (~3260 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -13,19 +13,19 @@ type Query {
   sysEsdDocuments: [SysEsdDocument!]!
   "Gets ESD Document by identifiers."
   sysEsdDocumentsByIds(ids: [ID!]!): [SysEsdDocument!]!
-  "Retrieves a software component."
+  "Retrieves a software component"
   sysLibSoftwareComponentById(id: ID!): SysLibSoftwareComponent
-  "Retrieves all available software components."
+  "Retrieves all available software components"
   sysLibSoftwareComponents: [SysLibSoftwareComponent]!
-  "Resolves uploaded user libraries to presigned archive download urls."
+  "Resolves uploaded user libraries to presigned archive download urls"
   sysLibSoftwareLibraryDownloads(ids: [ID!]!): [SysLibSoftwareLibraryDownload!]!
-  "Retrieves all available schema versions."
-  sysSdmSchemaVersionRegistry: [SysSdmSchemaRegistryEntry!]!
-  "Retrieves a system model."
+  "Retrieves all available schema versions"
+  sysSdmSchemaVersionRegistry: [SchemaRegistryEntry!]!
+  "Retrieves a system model"
   sysSdmSystemModelById(id: ID!): SysSdmSystemModel!
-  "Retrieves a list of system models."
+  "Retrieves a list of system models"
   sysSdmSystemModelsByIds(ids: [ID!]!): [SysSdmSystemModel]!
-  "Retrieves a system model version."
+  "Retrieves a system model version"
   sysSdmSystemModelVersionById(id: ID!): SysSdmSystemModelVersion!
 }
 
@@ -40,12 +40,25 @@ type Mutation {
   sysEsdImportDocument(input: SysEsdImportDocumentInput!): SysEsdImportDocumentPayload!
   "Updates the ESD Document."
   sysEsdUpdateDocument(input: SysEsdUpdateDocumentInput!): SysEsdUpdateDocumentPayload!
-  "Deletes an uploaded user software library."
+  "Delete an uploaded user software library"
   sysLibDeleteSoftwareLibrary(input: SysLibDeleteSoftwareLibraryInput!): SysLibDeleteSoftwareLibraryPayload!
-  "Uploads a user software library archive, or replaces an existing one by its library identifier."
+  "Upload a user software library archive, or replace one by libraryId"
   sysLibUploadSoftwareLibrary(input: SysLibUploadSoftwareLibraryInput!): SysLibUploadSoftwareLibraryPayload!
-  "Adds a new system model."
+  "Add new system model"
   sysSdmCreateSystemModelVersion(input: SysSdmCreateSystemModelVersionInput!): SysSdmCreateSystemModelVersionPayload!
+}
+
+type SchemaRegistryEntry {
+  cdmReleaseUrl: String!
+  cdmVersion: String!
+  description: String!
+  isLatest: Boolean!
+  isOnlySemantic: Boolean!
+  isPullDeprecated: Boolean!
+  isPushDeprecated: Boolean!
+  migrationNotes: String!
+  schemaVersion: String!
+  status: String!
 }
 
 type SysEsdCompiledMetadata {
@@ -199,7 +212,7 @@ type SysSdmAuthoringApplication {
 
 type SysSdmConnection {
   endpoints: [SysSdmEndpoint!]
-  id: ID!
+  id: String!
   name: String
   parameters: [SysSdmParameter!]
 }
@@ -210,21 +223,21 @@ type SysSdmCreateSystemModelVersionPayload {
 
 type SysSdmDeviceModel {
   boardName: String
-  id: ID!
+  id: String!
   mpn: String!
   peripherals: [SysSdmPeripheral!]
   ports: [SysSdmDmPort!]
 }
 
 type SysSdmDmPeripheralConfiguration {
-  id: ID!
+  id: String!
   parameters: [SysSdmDmPeripheralParameter!]
   pinConfigs: [SysSdmDmPeripheralPinConfig!]
   pinDependencyConfigs: [SysSdmDmPeripheralPinDependencyConfig!]
 }
 
 type SysSdmDmPeripheralInstance {
-  id: ID!
+  id: String!
   interfaceType: String
   modes: [SysSdmDmPeripheralMode!]
   name: String
@@ -261,7 +274,7 @@ type SysSdmDmPort {
   connections: [SysSdmDmPortConnection!]
   description: String
   functions: [SysSdmDmPortFunction!]
-  id: ID!
+  id: String!
   name: String
   pin: String
   symbolicName: String
@@ -269,7 +282,7 @@ type SysSdmDmPort {
 
 type SysSdmDmPortConfiguration {
   enumValues: [SysSdmDmPortConfigurationEnumValue!]
-  id: ID!
+  id: String!
   name: String
 }
 
@@ -285,12 +298,12 @@ type SysSdmDmPortConfigurationDependency {
 
 type SysSdmDmPortConfigurationEnumValue {
   dependencies: [SysSdmDmPortConfigurationDependency!]
-  id: ID!
+  id: String!
   name: String
 }
 
 type SysSdmDmPortConnection {
-  id: ID!
+  id: String!
   name: String
 }
 
@@ -306,7 +319,7 @@ type SysSdmEndpoint {
 
 type SysSdmFunctionalBlock {
   hardwareComponentIds: [String!]
-  id: ID!
+  id: String!
   name: String
   parameters: [SysSdmParameter!]
   ports: [SysSdmPort!]
@@ -316,14 +329,14 @@ type SysSdmFunctionalBlock {
 type SysSdmFunctionalModel {
   connections: [SysSdmConnection!]
   functionalBlocks: [SysSdmFunctionalBlock!]
-  id: ID!
+  id: String!
   implementedBy: String
   name: String
 }
 
 type SysSdmHardwareComponent {
   deviceModelId: String
-  id: ID!
+  id: String!
   name: String
   parameters: [SysSdmParameter!]
   sdmReferenceDesignator: String!
@@ -332,27 +345,27 @@ type SysSdmHardwareComponent {
 type SysSdmHardwareModel {
   functionalBlockIds: [String!]
   hardwareComponents: [SysSdmHardwareComponent!]
-  id: ID!
+  id: String!
   implementedBy: String
   name: String
   sdmReferenceDesignator: String!
 }
 
 type SysSdmParameter {
-  id: ID!
+  id: String!
   name: String
   value: String!
 }
 
 type SysSdmPeripheral {
-  id: ID!
+  id: String!
   instances: [SysSdmDmPeripheralInstance!]
   name: String
 }
 
 type SysSdmPort {
   hardwareComponentId: String
-  id: ID!
+  id: String!
   name: String
   parameters: [SysSdmParameter!]
   peripheralInstanceId: String
@@ -361,21 +374,8 @@ type SysSdmPort {
   softwareComponentId: String
 }
 
-type SysSdmSchemaRegistryEntry {
-  cdmReleaseUrl: String!
-  cdmVersion: String!
-  description: String!
-  isLatest: Boolean!
-  isOnlySemantic: Boolean!
-  isPullDeprecated: Boolean!
-  isPushDeprecated: Boolean!
-  migrationNotes: String!
-  schemaVersion: String!
-  status: String!
-}
-
 type SysSdmSoftwareComponent {
-  id: ID!
+  id: String!
   implementedBy: [String!]
   libraryComponentId: String
   name: String
@@ -385,7 +385,7 @@ type SysSdmSoftwareComponent {
 
 type SysSdmSoftwareModel {
   deviceModelId: String
-  id: ID!
+  id: String!
   implementedBy: String
   name: String
   sdmReferenceDesignator: String!
@@ -403,14 +403,16 @@ type SysSdmSoftwareSpecification {
 
 type SysSdmSoftwareStackInstance {
   dependencyIds: [String!]!
-  id: ID!
+  id: String!
   name: String
   parameters: [SysSdmParameter!]
   peripheralInstanceId: String
   specification: SysSdmSoftwareSpecification!
 }
 
-type SysSdmSystemModel {
+"**Experimental**"
+type SysSdmSystemModel @experimental {
+  "**Experimental**"
   id: ID!
   latestVersion: SysSdmSystemModelVersion!
   name: String!

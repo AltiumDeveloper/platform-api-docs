@@ -41,4 +41,4 @@ Error that occurs when attempting to create a new [`GloApp`](https://altiumdevel
 
 #### [`GloAppOAuthClientGrantAccessError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-grant-access-error.md) object
 
-Error that occurs when granting access to a \*OAuth client\* fails.
+Error that occurs when granting access to an \*OAuth client\* fails.

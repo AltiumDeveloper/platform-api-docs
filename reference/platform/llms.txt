@@ -1,7 +1,7 @@
 # Platform — Altium 365 API
 > Workspaces, users and organizations, apps and tokens, folders, generic revisions, permissions and settings, lifecycle definitions and revision naming schemes, domain events, notifications, solutions and the knowledge graph.
 
-Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~30808 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
+Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~32604 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
 
 ## Entities
 - [DesLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md): Lifecycle Definition — Defines the set of states that an entity can transition through in its lifecycle. GRID `grid:workspace:{workspace-id}:platform:lifecycle-definition/{id}`. Via: desLifeCycleDefinitionById, desLifeCycleDefinitionByContentTypeKind, desLifeCycleDefinitions, DesPartLifecycle.definition
@@ -54,17 +54,19 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [desWorkspaceByUrl](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-by-url.md): Search a specific workspace by its URL.
 - [desWorkspaceInfos](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-infos.md): Search for workspaces associated with this account.
 - [desWorkspaceLocations](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-locations.md): Get a list of workspace locations.
-- [desWorkspaceTeamByAuth](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-team-by-auth.md): Retrieves a workspace team based on the authenticity of the requester.
+- [desWorkspaceTeamByAuth](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-team-by-auth.md): Retrieves a workspace team based on the identity of the requester.
 - [desWorkspaceUserByAuth](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/des-workspace-user-by-auth.md): Retrieves a workspace user associated with the identity of the requester.
 - [gloAppByClientId](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-app-by-client-id.md): Gets the `GloApp` with a `GloOAuthClient` that has the specified Client identifier.
 - [gloOrganization](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/glo-organization.md): Retrieves an organization by its identifier.
 - [kgNode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/kg-node.md) [EXPERIMENTAL]
 - [kgNodes](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/kg-nodes.md) [EXPERIMENTAL]
 - [node](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/node.md): Fetches an object given its ID.
+- [platform.keyValueStore.all](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/key-value-store/all.md): Gets entry summaries without values, ordered by key; *prefix* limits the results to keys starting with it.
+- [platform.keyValueStore.byKey](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/key-value-store/by-key.md): Gets the entry with the given key, or null if it does not exist.
+- [platform.keyValueStore.byKeys](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/key-value-store/by-keys.md): Gets up to 25 entries by key, returning null in the position of each missing entry.
 - [platform.token.byTokenId](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/token/by-token-id.md): Gets the `PlatformToken` with the specified identifier.
 - [platform.token.byWorkspace](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/token/by-workspace.md): Gets a list of `PlatformToken` the user has access to in the Workspace, determined by the access token.
 - [platform.token.workspaceTokenQuota](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/platform/token/workspace-token-quota.md): Gets the `PlatformToken` quota for the Workspace.
-- [solBldEntityScaffoldingStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-bld-entity-scaffolding-status.md): Retrieves a entity scaffolding status.
 - [solBldScaffoldingStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-bld-scaffolding-status.md): Retrieves a job status.
 - [solBldScaffoldingStatusesBySolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-bld-scaffolding-statuses-by-solution.md): Retrieves cached job statuses for a solution.
 - [solEnvironmentLinks](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-environment-links.md): Gets environment links.
@@ -121,6 +123,9 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [gloUpdateAppName](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-update-app-name.md): Updates the name of an existing App.
 - [kgAddNode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/kg-add-node.md): Registers a new knowledge graph node. [EXPERIMENTAL]
 - [kgDeleteNode](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/kg-delete-node.md): Deletes a Vault entity registered in the knowledge graph. [EXPERIMENTAL]
+- [platformKeyValueStoreAdd](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-key-value-store-add.md): Adds an entry and fails if the key already exists.
+- [platformKeyValueStoreDelete](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-key-value-store-delete.md): Deletes an entry, succeeding without changes if it does not exist; *isDeleted* tells whether it existed.
+- [platformKeyValueStoreUpdate](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-key-value-store-update.md): Replaces the value of an existing entry, failing if it does not exist; the last write wins.
 - [platformTokenDelete](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-token-delete.md): Deletes a `PlatformToken`.
 - [platformTokenUpdate](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-token-update.md): Updates the name and/or description of an existing `PlatformToken`.
 - [platformWorkspaceRefreshTokenCreate](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/platform-workspace-refresh-token-create.md): Creates a new `PlatformWorkspaceRefreshToken`.
@@ -149,4 +154,4 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [solUpdateSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-update-solution.md): Updates existing solution.
 
 ## Optional
-- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~14157 tokens)
+- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~14966 tokens)

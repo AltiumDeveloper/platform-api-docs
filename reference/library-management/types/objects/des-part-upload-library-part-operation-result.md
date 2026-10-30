@@ -9,7 +9,7 @@ deprecated: false
 
 # DesPartUploadLibraryPartOperationResult
 
-Represents the result of a library part upload operation.
+Represents the result of one record of a library part upload operation.
 
 ### Member Of
 
@@ -17,7 +17,8 @@ Represents the result of a library part upload operation.
 
 ```graphql
 type DesPartUploadLibraryPartOperationResult {
-  errorMessage: String
+  errorDetails: String
+  message: String!
   partId: DesPartManufacturerPartId!
   status: String!
 }
@@ -25,14 +26,18 @@ type DesPartUploadLibraryPartOperationResult {
 
 ### Fields
 
-#### `errorMessage` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+#### `errorDetails` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-The error message if the operation failed.
+The validation or technical reason the record failed.
+
+#### `message` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+
+A human readable summary of the part processing.
 
 #### `partId` · [`DesPartManufacturerPartId!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-manufacturer-part-id.md) non-null object
 
-The identifiers of the part.
+The identifiers of the record: its MPN and manufacturer name.
 
 #### `status` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-The status of the operation: \*Created\*, \*Updated\*, \*Duplicated\* or \*Failed\*.
+The result of the part processing: \*Created\*, \*Updated\*, \*Failed\* or \*Skipped\*.

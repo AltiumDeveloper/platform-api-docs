@@ -35,8 +35,8 @@ Look up entities by identifier:
 
 | Kind | Items | Experimental |
 | - | - | - |
-| Queries | 9 | 0 |
+| Queries | 10 | 0 |
 | Mutations | 6 | 0 |
-| Objects | 35 | 0 |
-| Inputs | 13 | 0 |
+| Objects | 37 | 0 |
+| Inputs | 14 | 0 |
 | Unions | 1 | 0 |

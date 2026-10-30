@@ -9,7 +9,7 @@ deprecated: false
 
 # GloAppOAuthClientGrantAccessError
 
-Error that occurs when granting access to a \*OAuth client\* fails.
+Error that occurs when granting access to an \*OAuth client\* fails.
 
 ### Interfaces
 

@@ -22,7 +22,7 @@ Represents a work-in-progress BOM (i.e., it is mutable and could change dynamica
 
 ### Member Of
 
-[`BomBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-connection.md) object · [`BomBomsEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-edge.md) object · [`BomCreateBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-create-bom-payload.md) object
+[`BomBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-connection.md) object · [`BomBomsEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-boms-edge.md) object · [`BomCostedBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-costed-boms-connection.md) object · [`BomCostedBomsEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-costed-boms-edge.md) object · [`BomCreateBomPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-create-bom-payload.md) object
 
 ### Interfaces
 
@@ -33,6 +33,12 @@ Represents a shared part of work-in-progress BOMs and releases of BOMs.
 ```graphql
 type BomWip implements Bom {
   bomId: String!
+  costedBoms(
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): BomCostedBomsConnection
   createdAt: DateTime!
   healthChecks: [BomHealthCheck!]!
   id: ID!
@@ -62,7 +68,27 @@ type BomWip implements Bom {
 
 #### `bomId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-ID of the BOM.
+Identifier of the BOM.
+
+#### `costedBoms` · [`BomCostedBomsConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-costed-boms-connection.md) object
+
+A collection of all costed BOMs created from this BOM.
+
+##### `after` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+Returns the elements in the list that come after the specified cursor.
+
+##### `before` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+Returns the elements in the list that come before the specified cursor.
+
+##### `first` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
+
+Returns the first \_n\_ elements from the list.
+
+##### `last` · [`Int`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) scalar
+
+Returns the last \_n\_ elements from the list.
 
 #### `createdAt` · [`DateTime!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/date-time.md) non-null scalar
 
@@ -74,7 +100,7 @@ Effective health checks applicable to this BOM.
 
 #### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-ID of the BOM.
+Identifier of the BOM.
 
 #### `incompleteHealthChecks` · [`[BomHealthCheck!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/procurement/types/objects/bom-health-check.md) non-null object
 

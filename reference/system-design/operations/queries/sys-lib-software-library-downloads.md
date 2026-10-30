@@ -9,7 +9,7 @@ deprecated: false
 
 # sysLibSoftwareLibraryDownloads
 
-Resolves uploaded user libraries to presigned archive download urls.
+Resolves uploaded user libraries to presigned archive download urls
 
 ### Type
 

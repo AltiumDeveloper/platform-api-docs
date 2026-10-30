@@ -15,7 +15,7 @@ deprecated: false
 
 ```graphql
 type SysSdmDmPeripheralInstance {
-  id: ID!
+  id: String!
   interfaceType: String
   modes: [SysSdmDmPeripheralMode!]
   name: String
@@ -26,7 +26,7 @@ type SysSdmDmPeripheralInstance {
 
 ### Fields
 
-#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
+#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 #### `interfaceType` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
