@@ -19,7 +19,7 @@ Represents a design data generation process and its result.
 
 ### Returned By
 
-[`design.latestGeneration.byDesignId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/latest-generation/by-design-id.md) query · [`design.latestGeneration.byUploadId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/latest-generation/by-upload-id.md) query
+[`design.latestGeneration.byDesignId`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/latest-generation/by-design-id.md) query · [`design.latestGeneration.byUploadId`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/latest-generation/by-upload-id.md) query
 
 ```graphql
 type DesignDataGeneration {

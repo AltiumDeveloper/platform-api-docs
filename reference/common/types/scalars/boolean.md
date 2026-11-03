@@ -13,7 +13,7 @@ The `Boolean` scalar type represents `true` or `false`.
 
 ### Returned By
 
-[`desComparisonHealthcheck`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/des-comparison-healthcheck.md) query · [`desWorkspaceInsInsightsInitialized`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insights-initialized.md) query
+[`desComparisonHealthcheck`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/des-comparison-healthcheck.md) query · [`design.designData.isGeneratingByDesignId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/is-generating-by-design-id.md) query · [`design.designData.isGeneratingByReleaseId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/is-generating-by-release-id.md) query · [`design.designData.isGeneratingByUploadId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/is-generating-by-upload-id.md) query · [`desWorkspaceInsInsightsInitialized`](https://altiumdeveloper.github.io/platform-api-docs/reference/insights/operations/queries/des-workspace-ins-insights-initialized.md) query
 
 ### Member Of
 

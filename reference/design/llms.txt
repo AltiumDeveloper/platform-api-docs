@@ -1,7 +1,7 @@
 # Design — Altium 365 API
 > Hardware projects, design data, rule checks, comparisons and project releases.
 
-Concepts: [design](https://altiumdeveloper.github.io/cdm/subsets/design/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql) (~30803 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/overview.md).
+Concepts: [design](https://altiumdeveloper.github.io/cdm/subsets/design/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql) (~31210 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/overview.md).
 
 ## Entities
 - [DesProject](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md): Hardware Project — A design project stored in a Workspace, normally under its built-in version control, such as a PCB project. GRID `grid:workspace:{workspace-id}:design:project/{id}`. Via: desProjectById, desProjectsByIds, desProjects, DesSharedWithMeProjectInfo.project, DesWorkspace.projects, …
@@ -25,8 +25,12 @@ Concepts: [design](https://altiumdeveloper.github.io/cdm/subsets/design/). Schem
 - [desProjects](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/des-projects.md) (list): Search projects within a workspace with results in paged groups.
 
 ## Queries
-- [design.latestGeneration.byDesignId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/latest-generation/by-design-id.md): Retrieves the design data generation. [EXPERIMENTAL]
-- [design.latestGeneration.byUploadId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/latest-generation/by-upload-id.md): Retrieves the design data generation for the upload. [EXPERIMENTAL]
+- [design.designData.byDesignId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-design-id.md): Retrieves the latest available design data. [EXPERIMENTAL]
+- [design.designData.byReleaseId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-release-id.md): Retrieves the latest available design data for the release. [EXPERIMENTAL]
+- [design.designData.byUploadId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-upload-id.md): Retrieves the latest available design data for the upload. [EXPERIMENTAL]
+- [design.designData.isGeneratingByDesignId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/is-generating-by-design-id.md): Retrieves the information whether the design data is still processed. [EXPERIMENTAL]
+- [design.designData.isGeneratingByReleaseId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/is-generating-by-release-id.md): Retrieves the information whether the release design data is still processed. [EXPERIMENTAL]
+- [design.designData.isGeneratingByUploadId](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/is-generating-by-upload-id.md): Retrieves the information whether the uploaded design data is still processed. [EXPERIMENTAL]
 - [design.ruleCheck.configuration](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check/configuration.md): Retrieves current rule check configuration. [EXPERIMENTAL]
 - [design.ruleCheckExecution.byDesignIdAggregated](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id-aggregated.md): Retrieves the aggregated rule check results for a design. [EXPERIMENTAL]
 - [design.ruleCheckExecution.byDesignIdCombinedErc](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/rule-check-execution/by-design-id-combined-erc.md): Retrieves combined custom and default ERC results for a design. [EXPERIMENTAL]

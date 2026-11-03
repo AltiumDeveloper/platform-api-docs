@@ -1,4 +1,4 @@
-# Altium 365 API — Design schema slice (~30803 tokens)
+# Altium 365 API — Design schema slice (~31210 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -2032,6 +2032,44 @@ type DesignDataPin_Preview @experimental {
   variantName: String
 }
 
+"**Experimental** The entry point for queries related to the latest available design data."
+type DesignDataQueries @experimental {
+  "**Experimental** Retrieves the latest available design data."
+  byDesignId(
+    "The identifier of the design."
+    designId: ID!
+  ): DesignData_Preview
+  "**Experimental** Retrieves the latest available design data for the release."
+  byReleaseId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the project release."
+    releaseId: ID!
+  ): DesignData_Preview
+  "**Experimental** Retrieves the latest available design data for the upload."
+  byUploadId(
+    "The identifier of the upload."
+    uploadId: String!
+  ): DesignData_Preview
+  "**Experimental** Retrieves the information whether the design data is still processed."
+  isGeneratingByDesignId(
+    "The identifier of the design."
+    designId: ID!
+  ): Boolean!
+  "**Experimental** Retrieves the information whether the release design data is still processed."
+  isGeneratingByReleaseId(
+    "The identifier of the design."
+    designId: ID!
+    "The identifier of the release."
+    releaseId: ID!
+  ): Boolean!
+  "**Experimental** Retrieves the information whether the uploaded design data is still processed."
+  isGeneratingByUploadId(
+    "The identifier of the upload."
+    uploadId: String!
+  ): Boolean!
+}
+
 "**Experimental** Represents an axis-aligned rectangle."
 type DesignDataRectangle_Preview @experimental {
   "**Experimental** The bottom edge coordinate."
@@ -2193,6 +2231,8 @@ type DesignPreviewQueries @experimental {
 
 "**Experimental** Design related queries entry point."
 type DesignQueries @experimental {
+  "**Experimental** Queries for latest available design data."
+  designData: DesignDataQueries!
   "**Experimental** Queries for the latest design data generation."
   latestGeneration: LatestGenerationQueries!
   "**Experimental** Experimental queries for design, which are subject to change or removal without deprecation."
@@ -2233,12 +2273,12 @@ type LatestGenerationQueries @experimental {
     designId: ID!
     "The identifier of the project commit."
     revisionId: String
-  ): DesignDataGeneration!
+  ): DesignDataGeneration! @deprecated(reason: "Use DesignData.byDesignId and DesignData.isGeneratingByDesignId instead.")
   "**Experimental** Retrieves the design data generation for the upload."
   byUploadId(
     "The identifier of the upload."
     uploadId: String!
-  ): DesignDataGeneration!
+  ): DesignDataGeneration! @deprecated(reason: "Use DesignData.byUploadId and DesignData.isGeneratingByUploadId instead.")
 }
 
 "**Experimental** Represents a rule check definition."

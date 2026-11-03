@@ -1,4 +1,4 @@
-# Altium 365 API — System Design schema slice (~3260 tokens)
+# Altium 365 API — System Design schema slice (~3365 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -13,6 +13,8 @@ type Query {
   sysEsdDocuments: [SysEsdDocument!]!
   "Gets ESD Document by identifiers."
   sysEsdDocumentsByIds(ids: [ID!]!): [SysEsdDocument!]!
+  "Builds the System Data Model from the ESD Document and returns it as JSON."
+  sysEsdSystemDataModelByEsdId(id: ID!): String!
   "Retrieves a software component"
   sysLibSoftwareComponentById(id: ID!): SysLibSoftwareComponent
   "Retrieves all available software components"
@@ -90,6 +92,8 @@ type SysEsdDocument {
   "User who created the ESD document."
   createdBy: DesWorkspaceUser!
   createdById: ID! @deprecated(reason: "Field plays a technical role for schema stitching purposes.")
+  "Optional description of the ESD document."
+  description: String!
   "Identifier of the folder that contains the ESD document."
   folderId: String!
   "Unique identifier of the ESD document."
@@ -441,6 +445,8 @@ type SysSdmSystemModelVersionMetadata {
 
 "Input for creating a new ESD document."
 input SysEsdCreateDocumentInput {
+  "Optional description of the ESD document to create."
+  description: String
   "Identifier of the folder in which the ESD document is created."
   folderId: String!
   "Display name of the ESD document to create."
@@ -471,12 +477,14 @@ input SysEsdImportDocumentInput {
 
 "Input for updating an existing ESD document."
 input SysEsdUpdateDocumentInput {
+  "New description of the ESD document. When null, the description is left unchanged."
+  description: String
   "Not used."
-  folderId: String!
+  folderId: String
   "Identifier of the ESD document to update."
   id: ID!
-  "New display name of the ESD document."
-  name: String!
+  "New display name of the ESD document. When null, the name is left unchanged."
+  name: String
 }
 
 input SysLibDeleteSoftwareLibraryInput {

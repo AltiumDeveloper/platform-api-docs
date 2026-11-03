@@ -31,6 +31,7 @@ type SysEsdDocument {
   createdAt: DateTime!
   createdBy: DesWorkspaceUser!
   createdById: ID! @deprecated
+  description: String!
   folderId: String!
   id: ID!
   isScaffolding: Boolean!
@@ -54,6 +55,10 @@ Date and time when the ESD document was created.
 #### `createdBy` · [`DesWorkspaceUser!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace-user.md) non-null object Platform
 
 User who created the ESD document.
+
+#### `description` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+
+Optional description of the ESD document.
 
 #### `folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

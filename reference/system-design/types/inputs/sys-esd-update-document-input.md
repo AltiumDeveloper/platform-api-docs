@@ -17,15 +17,20 @@ Input for updating an existing ESD document.
 
 ```graphql
 input SysEsdUpdateDocumentInput {
-  folderId: String!
+  description: String
+  folderId: String
   id: ID!
-  name: String!
+  name: String
 }
 ```
 
 ### Fields
 
-#### `folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+New description of the ESD document. When null, the description is left unchanged.
+
+#### `folderId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Not used.
 
@@ -33,6 +38,6 @@ Not used.
 
 Identifier of the ESD document to update.
 
-#### `name` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `name` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-New display name of the ESD document.
+New display name of the ESD document. When null, the name is left unchanged.

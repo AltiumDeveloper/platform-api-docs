@@ -1,0 +1,42 @@
+---
+title: "design.latestGeneration.byUploadId"
+url: "https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/design/operations/queries/design/latest-generation/by-upload-id"
+bounded_context: "Design"
+kind: "queries"
+experimental: true
+deprecated: true
+---
+
+# design.latestGeneration.byUploadId
+
+**EXPERIMENTAL**
+
+### Experimental
+
+> **Caution:** Not production-ready. It may change or be removed without notice. See [Lifecycle](https://altiumdeveloper.github.io/platform-api-docs/guides/lifecycle.md).
+
+> **Deprecated:** Use DesignData.byUploadId and DesignData.isGeneratingByUploadId instead.
+
+Retrieves the design data generation for the upload.
+
+### Type
+
+#### [`DesignDataGeneration`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation.md) object **EXPERIMENTAL**
+
+Represents a design data generation process and its result.
+
+```graphql
+design {
+  latestGeneration {
+    byUploadId(
+      uploadId: String!
+    ): DesignDataGeneration! @deprecated
+  }
+}
+```
+
+### Arguments
+
+#### `uploadId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+
+The identifier of the upload.

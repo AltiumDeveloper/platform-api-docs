@@ -17,6 +17,10 @@ deprecated: false
 
 Represents the design data extracted from a design project.
 
+### Returned By
+
+[`design.designData.byDesignId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-design-id.md) query · [`design.designData.byReleaseId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-release-id.md) query · [`design.designData.byUploadId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-upload-id.md) query
+
 ### Member Of
 
 [`DesignDataGeneration_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation-preview.md) object · [`DesignDataGeneration`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-generation.md) object

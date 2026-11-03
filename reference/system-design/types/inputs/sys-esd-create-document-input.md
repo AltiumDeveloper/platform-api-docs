@@ -17,6 +17,7 @@ Input for creating a new ESD document.
 
 ```graphql
 input SysEsdCreateDocumentInput {
+  description: String
   folderId: String!
   name: String!
   sourceFlow: String
@@ -24,6 +25,10 @@ input SysEsdCreateDocumentInput {
 ```
 
 ### Fields
+
+#### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+Optional description of the ESD document to create.
 
 #### `folderId` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
