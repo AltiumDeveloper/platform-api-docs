@@ -9,7 +9,7 @@ deprecated: false
 
 # sysSdmSystemModelsByIds
 
-Retrieves a list of system models
+Retrieves a list of system models.
 
 ### Type
 

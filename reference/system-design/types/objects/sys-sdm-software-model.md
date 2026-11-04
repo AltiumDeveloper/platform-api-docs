@@ -21,7 +21,7 @@ deprecated: false
 ```graphql
 type SysSdmSoftwareModel {
   deviceModelId: String
-  id: String!
+  id: ID!
   implementedBy: String
   name: String
   sdmReferenceDesignator: String!
@@ -34,7 +34,7 @@ type SysSdmSoftwareModel {
 
 #### `deviceModelId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 #### `implementedBy` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

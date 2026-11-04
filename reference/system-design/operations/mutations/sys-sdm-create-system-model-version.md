@@ -9,7 +9,7 @@ deprecated: false
 
 # sysSdmCreateSystemModelVersion
 
-Add new system model
+Adds a new system model.
 
 ### Type
 

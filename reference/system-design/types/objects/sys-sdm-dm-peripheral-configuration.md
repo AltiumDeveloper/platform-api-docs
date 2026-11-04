@@ -15,7 +15,7 @@ deprecated: false
 
 ```graphql
 type SysSdmDmPeripheralConfiguration {
-  id: String!
+  id: ID!
   parameters: [SysSdmDmPeripheralParameter!]
   pinConfigs: [SysSdmDmPeripheralPinConfig!]
   pinDependencyConfigs: [SysSdmDmPeripheralPinDependencyConfig!]
@@ -24,7 +24,7 @@ type SysSdmDmPeripheralConfiguration {
 
 ### Fields
 
-#### `id` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
+#### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 #### `parameters` · [`[SysSdmDmPeripheralParameter!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-dm-peripheral-parameter.md) list object
 
