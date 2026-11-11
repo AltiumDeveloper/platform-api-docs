@@ -4,7 +4,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { htmlToChangelog } from './lib/changelog.mjs';
 
 const CHANGELOG_URL =
-  'https://raw.githubusercontent.com/AltiumDeveloper/graphql-changelog-tracker/main/PlatformApi/Cloud/Changelogs/Published/index.html';
+  'https://docs.developer.altium.com/graphql-changelog-tracker/PlatformApi/Cloud/Changelogs/Published/index.html';
 const OUT = 'docs/changelog/index.mdx';
 
 const FRONTMATTER = `---
