@@ -49,4 +49,4 @@ Time of the last write.
 
 #### `value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Stored value, at most 16 \*KiB\* when UTF-8 encoded.
+Stored value, at most 128 \*KiB\* when UTF-8 encoded.

@@ -49,6 +49,7 @@
 - [GloAddAppGrantTypePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-grant-type-payload.md)
 - [GloAddAppRedirectUriPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-redirect-uri-payload.md)
 - [GloAddAppScopePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-scope-payload.md)
+- [GloAddAppTokenExchangeSourcesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-app-token-exchange-sources-payload.md)
 - [GloAddress](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-address.md)
 - [GloAddUsersToGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-users-to-group-payload.md): Represents output value for add user to group.
 - [GloAppAlreadyInstalledError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-already-installed-error.md): Error that occurs when a `GloApp` cannot be installed into a workspace as it has already been installed.
@@ -73,6 +74,8 @@
 - [GloAppOAuthClientNotRestoredError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-not-restored-error.md): Error that occurs when an *OAuth client* cannot be restored.
 - [GloAppRedirectUriNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-redirect-uri-not-updated-error.md): Error that occurs when updating the redirect URI for a `GloApp` is unsuccessful.
 - [GloAppScopeNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-scope-not-updated-error.md): Error that occurs when updating the scope for a `GloApp` is unsuccessful.
+- [GloAppTokenExchangeSourcesDeletedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-token-exchange-sources-deleted-error.md): Error that occurs when deleted `GloApp`s are given as token exchange sources.
+- [GloAppTokenExchangeSourcesNotUpdatedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-token-exchange-sources-not-updated-error.md): Error that occurs when updating the token exchange sources for a `GloApp` is unsuccessful.
 - [GlobalTrackedEventContextObjectIdInvalidError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/global-tracked-event-context-object-id-invalid-error.md): Indicates that the supplied context object identifier is rejected.
 - [GlobalTrackedEventNameInvalidError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/global-tracked-event-name-invalid-error.md): Indicates that the supplied event name is rejected.
 - [GlobalTrackedEventReportPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/global-tracked-event-report-payload.md): Result of reporting a business analytics event.
@@ -96,6 +99,7 @@
 - [GloRemoveAppGrantTypePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-grant-type-payload.md)
 - [GloRemoveAppRedirectUriPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-redirect-uri-payload.md)
 - [GloRemoveAppScopePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-scope-payload.md)
+- [GloRemoveAppTokenExchangeSourcePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-app-token-exchange-source-payload.md)
 - [GloRemoveUsersFromGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-users-from-group-payload.md): Represents output value for remove users from group.
 - [GloRestoreAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-restore-app-payload.md)
 - [GloSamlSettings](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-saml-settings.md)
@@ -181,6 +185,7 @@
 - [GloAddAppGrantTypeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-grant-type-error.md)
 - [GloAddAppRedirectUriError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-redirect-uri-error.md)
 - [GloAddAppScopeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-scope-error.md)
+- [GloAddAppTokenExchangeSourcesError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-add-app-token-exchange-sources-error.md)
 - [GlobalTrackedEventReportError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/global-tracked-event-report-error.md)
 - [GloCreateAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-error.md)
 - [GloCreateAppFromOAuthClientError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-create-app-from-oauth-client-error.md)
@@ -190,6 +195,7 @@
 - [GloRemoveAppGrantTypeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-grant-type-error.md)
 - [GloRemoveAppRedirectUriError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-redirect-uri-error.md)
 - [GloRemoveAppScopeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-scope-error.md)
+- [GloRemoveAppTokenExchangeSourceError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-token-exchange-source-error.md)
 - [GloRestoreAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-restore-app-error.md)
 - [GloUninstallAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-uninstall-app-error.md)
 - [GloUpdateAppContactEmailError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-contact-email-error.md)
@@ -243,6 +249,7 @@
 - [GloAddAppGrantTypeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-grant-type-input.md)
 - [GloAddAppRedirectUriInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-redirect-uri-input.md)
 - [GloAddAppScopeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-scope-input.md)
+- [GloAddAppTokenExchangeSourcesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-token-exchange-sources-input.md)
 - [GloAddUsersToGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-users-to-group-input.md): Represents input value for adding user into group.
 - [GloAppFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-app-filter-input.md): Represents an Altium application.
 - [GloAppSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-app-sort-input.md): Represents an Altium application.
@@ -266,6 +273,7 @@
 - [GloRemoveAppGrantTypeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-grant-type-input.md)
 - [GloRemoveAppRedirectUriInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-redirect-uri-input.md)
 - [GloRemoveAppScopeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-scope-input.md)
+- [GloRemoveAppTokenExchangeSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-token-exchange-source-input.md)
 - [GloRemoveUsersFromGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-users-from-group-input.md): Represents input value for removing user from group.
 - [GloRestoreAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-restore-app-input.md)
 - [GloUninstallAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-uninstall-app-input.md)

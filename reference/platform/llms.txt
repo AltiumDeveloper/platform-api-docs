@@ -1,7 +1,7 @@
 # Platform — Altium 365 API
 > Workspaces, users and organizations, apps and tokens, folders, generic revisions, permissions and settings, lifecycle definitions and revision naming schemes, domain events, notifications, solutions and the knowledge graph.
 
-Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~32604 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
+Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~33086 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
 
 ## Entities
 - [DesLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md): Lifecycle Definition — Defines the set of states that an entity can transition through in its lifecycle. GRID `grid:workspace:{workspace-id}:platform:lifecycle-definition/{id}`. Via: desLifeCycleDefinitionById, desLifeCycleDefinitionByContentTypeKind, desLifeCycleDefinitions, DesPartLifecycle.definition
@@ -98,6 +98,7 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [gloAddAppGrantType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-app-grant-type.md): Adds a new grant type to an existing App.
 - [gloAddAppRedirectUri](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-app-redirect-uri.md): Adds a new redirect URI to an existing App.
 - [gloAddAppScope](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-app-scope.md): Adds a new scope to an existing App.
+- [gloAddAppTokenExchangeSources](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-app-token-exchange-sources.md): Adds third-party Apps to the token exchange sources of an existing App, so their tokens can be exchanged to it.
 - [gloAddUsersToGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-add-users-to-group.md): Add users to group.
 - [globalTrackedEventReport](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/global-tracked-event-report.md): Reports a business analytics event for the calling application's workspace.
 - [gloCreateApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-create-app.md): Creates a new App with an *OAuth 2.0 client*.
@@ -114,6 +115,7 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [gloRemoveAppGrantType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-grant-type.md): Removes an existing grant type from an existing App.
 - [gloRemoveAppRedirectUri](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-redirect-uri.md): Removes an existing redirect URI from an existing App.
 - [gloRemoveAppScope](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-scope.md): Removes an existing scope from an existing App.
+- [gloRemoveAppTokenExchangeSource](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-token-exchange-source.md): Removes a third-party App from the token exchange sources of an existing App.
 - [gloRemoveUsersFromGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-users-from-group.md): Remove users from group.
 - [gloRestoreApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-restore-app.md): Restores an App.
 - [gloUninstallApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-uninstall-app.md): Uninstalls an App from a Workspace.
@@ -154,4 +156,4 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [solUpdateSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-update-solution.md): Updates existing solution.
 
 ## Optional
-- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~14966 tokens)
+- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~15356 tokens)

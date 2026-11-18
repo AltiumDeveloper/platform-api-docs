@@ -28,4 +28,4 @@ Key of 1 to 256 characters from \*A-Z a-z 0-9 . \_ - /\*, case-insensitive. \*/\
 
 #### `value` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-Value of at most 16 \*KiB\* when UTF-8 encoded.
+Value of at most 128 \*KiB\* when UTF-8 encoded.

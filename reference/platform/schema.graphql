@@ -1,4 +1,4 @@
-# Altium 365 API — Platform schema slice (~32604 tokens)
+# Altium 365 API — Platform schema slice (~33086 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -296,6 +296,8 @@ type Mutation {
   gloAddAppRedirectUri(input: GloAddAppRedirectUriInput!): GloAddAppRedirectUriPayload!
   "Adds a new scope to an existing App."
   gloAddAppScope(input: GloAddAppScopeInput!): GloAddAppScopePayload!
+  "Adds third-party Apps to the token exchange sources of an existing App, so their tokens can be exchanged to it."
+  gloAddAppTokenExchangeSources(input: GloAddAppTokenExchangeSourcesInput!): GloAddAppTokenExchangeSourcesPayload!
   "Add users to group."
   gloAddUsersToGroup(input: GloAddUsersToGroupInput!): GloAddUsersToGroupPayload!
   "Reports a business analytics event for the calling application's workspace."
@@ -328,6 +330,8 @@ type Mutation {
   gloRemoveAppRedirectUri(input: GloRemoveAppRedirectUriInput!): GloRemoveAppRedirectUriPayload!
   "Removes an existing scope from an existing App."
   gloRemoveAppScope(input: GloRemoveAppScopeInput!): GloRemoveAppScopePayload!
+  "Removes a third-party App from the token exchange sources of an existing App."
+  gloRemoveAppTokenExchangeSource(input: GloRemoveAppTokenExchangeSourceInput!): GloRemoveAppTokenExchangeSourcePayload!
   "Remove users from group."
   gloRemoveUsersFromGroup(input: GloRemoveUsersFromGroupInput!): GloRemoveUsersFromGroupPayload!
   "Restores an App."
@@ -1213,6 +1217,11 @@ type GloAddAppScopePayload {
   gloApp: GloApp
 }
 
+type GloAddAppTokenExchangeSourcesPayload {
+  errors: [GloAddAppTokenExchangeSourcesError!]
+  gloApp: GloApp
+}
+
 "Represents output value for add user to group."
 type GloAddUsersToGroupPayload {
   "Status."
@@ -1371,6 +1380,16 @@ type GloAppRedirectUriNotUpdatedError implements Error {
 
 "Error that occurs when updating the scope for a `GloApp` is unsuccessful."
 type GloAppScopeNotUpdatedError implements Error {
+  message: String!
+}
+
+"Error that occurs when deleted `GloApp`s are given as token exchange sources. Lists every deleted App found in the request."
+type GloAppTokenExchangeSourcesDeletedError implements Error {
+  message: String!
+}
+
+"Error that occurs when updating the token exchange sources for a `GloApp` is unsuccessful."
+type GloAppTokenExchangeSourcesNotUpdatedError implements Error {
   message: String!
 }
 
@@ -1577,6 +1596,11 @@ type GloRemoveAppRedirectUriPayload {
 
 type GloRemoveAppScopePayload {
   errors: [GloRemoveAppScopeError!]
+  gloApp: GloApp
+}
+
+type GloRemoveAppTokenExchangeSourcePayload {
+  errors: [GloRemoveAppTokenExchangeSourceError!]
   gloApp: GloApp
 }
 
@@ -1856,7 +1880,7 @@ type PlatformKeyValueStoreEntry {
   sizeBytes: Int!
   "Time of the last write."
   updatedAt: DateTime!
-  "Stored value, at most 16 *KiB* when UTF-8 encoded."
+  "Stored value, at most 128 *KiB* when UTF-8 encoded."
   value: String!
 }
 
@@ -2340,6 +2364,8 @@ union GloAddAppRedirectUriError = GloAppNotFoundError | GloAppDeletedError | Glo
 
 union GloAddAppScopeError = GloAppNotFoundError | GloAppDeletedError | GloAppScopeNotUpdatedError
 
+union GloAddAppTokenExchangeSourcesError = GloAppNotFoundError | GloAppDeletedError | GloAppMissingOAuthClientError | GloAppTokenExchangeSourcesDeletedError | GloAppTokenExchangeSourcesNotUpdatedError
+
 union GloCreateAppError = GloAppInvalidOAuthError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppOAuthClientGrantAccessError
 
 union GloCreateAppFromOAuthClientError = GloAppMissingOAuthClientError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppClientExistsError | GloAppOAuthClientGrantAccessError
@@ -2355,6 +2381,8 @@ union GloRemoveAppGrantTypeError = GloAppNotFoundError | GloAppDeletedError | Gl
 union GloRemoveAppRedirectUriError = GloAppNotFoundError | GloAppDeletedError | GloAppRedirectUriNotUpdatedError
 
 union GloRemoveAppScopeError = GloAppNotFoundError | GloAppDeletedError | GloAppScopeNotUpdatedError
+
+union GloRemoveAppTokenExchangeSourceError = GloAppNotFoundError | GloAppDeletedError | GloAppMissingOAuthClientError | GloAppTokenExchangeSourcesNotUpdatedError
 
 union GloRestoreAppError = GloAppOAuthClientNotRestoredError | GloAppMissingOAuthClientError | GloAppNotFoundError | GloAppNotDeletedError
 
@@ -2805,6 +2833,13 @@ input GloAddAppScopeInput {
   scope: String!
 }
 
+input GloAddAppTokenExchangeSourcesInput {
+  "The GRID identifier for the App that tokens will be exchanged to."
+  targetAppId: ID!
+  "The GRID identifiers of the Apps whose tokens can be exchanged to the target App."
+  thirdPartyAppIds: [ID!]!
+}
+
 "Represents input value for adding user into group."
 input GloAddUsersToGroupInput {
   "Group identifier."
@@ -3120,6 +3155,13 @@ input GloRemoveAppScopeInput {
   scope: String!
 }
 
+input GloRemoveAppTokenExchangeSourceInput {
+  "The GRID identifier for the App that tokens are exchanged to."
+  targetAppId: ID!
+  "The GRID identifier of the App to be removed from the token exchange sources of the target App."
+  thirdPartyAppId: ID!
+}
+
 "Represents input value for removing user from group."
 input GloRemoveUsersFromGroupInput {
   "Group identifier."
@@ -3257,7 +3299,7 @@ input KgNodeParameterInput @experimental {
 input PlatformKeyValueStoreAddInput {
   "Key of 1 to 256 characters from *A-Z a-z 0-9 . _ - /*, case-insensitive. */* separates segments, which must be non-empty, must not end with *.* and must not be *.*, *..* or a reserved device name such as *con*."
   key: String!
-  "Value of at most 16 *KiB* when UTF-8 encoded."
+  "Value of at most 128 *KiB* when UTF-8 encoded."
   value: String!
 }
 
@@ -3269,7 +3311,7 @@ input PlatformKeyValueStoreDeleteInput {
 input PlatformKeyValueStoreUpdateInput {
   "Key of 1 to 256 characters from *A-Z a-z 0-9 . _ - /*, case-insensitive. */* separates segments, which must be non-empty, must not end with *.* and must not be *.*, *..* or a reserved device name such as *con*."
   key: String!
-  "Value of at most 16 *KiB* when UTF-8 encoded."
+  "Value of at most 128 *KiB* when UTF-8 encoded."
   value: String!
 }
 
