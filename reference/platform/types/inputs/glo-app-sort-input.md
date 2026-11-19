@@ -24,6 +24,7 @@ input GloAppSortInput {
   deletedById: SortEnumType
   description: SortEnumType
   hrid: SortEnumType
+  isAutoInstallable: SortEnumType
   isWorkspaceApp: SortEnumType
   name: SortEnumType
   oAuthClient: GloOAuthClientSortInput
@@ -61,6 +62,10 @@ A description of the App.
 #### `hrid` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
 The human-readable identifier for the App. Must be unique.
+
+#### `isAutoInstallable` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
+
+Whether the App is auto-installable.
 
 #### `isWorkspaceApp` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 

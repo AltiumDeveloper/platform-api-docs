@@ -14,7 +14,7 @@ deprecated: false
 [`GloCreateAppPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-create-app-payload.md) object
 
 ```graphql
-union GloCreateAppError = GloAppInvalidOAuthError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppOAuthClientGrantAccessError
+union GloCreateAppError = GloAppInvalidOAuthError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppOAuthClientGrantAccessError | GloAppAutoInstallableForbiddenError
 ```
 
 ### Possible types
@@ -38,3 +38,7 @@ Error that occurs when the input email is invalid.
 #### [`GloAppOAuthClientGrantAccessError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-oauth-client-grant-access-error.md) object
 
 Error that occurs when granting access to an \*OAuth client\* fails.
+
+#### [`GloAppAutoInstallableForbiddenError`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-auto-installable-forbidden-error.md) object
+
+Error that occurs when the user is not permitted to mark an App as auto-installable.

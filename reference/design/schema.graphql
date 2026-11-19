@@ -1,4 +1,4 @@
-# Altium 365 API — Design schema slice (~31210 tokens)
+# Altium 365 API — Design schema slice (~31237 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -3332,7 +3332,7 @@ input DesUploadProjectInput {
   fileId: String!
   "The project name."
   name: String!
-  "The project target parent folder identifier."
+  "The project target parent folder identifier. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated)."
   parentFolderId: ID!
   "The workspace URL."
   workspaceUrl: String

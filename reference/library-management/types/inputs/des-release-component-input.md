@@ -77,7 +77,7 @@ Life cycle definition identifier for component.
 
 #### `componentParentFolderId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 
-Destination parent folder identifier for releasing a component. If omitted or empty, `componentReleaseFolder` is required.
+Destination parent folder identifier for releasing a component. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated). If omitted or empty, `componentReleaseFolder` is required.
 
 #### `componentReleaseFolder` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

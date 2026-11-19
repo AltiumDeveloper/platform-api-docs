@@ -53,6 +53,7 @@
 - [GloAddress](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-address.md)
 - [GloAddUsersToGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-add-users-to-group-payload.md): Represents output value for add user to group.
 - [GloAppAlreadyInstalledError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-already-installed-error.md): Error that occurs when a `GloApp` cannot be installed into a workspace as it has already been installed.
+- [GloAppAutoInstallableForbiddenError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-auto-installable-forbidden-error.md): Error that occurs when the user is not permitted to mark an App as auto-installable.
 - [GloAppClientExistsError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-client-exists-error.md): Error that occurs when attempting to create a new `GloApp` with an *OAuth client* that is already associated with another `GloApp`.
 - [GloAppClientSecretNotAddedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-client-secret-not-added-error.md): Error that occurs when attempting to add a client secret to a `GloApp` *OAuth client* but the secret could not be added.
 - [GloAppClientSecretNotRemovedError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-app-client-secret-not-removed-error.md): Error that occurs when the *OAuth client* secret was not removed as expected from a `GloApp`.
@@ -336,6 +337,7 @@
 - [DesWorkspaceUserType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-user-type.md): Specifies the type of the user in the workspace.
 - [DesWorkspaceVendor](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/des-workspace-vendor.md): Workspace vendors.
 - [GloAccountType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-account-type.md)
+- [GloAppInstallationStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-app-installation-status.md): Whether a `GloApp` is installed in the current Workspace.
 - [GloAuthType](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-auth-type.md)
 - [GloEvtSubscriptionState](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-evt-subscription-state.md): Represents the state of the subscription.
 - [GloNtfBodyEmailFormat](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/enums/glo-ntf-body-email-format.md)

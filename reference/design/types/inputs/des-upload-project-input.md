@@ -41,7 +41,7 @@ The project name.
 
 #### `parentFolderId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-The project target parent folder identifier.
+The project target parent folder identifier. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated).
 
 #### `workspaceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

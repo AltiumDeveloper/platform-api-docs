@@ -28,7 +28,7 @@ input DesUpdateFolderPermissionsInput {
 
 #### `folderId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-Folder identifier for updating folder permissions. Soon, `folderId` will be the reference identifier (GUID) instead of node identifier, and should be used along with `workspaceUrl`.
+Folder identifier for updating folder permissions. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated).
 
 #### `permissions` · [`[DesUpdateFolderPermissionInput!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-folder-permission-input.md) non-null input
 

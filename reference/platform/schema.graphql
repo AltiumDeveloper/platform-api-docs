@@ -1,4 +1,4 @@
-# Altium 365 API — Platform schema slice (~33086 tokens)
+# Altium 365 API — Platform schema slice (~33337 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -162,6 +162,8 @@ type Query {
     "The GRID identifier for the App."
     appId: ID!
   ): GloApp
+  "Determines whether the `GloApp` associated with the client of the access token is installed in the current Workspace."
+  gloAppInstallationStatus: GloAppInstallationStatus
   "Gets a list of `GloApp` installed in a workspace."
   gloAppInstalledApps(order: [GloAppSortInput!], where: GloAppFilterInput): [GloApp!]
   "Gets a list of `GloApp`."
@@ -1259,6 +1261,8 @@ type GloApp {
   hrid: String!
   "The GRID identifier for the App."
   id: ID!
+  "Whether the App is auto-installable."
+  isAutoInstallable: Boolean!
   "Whether the App is a Workspace PAT App."
   isWorkspaceApp: Boolean!
   "The name of the App."
@@ -1275,6 +1279,11 @@ type GloApp {
 
 "Error that occurs when a `GloApp` cannot be installed into a workspace as it has already been installed."
 type GloAppAlreadyInstalledError implements Error {
+  message: String!
+}
+
+"Error that occurs when the user is not permitted to mark an App as auto-installable."
+type GloAppAutoInstallableForbiddenError implements Error {
   message: String!
 }
 
@@ -2366,7 +2375,7 @@ union GloAddAppScopeError = GloAppNotFoundError | GloAppDeletedError | GloAppSco
 
 union GloAddAppTokenExchangeSourcesError = GloAppNotFoundError | GloAppDeletedError | GloAppMissingOAuthClientError | GloAppTokenExchangeSourcesDeletedError | GloAppTokenExchangeSourcesNotUpdatedError
 
-union GloCreateAppError = GloAppInvalidOAuthError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppOAuthClientGrantAccessError
+union GloCreateAppError = GloAppInvalidOAuthError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppOAuthClientGrantAccessError | GloAppAutoInstallableForbiddenError
 
 union GloCreateAppFromOAuthClientError = GloAppMissingOAuthClientError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppClientExistsError | GloAppOAuthClientGrantAccessError
 
@@ -2694,7 +2703,7 @@ input DesUpdateFolderPermissionInput {
 
 "Input for updating folder permissions."
 input DesUpdateFolderPermissionsInput {
-  "Folder identifier for updating folder permissions. Soon, `folderId` will be the reference identifier (GUID) instead of node identifier, and should be used along with `workspaceUrl`."
+  "Folder identifier for updating folder permissions. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated)."
   folderId: ID!
   "Permissions to update."
   permissions: [DesUpdateFolderPermissionInput!]!
@@ -2865,6 +2874,8 @@ input GloAppFilterInput {
   description: StringOperationFilterInput
   "The human-readable identifier for the App. Must be unique."
   hrid: StringOperationFilterInput
+  "Whether the App is auto-installable."
+  isAutoInstallable: BooleanOperationFilterInput
   "Whether the App is a Workspace PAT App."
   isWorkspaceApp: BooleanOperationFilterInput
   "The name of the App."
@@ -2893,6 +2904,8 @@ input GloAppSortInput {
   description: SortEnumType
   "The human-readable identifier for the App. Must be unique."
   hrid: SortEnumType
+  "Whether the App is auto-installable."
+  isAutoInstallable: SortEnumType
   "Whether the App is a Workspace PAT App."
   isWorkspaceApp: SortEnumType
   "The name of the App."
@@ -2926,6 +2939,8 @@ input GloCreateAppInput {
   description: String!
   "Unique human-readable identifier for a new App."
   hrid: String!
+  "Whether the new App is auto-installable. Defaults to `false`."
+  isAutoInstallable: Boolean
   "Whether the new App is a Workspace App. Defaults to `false`."
   isWorkspaceApp: Boolean
   "Name of a new App."
@@ -3801,6 +3816,16 @@ enum DesWorkspaceVendor {
 enum GloAccountType {
   BUSINESS
   PERSONAL
+}
+
+"Whether a `GloApp` is installed in the current Workspace."
+enum GloAppInstallationStatus {
+  "The App is auto-installable, so it is installed in all Workspaces."
+  AUTO_INSTALLED
+  "The App is installed in this Workspace specifically."
+  INSTALLED
+  "The App is not installed in the Workspace."
+  NOT_INSTALLED
 }
 
 enum GloAuthType {

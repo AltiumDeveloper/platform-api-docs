@@ -36,6 +36,7 @@ type GloApp {
   description: String!
   hrid: String!
   id: ID!
+  isAutoInstallable: Boolean!
   isWorkspaceApp: Boolean!
   name: String!
   oAuthClient: GloOAuthClient!
@@ -78,6 +79,10 @@ The human-readable identifier for the App. Must be unique.
 #### `id` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The GRID identifier for the App.
+
+#### `isAutoInstallable` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
+
+Whether the App is auto-installable.
 
 #### `isWorkspaceApp` · [`Boolean!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) non-null scalar
 

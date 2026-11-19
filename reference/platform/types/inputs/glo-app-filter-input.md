@@ -25,6 +25,7 @@ input GloAppFilterInput {
   deletedById: StringOperationFilterInput
   description: StringOperationFilterInput
   hrid: StringOperationFilterInput
+  isAutoInstallable: BooleanOperationFilterInput
   isWorkspaceApp: BooleanOperationFilterInput
   name: StringOperationFilterInput
   oAuthClient: GloOAuthClientFilterInput
@@ -65,6 +66,10 @@ A description of the App.
 #### `hrid` · [`StringOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/string-operation-filter-input.md) input
 
 The human-readable identifier for the App. Must be unique.
+
+#### `isAutoInstallable` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input
+
+Whether the App is auto-installable.
 
 #### `isWorkspaceApp` · [`BooleanOperationFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/boolean-operation-filter-input.md) input
 

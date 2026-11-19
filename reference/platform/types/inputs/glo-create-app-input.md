@@ -20,6 +20,7 @@ input GloCreateAppInput {
   contactEmail: String!
   description: String!
   hrid: String!
+  isAutoInstallable: Boolean
   isWorkspaceApp: Boolean
   name: String!
   oAuthClient: GloCreateAppOAuthClientInput!
@@ -39,6 +40,10 @@ Description of a new App.
 #### `hrid` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
 Unique human-readable identifier for a new App.
+
+#### `isAutoInstallable` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
+
+Whether the new App is auto-installable. Defaults to `false`.
 
 #### `isWorkspaceApp` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 

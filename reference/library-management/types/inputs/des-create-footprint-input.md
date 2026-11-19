@@ -45,7 +45,7 @@ The footprint files.
 
 #### `folderId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
-The destination folder identifier.
+The destination folder identifier. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated).
 
 #### `lifeCycleDefinitionId` · [`ID`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) scalar
 

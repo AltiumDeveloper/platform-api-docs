@@ -1,4 +1,4 @@
-# Altium 365 API — Library Management schema slice (~26012 tokens)
+# Altium 365 API — Library Management schema slice (~26093 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -2231,7 +2231,7 @@ input DesCreateFootprintInput {
   description: String
   "The footprint files."
   files: [DesCreateFootprintFileInput!]!
-  "The destination folder identifier."
+  "The destination folder identifier. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated)."
   folderId: ID!
   "The footprint life cycle definition identifier."
   lifeCycleDefinitionId: ID
@@ -2257,7 +2257,7 @@ input DesCreateSymbolFileInput {
 input DesCreateSymbolInput {
   "The symbol files."
   files: [DesCreateSymbolFileInput!]!
-  "The destination folder identifier."
+  "The destination folder identifier. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated)."
   folderId: ID!
   "The symbol life cycle definition identifier."
   lifeCycleDefinitionId: ID
@@ -2775,7 +2775,7 @@ input DesReleaseComponentInput {
   componentLifeCycleDefinitionId: String
   "Life cycle definition identifier for component."
   componentLifeCycleDefinitionNodeId: ID
-  "Destination parent folder identifier for releasing a component. If omitted or empty, `componentReleaseFolder` is required."
+  "Destination parent folder identifier for releasing a component. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated). If omitted or empty, `componentReleaseFolder` is required."
   componentParentFolderId: ID
   "New child folder name for releasing a component. If omitted or empty, `componentParentFolderId` is required."
   componentReleaseFolder: String

@@ -7294,6 +7294,8 @@ type GloApp {
   hrid: String!
   "The GRID identifier for the App."
   id: ID!
+  "Whether the App is auto-installable."
+  isAutoInstallable: Boolean!
   "Whether the App is a Workspace PAT App."
   isWorkspaceApp: Boolean!
   "The name of the App."
@@ -7310,6 +7312,11 @@ type GloApp {
 
 "Error that occurs when a `GloApp` cannot be installed into a workspace as it has already been installed."
 type GloAppAlreadyInstalledError implements Error {
+  message: String!
+}
+
+"Error that occurs when the user is not permitted to mark an App as auto-installable."
+type GloAppAutoInstallableForbiddenError implements Error {
   message: String!
 }
 
@@ -9745,6 +9752,8 @@ type Query {
     "The GRID identifier for the App."
     appId: ID!
   ): GloApp
+  "Determines whether the `GloApp` associated with the client of the access token is installed in the current Workspace."
+  gloAppInstallationStatus: GloAppInstallationStatus
   "Gets a list of `GloApp` installed in a workspace."
   gloAppInstalledApps(order: [GloAppSortInput!], where: GloAppFilterInput): [GloApp!]
   "Gets a list of `GloApp`."
@@ -13135,7 +13144,7 @@ union GloAddAppScopeError = GloAppNotFoundError | GloAppDeletedError | GloAppSco
 
 union GloAddAppTokenExchangeSourcesError = GloAppNotFoundError | GloAppDeletedError | GloAppMissingOAuthClientError | GloAppTokenExchangeSourcesDeletedError | GloAppTokenExchangeSourcesNotUpdatedError
 
-union GloCreateAppError = GloAppInvalidOAuthError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppOAuthClientGrantAccessError
+union GloCreateAppError = GloAppInvalidOAuthError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppOAuthClientGrantAccessError | GloAppAutoInstallableForbiddenError
 
 union GloCreateAppFromOAuthClientError = GloAppMissingOAuthClientError | GloAppHridExistsError | GloAppInvalidHridError | GloAppInvalidEmailError | GloAppClientExistsError | GloAppOAuthClientGrantAccessError
 
@@ -14170,7 +14179,7 @@ input DesCreateFootprintInput {
   description: String
   "The footprint files."
   files: [DesCreateFootprintFileInput!]!
-  "The destination folder identifier."
+  "The destination folder identifier. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated)."
   folderId: ID!
   "The footprint life cycle definition identifier."
   lifeCycleDefinitionId: ID
@@ -14240,7 +14249,7 @@ input DesCreateSymbolFileInput {
 input DesCreateSymbolInput {
   "The symbol files."
   files: [DesCreateSymbolFileInput!]!
-  "The destination folder identifier."
+  "The destination folder identifier. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated)."
   folderId: ID!
   "The symbol life cycle definition identifier."
   lifeCycleDefinitionId: ID
@@ -15137,7 +15146,7 @@ input DesReleaseComponentInput {
   componentLifeCycleDefinitionId: String
   "Life cycle definition identifier for component."
   componentLifeCycleDefinitionNodeId: ID
-  "Destination parent folder identifier for releasing a component. If omitted or empty, `componentReleaseFolder` is required."
+  "Destination parent folder identifier for releasing a component. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated). If omitted or empty, `componentReleaseFolder` is required."
   componentParentFolderId: ID
   "New child folder name for releasing a component. If omitted or empty, `componentParentFolderId` is required."
   componentReleaseFolder: String
@@ -15482,7 +15491,7 @@ input DesUpdateFolderPermissionInput {
 
 "Input for updating folder permissions."
 input DesUpdateFolderPermissionsInput {
-  "Folder identifier for updating folder permissions. Soon, `folderId` will be the reference identifier (GUID) instead of node identifier, and should be used along with `workspaceUrl`."
+  "Folder identifier for updating folder permissions. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated)."
   folderId: ID!
   "Permissions to update."
   permissions: [DesUpdateFolderPermissionInput!]!
@@ -15765,7 +15774,7 @@ input DesUploadProjectInput {
   fileId: String!
   "The project name."
   name: String!
-  "The project target parent folder identifier."
+  "The project target parent folder identifier. Pass the reference identifier (GUID) along with `workspaceUrl`, or the legacy node identifier (deprecated)."
   parentFolderId: ID!
   "The workspace URL."
   workspaceUrl: String
@@ -16233,6 +16242,8 @@ input GloAppFilterInput {
   description: StringOperationFilterInput
   "The human-readable identifier for the App. Must be unique."
   hrid: StringOperationFilterInput
+  "Whether the App is auto-installable."
+  isAutoInstallable: BooleanOperationFilterInput
   "Whether the App is a Workspace PAT App."
   isWorkspaceApp: BooleanOperationFilterInput
   "The name of the App."
@@ -16261,6 +16272,8 @@ input GloAppSortInput {
   description: SortEnumType
   "The human-readable identifier for the App. Must be unique."
   hrid: SortEnumType
+  "Whether the App is auto-installable."
+  isAutoInstallable: SortEnumType
   "Whether the App is a Workspace PAT App."
   isWorkspaceApp: SortEnumType
   "The name of the App."
@@ -16294,6 +16307,8 @@ input GloCreateAppInput {
   description: String!
   "Unique human-readable identifier for a new App."
   hrid: String!
+  "Whether the new App is auto-installable. Defaults to `false`."
+  isAutoInstallable: Boolean
   "Whether the new App is a Workspace App. Defaults to `false`."
   isWorkspaceApp: Boolean
   "Name of a new App."
@@ -19718,6 +19733,16 @@ enum DmModelEvaluationStrategy @experimental {
 enum GloAccountType {
   BUSINESS
   PERSONAL
+}
+
+"Whether a `GloApp` is installed in the current Workspace."
+enum GloAppInstallationStatus {
+  "The App is auto-installable, so it is installed in all Workspaces."
+  AUTO_INSTALLED
+  "The App is installed in this Workspace specifically."
+  INSTALLED
+  "The App is not installed in the Workspace."
+  NOT_INSTALLED
 }
 
 enum GloAuthType {
