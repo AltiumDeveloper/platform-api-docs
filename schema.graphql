@@ -5999,6 +5999,8 @@ type DesignDataQueries @experimental {
   byDesignId(
     "The identifier of the design."
     designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
   ): DesignData_Preview
   "**Experimental** Retrieves the latest available design data for the release."
   byReleaseId(
@@ -6016,6 +6018,8 @@ type DesignDataQueries @experimental {
   isGeneratingByDesignId(
     "The identifier of the design."
     designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
   ): Boolean!
   "**Experimental** Retrieves the information whether the release design data is still processed."
   isGeneratingByReleaseId(
@@ -9934,6 +9938,8 @@ type Query {
   solSolutionsByPage(pageNumber: Int!, pageSize: Int!): [SolSolution!]! @deprecated(reason: "Use solSolutionsByPagev2 query")
   "Gets all available solutions with pagination."
   solSolutionsByPagev2(order: SolSolutionSortInput, pageNumber: Int!, pageSize: Int!, where: SolSolutionFilterInput): SolSolutionsByPagePayload!
+  "Gets supported entity types for solutions with their grid templates."
+  solSupportedGrids: [SolSupportedGrid!]!
   "Search a specific evaluation kit by its unique identifier."
   supEvalKitById(id: ID!): SupEvalKit
   "The evaluation kits of reference design."
@@ -11358,6 +11364,13 @@ type SolSolutionsByPagePayload {
 type SolStringKeyValue {
   key: String!
   value: String!
+}
+
+type SolSupportedGrid {
+  "Entity type the grid template belongs to."
+  entityType: String!
+  "Grid template of the entity type."
+  gridTemplate: String!
 }
 
 type SolUnlinkItemFromSolutionPayload {
@@ -13061,9 +13074,7 @@ type SysSdmSystemDataModelContent {
   downloadUrl: String!
 }
 
-"**Experimental**"
-type SysSdmSystemModel @experimental {
-  "**Experimental**"
+type SysSdmSystemModel {
   id: ID!
   latestVersion: SysSdmSystemModelVersion!
   name: String!

@@ -1,4 +1,4 @@
-# Altium 365 API — Design schema slice (~31237 tokens)
+# Altium 365 API — Design schema slice (~31270 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -2038,6 +2038,8 @@ type DesignDataQueries @experimental {
   byDesignId(
     "The identifier of the design."
     designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
   ): DesignData_Preview
   "**Experimental** Retrieves the latest available design data for the release."
   byReleaseId(
@@ -2055,6 +2057,8 @@ type DesignDataQueries @experimental {
   isGeneratingByDesignId(
     "The identifier of the design."
     designId: ID!
+    "The identifier of the project commit."
+    revisionId: String
   ): Boolean!
   "**Experimental** Retrieves the information whether the release design data is still processed."
   isGeneratingByReleaseId(

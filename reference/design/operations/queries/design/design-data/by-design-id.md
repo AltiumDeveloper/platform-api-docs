@@ -28,6 +28,7 @@ design {
   designData {
     byDesignId(
       designId: ID!
+      revisionId: String
     ): DesignData_Preview
   }
 }
@@ -38,3 +39,7 @@ design {
 #### `designId` · [`ID!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) non-null scalar
 
 The identifier of the design.
+
+#### `revisionId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+The identifier of the project commit.

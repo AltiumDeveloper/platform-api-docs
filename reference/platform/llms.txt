@@ -1,7 +1,7 @@
 # Platform — Altium 365 API
 > Workspaces, users and organizations, apps and tokens, folders, generic revisions, permissions and settings, lifecycle definitions and revision naming schemes, domain events, notifications, solutions and the knowledge graph.
 
-Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~33337 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
+Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~33405 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
 
 ## Entities
 - [DesLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md): Lifecycle Definition — Defines the set of states that an entity can transition through in its lifecycle. GRID `grid:workspace:{workspace-id}:platform:lifecycle-definition/{id}`. Via: desLifeCycleDefinitionById, desLifeCycleDefinitionByContentTypeKind, desLifeCycleDefinitions, DesPartLifecycle.definition
@@ -72,6 +72,7 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [solBldScaffoldingStatusesBySolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-bld-scaffolding-statuses-by-solution.md): Retrieves cached job statuses for a solution.
 - [solEnvironmentLinks](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-environment-links.md): Gets environment links.
 - [solSolutionsByPagev2](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-solutions-by-pagev-2.md): Gets all available solutions with pagination.
+- [solSupportedGrids](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/queries/sol-supported-grids.md): Gets supported entity types for solutions with their grid templates.
 
 ## Mutations
 - [desAddUsersToGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/des-add-users-to-group.md): Adds users to the specified group.
@@ -157,4 +158,4 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [solUpdateSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-update-solution.md): Updates existing solution.
 
 ## Optional
-- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~15471 tokens)
+- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~15503 tokens)

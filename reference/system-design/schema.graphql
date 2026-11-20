@@ -1,4 +1,4 @@
-# Altium 365 API — System Design schema slice (~3519 tokens)
+# Altium 365 API — System Design schema slice (~3506 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -426,9 +426,7 @@ type SysSdmSystemDataModelContent {
   downloadUrl: String!
 }
 
-"**Experimental**"
-type SysSdmSystemModel @experimental {
-  "**Experimental**"
+type SysSdmSystemModel {
   id: ID!
   latestVersion: SysSdmSystemModelVersion!
   name: String!

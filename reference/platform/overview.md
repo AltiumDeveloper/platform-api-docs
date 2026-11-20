@@ -60,9 +60,9 @@ Look up entities by identifier:
 
 | Kind | Items | Experimental |
 | - | - | - |
-| Queries | 51 | 3 |
+| Queries | 52 | 3 |
 | Mutations | 81 | 2 |
-| Objects | 203 | 7 |
+| Objects | 204 | 7 |
 | Inputs | 110 | 4 |
 | Enums | 22 | 2 |
 | Interfaces | 5 | 1 |

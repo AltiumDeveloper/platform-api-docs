@@ -176,6 +176,7 @@
 - [SolParameterBundleValue](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-parameter-bundle-value.md)
 - [SolSolutionsByPagePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solutions-by-page-payload.md)
 - [SolStringKeyValue](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-string-key-value.md)
+- [SolSupportedGrid](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-supported-grid.md)
 - [SolUnlinkItemFromSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-unlink-item-from-solution-payload.md)
 - [SolUpdateSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-update-solution-payload.md)
 - [DesPermission](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/interfaces/des-permission.md)
