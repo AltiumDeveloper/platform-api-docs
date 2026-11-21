@@ -11,6 +11,11 @@ deprecated: false
 
 Layer stackup properties and definition.
 
+### Common Data Model
+
+- [Layer Stackup](https://w3id.org/altium/cdm/design/Stackup) — The layer structure of a board: one or more layer stacks (more than one for rigid-flex boards).
+  - IRI: [`https://w3id.org/altium/cdm/design/Stackup`](https://w3id.org/altium/cdm/design/Stackup)
+
 ### Member Of
 
 [`DesPcb`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb.md) object

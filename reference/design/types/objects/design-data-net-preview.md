@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a net (electrical connection) in the design.
 
+### Common Data Model
+
+- [Net](https://w3id.org/altium/cdm/design/Net) — An electrical net of the compiled design: a set of component pins that are electrically connected, resolved across the sheet hierarchy. Its scope says whether it is local to one sheet, part of a sheet interface or global. Net names are not necessarily unique.
+  - IRI: [`https://w3id.org/altium/cdm/design/Net`](https://w3id.org/altium/cdm/design/Net)
+
 ### Member Of
 
 [`DesignData_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-preview.md) object

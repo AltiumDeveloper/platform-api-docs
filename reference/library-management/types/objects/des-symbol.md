@@ -105,7 +105,7 @@ The life cycle state information.
 
 ECAD entity name.
 
-#### `pins` · [`[DesPin!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pin.md) non-null object Design
+#### `pins` · [`[DesPin!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-pin.md) non-null object
 
 The list of pins.
 

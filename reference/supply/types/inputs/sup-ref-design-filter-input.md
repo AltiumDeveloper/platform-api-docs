@@ -21,6 +21,7 @@ input SupRefDesignFilterInput {
   categoryIds: [String!]
   hasEvalBoard: Boolean
   isVerified: Boolean
+  partIds: [String!]
   publisherIds: [String!]
   statuses: [SupRefDesignStatus!]
   tags: [String!]
@@ -45,6 +46,10 @@ Filter to only include designs that have evaluation boards.
 #### `isVerified` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Filter by verification status if specified.
+
+#### `partIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
+
+Filter by primary part IDs, key part IDs or evaluation kit part IDs if specified. At equal relevance, designs using them as a primary part rank first, then as a key part, then as an evaluation kit.
 
 #### `publisherIds` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 

@@ -122,6 +122,6 @@ The user this entity was last updated by.
 
 > **Deprecated:** Use `RevisionInternalId` instead.
 
-#### `pins` · [`[DesPin!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pin.md) **DEPRECATED** non-null object Design
+#### `pins` · [`[DesPin!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-pin.md) **DEPRECATED** non-null object
 
 > **Deprecated:** Not implemented and may be removed.

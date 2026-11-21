@@ -1,7 +1,7 @@
 # Platform — Altium 365 API
 > Workspaces, users and organizations, apps and tokens, folders, generic revisions, permissions and settings, lifecycle definitions and revision naming schemes, domain events, notifications, solutions and the knowledge graph.
 
-Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~33405 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
+Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql) (~33519 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/overview.md).
 
 ## Entities
 - [DesLifeCycleDefinition](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-life-cycle-definition.md): Lifecycle Definition — Defines the set of states that an entity can transition through in its lifecycle. GRID `grid:workspace:{workspace-id}:platform:lifecycle-definition/{id}`. Via: desLifeCycleDefinitionById, desLifeCycleDefinitionByContentTypeKind, desLifeCycleDefinitions, DesPartLifecycle.definition
@@ -120,6 +120,7 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [gloRemoveAppTokenExchangeSource](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-app-token-exchange-source.md): Removes a third-party App from the token exchange sources of an existing App.
 - [gloRemoveUsersFromGroup](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-remove-users-from-group.md): Remove users from group.
 - [gloRestoreApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-restore-app.md): Restores an App.
+- [gloSetAppAutoInstallable](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-set-app-auto-installable.md): Sets an App as auto-installable into all Workspaces.
 - [gloUninstallApp](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-uninstall-app.md): Uninstalls an App from a Workspace.
 - [gloUpdateAppContactEmail](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-update-app-contact-email.md): Updates the contact email of an existing App.
 - [gloUpdateAppDescription](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/glo-update-app-description.md): Updates the description of an existing App.
@@ -158,4 +159,4 @@ Concepts: [platform](https://altiumdeveloper.github.io/cdm/subsets/platform/). S
 - [solUpdateSolution](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/operations/mutations/sol-update-solution.md): Updates existing solution.
 
 ## Optional
-- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~15503 tokens)
+- [All types in Platform](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types.txt): one line per type (~15622 tokens)

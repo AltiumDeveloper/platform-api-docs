@@ -1,4 +1,4 @@
-# Altium 365 API — Design schema slice (~31270 tokens)
+# Altium 365 API — Design schema slice (~31173 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -1153,20 +1153,6 @@ type DesPickAndPlace {
   packageName: String
   "Pick and Place files."
   pickAndPlaceFiles: [DesDownloadableFile!]!
-}
-
-"Pin properties."
-type DesPin {
-  "Description of pin."
-  description: String!
-  "The numerical identifier of the pin."
-  designator: String!
-  "Electrical type of the pin."
-  electricalType: DesPinElectricalType!
-  "Returns `true` if the pin is hidden."
-  isHidden: Boolean!
-  "Pin display name. By default, a newly placed pin will be named using the designator value."
-  name: String!
 }
 
 "Polygon properties."

@@ -11,6 +11,11 @@ deprecated: false
 
 PCB design track information.
 
+### Common Data Model
+
+- [Track](https://w3id.org/altium/cdm/design/Track) — A straight conductor segment on a board layer, with a width.
+  - IRI: [`https://w3id.org/altium/cdm/design/Track`](https://w3id.org/altium/cdm/design/Track)
+
 ### Member Of
 
 [`DesDesignItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) object · [`DesNet`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) object · [`DesPcb`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb.md) object

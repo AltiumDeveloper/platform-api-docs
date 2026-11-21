@@ -11,6 +11,11 @@ deprecated: false
 
 Information about a specific layer in the PCB.
 
+### Common Data Model
+
+- [Board Layer](https://w3id.org/altium/cdm/design/BoardLayer) — A physical or logical layer of a board: copper (signal or plane), dielectric, mask, overlay, paste or mechanical.
+  - IRI: [`https://w3id.org/altium/cdm/design/BoardLayer`](https://w3id.org/altium/cdm/design/BoardLayer)
+
 ### Member Of
 
 [`DesDesignItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) object · [`DesNet`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) object · [`DesPad`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pad.md) object · [`DesStack`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-stack.md) object · [`DesTrack`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-track.md) object · [`DesVia`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-via.md) object

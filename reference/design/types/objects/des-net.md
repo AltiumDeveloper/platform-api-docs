@@ -11,6 +11,11 @@ deprecated: false
 
 Net information.
 
+### Common Data Model
+
+- [PCB Net](https://w3id.org/altium/cdm/design/PcbNet) — A net as realised in copper on a board: the pads, tracks and vias that carry it, the layers it is routed on and its routed length.
+  - IRI: [`https://w3id.org/altium/cdm/design/PcbNet`](https://w3id.org/altium/cdm/design/PcbNet)
+
 ### Member Of
 
 [`DesLayer`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-layer.md) object · [`DesPad`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pad.md) object · [`DesPcb`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb.md) object · [`DesTrack`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-track.md) object · [`DesVia`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-via.md) object

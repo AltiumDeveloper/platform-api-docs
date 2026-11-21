@@ -1,4 +1,4 @@
-# Altium 365 API — Supply schema slice (~29872 tokens)
+# Altium 365 API — Supply schema slice (~29928 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -2074,6 +2074,8 @@ input SupRefDesignFilterInput {
   hasEvalBoard: Boolean
   "Filter by verification status if specified."
   isVerified: Boolean
+  "Filter by primary part IDs, key part IDs or evaluation kit part IDs if specified. At equal relevance, designs using them as a primary part rank first, then as a key part, then as an evaluation kit."
+  partIds: [String!]
   "Filter by a list of publisher (company) identifiers if specified."
   publisherIds: [String!]
   "Filter by a list of reference design statuses if specified."

@@ -11,6 +11,11 @@ deprecated: false
 
 Rectangle positional information.
 
+### Common Data Model
+
+- [Rectangle 2D](https://w3id.org/altium/cdm/design/Rectangle2D) — An axis-aligned rectangle, used for bounding boxes of drawing objects.
+  - IRI: [`https://w3id.org/altium/cdm/design/Rectangle2D`](https://w3id.org/altium/cdm/design/Rectangle2D)
+
 ### Member Of
 
 [`DesCommentContext`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-comment-context.md) object · [`DesDesignItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) object

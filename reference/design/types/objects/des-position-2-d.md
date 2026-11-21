@@ -11,6 +11,11 @@ deprecated: false
 
 2D positional information in mm and mils.
 
+### Common Data Model
+
+- [Point 2D](https://w3id.org/altium/cdm/design/Point2D) — A point in the coordinate system of a schematic sheet or PCB document.
+  - IRI: [`https://w3id.org/altium/cdm/design/Point2D`](https://w3id.org/altium/cdm/design/Point2D)
+
 ### Member Of
 
 [`DesDesignItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) object · [`DesPad`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pad.md) object · [`DesPcb`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb.md) object · [`DesPolygon`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-polygon.md) object · [`DesRectangle`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-rectangle.md) object · [`DesTrack`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-track.md) object · [`DesVia`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-via.md) object

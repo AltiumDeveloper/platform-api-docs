@@ -1,4 +1,4 @@
-# Altium 365 API — Platform schema slice (~33405 tokens)
+# Altium 365 API — Platform schema slice (~33519 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -340,6 +340,8 @@ type Mutation {
   gloRemoveUsersFromGroup(input: GloRemoveUsersFromGroupInput!): GloRemoveUsersFromGroupPayload!
   "Restores an App."
   gloRestoreApp(input: GloRestoreAppInput!): GloRestoreAppPayload!
+  "Sets an App as auto-installable into all Workspaces."
+  gloSetAppAutoInstallable(input: GloSetAppAutoInstallableInput!): GloSetAppAutoInstallablePayload!
   "Uninstalls an App from a Workspace."
   gloUninstallApp(input: GloUninstallAppInput!): GloUninstallAppPayload!
   "Updates the contact email of an existing App."
@@ -1635,6 +1637,11 @@ type GloSamlSettings {
   scimEnabled: Boolean!
 }
 
+type GloSetAppAutoInstallablePayload {
+  errors: [GloSetAppAutoInstallableError!]
+  gloApp: GloApp
+}
+
 type GloUninstallAppPayload {
   errors: [GloUninstallAppError!]
   gloApp: GloApp
@@ -2403,6 +2410,8 @@ union GloRemoveAppScopeError = GloAppNotFoundError | GloAppDeletedError | GloApp
 union GloRemoveAppTokenExchangeSourceError = GloAppNotFoundError | GloAppDeletedError | GloAppMissingOAuthClientError | GloAppTokenExchangeSourcesNotUpdatedError
 
 union GloRestoreAppError = GloAppOAuthClientNotRestoredError | GloAppMissingOAuthClientError | GloAppNotFoundError | GloAppNotDeletedError
+
+union GloSetAppAutoInstallableError = GloAppDeletedError | GloAppNotFoundError
 
 union GloUninstallAppError = GloAppNotUninstalledError | GloAppDeletedError
 
@@ -3196,6 +3205,11 @@ input GloRemoveUsersFromGroupInput {
 
 input GloRestoreAppInput {
   "The GRID identifier for the App to be restored."
+  id: ID!
+}
+
+input GloSetAppAutoInstallableInput {
+  "The GRID identifier for the App to be set as auto-installable."
   id: ID!
 }
 

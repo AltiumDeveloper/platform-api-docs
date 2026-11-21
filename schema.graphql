@@ -8044,6 +8044,11 @@ type GloScrUpdateScriptPayload {
   gloScrScriptVersion: GloScrScriptVersion
 }
 
+type GloSetAppAutoInstallablePayload {
+  errors: [GloSetAppAutoInstallableError!]
+  gloApp: GloApp
+}
+
 type GloUninstallAppPayload {
   errors: [GloUninstallAppError!]
   gloApp: GloApp
@@ -8615,6 +8620,8 @@ type Mutation {
   gloScrSetScriptSecrets(input: GloScrSetScriptSecretsInput!): GloScrSetScriptSecretsPayload!
   "Updates an existing script, creating a new version."
   gloScrUpdateScript(input: GloScrUpdateScriptInput!): GloScrUpdateScriptPayload!
+  "Sets an App as auto-installable into all Workspaces."
+  gloSetAppAutoInstallable(input: GloSetAppAutoInstallableInput!): GloSetAppAutoInstallablePayload!
   "Uninstalls an App from a Workspace."
   gloUninstallApp(input: GloUninstallAppInput!): GloUninstallAppPayload!
   "Updates the contact email of an existing App."
@@ -13175,6 +13182,8 @@ union GloRemoveAppTokenExchangeSourceError = GloAppNotFoundError | GloAppDeleted
 
 union GloRestoreAppError = GloAppOAuthClientNotRestoredError | GloAppMissingOAuthClientError | GloAppNotFoundError | GloAppNotDeletedError
 
+union GloSetAppAutoInstallableError = GloAppDeletedError | GloAppNotFoundError
+
 union GloUninstallAppError = GloAppNotUninstalledError | GloAppDeletedError
 
 union GloUpdateAppContactEmailError = GloAppNotFoundError | GloAppDeletedError | GloAppInvalidEmailError
@@ -16831,6 +16840,11 @@ input GloScrUpdateScriptInput {
   scriptId: String!
 }
 
+input GloSetAppAutoInstallableInput {
+  "The GRID identifier for the App to be set as auto-installable."
+  id: ID!
+}
+
 input GloUninstallAppInput {
   "The GRID identifier for the App to be uninstalled."
   id: ID!
@@ -18251,6 +18265,8 @@ input SupRefDesignFilterInput {
   hasEvalBoard: Boolean
   "Filter by verification status if specified."
   isVerified: Boolean
+  "Filter by primary part IDs, key part IDs or evaluation kit part IDs if specified. At equal relevance, designs using them as a primary part rank first, then as a key part, then as an evaluation kit."
+  partIds: [String!]
   "Filter by a list of publisher (company) identifiers if specified."
   publisherIds: [String!]
   "Filter by a list of reference design statuses if specified."

@@ -11,6 +11,11 @@ deprecated: false
 
 Pad information.
 
+### Common Data Model
+
+- [Pad](https://w3id.org/altium/cdm/design/Pad) — A connection target on a board, usually one pin of a placed component; a free pad belongs to no component.
+  - IRI: [`https://w3id.org/altium/cdm/design/Pad`](https://w3id.org/altium/cdm/design/Pad)
+
 ### Member Of
 
 [`DesDesignItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) object · [`DesNet`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) object · [`DesPcb`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb.md) object

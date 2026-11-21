@@ -11,6 +11,11 @@ deprecated: false
 
 PCB design via information.
 
+### Common Data Model
+
+- [Via](https://w3id.org/altium/cdm/design/Via) — A plated hole that connects copper on two or more layers of a board.
+  - IRI: [`https://w3id.org/altium/cdm/design/Via`](https://w3id.org/altium/cdm/design/Via)
+
 ### Member Of
 
 [`DesDesignItem`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md) object · [`DesNet`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-net.md) object · [`DesPcb`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pcb.md) object

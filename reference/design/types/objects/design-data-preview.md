@@ -17,6 +17,11 @@ deprecated: false
 
 Represents the design data extracted from a design project.
 
+### Common Data Model
+
+- [Compiled Design](https://w3id.org/altium/cdm/design/CompiledDesign) — The compiled, connectivity-level view of a design project at one revision: its schematic sheets, the components placed on them, their pins and the nets that connect those pins, resolved across the sheet hierarchy. It is what is read when the logical design is analysed, as opposed to the drawing objects that are edited in the schematic editor. It is identified by its project and revision.
+  - IRI: [`https://w3id.org/altium/cdm/design/CompiledDesign`](https://w3id.org/altium/cdm/design/CompiledDesign)
+
 ### Returned By
 
 [`design.designData.byDesignId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-design-id.md) query · [`design.designData.byReleaseId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-release-id.md) query · [`design.designData.byUploadId`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/operations/queries/design/design-data/by-upload-id.md) query

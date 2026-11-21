@@ -30,6 +30,7 @@ API types in this bounded context that represent Common Data Model (CDM) entitie
 | [`DesDatasheet`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-datasheet.md) | [Datasheet](https://w3id.org/altium/cdm/library/Datasheet) [`https://w3id.org/altium/cdm/library/Datasheet`](https://w3id.org/altium/cdm/library/Datasheet) |
 | [`DesFootprint`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-footprint.md) | [Footprint Revision](https://w3id.org/altium/cdm/library/FootprintRevision) [`https://w3id.org/altium/cdm/library/FootprintRevision`](https://w3id.org/altium/cdm/library/FootprintRevision) |
 | [`DesPart`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part.md) | [Part](https://w3id.org/altium/cdm/library/Part) [`https://w3id.org/altium/cdm/library/Part`](https://w3id.org/altium/cdm/library/Part) |
+| [`DesPin`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-pin.md) | [Pin](https://w3id.org/altium/cdm/library/Pin) [`https://w3id.org/altium/cdm/library/Pin`](https://w3id.org/altium/cdm/library/Pin) |
 | [`DesReuseBlock`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block.md) | [Reuse Block](https://w3id.org/altium/cdm/library/ReuseBlock) [`https://w3id.org/altium/cdm/library/ReuseBlock`](https://w3id.org/altium/cdm/library/ReuseBlock) |
 | [`DesReuseBlockRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-reuse-block-revision.md) | [Reuse Block Revision](https://w3id.org/altium/cdm/library/ReuseBlockRevision) [`https://w3id.org/altium/cdm/library/ReuseBlockRevision`](https://w3id.org/altium/cdm/library/ReuseBlockRevision) |
 | [`DesSymbol`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-symbol.md) | [Symbol Revision](https://w3id.org/altium/cdm/library/SymbolRevision) [`https://w3id.org/altium/cdm/library/SymbolRevision`](https://w3id.org/altium/cdm/library/SymbolRevision) |
@@ -59,7 +60,7 @@ Look up entities by identifier:
 | - | - | - |
 | Queries | 32 | 0 |
 | Mutations | 35 | 0 |
-| Objects | 146 | 0 |
+| Objects | 147 | 0 |
 | Inputs | 84 | 0 |
 | Enums | 2 | 0 |
 | Unions | 1 | 0 |

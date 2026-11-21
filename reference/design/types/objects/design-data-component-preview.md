@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a component in the design.
 
+### Common Data Model
+
+- [Placed Component](https://w3id.org/altium/cdm/design/PlacedComponent) — A component instance placed in the design, identified by its designator. When the design uses managed components, it is derived from a library component revision; when it uses a file-based library, there is no Workspace library item to follow and only its parameters (for example manufacturer and part number) describe it.
+  - IRI: [`https://w3id.org/altium/cdm/design/PlacedComponent`](https://w3id.org/altium/cdm/design/PlacedComponent)
+
 ### Member Of
 
 [`DesignData_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-preview.md) object

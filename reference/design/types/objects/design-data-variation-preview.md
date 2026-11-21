@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a variation applied to a component within a project variant.
 
+### Common Data Model
+
+- [Variant Variation](https://w3id.org/altium/cdm/design/VariantVariation) — How one placed component differs in a project variant: not fitted, or replaced by an alternate component.
+  - IRI: [`https://w3id.org/altium/cdm/design/VariantVariation`](https://w3id.org/altium/cdm/design/VariantVariation)
+
 ### Member Of
 
 [`DesignDataVariant_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-variant-preview.md) object

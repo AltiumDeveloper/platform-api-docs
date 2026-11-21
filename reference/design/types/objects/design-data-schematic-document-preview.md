@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a schematic document in the design.
 
+### Common Data Model
+
+- [Schematic Sheet](https://w3id.org/altium/cdm/design/SchematicSheet) — A schematic document of the design. Sheets form a hierarchy: a sheet can reference sub-sheets, and a repeated (multi-channel) sub-sheet appears under each parent that references it.
+  - IRI: [`https://w3id.org/altium/cdm/design/SchematicSheet`](https://w3id.org/altium/cdm/design/SchematicSheet)
+
 ### Member Of
 
 [`DesignData_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-preview.md) object

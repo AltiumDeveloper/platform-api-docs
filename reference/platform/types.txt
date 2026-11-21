@@ -104,6 +104,7 @@
 - [GloRemoveUsersFromGroupPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-remove-users-from-group-payload.md): Represents output value for remove users from group.
 - [GloRestoreAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-restore-app-payload.md)
 - [GloSamlSettings](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-saml-settings.md)
+- [GloSetAppAutoInstallablePayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-set-app-auto-installable-payload.md)
 - [GloUninstallAppPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-uninstall-app-payload.md)
 - [GloUpdateAppContactEmailPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-contact-email-payload.md)
 - [GloUpdateAppDescriptionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/glo-update-app-description-payload.md)
@@ -199,6 +200,7 @@
 - [GloRemoveAppScopeError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-scope-error.md)
 - [GloRemoveAppTokenExchangeSourceError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-remove-app-token-exchange-source-error.md)
 - [GloRestoreAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-restore-app-error.md)
+- [GloSetAppAutoInstallableError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-set-app-auto-installable-error.md)
 - [GloUninstallAppError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-uninstall-app-error.md)
 - [GloUpdateAppContactEmailError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-contact-email-error.md)
 - [GloUpdateAppDescriptionError](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/unions/glo-update-app-description-error.md)
@@ -278,6 +280,7 @@
 - [GloRemoveAppTokenExchangeSourceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-app-token-exchange-source-input.md)
 - [GloRemoveUsersFromGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-remove-users-from-group-input.md): Represents input value for removing user from group.
 - [GloRestoreAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-restore-app-input.md)
+- [GloSetAppAutoInstallableInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-set-app-auto-installable-input.md)
 - [GloUninstallAppInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-uninstall-app-input.md)
 - [GloUpdateAppContactEmailInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-contact-email-input.md)
 - [GloUpdateAppDescriptionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-update-app-description-input.md)

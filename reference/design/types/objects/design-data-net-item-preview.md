@@ -17,6 +17,11 @@ deprecated: false
 
 Represents an item belonging to a net.
 
+### Common Data Model
+
+- [Net Item](https://w3id.org/altium/cdm/design/NetItem) — A connection object that contributes to a net, such as a net label, a port, a sheet entry or a power object.
+  - IRI: [`https://w3id.org/altium/cdm/design/NetItem`](https://w3id.org/altium/cdm/design/NetItem)
+
 ### Member Of
 
 [`DesignDataNet_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-preview.md) object

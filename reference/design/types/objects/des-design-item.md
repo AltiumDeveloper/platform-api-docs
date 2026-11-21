@@ -11,6 +11,11 @@ deprecated: false
 
 A design item is a specific instance of a part used in the design.
 
+### Common Data Model
+
+- [PCB Component](https://w3id.org/altium/cdm/design/PcbComponent) — A component as placed on a board: its footprint instance with position, rotation, side and pads.
+  - IRI: [`https://w3id.org/altium/cdm/design/PcbComponent`](https://w3id.org/altium/cdm/design/PcbComponent)
+
 ### Member Of
 
 [`DesDesignItemConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item-connection.md) object · [`DesDesignItemEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item-edge.md) object

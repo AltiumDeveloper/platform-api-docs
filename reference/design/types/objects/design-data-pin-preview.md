@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a pin on a component or part.
 
+### Common Data Model
+
+- [Pin Instance](https://w3id.org/altium/cdm/design/PinInstance) — A pin of a placed component in the design. It takes its number, name and electrical type from the library pin definition and is connected to at most one net.
+  - IRI: [`https://w3id.org/altium/cdm/design/PinInstance`](https://w3id.org/altium/cdm/design/PinInstance)
+
 ### Member Of
 
 [`DesignDataNet_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-preview.md) object · [`DesignDataPart_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-part-preview.md) object

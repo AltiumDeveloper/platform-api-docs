@@ -13,7 +13,7 @@ The electrical type of a pin.
 
 ### Member Of
 
-[`DesPin`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-pin.md) object
+[`DesPin`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-pin.md) object
 
 ```graphql
 enum DesPinElectricalType {

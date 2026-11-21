@@ -1,4 +1,4 @@
-# Altium 365 API — Library Management schema slice (~26093 tokens)
+# Altium 365 API — Library Management schema slice (~26194 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -11,7 +11,7 @@
 #   DesLifeCycleState → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
 #   DesModel3D → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
 #   DesPayloadError → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
-#   DesPin → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
+#   DesPinElectricalType → Design: https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql
 #   DesRevision → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
 #   DesUser → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
 #   Long → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
@@ -1776,6 +1776,20 @@ type DesPartUsages {
   wipBomUsages: [DesPartBomUsage!]
   "The WIP consolidated BOM usages."
   wipConsolidatedBomUsages: [DesPartBomUsage!]
+}
+
+"Pin properties."
+type DesPin {
+  "Description of pin."
+  description: String!
+  "The numerical identifier of the pin."
+  designator: String!
+  "Electrical type of the pin."
+  electricalType: DesPinElectricalType!
+  "Returns `true` if the pin is hidden."
+  isHidden: Boolean!
+  "Pin display name. By default, a newly placed pin will be named using the designator value."
+  name: String!
 }
 
 "Payload associated with releasing component file."

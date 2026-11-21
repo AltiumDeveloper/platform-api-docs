@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a differential pair and its associated positive and negative nets.
 
+### Common Data Model
+
+- [Differential Pair](https://w3id.org/altium/cdm/design/DifferentialPair) — Two nets that carry a differential signal together, for example USB\_D\_P and USB\_D\_N.
+  - IRI: [`https://w3id.org/altium/cdm/design/DifferentialPair`](https://w3id.org/altium/cdm/design/DifferentialPair)
+
 ### Member Of
 
 [`DesignDataNet_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-preview.md) object

@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a line segment in the design.
 
+### Common Data Model
+
+- [Wire](https://w3id.org/altium/cdm/design/Wire) — A wire drawn on a schematic sheet, part of one net.
+  - IRI: [`https://w3id.org/altium/cdm/design/Wire`](https://w3id.org/altium/cdm/design/Wire)
+
 ### Member Of
 
 [`DesignDataNet_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-net-preview.md) object

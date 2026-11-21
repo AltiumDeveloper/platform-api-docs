@@ -17,6 +17,11 @@ deprecated: false
 
 Represents a part within a component.
 
+### Common Data Model
+
+- [Component Part](https://w3id.org/altium/cdm/design/ComponentPart) — One part (section) of a placed component. Multi-part components, such as a quad op-amp, are drawn as several parts that may sit on different sheets; each part carries a subset of the component's pins.
+  - IRI: [`https://w3id.org/altium/cdm/design/ComponentPart`](https://w3id.org/altium/cdm/design/ComponentPart)
+
 ### Member Of
 
 [`DesignDataComponent_Preview`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/design-data-component-preview.md) object

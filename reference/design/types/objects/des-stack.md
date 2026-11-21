@@ -11,6 +11,11 @@ deprecated: false
 
 Information about layer stack.
 
+### Common Data Model
+
+- [Layer Stack](https://w3id.org/altium/cdm/design/LayerStack) — One stack of layers of a board, ordered from top to bottom; a rigid-flex board has one per rigid or flex region type.
+  - IRI: [`https://w3id.org/altium/cdm/design/LayerStack`](https://w3id.org/altium/cdm/design/LayerStack)
+
 ### Member Of
 
 [`DesStackup`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-stackup.md) object

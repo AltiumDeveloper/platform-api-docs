@@ -11,6 +11,11 @@ deprecated: false
 
 A PCB contains design details of the physical product.
 
+### Common Data Model
+
+- [PCB Layout](https://w3id.org/altium/cdm/design/PcbLayout) — The physical design of one board in a design project at one revision: its outline, layer stack, placed components, pads, tracks and vias, and the copper nets they form.
+  - IRI: [`https://w3id.org/altium/cdm/design/PcbLayout`](https://w3id.org/altium/cdm/design/PcbLayout)
+
 ### Member Of
 
 [`DesReleaseVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-release-variant.md) object · [`DesWipVariant`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-wip-variant.md) object
