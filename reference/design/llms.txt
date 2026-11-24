@@ -1,7 +1,7 @@
 # Design — Altium 365 API
 > Hardware projects, design data, rule checks, comparisons and project releases.
 
-Concepts: [design](https://altiumdeveloper.github.io/cdm/subsets/design/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql) (~31173 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/overview.md).
+Concepts: [design](https://altiumdeveloper.github.io/cdm/subsets/design/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/design/schema.graphql) (~31209 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/design/overview.md).
 
 ## Entities
 - [DesDesignItem](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-design-item.md): PCB Component — A component as placed on a board: its footprint instance with position, rotation, side and pads. Via: DesPcb.designItems, DesSchematic.designItems

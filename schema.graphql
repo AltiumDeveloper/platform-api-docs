@@ -3828,6 +3828,8 @@ type DesPosition2D {
 
 "A project manages all development stages of the PCB/PCA product lifecycle."
 type DesProject implements Node {
+  "The child projects of a multiboard (system design) project. Null for other project types and shared projects."
+  childProjects: [DesProject!]
   "The latest ECAD, MCAD or ESD revision. See also `desProjectCollaborationLatestRevision`."
   collaborationLatestRevision(
     "The collaboration domain to get the latest revision for."

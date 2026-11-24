@@ -1,4 +1,4 @@
-# Altium 365 API — Design schema slice (~31173 tokens)
+# Altium 365 API — Design schema slice (~31209 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -1179,6 +1179,8 @@ type DesPosition2D {
 
 "A project manages all development stages of the PCB/PCA product lifecycle."
 type DesProject implements Node {
+  "The child projects of a multiboard (system design) project. Null for other project types and shared projects."
+  childProjects: [DesProject!]
   "The latest ECAD, MCAD or ESD revision. See also `desProjectCollaborationLatestRevision`."
   collaborationLatestRevision(
     "The collaboration domain to get the latest revision for."

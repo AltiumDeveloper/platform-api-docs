@@ -24,7 +24,7 @@ A project manages all development stages of the PCB/PCA product lifecycle.
 
 ### Member Of
 
-[`DesProjectConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-connection.md) object · [`DesProjectEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-edge.md) object · [`DesSharedWithMeProjectInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info.md) object · [`DesWorkspace`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace.md) object · [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) object
+[`DesProject`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) object · [`DesProjectConnection`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-connection.md) object · [`DesProjectEdge`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project-edge.md) object · [`DesSharedWithMeProjectInfo`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-shared-with-me-project-info.md) object · [`DesWorkspace`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/des-workspace.md) object · [`SolSolution`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) object
 
 ### Interfaces
 
@@ -34,6 +34,7 @@ The node interface is implemented by entities that have a global unique identifi
 
 ```graphql
 type DesProject implements Node {
+  childProjects: [DesProject!]
   collaborationLatestRevision(
     domain: DesCollaborationDomain!
   ): DesCollaborationRevision
@@ -87,6 +88,10 @@ type DesProject implements Node {
 ```
 
 ### Fields
+
+#### `childProjects` · [`[DesProject!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-project.md) list object
+
+The child projects of a multiboard (system design) project. Null for other project types and shared projects.
 
 #### `collaborationLatestRevision` · [`DesCollaborationRevision`](https://altiumdeveloper.github.io/platform-api-docs/reference/design/types/objects/des-collaboration-revision.md) object
 
