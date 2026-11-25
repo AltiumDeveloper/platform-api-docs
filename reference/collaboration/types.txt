@@ -29,6 +29,7 @@
 - [DesUpdateTaskCommentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-update-task-comment-payload.md): Payload associated with updating a task comment.
 - [DesUpdateTaskPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/objects/des-update-task-payload.md): Payload associated with updating a task.
 - [DesAnnotationBinding](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/unions/des-annotation-binding.md): There may be multiple bindings associated with annotation instance.
+- [DesCommentThreadPropertyInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-comment-thread-property-input.md): A custom property to set on a comment thread.
 - [DesCreateCommentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-comment-input.md): Input for comment creation.
 - [DesCreateCommentThreadInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-comment-thread-input.md): Input for comment thread creation.
 - [DesCreateProjectTaskInput](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-create-project-task-input.md): Input for project task creation.

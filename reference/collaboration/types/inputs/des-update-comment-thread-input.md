@@ -19,7 +19,9 @@ Input for updating a comment thread.
 input DesUpdateCommentThreadInput {
   commentThreadId: String!
   entityId: ID!
-  status: DesCommentThreadStatus!
+  removeProperties: [String!]
+  setProperties: [DesCommentThreadPropertyInput!]
+  status: DesCommentThreadStatus
 }
 ```
 
@@ -33,6 +35,14 @@ Comment thread identifier.
 
 Entity identifier.
 
-#### `status` · [`DesCommentThreadStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-comment-thread-status.md) non-null enum
+#### `removeProperties` · [`[String!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) list scalar
 
-Comment thread status.
+Names of custom properties to remove. Names that are not set are ignored.
+
+#### `setProperties` · [`[DesCommentThreadPropertyInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-comment-thread-property-input.md) list input
+
+Custom properties to add or change. A property that already exists gets the new value.
+
+#### `status` · [`DesCommentThreadStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/enums/des-comment-thread-status.md) enum
+
+Comment thread status. Omit to leave it unchanged.

@@ -14045,6 +14045,14 @@ input DesColorInput {
   rgbString: String
 }
 
+"A custom property to set on a comment thread."
+input DesCommentThreadPropertyInput {
+  "Property name. Must start with *ext.*, be at most 254 characters and not contain */*, *~*, *:* or whitespace. Names are case-sensitive."
+  name: String!
+  "Property value. Values up to 4000 characters are accepted on every deployment. Avoid spaces, *:* and *|* in values you may want to filter on."
+  value: String!
+}
+
 input DesComparisonRunInput {
   mode: DesComparisonMode!
   sourceReleaseId: ID!
@@ -14132,6 +14140,8 @@ input DesCreateCommentThreadInput {
   itemAsInternalObjectId: String
   "User or group mentions to add to the first comment. Omit to create a thread without mentions."
   mentions: [DesMentionInput!]
+  "Custom properties to set on the comment thread. At most 50."
+  properties: [DesCommentThreadPropertyInput!]
   "Comment thread release identifier."
   releaseId: String
   "Comment thread text."
@@ -15422,8 +15432,12 @@ input DesUpdateCommentThreadInput {
   commentThreadId: String!
   "Entity identifier."
   entityId: ID!
-  "Comment thread status."
-  status: DesCommentThreadStatus!
+  "Names of custom properties to remove. Names that are not set are ignored."
+  removeProperties: [String!]
+  "Custom properties to add or change. A property that already exists gets the new value."
+  setProperties: [DesCommentThreadPropertyInput!]
+  "Comment thread status. Omit to leave it unchanged."
+  status: DesCommentThreadStatus
 }
 
 "Input for updating component item parameters."

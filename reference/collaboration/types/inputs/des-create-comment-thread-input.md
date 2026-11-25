@@ -27,6 +27,7 @@ input DesCreateCommentThreadInput {
   itemAsDesignItemSchUniqueId: String
   itemAsInternalObjectId: String
   mentions: [DesMentionInput!]
+  properties: [DesCommentThreadPropertyInput!]
   releaseId: String
   text: String!
 }
@@ -73,6 +74,10 @@ Comment thread item as internal object identifier.
 #### `mentions` · [`[DesMentionInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-mention-input.md) list input
 
 User or group mentions to add to the first comment. Omit to create a thread without mentions.
+
+#### `properties` · [`[DesCommentThreadPropertyInput!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/collaboration/types/inputs/des-comment-thread-property-input.md) list input
+
+Custom properties to set on the comment thread. At most 50.
 
 #### `releaseId` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

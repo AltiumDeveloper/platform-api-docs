@@ -35,6 +35,6 @@ API types in this bounded context that represent Common Data Model (CDM) entitie
 | Mutations | 13 | 0 |
 | Subscriptions | 1 | 0 |
 | Objects | 34 | 0 |
-| Inputs | 16 | 0 |
+| Inputs | 17 | 0 |
 | Enums | 7 | 0 |
 | Unions | 1 | 0 |
