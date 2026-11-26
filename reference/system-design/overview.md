@@ -56,7 +56,7 @@ Look up entities by identifier:
 | Kind | Items | Experimental |
 | - | - | - |
 | Queries | 11 | 0 |
-| Mutations | 9 | 0 |
-| Objects | 53 | 0 |
-| Inputs | 9 | 0 |
+| Mutations | 11 | 0 |
+| Objects | 55 | 0 |
+| Inputs | 11 | 0 |
 | Enums | 4 | 0 |

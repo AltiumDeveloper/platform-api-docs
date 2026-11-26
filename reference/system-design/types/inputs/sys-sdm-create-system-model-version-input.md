@@ -16,6 +16,7 @@ deprecated: false
 ```graphql
 input SysSdmCreateSystemModelVersionInput {
   applicationVersion: String
+  onlyCreateIfChangesDetected: Boolean
   schemaVersion: String
   systemModelId: ID!
   systemModelVersionFileId: String!
@@ -27,6 +28,10 @@ input SysSdmCreateSystemModelVersionInput {
 ### Fields
 
 #### `applicationVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
+
+#### `onlyCreateIfChangesDetected` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
+
+When true and the content is unchanged compared to the latest version (ignoring version number, schema version and metadata), no new version is created and the latest version is returned.
 
 #### `schemaVersion` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

@@ -1,4 +1,4 @@
-# Altium 365 API — Library Management schema slice (~26194 tokens)
+# Altium 365 API — Library Management schema slice (~26277 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -1452,6 +1452,8 @@ type DesPartSearchFixedFacets {
   hasBomOrProjectUsages: [DesPartSearchFacetValue!]!
   "Indicates if the part is used in components."
   hasComponentsUsages: [DesPartSearchFacetValue!]!
+  "Indicates if the part has stock globally or in the custom part provider."
+  hasStock: [DesPartSearchFacetValue!]!
   "The lifecycle state names. Not calculated yet, so it is always empty."
   lifecycleStates: [DesPartSearchFacetValue!]!
   "The manufacturer names."
@@ -2579,6 +2581,8 @@ input DesPartSearchFilterInput {
   hasBomOrProjectsUsages: Boolean
   "Specifies if the part has usages in components."
   hasComponentsUsages: Boolean
+  "Specifies if the part has stock globally or in the custom part provider."
+  hasStock: Boolean
   "Specifies if the part has any usages."
   hasUsages: Boolean
   "The keyword to search for."
@@ -2653,6 +2657,8 @@ input DesPartSortInput {
   attribute: DesPartAttributeSortInput
   "The sort order for the category name."
   categoryName: SortEnumType
+  "The sort order for whether the part has stock. Ascending puts parts without stock first."
+  hasStock: SortEnumType
   "The sort order for the lifecycle state name. Not supported yet and must not be provided: lifecycle data is not indexed."
   lifecycleState: SortEnumType
   "The sort order for the manufacturer name."

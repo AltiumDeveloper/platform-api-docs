@@ -3358,6 +3358,8 @@ type DesPartSearchFixedFacets {
   hasBomOrProjectUsages: [DesPartSearchFacetValue!]!
   "Indicates if the part is used in components."
   hasComponentsUsages: [DesPartSearchFacetValue!]!
+  "Indicates if the part has stock globally or in the custom part provider."
+  hasStock: [DesPartSearchFacetValue!]!
   "The lifecycle state names. Not calculated yet, so it is always empty."
   lifecycleStates: [DesPartSearchFacetValue!]!
   "The manufacturer names."
@@ -8890,6 +8892,8 @@ type Mutation {
   sysEsdExportDocument(input: SysEsdExportDocumentInput!): SysEsdExportDocumentPayload!
   "Imports new ESD Document."
   sysEsdImportDocument(input: SysEsdImportDocumentInput!): SysEsdImportDocumentPayload!
+  "Builds the System Data Model from the ESD Document using the latest stored version as the baseline and pushes it to the System Data Model service, which creates a new version only if changes are detected. Returns the identifier of the resulting System Data Model version."
+  sysEsdPushSdmIfChanged(input: SysEsdPushSdmIfChangedInput!): SysEsdPushSdmIfChangedPayload!
   "Updates the ESD Document."
   sysEsdUpdateDocument(input: SysEsdUpdateDocumentInput!): SysEsdUpdateDocumentPayload!
   "Deletes an uploaded user software library."
@@ -8900,6 +8904,8 @@ type Mutation {
   sysSdmBuildSystemModelFromSolution(input: SysSdmBuildSystemModelFromSolutionInput!): SysSdmBuildSystemModelFromSolutionPayload!
   "Adds a new system model."
   sysSdmCreateSystemModelVersion(input: SysSdmCreateSystemModelVersionInput!): SysSdmCreateSystemModelVersionPayload!
+  "Builds the System Data Model from the solution's first ESD document using the latest stored version as the baseline. If it differs from the latest version (ignoring version number, schema version and metadata), stores it as a new version and returns that version; otherwise returns the latest version."
+  sysSdmSyncSystemModelFromSolution(input: SysSdmSyncSystemModelFromSolutionInput!): SysSdmSyncSystemModelFromSolutionPayload!
 }
 
 "Information about pagination in a connection."
@@ -12812,6 +12818,12 @@ type SysEsdPortAssociation {
   softwareComponentId: String!
 }
 
+"Result of pushing the System Data Model built from an ESD document."
+type SysEsdPushSdmIfChangedPayload {
+  "Identifier of the resulting System Data Model version: the new one, or the latest one if nothing changed."
+  sdmVersionId: String!
+}
+
 type SysEsdSoftwareComponent {
   id: String!
   name: String
@@ -13075,6 +13087,10 @@ type SysSdmSoftwareStackInstance {
   parameters: [SysSdmParameter!]
   peripheralInstanceId: String
   specification: SysSdmSoftwareSpecification!
+}
+
+type SysSdmSyncSystemModelFromSolutionPayload {
+  sysSdmSystemModelVersion: SysSdmSystemModelVersion
 }
 
 type SysSdmSystemDataModelContent {
@@ -14872,6 +14888,8 @@ input DesPartSearchFilterInput {
   hasBomOrProjectsUsages: Boolean
   "Specifies if the part has usages in components."
   hasComponentsUsages: Boolean
+  "Specifies if the part has stock globally or in the custom part provider."
+  hasStock: Boolean
   "Specifies if the part has any usages."
   hasUsages: Boolean
   "The keyword to search for."
@@ -14946,6 +14964,8 @@ input DesPartSortInput {
   attribute: DesPartAttributeSortInput
   "The sort order for the category name."
   categoryName: SortEnumType
+  "The sort order for whether the part has stock. Ascending puts parts without stock first."
+  hasStock: SortEnumType
   "The sort order for the lifecycle state name. Not supported yet and must not be provided: lifecycle data is not indexed."
   lifecycleState: SortEnumType
   "The sort order for the manufacturer name."
@@ -19113,6 +19133,14 @@ input SysEsdImportDocumentInput {
   id: String!
 }
 
+"Input for pushing the System Data Model built from an ESD document."
+input SysEsdPushSdmIfChangedInput {
+  "Identifier of the ESD document to build the System Data Model from."
+  id: ID!
+  "Identifier of the system model to push the System Data Model to."
+  sdmId: ID!
+}
+
 "Input for updating an existing ESD document."
 input SysEsdUpdateDocumentInput {
   "New description of the ESD document. When null, the description is left unchanged."
@@ -19142,11 +19170,17 @@ input SysSdmBuildSystemModelFromSolutionInput {
 
 input SysSdmCreateSystemModelVersionInput {
   applicationVersion: String
+  "When true and the content is unchanged compared to the latest version (ignoring version number, schema version and metadata), no new version is created and the latest version is returned."
+  onlyCreateIfChangesDetected: Boolean
   schemaVersion: String
   systemModelId: ID!
   systemModelVersionFileId: String!
   tags: [String!]
   version: Int!
+}
+
+input SysSdmSyncSystemModelFromSolutionInput {
+  solutionId: ID!
 }
 
 "**Experimental**"

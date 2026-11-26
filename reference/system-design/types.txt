@@ -11,6 +11,7 @@
 - [SysEsdParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-parameter.md)
 - [SysEsdPort](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-port.md)
 - [SysEsdPortAssociation](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-port-association.md)
+- [SysEsdPushSdmIfChangedPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-push-sdm-if-changed-payload.md): Result of pushing the System Data Model built from an ESD document.
 - [SysEsdSoftwareComponent](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-software-component.md)
 - [SysEsdUpdateDocumentPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-esd-update-document-payload.md): Result of updating an ESD document.
 - [SysLibDeleteSoftwareLibraryPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-lib-delete-software-library-payload.md)
@@ -35,17 +36,20 @@
 - [SysSdmParameter](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-parameter.md)
 - [SysSdmPeripheral](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-peripheral.md)
 - [SysSdmSchemaRegistryEntry](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-schema-registry-entry.md)
+- [SysSdmSyncSystemModelFromSolutionPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-sync-system-model-from-solution-payload.md)
 - [SysSdmSystemDataModelContent](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-data-model-content.md)
 - [SysSdmSystemModelVersionMetadata](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model-version-metadata.md)
 - [SysEsdCreateDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-create-document-input.md): Input for creating a new ESD document.
 - [SysEsdDeleteDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-delete-document-input.md): Input for deleting an ESD document.
 - [SysEsdExportDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-export-document-input.md): Input for exporting an ESD document.
 - [SysEsdImportDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-import-document-input.md): Input for importing content into an existing ESD document.
+- [SysEsdPushSdmIfChangedInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-push-sdm-if-changed-input.md): Input for pushing the System Data Model built from an ESD document.
 - [SysEsdUpdateDocumentInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-esd-update-document-input.md): Input for updating an existing ESD document.
 - [SysLibDeleteSoftwareLibraryInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-lib-delete-software-library-input.md)
 - [SysLibUploadSoftwareLibraryInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-lib-upload-software-library-input.md)
 - [SysSdmBuildSystemModelFromSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-sdm-build-system-model-from-solution-input.md)
 - [SysSdmCreateSystemModelVersionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-sdm-create-system-model-version-input.md)
+- [SysSdmSyncSystemModelFromSolutionInput](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/inputs/sys-sdm-sync-system-model-from-solution-input.md)
 - [SysSdmDmGpioMode](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-dm-gpio-mode.md)
 - [SysSdmDmPeripheralVirtualization](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-dm-peripheral-virtualization.md)
 - [SysSdmDmPortMode](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/enums/sys-sdm-dm-port-mode.md)

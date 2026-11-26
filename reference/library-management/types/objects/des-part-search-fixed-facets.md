@@ -20,6 +20,7 @@ type DesPartSearchFixedFacets {
   categoryNames: [DesPartSearchFacetValue!]!
   hasBomOrProjectUsages: [DesPartSearchFacetValue!]!
   hasComponentsUsages: [DesPartSearchFacetValue!]!
+  hasStock: [DesPartSearchFacetValue!]!
   lifecycleStates: [DesPartSearchFacetValue!]!
   manufacturerNames: [DesPartSearchFacetValue!]!
   overallHealthCheckStatuses: [DesPartSearchFacetValue!]!
@@ -40,6 +41,10 @@ Indicates if the part has BOM or project usages.
 #### `hasComponentsUsages` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object
 
 Indicates if the part is used in components.
+
+#### `hasStock` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object
+
+Indicates if the part has stock globally or in the custom part provider.
 
 #### `lifecycleStates` · [`[DesPartSearchFacetValue!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/library-management/types/objects/des-part-search-facet-value.md) non-null object
 

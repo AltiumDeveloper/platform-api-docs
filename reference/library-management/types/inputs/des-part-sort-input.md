@@ -19,6 +19,7 @@ Represents the input for sorting parts.
 input DesPartSortInput {
   attribute: DesPartAttributeSortInput
   categoryName: SortEnumType
+  hasStock: SortEnumType
   lifecycleState: SortEnumType
   manufacturerName: SortEnumType
   medianPrice1000: SortEnumType
@@ -35,6 +36,10 @@ The sort order for the attribute.
 #### `categoryName` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 
 The sort order for the category name.
+
+#### `hasStock` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
+
+The sort order for whether the part has stock. Ascending puts parts without stock first.
 
 #### `lifecycleState` · [`SortEnumType`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/enums/sort-enum-type.md) enum
 

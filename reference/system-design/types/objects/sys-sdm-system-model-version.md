@@ -22,7 +22,7 @@ deprecated: false
 
 ### Member Of
 
-[`SysSdmCreateSystemModelVersionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-create-system-model-version-payload.md) object · [`SysSdmSystemModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model.md) object
+[`SysSdmCreateSystemModelVersionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-create-system-model-version-payload.md) object · [`SysSdmSyncSystemModelFromSolutionPayload`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-sync-system-model-from-solution-payload.md) object · [`SysSdmSystemModel`](https://altiumdeveloper.github.io/platform-api-docs/reference/system-design/types/objects/sys-sdm-system-model.md) object
 
 ```graphql
 type SysSdmSystemModelVersion {

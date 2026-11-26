@@ -22,6 +22,7 @@ input DesPartSearchFilterInput {
   customPartSourceName: [String!]
   hasBomOrProjectsUsages: Boolean
   hasComponentsUsages: Boolean
+  hasStock: Boolean
   hasUsages: Boolean
   keyword: String
   lifecycleState: [String!]
@@ -56,6 +57,10 @@ Specifies if the part has usages in BOM, projects, or assemblies.
 #### `hasComponentsUsages` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 
 Specifies if the part has usages in components.
+
+#### `hasStock` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
+
+Specifies if the part has stock globally or in the custom part provider.
 
 #### `hasUsages` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
 

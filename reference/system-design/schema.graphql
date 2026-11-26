@@ -1,4 +1,4 @@
-# Altium 365 API — System Design schema slice (~3506 tokens)
+# Altium 365 API — System Design schema slice (~3936 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -40,6 +40,8 @@ type Mutation {
   sysEsdExportDocument(input: SysEsdExportDocumentInput!): SysEsdExportDocumentPayload!
   "Imports new ESD Document."
   sysEsdImportDocument(input: SysEsdImportDocumentInput!): SysEsdImportDocumentPayload!
+  "Builds the System Data Model from the ESD Document using the latest stored version as the baseline and pushes it to the System Data Model service, which creates a new version only if changes are detected. Returns the identifier of the resulting System Data Model version."
+  sysEsdPushSdmIfChanged(input: SysEsdPushSdmIfChangedInput!): SysEsdPushSdmIfChangedPayload!
   "Updates the ESD Document."
   sysEsdUpdateDocument(input: SysEsdUpdateDocumentInput!): SysEsdUpdateDocumentPayload!
   "Deletes an uploaded user software library."
@@ -50,6 +52,8 @@ type Mutation {
   sysSdmBuildSystemModelFromSolution(input: SysSdmBuildSystemModelFromSolutionInput!): SysSdmBuildSystemModelFromSolutionPayload!
   "Adds a new system model."
   sysSdmCreateSystemModelVersion(input: SysSdmCreateSystemModelVersionInput!): SysSdmCreateSystemModelVersionPayload!
+  "Builds the System Data Model from the solution's first ESD document using the latest stored version as the baseline. If it differs from the latest version (ignoring version number, schema version and metadata), stores it as a new version and returns that version; otherwise returns the latest version."
+  sysSdmSyncSystemModelFromSolution(input: SysSdmSyncSystemModelFromSolutionInput!): SysSdmSyncSystemModelFromSolutionPayload!
 }
 
 type SysEsdCompiledMetadata {
@@ -153,6 +157,12 @@ type SysEsdPortAssociation {
   portId: String!
   portLibraryName: String!
   softwareComponentId: String!
+}
+
+"Result of pushing the System Data Model built from an ESD document."
+type SysEsdPushSdmIfChangedPayload {
+  "Identifier of the resulting System Data Model version: the new one, or the latest one if nothing changed."
+  sdmVersionId: String!
 }
 
 type SysEsdSoftwareComponent {
@@ -420,6 +430,10 @@ type SysSdmSoftwareStackInstance {
   specification: SysSdmSoftwareSpecification!
 }
 
+type SysSdmSyncSystemModelFromSolutionPayload {
+  sysSdmSystemModelVersion: SysSdmSystemModelVersion
+}
+
 type SysSdmSystemDataModelContent {
   content: String!
   "Uploads the content as a JSON file to the Files service and returns a pre-signed download URL, valid for one hour."
@@ -485,6 +499,14 @@ input SysEsdImportDocumentInput {
   id: String!
 }
 
+"Input for pushing the System Data Model built from an ESD document."
+input SysEsdPushSdmIfChangedInput {
+  "Identifier of the ESD document to build the System Data Model from."
+  id: ID!
+  "Identifier of the system model to push the System Data Model to."
+  sdmId: ID!
+}
+
 "Input for updating an existing ESD document."
 input SysEsdUpdateDocumentInput {
   "New description of the ESD document. When null, the description is left unchanged."
@@ -514,11 +536,17 @@ input SysSdmBuildSystemModelFromSolutionInput {
 
 input SysSdmCreateSystemModelVersionInput {
   applicationVersion: String
+  "When true and the content is unchanged compared to the latest version (ignoring version number, schema version and metadata), no new version is created and the latest version is returned."
+  onlyCreateIfChangesDetected: Boolean
   schemaVersion: String
   systemModelId: ID!
   systemModelVersionFileId: String!
   tags: [String!]
   version: Int!
+}
+
+input SysSdmSyncSystemModelFromSolutionInput {
+  solutionId: ID!
 }
 
 enum SysSdmDmGpioMode {
