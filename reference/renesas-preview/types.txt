@@ -139,8 +139,6 @@
 - [DmExecuteDeviceExtractionFromConfigurationUrlInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-execute-device-extraction-from-configuration-url-input.md) [EXPERIMENTAL]
 - [DmRequiredPeripheralPayloadInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-required-peripheral-payload-input.md) [EXPERIMENTAL]
 - [DmUpdateDeviceFromSdmInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/dm-update-device-from-sdm-input.md) [EXPERIMENTAL]
-- [MotorStudioProjectGridFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/motor-studio-project-grid-filter-input.md) [EXPERIMENTAL]
-- [MotorStudioProjectGridSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/motor-studio-project-grid-sort-input.md) [EXPERIMENTAL]
 - [RsaMotorStudioCreateEasyModeConfigInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-easy-mode-config-input.md): Represents input value for motor studio project easymode config creation. [EXPERIMENTAL]
 - [RsaMotorStudioCreateProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-project-input.md): Represents input value for motor studio project creation. [EXPERIMENTAL]
 - [RsaMotorStudioCreateScopeCaptureInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-create-scope-capture-input.md) [EXPERIMENTAL]
@@ -160,8 +158,6 @@
 - [RsaMotorStudioDeleteVariableSetInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-delete-variable-set-input.md) [EXPERIMENTAL]
 - [RsaMotorStudioLinkTuningToProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-link-tuning-to-project-input.md) [EXPERIMENTAL]
 - [RsaMotorStudioParameterEvidenceInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-parameter-evidence-input.md) [EXPERIMENTAL]
-- [RsaMotorStudioProjectFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-project-filter-input.md) [EXPERIMENTAL]
-- [RsaMotorStudioProjectSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-project-sort-input.md) [EXPERIMENTAL]
 - [RsaMotorStudioScopeChannelInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-scope-channel-input.md) [EXPERIMENTAL]
 - [RsaMotorStudioTuningModuleInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-tuning-module-input.md) [EXPERIMENTAL]
 - [RsaMotorStudioTuningParameterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/rsa-motor-studio-tuning-parameter-input.md) [EXPERIMENTAL]
@@ -204,11 +200,11 @@
 - [SftSoftwareUpdateProjectInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-input.md)
 - [SftSoftwareUpdateProjectPropertiesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/inputs/sft-software-update-project-properties-input.md)
 - [DmModelEvaluationStrategy](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/dm-model-evaluation-strategy.md): Controls how device models are evaluated with respect to devices and boards, including preferred and fallback behaviors. [EXPERIMENTAL]
-- [ParamSource](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/param-source.md) [EXPERIMENTAL]
+- [RsaScopeTriggerEdge](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-scope-trigger-edge.md) [EXPERIMENTAL]
+- [RsaScopeTriggerMode](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-scope-trigger-mode.md) [EXPERIMENTAL]
+- [RsaTuningModuleType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-tuning-module-type.md) [EXPERIMENTAL]
+- [RsaTuningParamSource](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-tuning-param-source.md) [EXPERIMENTAL]
+- [RsaTuningType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-tuning-type.md) [EXPERIMENTAL]
 - [SftSimSimulationRepositoryType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/sft-sim-simulation-repository-type.md)
 - [SftSimSimulationType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/sft-sim-simulation-type.md)
 - [SftSoftwareRepositoryType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/sft-software-repository-type.md)
-- [TriggerEdge](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/trigger-edge.md) [EXPERIMENTAL]
-- [TriggerMode](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/trigger-mode.md) [EXPERIMENTAL]
-- [TuningModuleType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-module-type.md) [EXPERIMENTAL]
-- [TuningType](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-type.md) [EXPERIMENTAL]

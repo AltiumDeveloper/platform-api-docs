@@ -18,7 +18,7 @@ For AI assistants: [llms.txt](https://altiumdeveloper.github.io/platform-api-doc
 | Kind | Items | Experimental |
 | - | - | - |
 | Objects | 2 | 0 |
-| Inputs | 8 | 3 |
+| Inputs | 4 | 0 |
 | Enums | 1 | 0 |
 | Interfaces | 2 | 0 |
 | Scalars | 13 | 1 |

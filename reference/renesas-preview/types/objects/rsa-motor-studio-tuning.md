@@ -39,7 +39,7 @@ type RsaMotorStudioTuning {
   name: String!
   path: String!
   revisions: [RsaMotorStudioTuningRevision!]!
-  tuningType: TuningType!
+  tuningType: RsaTuningType!
 }
 ```
 
@@ -73,4 +73,4 @@ type RsaMotorStudioTuning {
 
 #### `revisions` · [`[RsaMotorStudioTuningRevision!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-revision.md) non-null object
 
-#### `tuningType` · [`TuningType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-type.md) non-null enum
+#### `tuningType` · [`RsaTuningType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-tuning-type.md) non-null enum

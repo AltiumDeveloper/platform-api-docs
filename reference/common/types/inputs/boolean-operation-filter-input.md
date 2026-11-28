@@ -11,7 +11,7 @@ deprecated: false
 
 ### Member Of
 
-[`GloAppFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-app-filter-input.md) input · [`GridFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/grid-filter-input.md) input · [`PathFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/inputs/path-filter-input.md) input
+[`GloAppFilterInput`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-app-filter-input.md) input
 
 ```graphql
 input BooleanOperationFilterInput {

@@ -18,10 +18,12 @@ Represents the filter for searching evaluation kits.
 ```graphql
 input SupEvalKitSearchFilterInput {
   description: String
+  hasRefDesigns: Boolean
   ids: [ID!]
   partIds: [String!]
   q: String
   refDesignIds: [ID!]
+  status: SupEvalKitStatus
   title: String
 }
 ```
@@ -31,6 +33,10 @@ input SupEvalKitSearchFilterInput {
 #### `description` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 Searches by description.
+
+#### `hasRefDesigns` · [`Boolean`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/boolean.md) scalar
+
+Filter for evaluation kit that have any valid reference design associated if specified.
 
 #### `ids` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
@@ -47,6 +53,10 @@ Searches by important fields (title, description).
 #### `refDesignIds` · [`[ID!]`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/id.md) list scalar
 
 Searches by reference design identifiers.
+
+#### `status` · [`SupEvalKitStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-status.md) enum
+
+Filter by evaluation kit status if specified.
 
 #### `title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

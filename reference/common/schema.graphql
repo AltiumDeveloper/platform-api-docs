@@ -1,4 +1,4 @@
-# Altium 365 API — Common schema slice (~1637 tokens)
+# Altium 365 API — Common schema slice (~1299 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -52,56 +52,11 @@ input DateTimeOperationFilterInput {
   nlte: DateTime
 }
 
-"**Experimental**"
-input GridFilterInput @experimental {
-  "**Experimental**"
-  and: [GridFilterInput!]
-  "**Experimental**"
-  hasTenant: BooleanOperationFilterInput
-  "**Experimental**"
-  isInvalid: BooleanOperationFilterInput
-  "**Experimental**"
-  isWellFormed: BooleanOperationFilterInput
-  "**Experimental**"
-  or: [GridFilterInput!]
-  "**Experimental**"
-  resourcePath: PathFilterInput
-  "**Experimental**"
-  value: StringOperationFilterInput
-}
-
-input IntOperationFilterInput {
-  eq: Int
-  gt: Int
-  gte: Int
-  in: [Int]
-  lt: Int
-  lte: Int
-  neq: Int
-  ngt: Int
-  ngte: Int
-  nin: [Int]
-  nlt: Int
-  nlte: Int
-}
-
 input ListFilterInputTypeOfDesDesignItemParameterFilterInput {
   all: DesDesignItemParameterFilterInput
   any: Boolean
   none: DesDesignItemParameterFilterInput
   some: DesDesignItemParameterFilterInput
-}
-
-"**Experimental**"
-input PathFilterInput @experimental {
-  "**Experimental**"
-  and: [PathFilterInput!]
-  "**Experimental**"
-  count: IntOperationFilterInput
-  "**Experimental**"
-  isEmpty: BooleanOperationFilterInput
-  "**Experimental**"
-  or: [PathFilterInput!]
 }
 
 input StringOperationFilterInput {
@@ -117,34 +72,6 @@ input StringOperationFilterInput {
   nstartsWith: String
   or: [StringOperationFilterInput!]
   startsWith: String
-}
-
-"**Experimental**"
-input UuidOperationFilterInput @experimental {
-  "**Experimental**"
-  eq: UUID
-  "**Experimental**"
-  gt: UUID
-  "**Experimental**"
-  gte: UUID
-  "**Experimental**"
-  in: [UUID]
-  "**Experimental**"
-  lt: UUID
-  "**Experimental**"
-  lte: UUID
-  "**Experimental**"
-  neq: UUID
-  "**Experimental**"
-  ngt: UUID
-  "**Experimental**"
-  ngte: UUID
-  "**Experimental**"
-  nin: [UUID]
-  "**Experimental**"
-  nlt: UUID
-  "**Experimental**"
-  nlte: UUID
 }
 
 "Represents the sort direction."

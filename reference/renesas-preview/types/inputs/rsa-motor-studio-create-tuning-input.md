@@ -25,7 +25,7 @@ input RsaMotorStudioCreateTuningInput {
   folderId: String!
   name: String!
   path: String!
-  tuningType: TuningType!
+  tuningType: RsaTuningType!
 }
 ```
 
@@ -39,4 +39,4 @@ input RsaMotorStudioCreateTuningInput {
 
 #### `path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `tuningType` · [`TuningType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-type.md) non-null enum
+#### `tuningType` · [`RsaTuningType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-tuning-type.md) non-null enum

@@ -8660,7 +8660,7 @@ type Mutation {
   platformWorkspaceTokenCreate(input: PlatformWorkspaceTokenCreateInput!): PlatformWorkspaceTokenCreatePayload!
   "**Experimental** Add an easymode config for the specified project."
   rsaMotorStudioCreateEasyModeConfig(input: RsaMotorStudioCreateEasyModeConfigInput!): RsaMotorStudioCreateEasyModeConfigPayload! @experimental
-  "**Experimental** Add new MotorStudioProject"
+  "**Experimental** Add new motor studio project."
   rsaMotorStudioCreateProject(input: RsaMotorStudioCreateProjectInput!): RsaMotorStudioCreateProjectPayload! @experimental
   "**Experimental** Create a scope capture for the specified project and scope configuration."
   rsaMotorStudioCreateScopeCapture(input: RsaMotorStudioCreateScopeCaptureInput!): RsaMotorStudioCreateScopeCapturePayload! @experimental
@@ -8692,7 +8692,7 @@ type Mutation {
   rsaMotorStudioUnlinkTuningFromProject(input: RsaMotorStudioUnlinkTuningFromProjectInput!): RsaMotorStudioUnlinkTuningFromProjectPayload! @experimental
   "**Experimental** Update an easymode config for the specified project (provided sliders will become the entire list)."
   rsaMotorStudioUpdateEasyModeConfig(input: RsaMotorStudioUpdateEasyModeConfigInput!): RsaMotorStudioUpdateEasyModeConfigPayload! @experimental
-  "**Experimental** Update a MotorStudioProject"
+  "**Experimental** Update a motor studio project."
   rsaMotorStudioUpdateProject(input: RsaMotorStudioUpdateProjectInput!): RsaMotorStudioUpdateProjectPayload! @experimental
   "**Experimental** Update a scope configuration for the specified project (provided views/channels become the entire list)."
   rsaMotorStudioUpdateScopeConfig(input: RsaMotorStudioUpdateScopeConfigInput!): RsaMotorStudioUpdateScopeConfigPayload! @experimental
@@ -8815,13 +8815,15 @@ type Mutation {
   "Replace all parameters on an evaluation kit. Deletes all existing parameters and values, then inserts the new ones."
   supEvalKitSetParameters(input: SupEvalKitSetParametersInput!): SupEvalKitSetParametersPayload!
   "Modify a software project compatible evaluation kit."
-  supEvalKitSoftwareProjectCompatibleEvalKit(input: SupEvalKitSoftwareProjectCompatibleEvalKitInput!): SupEvalKitSoftwareProjectCompatibleEvalKitPayload!
+  supEvalKitSoftwareProjectCompatibleEvalKit(input: SupEvalKitSoftwareProjectCompatibleEvalKitInput!): SupEvalKitSoftwareProjectCompatibleEvalKitPayload! @deprecated(reason: "supEvalKitSoftwareProjectCompatibleEvalKit is deprecated and no longer accepted.")
   "Sort preview images of an evaluation kit."
   supEvalKitSortPreviewImages(input: SupEvalKitSortPreviewImagesInput!): SupEvalKitSortPreviewImagesPayload!
   "Unset a specific main reference design for an evaluation kit."
   supEvalKitUnsetMainRefDesign(input: SupEvalKitUnsetMainRefDesignInput!): SupEvalKitUnsetMainRefDesignPayload!
   "Update a evaluation kit."
   supEvalKitUpdateEvalKit(input: SupEvalKitUpdateEvalKitInput!): SupEvalKitUpdateEvalKitPayload!
+  "Update the status of an evaluation kit."
+  supEvalKitUpdateEvalKitStatus(input: SupEvalKitUpdateEvalKitStatusInput!): SupEvalKitUpdateEvalKitStatusPayload!
   "Create a new software project."
   supSoftwareProjectCreateSoftwareProject(input: SupSoftwareProjectCreateSoftwareProjectInput!): SupSoftwareProjectCreateSoftwareProjectPayload!
   "Delete a software project."
@@ -9879,10 +9881,10 @@ type Query {
   rsaMotorStudioEasyModeConfigById(configId: String!, projectId: ID!): RsaMotorStudioEasyModeConfig @experimental
   "**Experimental** List existing easymode configs for a project."
   rsaMotorStudioEasyModeConfigs(projectId: ID!): [RsaMotorStudioEasyModeConfig!]! @experimental
-  "**Experimental** Retrieves a MotorStudioProject"
+  "**Experimental** Retrieves a motor studio project."
   rsaMotorStudioProjectById(id: ID!): RsaMotorStudioProject! @experimental
-  "**Experimental** Retrieves collection of MotorStudioProject"
-  rsaMotorStudioProjects(order: [RsaMotorStudioProjectSortInput!], where: RsaMotorStudioProjectFilterInput): [RsaMotorStudioProject!]! @experimental
+  "**Experimental** Retrieves collection of motor studio projects."
+  rsaMotorStudioProjects: [RsaMotorStudioProject!]! @experimental
   "**Experimental** Gets motor studio projects by IDs."
   rsaMotorStudioProjectsByIds(ids: [ID!]!): [RsaMotorStudioProject!]! @experimental
   "**Experimental** Get a scope capture by id."
@@ -10352,7 +10354,7 @@ type RsaMotorStudioProject @experimental {
   modifiedById: ID @experimental @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
   "**Experimental**"
   name: String! @experimental
-  "**Experimental** Parent solutions linked to this MotorStudio project."
+  "**Experimental** Parent solutions linked to this motor studio project."
   parentSolutions: [SolSolution!]! @experimental
   "**Experimental** Collection of scope captures associated with the motor studio project."
   scopeCaptures: [RsaMotorStudioScopeCapture!]! @experimental
@@ -10431,11 +10433,11 @@ type RsaMotorStudioScopeConfig @experimental {
   "**Experimental**"
   samplesLength: Int!
   "**Experimental**"
-  triggerEdge: TriggerEdge!
+  triggerEdge: RsaScopeTriggerEdge!
   "**Experimental**"
   triggerLevel: Float!
   "**Experimental**"
-  triggerMode: TriggerMode!
+  triggerMode: RsaScopeTriggerMode!
   "**Experimental**"
   triggerSourceChannelIndex: Int!
   "**Experimental**"
@@ -10503,13 +10505,13 @@ type RsaMotorStudioTuning @experimental {
   "**Experimental**"
   revisions: [RsaMotorStudioTuningRevision!]!
   "**Experimental**"
-  tuningType: TuningType!
+  tuningType: RsaTuningType!
 }
 
 "**Experimental**"
 type RsaMotorStudioTuningModule @experimental {
   "**Experimental**"
-  moduleType: TuningModuleType!
+  moduleType: RsaTuningModuleType!
   "**Experimental**"
   parameters: [RsaMotorStudioTuningParameter!]!
   "**Experimental**"
@@ -10525,7 +10527,7 @@ type RsaMotorStudioTuningParameter @experimental {
   "**Experimental**"
   path: String!
   "**Experimental**"
-  source: ParamSource!
+  source: RsaTuningParamSource!
   "**Experimental**"
   units: String
   "**Experimental**"
@@ -11472,6 +11474,8 @@ type SupEvalKit {
   refDesigns: [SupRefDesign!]!
   "The source url."
   sourceUrl: String
+  "The evaluation kit status."
+  status: SupEvalKitStatus!
   "The evaluation kit title."
   title: String!
   "The last updated date."
@@ -11681,6 +11685,11 @@ type SupEvalKitUnsetMainRefDesignPayload {
 "Payload associated with updating a evaluation kit."
 type SupEvalKitUpdateEvalKitPayload {
   errors: [SupEvalKitUpdateEvalKitError!]
+}
+
+"Payload associated with updating the status of an evaluation kit."
+type SupEvalKitUpdateEvalKitStatusPayload {
+  errors: [SupEvalKitUpdateEvalKitStatusError!]
 }
 
 type SupImage {
@@ -13261,6 +13270,8 @@ union SupEvalKitSortPreviewImagesError = SupEvalKitOperationFailedError | SupEva
 union SupEvalKitUnsetMainRefDesignError = SupEvalKitOperationFailedError | SupEvalKitNotFoundError
 
 union SupEvalKitUpdateEvalKitError = SupEvalKitOperationFailedError | SupEvalKitNotFoundError
+
+union SupEvalKitUpdateEvalKitStatusError = SupEvalKitOperationFailedError | SupEvalKitNotFoundError
 
 union SupSoftwareProjectCreateSoftwareProjectError = SupSoftwareProjectOperationFailedError
 
@@ -16044,26 +16055,14 @@ input DesWorkspaceInsUserSettingsInput {
 
 "Specifies the filtering criteria for the workspace user list."
 input DesWorkspaceUserFilterInput {
-  "**Experimental**"
-  and: [DesWorkspaceUserFilterInput!] @experimental
   "Workspace specific identifiers of the groups."
   groupIds: [String!]
-  "**Experimental**"
-  id: GridFilterInput @experimental
-  "**Experimental**"
-  or: [DesWorkspaceUserFilterInput!] @experimental
   "The text that either the guest first or last names or emails must contain. Case-insensitive."
   text: String
   "Workspace specific identifiers of the users."
   userIds: [String!]
   "The specific type of users to search."
   userTypes: [DesWorkspaceUserType!]
-}
-
-"**Experimental**"
-input DesWorkspaceUserSortInput @experimental {
-  "**Experimental**"
-  id: SortEnumType
 }
 
 "**Experimental** Represents input value for generate design data mutation."
@@ -16973,39 +16972,6 @@ input GlobalTrackedEventReportInput {
 }
 
 "**Experimental**"
-input GridFilterInput @experimental {
-  "**Experimental**"
-  and: [GridFilterInput!]
-  "**Experimental**"
-  hasTenant: BooleanOperationFilterInput
-  "**Experimental**"
-  isInvalid: BooleanOperationFilterInput
-  "**Experimental**"
-  isWellFormed: BooleanOperationFilterInput
-  "**Experimental**"
-  or: [GridFilterInput!]
-  "**Experimental**"
-  resourcePath: PathFilterInput
-  "**Experimental**"
-  value: StringOperationFilterInput
-}
-
-input IntOperationFilterInput {
-  eq: Int
-  gt: Int
-  gte: Int
-  in: [Int]
-  lt: Int
-  lte: Int
-  neq: Int
-  ngt: Int
-  ngte: Int
-  nin: [Int]
-  nlt: Int
-  nlte: Int
-}
-
-"**Experimental**"
 input KgAddNodeInput @experimental {
   "**Experimental** An optional description of the entity."
   description: String
@@ -17040,38 +17006,6 @@ input ListFilterInputTypeOfDesDesignItemParameterFilterInput {
   any: Boolean
   none: DesDesignItemParameterFilterInput
   some: DesDesignItemParameterFilterInput
-}
-
-"**Experimental**"
-input MotorStudioProjectGridFilterInput @experimental {
-  "**Experimental**"
-  and: [MotorStudioProjectGridFilterInput!]
-  "**Experimental**"
-  or: [MotorStudioProjectGridFilterInput!]
-  "**Experimental**"
-  projectId: StringOperationFilterInput
-  "**Experimental**"
-  tenantId: UuidOperationFilterInput
-}
-
-"**Experimental**"
-input MotorStudioProjectGridSortInput @experimental {
-  "**Experimental**"
-  projectId: SortEnumType
-  "**Experimental**"
-  tenantId: SortEnumType
-}
-
-"**Experimental**"
-input PathFilterInput @experimental {
-  "**Experimental**"
-  and: [PathFilterInput!]
-  "**Experimental**"
-  count: IntOperationFilterInput
-  "**Experimental**"
-  isEmpty: BooleanOperationFilterInput
-  "**Experimental**"
-  or: [PathFilterInput!]
 }
 
 input PlatformKeyValueStoreAddInput {
@@ -17236,11 +17170,11 @@ input RsaMotorStudioCreateScopeConfigInput @experimental {
   "**Experimental**"
   samplesLength: Int!
   "**Experimental**"
-  triggerEdge: TriggerEdge!
+  triggerEdge: RsaScopeTriggerEdge!
   "**Experimental**"
   triggerLevel: Float!
   "**Experimental**"
-  triggerMode: TriggerMode!
+  triggerMode: RsaScopeTriggerMode!
   "**Experimental**"
   triggerSourceChannelIndex: Int!
   "**Experimental**"
@@ -17284,7 +17218,7 @@ input RsaMotorStudioCreateTuningInput @experimental {
   "**Experimental**"
   path: String!
   "**Experimental**"
-  tuningType: TuningType!
+  tuningType: RsaTuningType!
 }
 
 "**Experimental**"
@@ -17380,58 +17314,6 @@ input RsaMotorStudioParameterEvidenceInput @experimental {
 }
 
 "**Experimental**"
-input RsaMotorStudioProjectFilterInput @experimental {
-  "**Experimental**"
-  and: [RsaMotorStudioProjectFilterInput!]
-  "**Experimental**"
-  createdAt: DateTimeOperationFilterInput
-  "**Experimental**"
-  createdBy: DesWorkspaceUserFilterInput
-  "**Experimental**"
-  createdById: GridFilterInput
-  "**Experimental**"
-  description: StringOperationFilterInput
-  "**Experimental**"
-  folderId: StringOperationFilterInput
-  "**Experimental**"
-  id: MotorStudioProjectGridFilterInput
-  "**Experimental**"
-  modifiedAt: DateTimeOperationFilterInput
-  "**Experimental**"
-  modifiedBy: DesWorkspaceUserFilterInput
-  "**Experimental**"
-  modifiedById: GridFilterInput
-  "**Experimental**"
-  name: StringOperationFilterInput
-  "**Experimental**"
-  or: [RsaMotorStudioProjectFilterInput!]
-}
-
-"**Experimental**"
-input RsaMotorStudioProjectSortInput @experimental {
-  "**Experimental**"
-  createdAt: SortEnumType
-  "**Experimental**"
-  createdBy: DesWorkspaceUserSortInput
-  "**Experimental**"
-  createdById: SortEnumType
-  "**Experimental**"
-  description: SortEnumType
-  "**Experimental**"
-  folderId: SortEnumType
-  "**Experimental**"
-  id: MotorStudioProjectGridSortInput
-  "**Experimental**"
-  modifiedAt: SortEnumType
-  "**Experimental**"
-  modifiedBy: DesWorkspaceUserSortInput
-  "**Experimental**"
-  modifiedById: SortEnumType
-  "**Experimental**"
-  name: SortEnumType
-}
-
-"**Experimental**"
 input RsaMotorStudioScopeChannelInput @experimental {
   "**Experimental**"
   channelId: String
@@ -17450,7 +17332,7 @@ input RsaMotorStudioScopeChannelInput @experimental {
 "**Experimental**"
 input RsaMotorStudioTuningModuleInput @experimental {
   "**Experimental**"
-  moduleType: TuningModuleType!
+  moduleType: RsaTuningModuleType!
   "**Experimental**"
   parameters: [RsaMotorStudioTuningParameterInput!]!
   "**Experimental**"
@@ -17466,7 +17348,7 @@ input RsaMotorStudioTuningParameterInput @experimental {
   "**Experimental**"
   path: String!
   "**Experimental**"
-  source: ParamSource!
+  source: RsaTuningParamSource!
   "**Experimental**"
   units: String
   "**Experimental**"
@@ -17524,11 +17406,11 @@ input RsaMotorStudioUpdateScopeConfigInput @experimental {
   "**Experimental**"
   samplesLength: Int!
   "**Experimental**"
-  triggerEdge: TriggerEdge!
+  triggerEdge: RsaScopeTriggerEdge!
   "**Experimental**"
   triggerLevel: Float!
   "**Experimental**"
-  triggerMode: TriggerMode!
+  triggerMode: RsaScopeTriggerMode!
   "**Experimental**"
   triggerSourceChannelIndex: Int!
   "**Experimental**"
@@ -17578,7 +17460,7 @@ input RsaMotorStudioUpdateTuningInput @experimental {
   "**Experimental**"
   path: String
   "**Experimental**"
-  tuningType: TuningType
+  tuningType: RsaTuningType
 }
 
 "**Experimental**"
@@ -18046,6 +17928,8 @@ input SupEvalKitCreateEvalKitInput {
   sourceFile: SupEvalKitFileInput
   "The evaluation kit source url."
   sourceUrl: String
+  "The evaluation kit status. Defaults to DRAFT if not specified."
+  status: SupEvalKitStatus
   "The evaluation kit title."
   title: String!
 }
@@ -18151,6 +18035,8 @@ input SupEvalKitRemoveSoftwareProjectCompatibleEvalKitInput {
 input SupEvalKitSearchFilterInput {
   "Searches by description."
   description: String
+  "Filter for evaluation kit that have any valid reference design associated if specified."
+  hasRefDesigns: Boolean
   "Searches by evaluation kit identifiers."
   ids: [ID!]
   "Searches by part identifiers."
@@ -18159,6 +18045,8 @@ input SupEvalKitSearchFilterInput {
   q: String
   "Searches by reference design identifiers."
   refDesignIds: [ID!]
+  "Filter by evaluation kit status if specified."
+  status: SupEvalKitStatus
   "Searches by title."
   title: String
 }
@@ -18278,8 +18166,18 @@ input SupEvalKitUpdateEvalKitInput {
   sourceFile: SupEvalKitFileInput
   "The evaluation kit source url."
   sourceUrl: String
+  "The evaluation kit status. The current status is kept if not specified."
+  status: SupEvalKitStatus
   "The evaluation kit title."
   title: String
+}
+
+"Input for evaluation kit status update."
+input SupEvalKitUpdateEvalKitStatusInput {
+  "The evaluation kit identifier."
+  id: ID!
+  "The status of an evaluation kit to update."
+  status: SupEvalKitStatus!
 }
 
 input SupEvalKitUpdateSoftwareProjectCompatibleEvalKitInput {
@@ -19183,34 +19081,6 @@ input SysSdmSyncSystemModelFromSolutionInput {
   solutionId: ID!
 }
 
-"**Experimental**"
-input UuidOperationFilterInput @experimental {
-  "**Experimental**"
-  eq: UUID
-  "**Experimental**"
-  gt: UUID
-  "**Experimental**"
-  gte: UUID
-  "**Experimental**"
-  in: [UUID]
-  "**Experimental**"
-  lt: UUID
-  "**Experimental**"
-  lte: UUID
-  "**Experimental**"
-  neq: UUID
-  "**Experimental**"
-  ngt: UUID
-  "**Experimental**"
-  ngte: UUID
-  "**Experimental**"
-  nin: [UUID]
-  "**Experimental**"
-  nlt: UUID
-  "**Experimental**"
-  nlte: UUID
-}
-
 enum BomHealthCheckSeverity {
   ERROR
   FATAL
@@ -19910,11 +19780,53 @@ enum KgRelationSemantic @experimental {
 }
 
 "**Experimental**"
-enum ParamSource @experimental {
+enum RsaScopeTriggerEdge @experimental {
+  "**Experimental**"
+  BOTH
+  "**Experimental**"
+  FALL
+  "**Experimental**"
+  RISE
+}
+
+"**Experimental**"
+enum RsaScopeTriggerMode @experimental {
+  "**Experimental**"
+  AUTO
+  "**Experimental**"
+  NORMAL
+  "**Experimental**"
+  SINGLE
+}
+
+"**Experimental**"
+enum RsaTuningModuleType @experimental {
+  "**Experimental**"
+  BRUSHLESS_THREE_PHASE_MOTOR
+  "**Experimental**"
+  MOTOR
+  "**Experimental**"
+  PI_CURRENT_CONTROLLER
+  "**Experimental**"
+  PI_SPEED_CONTROLLER
+  "**Experimental**"
+  THREE_PHASE_INVERTER
+}
+
+"**Experimental**"
+enum RsaTuningParamSource @experimental {
   "**Experimental**"
   IDENT_RESULT
   "**Experimental**"
   USER_ENTERED
+}
+
+"**Experimental**"
+enum RsaTuningType @experimental {
+  "**Experimental**"
+  FOC3_PHASE_SENSORED
+  "**Experimental**"
+  FOC3_PHASE_SENSORLESS
 }
 
 enum SftSimSimulationRepositoryType {
@@ -19963,6 +19875,23 @@ enum SupEvalKitOrderField {
   TITLE
   "Order by last update date."
   UPDATED_AT
+}
+
+enum SupEvalKitStatus {
+  "The evaluation kit is approved and published and it has active status."
+  ACTIVE
+  "Work in progress, not yet submitted for review."
+  DRAFT
+  "The evaluation kit is not active."
+  INACTIVE
+  "Review or progress is paused pending further action."
+  ON_HOLD
+  "The evaluation kit was reviewed and rejected."
+  REJECTED
+  "The evaluation kit is currently under review."
+  REVIEWING
+  "Evaluation kit data has been submitted and awaits review."
+  SUBMITTED
 }
 
 "Valid document types for Part Family documentation."
@@ -20191,48 +20120,6 @@ enum SysSdmSoftwareComponentCategory {
   LIBRARY
   MIDDLEWARE
   OPERATING_SYSTEM
-}
-
-"**Experimental**"
-enum TriggerEdge @experimental {
-  "**Experimental**"
-  BOTH
-  "**Experimental**"
-  FALL
-  "**Experimental**"
-  RISE
-}
-
-"**Experimental**"
-enum TriggerMode @experimental {
-  "**Experimental**"
-  AUTO
-  "**Experimental**"
-  NORMAL
-  "**Experimental**"
-  SINGLE
-}
-
-"**Experimental**"
-enum TuningModuleType @experimental {
-  "**Experimental**"
-  BRUSHLESS_THREE_PHASE_MOTOR
-  "**Experimental**"
-  MOTOR
-  "**Experimental**"
-  PI_CURRENT_CONTROLLER
-  "**Experimental**"
-  PI_SPEED_CONTROLLER
-  "**Experimental**"
-  THREE_PHASE_INVERTER
-}
-
-"**Experimental**"
-enum TuningType @experimental {
-  "**Experimental**"
-  FOC3_PHASE_SENSORED
-  "**Experimental**"
-  FOC3_PHASE_SENSORLESS
 }
 
 directive @experimental on QUERY | MUTATION | SUBSCRIPTION | FIELD | FRAGMENT_DEFINITION | FRAGMENT_SPREAD | INLINE_FRAGMENT | VARIABLE_DEFINITION | SCALAR | OBJECT | FIELD_DEFINITION | ARGUMENT_DEFINITION | INTERFACE | UNION | ENUM | ENUM_VALUE | INPUT_OBJECT | INPUT_FIELD_DEFINITION

@@ -13,7 +13,7 @@ Payload associated with updating a software project compatible evaluation kits.
 
 ### Returned By
 
-[`supEvalKitSoftwareProjectCompatibleEvalKit`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-software-project-compatible-eval-kit.md) mutation
+[`supEvalKitSoftwareProjectCompatibleEvalKit`](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/supply/operations/mutations/sup-eval-kit-software-project-compatible-eval-kit.md) mutation
 
 ```graphql
 type SupEvalKitSoftwareProjectCompatibleEvalKitPayload {

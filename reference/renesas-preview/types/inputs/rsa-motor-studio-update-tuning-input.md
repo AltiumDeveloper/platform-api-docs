@@ -26,7 +26,7 @@ input RsaMotorStudioUpdateTuningInput {
   id: ID!
   name: String
   path: String
-  tuningType: TuningType
+  tuningType: RsaTuningType
 }
 ```
 
@@ -42,4 +42,4 @@ input RsaMotorStudioUpdateTuningInput {
 
 #### `path` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
-#### `tuningType` · [`TuningType`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-type.md) enum
+#### `tuningType` · [`RsaTuningType`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-tuning-type.md) enum

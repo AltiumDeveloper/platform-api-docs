@@ -1,7 +1,7 @@
 # Renesas (preview) — Altium 365 API
 > Renesas-specific device models, software projects and tools. Parked; not yet organised into bounded contexts.
 
-Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceModel/), [software](https://altiumdeveloper.github.io/cdm/subsets/software/), [ota](https://altiumdeveloper.github.io/cdm/subsets/ota/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/schema.graphql) (~24589 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/overview.md).
+Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceModel/), [software](https://altiumdeveloper.github.io/cdm/subsets/software/), [ota](https://altiumdeveloper.github.io/cdm/subsets/ota/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/schema.graphql) (~23915 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/overview.md).
 
 ## Entities
 - [DmAddressBlock](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/dm-address-block.md): AddressBlock — Address block with start, size, and optional registers and peripherals. Via: DmAddressSegment.blocks, DmPeripheralInstance.addressBlocks
@@ -29,7 +29,7 @@ Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceMode
 
 ## Entry points
 - [rsaMotorStudioEasyModeConfigById](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-easy-mode-config-by-id.md): Get an easymode config by id. [EXPERIMENTAL]
-- [rsaMotorStudioProjectById](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-project-by-id.md): Retrieves a MotorStudioProject [EXPERIMENTAL]
+- [rsaMotorStudioProjectById](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-project-by-id.md): Retrieves a motor studio project. [EXPERIMENTAL]
 - [rsaMotorStudioProjectsByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-projects-by-ids.md): Gets motor studio projects by IDs. [EXPERIMENTAL]
 - [rsaMotorStudioScopeCaptureById](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-scope-capture-by-id.md): Get a scope capture by id. [EXPERIMENTAL]
 - [rsaMotorStudioScopeConfigById](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-scope-config-by-id.md): Get a scope configuration by id. [EXPERIMENTAL]
@@ -63,7 +63,7 @@ Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceMode
 - [dmInterfaceSupportSummary](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/dm-interface-support-summary.md): Returns a summary of supported interfaces across all devices, including instance counts and device support details. [EXPERIMENTAL]
 - [dmInterfaceTypeModels](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/dm-interface-type-models.md): Returns the unified dictionary of supported interface (port) types, including display metadata and which are user-selectable. [EXPERIMENTAL]
 - [rsaMotorStudioEasyModeConfigs](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-easy-mode-configs.md): List existing easymode configs for a project. [EXPERIMENTAL]
-- [rsaMotorStudioProjects](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-projects.md): Retrieves collection of MotorStudioProject [EXPERIMENTAL]
+- [rsaMotorStudioProjects](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-projects.md): Retrieves collection of motor studio projects. [EXPERIMENTAL]
 - [rsaMotorStudioScopeCaptures](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-scope-captures.md): List scope captures for a project. [EXPERIMENTAL]
 - [rsaMotorStudioScopeConfigs](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-scope-configs.md): List scope configurations for a project. [EXPERIMENTAL]
 - [rsaMotorStudioTuningRevisionsByTuningId](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/queries/rsa-motor-studio-tuning-revisions-by-tuning-id.md): List tuning revisions for a tuning. [EXPERIMENTAL]
@@ -83,7 +83,7 @@ Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceMode
 - [dmExecuteDeviceExtractionFromConfigurationUrl](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/dm-execute-device-extraction-from-configuration-url.md) [EXPERIMENTAL]
 - [dmUpdateDeviceFromSdm](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/dm-update-device-from-sdm.md) [EXPERIMENTAL]
 - [rsaMotorStudioCreateEasyModeConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-create-easy-mode-config.md): Add an easymode config for the specified project. [EXPERIMENTAL]
-- [rsaMotorStudioCreateProject](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-create-project.md): Add new MotorStudioProject [EXPERIMENTAL]
+- [rsaMotorStudioCreateProject](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-create-project.md): Add new motor studio project. [EXPERIMENTAL]
 - [rsaMotorStudioCreateScopeCapture](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-create-scope-capture.md): Create a scope capture for the specified project and scope configuration. [EXPERIMENTAL]
 - [rsaMotorStudioCreateScopeConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-create-scope-config.md): Create a scope configuration for the specified project. [EXPERIMENTAL]
 - [rsaMotorStudioCreateTuning](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-create-tuning.md): Create a tuning. [EXPERIMENTAL]
@@ -99,7 +99,7 @@ Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceMode
 - [rsaMotorStudioLinkTuningToProject](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-link-tuning-to-project.md) [EXPERIMENTAL]
 - [rsaMotorStudioUnlinkTuningFromProject](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-unlink-tuning-from-project.md) [EXPERIMENTAL]
 - [rsaMotorStudioUpdateEasyModeConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-update-easy-mode-config.md): Update an easymode config for the specified project (provided sliders will become the entire list). [EXPERIMENTAL]
-- [rsaMotorStudioUpdateProject](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-update-project.md): Update a MotorStudioProject [EXPERIMENTAL]
+- [rsaMotorStudioUpdateProject](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-update-project.md): Update a motor studio project. [EXPERIMENTAL]
 - [rsaMotorStudioUpdateScopeConfig](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-update-scope-config.md): Update a scope configuration for the specified project (provided views/channels become the entire list). [EXPERIMENTAL]
 - [rsaMotorStudioUpdateTuning](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-update-tuning.md): Update a tuning. [EXPERIMENTAL]
 - [rsaMotorStudioUpdateVariableSet](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/rsa-motor-studio-update-variable-set.md): Update a variable set metadata for the specified project. [EXPERIMENTAL]
@@ -131,4 +131,4 @@ Concepts: [deviceModel](https://altiumdeveloper.github.io/cdm/subsets/deviceMode
 - [sftSoftwareUpdateProjectFirmware](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/operations/mutations/sft-software-update-project-firmware.md): Updates the Software Project firmware.
 
 ## Optional
-- [All types in Renesas (preview)](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types.txt): one line per type (~10399 tokens)
+- [All types in Renesas (preview)](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types.txt): one line per type (~10233 tokens)

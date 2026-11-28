@@ -34,6 +34,7 @@
 - [bomExportBomRelease](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/procurement/operations/mutations/bom-export-bom-release.md): Exports the specified BOM release into a file and provides a download URL. (deprecated: Use bomExportBomById() instead.)
 
 ## Supply
+- [supEvalKitSoftwareProjectCompatibleEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/supply/operations/mutations/sup-eval-kit-software-project-compatible-eval-kit.md): Modify a software project compatible evaluation kit. (deprecated: supEvalKitSoftwareProjectCompatibleEvalKit is deprecated and no longer accepted.)
 - [supRefDesignByIds](https://altiumdeveloper.github.io/platform-api-docs/reference/deprecated/supply/operations/queries/sup-ref-design-by-ids.md): Search a specific reference designs by its unique identifiers. (deprecated: Use 'supRefDesignsByIds' instead.)
 
 ## Renesas (preview)

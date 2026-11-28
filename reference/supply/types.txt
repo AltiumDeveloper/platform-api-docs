@@ -26,6 +26,7 @@
 - [SupEvalKitSortPreviewImagesPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-sort-preview-images-payload.md)
 - [SupEvalKitUnsetMainRefDesignPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-unset-main-ref-design-payload.md): Payload returned after unsetting the main reference design of an evaluation kit.
 - [SupEvalKitUpdateEvalKitPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-update-eval-kit-payload.md): Payload associated with updating a evaluation kit.
+- [SupEvalKitUpdateEvalKitStatusPayload](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit-update-eval-kit-status-payload.md): Payload associated with updating the status of an evaluation kit.
 - [SupImage](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-image.md)
 - [SupPartFamilyDocument](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-document.md): `SupPartFamilyDocument` contains the details for the documentation provided for a Part Family.
 - [SupPartFamilyFeatureMetadata](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-part-family-feature-metadata.md): `SupPartFamilyFeatureMetadata` contains additional information about a given feature.
@@ -124,6 +125,7 @@
 - [SupEvalKitSortPreviewImagesError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-sort-preview-images-error.md)
 - [SupEvalKitUnsetMainRefDesignError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-unset-main-ref-design-error.md)
 - [SupEvalKitUpdateEvalKitError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-update-eval-kit-error.md)
+- [SupEvalKitUpdateEvalKitStatusError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-eval-kit-update-eval-kit-status-error.md)
 - [SupSoftwareProjectCreateSoftwareProjectError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-create-software-project-error.md)
 - [SupSoftwareProjectDeleteSoftwareProjectError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-delete-software-project-error.md)
 - [SupSoftwareProjectPatchParametersError](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/unions/sup-software-project-patch-parameters-error.md)
@@ -186,6 +188,7 @@
 - [SupEvalKitSortPreviewImagesInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-sort-preview-images-input.md): Input for reordering preview images of an evaluation kit.
 - [SupEvalKitUnsetMainRefDesignInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-unset-main-ref-design-input.md): Input for unsetting the main reference design of an evaluation kit.
 - [SupEvalKitUpdateEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-eval-kit-input.md): Input for evaluation kit update.
+- [SupEvalKitUpdateEvalKitStatusInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-eval-kit-status-input.md): Input for evaluation kit status update.
 - [SupEvalKitUpdateSoftwareProjectCompatibleEvalKitInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-eval-kit-update-software-project-compatible-eval-kit-input.md)
 - [SupRefDesignFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-ref-design-filter-input.md): Input for filtering reference designs by additional conditions.
 - [SupRefDesignOrderInput](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/inputs/sup-ref-design-order-input.md): Input for ordering reference designs by one or more fields.
@@ -266,6 +269,7 @@
 - [SupEvalKitErrorCode](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-error-code.md)
 - [SupEvalKitOrderDirection](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-order-direction.md)
 - [SupEvalKitOrderField](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-order-field.md)
+- [SupEvalKitStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-status.md)
 - [SupPartFamilyDocumentType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-part-family-document-type.md): Valid document types for Part Family documentation.
 - [SupPartFamilyFeatureValueType](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-part-family-feature-value-type.md): Valid types a features value can take.
 - [SupRefDesignStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-ref-design-status.md)

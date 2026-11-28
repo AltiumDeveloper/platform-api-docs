@@ -63,7 +63,7 @@ Look up entities by identifier:
 | Queries | 52 | 3 |
 | Mutations | 82 | 2 |
 | Objects | 205 | 7 |
-| Inputs | 111 | 4 |
+| Inputs | 110 | 3 |
 | Enums | 22 | 2 |
 | Interfaces | 5 | 1 |
 | Unions | 31 | 0 |

@@ -248,7 +248,6 @@
 - [DesUpdateUserGroupInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-user-group-input.md): Input for updating a user group.
 - [DesUpdateUserInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-update-user-input.md): Input for updating a user.
 - [DesWorkspaceUserFilterInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-workspace-user-filter-input.md): Specifies the filtering criteria for the workspace user list.
-- [DesWorkspaceUserSortInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/des-workspace-user-sort-input.md) [EXPERIMENTAL]
 - [GloAddAppClientSecretInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-client-secret-input.md)
 - [GloAddAppGrantTypeInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-grant-type-input.md)
 - [GloAddAppRedirectUriInput](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/inputs/glo-add-app-redirect-uri-input.md)

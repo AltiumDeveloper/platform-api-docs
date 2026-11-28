@@ -1,21 +1,14 @@
-# Altium 365 API — Renesas (preview) schema slice (~24589 tokens)
+# Altium 365 API — Renesas (preview) schema slice (~23915 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
 #   DateTime → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
-#   DateTimeOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 #   Decimal → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 #   DesPermission → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
 #   DesWorkspaceUser → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
-#   DesWorkspaceUserFilterInput → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
-#   DesWorkspaceUserSortInput → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
-#   GridFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 #   Long → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 #   SolSolution → Platform: https://altiumdeveloper.github.io/platform-api-docs/reference/platform/schema.graphql
-#   SortEnumType → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
-#   StringOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 #   Upload → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
-#   UuidOperationFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 
 type Query {
   "**Experimental** A board model (an MCU as soldered onto a specific eval kit) by board name."
@@ -46,10 +39,10 @@ type Query {
   rsaMotorStudioEasyModeConfigById(configId: String!, projectId: ID!): RsaMotorStudioEasyModeConfig @experimental
   "**Experimental** List existing easymode configs for a project."
   rsaMotorStudioEasyModeConfigs(projectId: ID!): [RsaMotorStudioEasyModeConfig!]! @experimental
-  "**Experimental** Retrieves a MotorStudioProject"
+  "**Experimental** Retrieves a motor studio project."
   rsaMotorStudioProjectById(id: ID!): RsaMotorStudioProject! @experimental
-  "**Experimental** Retrieves collection of MotorStudioProject"
-  rsaMotorStudioProjects(order: [RsaMotorStudioProjectSortInput!], where: RsaMotorStudioProjectFilterInput): [RsaMotorStudioProject!]! @experimental
+  "**Experimental** Retrieves collection of motor studio projects."
+  rsaMotorStudioProjects: [RsaMotorStudioProject!]! @experimental
   "**Experimental** Gets motor studio projects by IDs."
   rsaMotorStudioProjectsByIds(ids: [ID!]!): [RsaMotorStudioProject!]! @experimental
   "**Experimental** Get a scope capture by id."
@@ -127,7 +120,7 @@ type Mutation {
   dmUpdateDeviceFromSdm(input: DmUpdateDeviceFromSdmInput!): DmUpdateDeviceFromSdmPayload! @experimental
   "**Experimental** Add an easymode config for the specified project."
   rsaMotorStudioCreateEasyModeConfig(input: RsaMotorStudioCreateEasyModeConfigInput!): RsaMotorStudioCreateEasyModeConfigPayload! @experimental
-  "**Experimental** Add new MotorStudioProject"
+  "**Experimental** Add new motor studio project."
   rsaMotorStudioCreateProject(input: RsaMotorStudioCreateProjectInput!): RsaMotorStudioCreateProjectPayload! @experimental
   "**Experimental** Create a scope capture for the specified project and scope configuration."
   rsaMotorStudioCreateScopeCapture(input: RsaMotorStudioCreateScopeCaptureInput!): RsaMotorStudioCreateScopeCapturePayload! @experimental
@@ -159,7 +152,7 @@ type Mutation {
   rsaMotorStudioUnlinkTuningFromProject(input: RsaMotorStudioUnlinkTuningFromProjectInput!): RsaMotorStudioUnlinkTuningFromProjectPayload! @experimental
   "**Experimental** Update an easymode config for the specified project (provided sliders will become the entire list)."
   rsaMotorStudioUpdateEasyModeConfig(input: RsaMotorStudioUpdateEasyModeConfigInput!): RsaMotorStudioUpdateEasyModeConfigPayload! @experimental
-  "**Experimental** Update a MotorStudioProject"
+  "**Experimental** Update a motor studio project."
   rsaMotorStudioUpdateProject(input: RsaMotorStudioUpdateProjectInput!): RsaMotorStudioUpdateProjectPayload! @experimental
   "**Experimental** Update a scope configuration for the specified project (provided views/channels become the entire list)."
   rsaMotorStudioUpdateScopeConfig(input: RsaMotorStudioUpdateScopeConfigInput!): RsaMotorStudioUpdateScopeConfigPayload! @experimental
@@ -1359,7 +1352,7 @@ type RsaMotorStudioProject @experimental {
   modifiedById: ID @experimental @deprecated(reason: "Fields play a technical role for schema stitching purposes.")
   "**Experimental**"
   name: String! @experimental
-  "**Experimental** Parent solutions linked to this MotorStudio project."
+  "**Experimental** Parent solutions linked to this motor studio project."
   parentSolutions: [SolSolution!]! @experimental
   "**Experimental** Collection of scope captures associated with the motor studio project."
   scopeCaptures: [RsaMotorStudioScopeCapture!]! @experimental
@@ -1438,11 +1431,11 @@ type RsaMotorStudioScopeConfig @experimental {
   "**Experimental**"
   samplesLength: Int!
   "**Experimental**"
-  triggerEdge: TriggerEdge!
+  triggerEdge: RsaScopeTriggerEdge!
   "**Experimental**"
   triggerLevel: Float!
   "**Experimental**"
-  triggerMode: TriggerMode!
+  triggerMode: RsaScopeTriggerMode!
   "**Experimental**"
   triggerSourceChannelIndex: Int!
   "**Experimental**"
@@ -1510,13 +1503,13 @@ type RsaMotorStudioTuning @experimental {
   "**Experimental**"
   revisions: [RsaMotorStudioTuningRevision!]!
   "**Experimental**"
-  tuningType: TuningType!
+  tuningType: RsaTuningType!
 }
 
 "**Experimental**"
 type RsaMotorStudioTuningModule @experimental {
   "**Experimental**"
-  moduleType: TuningModuleType!
+  moduleType: RsaTuningModuleType!
   "**Experimental**"
   parameters: [RsaMotorStudioTuningParameter!]!
   "**Experimental**"
@@ -1532,7 +1525,7 @@ type RsaMotorStudioTuningParameter @experimental {
   "**Experimental**"
   path: String!
   "**Experimental**"
-  source: ParamSource!
+  source: RsaTuningParamSource!
   "**Experimental**"
   units: String
   "**Experimental**"
@@ -2017,26 +2010,6 @@ input DmUpdateDeviceFromSdmInput @experimental {
   requiredPeripherals: [DmRequiredPeripheralPayloadInput!]!
 }
 
-"**Experimental**"
-input MotorStudioProjectGridFilterInput @experimental {
-  "**Experimental**"
-  and: [MotorStudioProjectGridFilterInput!]
-  "**Experimental**"
-  or: [MotorStudioProjectGridFilterInput!]
-  "**Experimental**"
-  projectId: StringOperationFilterInput
-  "**Experimental**"
-  tenantId: UuidOperationFilterInput
-}
-
-"**Experimental**"
-input MotorStudioProjectGridSortInput @experimental {
-  "**Experimental**"
-  projectId: SortEnumType
-  "**Experimental**"
-  tenantId: SortEnumType
-}
-
 "**Experimental** Represents input value for motor studio project easymode config creation."
 input RsaMotorStudioCreateEasyModeConfigInput @experimental {
   "**Experimental**"
@@ -2100,11 +2073,11 @@ input RsaMotorStudioCreateScopeConfigInput @experimental {
   "**Experimental**"
   samplesLength: Int!
   "**Experimental**"
-  triggerEdge: TriggerEdge!
+  triggerEdge: RsaScopeTriggerEdge!
   "**Experimental**"
   triggerLevel: Float!
   "**Experimental**"
-  triggerMode: TriggerMode!
+  triggerMode: RsaScopeTriggerMode!
   "**Experimental**"
   triggerSourceChannelIndex: Int!
   "**Experimental**"
@@ -2148,7 +2121,7 @@ input RsaMotorStudioCreateTuningInput @experimental {
   "**Experimental**"
   path: String!
   "**Experimental**"
-  tuningType: TuningType!
+  tuningType: RsaTuningType!
 }
 
 "**Experimental**"
@@ -2244,58 +2217,6 @@ input RsaMotorStudioParameterEvidenceInput @experimental {
 }
 
 "**Experimental**"
-input RsaMotorStudioProjectFilterInput @experimental {
-  "**Experimental**"
-  and: [RsaMotorStudioProjectFilterInput!]
-  "**Experimental**"
-  createdAt: DateTimeOperationFilterInput
-  "**Experimental**"
-  createdBy: DesWorkspaceUserFilterInput
-  "**Experimental**"
-  createdById: GridFilterInput
-  "**Experimental**"
-  description: StringOperationFilterInput
-  "**Experimental**"
-  folderId: StringOperationFilterInput
-  "**Experimental**"
-  id: MotorStudioProjectGridFilterInput
-  "**Experimental**"
-  modifiedAt: DateTimeOperationFilterInput
-  "**Experimental**"
-  modifiedBy: DesWorkspaceUserFilterInput
-  "**Experimental**"
-  modifiedById: GridFilterInput
-  "**Experimental**"
-  name: StringOperationFilterInput
-  "**Experimental**"
-  or: [RsaMotorStudioProjectFilterInput!]
-}
-
-"**Experimental**"
-input RsaMotorStudioProjectSortInput @experimental {
-  "**Experimental**"
-  createdAt: SortEnumType
-  "**Experimental**"
-  createdBy: DesWorkspaceUserSortInput
-  "**Experimental**"
-  createdById: SortEnumType
-  "**Experimental**"
-  description: SortEnumType
-  "**Experimental**"
-  folderId: SortEnumType
-  "**Experimental**"
-  id: MotorStudioProjectGridSortInput
-  "**Experimental**"
-  modifiedAt: SortEnumType
-  "**Experimental**"
-  modifiedBy: DesWorkspaceUserSortInput
-  "**Experimental**"
-  modifiedById: SortEnumType
-  "**Experimental**"
-  name: SortEnumType
-}
-
-"**Experimental**"
 input RsaMotorStudioScopeChannelInput @experimental {
   "**Experimental**"
   channelId: String
@@ -2314,7 +2235,7 @@ input RsaMotorStudioScopeChannelInput @experimental {
 "**Experimental**"
 input RsaMotorStudioTuningModuleInput @experimental {
   "**Experimental**"
-  moduleType: TuningModuleType!
+  moduleType: RsaTuningModuleType!
   "**Experimental**"
   parameters: [RsaMotorStudioTuningParameterInput!]!
   "**Experimental**"
@@ -2330,7 +2251,7 @@ input RsaMotorStudioTuningParameterInput @experimental {
   "**Experimental**"
   path: String!
   "**Experimental**"
-  source: ParamSource!
+  source: RsaTuningParamSource!
   "**Experimental**"
   units: String
   "**Experimental**"
@@ -2388,11 +2309,11 @@ input RsaMotorStudioUpdateScopeConfigInput @experimental {
   "**Experimental**"
   samplesLength: Int!
   "**Experimental**"
-  triggerEdge: TriggerEdge!
+  triggerEdge: RsaScopeTriggerEdge!
   "**Experimental**"
   triggerLevel: Float!
   "**Experimental**"
-  triggerMode: TriggerMode!
+  triggerMode: RsaScopeTriggerMode!
   "**Experimental**"
   triggerSourceChannelIndex: Int!
   "**Experimental**"
@@ -2442,7 +2363,7 @@ input RsaMotorStudioUpdateTuningInput @experimental {
   "**Experimental**"
   path: String
   "**Experimental**"
-  tuningType: TuningType
+  tuningType: RsaTuningType
 }
 
 "**Experimental**"
@@ -2636,11 +2557,53 @@ enum DmModelEvaluationStrategy @experimental {
 }
 
 "**Experimental**"
-enum ParamSource @experimental {
+enum RsaScopeTriggerEdge @experimental {
+  "**Experimental**"
+  BOTH
+  "**Experimental**"
+  FALL
+  "**Experimental**"
+  RISE
+}
+
+"**Experimental**"
+enum RsaScopeTriggerMode @experimental {
+  "**Experimental**"
+  AUTO
+  "**Experimental**"
+  NORMAL
+  "**Experimental**"
+  SINGLE
+}
+
+"**Experimental**"
+enum RsaTuningModuleType @experimental {
+  "**Experimental**"
+  BRUSHLESS_THREE_PHASE_MOTOR
+  "**Experimental**"
+  MOTOR
+  "**Experimental**"
+  PI_CURRENT_CONTROLLER
+  "**Experimental**"
+  PI_SPEED_CONTROLLER
+  "**Experimental**"
+  THREE_PHASE_INVERTER
+}
+
+"**Experimental**"
+enum RsaTuningParamSource @experimental {
   "**Experimental**"
   IDENT_RESULT
   "**Experimental**"
   USER_ENTERED
+}
+
+"**Experimental**"
+enum RsaTuningType @experimental {
+  "**Experimental**"
+  FOC3_PHASE_SENSORED
+  "**Experimental**"
+  FOC3_PHASE_SENSORLESS
 }
 
 enum SftSimSimulationRepositoryType {
@@ -2656,46 +2619,4 @@ enum SftSimSimulationType {
 enum SftSoftwareRepositoryType {
   EXTERNAL
   INTERNAL
-}
-
-"**Experimental**"
-enum TriggerEdge @experimental {
-  "**Experimental**"
-  BOTH
-  "**Experimental**"
-  FALL
-  "**Experimental**"
-  RISE
-}
-
-"**Experimental**"
-enum TriggerMode @experimental {
-  "**Experimental**"
-  AUTO
-  "**Experimental**"
-  NORMAL
-  "**Experimental**"
-  SINGLE
-}
-
-"**Experimental**"
-enum TuningModuleType @experimental {
-  "**Experimental**"
-  BRUSHLESS_THREE_PHASE_MOTOR
-  "**Experimental**"
-  MOTOR
-  "**Experimental**"
-  PI_CURRENT_CONTROLLER
-  "**Experimental**"
-  PI_SPEED_CONTROLLER
-  "**Experimental**"
-  THREE_PHASE_INVERTER
-}
-
-"**Experimental**"
-enum TuningType @experimental {
-  "**Experimental**"
-  FOC3_PHASE_SENSORED
-  "**Experimental**"
-  FOC3_PHASE_SENSORLESS
 }

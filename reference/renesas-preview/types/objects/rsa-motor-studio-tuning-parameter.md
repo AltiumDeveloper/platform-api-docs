@@ -24,7 +24,7 @@ type RsaMotorStudioTuningParameter {
   evidence: RsaMotorStudioTuningParameterEvidence
   name: String!
   path: String!
-  source: ParamSource!
+  source: RsaTuningParamSource!
   units: String
   value: String!
 }
@@ -38,7 +38,7 @@ type RsaMotorStudioTuningParameter {
 
 #### `path` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 
-#### `source` · [`ParamSource!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/param-source.md) non-null enum
+#### `source` · [`RsaTuningParamSource!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-tuning-param-source.md) non-null enum
 
 #### `units` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

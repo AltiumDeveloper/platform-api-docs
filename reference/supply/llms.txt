@@ -1,7 +1,7 @@
 # Supply — Altium 365 API
 > Parts, offers, part families, reference designs, evaluation kits, software projects and solution templates.
 
-Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/schema.graphql) (~29928 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/overview.md).
+Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schema slice: [schema.graphql](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/schema.graphql) (~30345 tokens). Overview: [overview](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/overview.md).
 
 ## Entities
 - [SupEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/objects/sup-eval-kit.md): Evaluation Kit — A vendor evaluation kit in the supply catalog, described by its associated devices, its reference designs (including a main one) and the software projects compatible with it. GRID `grid:supply::platform:eval-kit/{id}`. Via: supEvalKitById, supEvalKitsByIds, supEvalKitDetailsByRefDesignId, supEvalKits, supEvalKitSearch, …
@@ -67,10 +67,10 @@ Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schem
 - [supEvalKitPatchParameters](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-patch-parameters.md): Add or remove parameters on an evaluation kit.
 - [supEvalKitSetMainRefDesign](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-set-main-ref-design.md): Set the main reference design for an evaluation kit.
 - [supEvalKitSetParameters](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-set-parameters.md): Replace all parameters on an evaluation kit.
-- [supEvalKitSoftwareProjectCompatibleEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-software-project-compatible-eval-kit.md): Modify a software project compatible evaluation kit.
 - [supEvalKitSortPreviewImages](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-sort-preview-images.md): Sort preview images of an evaluation kit.
 - [supEvalKitUnsetMainRefDesign](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-unset-main-ref-design.md): Unset a specific main reference design for an evaluation kit.
 - [supEvalKitUpdateEvalKit](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-update-eval-kit.md): Update a evaluation kit.
+- [supEvalKitUpdateEvalKitStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-eval-kit-update-eval-kit-status.md): Update the status of an evaluation kit.
 - [supSoftwareProjectCreateSoftwareProject](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-software-project-create-software-project.md): Create a new software project.
 - [supSoftwareProjectDeleteSoftwareProject](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-software-project-delete-software-project.md): Delete a software project.
 - [supSoftwareProjectPatchParameters](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-software-project-patch-parameters.md): Add or remove parameters on a software project.
@@ -104,4 +104,4 @@ Concepts: [supply](https://altiumdeveloper.github.io/cdm/subsets/supply/). Schem
 - [supSolutionTemplateUpdateSolutionTemplateStatus](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/operations/mutations/sup-solution-template-update-solution-template-status.md): Update the status of a solution template.
 
 ## Optional
-- [All types in Supply](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types.txt): one line per type (~14231 tokens)
+- [All types in Supply](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types.txt): one line per type (~14416 tokens)

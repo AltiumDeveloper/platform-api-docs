@@ -29,6 +29,7 @@ input SupEvalKitUpdateEvalKitInput {
   removeRefDesignIds: [ID!]
   sourceFile: SupEvalKitFileInput
   sourceUrl: String
+  status: SupEvalKitStatus
   title: String
 }
 ```
@@ -74,6 +75,10 @@ The evaluation kit source file for building source url.
 #### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The evaluation kit source url.
+
+#### `status` · [`SupEvalKitStatus`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-status.md) enum
+
+The evaluation kit status. The current status is kept if not specified.
 
 #### `title` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 

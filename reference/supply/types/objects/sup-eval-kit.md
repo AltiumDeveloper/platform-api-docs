@@ -65,6 +65,7 @@ type SupEvalKit {
   refDesignIds: [String!]! @deprecated
   refDesigns: [SupRefDesign!]!
   sourceUrl: String
+  status: SupEvalKitStatus!
   title: String!
   updatedAt: DateTime!
   updatedById: String
@@ -145,6 +146,10 @@ The list of reference designs associated with the evaluation kit.
 #### `sourceUrl` · [`String`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) scalar
 
 The source url.
+
+#### `status` · [`SupEvalKitStatus!`](https://altiumdeveloper.github.io/platform-api-docs/reference/supply/types/enums/sup-eval-kit-status.md) non-null enum
+
+The evaluation kit status.
 
 #### `title` · [`String!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/string.md) non-null scalar
 

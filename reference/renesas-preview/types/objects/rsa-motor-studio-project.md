@@ -68,7 +68,7 @@ Collection of easymode configurations associated with the motor studio project.
 
 #### `parentSolutions` · [`[SolSolution!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/platform/types/objects/sol-solution.md) non-null object Platform **EXPERIMENTAL**
 
-Parent solutions linked to this MotorStudio project.
+Parent solutions linked to this motor studio project.
 
 #### `scopeCaptures` · [`[RsaMotorStudioScopeCapture!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-scope-capture.md) non-null object **EXPERIMENTAL**
 

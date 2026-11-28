@@ -1,4 +1,4 @@
-# Altium 365 API — Platform schema slice (~33519 tokens)
+# Altium 365 API — Platform schema slice (~33413 tokens)
 # Not a complete schema: types from other contexts are referenced, not defined.
 # Full schema for code generation: https://altiumdeveloper.github.io/platform-api-docs/schema.graphql
 # Referenced from other contexts:
@@ -25,7 +25,6 @@
 #   DesWorkflowFilterInput → Customization: https://altiumdeveloper.github.io/platform-api-docs/reference/customization/schema.graphql
 #   DesWorkspaceConfiguration → Configuration Management: https://altiumdeveloper.github.io/platform-api-docs/reference/configuration-management/schema.graphql
 #   Error → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
-#   GridFilterInput → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 #   Long → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 #   Node → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
 #   PageInfo → Common: https://altiumdeveloper.github.io/platform-api-docs/reference/common/schema.graphql
@@ -2812,26 +2811,14 @@ input DesUpdateUserInput {
 
 "Specifies the filtering criteria for the workspace user list."
 input DesWorkspaceUserFilterInput {
-  "**Experimental**"
-  and: [DesWorkspaceUserFilterInput!] @experimental
   "Workspace specific identifiers of the groups."
   groupIds: [String!]
-  "**Experimental**"
-  id: GridFilterInput @experimental
-  "**Experimental**"
-  or: [DesWorkspaceUserFilterInput!] @experimental
   "The text that either the guest first or last names or emails must contain. Case-insensitive."
   text: String
   "Workspace specific identifiers of the users."
   userIds: [String!]
   "The specific type of users to search."
   userTypes: [DesWorkspaceUserType!]
-}
-
-"**Experimental**"
-input DesWorkspaceUserSortInput @experimental {
-  "**Experimental**"
-  id: SortEnumType
 }
 
 input GloAddAppClientSecretInput {

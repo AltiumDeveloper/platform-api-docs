@@ -29,9 +29,9 @@ input RsaMotorStudioUpdateScopeConfigInput {
   projectId: ID!
   samplePeriodNs: Int!
   samplesLength: Int!
-  triggerEdge: TriggerEdge!
+  triggerEdge: RsaScopeTriggerEdge!
   triggerLevel: Float!
-  triggerMode: TriggerMode!
+  triggerMode: RsaScopeTriggerMode!
   triggerSourceChannelIndex: Int!
   views: [RsaMotorStudioUpdateScopeViewInput!]!
   virtualVariables: [String!]
@@ -56,11 +56,11 @@ input RsaMotorStudioUpdateScopeConfigInput {
 
 #### `samplesLength` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 
-#### `triggerEdge` · [`TriggerEdge!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/trigger-edge.md) non-null enum
+#### `triggerEdge` · [`RsaScopeTriggerEdge!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-scope-trigger-edge.md) non-null enum
 
 #### `triggerLevel` · [`Float!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/float.md) non-null scalar
 
-#### `triggerMode` · [`TriggerMode!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/trigger-mode.md) non-null enum
+#### `triggerMode` · [`RsaScopeTriggerMode!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-scope-trigger-mode.md) non-null enum
 
 #### `triggerSourceChannelIndex` · [`Int!`](https://altiumdeveloper.github.io/platform-api-docs/reference/common/types/scalars/int.md) non-null scalar
 

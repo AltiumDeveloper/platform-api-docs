@@ -21,7 +21,7 @@ deprecated: false
 
 ```graphql
 type RsaMotorStudioTuningModule {
-  moduleType: TuningModuleType!
+  moduleType: RsaTuningModuleType!
   parameters: [RsaMotorStudioTuningParameter!]!
   path: String!
 }
@@ -29,7 +29,7 @@ type RsaMotorStudioTuningModule {
 
 ### Fields
 
-#### `moduleType` · [`TuningModuleType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/tuning-module-type.md) non-null enum
+#### `moduleType` · [`RsaTuningModuleType!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/enums/rsa-tuning-module-type.md) non-null enum
 
 #### `parameters` · [`[RsaMotorStudioTuningParameter!]!`](https://altiumdeveloper.github.io/platform-api-docs/reference/renesas-preview/types/objects/rsa-motor-studio-tuning-parameter.md) non-null object
 
